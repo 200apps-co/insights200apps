@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 רדיו · ניתוח מקדים — 200Apps</title>
+<meta property="og:title" content="5 רדיו · ניתוח מקדים — 200Apps">
+<meta property="og:description" content="עשרות אלפי אוהדים הורידו את 5 רדיו. ניתוח מבוסס עדויות - הוכן במיוחד עבור Or Abulafia.">
+<meta property="og:image" content="https://insights.200apps.com/5-radio/og-image.png">
+<meta property="og:url" content="https://insights.200apps.com/5-radio/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://insights.200apps.com/5-radio/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* COLOR RULE (locked): navy=base · blue=the single accent · green #25D366 = ONLY WhatsApp · red #c0392b = ONLY warning/stale. Do not introduce new accent colors. */
+    --bone:#fafafa; --bone-2:#f0f0f0;
+    --navy:#1a1a42; --navy-d:#12122e; --navy-ink:#d9ddf2;
+    --blue:#3a5bd0; --blue-2:#5b78e0; --blue-soft:#e2e7fb;
+    --tint:#dfe3f2;
+    --ink:#393939; --muted:#5b5b66; --line:#dadace;
+    --mono:'Rubik',sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Rubik',sans-serif;background:var(--bone);color:var(--ink);margin:0;line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum";}
+  .ribbon{background:var(--navy);color:#fff;text-align:center;font-size:13px;padding:9px 16px;letter-spacing:.3px;position:relative;z-index:5;}
+  .ribbon .mk{display:inline-block;width:7px;height:7px;background:var(--blue-2);margin-inline-start:8px;transform:rotate(45deg);vertical-align:middle;}
+  .logo{display:flex;align-items:center;gap:11px;}
+  .logo .badge{width:42px;height:42px;background:var(--navy);border-radius:13px;display:flex;align-items:center;justify-content:center;}
+  .logo .badge span{font-family:var(--mono);font-weight:500;color:#fff;font-size:15px;letter-spacing:.5px;}
+  .logo .wm{line-height:1.05;}
+  .logo .wm b{display:block;font-weight:600;font-size:18px;letter-spacing:-.3px;color:var(--navy);}
+  .logo .wm small{font-size:11px;color:var(--muted);letter-spacing:.5px;}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:24px 0 8px;}
+  .nav-tag{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;}
+  .lead-id{display:flex;align-items:center;gap:16px;margin:34px 0 0;padding:16px 20px;background:#fff;border-radius:16px;}
+  .lead-id img{width:58px;height:58px;border-radius:14px;box-shadow:0 4px 14px rgba(26,26,66,.18);}
+  .lead-id .nm{font-weight:600;font-size:19px;letter-spacing:-.3px;}
+  .lead-id .by{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-top:2px;}
+  .lead-chips{margin-inline-start:auto;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;}
+  .lead-chips span{background:var(--blue-soft);color:var(--blue);font-family:var(--mono);font-size:12.5px;font-weight:500;padding:6px 12px;border-radius:20px;white-space:nowrap;}
+  .hero{padding:30px 0 26px;}
+  .eyebrow{font-family:var(--mono);font-size:14px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:22px;}
+  .eyebrow b{color:var(--blue);}
+  h1,h2,h3,h4{font-family:'Rubik',sans-serif;}
+  h1{font-size:clamp(38px,5.6vw,68px);line-height:1.05;font-weight:700;letter-spacing:-1.5px;margin:0 0 24px;max-width:22ch;text-wrap:balance;}
+  h1 .dim{color:var(--muted);}
+  .lead{font-size:20px;color:#3a3a44;max-width:78ch;font-weight:400;}
+  .lead b{font-weight:700;color:var(--ink);}
+  .metastrip{display:flex;flex-wrap:wrap;gap:0;margin-top:26px;}
+  .metastrip div{flex:1;min-width:120px;padding:10px 16px;text-align:center;}
+  .metastrip div:first-child{padding-inline-start:0;}
+  .metastrip .k{font-size:13px;font-weight:700;letter-spacing:.8px;color:var(--muted);text-transform:uppercase;}
+  .metastrip .v{font-size:32px;font-weight:600;margin-top:2px;letter-spacing:-.5px;}
+  .metastrip .v.good{color:var(--blue);}
+  .metastrip .v.warn{color:#c0392b;}
+  .connector{display:flex;flex-direction:column;align-items:center;height:64px;}
+  .connector .ln{flex:1;width:1.5px;background:var(--line);}
+  .connector .node{width:9px;height:9px;border:1.5px solid var(--blue);transform:rotate(45deg);background:var(--bone);}
+  section{padding:8px 0;}
+  .sec-label{font-family:var(--mono);font-size:18px;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin-bottom:18px;display:flex;align-items:baseline;gap:12px;}
+  .sec-label .n{color:var(--ink);font-weight:500;}
+  h2{font-size:clamp(28px,4vw,46px);font-weight:700;letter-spacing:-1px;line-height:1.08;margin:0 0 18px;max-width:20ch;}
+  .sec-sub{font-size:18px;color:var(--muted);max-width:60ch;}
+  .panel{background:var(--navy);color:#fff;border-radius:26px;padding:48px;position:relative;overflow:hidden;}
+  .panel.tinted{background:var(--tint);color:var(--ink);}
+  .panel h3{font-size:26px;font-weight:600;margin:0 0 12px;letter-spacing:-.5px;}
+  .panel p{font-size:17px;opacity:.94;max-width:56ch;margin:0;}
+  .panel .tag{position:absolute;font-family:var(--mono);font-size:11px;letter-spacing:1.5px;opacity:.55;text-transform:uppercase;}
+  .panel .tag.tl{top:26px;inset-inline-start:32px;}
+  .panel .tag.br{bottom:26px;inset-inline-end:32px;}
+  .pgap{margin-top:30px;display:flex;gap:24px;flex-wrap:wrap;}
+  .pgap .col{flex:1;min-width:200px;background:#fff;border-radius:16px;padding:22px;}
+  .pgap .col .os{font-family:var(--mono);font-size:12px;letter-spacing:1px;color:var(--muted);text-transform:uppercase;}
+  .pgap .col .ver{font-size:30px;font-weight:700;letter-spacing:-1px;margin:8px 0 4px;}
+  .pgap .col.frozen{border-color:#e0e0e0;}
+  .pgap .col.frozen .ver{color:#c0392b;}
+  .pgap .col .since{font-family:var(--mono);font-size:13px;color:var(--muted);}
+  .pgap .col .badge{display:inline-block;margin-top:12px;font-family:var(--mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:20px;}
+  .pgap .col.frozen .badge{background:#fbe3df;color:#c0392b;}
+  .pgap .col.live .badge{background:var(--blue-soft);color:var(--blue);}
+  .ev-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:30px;}
+  @media(max-width:760px){.ev-grid{grid-template-columns:1fr;}}
+  .theme{background:#fff;border-radius:18px;padding:26px;position:relative;}
+  .theme .cnt{display:none;}
+  .theme h4{font-size:21px;font-weight:600;margin:6px 0 18px;letter-spacing:-.3px;}
+  .quote{padding:10px 0;margin-bottom:8px;background:transparent;}
+  .quote:last-child{margin-bottom:0;}
+  .quote:last-child{margin-bottom:0;}
+  .quote .txt{font-size:15px;color:#2c2c32;line-height:1.55;}
+  .quote .meta{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:10px;letter-spacing:.5px;display:flex;gap:10px;direction:ltr;justify-content:flex-end;}
+  .quote .meta .star{display:none;}
+  .opp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px;}
+  @media(max-width:760px){.opp-grid{grid-template-columns:1fr;}}
+  .opp{background:#fff;border-radius:18px;padding:26px;transition:transform .25s,box-shadow .25s;}
+  .opp:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(26,26,66,.13);}
+  .opp .num{display:none;}
+  .opp h4{font-size:20px;font-weight:600;margin:12px 0 10px;letter-spacing:-.3px;}
+  .opp p{font-size:15px;color:#52525a;margin:0;}
+  .ai-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:26px;}
+  @media(max-width:760px){.ai-grid{grid-template-columns:1fr;}}
+  .ai{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:22px;}
+  .ai .num{display:none;}
+  .ai h4{font-size:19px;font-weight:600;margin:10px 0 8px;}
+  .ai p{font-size:14.5px;opacity:.9;margin:0;}
+  .cs-grid{display:flex;gap:18px;flex-wrap:wrap;margin-top:26px;}
+  .cs{flex:1;min-width:210px;background:#fff;border-radius:16px;padding:22px;display:flex;gap:15px;align-items:stretch;}
+  .cs img{width:50px;height:50px;border-radius:13px;flex:none;object-fit:contain;background:#fff;}
+  .cs > div{display:flex;flex-direction:column;flex:1;}
+  .cs .nm{font-size:18px;font-weight:600;}
+  .cs .ds{font-size:14px;color:#52525a;margin-top:4px;}
+  .clients{margin-top:54px;margin-bottom:28px;}
+  .clients .ttl{font-family:var(--mono);font-size:14px;letter-spacing:1px;color:var(--muted);text-transform:uppercase;text-align:center;margin-bottom:26px;}
+  .cwall{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:30px 46px;}
+  .cwall img{height:28px;width:auto;max-width:116px;object-fit:contain;opacity:.5;filter:grayscale(1);transition:opacity .3s,filter .3s,transform .3s;}
+  .cwall img:hover{opacity:1;filter:none;transform:scale(1.08);}
+  .cta-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:30px;}
+  .pill{display:inline-flex;align-items:center;gap:9px;background:#fff;color:var(--navy);border:0;border-radius:40px;padding:17px 30px;font-family:inherit;font-size:17px;font-weight:600;cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 8px 24px rgba(0,0,0,.18);}
+  .pill:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,.26);}
+  .pill .arr{font-size:18px;color:var(--blue);}
+  .pill.ghost{background:transparent;color:#fff;box-shadow:none;border:1.5px solid rgba(255,255,255,.45);font-weight:700;}
+  .pill.ghost:hover{box-shadow:none;background:rgba(255,255,255,.08);}
+  .pill.wa{background:#25D366;color:#fff;box-shadow:0 8px 24px rgba(37,211,102,.38);}
+  .pill.wa:hover{background:#1ebe5a;box-shadow:0 12px 30px rgba(37,211,102,.45);}
+  .pill.wa .arr{color:#dffbe9;}
+  .pill svg,.sticky-cta svg{width:20px;height:20px;flex:none;}
+  .cta-note{font-family:var(--mono);font-size:13px;color:#cfd6f5;}
+  .cta-panel{text-align:center;}
+  .cta-panel h3{margin-inline:auto;max-width:26ch;}
+  .cta-panel p{margin-inline:auto;}
+  .cta-panel .cta-row{justify-content:center;}
+  .cta-panel .cta-note{text-align:center;}
+  .mid-cta{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;background:var(--blue-soft);border:1px solid var(--tint);border-radius:20px;padding:26px 32px;text-align:center;}
+  .mid-cta .t{font-size:20px;font-weight:600;color:var(--navy);letter-spacing:-.3px;}
+  .sticky-cta{position:fixed;bottom:22px;inset-inline-start:22px;z-index:200;display:inline-flex;align-items:center;gap:9px;background:#25D366;color:#fff;border-radius:40px;padding:13px 21px;font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.3);transition:transform .2s;}
+  .sticky-cta:hover{transform:translateY(-2px);}
+  @media print{.sticky-cta{display:none;}}
+  footer{margin-top:90px;background:var(--bone-2);padding:40px 0 28px;position:relative;}
+  .foot-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;padding-bottom:30px;border-bottom:1px solid var(--line);}
+  .foot-links{font-family:var(--mono);font-size:12.5px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);}
+  .sig{padding:26px 0 30px;color:var(--muted);font-size:14px;line-height:1.6;}
+  .sig .nm{font-weight:600;color:var(--ink);font-size:15px;}
+  .wordmark{font-size:clamp(80px,20vw,250px);font-weight:700;letter-spacing:-6px;color:#0000000a;line-height:.8;white-space:nowrap;margin:10px 0 -30px;text-align:center;user-select:none;direction:ltr;}
+  .lang-switch{font-family:var(--mono);font-size:12px;letter-spacing:1px;color:var(--muted);border:1px solid var(--line);border-radius:20px;padding:6px 14px;text-decoration:none;transition:border-color .2s,color .2s;}
+  .lang-switch:hover{border-color:var(--blue);color:var(--blue);}
+  .cs-links{display:flex;flex-direction:row;gap:6px;margin-top:auto;padding-top:12px;flex-wrap:nowrap;}
+  .store-badge{display:inline-flex;align-items:center;gap:5px;background:#111;color:#fff;border-radius:7px;padding:5px 9px;text-decoration:none;transition:opacity .2s;flex:1;}
+  .store-badge:hover{opacity:.75;}
+  .store-badge svg{flex:none;}
+  .store-badge .bt small{display:block;font-size:7px;letter-spacing:.3px;opacity:.8;font-weight:400;font-family:'Rubik',sans-serif;white-space:nowrap;}
+  .store-badge .bt strong{display:block;font-size:11px;font-weight:700;line-height:1.2;font-family:'Rubik',sans-serif;letter-spacing:-.1px;white-space:nowrap;}
+  .js .rv{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+  .js .rv.in{opacity:1;transform:none;}
+  .js .hero .eyebrow,.js .hero h1,.js .hero .lead,.js .hero .metastrip,.js .lead-id{opacity:0;transform:translateY(20px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards;}
+  .hero h1{animation-delay:.12s;} .hero .lead{animation-delay:.22s;} .hero .metastrip{animation-delay:.32s;}
+  @keyframes rise{to{opacity:1;transform:none;}}
+  @media (prefers-reduced-motion: reduce){
+    .js .rv,.js .rv.in,.js .hero .eyebrow,.js .hero h1,.js .hero .lead,.js .hero .metastrip,.js .lead-id{opacity:1!important;transform:none!important;animation:none!important;transition:none!important;}
+  }
+  @media(max-width:768px){
+    .wrap{padding:0 16px;}
+    nav{padding:16px 0 6px;}
+    .lead-id{flex-wrap:wrap;gap:10px;padding:12px 14px;}
+    .lead-chips{margin-inline-start:0;justify-content:flex-start;width:100%;}
+    .hero{padding:20px 0 16px;}
+    h1,h2,h3,h4{max-width:100%!important;text-wrap:balance;}
+    h1{font-size:clamp(32px,8vw,48px);}
+    h2{letter-spacing:-.5px;font-size:clamp(24px,6vw,36px);}
+    .panel .tag{display:none;}
+    .panel h3{font-size:clamp(22px,5.5vw,30px)!important;}
+    .cta-panel h3{font-size:clamp(22px,6vw,30px)!important;}
+    .metastrip{flex-direction:column;}
+    .metastrip div{border-inline-start:0!important;border-top:1px solid var(--line);padding:14px 16px;min-width:100%;}
+    .metastrip div:first-child{border-top:0;}
+    .metastrip .v{font-size:26px;}
+    .panel{padding:24px 18px;}
+    .ai-grid{grid-template-columns:1fr;}
+    .cs-grid{flex-direction:column;}
+    .cs{min-width:100%;}
+    .cs-links{flex-wrap:wrap;}
+    .mid-cta{flex-direction:column;gap:12px;padding:20px 16px;text-align:center;}
+    .mid-cta .t{font-size:17px;}
+    .cta-row{flex-direction:column;align-items:stretch;}
+    .cta-row .pill{justify-content:center;}
+    .cta-panel .cta-row{align-items:center;}
+    .sticky-cta{bottom:14px;inset-inline-start:14px;padding:10px 16px;font-size:14px;}
+    .wordmark{display:none;}
+    footer{margin-top:50px;}
+  }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<div class="ribbon mono">ניתוח שהוכן במיוחד עבור Or Abulafia<span class="mk"></span></div>
+<a class="sticky-cta" href="https://wa.me/972553192012?text=היי, ראיתי את הניתוח של 200Apps על 5 רדיו ואשמח לתאם שיחה." target="_blank" rel="noopener"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 .4C7.4.4.5 7.3.5 15.9c0 2.8.7 5.4 2 7.7L.4 31.6l8.2-2.1c2.2 1.2 4.8 1.9 7.4 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.4 16 .4zm0 28.3c-2.4 0-4.6-.6-6.5-1.8l-.5-.3-4.9 1.3 1.3-4.8-.3-.5C3.6 20.8 3 18.4 3 15.9 3 8.7 8.8 2.9 16 2.9S29 8.7 29 15.9 23.2 28.7 16 28.7zm7.1-9.7c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1 0 1.8 1.3 3.6 1.5 3.8.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.7.2-1.8z"/></svg>דברו איתנו</a>
+
+<div class="wrap">
+  <nav>
+    <div class="logo"><span class="badge"><span>200</span></span><span class="wm"><b>200Apps</b><small>מאתיים אפליקציות</small></span></div>
+    <div class="nav-tag">App Teardown · 2026</div>
+  </nav>
+  <div class="lead-id">
+    <img src="assets/icons/5-radio.png" alt="5 רדיו">
+    <div><div class="nm">5 Radio</div><div class="by">Or Abulafia · App Store + Google Play</div></div>
+    <div class="lead-chips"><span>50K+ התקנות</span><span>126 ביקורות שליליות</span></div>
+  </div>
+  <header class="hero">
+    <div class="eyebrow">ניתוח מקדים · <b>מבוסס עדויות</b></div>
+    <h1>עשרות אלפי אוהדים הורידו את 5 רדיו.<br><span class="dim">אבל השידור נתקע להם באמצע המשחק.</span></h1>
+    <p class="lead">לא ניחשנו ולא קראנו את הקוד. קראנו את <b>175 הביקורות</b> של 5 רדיו בגוגל פליי ומיפינו מה המאזינים עצמם כותבים. התמונה עקבית: את התוכן - השידורים והפודקאסטים - הם אוהבים. אבל <b>126 מתוך 175 ביקורות שליליות</b>, והתלונות חוזרות על אותם שלושה דברים: שידור שנתקע, נגינה שנכבית עם המסך, ואין אופליין. ריכזנו כאן את הממצאים, עם ציטוטים מקוריים, כדי שתוכלו לראות בדיוק איפה המאזינים מחכים.</p>
+    <div class="metastrip"><div><div class="k">התקנות (Android)</div><div class="v ">50,000+</div></div><div><div class="k">דירוג Google Play</div><div class="v warn">1.2 ★</div></div><div><div class="k">ביקורות שליליות</div><div class="v warn mono">126 / 175</div></div></div>
+  </header>
+</div>
+<div class="wrap"><div class="connector"><div class="ln"></div><div class="node"></div><div class="ln"></div></div></div>
+<div class="wrap"><section class="rv">
+  <div class="sec-label"><span class="n">00</span> הבעיה</div>
+  <h2>תוכן שאוהדים רוצים לשמוע - ונגן שלא מחזיק שידור.</h2>
+  <p class="sec-sub">5 רדיו היא הדרך הרשמית היחידה להאזין לתחנה - ההאזנה דרך אפליקציות רדיו חיצוניות נחסמה. אבל הדירוג בגוגל פליי עומד על 1.2★, התלונה המובילה היא קריסות ותקיעות, וגרסת ה-iOS לא עודכנה מאז יולי 2021. מאזינים שכותבים שהתוכן מעולה - עוזבים בגלל הנגן.</p>
+  <div class="pgap">
+    <div class="col live"><div class="os">Android</div><div class="ver">Google Play</div><div class="since mono">דירוג · 1.2★</div><div><span class="badge">72% ביקורות שליליות</span></div></div>
+    <div class="col frozen"><div class="os">iOS</div><div class="ver">App Store</div><div class="since mono">עודכן · יולי 2021</div><div><span class="badge">קפוא כ-60 חודשים</span></div></div>
+  </div>
+</section></div>
+<div class="wrap"><div class="connector"><div class="ln"></div><div class="node"></div><div class="ln"></div></div></div>
+<div class="wrap"><section class="rv">
+  <div class="sec-label"><span class="n">01</span> מה המשתמשים אומרים</div>
+  <h2>העדויות, מילה במילה.</h2>
+  <p class="sec-sub">קיבצנו את הביקורות לפי נושא. אלה לא דעות שלנו - ציטוטים אמיתיים של מאזינים. שלושה נושאים חוזרים שוב ושוב:</p>
+  <div class="ev-grid"><div class="theme"><div class="cnt mono">14× קריסות</div><h4>שידור שנתקע באמצע המשחק</h4><div class="quote"><div class="txt">"אפליקציה איטית נורא, נתקעת המון וקורסת ללא הפסקה"</div><div class="meta"><span class="star">★ 1</span><span>Google Play</span><span>ינואר 2023</span></div></div><div class="quote"><div class="txt">"רעיון מבורך תוכן מעולה רק שהביצוע על הפנים . האפליקציה נתקעת וברוב המקרים בכלל לא מעךה את התוכן. בקיצור תסדרו את העניין הטכני וזאת תהיה האפליקציה הכי משומשת בטלפון שלי"</div><div class="meta"><span class="star">★ 1</span><span>Google Play</span><span>יולי 2019</span></div></div></div><div class="theme"><div class="cnt mono">נגינה ברקע</div><h4>נועלים מסך - והשידור נכבה</h4><div class="quote"><div class="txt">"הורדתי רק כי אין אפשרות להאזין באתר. אפליקציה מאוד לא נוחה, כשסוגרים את המסך נכבה מה שהאזנתי לו וצריך להפעיל מחר. ממשק ישן מאוד."</div><div class="meta"><span class="star">★ 1</span><span>Google Play</span><span>פברואר 2022</span></div></div><div class="quote"><div class="txt">"לא מאפשר שמיעה עם האפליקציה ברקע, לא מאפשר שמיעה עם מסך סגור. מבקש הרשאות חריגות לטלפון."</div><div class="meta"><span class="star">★ 1</span><span>Google Play</span><span>דצמבר 2018</span></div></div></div><div class="theme"><div class="cnt mono">אופליין</div><h4>פודקאסטים בלי הורדה ובלי אופליין</h4><div class="quote"><div class="txt">"גרוע, למה אי אפשר להוריד את הפודקאסטים למכשיר כמו בשאר אפליקציות הפודקאסטים האחרות"</div><div class="meta"><span class="star">★ 1</span><span>Google Play</span><span>יוני 2019</span></div></div><div class="quote"><div class="txt">"אפליקציה מעולה רק חסר לי שתי דברים סופר חשובים : אפשרות 1 זה אופציה להאזנה אופליין כלומר להוריד את הפרק ולשמוע אותו גם במקומות בלי אינטרנט או לאנשים שמעדיפים לחסוך בחבילת הגלישה..."</div><div class="meta"><span class="star">★ 4</span><span>Google Play</span><span>ינואר 2020</span></div></div></div><div class="theme" style="display:flex;flex-direction:column;justify-content:center;background:var(--navy);color:#fff;border-color:var(--navy);"><h4 style="color:#fff;">למה דווקא אלה?</h4><p style="font-size:15.5px;opacity:.95;margin:0;">סיננו החוצה תלונות חד-פעמיות. מה שנשאר הוא דפוס עקבי: <b>מאזינים שאוהבים את התוכן ועוזבים בגלל הנגן</b>. חלקם כותבים במפורש שהאזינו דרך אפליקציות רדיו אחרות עד שהאפשרות נחסמה - ו-TuneIn ו-Simple Radio, שמשרתות בדיוק את אותו תרחיש האזנה, מדורגות מעל 4.5★. הפער הוא טכני, לא תוכני - ולכן ניתן לתיקון.</p></div></div>
+</section></div>
+<div class="wrap"><div class="connector"><div class="ln"></div><div class="node"></div><div class="ln"></div></div></div>
+<div class="wrap"><section class="rv">
+  <div class="sec-label"><span class="n">02</span> יציבות וחוויית האזנה</div>
+  <h2>ארבעה ממצאים. ארבעה תיקונים שמחזירים מאזינים.</h2>
+  <p class="sec-sub">כל אחד מהשדרוגים האלה יושב על עדות שחוזרת בביקורות - לא על תחושת בטן שלנו. מאיפה כדאי להתחיל:</p>
+  <div class="opp-grid"><div class="opp"><div class="num mono">02a</div><h4>נגן סטרימינג יציב</h4><p>14 ביקורות מתלוננות על קריסות ותקיעות - הנושא הנפוץ ביותר, וזה שמושך את הדירוג ל-1.2★. מאזינים כותבים במפורש: התוכן מעולה, הביצוע הטכני מבריח. נגן יציב הוא הבסיס לכל השאר.</p></div><div class="opp"><div class="num mono">02b</div><h4>האזנה ברקע ובמסך נעול</h4><p>מאזיני רדיו שומעים תוך כדי נהיגה או עם הטלפון בכיס - וב-5 רדיו נעילת מסך מכבה את השידור. זו פונקציית הבסיס של כל אפליקציית רדיו, והיא זו שמופיעה בביקורות כסיבת נטישה.</p></div><div class="opp"><div class="num mono">02c</div><h4>הורדת פרקים ואופליין</h4><p>מאזינים מבקשים להוריד פודקאסטים למכשיר ולהאזין בלי אינטרנט - כמו בכל אפליקציית פודקאסטים. הבקשה חוזרת גם בביקורות אוהדות של 4 כוכבים, שמסיימות ב'זה יהפוך את האפליקציה למושלמת'.</p></div><div class="opp"><div class="num mono">02d</div><h4>גרסת iOS חיה</h4><p>אפליקציית האייפון לא עודכנה מאז יולי 2021 - כמעט חמש שנים. מאזיני אייפון מקבלים מוצר ישן, בזמן שההאזנה דרך אפליקציות חיצוניות חסומה. עדכון הגרסה סוגר את הדלת האחורית שדרכה בורחים מאזינים.</p></div></div>
+</section></div>
+<div class="wrap"><div class="connector"><div class="ln"></div><div class="node"></div><div class="ln"></div></div></div>
+<div class="wrap">
+  <section class="rv">
+    <div class="sec-label"><span class="n">03</span> בעידן ה-AI</div>
+    <div class="panel">
+      <span class="tag tl mono">AI-NATIVE · VISION</span>
+      <h3 style="font-size:32px;max-width:20ch;">לאן אפשר לקחת את 5 רדיו בעידן ה-AI?</h3>
+      <p>נגן יציב הוא הבסיס. אבל תחנת רדיו ספורט יושבת על נכס נדיר - <b>שעות של דיבור מקצועי על ספורט ישראלי, כל יום</b> - וזה בדיוק סוג התוכן שבינה מלאכותית יודעת להפוך למוצר.</p>
+      <div class="ai-grid"><div class="ai"><div class="num mono">03a</div><h4>חיפוש בתוך השידור</h4><p>תמלול אוטומטי של כל שידור ופודקאסט: המאזין מחפש שחקן, קבוצה או נושא - ומגיע לדקה המדויקת שבה דיברו על זה.</p></div><div class="ai"><div class="num mono">03b</div><h4>פיד לפי קבוצה</h4><p>פרופיל מאזין עם קבוצה מועדפת: התראה כשמדברים על הקבוצה שלו, רצף קטעים רלוונטיים, ותקציר יומי של מה שנאמר עליה בתחנה.</p></div><div class="ai"><div class="num mono">03c</div><h4>תקצירים חכמים</h4><p>פספסת את התוכנית? תקציר קולי של 5 דקות שנבנה אוטומטית מהשידור המלא - הרגעים החמים, הציטוטים, השורה התחתונה.</p></div></div>
+      <span class="tag br mono">200APPS BUILDS AI-NATIVE →</span>
+    </div>
+  </section>
+  <section class="rv" style="padding-top:30px;">
+    <div class="mid-cta"><span class="t">כבר רואים את הכיוון?</span><a class="pill wa" href="https://wa.me/972553192012?text=היי, ראיתי את הניתוח של 200Apps על 5 רדיו ואשמח לתאם שיחה." target="_blank" rel="noopener"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 .4C7.4.4.5 7.3.5 15.9c0 2.8.7 5.4 2 7.7L.4 31.6l8.2-2.1c2.2 1.2 4.8 1.9 7.4 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.4 16 .4zm0 28.3c-2.4 0-4.6-.6-6.5-1.8l-.5-.3-4.9 1.3 1.3-4.8-.3-.5C3.6 20.8 3 18.4 3 15.9 3 8.7 8.8 2.9 16 2.9S29 8.7 29 15.9 23.2 28.7 16 28.7zm7.1-9.7c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1 0 1.8 1.3 3.6 1.5 3.8.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.7.2-1.8z"/></svg>בואו נדבר על 5 רדיו <span class="arr">←</span></a></div>
+  </section>
+</div>
+<div class="wrap"><div class="connector"><div class="ln"></div><div class="node"></div><div class="ln"></div></div></div>
+<div class="wrap"><section class="rv">
+  <div class="sec-label"><span class="n">04</span> מה שכבר בנינו</div>
+  <h2>אפליקציות תוכן בעברית - זה בדיוק מה שאנחנו בונים.</h2>
+  <p class="sec-sub">אנחנו לא לומדים עולם תוכן ונגינה מאפס. בנינו אפליקציות תוכן בעברית שחיות שנים בחנויות עם דירוגים גבוהים - יציבות, מצב לא-מקוון, וקהלים של מאות אלפי משתמשים.</p>
+  <div class="cs-grid"><div class="cs"><img src="assets/icons/pniney.png" alt="פניני הלכה"><div><div class="nm">פניני הלכה</div><div class="ds">ספריית תוכן עברית עם חיפוש חכם, מצב לא-מקוון וניווט עשיר - נבנתה ליציבות ודירוג גבוה.</div><div class="cs-links"><a href="https://apps.apple.com/il/app/%D7%A4%D7%A0%D7%99%D7%A0%D7%99-%D7%94%D7%9C%D7%9B%D7%94-pniney-halach/id450765387" class="store-badge" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="20" fill="white" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><div class="bt"><small>Download on the</small><strong>App Store</strong></div></a><a href="https://play.google.com/store/apps/details?id=com.rafraph.pnineyHalachaHashalem" class="store-badge" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><polygon points="2,2 8.7,12 2,12" fill="#4285F4"/><polygon points="2,12 8.7,12 2,22" fill="#EA4335"/><polygon points="2,2 22,12 8.7,12" fill="#FBBC04"/><polygon points="8.7,12 22,12 2,22" fill="#34A853"/></svg><div class="bt"><small>Get it on</small><strong>Google Play</strong></div></a></div></div></div><div class="cs"><img src="assets/icons/tfilon.png" alt="תפילון"><div><div class="nm">תפילון</div><div class="ds">אפליקציה יומיומית בשימוש המוני - מוצר עברי שחי שנים בחנויות עם קהל של מאות אלפים.</div></div></div><div class="cs"><img src="assets/icons/koren.png" alt="קורן"><div><div class="nm">קורן</div><div class="ds">אפליקציית תוכן דיגיטלית עם קטלוג עמוק וטיפוגרפיה עברית מוקפדת.</div><div class="cs-links"><a href="https://apps.apple.com/us/app/the-koren-tefilla-app/id1666548098" class="store-badge" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="20" fill="white" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><div class="bt"><small>Download on the</small><strong>App Store</strong></div></a><a href="https://play.google.com/store/apps/details?id=com.maatayim.koren" class="store-badge" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><polygon points="2,2 8.7,12 2,12" fill="#4285F4"/><polygon points="2,12 8.7,12 2,22" fill="#EA4335"/><polygon points="2,2 22,12 8.7,12" fill="#FBBC04"/><polygon points="8.7,12 22,12 2,22" fill="#34A853"/></svg><div class="bt"><small>Get it on</small><strong>Google Play</strong></div></a></div></div></div></div>
+  <div class="clients"><div class="ttl">ועוד מותגים שכבר עובדים איתנו</div><div class="cwall"><img src="assets/clients/c12.png" alt=""><img src="assets/clients/c14.png" alt=""><img src="assets/clients/c11.png" alt=""><img src="assets/clients/c08.png" alt=""><img src="assets/clients/c03.png" alt=""><img src="assets/clients/c10.png" alt=""><img src="assets/clients/c05.png" alt=""><img src="assets/clients/c09.png" alt=""><img src="assets/clients/c01.png" alt=""><img src="assets/clients/c06.png" alt=""><img src="assets/clients/c15.png" alt=""><img src="assets/clients/c04.png" alt=""><img src="assets/clients/c16.png" alt=""><img src="assets/clients/c17.png" alt=""><img src="assets/clients/c18.png" alt=""></div></div>
+</section></div>
+<div class="wrap"><div class="connector"><div class="ln"></div><div class="node"></div><div class="ln"></div></div></div>
+<div class="wrap"><section class="rv">
+  <div class="sec-label"><span class="n">05</span> בואו נדבר</div>
+  <div class="panel cta-panel">
+    <span class="tag tl mono">GET STARTED</span>
+    <h3 style="font-size:34px;">כמה מאזינים חוזרים כשהשידור פשוט עובד?</h3>
+    <p>שיחה קצרה, בלי התחייבות - נעבור יחד על הממצאים ועל מה ששווה לתקן ראשון. הדוח הזה הוא רק ההתחלה.</p>
+    <div class="cta-row"><a class="pill wa" href="https://wa.me/972553192012?text=היי, ראיתי את הניתוח של 200Apps על 5 רדיו ואשמח לתאם שיחה." target="_blank" rel="noopener"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 .4C7.4.4.5 7.3.5 15.9c0 2.8.7 5.4 2 7.7L.4 31.6l8.2-2.1c2.2 1.2 4.8 1.9 7.4 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.4 16 .4zm0 28.3c-2.4 0-4.6-.6-6.5-1.8l-.5-.3-4.9 1.3 1.3-4.8-.3-.5C3.6 20.8 3 18.4 3 15.9 3 8.7 8.8 2.9 16 2.9S29 8.7 29 15.9 23.2 28.7 16 28.7zm7.1-9.7c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1 0 1.8 1.3 3.6 1.5 3.8.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.7.2-1.8z"/></svg>דברו איתנו בוואטסאפ <span class="arr">←</span></a><a class="pill ghost" href="mailto:hi@200apps.com?subject=שדרוג אפליקציית 5 רדיו&body=היי, ראיתי את הניתוח של 200Apps על 5 רדיו ואשמח לתאם שיחה.">או במייל</a></div>
+  </div>
+</section></div>
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="logo"><span class="badge"><span>200</span></span><span class="wm"><b>200Apps</b><small>מאתיים אפליקציות</small></span></div>
+      <div class="foot-links">PRODUCT TEARDOWN · ISRAEL · 2026</div>
+    </div>
+    <div class="sig"><div class="nm">חמי בן לביא</div><div>Head of Product Operations</div><div>200Apps · hi@200apps.com</div></div>
+  </div>
+  <div class="wordmark">200Apps</div>
+</footer>
+<script>
+const io = new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.16});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+(function(){
+  var EP="", LEAD="5-radio";
+  function ping(ev){ if(!EP){try{console.log('[track]',LEAD,ev);}catch(e){}return;} var i=new Image();
+    i.src=EP+(EP.indexOf('?')<0?'?':'&')+'lead='+encodeURIComponent(LEAD)+'&e='+ev+'&t='+Date.now(); }
+  ping('open');
+  var fired=false, cta=document.querySelector('footer');
+  if(cta&&'IntersectionObserver'in window){new IntersectionObserver(function(x){x.forEach(function(e){if(e.isIntersecting&&!fired){fired=true;ping('read');}});}).observe(cta);}
+})();
+</script>
+<script data-goatcounter="https://200apps.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
