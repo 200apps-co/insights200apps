@@ -30,6 +30,8 @@
   body{font-family:Calibri,'Segoe UI','Assistant','Rubik',Arial,sans-serif;color:var(--ink);
     background:var(--stone-2);line-height:1.6;-webkit-font-smoothing:antialiased;}
   .serif{font-family:Calibri,'Segoe UI','Assistant','Rubik',Arial,sans-serif;}
+  h1,.band h2,.pillar h3,.cta .t{text-wrap:balance;}
+  .lead,.band p,.pillar p,.proof p,.who p,.cta .s,.feat .d,.eyebrow{text-wrap:pretty;}
   a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(169,130,60,.4);}
   a:hover{border-bottom-color:var(--accent);}
   .sheet{max-width:920px;margin:22px auto;background:var(--stone);
@@ -81,6 +83,13 @@
   .pillar h3{font-size:21px;font-weight:700;color:var(--navy);margin-bottom:7px;}
   .pillar p{font-size:15px;line-height:1.75;color:#544d42;max-width:70ch;}
   .pillar p b{color:var(--accent);font-weight:700;}
+  /* proof point */
+  .proof{background:var(--paper);border:1px solid var(--line);border-inline-start:3px solid var(--accent);
+    border-radius:14px;padding:24px 30px;margin-top:26px;}
+  .proof .k{font-size:13px;letter-spacing:1px;color:var(--accent);font-weight:700;margin-bottom:11px;}
+  .proof p{font-size:14.5px;line-height:1.8;color:#544d42;max-width:80ch;margin-bottom:12px;}
+  .proof p:last-child{margin-bottom:0;}
+  .proof b{color:var(--navy);font-weight:700;}
   /* who + clients */
   .who{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:26px 30px;margin-top:10px;}
   .who .k{font-size:13px;letter-spacing:1px;color:var(--accent);font-weight:700;margin-bottom:9px;}
@@ -122,16 +131,17 @@
     .pillar{gap:13px;padding:18px 0;}
     .pnum{width:38px;height:38px;font-size:17px;border-radius:10px;}
     .pillar h3{font-size:18px;} .pillar p{font-size:14px;line-height:1.7;}
+    .proof{padding:18px 20px;} .proof p{font-size:13.5px;line-height:1.75;}
     .who{padding:19px 20px;} .cwall{gap:16px 26px;} .cwall img{height:22px;}
     .cta{flex-direction:column;align-items:stretch;padding:22px 22px;gap:16px;}
     .cta .t{font-size:21px;} .cta .s{font-size:13.5px;}
     .sig{border-inline-start:none;padding-inline-start:0;border-top:1px solid rgba(255,255,255,.35);padding-top:14px;white-space:normal;}
   }
   /* --- micro-interactions --- */
-  .js h1,.js .lead,.js .band,.js .pillar,.js .who,.js .cta{
+  .js h1,.js .lead,.js .band,.js .pillar,.js .proof,.js .who,.js .cta{
     opacity:0;transform:translateY(20px);
     transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
-  .js h1.in,.js .lead.in,.js .band.in,.js .pillar.in,.js .who.in,.js .cta.in{opacity:1;transform:none;}
+  .js h1.in,.js .lead.in,.js .band.in,.js .pillar.in,.js .proof.in,.js .who.in,.js .cta.in{opacity:1;transform:none;}
   .sheet{transition:opacity .2s ease;}
   .sheet.swapping{opacity:.28;}
   .cp{background:transparent;border:1px solid rgba(255,255,255,.35);color:#eafaefcc;border-radius:7px;
@@ -144,7 +154,7 @@
     opacity:0;pointer-events:none;transition:.28s cubic-bezier(.2,.7,.2,1);z-index:99;box-shadow:0 12px 32px rgba(0,0,0,.28);}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
   @media (prefers-reduced-motion: reduce){
-    .js h1,.js .lead,.js .band,.js .pillar,.js .who,.js .cta{opacity:1!important;transform:none!important;transition:none!important;}
+    .js h1,.js .lead,.js .band,.js .pillar,.js .proof,.js .who,.js .cta{opacity:1!important;transform:none!important;transition:none!important;}
     .sheet{transition:none!important;}
   }
 </style>
@@ -171,8 +181,8 @@
       <span class="en">At 200Apps, we believe Yad Vashem is exactly the place an app is built for.</span>
     </h1>
     <p class="lead">
-      <span class="he">יד ושם הוא מרכז ההנצחה העולמי לזכר קורבנות השואה, ומגיעים אליו קרוב לשני מיליון מבקרים בשנה.<br>בין כתליו שמור <b>הארכיון הגדול בעולם לתיעוד השואה</b>, לצד מאגר שמות הנספים, עדויות ניצולים, תצלומים ומסמכים.<br>אפליקציה יכולה לשאת את הזיכרון הזה אל <b>כיס המבקר</b>, וללוות אותו בביקור באתר, בעדות, ובמעשה ההנצחה, בכל מקום ובכל זמן.</span>
-      <span class="en">Yad Vashem is the world center for the remembrance of the victims of the Holocaust, welcoming close to two million visitors a year.<br>Within its walls is <b>the world's largest archive of Holocaust documentation</b>, alongside the database of victims' names, survivor testimonies, photographs and documents.<br>An app can carry this memory into <b>the visitor's pocket</b>, accompanying them through the visit, the testimony, and the act of remembrance, anywhere and at any time.</span>
+      <span class="he">יד ושם הוא מרכז ההנצחה העולמי לזכר קורבנות השואה, ומגיעים אליו קרוב לשני מיליון מבקרים בשנה.<br>בין כתליו שמור <b>הארכיון הגדול בעולם לתיעוד השואה</b>, לצד מאגר שמות הנספים, עדויות ניצולים, תצלומים ומסמכים.<br>אפליקציה יכולה לשאת את הזיכרון הזה אל <b>כף היד של כל אדם</b>, בישראל ובעולם: ללוות את מי שמבקר באתר, ולא פחות מכך להנגיש את העדות, הארכיון ומעשה ההנצחה גם למי שלא יגיע פיזית, בכל מקום ובכל זמן.</span>
+      <span class="en">Yad Vashem is the world center for the remembrance of the victims of the Holocaust, welcoming close to two million visitors a year.<br>Within its walls is <b>the world's largest archive of Holocaust documentation</b>, alongside the database of victims' names, survivor testimonies, photographs and documents.<br>An app can carry this memory into <b>anyone's hand</b>, in Israel and worldwide: accompanying those who visit the site, and no less importantly, bringing the testimony, the archive and the act of remembrance to those who will never visit, anywhere and at any time.</span>
     </p>
   </div>
 
@@ -192,10 +202,6 @@
       בתוך המתחם, האפליקציה מציעה מפה, מסלול חכם ומדריך שמע דיגיטלי רב-לשוני, עם הקשר לכל אנדרטה ואתר.<br>ומחוץ למתחם: הארכיון, העדויות, חיפוש שם והנצחה אישית, זמינים בכל רגע.</span>
       <span class="en"><b>An official app turns all of this into one dignified companion, in the visitor's pocket.</b><br>
       On the grounds, the app offers a map, a smart route and a multilingual digital audio guide, with context for every memorial and site.<br>And beyond the grounds: the archive, the testimonies, name search and personal remembrance, available at any moment.</span>
-    </p>
-    <p>
-      <span class="he">וזו גם הזדמנות להוביל: רק מעטים מבין מוסדות הזיכרון המובילים בעולם החזיקו עד היום אפליקציה ממותגת ומלאה משלהם.<br>יד ושם יכול להיות <b>בין הראשונים</b>.</span>
-      <span class="en">And it's an opportunity to lead: only a few of the world's leading memorial institutions have had a full, branded app of their own.<br>Yad Vashem could be <b>among the first</b>.</span>
     </p>
     <div class="feats">
       <div class="feat"><span class="dot"></span><div><b><span class="he">מלווה ביקור</span><span class="en">On-site companion</span></b><span class="d"><span class="he">מפה, מסלול ומדריך שמע דיגיטלי</span><span class="en">map, route and digital audio guide</span></span></div></div>
@@ -264,11 +270,23 @@
       </div>
     </div>
 
+    <div class="proof">
+      <div class="k"><span class="he">זה כבר עובד במקומות אחרים</span><span class="en">It already works elsewhere</span></div>
+      <p>
+        <span class="he">בית אנה פרנק באמסטרדם בנה חוויית מציאות מדומה <b>עטורת פרסים (Webby)</b> שמשחזרת בנאמנות את "הבית הסודי", בשבע שפות כולל עברית, ומאפשרת לאנשים בכל העולם לחוות את הסיפור, גם בלי להגיע פיזית.<br>המסקנה ברורה: כלי דיגיטלי שמנגיש מרחב היסטורי וסיפור אישי בנאמנות זוכה להכרה בינלאומית. הסטנדרט הוא <b>חוויה</b>, לא אפליקציית מידע גנרית.</span>
+        <span class="en">The Anne Frank House in Amsterdam built an <b>award-winning (Webby)</b> virtual-reality experience that faithfully recreates the "Secret Annex" in seven languages including Hebrew, letting people around the world experience the story, even without visiting in person.<br>The lesson is clear: a digital tool that faithfully brings a historical space and a personal story to life earns international recognition. The standard is an <b>experience</b>, not a generic information app.</span>
+      </p>
+      <p>
+        <span class="he">ובכל זאת, רק מעטים ממוסדות הזיכרון המובילים בעולם החזיקו עד היום אפליקציית מובייל רשמית ומלאה משלהם.<br>יד ושם, עם קרוב לשני מיליון מבקרים בשנה, יכול להיות <b>בין הראשונים</b> להציב את הסטנדרט הזה, ולהנגיש את זיכרון השואה לא רק למי שמבקר, אלא לכל אדם ובכל מקום.</span>
+        <span class="en">And yet, only a few of the world's leading memorial institutions have had a full, official mobile app of their own.<br>Yad Vashem, with close to two million visitors a year, could be <b>among the first</b> to set that standard, and make Holocaust remembrance accessible not only to those who visit, but to everyone, everywhere.</span>
+      </p>
+    </div>
+
     <div class="who">
       <div class="k"><span class="he">מי אנחנו</span><span class="en">Who we are</span></div>
       <p>
-        <span class="he">200Apps (מאאתיים) <b>בונה מוצרים טכנולוגיים ומלווה חברות, ארגונים ועסקים כבר 12 שנה</b>.<br>נוסדנו ב-2014 ובנינו מעל 100 מוצרים במודל מקצה-לקצה: מחקר, אפיון ממשק, עיצוב, פיתוח, QA ותחזוקה, עם ניסיון עמוק בתוכן, חינוך וקהילות דיגיטליות.<br>אנחנו ב-200Apps שותפים יחד אתכם ביצירת מוצר טכנולוגי שמתרגם רעיון למערכת חיה. מוזמנים להתרשם מהעבודות שלנו באתר: <a href="https://www.200apps.com" target="_blank" rel="noopener">200apps.com</a></span>
-        <span class="en">200Apps <b>builds technology products and partners with companies, organizations and businesses, for 12 years</b>.<br>Founded in 2014, we've built 100+ products end-to-end: research, UX, design, development, QA and maintenance, with deep experience in content, education and digital communities.<br>At 200Apps we partner with you, together, in creating a technology product that turns an idea into a living system. See our work at: <a href="https://www.200apps.com" target="_blank" rel="noopener">200apps.com</a></span>
+        <span class="he">200Apps (מאאתיים אפליקציות) <b>בונה מוצרים טכנולוגיים ומלווה חברות, ארגונים ועסקים כבר 12 שנה</b>.<br>נוסדנו ב-2014 ובנינו מעל 300 מוצרים במודל מקצה-לקצה: מחקר, אפיון ממשק, עיצוב, פיתוח, QA ותחזוקה, עם ניסיון עמוק בתוכן, חינוך וקהילות דיגיטליות.<br>אנחנו ב-200Apps שותפים יחד אתכם ביצירת מוצר טכנולוגי שמתרגם רעיון למערכת חיה. מוזמנים להתרשם מהעבודות שלנו באתר: <a href="https://www.200apps.com" target="_blank" rel="noopener">200apps.com</a></span>
+        <span class="en">200Apps <b>builds technology products and partners with companies, organizations and businesses, for 12 years</b>.<br>Founded in 2014, we've built 300+ products end-to-end: research, UX, design, development, QA and maintenance, with deep experience in content, education and digital communities.<br>At 200Apps we partner with you, together, in creating a technology product that turns an idea into a living system. See our work at: <a href="https://www.200apps.com" target="_blank" rel="noopener">200apps.com</a></span>
       </p>
       <div class="clients">
         <div class="ttl"><span class="he">מותגים שכבר עובדים איתנו</span><span class="en">Brands already working with us</span></div>
@@ -307,7 +325,7 @@
 
   // 1. scroll reveal
   (function(){
-    var els = document.querySelectorAll('h1, .lead, .band, .pillar, .who, .cta');
+    var els = document.querySelectorAll('h1, .lead, .band, .pillar, .proof, .who, .cta');
     if(reduce || !hasIO){ els.forEach(function(e){e.classList.add('in');}); return; }
     var io = new IntersectionObserver(function(en){
       en.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
