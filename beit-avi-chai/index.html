@@ -17,6 +17,7 @@
 <meta name="twitter:title" content="בית אבי חי × 200Apps — הצעה לפגישה">
 <meta name="twitter:description" content="אפליקציה לבית אבי חי: קהילת לימוד, פרסונליזציה ב-AI, סטרימינג תוכן ואנליטיקות.">
 <meta name="twitter:image" content="https://insights.200apps.com/beit-avi-chai/assets/og.png">
+<script>document.documentElement.classList.add('js');</script>
 <style>
   :root{
     --stone:#f5efe4; --stone-2:#ece4d4; --paper:#fffdf8;
@@ -122,6 +123,24 @@
     .cta .t{font-size:21px;} .cta .s{font-size:13.5px;}
     .sig{border-inline-start:none;padding-inline-start:0;border-top:1px solid rgba(255,255,255,.35);padding-top:14px;white-space:normal;}
   }
+  /* --- micro-interactions --- */
+  .js h1,.js .lead,.js .band,.js .pillar,.js .who,.js .cta{
+    opacity:0;transform:translateY(20px);
+    transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+  .js h1.in,.js .lead.in,.js .band.in,.js .pillar.in,.js .who.in,.js .cta.in{opacity:1;transform:none;}
+  .sheet{transition:opacity .2s ease;}
+  .sheet.swapping{opacity:.28;}
+  .cp{background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:7px;
+    font-size:12px;line-height:1;padding:3px 7px;margin-inline-start:7px;cursor:pointer;transition:.15s;vertical-align:middle;}
+  .cp:hover{background:rgba(255,255,255,.16);}
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(26px);
+    background:var(--navy);color:#fff;padding:11px 22px;border-radius:24px;font-size:13.5px;font-weight:700;
+    opacity:0;pointer-events:none;transition:.28s cubic-bezier(.2,.7,.2,1);z-index:99;box-shadow:0 12px 32px rgba(0,0,0,.28);}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    .js h1,.js .lead,.js .band,.js .pillar,.js .who,.js .cta{opacity:1!important;transform:none!important;transition:none!important;}
+    .sheet{transition:none!important;}
+  }
 </style>
 </head>
 <body>
@@ -226,8 +245,8 @@
     <div class="who">
       <div class="k"><span class="he">מי אנחנו</span><span class="en">Who we are</span></div>
       <p>
-        <span class="he">200Apps (מאאתיים) <b>בונה מוצרים טכנולוגיים ומלווה חברות, ארגונים ועסקים כבר 12 שנה</b>.<br>נוסדנו ב-2014 ובנינו מעל 100 מוצרים במודל מקצה-לקצה: מחקר, אפיון ממשק, עיצוב, פיתוח, QA ותחזוקה, עם ניסיון עמוק בתוכן, חינוך וקהילות דיגיטליות.<br>אנחנו ב-200Apps שותפים יחד אתכם ביצירת מוצר טכנולוגי שמתרגם רעיון למערכת חיה. מוזמנים להתרשם מהעבודות שלנו באתר: <a href="https://www.200apps.com" target="_blank" rel="noopener">200apps.com</a></span>
-        <span class="en">200Apps <b>builds technology products and partners with companies, organizations and businesses, for 12 years</b>.<br>Founded in 2014, we've built 100+ products end-to-end: research, UX, design, development, QA and maintenance, with deep experience in content, education and digital communities.<br>At 200Apps we partner with you, together, in creating a technology product that turns an idea into a living system. See our work at: <a href="https://www.200apps.com" target="_blank" rel="noopener">200apps.com</a></span>
+        <span class="he">200Apps (מאאתיים) <b>בונה מוצרים טכנולוגיים ומלווה חברות, ארגונים ועסקים כבר <span class="count" data-to="12">12</span> שנה</b>.<br>נוסדנו ב-2014 ובנינו מעל <span class="count" data-to="100">100</span> מוצרים במודל מקצה-לקצה: מחקר, אפיון ממשק, עיצוב, פיתוח, QA ותחזוקה, עם ניסיון עמוק בתוכן, חינוך וקהילות דיגיטליות.<br>אנחנו ב-200Apps שותפים יחד אתכם ביצירת מוצר טכנולוגי שמתרגם רעיון למערכת חיה. מוזמנים להתרשם מהעבודות שלנו באתר: <a href="https://www.200apps.com" target="_blank" rel="noopener">200apps.com</a></span>
+        <span class="en">200Apps <b>builds technology products and partners with companies, organizations and businesses, for <span class="count" data-to="12">12</span> years</b>.<br>Founded in 2014, we've built <span class="count" data-to="100">100</span>+ products end-to-end: research, UX, design, development, QA and maintenance, with deep experience in content, education and digital communities.<br>At 200Apps we partner with you, together, in creating a technology product that turns an idea into a living system. See our work at: <a href="https://www.200apps.com" target="_blank" rel="noopener">200apps.com</a></span>
       </p>
       <div class="clients">
         <div class="ttl"><span class="he">מותגים שכבר עובדים איתנו</span><span class="en">Brands already working with us</span></div>
@@ -245,8 +264,8 @@
       <div class="sig">
         <div class="nm">חמי בן לביא · Hemi Ben-Lavi</div>
         <div>Head of Product Operations · 200Apps</div>
-        <div>054-4608119</div>
-        <div><a href="mailto:Hemi@200apps.co">Hemi@200apps.co</a></div>
+        <div><a href="tel:+972544608119">054-4608119</a> <button class="cp" title="העתק / Copy" onclick="copyText('054-4608119')">⧉</button></div>
+        <div><a href="mailto:Hemi@200apps.co">Hemi@200apps.co</a> <button class="cp" title="העתק / Copy" onclick="copyText('Hemi@200apps.co')">⧉</button></div>
       </div>
     </div>
   </div>
@@ -258,14 +277,59 @@
 
 </div>
 
+<div class="toast" id="toast"></div>
+
 <script>
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasIO = 'IntersectionObserver' in window;
+
+  // 1. scroll reveal
+  (function(){
+    var els = document.querySelectorAll('h1, .lead, .band, .pillar, .who, .cta');
+    if(reduce || !hasIO){ els.forEach(function(e){e.classList.add('in');}); return; }
+    var io = new IntersectionObserver(function(en){
+      en.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:.12});
+    els.forEach(function(e){ io.observe(e); });
+  })();
+
+  // 3. count-up on credibility numbers
+  document.querySelectorAll('.count').forEach(function(el){
+    var to = +el.dataset.to;
+    if(reduce || !hasIO){ el.textContent = to; return; }
+    var cio = new IntersectionObserver(function(en){
+      en.forEach(function(e){ if(e.isIntersecting){
+        var t0 = performance.now();
+        (function tick(t){ var p = Math.min(1,(t-t0)/900); el.textContent = Math.round(to*p);
+          if(p<1) requestAnimationFrame(tick); else el.textContent = to; })(performance.now());
+        cio.unobserve(e.target);
+      }});
+    },{threshold:.6});
+    cio.observe(el);
+  });
+
+  // 2. language toggle with crossfade
   var isEn=false;
   function toggleLang(){
-    isEn=!isEn;
-    document.body.classList.toggle('lang-en', isEn);
-    document.documentElement.lang = isEn?'en':'he';
-    document.documentElement.dir  = isEn?'ltr':'rtl';
-    document.getElementById('langBtn').textContent = isEn?'עברית':'EN';
+    var s=document.querySelector('.sheet');
+    s.classList.add('swapping');
+    setTimeout(function(){
+      isEn=!isEn;
+      document.body.classList.toggle('lang-en', isEn);
+      document.documentElement.lang = isEn?'en':'he';
+      document.documentElement.dir  = isEn?'ltr':'rtl';
+      document.getElementById('langBtn').textContent = isEn?'עברית':'EN';
+      s.classList.remove('swapping');
+    }, reduce?0:170);
+  }
+
+  // 4. copy phone/email with toast
+  function copyText(t){
+    try{ navigator.clipboard.writeText(t); }catch(e){}
+    var el=document.getElementById('toast');
+    el.textContent = document.body.classList.contains('lang-en') ? 'Copied ✓' : 'הועתק ✓';
+    el.classList.add('show');
+    clearTimeout(window._tt); window._tt=setTimeout(function(){ el.classList.remove('show'); }, 1500);
   }
 </script>
 <script data-goatcounter="https://200apps.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
