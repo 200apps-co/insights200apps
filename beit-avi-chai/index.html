@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>200Apps × בית אבי חי — הצעה לפגישה</title>
+<style>
+  :root{
+    --stone:#f5efe4; --stone-2:#ece4d4; --paper:#fffdf8;
+    --ink:#2a2a2f; --muted:#7b7568; --line:#e4dcca;
+    --navy:#28374b; --navy2:#1b2735; --accent:#a9823c; --accent-soft:#efe6cf;
+    --gold2:#cdaa5e;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:Calibri,'Segoe UI','Assistant','Rubik',Arial,sans-serif;color:var(--ink);
+    background:var(--stone-2);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .serif{font-family:Calibri,'Segoe UI','Assistant','Rubik',Arial,sans-serif;}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(169,130,60,.4);}
+  a:hover{border-bottom-color:var(--accent);}
+  .sheet{max-width:920px;margin:22px auto;background:var(--stone);
+    box-shadow:0 24px 70px rgba(40,40,30,.18);border-radius:14px;overflow:hidden;position:relative;
+    background-image:radial-gradient(circle at 12% -5%, rgba(169,130,60,.08), transparent 42%),
+                     radial-gradient(circle at 100% 100%, rgba(40,55,75,.06), transparent 40%);}
+  .pad{padding:44px 54px;}
+  /* header */
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:20px 54px;border-bottom:1px solid var(--line);background:rgba(255,253,248,.6);}
+  .logos{direction:ltr;display:flex;align-items:center;gap:22px;}
+  .brand200{display:flex;align-items:center;gap:11px;}
+  .brand200 .txt{text-align:right;line-height:1.05;}
+  .brand200 b{font-size:20px;font-weight:700;color:var(--ink);letter-spacing:-.3px;display:block;}
+  .brand200 small{font-size:11px;color:var(--muted);letter-spacing:.2px;}
+  .brand200 .sq{width:44px;height:44px;border-radius:12px;background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;letter-spacing:-.5px;}
+  .x{color:#b6ad9a;font-size:24px;font-weight:300;line-height:1;padding:0 2px;}
+  .bac-logo img{height:56px;width:auto;display:block;}
+  .toggle{border:1.5px solid var(--navy);background:transparent;color:var(--navy);
+    border-radius:22px;padding:7px 16px;font-weight:700;font-size:13px;cursor:pointer;transition:.15s;white-space:nowrap;}
+  .toggle:hover{background:var(--navy);color:#fff;}
+  /* hero */
+  .eyebrow{display:inline-block;font-size:14.5px;letter-spacing:.4px;color:var(--accent);font-weight:700;
+    background:var(--accent-soft);border-radius:8px;padding:7px 15px;margin-bottom:20px;}
+  h1{font-size:33px;font-weight:700;line-height:1.32;color:var(--navy);letter-spacing:-.2px;margin-bottom:18px;max-width:26ch;}
+  .lead{font-size:16px;line-height:1.8;color:#4a463f;max-width:66ch;}
+  .lead b{color:var(--accent);font-weight:700;}
+  /* band */
+  .band{background:linear-gradient(150deg,var(--navy),var(--navy2));color:#e9ecf1;margin:30px 0 0;padding:34px 54px;}
+  .band .k{font-size:13px;letter-spacing:1px;color:var(--gold2);font-weight:700;margin-bottom:12px;}
+  .band h2{font-size:25px;font-weight:700;color:#fff;margin-bottom:15px;line-height:1.32;}
+  .band p{font-size:15px;line-height:1.85;color:#d7dce4;max-width:78ch;margin-bottom:12px;}
+  .band p:last-of-type{margin-bottom:0;}
+  .band p b{color:#fff;font-weight:700;}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
+  .chip{background:rgba(255,255,255,.07);border:1px solid rgba(205,170,94,.45);border-radius:22px;
+    padding:8px 15px;font-size:13px;color:#e9ecf1;}
+  .chip b{color:var(--gold2);font-weight:700;}
+  /* pillars */
+  .sec-label{font-size:13px;letter-spacing:1px;color:var(--muted);font-weight:700;margin-bottom:20px;}
+  .pillar{display:flex;gap:22px;padding:22px 0;border-top:1px solid var(--line);}
+  .pillar:first-of-type{border-top:none;}
+  .pnum{flex:none;width:46px;height:46px;border-radius:12px;background:var(--accent-soft);color:var(--accent);
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:21px;}
+  .pillar h3{font-size:21px;font-weight:700;color:var(--navy);margin-bottom:7px;}
+  .pillar p{font-size:15px;line-height:1.75;color:#544d42;max-width:70ch;}
+  .pillar p b{color:var(--accent);font-weight:700;}
+  /* who + clients */
+  .who{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:26px 30px;margin-top:10px;}
+  .who .k{font-size:13px;letter-spacing:1px;color:var(--accent);font-weight:700;margin-bottom:9px;}
+  .who p{font-size:14.5px;line-height:1.75;color:#544d42;}
+  .who b{color:var(--ink);font-weight:700;}
+  .clients{margin-top:26px;}
+  .clients .ttl{font-size:12px;letter-spacing:1px;color:var(--muted);font-weight:700;text-align:center;margin-bottom:20px;}
+  .cwall{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:22px 38px;}
+  .cwall img{height:26px;width:auto;max-width:104px;object-fit:contain;opacity:.55;filter:grayscale(1);transition:.3s;}
+  .cwall img:hover{opacity:1;filter:none;transform:scale(1.08);}
+  /* cta */
+  .cta{margin-top:24px;background:linear-gradient(120deg,var(--navy),var(--navy2));color:#fff;
+    border-radius:14px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap;}
+  .cta .t{font-size:24px;font-weight:700;margin-bottom:7px;color:#fff;}
+  .cta .s{font-size:14.5px;line-height:1.65;color:#dfe4ec;max-width:52ch;}
+  .sig{text-align:start;white-space:nowrap;border-inline-start:1px solid rgba(255,255,255,.35);padding-inline-start:24px;}
+  .sig .nm{font-size:15px;font-weight:700;color:#fff;}
+  .sig div{font-size:12px;color:#dfe4eccc;line-height:1.55;}
+  .sig a{color:#fff;border-bottom-color:rgba(255,255,255,.5);}
+  .foot{padding:18px 54px;border-top:1px solid var(--line);display:flex;justify-content:space-between;
+    font-size:11.5px;color:var(--muted);letter-spacing:.3px;background:rgba(255,253,248,.4);}
+  .en{display:none!important;}
+  body.lang-en .he{display:none!important;}
+  body.lang-en .en{display:inline!important;}
+  body.lang-en .en.block{display:block!important;}
+  @media(max-width:640px){
+    .sheet{margin:0;border-radius:0;max-width:100%;box-shadow:none;}
+    .bar{padding:14px 16px;flex-wrap:wrap;gap:10px;}
+    .logos{gap:12px;} .bac-logo img{height:44px;} .brand200 .sq{width:36px;height:36px;font-size:14px;}
+    .brand200 b{font-size:16px;} .brand200 small{font-size:9.5px;} .x{font-size:19px;}
+    .toggle{padding:6px 13px;font-size:12px;margin-inline-start:auto;}
+    .pad{padding:24px 18px;} .band{padding:24px 18px;} .foot{padding:13px 18px;font-size:10px;flex-wrap:wrap;gap:4px;}
+    .eyebrow{font-size:12.5px;padding:6px 12px;margin-bottom:14px;}
+    h1{font-size:24px;line-height:1.35;margin-bottom:13px;}
+    .lead{font-size:14.5px;line-height:1.75;}
+    .band h2{font-size:20px;} .band p{font-size:13.5px;} .chip{font-size:12px;padding:7px 12px;}
+    .sec-label{font-size:12px;margin-bottom:14px;}
+    .pillar{gap:13px;padding:18px 0;}
+    .pnum{width:38px;height:38px;font-size:17px;border-radius:10px;}
+    .pillar h3{font-size:18px;} .pillar p{font-size:14px;line-height:1.7;}
+    .who{padding:19px 20px;} .cwall{gap:16px 26px;} .cwall img{height:22px;}
+    .cta{flex-direction:column;align-items:stretch;padding:22px 22px;gap:16px;}
+    .cta .t{font-size:21px;} .cta .s{font-size:13.5px;}
+    .sig{border-inline-start:none;padding-inline-start:0;border-top:1px solid rgba(255,255,255,.35);padding-top:14px;white-space:normal;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="bar">
+    <div class="logos">
+      <div class="brand200">
+        <span class="txt"><b>200Apps</b><small class="he">מאאתיים אפליקציות</small><small class="en">מאאתיים · Apps</small></span>
+        <span class="sq">200</span>
+      </div>
+      <span class="x">×</span>
+      <span class="bac-logo"><img src="assets/bac-logo.svg" alt="בית אבי חי"></span>
+    </div>
+    <button class="toggle" id="langBtn" onclick="toggleLang()">EN</button>
+  </div>
+
+  <div class="pad">
+    <div class="eyebrow"><span class="he">הצעה לפגישה · אפליקציה לבית אבי חי</span><span class="en">A proposal to meet · An app for Beit Avi Chai</span></div>
+    <h1 class="serif">
+      <span class="he">אנו ב-200Apps מאמינים שבית אבי חי הוא בדיוק המקום שאפליקציה נבנתה עבורו.</span>
+      <span class="en">At 200Apps, we believe Beit Avi Chai is exactly the place an app is built for.</span>
+    </h1>
+    <p class="lead">
+      <span class="he">אתם נמצאים בחוד החנית של התרבות הישראלית בירושלים, ויש לכם שני נכסים סופר משמעותיים: <b>קהל חוזר ונאמן</b>, ו<b>מאגר תוכן דיגיטלי עשיר</b> - בית מדרש, סדרות, הרצאות, תערוכות, פודקאסטים, וידאו ועוד.<br>אפליקציה יכולה לקחת את כל העושר הזה ישירות אל כיס הקהל, ולשנות מקצה לקצה את הדרך שבה הוא פוגש את התוכן שלכם.</span>
+      <span class="en">You stand at the forefront of Israeli culture in Jerusalem, with two hugely valuable assets: <b>a loyal, returning audience</b>, and <b>a rich library of digital content</b>: beit midrash, series, lectures, exhibitions, podcasts, video and more.<br>An app can bring all of this wealth straight into your audience's pocket, and transform, end to end, the way they meet your content.</span>
+    </p>
+  </div>
+
+  <div class="band">
+    <div class="k"><span class="he">התמונה הגדולה</span><span class="en">The big picture</span></div>
+    <h2 class="serif"><span class="he">איך אפליקציה משפרת את חוויית צריכת התוכן בבית אבי חי</span><span class="en">How an app improves the content experience at Beit Avi Chai</span></h2>
+    <p>
+      <span class="he">היום התוכן של בית אבי חי מחולק בין כמה מקומות: חלקו במוסד הפיזי עצמו, חלקו באתר האינטרנט, וחלקו ביוטיוב, במייל ובניוזלטר.<br>הקהל פוגש אותו בפיסות, קופץ בין מקורות ולא תמיד מוצא את התוכן שהוא מבקש.</span>
+      <span class="en">Today, Beit Avi Chai's content is divided across several places: some in the physical institution, some on the website, and some on YouTube, email and the newsletter.<br>The audience meets it in pieces, hopping between sources and not always finding the content it's looking for.</span>
+    </p>
+    <p>
+      <span class="he"><b>אפליקציה מרכזת את הכל למקום אחד, זמינה תמיד, ומכירה את היוזרים והיוזריות.</b><br>
+      תוכן פרסונלי מוצג באופן ישיר ומיידי.<br>תוכן שיוזר התחיל להאזין ולצפות בו ממשיך ישירות מהמקום שבו עצר.<br>תוכן אהוב ומועדף נשמר וממתין לפתיחה הבאה.</span>
+      <span class="en"><b>An app centralizes everything into one place, always available, and knows its users.</b><br>
+      Personal content appears directly and instantly.<br>Content a user began listening to or watching resumes right where they left off.<br>Favorite content is saved and waiting for the next visit.</span>
+    </p>
+    <p>
+      <span class="he">במקום קהל שמגיע לאירוע ונעלם, נוצרת <b>קהילה שנשארת מחוברת בין האירועים</b>, צורכת יותר, לעומק ובאופן אישי.</span>
+      <span class="en">Instead of an audience that shows up for an event and disappears, <b>a community forms that stays connected between events</b>, consuming more, deeper, and personally.</span>
+    </p>
+    <div class="chips">
+      <span class="chip"><b class="he">זמינות</b><b class="en">Always on</b> · <span class="he">כל התוכן במקום אחד, גם לא-מקוון</span><span class="en">all content in one place, even offline</span></span>
+      <span class="chip"><b class="he">רלוונטיות</b><b class="en">Relevance</b> · <span class="he">תוכן פרסונלי, ישיר ומיידי</span><span class="en">personal content, direct and instant</span></span>
+      <span class="chip"><b class="he">רציפות</b><b class="en">Continuity</b> · <span class="he">ממשיכים, שומרים, חוזרים</span><span class="en">resume, save, return</span></span>
+      <span class="chip"><b class="he">קהילה</b><b class="en">Community</b> · <span class="he">מגיבים, שואלים, לומדים יחד</span><span class="en">discuss, ask, learn together</span></span>
+    </div>
+  </div>
+
+  <div class="pad">
+    <div class="sec-label"><span class="he">ארבעה עמודי תווך לאפליקציה</span><span class="en">Four pillars for the app</span></div>
+
+    <div class="pillar">
+      <div class="pnum">1</div>
+      <div>
+        <h3 class="serif"><span class="he">קהילת לימוד בכיס</span><span class="en">A learning community in your pocket</span></h3>
+        <p>
+          <span class="he">היום הלימוד, בית המדרש, השיעורים והסדרות, חי בין כותלי הבית ובשעת המפגש בלבד.<br>אפליקציה עושה שני דברים: <b>מנגישה את מאגר הלימוד המלא</b> (הקלטות, סדרות וחומרי לימוד, זמינים תמיד), <b>ומרחיבה אותו אל מעבר למפגש</b> בשאלות למרצה ודיון בין המשתתפים: לפני, אחרי וביניהם.<br>כך נוצרת קהילת לימוד שחיה כל השבוע, לא רק בערב השיעור.</span>
+          <span class="en">Today learning, the beit midrash, the classes and series, lives within the walls and only during session time.<br>An app does two things: it <b>opens up the full learning library</b> (recordings, series and study materials, always available), <b>and extends it beyond the session</b> with questions to the teacher and discussion among participants: before, after, and in between.<br>A learning community that lives all week, not only on class night.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="pnum">2</div>
+      <div>
+        <h3 class="serif"><span class="he">התאמה אישית בעידן ה-AI</span><span class="en">Personalization in the age of AI</span></h3>
+        <p>
+          <span class="he">יש המון תוכן, אבל לא הכל מתאים לכל אחד.<br>כמו הרגע הראשון בספוטיפיי שבו האפליקציה שואלת מה מעניין אותך, גם כאן <b>כל אחד בוחר את תחומי העניין שלו</b>, ובעזרת AI מתקבלות <b>המלצות לפי טעם</b> - מוזיקה, הגות או פעילות למשפחות - כך שכל מבקר מוצא את מה שמדבר אליו, ומגיע שוב.<br>התראות על אירועים רלוונטיים עבורו, ורכישת כרטיס בלחיצה אחת. המעבר מ"קטלוג לכולם" ל<b>"תוכנית אישית"</b>.</span>
+          <span class="en">There's a wealth of content, but not all of it fits everyone.<br>Like that first Spotify moment where the app asks what you're into, here too <b>each person picks their interests</b>, and with AI they get <b>recommendations by taste</b> - music, thought, or family activities - so every visitor finds what speaks to them, and comes back again.<br>Notifications about events relevant to them, and one-tap ticket purchase. From a "catalog for everyone" to <b>a personal program</b>.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="pnum">3</div>
+      <div>
+        <h3 class="serif"><span class="he">סטרימינג של תוכן, בבית שלכם</span><span class="en">Streaming, inside your own home</span></h3>
+        <p>
+          <span class="he">היום הפודקאסטים הם כפתור פליי בלבד, בלי שמירה, דילוג או תגובות, והווידאו הוא לינק שמוציא את המשתמש החוצה ליוטיוב.<br>אפליקציה נותנת <b>חוויית סטרימינג אמיתית</b> לאודיו ולווידאו כאחד: האזנה וצפייה רציפות, שמירה והאזנה גם לא-מקוון, דילוג ופלייליסטים, ותגובות ודיון סביב כל פרק, <b>הכל בתוך הבית של בית אבי חי, בלי לצאת ממנו</b>.<br>כמו ספוטיפיי או נטפליקס, אבל של התוכן שלכם.</span>
+          <span class="en">Today podcasts are just a play button, with no saving, skipping or comments, and video is a link that sends the user out to YouTube.<br>An app delivers <b>a real streaming experience</b> for audio and video alike: continuous listening and viewing, save and offline playback, skip and playlists, and comments and discussion around each episode, <b>all inside Beit Avi Chai's own home, without ever leaving it</b>.<br>Like Spotify or Netflix, but for your content.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="pnum">4</div>
+      <div>
+        <h3 class="serif"><span class="he">היכרות אמיתית עם הקהל</span><span class="en">Truly knowing your audience</span></h3>
+        <p>
+          <span class="he">עד היום קשה לדעת מי באמת צורך את התוכן, מה עובד ומה פחות.<br>עם <b>Firebase ו-Analytics</b> מובנים באפליקציה, אתם מכירים את קהל המשתמשים והמשתמשות באופן מדויק: אילו סדרות מחזיקות, מי חוזר, מה נשמר ומה ננטש.<br><b>תובנות אמיתיות</b> שמאפשרות להחליט על התוכן והפעילות מתוך נתונים, לא מתוך תחושה.</span>
+          <span class="en">Until now it's hard to know who really consumes the content, what works and what doesn't.<br>With <b>Firebase and Analytics</b> built into the app, you know your audience precisely: which series hold, who returns, what's saved and what's abandoned.<br><b>Real insight</b> that lets you shape content and programming from data, not from a hunch.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="who">
+      <div class="k"><span class="he">מי אנחנו</span><span class="en">Who we are</span></div>
+      <p>
+        <span class="he">200Apps (מאאתיים) <b>בונה מוצרים טכנולוגיים ומלווה חברות, ארגונים ועסקים כבר 12 שנה</b>.<br>נוסדנו ב-2014 ובנינו מעל 100 מוצרים במודל מקצה-לקצה: מחקר, אפיון ממשק, עיצוב, פיתוח, QA ותחזוקה, עם ניסיון עמוק בתוכן, חינוך וקהילות דיגיטליות.<br>אנחנו ב-200Apps שותפים יחד אתכם ביצירת מוצר טכנולוגי שמתרגם רעיון למערכת חיה. מוזמנים להתרשם מהעבודות שלנו באתר: <a href="https://www.200apps.com" target="_blank" rel="noopener">200apps.com</a></span>
+        <span class="en">200Apps <b>builds technology products and partners with companies, organizations and businesses, for 12 years</b>.<br>Founded in 2014, we've built 100+ products end-to-end: research, UX, design, development, QA and maintenance, with deep experience in content, education and digital communities.<br>At 200Apps we partner with you, together, in creating a technology product that turns an idea into a living system. See our work at: <a href="https://www.200apps.com" target="_blank" rel="noopener">200apps.com</a></span>
+      </p>
+      <div class="clients">
+        <div class="ttl"><span class="he">מותגים שכבר עובדים איתנו</span><span class="en">Brands already working with us</span></div>
+        <div class="cwall">
+          <img src="assets/clients/c01.png" alt=""><img src="assets/clients/c02.png" alt=""><img src="assets/clients/c03.png" alt=""><img src="assets/clients/c04.png" alt=""><img src="assets/clients/c05.png" alt=""><img src="assets/clients/c06.png" alt=""><img src="assets/clients/c07.png" alt=""><img src="assets/clients/c08.png" alt=""><img src="assets/clients/c09.png" alt=""><img src="assets/clients/c10.png" alt=""><img src="assets/clients/c11.png" alt=""><img src="assets/clients/c12.png" alt=""><img src="assets/clients/c13.png" alt=""><img src="assets/clients/c14.png" alt=""><img src="assets/clients/c15.png" alt=""><img src="assets/clients/c16.png" alt=""><img src="assets/clients/c17.png" alt=""><img src="assets/clients/c18.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="cta">
+      <div>
+        <div class="t serif"><span class="he">בואו ניפגש לשיחה קצרה.</span><span class="en">Let's meet for a short conversation.</span></div>
+        <div class="s"><span class="he">נשמח ממש להיפגש, להכיר ולחשוב יחד על בניית מוצר מובייל ייחודי שיתאים לצרכים של בית אבי חי.</span><span class="en">We'd truly love to meet, get to know you, and think together about building a unique mobile product tailored to Beit Avi Chai's needs.</span></div>
+      </div>
+      <div class="sig">
+        <div class="nm">חמי בן לביא · Hemi Ben-Lavi</div>
+        <div>Head of Product Operations · 200Apps</div>
+        <div>054-4608119</div>
+        <div><a href="mailto:Hemi@200apps.co">Hemi@200apps.co</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span><a href="https://www.200apps.com" target="_blank" rel="noopener" style="border:none;color:var(--muted);">200apps.com</a></span>
+    <span><span class="he">הוכן במיוחד עבור בית אבי חי · 21.7.2026</span><span class="en">Prepared for Beit Avi Chai · 21.7.2026</span></span>
+  </div>
+
+</div>
+
+<script>
+  var isEn=false;
+  function toggleLang(){
+    isEn=!isEn;
+    document.body.classList.toggle('lang-en', isEn);
+    document.documentElement.lang = isEn?'en':'he';
+    document.documentElement.dir  = isEn?'ltr':'rtl';
+    document.getElementById('langBtn').textContent = isEn?'עברית':'EN';
+  }
+</script>
+<script data-goatcounter="https://200apps.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
