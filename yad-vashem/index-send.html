@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>200Apps × יד ושם — הצעה לפגישה</title>
+<meta name="description" content="הצעה לפגישה: אפליקציה רשמית ליד ושם - מלווה ביקור, ארכיון ועדויות, חיפוש שם והנחלה לדור הבא.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://insights.200apps.com/yad-vashem/">
+<meta property="og:title" content="יד ושם × 200Apps — הצעה לפגישה">
+<meta property="og:description" content="הצעה לפגישה: אפליקציה רשמית ליד ושם - מלווה ביקור, ארכיון ועדויות, חיפוש שם והנחלה לדור הבא.">
+<meta property="og:image" content="https://insights.200apps.com/yad-vashem/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="he_IL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="יד ושם × 200Apps — הצעה לפגישה">
+<meta name="twitter:description" content="אפליקציה רשמית ליד ושם: מלווה ביקור, ארכיון ועדויות, חיפוש שם והנחלה לדור הבא.">
+<meta name="twitter:image" content="https://insights.200apps.com/yad-vashem/assets/og.png">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  :root{
+    --stone:#f5efe4; --stone-2:#ece4d4; --paper:#fffdf8;
+    --ink:#2a2a2f; --muted:#7b7568; --line:#e4dcca;
+    --navy:#28374b; --navy2:#1b2735; --accent:#a9823c; --accent-soft:#efe6cf;
+    --gold2:#cdaa5e;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:Calibri,'Segoe UI','Assistant','Rubik',Arial,sans-serif;color:var(--ink);
+    background:var(--stone-2);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .serif{font-family:Calibri,'Segoe UI','Assistant','Rubik',Arial,sans-serif;}
+  h1,.band h2,.pillar h3,.cta .t{text-wrap:balance;}
+  .lead,.band p,.pillar p,.proof p,.who p,.cta .s,.feat .d,.eyebrow{text-wrap:pretty;}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(169,130,60,.4);}
+  a:hover{border-bottom-color:var(--accent);}
+  .sheet{max-width:920px;margin:22px auto;background:var(--stone);
+    box-shadow:0 24px 70px rgba(40,40,30,.18);border-radius:14px;overflow:hidden;position:relative;
+    background-image:radial-gradient(circle at 12% -5%, rgba(169,130,60,.08), transparent 42%),
+                     radial-gradient(circle at 100% 100%, rgba(40,55,75,.06), transparent 40%);}
+  .pad{padding:44px 54px;}
+  /* header */
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:20px 54px;border-bottom:1px solid var(--line);background:rgba(255,253,248,.6);}
+  .logos{direction:ltr;display:flex;align-items:center;gap:22px;}
+  .brand200{display:flex;align-items:center;gap:11px;}
+  .brand200 .txt{text-align:right;line-height:1.05;}
+  .brand200 b{font-size:20px;font-weight:700;color:var(--ink);letter-spacing:-.3px;display:block;}
+  .brand200 small{font-size:11px;color:var(--muted);letter-spacing:.2px;}
+  .brand200 .sq{width:44px;height:44px;border-radius:12px;background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;letter-spacing:-.5px;}
+  .x{color:#b6ad9a;font-size:24px;font-weight:300;line-height:1;padding:0 2px;}
+  .bac-logo img{height:56px;width:auto;display:block;}
+  .toggle{border:1.5px solid var(--navy);background:transparent;color:var(--navy);
+    border-radius:22px;padding:7px 16px;font-weight:700;font-size:13px;cursor:pointer;transition:.15s;white-space:nowrap;}
+  .toggle:hover{background:var(--navy);color:#fff;}
+  /* hero */
+  .eyebrow{display:inline-block;font-size:14.5px;letter-spacing:.4px;color:var(--accent);font-weight:700;
+    background:var(--accent-soft);border-radius:8px;padding:7px 15px;margin-bottom:20px;}
+  h1{font-size:33px;font-weight:700;line-height:1.32;color:var(--navy);letter-spacing:-.2px;margin-bottom:18px;max-width:26ch;}
+  .lead{font-size:16px;line-height:1.8;color:#4a463f;max-width:66ch;}
+  .lead b{color:var(--accent);font-weight:700;}
+  /* band */
+  .band{background:linear-gradient(150deg,var(--navy),var(--navy2));color:#e9ecf1;margin:30px 0 0;padding:34px 54px;}
+  .band .k{font-size:13px;letter-spacing:1px;color:var(--gold2);font-weight:700;margin-bottom:12px;}
+  .band h2{font-size:25px;font-weight:700;color:#fff;margin-bottom:15px;line-height:1.32;}
+  .band p{font-size:15px;line-height:1.85;color:#d7dce4;max-width:78ch;margin-bottom:12px;}
+  .band p:last-of-type{margin-bottom:0;}
+  .band p b{color:#fff;font-weight:700;}
+  .feats{display:flex;flex-wrap:wrap;gap:18px 30px;margin-top:26px;padding-top:22px;
+    border-top:1px solid rgba(205,170,94,.28);}
+  .feat{display:flex;align-items:flex-start;gap:11px;flex:1 1 200px;max-width:250px;}
+  .feat .dot{flex:none;width:7px;height:7px;border-radius:50%;background:var(--gold2);
+    margin-top:8px;box-shadow:0 0 0 4px rgba(205,170,94,.13);}
+  .feat b{display:block;color:#fff;font-weight:700;font-size:14.5px;margin-bottom:2px;}
+  .feat .d{display:block;color:#c3c9d3;font-size:12.5px;line-height:1.5;}
+  /* pillars */
+  .sec-label{font-size:13px;letter-spacing:1px;color:var(--muted);font-weight:700;margin-bottom:20px;}
+  .pillar{display:flex;gap:22px;padding:22px 0;border-top:1px solid var(--line);}
+  .pillar:first-of-type{border-top:none;}
+  .pnum{flex:none;width:46px;height:46px;border-radius:12px;background:var(--accent-soft);color:var(--accent);
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:21px;}
+  .pillar h3{font-size:21px;font-weight:700;color:var(--navy);margin-bottom:7px;}
+  .pillar p{font-size:15px;line-height:1.75;color:#544d42;max-width:70ch;}
+  .pillar p b{color:var(--accent);font-weight:700;}
+  /* proof point */
+  .proof{background:var(--paper);border:1px solid var(--line);border-inline-start:3px solid var(--accent);
+    border-radius:14px;padding:24px 30px;margin-top:26px;}
+  .proof .k{font-size:13px;letter-spacing:1px;color:var(--accent);font-weight:700;margin-bottom:11px;}
+  .proof p{font-size:14.5px;line-height:1.8;color:#544d42;max-width:80ch;margin-bottom:12px;}
+  .proof p:last-child{margin-bottom:0;}
+  .proof b{color:var(--navy);font-weight:700;}
+  /* museums proof band (send version only) - dark, no nested frames */
+  .mband{background:linear-gradient(150deg,var(--navy),var(--navy2));border-radius:14px;margin-top:26px;padding:30px 34px;color:#e9ecf1;}
+  .mband .k{font-size:13px;letter-spacing:1px;color:var(--gold2);font-weight:700;margin-bottom:12px;}
+  .mband p{font-size:15px;line-height:1.8;color:#d7dce4;margin:0 0 14px;}
+  .mband p b{color:#fff;font-weight:700;}
+  .mcap{font-size:12.5px;letter-spacing:.2px;color:#aeb8c6;font-weight:700;margin:24px 0 18px;}
+  .mrow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px 14px;margin-bottom:24px;}
+  .mcell{display:flex;flex-direction:column;align-items:center;text-align:center;}
+  .mcell img,.mcell .ph{width:64px;height:64px;border-radius:15px;object-fit:cover;}
+  .mcell .ph{background:#0f1a2a;color:var(--gold2);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;}
+  .mcell .nm{font-size:12px;color:#eef1f5;font-weight:700;margin-top:12px;line-height:1.25;}
+  .mcell .dl{direction:ltr;display:inline-flex;align-items:center;gap:4px;font-size:11.5px;color:#9fb0c4;margin-top:5px;font-weight:600;}
+  @media(max-width:640px){ .mband{padding:22px 18px;} .mrow{grid-template-columns:repeat(2,1fr);gap:20px 10px;} }
+  /* who + clients */
+  .who{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:26px 30px;margin-top:10px;}
+  .who .k{font-size:13px;letter-spacing:1px;color:var(--accent);font-weight:700;margin-bottom:9px;}
+  .who p{font-size:14.5px;line-height:1.75;color:#544d42;}
+  .who b{color:var(--ink);font-weight:700;}
+  .clients{margin-top:26px;}
+  .clients .ttl{font-size:12px;letter-spacing:1px;color:var(--muted);font-weight:700;text-align:center;margin-bottom:20px;}
+  .cwall{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:22px 38px;}
+  .cwall img{height:26px;width:auto;max-width:104px;object-fit:contain;opacity:.55;filter:grayscale(1);transition:.3s;}
+  .cwall img:hover{opacity:1;filter:none;transform:scale(1.08);}
+  /* cta */
+  .cta{margin-top:24px;background:linear-gradient(120deg,var(--navy),var(--navy2));color:#fff;
+    border-radius:14px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap;}
+  .cta .t{font-size:24px;font-weight:700;margin-bottom:7px;color:#fff;}
+  .cta .s{font-size:14.5px;line-height:1.65;color:#dfe4ec;max-width:52ch;}
+  .sig{text-align:start;white-space:nowrap;border-inline-start:1px solid rgba(255,255,255,.35);padding-inline-start:24px;}
+  .sig .nm{font-size:15px;font-weight:700;color:#fff;}
+  .sig div{font-size:12px;color:#dfe4eccc;line-height:1.55;}
+  .sig a{color:#fff;border-bottom-color:rgba(255,255,255,.5);}
+  .foot{padding:18px 54px;border-top:1px solid var(--line);display:flex;justify-content:space-between;
+    font-size:11.5px;color:var(--muted);letter-spacing:.3px;background:rgba(255,253,248,.4);}
+  .en{display:none!important;}
+  body.lang-en .he{display:none!important;}
+  body.lang-en .en{display:inline!important;}
+  body.lang-en .en.block{display:block!important;}
+  @media(max-width:640px){
+    .sheet{margin:0;border-radius:0;max-width:100%;box-shadow:none;}
+    .bar{padding:14px 16px;flex-wrap:wrap;gap:10px;}
+    .logos{gap:12px;} .bac-logo img{height:44px;} .brand200 .sq{width:36px;height:36px;font-size:14px;}
+    .brand200 b{font-size:16px;} .brand200 small{font-size:9.5px;} .x{font-size:19px;}
+    .toggle{padding:6px 13px;font-size:12px;margin-inline-start:auto;}
+    .pad{padding:24px 18px;} .band{padding:24px 18px;} .foot{padding:13px 18px;font-size:10px;flex-wrap:wrap;gap:4px;}
+    .eyebrow{font-size:12.5px;padding:6px 12px;margin-bottom:14px;}
+    h1{font-size:24px;line-height:1.35;margin-bottom:13px;}
+    .lead{font-size:14.5px;line-height:1.75;}
+    .band h2{font-size:20px;} .band p{font-size:13.5px;}
+    .feats{gap:14px 20px;} .feat{flex-basis:100%;max-width:100%;} .feat b{font-size:14px;} .feat .d{font-size:12.5px;}
+    .sec-label{font-size:12px;margin-bottom:14px;}
+    .pillar{gap:13px;padding:18px 0;}
+    .pnum{width:38px;height:38px;font-size:17px;border-radius:10px;}
+    .pillar h3{font-size:18px;} .pillar p{font-size:14px;line-height:1.7;}
+    .proof{padding:18px 20px;} .proof p{font-size:13.5px;line-height:1.75;}
+    .who{padding:19px 20px;} .cwall{gap:16px 26px;} .cwall img{height:22px;}
+    .cta{flex-direction:column;align-items:stretch;padding:22px 22px;gap:16px;}
+    .cta .t{font-size:21px;} .cta .s{font-size:13.5px;}
+    .sig{border-inline-start:none;padding-inline-start:0;border-top:1px solid rgba(255,255,255,.35);padding-top:14px;white-space:normal;}
+  }
+  /* --- micro-interactions --- */
+  .js h1,.js .lead,.js .band,.js .pillar,.js .mband,.js .who,.js .cta{
+    opacity:0;transform:translateY(20px);
+    transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+  .js h1.in,.js .lead.in,.js .band.in,.js .pillar.in,.js .mband.in,.js .who.in,.js .cta.in{opacity:1;transform:none;}
+  .sheet{transition:opacity .2s ease;}
+  .sheet.swapping{opacity:.28;}
+  .cp{background:transparent;border:1px solid rgba(255,255,255,.35);color:#eafaefcc;border-radius:7px;
+    display:inline-flex;align-items:center;justify-content:center;padding:4px 6px;margin-inline-start:8px;
+    cursor:pointer;transition:.15s;vertical-align:middle;}
+  .cp svg{display:block;}
+  .cp:hover{background:rgba(255,255,255,.16);}
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(26px);
+    background:var(--navy);color:#fff;padding:11px 22px;border-radius:24px;font-size:13.5px;font-weight:700;
+    opacity:0;pointer-events:none;transition:.28s cubic-bezier(.2,.7,.2,1);z-index:99;box-shadow:0 12px 32px rgba(0,0,0,.28);}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    .js h1,.js .lead,.js .band,.js .pillar,.js .mband,.js .who,.js .cta{opacity:1!important;transform:none!important;transition:none!important;}
+    .sheet{transition:none!important;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="bar">
+    <div class="logos">
+      <div class="brand200">
+        <span class="txt"><b>200Apps</b><small class="he">מאאתיים אפליקציות</small><small class="en">מאאתיים · Apps</small></span>
+        <span class="sq">200</span>
+      </div>
+      <span class="x">×</span>
+      <span class="bac-logo"><img src="assets/yad-vashem-logo.png" alt="יד ושם" onerror="logoFallback(this)"></span>
+    </div>
+    <button class="toggle" id="langBtn" onclick="toggleLang()">EN</button>
+  </div>
+
+  <div class="pad">
+    <div class="eyebrow"><span class="he">הצעה לפגישה · אפליקציה רשמית ליד ושם</span><span class="en">A proposal to meet · An official app for Yad Vashem</span></div>
+    <h1 class="serif">
+      <span class="he">אנו ב-200Apps מאמינים שיד ושם הוא בדיוק המקום שאפליקציה נבנתה עבורו.</span>
+      <span class="en">At 200Apps, we believe Yad Vashem is exactly the place an app is built for.</span>
+    </h1>
+    <p class="lead">
+      <span class="he">יד ושם הוא מרכז ההנצחה העולמי לזכר קורבנות השואה, ומגיעים אליו קרוב לשני מיליון מבקרים בשנה.<br>בין כתליו שמור <b>הארכיון הגדול בעולם לתיעוד השואה</b>, לצד מאגר שמות הנספים, עדויות ניצולים, תצלומים ומסמכים.<br>אפליקציה יכולה לשאת את הזיכרון הזה אל <b>כף היד של כל אדם</b>, בישראל ובעולם: ללוות את מי שמבקר באתר, ולא פחות מכך להנגיש את העדות, הארכיון ומעשה ההנצחה גם למי שלא יגיע פיזית, בכל מקום ובכל זמן.</span>
+      <span class="en">Yad Vashem is the world center for the remembrance of the victims of the Holocaust, welcoming close to two million visitors a year.<br>Within its walls is <b>the world's largest archive of Holocaust documentation</b>, alongside the database of victims' names, survivor testimonies, photographs and documents.<br>An app can carry this memory into <b>anyone's hand</b>, in Israel and worldwide: accompanying those who visit the site, and no less importantly, bringing the testimony, the archive and the act of remembrance to those who will never visit, anywhere and at any time.</span>
+    </p>
+  </div>
+
+  <div class="band">
+    <div class="k"><span class="he">התמונה הגדולה</span><span class="en">The big picture</span></div>
+    <h2 class="serif"><span class="he">איך אפליקציה משרתת את הזיכרון ואת חוויית הביקור ביד ושם</span><span class="en">How an app serves remembrance and the visit at Yad Vashem</span></h2>
+    <p style="font-size:16px;color:#fff;font-weight:700;border-inline-start:3px solid var(--gold2);padding-inline-start:15px;margin:0 0 16px;line-height:1.5;">
+      <span class="he">כבר השקעתם עמוקות בדיגיטל: שדרוג האתר, אוספים מקוונים, תערוכות וחומרי חינוך. אפליקציה רשמית היא השכבה הטבעית הבאה, שמחברת את כל אלה לרגע האמת של המבקר.</span>
+      <span class="en">You've already invested deeply in digital: an upgraded website, online collections, exhibitions and education resources. An official app is the natural next layer, connecting all of these to the visitor's moment of truth.</span>
+    </p>
+    <p>
+      <span class="he">היום, הביקור ביד ושם נשען על שילוט פיזי ועל מדריך שמע מושכר, וההתמצאות במתחם הרחב אינה תמיד פשוטה.<br>הארכיון העצום ומאגר השמות, חיים בעיקר באתר האינטרנט, והגישה אליהם ברגע הביקור מוגבלת.</span>
+      <span class="en">Today, the visit to Yad Vashem relies on physical signage and a rented audio guide, and finding your way around the vast campus isn't always simple.<br>The immense archive and the names database live mainly on the website, and access to them at the moment of the visit is limited.</span>
+    </p>
+    <p>
+      <span class="he"><b>אפליקציה רשמית הופכת את כל זה למלווה אחד, מכובד, בכיס של המבקר.</b><br>
+      בתוך המתחם, האפליקציה מציעה מפה, מסלול חכם ומדריך שמע דיגיטלי רב-לשוני, עם הקשר לכל אנדרטה ואתר.<br>ומחוץ למתחם: הארכיון, העדויות, חיפוש שם והנצחה אישית, זמינים בכל רגע.</span>
+      <span class="en"><b>An official app turns all of this into one dignified companion, in the visitor's pocket.</b><br>
+      On the grounds, the app offers a map, a smart route and a multilingual digital audio guide, with context for every memorial and site.<br>And beyond the grounds: the archive, the testimonies, name search and personal remembrance, available at any moment.</span>
+    </p>
+    <div class="feats">
+      <div class="feat"><span class="dot"></span><div><b><span class="he">מלווה ביקור</span><span class="en">On-site companion</span></b><span class="d"><span class="he">מפה, מסלול ומדריך שמע דיגיטלי</span><span class="en">map, route and digital audio guide</span></span></div></div>
+      <div class="feat"><span class="dot"></span><div><b><span class="he">ארכיון ועדויות</span><span class="en">Archive & testimony</span></b><span class="d"><span class="he">נגישים בכל מקום ובכל רגע</span><span class="en">available anywhere, anytime</span></span></div></div>
+      <div class="feat"><span class="dot"></span><div><b><span class="he">חיפוש שם והנצחה</span><span class="en">Name search & remembrance</span></b><span class="d"><span class="he">חיפוש במאגר, דף עד ונר זיכרון</span><span class="en">database search, testimony, candle</span></span></div></div>
+      <div class="feat"><span class="dot"></span><div><b><span class="he">הנחלה לדור הבא</span><span class="en">Passing it on</span></b><span class="d"><span class="he">מסעות לימוד לתלמידים ולמשפחות</span><span class="en">learning journeys for all</span></span></div></div>
+      <div class="feat"><span class="dot"></span><div><b><span class="he">בינה מלאכותית</span><span class="en">Artificial intelligence</span></b><span class="d"><span class="he">מסלול חכם, חיפוש חכם ותרגום רב-לשוני</span><span class="en">smart routing, search and translation</span></span></div></div>
+    </div>
+  </div>
+
+  <div class="pad">
+    <div class="sec-label"><span class="he">חמישה עמודי תווך לאפליקציה</span><span class="en">Five pillars for the app</span></div>
+
+    <div class="pillar">
+      <div class="pnum">1</div>
+      <div>
+        <h3 class="serif"><span class="he">מלווה ביקור מכובד באתר</span><span class="en">A dignified companion for the visit</span></h3>
+        <p>
+          <span class="he">אתר יד ושם רחב וטעון: מוזיאון השואה, היכל השמות, אנדרטת הילדים, בקעת הקהילות ועוד.<br>אפליקציה נותנת לכל מבקר <b>מלווה עצמאי ומכובד</b>: מפה, מסלול מוצע לפי זמן ועניין, ומדריך שמע דיגיטלי בשפה שלו, עם הקשר לכל אתר.<br>הביקור נעשה עמוק ורציף יותר, וגם הצפיפות והניווט מתקלים.</span>
+          <span class="en">The Yad Vashem site is vast and profound: the Holocaust History Museum, the Hall of Names, the Children's Memorial, the Valley of the Communities and more.<br>An app gives every visitor a <b>dignified, self-guided companion</b>: a map, a suggested route by time and interest, and a digital audio guide in their language, with context for each site.<br>The visit becomes deeper and more continuous, and crowding and navigation become easier.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="pnum">2</div>
+      <div>
+        <h3 class="serif"><span class="he">הארכיון והעדויות, נגישים לכל</span><span class="en">The archive and testimonies, open to all</span></h3>
+        <p>
+          <span class="he">יד ושם מחזיק את הארכיון הגדול בעולם לתיעוד השואה: עדויות ניצולים, תצלומים, מסמכים ופריטים.<br>אפליקציה פותחת אותו אל כף היד: <b>לצפות בעדות, לקרוא מסמך, ולהתחקות אחר סיפור</b>, בכל מקום ובכל זמן.<br>הזיכרון מפסיק להיות נחלת קיר וארכיון, והופך לנגיש לכל אדם.</span>
+          <span class="en">Yad Vashem holds the world's largest archive of Holocaust documentation: survivor testimonies, photographs, documents and artifacts.<br>An app opens it into the palm of the hand: <b>to watch a testimony, read a document, and follow a story</b>, anywhere and anytime.<br>Memory is no longer confined to a wall or an archive, and becomes accessible to everyone.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="pnum">3</div>
+      <div>
+        <h3 class="serif"><span class="he">חיפוש שם והנצחה אישית</span><span class="en">Name search and personal remembrance</span></h3>
+        <p>
+          <span class="he">מאגר שמות קורבנות השואה מנציח מיליוני שמות, ומאחורי כל שם, אדם.<br>אפליקציה מאפשרת <b>לחפש שם, לגלות בן משפחה, למלא דף עד, ולהדליק נר זיכרון</b>, מכל מקום.<br>מעשה הנצחה אישי ומשמעותי, במיוחד ככל שדור הניצולים הולך ומתמעט.</span>
+          <span class="en">The Central Database of Shoah Victims' Names commemorates millions of names, and behind each name, a person.<br>An app makes it possible to <b>search a name, discover a family member, submit a Page of Testimony, and light a memorial candle</b>, from anywhere.<br>A personal and meaningful act of remembrance, all the more so as the generation of survivors grows smaller.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="pnum">4</div>
+      <div>
+        <h3 class="serif"><span class="he">הנחלת הזיכרון לדור הבא</span><span class="en">Passing on remembrance to the next generation</span></h3>
+        <p>
+          <span class="he">שליחות יד ושם היא לזכור וללמד, ובראשה ההנחלה לדור שכבר לא יפגוש ניצולים.<br>אפליקציה מציעה <b>מסעות לימוד מובנים</b> לתלמידים, למורים ולמשפחות, ומביאה את העדות אל הטלפון שבו הדור הזה חי.<br>ובעזרת נתונים על היקף ההגעה והמעורבות, אפשר לשרת את השליחות הזו טוב יותר, מתוך ידיעה ולא מתוך השערה.</span>
+          <span class="en">Yad Vashem's mission is to remember and to teach, and at its heart, to pass memory to a generation that will no longer meet survivors.<br>An app offers <b>structured learning journeys</b> for students, teachers and families, and brings testimony to the phone where this generation lives.<br>And with data on reach and engagement, that mission can be served better, from knowledge rather than assumption.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="pnum">5</div>
+      <div>
+        <h3 class="serif"><span class="he">נגישות והכלה, מהיסוד</span><span class="en">Accessibility and inclusion, by design</span></h3>
+        <p>
+          <span class="he">יד ושם מחויב לנגישות, והמבקרים מגיעים עם צרכים מגוונים.<br>אפליקציה מרחיבה את זה לכל רגע בביקור: <b>הגדלת טקסט וניגודיות, כתוביות ותמלולים, תיאורי קול, שפה פשוטה, מסלולים שקטים יותר, ותוכן רב-לשוני</b>.<br>כך הזיכרון נגיש באמת לכל אדם. זה תקן איכות, לא תוספת.</span>
+          <span class="en">Yad Vashem is committed to accessibility, and visitors arrive with diverse needs.<br>An app extends this to every moment of the visit: <b>larger text and contrast, captions and transcripts, audio descriptions, plain language, quieter routes, and multilingual content</b>.<br>So that memory is truly accessible to every person. A standard of quality, not an add-on.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="mband">
+      <div class="k"><span class="he">מה שכבר עובד בעולם</span><span class="en">What already works in the world</span></div>
+      <p>
+        <span class="he">בית אנה פרנק באמסטרדם בנה חוויית מציאות מדומה <b>עטורת פרסים (Webby)</b> שמשחזרת בנאמנות את "הבית הסודי", בשבע שפות כולל עברית, ומאפשרת לאנשים בכל העולם לחוות את הסיפור, גם בלי להגיע פיזית.<br>המסקנה ברורה: כלי דיגיטלי שמנגיש מרחב היסטורי וסיפור אישי בנאמנות זוכה להכרה בינלאומית. הסטנדרט הוא <b>חוויה</b>, לא אפליקציית מידע גנרית.</span>
+        <span class="en">The Anne Frank House in Amsterdam built an <b>award-winning (Webby)</b> virtual-reality experience that faithfully recreates the "Secret Annex" in seven languages including Hebrew, letting people around the world experience the story, even without visiting in person.<br>The lesson is clear: a digital tool that faithfully brings a historical space and a personal story to life earns international recognition. The standard is an <b>experience</b>, not a generic information app.</span>
+      </p>
+
+      <div class="mcap"><span class="he">ומוזיאונים לאומיים מובילים כבר עם אפליקציה רשמית, במאות אלפי עד מיליוני הורדות:</span><span class="en">And leading national museums already have an official app, with hundreds of thousands to millions of downloads:</span></div>
+      <div class="mrow">
+        <div class="mcell">
+          <img src="assets/museums/rijksmuseum.png" alt="Rijksmuseum" onerror="museumFallback(this,'R')">
+          <div class="nm">Rijksmuseum</div>
+          <div class="dl"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>1M+</div>
+        </div>
+        <div class="mcell">
+          <img src="assets/museums/amnh.png" alt="AMNH Explorer" onerror="museumFallback(this,'AM')">
+          <div class="nm">AMNH Explorer</div>
+          <div class="dl"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>500K+</div>
+        </div>
+        <div class="mcell">
+          <img src="assets/museums/korea.png" alt="National Museum of Korea" onerror="museumFallback(this,'NK')">
+          <div class="nm">Nat’l Museum of Korea</div>
+          <div class="dl"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>100K+</div>
+        </div>
+        <div class="mcell">
+          <img src="assets/museums/deutsches.png" alt="Deutsches Museum" onerror="museumFallback(this,'DM')">
+          <div class="nm">Deutsches Museum</div>
+          <div class="dl"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>100K+</div>
+        </div>
+      </div>
+
+      <p>
+        <span class="he"><b>אבל בין מוסדות זיכרון השואה בעולם כמעט אף אחד עדיין לא החזיק אפליקציה רשמית ומלאה משלו.</b><br>כאן יד ושם, עם קרוב לשני מיליון מבקרים בשנה, יכול להיות <b>בין הראשונים</b>, ולהנגיש את זיכרון השואה לא רק למי שמבקר, אלא לכל אדם ובכל מקום.</span>
+        <span class="en"><b>But among the world's Holocaust memorial institutions almost none has yet had a full, official app of its own.</b><br>Here Yad Vashem, with close to two million visitors a year, could be <b>among the first</b>, and make Holocaust remembrance accessible not only to those who visit, but to everyone, everywhere.</span>
+      </p>
+    </div>
+
+    <div class="who">
+      <div class="k"><span class="he">מי אנחנו</span><span class="en">Who we are</span></div>
+      <p>
+        <span class="he">200Apps (מאאתיים אפליקציות) <b>בונה מוצרים טכנולוגיים ומלווה חברות, ארגונים ועסקים כבר 12 שנה</b>.<br>נוסדנו ב-2014 ובנינו מעל 300 מוצרים במודל מקצה-לקצה: מחקר, אפיון ממשק, עיצוב, פיתוח, QA ותחזוקה, עם ניסיון עמוק בתוכן, חינוך וקהילות דיגיטליות.<br>אנחנו ב-200Apps שותפים יחד אתכם ביצירת מוצר טכנולוגי שמתרגם רעיון למערכת חיה. מוזמנים להתרשם מהעבודות שלנו באתר: <a href="https://www.200apps.com" target="_blank" rel="noopener">200apps.com</a></span>
+        <span class="en">200Apps <b>builds technology products and partners with companies, organizations and businesses, for 12 years</b>.<br>Founded in 2014, we've built 300+ products end-to-end: research, UX, design, development, QA and maintenance, with deep experience in content, education and digital communities.<br>At 200Apps we partner with you, together, in creating a technology product that turns an idea into a living system. See our work at: <a href="https://www.200apps.com" target="_blank" rel="noopener">200apps.com</a></span>
+      </p>
+      <div class="clients">
+        <div class="ttl"><span class="he">מותגים שכבר עובדים איתנו</span><span class="en">Brands already working with us</span></div>
+        <div class="cwall">
+          <img src="assets/clients/c01.png" alt=""><img src="assets/clients/c02.png" alt=""><img src="assets/clients/c03.png" alt=""><img src="assets/clients/c04.png" alt=""><img src="assets/clients/c05.png" alt=""><img src="assets/clients/c06.png" alt=""><img src="assets/clients/c07.png" alt=""><img src="assets/clients/c08.png" alt=""><img src="assets/clients/c09.png" alt=""><img src="assets/clients/c10.png" alt=""><img src="assets/clients/c11.png" alt=""><img src="assets/clients/c12.png" alt=""><img src="assets/clients/c13.png" alt=""><img src="assets/clients/c14.png" alt=""><img src="assets/clients/c15.png" alt=""><img src="assets/clients/c16.png" alt=""><img src="assets/clients/c17.png" alt=""><img src="assets/clients/c18.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="cta">
+      <div>
+        <div class="t serif"><span class="he">בואו ניפגש לשיחה קצרה.</span><span class="en">Let's meet for a short conversation.</span></div>
+        <div class="s"><span class="he">נשמח להיפגש, להכיר, ולחשוב יחד כיצד אפליקציה רשמית יכולה לשרת את שליחות הזיכרון וההנחלה של יד ושם.</span><span class="en">We would be honored to meet, get to know you, and think together about how an official app can serve Yad Vashem's mission of remembrance and education.</span></div>
+      </div>
+      <div class="sig">
+        <div class="nm">חמי בן לביא · Hemi Ben-Lavi</div>
+        <div>Head of Product Operations · 200Apps</div>
+        <div><a href="tel:+972544608119">054-4608119</a> <button class="cp" title="העתק / Copy" onclick="copyText('054-4608119')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></div>
+        <div><a href="mailto:Hemi@200apps.co">Hemi@200apps.co</a> <button class="cp" title="העתק / Copy" onclick="copyText('Hemi@200apps.co')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span><a href="https://www.200apps.com" target="_blank" rel="noopener" style="border:none;color:var(--muted);">200apps.com</a></span>
+    <span><span class="he">הוכן במיוחד עבור יד ושם · 21.7.2026</span><span class="en">Prepared for Yad Vashem · 21.7.2026</span></span>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasIO = 'IntersectionObserver' in window;
+
+  // 1. scroll reveal
+  (function(){
+    var els = document.querySelectorAll('h1, .lead, .band, .pillar, .mband, .who, .cta');
+    if(reduce || !hasIO){ els.forEach(function(e){e.classList.add('in');}); return; }
+    var io = new IntersectionObserver(function(en){
+      en.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:.12});
+    els.forEach(function(e){ io.observe(e); });
+  })();
+
+  // 2. language toggle with crossfade
+  var isEn=false;
+  function toggleLang(){
+    var s=document.querySelector('.sheet');
+    s.classList.add('swapping');
+    setTimeout(function(){
+      isEn=!isEn;
+      document.body.classList.toggle('lang-en', isEn);
+      document.documentElement.lang = isEn?'en':'he';
+      document.documentElement.dir  = isEn?'ltr':'rtl';
+      document.getElementById('langBtn').textContent = isEn?'עברית':'EN';
+      s.classList.remove('swapping');
+    }, reduce?0:170);
+  }
+
+  // logo fallback (clean placeholder if the file isn't there yet)
+  function logoFallback(img){
+    img.parentNode.innerHTML='<span style="display:flex;align-items:center;justify-content:center;min-width:132px;height:56px;border:1.5px dashed #cbb98f;border-radius:10px;color:#a9926a;font-size:11px;line-height:1.3;text-align:center;padding:0 12px;">לוגו יד ושם<br>(assets/yad-vashem-logo.png)</span>';
+  }
+
+  // museum shelf icon fallback (until real icons are fetched)
+  function museumFallback(img,ini){
+    var d=document.createElement('div');
+    d.className='ph'; d.textContent=ini; img.parentNode.replaceChild(d,img);
+  }
+
+  // 4. copy phone/email with toast
+  function copyText(t){
+    try{ navigator.clipboard.writeText(t); }catch(e){}
+    var el=document.getElementById('toast');
+    el.textContent = document.body.classList.contains('lang-en') ? 'Copied ✓' : 'הועתק ✓';
+    el.classList.add('show');
+    clearTimeout(window._tt); window._tt=setTimeout(function(){ el.classList.remove('show'); }, 1500);
+  }
+</script>
+<script data-goatcounter="https://200apps.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
