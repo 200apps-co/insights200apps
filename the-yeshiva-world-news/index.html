@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Yeshiva World News · Product Teardown — 200Apps</title>
+<meta property="og:title" content="The Yeshiva World News · Product Teardown — 200Apps">
+<meta property="og:description" content="Readers love the news, but The Yeshiva World app crashes and won't load. An evidence-based product teardown by 200Apps.">
+<meta property="og:image" content="https://insights.200apps.com/the-yeshiva-world-news/og-image.png">
+<meta property="og:url" content="https://insights.200apps.com/the-yeshiva-world-news/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://insights.200apps.com/the-yeshiva-world-news/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bone:#fafafa;--bone-2:#f0f0f0;
+  --navy:#1a1a42;--navy-d:#12122e;
+  --blue:#3a5bd0;--blue-2:#5b78e0;--blue-soft:#e2e7fb;--tint:#dfe3f2;
+  --ink:#26263f;--muted:#5b5b66;--line:#e2e2d8;--warn:#c0392b;
+  --mono:'Inter',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',-apple-system,'Segoe UI',sans-serif;background:var(--bone);color:var(--ink);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
+.mono{font-family:var(--mono);}
+.ribbon{background:var(--navy);color:#fff;text-align:center;font-size:13px;padding:9px 16px;letter-spacing:.4px;}
+.ribbon .mk{display:inline-block;width:7px;height:7px;background:var(--blue-2);margin-inline-start:8px;transform:rotate(45deg);vertical-align:middle;}
+nav{display:flex;align-items:center;justify-content:space-between;padding:24px 0 8px;}
+a.logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit;}
+.logo .badge{width:42px;height:42px;background:var(--navy);border-radius:13px;display:flex;align-items:center;justify-content:center;}
+.logo .badge span{font-weight:600;color:#fff;font-size:15px;}
+.logo .wm b{display:block;font-weight:700;font-size:18px;color:var(--navy);letter-spacing:-.3px;}
+.logo .wm small{font-size:11px;color:var(--muted);letter-spacing:.5px;}
+.nav-tag{font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;text-decoration:none;}
+a.nav-tag:hover{color:var(--blue);}
+.lead-id{display:flex;align-items:center;gap:16px;margin-top:34px;padding:16px 20px;background:#fff;border-radius:16px;}
+.lead-id img{width:58px;height:58px;border-radius:14px;box-shadow:0 4px 14px rgba(26,26,66,.18);}
+.lead-id .nm{font-weight:700;font-size:19px;letter-spacing:-.3px;}
+.lead-id .by{font-size:12.5px;color:var(--muted);margin-top:2px;}
+.lead-chips{margin-inline-start:auto;display:flex;gap:8px;flex-wrap:wrap;}
+.lead-chips span{background:var(--blue-soft);color:var(--blue);font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:20px;white-space:nowrap;}
+.lead-chips span.bad{background:#fbe3df;color:var(--warn);}
+.hero{padding:30px 0 26px;}
+.eyebrow{font-size:14px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:20px;}
+.eyebrow b{color:var(--blue);}
+h1{font-size:clamp(36px,5.4vw,64px);line-height:1.06;font-weight:800;letter-spacing:-1.5px;margin-bottom:22px;max-width:20ch;text-wrap:balance;}
+h1 .dim{color:var(--muted);}
+.lead{font-size:20px;color:#3a3a44;max-width:74ch;}
+.lead b{font-weight:700;color:var(--ink);}
+.metastrip{display:flex;flex-wrap:wrap;margin-top:26px;}
+.metastrip div{flex:1;min-width:130px;padding:10px 16px;}
+.metastrip div:first-child{padding-inline-start:0;}
+.metastrip .k{font-size:12px;font-weight:700;letter-spacing:.8px;color:var(--muted);text-transform:uppercase;}
+.metastrip .v{font-size:30px;font-weight:700;margin-top:2px;letter-spacing:-.5px;}
+.metastrip .v.good{color:var(--blue);}
+.metastrip .v.warn{color:var(--warn);}
+.connector{display:flex;flex-direction:column;align-items:center;height:60px;}
+.connector .ln{flex:1;width:1.5px;background:var(--line);}
+.connector .node{width:9px;height:9px;border:1.5px solid var(--blue);transform:rotate(45deg);}
+section{padding:8px 0;}
+.sec-label{font-size:18px;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin-bottom:16px;display:flex;gap:12px;align-items:baseline;}
+.sec-label .n{color:var(--ink);font-weight:600;}
+h2{font-size:clamp(27px,4vw,44px);font-weight:800;letter-spacing:-1px;line-height:1.08;margin-bottom:16px;max-width:22ch;}
+.sec-sub{font-size:18px;color:var(--muted);max-width:64ch;}
+.panel{background:var(--navy);color:#fff;border-radius:26px;padding:44px;position:relative;overflow:hidden;}
+.panel h3{font-size:28px;font-weight:700;margin-bottom:12px;letter-spacing:-.5px;max-width:20ch;}
+.panel p{font-size:17px;opacity:.94;max-width:60ch;}
+.panel .tag{position:absolute;font-size:11px;letter-spacing:1.5px;opacity:.5;text-transform:uppercase;}
+.panel .tag.tl{top:24px;inset-inline-start:30px;}
+.panel .tag.br{bottom:24px;inset-inline-end:30px;}
+.pgap{margin-top:28px;display:flex;gap:22px;flex-wrap:wrap;}
+.pgap .col{flex:1;min-width:220px;background:#fff;border-radius:16px;padding:22px;}
+.pgap .col .os{font-size:12px;letter-spacing:1px;color:var(--muted);text-transform:uppercase;}
+.pgap .col .ver{font-size:26px;font-weight:800;letter-spacing:-.5px;margin:8px 0 4px;}
+.pgap .col.warnbad .ver{color:var(--warn);}
+.pgap .col .since{font-size:13px;color:var(--muted);}
+.pgap .col .badge{display:inline-block;margin-top:12px;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:20px;}
+.pgap .col.good .badge{background:var(--blue-soft);color:var(--blue);}
+.pgap .col.warnbad .badge{background:#fbe3df;color:var(--warn);}
+.ev-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px;}
+@media(max-width:760px){.ev-grid{grid-template-columns:1fr;}}
+.theme{background:#fff;border-radius:18px;padding:26px;}
+.theme h4{font-size:20px;font-weight:700;margin-bottom:16px;letter-spacing:-.3px;}
+.quote{padding:10px 0;}
+.quote .txt{font-size:15px;color:#2c2c32;line-height:1.55;}
+.quote .meta{font-size:11.5px;color:var(--muted);margin-top:9px;letter-spacing:.4px;display:flex;gap:10px;}
+.opp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px;}
+@media(max-width:760px){.opp-grid{grid-template-columns:1fr;}}
+.opp{background:#fff;border-radius:18px;padding:26px;transition:transform .25s,box-shadow .25s;}
+.opp:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(26,26,66,.13);}
+.opp h4{font-size:19px;font-weight:700;margin-bottom:10px;letter-spacing:-.3px;}
+.opp p{font-size:14.5px;color:#52525a;}
+.ai-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px;}
+@media(max-width:760px){.ai-grid{grid-template-columns:1fr;}}
+.ai{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:22px;}
+.ai h4{font-size:18px;font-weight:700;margin-bottom:8px;}
+.ai p{font-size:14px;opacity:.9;}
+.cs-grid{display:flex;gap:18px;flex-wrap:wrap;margin-top:24px;}
+.cs{flex:1;min-width:230px;background:#fff;border-radius:16px;padding:22px;display:flex;gap:15px;}
+.cs img{width:50px;height:50px;border-radius:13px;flex:none;object-fit:contain;}
+.cs .nm{font-size:18px;font-weight:700;}
+.cs .ds{font-size:14px;color:#52525a;margin-top:4px;}
+.clients{margin-top:50px;margin-bottom:24px;}
+.clients .ttl{font-size:13px;letter-spacing:1px;color:var(--muted);text-transform:uppercase;text-align:center;margin-bottom:24px;}
+.cwall{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:28px 44px;}
+.cwall img{height:28px;max-width:116px;object-fit:contain;opacity:.5;filter:grayscale(1);transition:.3s;}
+.cwall img:hover{opacity:1;filter:none;transform:scale(1.08);}
+.cta-panel{text-align:center;}
+.cta-panel h3{margin:0 auto 12px;}
+.cta-panel p{margin:0 auto;}
+.cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:28px;}
+.pill{display:inline-flex;align-items:center;gap:9px;background:#fff;color:var(--navy);border-radius:40px;padding:16px 30px;font-size:17px;font-weight:700;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.18);transition:transform .2s,box-shadow .2s;}
+.pill:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,.26);}
+.pill.primary{background:var(--blue);color:#fff;box-shadow:0 8px 24px rgba(58,91,208,.4);}
+.pill.primary:hover{background:#3350c0;}
+.pill.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.45);box-shadow:none;}
+.pill.ghost:hover{background:rgba(255,255,255,.08);box-shadow:none;}
+.pill .arr{color:var(--blue-2);}
+.pill.primary .arr{color:#dfe6ff;}
+.mid-cta{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;background:var(--blue-soft);border:1px solid var(--tint);border-radius:20px;padding:24px 30px;text-align:center;}
+.mid-cta .t{font-size:19px;font-weight:700;color:var(--navy);}
+footer{margin-top:80px;background:var(--bone-2);padding:40px 0 28px;}
+.foot-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;padding-bottom:28px;border-bottom:1px solid var(--line);}
+.foot-links{font-size:12.5px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);}
+.sig{padding:24px 0 30px;color:var(--muted);font-size:14px;}
+.sig .nm{font-weight:700;color:var(--ink);font-size:15px;}
+.wordmark{font-size:clamp(70px,18vw,220px);font-weight:800;letter-spacing:-6px;color:#00000009;line-height:.8;text-align:center;margin:10px 0 -24px;white-space:nowrap;user-select:none;}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+.js .rv.in{opacity:1;transform:none;}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1!important;transform:none!important;}}
+@media(max-width:768px){
+  .wrap{padding:0 16px;}
+  .lead-id{flex-wrap:wrap;gap:10px;}
+  .lead-chips{margin-inline-start:0;width:100%;}
+  h1{font-size:clamp(30px,8vw,44px);}
+  .metastrip{flex-direction:column;}
+  .metastrip div{border-top:1px solid var(--line);padding:14px 0;}
+  .metastrip div:first-child{border-top:0;}
+  .panel{padding:26px 20px;}.panel .tag{display:none;}
+  .opp-grid,.ai-grid{grid-template-columns:1fr;}
+  .cs{min-width:100%;}
+  .cta-row{flex-direction:column;}.cta-row .pill{justify-content:center;}
+  .wordmark{display:none;}
+}
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<div class="ribbon mono">A product teardown prepared for The Yeshiva World<span class="mk"></span></div>
+<div class="wrap">
+  <nav>
+    <a class="logo" href="https://www.200apps.com" target="_blank" rel="noopener"><span class="badge"><span>200</span></span><span class="wm"><b>200Apps</b><small>Product Studio</small></span></a>
+    <a class="nav-tag" href="https://www.200apps.com" target="_blank" rel="noopener">200apps.com &#8599;</a>
+  </nav>
+  <div class="lead-id">
+    <img src="assets/icons/the-yeshiva-world-news.png" alt="The Yeshiva World News">
+    <div><div class="nm">The Yeshiva World News</div><div class="by">The Yeshiva World · Kornerstone Media · App Store + Google Play</div></div>
+    <div class="lead-chips"><span class="">Jewish news</span><span class="bad">Last update: Jun 2025</span></div>
+  </div>
+  <header class="hero">
+    <div class="eyebrow">Product teardown · <b>Evidence-based</b></div>
+    <h1>Readers call it &lsquo;the only real Jewish-news app.&rsquo;<br><span class="dim">The app crashes before they can read it.</span></h1>
+    <p class="lead">We didn&rsquo;t read the code or guess. We read the Google Play reviews of The Yeshiva World News app and mapped what readers themselves write &mdash; <b>separating the app from the editorial</b>. On the technology, one pattern repeats for a decade: <b>the app crashes on open, shows a blank screen, and articles won&rsquo;t load.</b> Readers still call it &lsquo;the only real app with only Jewish news&rsquo; &mdash; and in May 2026 one wrote: &lsquo;great news, but the actual app needs some serious work.&rsquo;</p>
+    <div class="metastrip"><div><div class="k">Last app update</div><div class="v warn">Jun 2025</div></div><div><div class="k">Blank-screen reports since</div><div class="v warn">2013</div></div><div><div class="k">The news itself</div><div class="v good">Trusted</div></div></div>
+  </header>
+</div>
+<div class="wrap"><div class="connector"><div class="ln"></div><div class="node"></div><div class="ln"></div></div></div>
+<div class="wrap"><section class="rv">
+  <div class="sec-label"><span class="n">00</span> The problem</div>
+  <h2>A newsroom people rely on, on an app that won&rsquo;t open.</h2>
+  <p class="sec-sub">Readers are clear: the news is why they&rsquo;re here &mdash; &lsquo;the only real app with only Jewish news.&rsquo; But on the technology, one pattern repeats for ten years: the app crashes on launch, opens to a blank screen, and articles fail to load. It&rsquo;s not a one-off &mdash; reviewers note &lsquo;saw it on other reviews too,&rsquo; and a May 2026 review still reads &lsquo;crashes, fails to load, and very poor search engine.&rsquo;</p>
+  <div class="pgap">
+    <div class="col good"><div class="os">The newsroom</div><div class="ver">Trusted</div><div class="since">Updated by the minute</div><div><span class="badge">&lsquo;The only real Jewish-news app&rsquo;</span></div></div>
+    <div class="col warnbad"><div class="os">The app</div><div class="ver">Won&rsquo;t open</div><div class="since">Blank screens since 2013</div><div><span class="badge">Last update Jun 2025</span></div></div>
+  </div>
+</section></div>
+<div class="wrap"><div class="connector"><div class="ln"></div><div class="node"></div><div class="ln"></div></div></div>
+<div class="wrap"><section class="rv">
+  <div class="sec-label"><span class="n">01</span> What readers say</div>
+  <h2>The evidence, word for word.</h2>
+  <p class="sec-sub">We grouped the Google Play reviews by theme &mdash; and kept strictly to the app, not the editorial. These are real readers who want the news and can&rsquo;t reach it:</p>
+  <div class="ev-grid"><div class="theme"><h4>Crashes on open / blank screen</h4><div class="quote"><div class="txt">"Crashes every time I try to enter app saw it on other reviews too you better fix this problem"</div><div class="meta"><span>Google Play</span><span>Apr 2020 · 24 helpful</span></div></div><div class="quote"><div class="txt">"Stopped working with latest update. The app opens a blank screen. Would love for this to be fixed"</div><div class="meta"><span>Google Play</span><span>Nov 2017</span></div></div></div><div class="theme"><h4>Articles won&rsquo;t load</h4><div class="quote"><div class="txt">"The app fails when accessing a story 75% of the time"</div><div class="meta"><span>Google Play</span><span>May 2021 · 7 helpful</span></div></div><div class="quote"><div class="txt">"App never works properly. The articles never open."</div><div class="meta"><span>Google Play</span><span>May 2022</span></div></div></div><div class="theme"><h4>Loved news, broken app &mdash; still in 2026</h4><div class="quote"><div class="txt">"great news but the actual app needs some serious work. crashes fails to load and very poor search engine..."</div><div class="meta"><span>Google Play</span><span>May 2026</span></div></div><div class="quote"><div class="txt">"the only real appp that has only Jewish news"</div><div class="meta"><span>Google Play</span><span>Jul 2025</span></div></div></div><div class="theme" style="background:var(--navy);color:#fff;display:flex;flex-direction:column;justify-content:center;"><h4 style="color:#fff;">Why these?</h4><p style="font-size:15px;opacity:.95;">We set aside the editorial opinions entirely and kept only the technical reports. What remains is a decade-long pattern: crashes on open, blank screens, articles that won&rsquo;t load, and a search that barely works &mdash; on the one app readers call &lsquo;the only real Jewish-news app.&rsquo; A May 2026 review confirms it&rsquo;s still unresolved.</p></div></div>
+</section></div>
+<div class="wrap"><div class="connector"><div class="ln"></div><div class="node"></div><div class="ln"></div></div></div>
+<div class="wrap"><section class="rv">
+  <div class="sec-label"><span class="n">02</span> Stability & experience</div>
+  <h2>Three upgrades that sit directly on the reviews.</h2>
+  <p class="sec-sub">Each one is anchored in a technical complaint readers repeat &mdash; not the editorial. Where to start:</p>
+  <div class="opp-grid"><div class="opp"><h4>An app that opens, every time</h4><p>A rebuilt, native shell that launches instantly instead of a blank screen &mdash; the single most-repeated complaint across ten years of reviews.</p></div><div class="opp"><h4>Articles that load, search that works</h4><p>Fast, reliable article loading with a real search engine (called out by name in a 2026 review), offline saving, and links that respect community filters.</p></div><div class="opp"><h4>News that reaches readers</h4><p>Push alerts that fire by topic, a clean read with sane ad placement, and the Coffee Room, photos and live blog woven in.</p></div></div>
+</section></div>
+<div class="wrap"><div class="connector"><div class="ln"></div><div class="node"></div><div class="ln"></div></div></div>
+<div class="wrap"><section class="rv">
+  <div class="panel">
+    <span class="tag tl">AI-NATIVE · VISION</span>
+    <h3 style="font-size:30px;">Where can The Yeshiva World go in the AI era?</h3>
+    <p>A working app is the base. But years of breaking-news coverage are exactly the kind of archive AI turns into a service &mdash; <b>faster to reach, easier to follow</b>.</p>
+    <div class="ai-grid"><div class="ai"><h4>Ask the newsroom</h4><p>Natural-language search across years of coverage &mdash; instantly, instead of a broken search box.</p></div><div class="ai"><h4>A brief built for you</h4><p>A personalized daily digest by the topics each reader follows.</p></div><div class="ai"><h4>Live, summarized</h4><p>AI summaries of the live blog and long threads so readers catch up in seconds.</p></div></div>
+    <span class="tag br">200APPS BUILDS AI-NATIVE &#8594;</span>
+  </div>
+  <div style="padding-top:28px;"><div class="mid-cta"><span class="t">See the direction?</span><a class="pill primary" href="mailto:hi@200apps.com?subject=The Yeshiva World News app — rebuild"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>Let&rsquo;s talk about the app <span class="arr">&#8594;</span></a></div></div>
+</section></div>
+<div class="wrap"><div class="connector"><div class="ln"></div><div class="node"></div><div class="ln"></div></div></div>
+<div class="wrap"><section class="rv">
+  <div class="sec-label"><span class="n">03</span> What we've built</div>
+  <h2>Hebrew and English content apps that live in the stores.</h2>
+  <p class="sec-sub">We build content apps that stay fast, stable and maintained for years &mdash; the exact opposite of a blank screen on launch.</p>
+  <div class="cs-grid"><div class="cs"><img src="assets/icons/torah-live.png" alt="Torah Live"><div><div class="nm">Torah Live</div><div class="ds">A subscription video-streaming app &mdash; tiers, login and sync across devices, including Apple TV. Built to stream reliably and scale.</div></div></div><div class="cs"><img src="assets/icons/koren.png" alt="Koren"><div><div class="nm">Koren</div><div class="ds">The Koren Tefilla app &mdash; a deep content library with meticulous typography and a clean, fast reading experience.</div></div></div><div class="cs"><img src="assets/icons/time4mishna.png" alt="Time4Mishna"><div><div class="nm">Time4Mishna</div><div class="ds">A daily-content program with audio, reminders and progress tracking &mdash; content that arrives on schedule, every day.</div></div></div></div>
+  <div class="clients"><div class="ttl">And more brands already working with us</div><div class="cwall"><img src="assets/clients/c12.png" alt=""><img src="assets/clients/c14.png" alt=""><img src="assets/clients/c11.png" alt=""><img src="assets/clients/c08.png" alt=""><img src="assets/clients/c03.png" alt=""><img src="assets/clients/c10.png" alt=""><img src="assets/clients/c05.png" alt=""><img src="assets/clients/c09.png" alt=""><img src="assets/clients/c01.png" alt=""><img src="assets/clients/c06.png" alt=""><img src="assets/clients/c15.png" alt=""><img src="assets/clients/c04.png" alt=""><img src="assets/clients/c16.png" alt=""><img src="assets/clients/c17.png" alt=""><img src="assets/clients/c18.png" alt=""></div></div>
+</section></div>
+<div class="wrap"><div class="connector"><div class="ln"></div><div class="node"></div><div class="ln"></div></div></div>
+<div class="wrap"><section class="rv">
+  <div class="sec-label"><span class="n">04</span> Let's talk</div>
+  <div class="panel cta-panel">
+    <span class="tag tl">GET STARTED</span>
+    <h3 style="font-size:32px;max-width:24ch;">Not one bug &mdash; a chance to rebuild the app.</h3>
+    <p>A short, no-obligation call &mdash; we&rsquo;ll walk the technical findings and where to start. Not a patch, a rebuild.</p>
+    <div class="cta-row"><a class="pill primary" href="mailto:hi@200apps.com?subject=The Yeshiva World News app — rebuild"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>Email us about the app <span class="arr">&#8594;</span></a><a class="pill ghost" href="https://wa.me/972544608119">Or WhatsApp</a></div>
+  </div>
+</section></div>
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="logo" href="https://www.200apps.com" target="_blank" rel="noopener"><span class="badge"><span>200</span></span><span class="wm"><b>200Apps</b><small>Product Studio</small></span></a>
+      <div class="foot-links">PRODUCT TEARDOWN · 2026</div>
+    </div>
+    <div class="sig"><div class="nm">Hemi Ben Lavi</div><div>Head of Product Operations</div><div>200Apps · hi@200apps.com · +972 54 460 8119</div></div>
+  </div>
+  <div class="wordmark">200Apps</div>
+</footer>
+<script>
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.14});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+<script data-goatcounter="https://200apps.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
