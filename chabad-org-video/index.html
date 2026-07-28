@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chabad.org Video · Product Teardown - 200Apps</title>
-<meta property="og:title" content="Chabad.org Video · Product Teardown - 200Apps">
-<meta property="og:description" content="Chabad.org Video's library is beloved, but the player has been breaking for years. An evidence-based product teardown by 200Apps.">
+<title>Chabad.org Video · Product Analysis - 200Apps</title>
+<meta property="og:title" content="Chabad.org Video · Product Analysis - 200Apps">
+<meta property="og:description" content="Chabad.org Video's library is beloved, but the player has been breaking for years. An evidence-based product analysis by 200Apps.">
 <meta property="og:image" content="https://insights.200apps.com/chabad-org-video/og-image.png">
 <meta property="og:url" content="https://insights.200apps.com/chabad-org-video/">
 <meta property="og:type" content="website">
@@ -118,6 +118,9 @@ h2{font-size:clamp(27px,4vw,44px);font-weight:800;letter-spacing:-1px;line-heigh
 .pill.primary:hover{background:#3350c0;}
 .pill.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.45);box-shadow:none;}
 .pill.ghost:hover{background:rgba(255,255,255,.08);box-shadow:none;}
+.pill.wa{background:#25D366;color:#fff;box-shadow:0 8px 24px rgba(37,211,102,.4);}
+.pill.wa:hover{background:#20b95a;box-shadow:0 12px 30px rgba(37,211,102,.5);}
+.pill.wa svg{width:19px;height:19px;flex:none;}
 .pill .arr{color:var(--blue-2);}
 .pill.primary .arr{color:#dfe6ff;}
 .mid-cta{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;background:var(--blue-soft);border:1px solid var(--tint);border-radius:20px;padding:24px 30px;text-align:center;}
@@ -131,6 +134,8 @@ footer{margin-top:80px;background:var(--bone-2);padding:40px 0 28px;}
 .foot-links{font-size:12.5px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);}
 .sig{padding:24px 0 30px;color:var(--muted);font-size:14px;}
 .sig .nm{font-weight:700;color:var(--ink);font-size:15px;}
+.sig a{color:var(--blue);text-decoration:none;}
+.sig a:hover{text-decoration:underline;}
 .wordmark{font-size:clamp(70px,18vw,220px);font-weight:800;letter-spacing:-6px;color:#00000009;line-height:.8;text-align:center;margin:10px 0 -24px;white-space:nowrap;user-select:none;}
 .js .rv{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
 .js .rv.in{opacity:1;transform:none;}
@@ -153,8 +158,8 @@ footer{margin-top:80px;background:var(--bone-2);padding:40px 0 28px;}
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-<div class="ribbon mono">A product teardown prepared for Chabad.org<span class="mk"></span></div>
-<a class="sticky-cta" href="https://wa.me/972553192012?text=Hi, I saw the 200Apps analysis of our app and would love to talk." target="_blank" rel="noopener"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 .4C7.4.4.5 7.3.5 15.9c0 2.8.7 5.4 2 7.7L.4 31.6l8.2-2.1c2.2 1.2 4.8 1.9 7.4 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.4 16 .4zm0 28.3c-2.4 0-4.6-.6-6.5-1.8l-.5-.3-4.9 1.3 1.3-4.8-.3-.5C3.6 20.8 3 18.4 3 15.9 3 8.7 8.8 2.9 16 2.9S29 8.7 29 15.9 23.2 28.7 16 28.7zm7.1-9.7c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1 0 1.8 1.3 3.6 1.5 3.8.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.7.2-1.8z"/></svg>Chat with us</a>
+<div class="ribbon mono">A product analysis prepared for Chabad.org<span class="mk"></span></div>
+<a class="sticky-cta" href="https://wa.me/972553192012?text=Hi, I saw the 200Apps analysis of our app and would love to talk." target="_blank" rel="noopener"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 .4C7.4.4.5 7.3.5 15.9c0 2.8.7 5.4 2 7.7L.4 31.6l8.2-2.1c2.2 1.2 4.8 1.9 7.4 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.4 16 .4zm0 28.3c-2.4 0-4.6-.6-6.5-1.8l-.5-.3-4.9 1.3 1.3-4.8-.3-.5C3.6 20.8 3 18.4 3 15.9 3 8.7 8.8 2.9 16 2.9S29 8.7 29 15.9 23.2 28.7 16 28.7zm7.1-9.7c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1 0 1.8 1.3 3.6 1.5 3.8.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.7.2-1.8z"/></svg>Chat about Chabad.org Video</a>
 <div class="wrap">
   <nav>
     <a class="logo" href="https://www.200apps.com" target="_blank" rel="noopener"><span class="badge"><span>200</span></span><span class="wm"><b>200Apps</b><small>Product Studio</small></span></a>
@@ -166,7 +171,7 @@ footer{margin-top:80px;background:var(--bone-2);padding:40px 0 28px;}
     <div class="lead-chips"><span class="">Torah video library</span><span class="bad">Last update: Sep 2024</span></div>
   </div>
   <header class="hero">
-    <div class="eyebrow">Product teardown · <b>Evidence-based</b></div>
+    <div class="eyebrow">Product analysis · <b>Evidence-based</b></div>
     <h1>People call Chabad.org Video &lsquo;a life necessity.&rsquo;<br><span class="dim">The player has been breaking it for years.</span></h1>
     <p class="lead">We didn&rsquo;t read the code or guess. We read the Google Play reviews of the Chabad.org Video app and mapped what users themselves write. The pattern is striking: the library is beloved - <b>&lsquo;the biggest Jewish video collection there is&rsquo;</b> - but the player keeps getting in the way. <b>Playback stops the moment the screen locks, videos freeze and won&rsquo;t restart, and a review from March 2026 shows it&rsquo;s still broken.</b> The app was last updated September 2024.</p>
     <div class="metastrip"><div><div class="k">Last app update</div><div class="v warn">Sep 2024</div></div><div><div class="k">Player issues since</div><div class="v warn">2013</div></div><div><div class="k">The content</div><div class="v good">Beloved</div></div></div>
@@ -187,7 +192,7 @@ footer{margin-top:80px;background:var(--bone-2);padding:40px 0 28px;}
   <div class="sec-label"><span class="n">01</span> What users say</div>
   <h2>The evidence, word for word.</h2>
   <p class="sec-sub">We grouped the Google Play reviews by theme. These aren&rsquo;t our opinions - they&rsquo;re real users who love the content and keep hitting the same wall:</p>
-  <div class="ev-grid"><div class="theme"><h4>Playback dies when the screen locks</h4><div class="quote"><div class="txt">"Would be better if it can play even when the device is locked. You usually don't leave your cellphone unlocked when listening to something."</div><div class="meta"><span>Google Play</span><span>Dec 2018 · 17 helpful</span></div></div><div class="quote"><div class="txt">"Videos cannot play in the background or with the screen switched off. Any touch / gesture stops the playback... It's forcing me to restart every 30 mins video over 5 times. Please bring the old version back."</div><div class="meta"><span>Google Play</span><span>Jan 2015</span></div></div></div><div class="theme"><h4>Videos freeze, crash, and won&rsquo;t restart</h4><div class="quote"><div class="txt">"App has great potential. Yet videos often stop streaming and aren't able to restart. Are CODEC issues the cause of unreliability?"</div><div class="meta"><span>Google Play</span><span>Sep 2017 · 10 helpful</span></div></div><div class="quote"><div class="txt">"Everytime I want to play a video, the program is suddenly Force Close."</div><div class="meta"><span>Google Play</span><span>Jul 2016</span></div></div></div><div class="theme"><h4>Still broken in 2026</h4><div class="quote"><div class="txt">"it keeps saying invalid response even though I clicked allow notifications"</div><div class="meta"><span>Google Play</span><span>Mar 2026</span></div></div><div class="quote"><div class="txt">"a life necessity for me!!"</div><div class="meta"><span>Google Play</span><span>May 2017</span></div></div></div><div class="theme" style="background:var(--navy);color:#fff;display:flex;flex-direction:column;justify-content:center;"><h4 style="color:#fff;">Why these?</h4><p style="font-size:15px;opacity:.95;">We filtered out one-offs. What remains is a decade-long, consistent pattern: people love the Torah content enough to keep coming back - but the playback layer (background audio, resume, stability) fails them. This isn&rsquo;t about the library. It&rsquo;s the player the library sits on. And a March 2026 review shows it&rsquo;s still unresolved.</p></div></div>
+  <div class="ev-grid"><div class="theme"><h4>Playback dies when the screen locks</h4><div class="quote"><div class="txt">"Would be better if it can play even when the device is locked. You usually don't leave your cellphone unlocked when listening to something."</div><div class="meta"><span>Google Play</span><span>Dec 2018</span></div></div><div class="quote"><div class="txt">"Videos cannot play in the background or with the screen switched off. Any touch / gesture stops the playback... It's forcing me to restart every 30 mins video over 5 times. Please bring the old version back."</div><div class="meta"><span>Google Play</span><span>Jan 2015</span></div></div></div><div class="theme"><h4>Videos freeze, crash, and won&rsquo;t restart</h4><div class="quote"><div class="txt">"App has great potential. Yet videos often stop streaming and aren't able to restart. Are CODEC issues the cause of unreliability?"</div><div class="meta"><span>Google Play</span><span>Sep 2017</span></div></div><div class="quote"><div class="txt">"Everytime I want to play a video, the program is suddenly Force Close."</div><div class="meta"><span>Google Play</span><span>Jul 2016</span></div></div></div><div class="theme"><h4>Still broken in 2026</h4><div class="quote"><div class="txt">"it keeps saying invalid response even though I clicked allow notifications"</div><div class="meta"><span>Google Play</span><span>Mar 2026</span></div></div><div class="quote"><div class="txt">"a life necessity for me!!"</div><div class="meta"><span>Google Play</span><span>May 2017</span></div></div></div><div class="theme" style="background:var(--navy);color:#fff;display:flex;flex-direction:column;justify-content:center;"><h4 style="color:#fff;">Why these?</h4><p style="font-size:15px;opacity:.95;">We filtered out one-offs. What remains is a decade-long, consistent pattern: people love the Torah content enough to keep coming back - but the playback layer (background audio, resume, stability) fails them. This isn&rsquo;t about the library. It&rsquo;s the player the library sits on. And a March 2026 review shows it&rsquo;s still unresolved.</p></div></div>
 </section></div>
 <div class="wrap"><div class="connector"><div class="ln"></div><div class="node"></div><div class="ln"></div></div></div>
 <div class="wrap"><section class="rv">
@@ -205,7 +210,7 @@ footer{margin-top:80px;background:var(--bone-2);padding:40px 0 28px;}
     <div class="ai-grid"><div class="ai"><h4>Ask the library</h4><p>Natural-language search across thousands of videos: &lsquo;where does the Rebbe speak about...&rsquo; finds the exact talk and moment.</p></div><div class="ai"><h4>Your next shiur, chosen for you</h4><p>Personalized recommendations by topic, scholar, and where you left off.</p></div><div class="ai"><h4>Learn hands-free</h4><p>A reliable audio mode with resume, chapters and smart summaries for the commute.</p></div></div>
     <span class="tag br">200APPS BUILDS AI-NATIVE &#8594;</span>
   </div>
-  <div style="padding-top:28px;"><div class="mid-cta"><span class="t">See the direction?</span><a class="pill primary" href="mailto:hi@200apps.com?subject=Chabad.org Video - product upgrade"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>Let&rsquo;s talk about the app <span class="arr">&#8594;</span></a></div></div>
+  <div style="padding-top:28px;"><div class="mid-cta" style="flex-direction:column;text-align:center;gap:12px;"><span class="t" style="font-size:22px;max-width:32ch;">Rebuilding it costs less, and takes less time, than ever.</span><p style="color:var(--muted);max-width:64ch;margin:0 auto;">Our process is AI-native end to end - the same technology behind these ideas also accelerates how we design, build and ship. Stabilizing the player and adding what the reviews ask for is faster and lighter than a traditional rebuild.</p><a class="pill primary" href="mailto:hi@200apps.com?subject=Chabad.org Video - product upgrade"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>Let&rsquo;s talk about Chabad.org Video <span class="arr">&#8594;</span></a></div></div>
 </section></div>
 <div class="wrap"><div class="connector"><div class="ln"></div><div class="node"></div><div class="ln"></div></div></div>
 <div class="wrap"><section class="rv">
@@ -222,16 +227,16 @@ footer{margin-top:80px;background:var(--bone-2);padding:40px 0 28px;}
     <span class="tag tl">GET STARTED</span>
     <h3 style="font-size:32px;max-width:24ch;">Not one bug - a chance to rebuild the experience.</h3>
     <p>A short, no-obligation call - we&rsquo;ll walk the findings together and where to start. Not a point fix, a product upgrade.</p>
-    <div class="cta-row"><a class="pill primary" href="mailto:hi@200apps.com?subject=Chabad.org Video - product upgrade"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>Email us about Chabad.org Video <span class="arr">&#8594;</span></a><a class="pill ghost" href="https://wa.me/972553192012?text=Hi, I saw the 200Apps analysis of our app and would love to talk." target="_blank" rel="noopener">Or WhatsApp</a></div>
+    <div class="cta-row"><a class="pill primary" href="mailto:hi@200apps.com?subject=Chabad.org Video - product upgrade"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>Let&rsquo;s talk about Chabad.org Video <span class="arr">&#8594;</span></a><a class="pill wa" href="https://wa.me/972553192012?text=Hi, I saw the 200Apps analysis of our app and would love to talk." target="_blank" rel="noopener"><svg viewBox="0 0 32 32" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M16 .4C7.4.4.5 7.3.5 15.9c0 2.8.7 5.4 2 7.7L.4 31.6l8.2-2.1c2.2 1.2 4.8 1.9 7.4 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.4 16 .4zm0 28.3c-2.4 0-4.6-.6-6.5-1.8l-.5-.3-4.9 1.3 1.3-4.8-.3-.5C3.6 20.8 3 18.4 3 15.9 3 8.7 8.8 2.9 16 2.9S29 8.7 29 15.9 23.2 28.7 16 28.7zm7.1-9.7c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1 0 1.8 1.3 3.6 1.5 3.8.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.7.2-1.8z"/></svg>Let&rsquo;s talk about Chabad.org Video</a></div>
   </div>
 </section></div>
 <footer>
   <div class="wrap">
     <div class="foot-top">
       <a class="logo" href="https://www.200apps.com" target="_blank" rel="noopener"><span class="badge"><span>200</span></span><span class="wm"><b>200Apps</b><small>Product Studio</small></span></a>
-      <div class="foot-links">PRODUCT TEARDOWN · 2026</div>
+      <div class="foot-links">PRODUCT ANALYSIS · 2026</div>
     </div>
-    <div class="sig"><div class="nm">Hemi Ben Lavi</div><div>Head of Product Operations</div><div>200Apps · hi@200apps.com · +972 54 460 8119</div></div>
+    <div class="sig"><div class="nm">Hemi Ben Lavi</div><div>Head of Product Operations</div><div>200Apps · <a href="mailto:hi@200apps.com">hi@200apps.com</a> · <a href="tel:+972544608119">+972 54 460 8119</a></div></div>
   </div>
   <div class="wordmark">200Apps</div>
 </footer>
