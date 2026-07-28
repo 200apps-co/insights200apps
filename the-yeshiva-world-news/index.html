@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Yeshiva World News · Product Teardown — 200Apps</title>
-<meta property="og:title" content="The Yeshiva World News · Product Teardown — 200Apps">
+<title>The Yeshiva World News · Product Teardown - 200Apps</title>
+<meta property="og:title" content="The Yeshiva World News · Product Teardown - 200Apps">
 <meta property="og:description" content="Readers love the news, but The Yeshiva World app crashes and won't load. An evidence-based product teardown by 200Apps.">
 <meta property="og:image" content="https://insights.200apps.com/the-yeshiva-world-news/og-image.png">
 <meta property="og:url" content="https://insights.200apps.com/the-yeshiva-world-news/">
@@ -122,6 +122,10 @@ h2{font-size:clamp(27px,4vw,44px);font-weight:800;letter-spacing:-1px;line-heigh
 .pill.primary .arr{color:#dfe6ff;}
 .mid-cta{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;background:var(--blue-soft);border:1px solid var(--tint);border-radius:20px;padding:24px 30px;text-align:center;}
 .mid-cta .t{font-size:19px;font-weight:700;color:var(--navy);}
+.sticky-cta{position:fixed;bottom:22px;right:22px;z-index:200;display:inline-flex;align-items:center;gap:9px;background:#25D366;color:#fff;border-radius:40px;padding:13px 21px;font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.3);transition:transform .2s;}
+.sticky-cta:hover{transform:translateY(-2px);}
+.sticky-cta svg{width:20px;height:20px;flex:none;}
+@media print{.sticky-cta{display:none;}}
 footer{margin-top:80px;background:var(--bone-2);padding:40px 0 28px;}
 .foot-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;padding-bottom:28px;border-bottom:1px solid var(--line);}
 .foot-links{font-size:12.5px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);}
@@ -150,6 +154,7 @@ footer{margin-top:80px;background:var(--bone-2);padding:40px 0 28px;}
 </head>
 <body>
 <div class="ribbon mono">A product teardown prepared for The Yeshiva World<span class="mk"></span></div>
+<a class="sticky-cta" href="https://wa.me/972553192012?text=Hi, I saw the 200Apps analysis of our app and would love to talk." target="_blank" rel="noopener"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 .4C7.4.4.5 7.3.5 15.9c0 2.8.7 5.4 2 7.7L.4 31.6l8.2-2.1c2.2 1.2 4.8 1.9 7.4 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.4 16 .4zm0 28.3c-2.4 0-4.6-.6-6.5-1.8l-.5-.3-4.9 1.3 1.3-4.8-.3-.5C3.6 20.8 3 18.4 3 15.9 3 8.7 8.8 2.9 16 2.9S29 8.7 29 15.9 23.2 28.7 16 28.7zm7.1-9.7c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1 0 1.8 1.3 3.6 1.5 3.8.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.7.2-1.8z"/></svg>Chat with us</a>
 <div class="wrap">
   <nav>
     <a class="logo" href="https://www.200apps.com" target="_blank" rel="noopener"><span class="badge"><span>200</span></span><span class="wm"><b>200Apps</b><small>Product Studio</small></span></a>
@@ -163,7 +168,7 @@ footer{margin-top:80px;background:var(--bone-2);padding:40px 0 28px;}
   <header class="hero">
     <div class="eyebrow">Product teardown · <b>Evidence-based</b></div>
     <h1>Readers call it &lsquo;the only real Jewish-news app.&rsquo;<br><span class="dim">The app crashes before they can read it.</span></h1>
-    <p class="lead">We didn&rsquo;t read the code or guess. We read the Google Play reviews of The Yeshiva World News app and mapped what readers themselves write &mdash; <b>separating the app from the editorial</b>. On the technology, one pattern repeats for a decade: <b>the app crashes on open, shows a blank screen, and articles won&rsquo;t load.</b> Readers still call it &lsquo;the only real app with only Jewish news&rsquo; &mdash; and in May 2026 one wrote: &lsquo;great news, but the actual app needs some serious work.&rsquo;</p>
+    <p class="lead">We didn&rsquo;t read the code or guess. We read the Google Play reviews of The Yeshiva World News app and mapped what readers themselves write - <b>separating the app from the editorial</b>. On the technology, one pattern repeats for a decade: <b>the app crashes on open, shows a blank screen, and articles won&rsquo;t load.</b> Readers still call it &lsquo;the only real app with only Jewish news&rsquo; - and in May 2026 one wrote: &lsquo;great news, but the actual app needs some serious work.&rsquo;</p>
     <div class="metastrip"><div><div class="k">Last app update</div><div class="v warn">Jun 2025</div></div><div><div class="k">Blank-screen reports since</div><div class="v warn">2013</div></div><div><div class="k">The news itself</div><div class="v good">Trusted</div></div></div>
   </header>
 </div>
@@ -171,7 +176,7 @@ footer{margin-top:80px;background:var(--bone-2);padding:40px 0 28px;}
 <div class="wrap"><section class="rv">
   <div class="sec-label"><span class="n">00</span> The problem</div>
   <h2>A newsroom people rely on, on an app that won&rsquo;t open.</h2>
-  <p class="sec-sub">Readers are clear: the news is why they&rsquo;re here &mdash; &lsquo;the only real app with only Jewish news.&rsquo; But on the technology, one pattern repeats for ten years: the app crashes on launch, opens to a blank screen, and articles fail to load. It&rsquo;s not a one-off &mdash; reviewers note &lsquo;saw it on other reviews too,&rsquo; and a May 2026 review still reads &lsquo;crashes, fails to load, and very poor search engine.&rsquo;</p>
+  <p class="sec-sub">Readers are clear: the news is why they&rsquo;re here - &lsquo;the only real app with only Jewish news.&rsquo; But on the technology, one pattern repeats for ten years: the app crashes on launch, opens to a blank screen, and articles fail to load. It&rsquo;s not a one-off - reviewers note &lsquo;saw it on other reviews too,&rsquo; and a May 2026 review still reads &lsquo;crashes, fails to load, and very poor search engine.&rsquo;</p>
   <div class="pgap">
     <div class="col good"><div class="os">The newsroom</div><div class="ver">Trusted</div><div class="since">Updated by the minute</div><div><span class="badge">&lsquo;The only real Jewish-news app&rsquo;</span></div></div>
     <div class="col warnbad"><div class="os">The app</div><div class="ver">Won&rsquo;t open</div><div class="since">Blank screens since 2013</div><div><span class="badge">Last update Jun 2025</span></div></div>
@@ -181,33 +186,33 @@ footer{margin-top:80px;background:var(--bone-2);padding:40px 0 28px;}
 <div class="wrap"><section class="rv">
   <div class="sec-label"><span class="n">01</span> What readers say</div>
   <h2>The evidence, word for word.</h2>
-  <p class="sec-sub">We grouped the Google Play reviews by theme &mdash; and kept strictly to the app, not the editorial. These are real readers who want the news and can&rsquo;t reach it:</p>
-  <div class="ev-grid"><div class="theme"><h4>Crashes on open / blank screen</h4><div class="quote"><div class="txt">"Crashes every time I try to enter app saw it on other reviews too you better fix this problem"</div><div class="meta"><span>Google Play</span><span>Apr 2020 · 24 helpful</span></div></div><div class="quote"><div class="txt">"Stopped working with latest update. The app opens a blank screen. Would love for this to be fixed"</div><div class="meta"><span>Google Play</span><span>Nov 2017</span></div></div></div><div class="theme"><h4>Articles won&rsquo;t load</h4><div class="quote"><div class="txt">"The app fails when accessing a story 75% of the time"</div><div class="meta"><span>Google Play</span><span>May 2021 · 7 helpful</span></div></div><div class="quote"><div class="txt">"App never works properly. The articles never open."</div><div class="meta"><span>Google Play</span><span>May 2022</span></div></div></div><div class="theme"><h4>Loved news, broken app &mdash; still in 2026</h4><div class="quote"><div class="txt">"great news but the actual app needs some serious work. crashes fails to load and very poor search engine..."</div><div class="meta"><span>Google Play</span><span>May 2026</span></div></div><div class="quote"><div class="txt">"the only real appp that has only Jewish news"</div><div class="meta"><span>Google Play</span><span>Jul 2025</span></div></div></div><div class="theme" style="background:var(--navy);color:#fff;display:flex;flex-direction:column;justify-content:center;"><h4 style="color:#fff;">Why these?</h4><p style="font-size:15px;opacity:.95;">We set aside the editorial opinions entirely and kept only the technical reports. What remains is a decade-long pattern: crashes on open, blank screens, articles that won&rsquo;t load, and a search that barely works &mdash; on the one app readers call &lsquo;the only real Jewish-news app.&rsquo; A May 2026 review confirms it&rsquo;s still unresolved.</p></div></div>
+  <p class="sec-sub">We grouped the Google Play reviews by theme - and kept strictly to the app, not the editorial. These are real readers who want the news and can&rsquo;t reach it:</p>
+  <div class="ev-grid"><div class="theme"><h4>Crashes on open / blank screen</h4><div class="quote"><div class="txt">"Crashes every time I try to enter app saw it on other reviews too you better fix this problem"</div><div class="meta"><span>Google Play</span><span>Apr 2020 · 24 helpful</span></div></div><div class="quote"><div class="txt">"Stopped working with latest update. The app opens a blank screen. Would love for this to be fixed"</div><div class="meta"><span>Google Play</span><span>Nov 2017</span></div></div></div><div class="theme"><h4>Articles won&rsquo;t load</h4><div class="quote"><div class="txt">"The app fails when accessing a story 75% of the time"</div><div class="meta"><span>Google Play</span><span>May 2021 · 7 helpful</span></div></div><div class="quote"><div class="txt">"App never works properly. The articles never open."</div><div class="meta"><span>Google Play</span><span>May 2022</span></div></div></div><div class="theme"><h4>Loved news, broken app - still in 2026</h4><div class="quote"><div class="txt">"great news but the actual app needs some serious work. crashes fails to load and very poor search engine..."</div><div class="meta"><span>Google Play</span><span>May 2026</span></div></div><div class="quote"><div class="txt">"the only real appp that has only Jewish news"</div><div class="meta"><span>Google Play</span><span>Jul 2025</span></div></div></div><div class="theme" style="background:var(--navy);color:#fff;display:flex;flex-direction:column;justify-content:center;"><h4 style="color:#fff;">Why these?</h4><p style="font-size:15px;opacity:.95;">We set aside the editorial opinions entirely and kept only the technical reports. What remains is a decade-long pattern: crashes on open, blank screens, articles that won&rsquo;t load, and a search that barely works - on the one app readers call &lsquo;the only real Jewish-news app.&rsquo; A May 2026 review confirms it&rsquo;s still unresolved.</p></div></div>
 </section></div>
 <div class="wrap"><div class="connector"><div class="ln"></div><div class="node"></div><div class="ln"></div></div></div>
 <div class="wrap"><section class="rv">
   <div class="sec-label"><span class="n">02</span> Stability & experience</div>
   <h2>Three upgrades that sit directly on the reviews.</h2>
-  <p class="sec-sub">Each one is anchored in a technical complaint readers repeat &mdash; not the editorial. Where to start:</p>
-  <div class="opp-grid"><div class="opp"><h4>An app that opens, every time</h4><p>A rebuilt, native shell that launches instantly instead of a blank screen &mdash; the single most-repeated complaint across ten years of reviews.</p></div><div class="opp"><h4>Articles that load, search that works</h4><p>Fast, reliable article loading with a real search engine (called out by name in a 2026 review), offline saving, and links that respect community filters.</p></div><div class="opp"><h4>News that reaches readers</h4><p>Push alerts that fire by topic, a clean read with sane ad placement, and the Coffee Room, photos and live blog woven in.</p></div></div>
+  <p class="sec-sub">Each one is anchored in a technical complaint readers repeat - not the editorial. Where to start:</p>
+  <div class="opp-grid"><div class="opp"><h4>An app that opens, every time</h4><p>A rebuilt, native shell that launches instantly instead of a blank screen - the single most-repeated complaint across ten years of reviews.</p></div><div class="opp"><h4>Articles that load, search that works</h4><p>Fast, reliable article loading with a real search engine (called out by name in a 2026 review), offline saving, and links that respect community filters.</p></div><div class="opp"><h4>News that reaches readers</h4><p>Push alerts that fire by topic, a clean read with sane ad placement, and the Coffee Room, photos and live blog woven in.</p></div></div>
 </section></div>
 <div class="wrap"><div class="connector"><div class="ln"></div><div class="node"></div><div class="ln"></div></div></div>
 <div class="wrap"><section class="rv">
   <div class="panel">
     <span class="tag tl">AI-NATIVE · VISION</span>
     <h3 style="font-size:30px;">Where can The Yeshiva World go in the AI era?</h3>
-    <p>A working app is the base. But years of breaking-news coverage are exactly the kind of archive AI turns into a service &mdash; <b>faster to reach, easier to follow</b>.</p>
-    <div class="ai-grid"><div class="ai"><h4>Ask the newsroom</h4><p>Natural-language search across years of coverage &mdash; instantly, instead of a broken search box.</p></div><div class="ai"><h4>A brief built for you</h4><p>A personalized daily digest by the topics each reader follows.</p></div><div class="ai"><h4>Live, summarized</h4><p>AI summaries of the live blog and long threads so readers catch up in seconds.</p></div></div>
+    <p>A working app is the base. But years of breaking-news coverage are exactly the kind of archive AI turns into a service - <b>faster to reach, easier to follow</b>.</p>
+    <div class="ai-grid"><div class="ai"><h4>Ask the newsroom</h4><p>Natural-language search across years of coverage - instantly, instead of a broken search box.</p></div><div class="ai"><h4>A brief built for you</h4><p>A personalized daily digest by the topics each reader follows.</p></div><div class="ai"><h4>Live, summarized</h4><p>AI summaries of the live blog and long threads so readers catch up in seconds.</p></div></div>
     <span class="tag br">200APPS BUILDS AI-NATIVE &#8594;</span>
   </div>
-  <div style="padding-top:28px;"><div class="mid-cta"><span class="t">See the direction?</span><a class="pill primary" href="mailto:hi@200apps.com?subject=The Yeshiva World News app — rebuild"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>Let&rsquo;s talk about the app <span class="arr">&#8594;</span></a></div></div>
+  <div style="padding-top:28px;"><div class="mid-cta"><span class="t">See the direction?</span><a class="pill primary" href="mailto:hi@200apps.com?subject=The Yeshiva World News app - rebuild"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>Let&rsquo;s talk about the app <span class="arr">&#8594;</span></a></div></div>
 </section></div>
 <div class="wrap"><div class="connector"><div class="ln"></div><div class="node"></div><div class="ln"></div></div></div>
 <div class="wrap"><section class="rv">
   <div class="sec-label"><span class="n">03</span> What we've built</div>
   <h2>Hebrew and English content apps that live in the stores.</h2>
-  <p class="sec-sub">We build content apps that stay fast, stable and maintained for years &mdash; the exact opposite of a blank screen on launch.</p>
-  <div class="cs-grid"><div class="cs"><img src="assets/icons/torah-live.png" alt="Torah Live"><div><div class="nm">Torah Live</div><div class="ds">A subscription video-streaming app &mdash; tiers, login and sync across devices, including Apple TV. Built to stream reliably and scale.</div></div></div><div class="cs"><img src="assets/icons/koren.png" alt="Koren"><div><div class="nm">Koren</div><div class="ds">The Koren Tefilla app &mdash; a deep content library with meticulous typography and a clean, fast reading experience.</div></div></div><div class="cs"><img src="assets/icons/time4mishna.png" alt="Time4Mishna"><div><div class="nm">Time4Mishna</div><div class="ds">A daily-content program with audio, reminders and progress tracking &mdash; content that arrives on schedule, every day.</div></div></div></div>
+  <p class="sec-sub">We build content apps that stay fast, stable and maintained for years - the exact opposite of a blank screen on launch.</p>
+  <div class="cs-grid"><div class="cs"><img src="assets/icons/torah-live.png" alt="Torah Live"><div><div class="nm">Torah Live</div><div class="ds">A subscription video-streaming app - tiers, login and sync across devices, including Apple TV. Built to stream reliably and scale.</div></div></div><div class="cs"><img src="assets/icons/koren.png" alt="Koren"><div><div class="nm">Koren</div><div class="ds">The Koren Tefilla app - a deep content library with meticulous typography and a clean, fast reading experience.</div></div></div><div class="cs"><img src="assets/icons/pniney.png" alt="Pniney Halacha"><div><div class="nm">Pniney Halacha</div><div class="ds">A Torah content library with smart search, rich navigation and offline mode. Built for fast, reliable reading at scale.</div></div></div></div>
   <div class="clients"><div class="ttl">And more brands already working with us</div><div class="cwall"><img src="assets/clients/c12.png" alt=""><img src="assets/clients/c14.png" alt=""><img src="assets/clients/c11.png" alt=""><img src="assets/clients/c08.png" alt=""><img src="assets/clients/c03.png" alt=""><img src="assets/clients/c10.png" alt=""><img src="assets/clients/c05.png" alt=""><img src="assets/clients/c09.png" alt=""><img src="assets/clients/c01.png" alt=""><img src="assets/clients/c06.png" alt=""><img src="assets/clients/c15.png" alt=""><img src="assets/clients/c04.png" alt=""><img src="assets/clients/c16.png" alt=""><img src="assets/clients/c17.png" alt=""><img src="assets/clients/c18.png" alt=""></div></div>
 </section></div>
 <div class="wrap"><div class="connector"><div class="ln"></div><div class="node"></div><div class="ln"></div></div></div>
@@ -215,9 +220,9 @@ footer{margin-top:80px;background:var(--bone-2);padding:40px 0 28px;}
   <div class="sec-label"><span class="n">04</span> Let's talk</div>
   <div class="panel cta-panel">
     <span class="tag tl">GET STARTED</span>
-    <h3 style="font-size:32px;max-width:24ch;">Not one bug &mdash; a chance to rebuild the app.</h3>
-    <p>A short, no-obligation call &mdash; we&rsquo;ll walk the technical findings and where to start. Not a patch, a rebuild.</p>
-    <div class="cta-row"><a class="pill primary" href="mailto:hi@200apps.com?subject=The Yeshiva World News app — rebuild"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>Email us about the app <span class="arr">&#8594;</span></a><a class="pill ghost" href="https://wa.me/972544608119">Or WhatsApp</a></div>
+    <h3 style="font-size:32px;max-width:24ch;">Not one bug - a chance to rebuild the app.</h3>
+    <p>A short, no-obligation call - we&rsquo;ll walk the technical findings and where to start. Not a patch, a rebuild.</p>
+    <div class="cta-row"><a class="pill primary" href="mailto:hi@200apps.com?subject=The Yeshiva World News app - rebuild"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>Email us about the app <span class="arr">&#8594;</span></a><a class="pill ghost" href="https://wa.me/972553192012?text=Hi, I saw the 200Apps analysis of our app and would love to talk." target="_blank" rel="noopener">Or WhatsApp</a></div>
   </div>
 </section></div>
 <footer>
