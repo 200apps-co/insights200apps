@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>הגן הבוטני האוניברסיטאי ירושלים · אפליקציה למבקר</title>
+<style>
+@font-face{font-family:Rubik;src:url(assets/fonts/rubik-hebrew.woff2) format('woff2');font-weight:300 900;font-display:swap;unicode-range:U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F}
+@font-face{font-family:Rubik;src:url(assets/fonts/rubik-latin.woff2) format('woff2');font-weight:300 900;font-display:swap}
+
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --green:#1B3C34; --green-deep:#102520; --green-mid:#2d5a4d; --green-tint:#e4ebe8;
+  --plum:#914569; --plum-tint:#f4e9ee;
+  --bone:#EBE9E5; --bone-2:#F6F4F0;
+  --ink:#23282a; --muted:#5f6a66; --line:#d9d6cf;
+  --navy:#14213F;
+}
+html,body{height:100%;background:#0c1512;overflow:hidden}
+body{font-family:Rubik,'Assistant','Heebo',Arial,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+
+/* ---------- stage: fixed 1280x720, scaled to fit ---------- */
+#viewport{position:fixed;inset:0;display:grid;place-items:center}
+#stage{width:1280px;height:720px;position:relative;transform-origin:center center;box-shadow:0 30px 90px rgba(0,0,0,.5)}
+.slide{position:absolute;inset:0;background:var(--bone-2);opacity:0;pointer-events:none;
+  transition:opacity .45s ease, transform .45s ease;transform:translateY(14px);overflow:hidden}
+.slide.on{opacity:1;pointer-events:auto;transform:none}
+.pad{position:absolute;inset:0;padding:60px 76px;display:flex;flex-direction:column}
+
+/* grain */
+.slide::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ---------- type ---------- */
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;color:var(--plum);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.eyebrow .num{background:var(--plum);color:#fff;border-radius:6px;padding:2px 8px;font-size:12px;letter-spacing:.06em}
+h1{font-size:60px;font-weight:700;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:40px;font-weight:700;line-height:1.15;letter-spacing:-.01em;color:var(--green)}
+h3{font-size:19px;font-weight:600;line-height:1.3;color:var(--green)}
+.lead{font-size:19px;line-height:1.6;color:var(--muted);max-width:74ch;margin-top:14px}
+.kicker{font-size:16px;line-height:1.6;color:var(--muted)}
+.foot{margin-top:auto;font-size:16px;line-height:1.6;color:var(--green);font-weight:500;
+  border-top:1px solid var(--line);padding-top:18px}
+.mono{font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
+b,strong{font-weight:600;color:var(--ink)}
+.dark b,.dark strong{color:#fff}
+
+/* ---------- dark slides ---------- */
+.dark{background:var(--green);color:#f2f5f3}
+.dark h2{color:#fff}.dark h3{color:#fff}
+.dark .lead,.dark .kicker{color:#bccdc7}
+.dark .foot{border-top-color:rgba(255,255,255,.18);color:#dfe8e4}
+.dark .eyebrow{color:#e0b3c8}
+.dark .eyebrow .num{background:var(--plum)}
+.navy{background:var(--navy)}
+.navy h2,.navy h3{color:#fff}
+.navy .lead,.navy .kicker{color:#b9c2d6}
+.navy .foot{color:#d6dced;border-top-color:rgba(255,255,255,.18)}
+.navy .eyebrow{color:#9fb0d8}
+.navy .eyebrow .num{background:#3a5bd0}
+
+/* ---------- cards ---------- */
+.grid{display:grid;gap:16px}
+.card{background:#fff;border-radius:18px;padding:22px 24px}
+.card p{font-size:15px;line-height:1.55;color:var(--muted);margin-top:8px}
+.dark .card{background:rgba(255,255,255,.07)}
+.dark .card p{color:#b9cac4}
+.navy .card{background:rgba(255,255,255,.07)}
+.navy .card p{color:#b3bdd4}
+.card.tint{background:var(--plum-tint)}
+.card.tint p{color:#7a4c60}
+.card.gt{background:var(--green-tint)}
+
+.stat{background:#fff;border-radius:16px;padding:18px 20px}
+.stat .v{font-size:30px;font-weight:700;color:var(--green);line-height:1.05;letter-spacing:-.02em}
+.stat .l{font-size:13.5px;line-height:1.45;color:var(--muted);margin-top:7px}
+.dark .stat{background:rgba(255,255,255,.07)}
+.dark .stat .v{color:#fff}.dark .stat .l{color:#b9cac4}
+
+.pill{display:inline-block;background:var(--green);color:#fff;border-radius:999px;padding:7px 16px;font-size:14px;font-weight:500}
+.pill.plum{background:var(--plum)}
+.pill.ghost{background:transparent;color:var(--green);box-shadow:inset 0 0 0 1.5px var(--line)}
+.dark .pill.ghost{color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.3)}
+.pillrow{display:flex;flex-wrap:wrap;gap:9px}
+
+/* ---------- title slide ---------- */
+#s1{background:var(--green-deep)}
+#s1 .bg{position:absolute;inset:0}
+#s1 .bg img{width:100%;height:100%;object-fit:cover}
+#s1 .veil{position:absolute;inset:0;background:
+  linear-gradient(to top,rgba(16,37,32,.8) 0%,rgba(16,37,32,0) 46%),
+  linear-gradient(285deg,rgba(16,37,32,.97) 0%,rgba(16,37,32,.9) 47%,rgba(16,37,32,.3) 100%)}
+#s1 .pad{justify-content:space-between}
+#s1 h1{color:#fff;max-width:19ch;text-shadow:0 2px 24px rgba(10,24,20,.5)}
+#s1 .sub{font-size:20px;line-height:1.55;color:#cfdcd7;margin-top:20px;max-width:42ch;
+  text-shadow:0 1px 16px rgba(10,24,20,.6)}
+.logos{display:flex;align-items:center;gap:24px}
+.logos img.g{height:66px;width:auto}
+.logos .div{width:1px;height:58px;background:rgba(255,255,255,.28)}
+.logos img.a{height:78px;width:auto;filter:brightness(0) invert(1)}
+.datestrip{display:flex;gap:26px;align-items:center;font-size:14px;color:#9fb5ae}
+
+/* ---------- two-col ---------- */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:38px;flex:1;min-height:0;align-items:center}
+.two.wide-r{grid-template-columns:.85fr 1.15fr}
+.two.wide-l{grid-template-columns:1.15fr .85fr}
+
+/* printed map vs phone */
+.papermap{position:relative;background:#fff;border-radius:10px;padding:11px;height:366px;width:246px;
+  display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(0,0,0,.14);
+  transform:rotate(-2.4deg)}
+.papermap img{width:100%;height:100%;object-fit:contain;object-position:center}
+.caplabel{position:absolute;bottom:-12px;right:14px;background:var(--ink);color:#fff;font-size:12px;
+  padding:4px 11px;border-radius:999px;font-weight:500}
+.phonewrap{display:grid;place-items:center;height:426px;position:relative}
+.phone{width:214px;height:392px;background:#fff;border-radius:32px;position:relative;
+  overflow:hidden;box-shadow:0 16px 44px rgba(0,0,0,.26);border:7px solid #1a1a1a}
+.phone .map{position:absolute;inset:0}
+.phone .map img{width:150%;height:150%;object-fit:cover;object-position:60% 42%;filter:saturate(1.06)}
+.phone .search{position:absolute;top:12px;right:11px;left:11px;background:#fff;border-radius:999px;
+  padding:8px 13px;font-size:12px;color:#8b938f;display:flex;align-items:center;gap:7px;
+  box-shadow:0 3px 12px rgba(0,0,0,.16)}
+.phone .search svg{flex:0 0 13px}
+.dot{position:absolute;top:47%;right:44%;width:15px;height:15px;border-radius:50%;
+  background:var(--plum);box-shadow:0 0 0 5px rgba(145,69,105,.28);animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 5px rgba(145,69,105,.28)}50%{box-shadow:0 0 0 12px rgba(145,69,105,.06)}}
+.phone .pcard{position:absolute;bottom:11px;right:11px;left:11px;background:#fff;border-radius:16px;
+  padding:13px 14px;box-shadow:0 -3px 20px rgba(0,0,0,.13)}
+.phone .pcard .n{font-size:14.5px;font-weight:600;color:var(--green)}
+.phone .pcard .s{font-size:11.5px;color:#8b938f;margin-top:2px}
+.phone .pcard .r{display:flex;gap:6px;margin-top:9px}
+.phone .pcard .t{font-size:10.5px;background:var(--green-tint);color:var(--green);
+  padding:3px 8px;border-radius:999px;font-weight:500}
+
+/* ══════════ interactive prototype ══════════ */
+.proto{display:flex;flex-direction:column;align-items:center;gap:10px;position:relative}
+.dev{width:224px;height:380px;background:#fff;border-radius:31px;position:relative;overflow:hidden;
+  box-shadow:0 18px 46px rgba(0,0,0,.28);border:7px solid #16211d;cursor:pointer;flex:0 0 auto}
+.dev.sm{width:196px;height:334px;border-radius:27px}
+.dev .notch{position:absolute;top:7px;left:50%;transform:translateX(-50%);width:52px;height:4px;
+  border-radius:99px;background:rgba(0,0,0,.16);z-index:9}
+
+/* map layer */
+.mapl{position:absolute;inset:0;background:#eef1ea}
+.mapl svg{width:100%;height:100%;display:block}
+.rt{stroke:var(--plum);stroke-width:3.4;fill:none;stroke-linecap:round;
+  stroke-dasharray:900;stroke-dashoffset:900;transition:stroke-dashoffset 1.5s ease}
+.st-4 .rt{stroke-dashoffset:0}
+.pin{transition:transform .4s ease,opacity .4s ease;transform-origin:center}
+.gdot{opacity:0;transition:opacity .45s ease}
+.st-1 .gdot,.st-2 .gdot,.st-3 .gdot,.st-4 .gdot{opacity:1}
+.gdot .rg{animation:gp 2.3s infinite}
+@keyframes gp{0%,100%{r:7;opacity:.42}50%{r:15;opacity:0}}
+.pin.act{transform:scale(0)}
+.st-2 .pin.act,.st-4 .pin.act{transform:scale(1.35)}
+
+/* top search */
+.tb{position:absolute;top:15px;right:11px;left:11px;background:#fff;border-radius:99px;
+  padding:8px 12px;font-size:11.5px;color:#8b938f;display:flex;align-items:center;gap:7px;
+  box-shadow:0 3px 13px rgba(0,0,0,.15);z-index:5;opacity:0;transform:translateY(-8px);
+  transition:opacity .4s ease,transform .4s ease}
+.st-1 .tb,.st-2 .tb,.st-3 .tb,.st-4 .tb{opacity:1;transform:none}
+
+/* bottom sheets */
+.sh{position:absolute;right:0;left:0;bottom:0;background:#fff;border-radius:20px 20px 0 0;
+  padding:14px 15px 16px;box-shadow:0 -4px 24px rgba(0,0,0,.15);z-index:6;
+  transform:translateY(102%);transition:transform .48s cubic-bezier(.22,.9,.24,1)}
+.sh.on{transform:none}
+.sh .hd{font-size:15px;font-weight:600;color:var(--green);line-height:1.25}
+.sh .sc{font-size:11px;color:#8b938f;margin-top:3px;direction:ltr;text-align:right}
+.sh .cp{display:flex;gap:5px;flex-wrap:wrap;margin-top:9px}
+.sh .cp span{font-size:10px;background:var(--green-tint);color:var(--green);padding:3px 8px;
+  border-radius:99px;font-weight:600}
+.sh .cp span.now{background:var(--plum);color:#fff}
+.sh .thumb{width:100%;height:74px;border-radius:11px;overflow:hidden;margin-bottom:10px}
+.sh .thumb img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+.sh .peek{font-size:12px;color:var(--green);font-weight:600;display:flex;align-items:center;gap:7px}
+.sh .peek i{width:6px;height:6px;border-radius:50%;background:var(--plum);flex:0 0 6px}
+.sh .grab{width:34px;height:3.5px;border-radius:99px;background:#dcdfd9;margin:0 auto 10px}
+
+/* bloom list */
+.bl{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.bl .r{display:flex;align-items:center;gap:9px}
+.bl .sw{width:26px;height:26px;border-radius:8px;flex:0 0 26px}
+.bl .nm{font-size:12px;font-weight:600;color:var(--green);line-height:1.2}
+.bl .lt{font-size:9.5px;color:#98a09b;direction:ltr;text-align:right}
+.bl .bd{margin-inline-start:auto;font-size:9px;background:var(--plum);color:#fff;
+  padding:2px 7px;border-radius:99px;font-weight:600;flex:0 0 auto}
+
+/* route sheet */
+.sh .btn{margin-top:11px;background:var(--green);color:#fff;border-radius:99px;padding:9px;
+  text-align:center;font-size:12.5px;font-weight:600}
+.sh .meta{display:flex;gap:12px;margin-top:8px;font-size:11px;color:#8b938f}
+
+/* welcome overlay */
+.wl{position:absolute;inset:0;background:var(--green);z-index:8;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:13px;padding:26px;text-align:center;
+  opacity:0;pointer-events:none;transition:opacity .5s ease}
+.st-0 .wl{opacity:1}
+.wl img{height:44px;width:auto}
+.wl .t{font-size:15px;font-weight:600;color:#fff;line-height:1.35}
+.wl .s{font-size:11.5px;color:#a9c1b8;line-height:1.45}
+.wl .qr{width:52px;height:52px;border-radius:11px;background:#fff;display:grid;
+  grid-template:repeat(4,1fr)/repeat(4,1fr);gap:3px;padding:7px}
+.wl .qr i{background:var(--green);border-radius:2px}
+.wl .qr i:nth-child(3),.wl .qr i:nth-child(6),.wl .qr i:nth-child(9),
+.wl .qr i:nth-child(12),.wl .qr i:nth-child(14){background:transparent}
+
+/* camera / AI demo */
+.cam{position:absolute;inset:0;z-index:3}
+.cam img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+.ret{position:absolute;top:50%;left:50%;width:112px;height:112px;transform:translate(-50%,-58%);
+  z-index:4;opacity:0;transition:opacity .4s ease}
+.st-0 .ret,.st-1 .ret{opacity:1}
+.ret .c{position:absolute;width:22px;height:22px;border:2.4px solid #fff;border-radius:3px}
+.ret .c:nth-child(1){top:0;left:0;border-right:0;border-bottom:0}
+.ret .c:nth-child(2){top:0;right:0;border-left:0;border-bottom:0}
+.ret .c:nth-child(3){bottom:0;left:0;border-right:0;border-top:0}
+.ret .c:nth-child(4){bottom:0;right:0;border-left:0;border-top:0}
+.scan{position:absolute;top:0;right:0;left:0;height:2.5px;background:
+  linear-gradient(90deg,transparent,#fff,transparent);opacity:0;z-index:5}
+.st-1 .scan{opacity:1;animation:sc 1.3s ease-in-out infinite}
+@keyframes sc{0%{top:14%}50%{top:82%}100%{top:14%}}
+.camlbl{position:absolute;bottom:15px;right:13px;left:13px;background:rgba(11,22,18,.82);
+  color:#fff;border-radius:12px;padding:9px 12px;font-size:11.5px;text-align:center;z-index:6;
+  opacity:0;transition:opacity .4s ease;font-weight:500}
+.st-0 .camlbl.a{opacity:1}
+.st-1 .camlbl.b{opacity:1}
+.res{position:absolute;inset:0;background:#fff;z-index:7;padding:0;opacity:0;pointer-events:none;
+  transition:opacity .5s ease;display:flex;flex-direction:column}
+.st-2 .res{opacity:1}
+.res .ph{height:132px;overflow:hidden;flex:0 0 auto}
+.res .ph img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+.res .bd2{padding:14px 15px;flex:1}
+.res .mt{font-size:9.5px;font-weight:700;letter-spacing:.09em;color:var(--plum)}
+
+/* step dots */
+.pbar{display:flex;gap:6px}
+.pbar i{width:6px;height:6px;border-radius:99px;background:#cdd3ca;transition:.3s}
+.pbar i.on{background:var(--plum);width:18px}
+.dark .pbar i{background:rgba(255,255,255,.26)}
+.dark .pbar i.on{background:#e0b3c8}
+.protohint{font-size:11.5px;color:var(--muted);letter-spacing:.02em}
+.dark .protohint{color:#a9c1b8}
+
+@media (prefers-reduced-motion:reduce){
+  .gdot .rg,.scan{animation:none}
+  .rt{transition:none}
+}
+
+/* ---------- icons ---------- */
+.ic{width:27px;height:27px;stroke:var(--plum);stroke-width:1.5;fill:none;
+  stroke-linecap:round;stroke-linejoin:round;opacity:.78;display:block;margin-bottom:11px}
+.dark .ic,.navy .ic{stroke:#e0b3c8;opacity:.9}
+.card .ic{stroke:var(--green);opacity:.62}
+
+/* ---------- asset bullets ---------- */
+.assets{display:flex;flex-direction:column;gap:9px;margin-top:14px}
+.assets div{font-size:17.5px;line-height:1.45;display:flex;gap:11px;align-items:baseline}
+.assets div::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;
+  background:var(--plum);transform:translateY(-3px)}
+
+/* ---------- portfolio shots ---------- */
+.pi{background:rgba(255,255,255,.07);border-radius:14px;padding:14px 16px}
+.pn{font-size:15.5px;font-weight:600;color:#fff;line-height:1.25}
+.pd{font-size:13.5px;line-height:1.5;color:#adb7d0;margin-top:5px}
+/* product slide: full image one side, text the other */
+.pshot{height:428px;padding:16px;border-radius:16px;overflow:hidden;
+  box-shadow:0 16px 44px rgba(0,0,0,.32);display:grid;place-items:center}
+.pshot img{max-width:100%;max-height:396px;width:auto;height:auto;display:block;
+  border-radius:6px}
+.pshot.pad-mint{background:#e7f6f0}
+.pshot.pad-light{background:#f2f4f7}
+.pshot.pad-violet{background:#a5a8f0}
+.pshot.pad-dark{background:#1d2836}
+.pdesc{font-size:17px;line-height:1.6;color:#c3ccdf}
+.pdesc b{color:#fff}
+
+.shot{border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 12px 34px rgba(0,0,0,.28);
+  height:168px;display:block}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.shot.big{height:330px}
+.shot.big img{object-fit:contain;object-position:center;background:#e7f6f0}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}
+.tags span{font-size:11px;font-weight:600;background:rgba(255,255,255,.13);color:#dbe2f2;
+  padding:4px 10px;border-radius:99px}
+
+/* ---------- questions panel ---------- */
+.qs{background:var(--green-tint);border-radius:18px;padding:18px 24px}
+.qs .h{font-size:14px;font-weight:600;letter-spacing:.05em;color:var(--green);margin-bottom:12px}
+.qs .row{display:flex;flex-wrap:wrap;gap:9px}
+.qs .q{background:#fff;border-radius:999px;padding:8px 16px;font-size:15px;color:var(--green);font-weight:500}
+
+/* ---------- gps annotation ---------- */
+.gps{position:absolute;top:50%;right:calc(100% + 10px);display:flex;align-items:center;gap:7px;z-index:4}
+.gps .lbl{background:var(--ink);color:#fff;font-size:11px;font-weight:600;letter-spacing:.03em;
+  padding:5px 10px;border-radius:999px;white-space:nowrap}
+.gps .ln{width:28px;height:1.5px;background:var(--ink);opacity:.45}
+
+/* ---------- journey ---------- */
+.journey{display:flex;flex-direction:column;gap:0;flex:1;justify-content:center}
+.jrow{display:grid;grid-template-columns:74px 1fr;gap:20px;padding:11px 0;position:relative}
+.jrow+.jrow{border-top:1px solid var(--line)}
+.jrow .t{font-size:15px;font-weight:600;color:var(--plum);font-variant-numeric:tabular-nums;padding-top:2px}
+.jrow .w{font-size:16.5px;line-height:1.45}
+.jrow .w span{color:var(--muted);font-size:15px;display:block;margin-top:3px}
+
+/* ---------- bars ---------- */
+.bars{display:flex;flex-direction:column;gap:11px;flex:1;justify-content:center}
+.bar{display:grid;grid-template-columns:132px 1fr 86px;gap:14px;align-items:center}
+.bar .nm{font-size:15px;color:var(--muted);text-align:left;direction:ltr}
+.bar .tr{height:26px;background:#e6e3dc;border-radius:6px;overflow:hidden}
+.bar .fl{height:100%;background:#c9c4b8;border-radius:6px}
+.bar .vv{font-size:15px;font-weight:600;color:var(--muted);font-variant-numeric:tabular-nums}
+.bar.hi .nm,.bar.hi .vv{color:var(--green);font-weight:700}
+.bar.hi .fl{background:var(--green)}
+.bar.tw .nm,.bar.tw .vv{color:var(--plum);font-weight:700}
+.bar.tw .fl{background:var(--plum)}
+
+/* ---------- zeros ---------- */
+.zeros{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.zero{background:#fff;border-radius:18px;padding:22px 18px;text-align:center}
+.zero .z{font-size:52px;font-weight:700;color:var(--plum);line-height:1;letter-spacing:-.03em}
+.zero .z small{font-size:20px;color:#b98fa5;font-weight:600}
+.zero .l{font-size:13.5px;line-height:1.45;color:var(--muted);margin-top:11px}
+.zero.one .z{color:var(--green)}
+.zero.one .z small{color:#8aa39b}
+
+/* ---------- zoo ---------- */
+.gifbox{border-radius:18px;overflow:hidden;background:#fff;height:392px;display:grid;place-items:center}
+.gifbox img{width:100%;height:100%;object-fit:cover;object-position:center}
+
+/* ---------- logo wall ---------- */
+.wall{display:grid;grid-template-columns:repeat(9,1fr);gap:12px;align-items:center}
+.wall img{width:100%;height:40px;object-fit:contain;filter:grayscale(1) brightness(0) invert(1);opacity:.62}
+
+/* ---------- phases ---------- */
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ph{background:#fff;border-radius:18px;padding:20px 22px;position:relative;overflow:hidden}
+.ph::before{content:'';position:absolute;top:0;right:0;left:0;height:4px;background:var(--green-tint)}
+.ph.p1::before{background:var(--green)}
+.ph.p2::before{background:var(--green-mid)}
+.ph.p3::before{background:var(--plum)}
+.ph .tag{font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+.ph h3{margin-top:5px;font-size:20px}
+.ph ul{margin-top:11px;padding-inline-start:16px}
+.ph li{font-size:14.5px;line-height:1.5;color:var(--muted);margin-bottom:5px}
+.nots{background:var(--plum-tint);border-radius:18px;padding:18px 22px}
+.nots .h{font-size:15px;font-weight:600;color:var(--plum);margin-bottom:9px}
+.nots ul{padding-inline-start:16px;columns:2;column-gap:34px}
+.nots li{font-size:14px;line-height:1.5;color:#7a4c60;margin-bottom:5px}
+
+/* ---------- lists ---------- */
+ul.clean{list-style:none}
+ul.clean li{font-size:16.5px;line-height:1.5;padding:9px 0 9px 0;display:flex;gap:11px;align-items:flex-start}
+ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;background:var(--plum);margin-top:9px}
+.dark ul.clean li,.navy ul.clean li{color:#fff}
+.dark ul.clean li::before{background:#e0b3c8}
+.navy ul.clean li::before{background:#7b93d8}
+
+/* ---------- closing ---------- */
+.closing .pad{align-items:center;justify-content:center;text-align:center}
+.sig{margin-top:44px;display:flex;gap:0;align-items:stretch}
+.sig .p{padding:0 34px;text-align:center}
+.sig .p+.p{border-inline-start:1px solid rgba(255,255,255,.2)}
+.sig .nm{font-size:18px;font-weight:600;color:#fff}
+.sig .rl{font-size:14px;color:#a8bdb6;margin-top:4px}
+
+/* ---------- chrome ---------- */
+#chrome{position:fixed;bottom:14px;left:0;right:0;display:flex;justify-content:center;
+  align-items:center;gap:16px;z-index:20;font-size:12px;color:#7b8e88;pointer-events:none}
+#dots{display:flex;gap:5px;pointer-events:auto}
+#dots i{width:6px;height:6px;border-radius:50%;background:#3d4f49;cursor:pointer;transition:.2s}
+#dots i.on{background:#c9a3b5;width:17px;border-radius:3px}
+#cnt{font-variant-numeric:tabular-nums;min-width:44px;text-align:center}
+#hint{position:fixed;top:14px;left:16px;font-size:11.5px;color:#4e615b;z-index:20;transition:opacity .6s}
+
+@media (prefers-reduced-motion:reduce){
+  .slide{transition:none}.dot{animation:none}
+}
+
+/* narrow portrait phones: the 16:9 stage becomes unreadable */
+#rotate{display:none;position:fixed;inset:0;z-index:60;background:var(--green-deep);
+  align-items:center;justify-content:center;text-align:center;padding:36px}
+#rotate .ic2{font-size:34px;margin-bottom:16px;opacity:.8;color:#a9c1b8}
+#rotate .t2{font-size:17px;font-weight:600;color:#fff;line-height:1.4}
+#rotate .s2{font-size:14px;color:#a9c1b8;line-height:1.6;margin-top:10px;max-width:24ch}
+@media (max-width:760px) and (orientation:portrait){#rotate{display:flex}}
+
+@media print{
+  @page{size:1280px 720px;margin:0}
+  html,body{overflow:visible;background:#fff;height:auto}
+  .slide::after{display:none}
+  .slide{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  #viewport{position:static;display:block}
+  #stage{transform:none!important;box-shadow:none;width:1280px;height:auto}
+  .slide{position:relative;opacity:1!important;transform:none!important;height:720px;
+    page-break-after:always;break-after:page;pointer-events:auto}
+  #chrome,#hint{display:none}
+}
+</style>
+</head>
+<body>
+
+<div id="rotate"><div><div class="ic2">&#8635;</div><div class="t2">סובבו את המכשיר לרוחב</div><div class="s2">המצגת בנויה למסך רחב. לצפייה נוחה מומלץ מחשב או טאבלט.</div></div></div>
+<div id="hint">← → מעבר בין שקפים · F מסך מלא</div>
+<div id="viewport"><div id="stage">
+
+<!-- ══════════ 1 · שער ══════════ -->
+<section class="slide on" id="s1">
+  <div class="bg"><img src="assets/garden-pond.jpg" alt=""><div class="veil"></div></div>
+  <div class="pad">
+    <div class="logos">
+      <img class="g" src="assets/garden-logo.svg" alt="הגן הבוטני האוניברסיטאי ירושלים">
+      <div class="div"></div>
+      <img class="a" src="assets/200apps-logo.png" alt="200Apps">
+    </div>
+    <div>
+      <div class="eyebrow" style="color:#e0b3c8">הצעה לדיון</div>
+      <h1>אפליקציה למבקר בגן הבוטני</h1>
+      <div class="sub">מה קורה כשכל מה שהגן כבר יודע עובר לכיס של המבקר, בדיוק במקום שבו הוא עומד.</div>
+    </div>
+    <div class="datestrip">
+      <span>אוגוסט 2026</span><span>·</span>
+      <span>הגן הבוטני האוניברסיטאי ירושלים</span><span>·</span>
+      <span>200Apps</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 2 · התזה ══════════ -->
+<section class="slide" id="s2">
+  <div class="pad">
+    <div class="eyebrow"><span class="num">00</span> נקודת הפתיחה</div>
+    <h2>170 דונם. 7,000 מינים. מפה מודפסת.</h2>
+    <div class="two" style="margin-top:26px;justify-items:center;grid-template-columns:1fr 1fr">
+      <div class="papermap">
+        <img src="assets/garden-printed-map.png" alt="המפה המודפסת של הגן">
+        <div class="caplabel">המפה של הגן היום</div>
+      </div>
+      <div class="phonewrap">
+        <div class="proto" data-demo="5" data-auto="2900">
+          <div class="gps">
+            <div class="ln"></div>
+            <div class="lbl">GPS · מיקום המבקר בזמן אמת</div>
+          </div>
+          <div class="dev st-0">
+            <div class="notch"></div>
+
+            <div class="mapl">
+              <svg viewBox="0 0 236 404" aria-hidden="true">
+                <rect width="236" height="404" fill="#f1f4ee"/>
+                <!-- phytogeographic sections, tiled -->
+                <path d="M0 0 H236 V96 C180 112 120 84 60 100 C40 105 18 100 0 94 Z" fill="#c6d3b1"/>
+                <path d="M0 94 C18 100 40 105 60 100 C120 84 180 112 236 96 V186 C176 200 112 174 52 190 C34 195 16 192 0 188 Z" fill="#cdc4d7"/>
+                <path d="M0 188 C16 192 34 195 52 190 C112 174 176 200 236 186 V272 C178 288 116 262 56 278 C36 283 18 280 0 276 Z" fill="#dfc2ad"/>
+                <path d="M0 276 C18 280 36 283 56 278 C116 262 178 288 236 272 V344 C170 358 108 336 48 348 C32 351 14 350 0 348 Z" fill="#aec9d1"/>
+                <path d="M0 348 C14 350 32 351 48 348 C108 336 170 358 236 344 V404 H0 Z" fill="#c4d8ba"/>
+                <!-- outside: street corner top-right -->
+                <path d="M236 0 L236 44 L192 0 Z" fill="#d8ded4"/>
+                <path d="M190 0 L236 46" stroke="#eceee8" stroke-width="5" fill="none"/>
+                <!-- pond -->
+                <path d="M96 206 C96 194 112 188 126 190 C142 192 150 200 148 212
+                         C146 226 128 234 112 230 C100 227 96 218 96 206 Z" fill="#93b6c6"/>
+                <path d="M104 208 C106 202 114 199 122 200" stroke="#b9d3dd" stroke-width="2.4" fill="none"/>
+                <!-- structures -->
+                <rect x="150" y="228" width="22" height="15" rx="3" fill="#ded9cf"/>
+                <rect x="58"  y="318" width="19" height="13" rx="3" fill="#ded9cf"/>
+                <rect x="164" y="352" width="24" height="16" rx="3" fill="#ded9cf"/>
+                <!-- path casing + paths -->
+                <g fill="none" stroke-linecap="round">
+                  <path d="M196 386 C168 366 150 344 152 316 C154 288 118 282 106 258
+                           C94 234 122 224 124 200 C126 176 96 168 100 140
+                           C104 112 138 106 146 82 C152 64 150 50 148 34"
+                        stroke="#dfe4da" stroke-width="10"/>
+                  <path d="M106 258 C86 268 62 288 56 322 C52 342 58 356 66 366"
+                        stroke="#dfe4da" stroke-width="8.5"/>
+                  <path d="M124 200 C146 194 168 198 186 208" stroke="#dfe4da" stroke-width="8"/>
+                  <path d="M196 386 C168 366 150 344 152 316 C154 288 118 282 106 258
+                           C94 234 122 224 124 200 C126 176 96 168 100 140
+                           C104 112 138 106 146 82 C152 64 150 50 148 34"
+                        stroke="#fff" stroke-width="6.4"/>
+                  <path d="M106 258 C86 268 62 288 56 322 C52 342 58 356 66 366"
+                        stroke="#fff" stroke-width="5"/>
+                  <path d="M124 200 C146 194 168 198 186 208" stroke="#fff" stroke-width="4.6"/>
+                </g>
+                <!-- flagship route (draws on step 4) -->
+                <path class="rt" d="M196 386 C168 366 150 344 152 316 C154 288 118 282 106 258
+                         C94 234 122 224 124 200 C126 176 96 168 100 140
+                         C104 112 138 106 146 82 C152 64 150 50 148 34"/>
+                <!-- pins -->
+                <g class="pin"><path d="M152 322 c-4.6 0 -8 -3.5 -8 -8 0 -6 8 -13 8 -13 0 0 8 7 8 13 0 4.5 -3.4 8 -8 8 z" fill="#1B3C34" opacity=".88"/></g>
+                <g class="pin"><path d="M100 146 c-4.6 0 -8 -3.5 -8 -8 0 -6 8 -13 8 -13 0 0 8 7 8 13 0 4.5 -3.4 8 -8 8 z" fill="#1B3C34" opacity=".88"/></g>
+                <g class="pin"><path d="M148 48 c-4.6 0 -8 -3.5 -8 -8 0 -6 8 -13 8 -13 0 0 8 7 8 13 0 4.5 -3.4 8 -8 8 z" fill="#1B3C34" opacity=".88"/></g>
+                <g class="pin"><path d="M60 346 c-4.6 0 -8 -3.5 -8 -8 0 -6 8 -13 8 -13 0 0 8 7 8 13 0 4.5 -3.4 8 -8 8 z" fill="#1B3C34" opacity=".88"/></g>
+                <g class="pin act">
+                  <path d="M124 208 c-6 0 -10.5 -4.6 -10.5 -10.5 0 -7.8 10.5 -17 10.5 -17 0 0 10.5 9.2 10.5 17 0 5.9 -4.5 10.5 -10.5 10.5 z"
+                        fill="#914569" stroke="#fff" stroke-width="2.4"/>
+                  <circle cx="124" cy="197" r="3.4" fill="#fff"/>
+                </g>
+                <!-- entrance -->
+                <g><circle cx="198" cy="390" r="5.6" fill="#fff" stroke="#1B3C34" stroke-width="2.2"/>
+                   <text x="198" y="392.6" font-size="6.6" fill="#1B3C34" text-anchor="middle" font-family="Rubik" font-weight="700">ש</text></g>
+                <!-- visitor location -->
+                <g class="gdot">
+                  <circle class="rg" cx="134" cy="244" r="7" fill="#914569" opacity=".42"/>
+                  <circle cx="134" cy="244" r="5.6" fill="#914569" stroke="#fff" stroke-width="2.4"/>
+                </g>
+                <!-- labels -->
+                <text x="78"  y="44"  font-size="8.6" fill="#59684f" font-family="Rubik" font-weight="500">הים התיכון</text>
+                <text x="76"  y="146" font-size="8.6" fill="#5d5470" font-family="Rubik" font-weight="500">מרכז אסיה</text>
+                <text x="182" y="258" font-size="8.6" fill="#7a5b45" font-family="Rubik" font-weight="500">אוסטרליה</text>
+                <text x="114" y="300" font-size="8.6" fill="#4a6570" font-family="Rubik" font-weight="500">אמריקה הצפונית</text>
+                <text x="62"  y="382" font-size="8.6" fill="#4f6b48" font-family="Rubik" font-weight="500">אירופה</text>
+                <text x="122" y="216" font-size="7.6" fill="#3f6675" font-family="Rubik" font-weight="600">בריכת הלוטוס</text>
+                <!-- north arrow -->
+                <g opacity=".55"><path d="M212 66 l4 10 -4 -2.6 -4 2.6 z" fill="#4a5850"/>
+                   <text x="212" y="84" font-size="7" fill="#4a5850" text-anchor="middle" font-family="Rubik" font-weight="600">N</text></g>
+              </svg>
+            </div>
+
+            <div class="tb">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8b938f" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3"/></svg>
+              חיפוש צמח או חלקה
+            </div>
+
+            <!-- step 1 -->
+            <div class="sh" data-st="1" style="padding:13px 15px 15px">
+              <div class="peek"><i></i> 3 צמחים פורחים במרחק הליכה מכם</div>
+            </div>
+
+            <!-- step 2 -->
+            <div class="sh" data-st="2">
+              <div class="grab"></div>
+              <div class="thumb"><img src="assets/lotus-a.jpg" alt=""></div>
+              <div class="hd">נלומבו נאה · לוטוס</div>
+              <div class="sc">Nelumbo nucifera · בריכת הלוטוס</div>
+              <div class="cp"><span class="now">פורח עכשיו</span><span>הים התיכון</span><span>מים</span></div>
+            </div>
+
+            <!-- step 3 -->
+            <div class="sh" data-st="3">
+              <div class="grab"></div>
+              <div class="hd">מה פורח עכשיו · אוגוסט</div>
+              <div class="bl">
+                <div class="r"><div class="sw" style="background:#9dbfcc"></div>
+                  <div><div class="nm">נלומבו נאה</div><div class="lt">Nelumbo nucifera</div></div>
+                  <div class="bd">בשיא</div></div>
+                <div class="r"><div class="sw" style="background:#dbbdaa"></div>
+                  <div><div class="nm">בוהיניית גלפין</div><div class="lt">Bauhinia galpinii</div></div>
+                  <div class="bd">פורח</div></div>
+                <div class="r"><div class="sw" style="background:#bdcbaa"></div>
+                  <div><div class="nm">כמרופס נמוך</div><div class="lt">Chamaerops humilis</div></div>
+                  <div class="bd">פורח</div></div>
+                <div class="r"><div class="sw" style="background:#c9c0d3"></div>
+                  <div><div class="nm">טופח ריחני</div><div class="lt">Lathyrus odoratus</div></div>
+                  <div class="bd">פורח</div></div>
+              </div>
+            </div>
+
+            <!-- step 4 -->
+            <div class="sh" data-st="4">
+              <div class="grab"></div>
+              <div class="hd">מסלול הצמחים בסכנת הכחדה</div>
+              <div class="meta"><span>24 עצירות</span><span>כ-50 דקות</span><span>2.1 ק"מ</span></div>
+              <div class="cp" style="margin-top:9px"><span>מתחיל בשער</span><span>עברית ואנגלית</span></div>
+              <div class="btn">התחילו את המסלול</div>
+            </div>
+
+            <div class="wl">
+              <img src="assets/garden-logo.svg" alt="">
+              <div class="qr"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="t">ברוכים הבאים לגן הבוטני</div>
+              <div class="s">סרקו את הקוד בשער<br>ואין מה להתקין</div>
+            </div>
+          </div>
+          <div class="pbar"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+        </div>
+      </div>
+    </div>
+    <div class="foot">אותה מפה בדיוק. מה שנוסף הוא ה-GPS שכבר נמצא בטלפון של כל מבקר: משם האפליקציה יודעת איפה הוא עומד, מה סביבו ומה פורח היום.</div>
+  </div>
+</section>
+
+<!-- ══════════ 3 · הגן היום ══════════ -->
+<section class="slide" id="s3">
+  <div class="pad">
+    <div class="eyebrow"><span class="num">01</span> הגן היום</div>
+    <h2>לגן הבוטני יש שלושה נכסים שאפליקציה נבנתה עבורם</h2>
+    <div class="assets">
+      <div><span><b>קהל חוזר ונאמן</b> - משפחות, אוהבי טבע, חברי מנוי ותיירים</span></div>
+      <div><span><b>אוסף חי</b> שמשתנה עם העונות, כך שכל ביקור הוא ביקור אחר</span></div>
+      <div><span><b>מגוון עשיר של אירועים</b>, סדנאות, קורסים ופעילויות</span></div>
+    </div>
+    <div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:22px">
+      <div class="stat">
+        <svg class="ic" viewBox="0 0 24 24"><path d="M4 6.2l5.2-2 5.6 2 5.2-2v13.6l-5.2 2-5.6-2-5.2 2z"/><path d="M9.2 4.2v13.6M14.8 6.2v13.6"/></svg>
+        <div class="v mono">170</div><div class="l">דונם בלב ירושלים</div>
+      </div>
+      <div class="stat">
+        <svg class="ic" viewBox="0 0 24 24"><path d="M12 21v-8.4"/><path d="M12 12.6c0-4-2.9-6-6.8-6 0 4 2.9 6 6.8 6z"/><path d="M12 12.6c0-4 2.9-6 6.8-6 0 4-2.9 6-6.8 6z"/></svg>
+        <div class="v mono">7,000+</div><div class="l">מינים וזנים. האוסף הגדול בישראל ובמזרח התיכון</div>
+      </div>
+      <div class="stat">
+        <svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="9.4" r="2.2"/><path d="M12 7.2V4.6M9.8 9.4H7.2M14.2 9.4h2.6M10.3 7.7L8.6 6M13.7 7.7L15.4 6M10.3 11.1L8.6 12.8M13.7 11.1l1.7 1.7"/><path d="M12 14.4V21"/></svg>
+        <div class="v mono">300+</div><div class="l">צמחים בסכנת הכחדה. מאגר גנטי חי</div>
+      </div>
+      <div class="stat">
+        <svg class="ic" viewBox="0 0 24 24"><circle cx="9.2" cy="7.8" r="2.9"/><path d="M3.4 19.6c0-3.2 2.6-5.8 5.8-5.8s5.8 2.6 5.8 5.8"/><circle cx="17.4" cy="9.2" r="2.2"/><path d="M16.6 13.8c2.5.5 4.4 2.7 4.4 5.4"/></svg>
+        <div class="v">עשרות אלפים</div><div class="l">אורחים באירועים, מכל הארץ. ועוד חברי מנוי שחוזרים</div>
+      </div>
+    </div>
+    <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:16px">
+      <div class="card gt" style="padding:18px 22px">
+        <svg class="ic" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6"/><path d="M19.6 19.6l-4.6-4.6"/><path d="M10.8 13c0-2.2 1.5-3.6 3.1-3.6 0 2.2-1.5 3.6-3.1 3.6z"/></svg>
+        <h3>מאגר צמחים מקוון</h3><p>קיים באתר, עם סינון. התוכן הבוטני כבר כתוב.</p>
+      </div>
+      <div class="card gt" style="padding:18px 22px">
+        <svg class="ic" viewBox="0 0 24 24"><path d="M5.2 7.6h13.6l-1.4 12.8H6.6z"/><path d="M5.2 7.6l2.8-3.2h8l2.8 3.2"/><circle cx="12" cy="13.4" r="1.9"/></svg>
+        <h3>חנות הזרעים</h3><p>מסחר מקוון פעיל, עם קהל שקונה.</p>
+      </div>
+      <div class="card gt" style="padding:18px 22px">
+        <svg class="ic" viewBox="0 0 24 24"><path d="M12 6.6C10 5.1 7.6 4.6 4.2 4.6v12.8c3.4 0 5.8.5 7.8 2 2-1.5 4.4-2 7.8-2V4.6c-3.4 0-5.8.5-7.8 2z"/><path d="M12 6.6v12.8"/></svg>
+        <h3>קורסים וסדנאות</h3><p>קמפוס שלם עם הרשמה מקוונת.</p>
+      </div>
+    </div>
+    <div class="foot">התוכן, המסחר וההרשמות כבר בנויים ועובדים. מה שנוסף הוא להביא אותם אל המבקר, בזמן שהוא בגן.</div>
+  </div>
+</section>
+
+<!-- ══════════ 4 · הפער ══════════ -->
+<section class="slide" id="s4">
+  <div class="pad">
+    <div class="eyebrow"><span class="num">02</span> מסע המבקר</div>
+    <h2>החוויה קיימת. היא פשוט מפוזרת בין ארבעה מקומות.</h2>
+    <div class="lead" style="margin-top:12px;max-width:none">כל אחד מהם עושה את העבודה שלו טוב. הם פשוט לא מדברים ביניהם, ולכן המבקר פוגש את הגן בפיסות.</div>
+    <div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:22px">
+      <div class="card">
+        <svg class="ic" viewBox="0 0 24 24"><rect x="4" y="5.4" width="16" height="10" rx="1.6"/><path d="M12 15.4V21M9 21h6"/></svg>
+        <h3>השילוט ליד הצמחים</h3>
+        <p><b>מידע מדויק ומקצועי</b>, כתוב בידי בוטנאים. עונה על שאלה אחת: מה הצמח שאני עומד מולו.</p>
+      </div>
+      <div class="card">
+        <svg class="ic" viewBox="0 0 24 24"><path d="M4 6.2l5.2-2 5.6 2 5.2-2v13.6l-5.2 2-5.6-2-5.2 2z"/><path d="M9.2 4.2v13.6M14.8 6.2v13.6"/></svg>
+        <h3>המפה המודפסת</h3>
+        <p><b>התמצאות טובה בשטח</b> ומזכרת נחמדה. לא יודעת איפה המבקר עומד, ולא משתנה עם העונה.</p>
+      </div>
+      <div class="card">
+        <svg class="ic" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6"/><path d="M19.6 19.6l-4.6-4.6"/><path d="M10.8 13c0-2.2 1.5-3.6 3.1-3.6 0 2.2-1.5 3.6-3.1 3.6z"/></svg>
+        <h3>האתר ומאגר הצמחים</h3>
+        <p><b>עומק בוטני אמיתי</b>, עם סינון וחיפוש. נצרך בבית, לפני הביקור או אחריו.</p>
+      </div>
+      <div class="card">
+        <svg class="ic" viewBox="0 0 24 24"><path d="M4.4 6.6h15.2v11.4H4.4z"/><path d="M4.4 7l7.6 5.6L19.6 7"/></svg>
+        <h3>הניוזלטר והרשתות</h3>
+        <p><b>אירועים, פריחה וחדשות</b> שמגיעים לקהל. מגיעים בזמן שלהם, לא בזמן שהמבקר בגן.</p>
+      </div>
+    </div>
+    <div class="qs" style="margin-top:18px">
+      <div class="h">וחמש השאלות שהמבקר שואל בזמן שהוא בתוך הגן</div>
+      <div class="row">
+        <span class="q">מה פורח עכשיו, ואיפה?</span>
+        <span class="q">איך מגיעים לאוסף הבונסאי?</span>
+        <span class="q">מה מתאים לילד בן חמש בשעה?</span>
+        <span class="q">מה יש כאן שלא ראיתי בביקור הקודם?</span>
+        <span class="q">מתי הסדנה הבאה, ואיך נרשמים?</span>
+      </div>
+    </div>
+    <div class="foot">התשובה לכל אחת מהן כבר קיימת אצלכם. היא פשוט לא נמצאת במקום שבו נשאלת השאלה.</div>
+  </div>
+</section>
+
+<!-- ══════════ 5 · מה יש בעולם ══════════ -->
+<section class="slide dark" id="s5">
+  <div class="pad">
+    <div class="eyebrow"><span class="num">03</span> בנצ'מרק</div>
+    <h2>9 גנים בוטניים בעולם עם אפליקציה רשמית</h2>
+    <div class="lead">בדקנו גנים בארצות הברית, אוסטרליה, ניו זילנד, בלארוס וברבדוס. הן מתחלקות לשלושה דגמים.</div>
+    <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:24px">
+      <div class="card">
+        <div class="pill plum" style="margin-bottom:12px">רב-שירותית</div>
+        <h3>Fairchild, מיאמי</h3>
+        <p>מפה ומסלול מותאם, אוספי צמחים, סיורים, תזמון טראם, הזמנת מזון, חנות צמחים, וכרטיס כניסה שהופך למנוי.</p>
+        <p style="margin-top:11px;color:#fff;font-weight:500">4.9★ מ-137 דירוגים. המעורבות החזקה במדגם.</p>
+      </div>
+      <div class="card">
+        <div class="pill ghost" style="margin-bottom:12px">פרשנות וניווט</div>
+        <h3>שיקגו · אוסטרליה</h3>
+        <p>מפה, חיפוש צמח לפי שם וצבע, "מה פורח עכשיו", מסלולי הליכה, אודיו, ותוכן שעובד בלי רשת.</p>
+        <p style="margin-top:11px;color:#fff;font-weight:500">שיקגו: +10K הורדות, אבל עדכון אחרון 01.2025 ו-3.7★ ב-iOS.</p>
+      </div>
+      <div class="card">
+        <div class="pill ghost" style="margin-bottom:12px">מדריך סיור ממוקד</div>
+        <h3>סן דייגו · מינסק · אנדרומדה</h3>
+        <p>אודיו, תמונות וסיפורי מקום רב-לשוניים. מוצר צנוע, ממוקד באוסף אחד או בשביל אחד.</p>
+        <p style="margin-top:11px;color:#fff;font-weight:500">אנדרומדה: 4 שפות. סן דייגו: אנגלית וספרדית.</p>
+      </div>
+    </div>
+    <div class="pillrow" style="margin-top:24px">
+      <span class="pill ghost">Chicago</span><span class="pill ghost">Desert, פיניקס</span>
+      <span class="pill ghost">Fairchild, מיאמי</span><span class="pill ghost">San Diego</span>
+      <span class="pill ghost">Australian National</span><span class="pill ghost">Darwin</span>
+      <span class="pill ghost">Auckland</span><span class="pill ghost">Minsk</span>
+      <span class="pill ghost">Andromeda, ברבדוס</span>
+    </div>
+    <div class="foot">נבדק ל-3 באוגוסט 2026, מתוך אתרי הגנים ודפי החנויות הרשמיים.</div>
+  </div>
+</section>
+
+<!-- ══════════ 6 · מה עובד ══════════ -->
+<section class="slide" id="s6">
+  <div class="pad">
+    <div class="eyebrow"><span class="num">04</span> מה למדנו</div>
+    <h2>מה באמת עובד, ומה רק נראה טוב במצגת</h2>
+    <div class="grid" style="grid-template-columns:1fr 1fr;margin-top:24px">
+      <div class="card"><h3>ניווט לבד לא מספיק</h3><p>מפה חייבת סיבה להיפתח: חיפוש צמח מסוים, מסלול מותאם, פריחה עונתית. מפה סטטית שהועתקה מחוברת מודפסת לא מייצרת ערך שחוזר.</p></div>
+      <div class="card"><h3>מידע עונתי הוא מנוע החזרה</h3><p>"מה פורח עכשיו" ואירועים מתחלפים נותנים סיבה לפתוח את האפליקציה <b>לפני</b> כל ביקור. מדריך אודיו שלא מתעדכן שימושי פעם אחת.</p></div>
+      <div class="card"><h3>עבודה בלי רשת היא אסטרטגיה</h3><p>אוסטרליה מאפשרת להוריד מפות ותוכן מראש. זה מוריד תלות בקליטה בתוך הגן, וחוסך לתיירים חבילות נדידה.</p></div>
+      <div class="card tint"><h3>לא חייבים להתחיל בחנויות</h3><p>דארווין באוסטרליה העבירה ב-2026 את הניווט שלה לדפדפן, בלי התקנה. חסם נמוך בהרבה למבקר חד-פעמי. לכן נציע גם כניסה מהדפדפן, לצד האפליקציה.</p></div>
+    </div>
+    <div class="foot">והערה על סדר גודל: +10K הורדות בשיקגו, +1K ברוב, +100 באוקלנד. זה לא שוק רווי. זה שוק שאף אחד עוד לא ניצח.</div>
+  </div>
+</section>
+
+<!-- ══════════ 8 · המקום הפנוי ══════════ -->
+<section class="slide dark" id="s7">
+  <div class="pad">
+    <div class="eyebrow"><span class="num">05</span> ההזדמנות</div>
+    <h2>מה 9 הגנים האלה עוד לא עשו</h2>
+    <div class="zeros" style="margin-top:30px">
+      <div class="zero"><div class="z">0<small>/9</small></div><div class="l">זיהוי צמח בצילום, או שימוש כלשהו ב-AI</div></div>
+      <div class="zero"><div class="z">0<small>/9</small></div><div class="l">מצב ילדים או משחק דיגיטלי</div></div>
+      <div class="zero"><div class="z">0<small>/9</small></div><div class="l">מדע אזרחי ושיתוף תצפיות</div></div>
+      <div class="zero"><div class="z">0<small>/9</small></div><div class="l">מסלול נגיש כמסנן אמיתי בממשק</div></div>
+      <div class="zero one"><div class="z">1<small>/9</small></div><div class="l">מסחר מחובר: כרטיס, מנוי, חנות. רק Fairchild</div></div>
+    </div>
+    <div class="card" style="margin-top:26px;background:rgba(255,255,255,.1)">
+      <p style="font-size:19px;line-height:1.55;color:#fff">
+      ולגן בירושלים <b>כבר יש</b> את חנות הזרעים, את הקורסים, את הסדנאות ואת האירועים שמביאים עשרות אלפי אורחים.
+      הדבר היחיד שחסר הוא שהם יהיו בכיס של המבקר.</p>
+    </div>
+    <div class="foot">כלומר: הפער בין הגן לבין המובילות בעולם קטן בהרבה ממה שנראה. בשני מקומות הגן אפילו מקדים אותן.</div>
+  </div>
+</section>
+
+<!-- ══════════ האפליקציה · בגן ══════════ -->
+<section class="slide" id="s8">
+  <div class="pad">
+    <div class="eyebrow"><span class="num">06</span> האפליקציה</div>
+    <h2>מה שהגן כבר יודע, במקום שבו המבקר עומד</h2>
+    <div class="lead" style="margin-top:12px;max-width:none">אפליקציה אחת בשתי החנויות, ובנוסף כניסה מיידית מהדפדפן דרך QR בשער למי שמבקר פעם אחת ולא רוצה להתקין.</div>
+    <div class="pillrow" style="margin-top:14px">
+      <span class="pill">iOS ואנדרואיד</span><span class="pill ghost">QR בשער</span>
+      <span class="pill ghost">עברית ואנגלית</span><span class="pill ghost">עובדת בלי רשת</span>
+    </div>
+    <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:20px;gap:14px">
+      <div class="card" style="padding:16px 20px"><h3>מפה חיה</h3><p>שש החלקות, כניסות, שירותים, מים, בית קפה וחניה. ומיקום המבקר עליה בזמן אמת.</p></div>
+      <div class="card" style="padding:16px 20px"><h3>כרטיס צמח</h3><p>שם עממי ומדעי, אזור מוצא, עונת פריחה ותמונה. נשען על מאגר הצמחים שכבר קיים באתר שלכם.</p></div>
+      <div class="card" style="padding:16px 20px"><h3>מה פורח עכשיו</h3><p>התצוגה העונתית. זה הפיצ'ר שמחזיר מבקרים, לפי כל הגנים שבדקנו.</p></div>
+      <div class="card" style="padding:16px 20px"><h3>מסלולים מודרכים</h3><p>לפי נושא ולפי זמן: משפחות, בוטניקה, נגישות, מסלול קצר או ארוך.</p></div>
+      <div class="card" style="padding:16px 20px"><h3>מצב ילדים ומשחק בשטח</h3><p>חפש את המטמון, חידות מבוססות מקום ותגים דיגיטליים. אף אחת מ-9 האפליקציות בעולם לא עושה את זה.</p></div>
+      <div class="card" style="padding:16px 20px"><h3>עבודה בלי רשת</h3><p>מפה ותוכן שנטענים מראש. בלי תלות בקליטה בתוך הגן ובלי חבילות נדידה לתיירים.</p></div>
+    </div>
+    <div class="foot">כל התוכן הזה כבר קיים אצלכם: מאגר הצמחים, עונות הפריחה והחלקות. האפליקציה לא כותבת אותו מחדש, היא מביאה אותו לשביל.</div>
+  </div>
+</section>
+
+<!-- ══════════ האפליקציה · לאורך השנה ══════════ -->
+<section class="slide" id="s9">
+  <div class="pad">
+    <div class="eyebrow"><span class="num">07</span> האפליקציה</div>
+    <h2>ומה שממשיך אחרי שהמבקר יוצא מהשער</h2>
+    <div class="lead" style="margin-top:12px;max-width:none">כאן הביקור החד-פעמי הופך לקשר שחוזר בכל עונה, ובדיוק כאן הגן כבר מחזיק את הנכסים: אירועים, קורסים, סדנאות וחנות זרעים.</div>
+    <div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:22px">
+      <div class="card"><h3>לוח אירועים והרשמה</h3><p>כל האירועים, הקורסים והסדנאות במקום אחד, עם הרשמה ורכישת כרטיס בלחיצה. בלי לעבור לאתר חיצוני.</p></div>
+      <div class="card"><h3>נוטיפיקציות על אירועים ופריחה</h3><p>"הלוטוסים בשיאם" או "נותרו 4 מקומות בסדנה". זו הסיבה שמבקר פותח את האפליקציה לפני שהוא מחליט לבוא.</p></div>
+      <div class="card"><h3>חנות הזרעים בכיס</h3><p>המסחר שכבר קיים אצלכם, זמין למבקר בזמן שהוא עומד מול הצמח. כולל מבצעים והתראות.</p></div>
+      <div class="card"><h3>מועדפים ומדף אישי</h3><p>צמח או פינה שאהב נשמרים ומחכים לביקור הבא. זה מה שהופך מבקר לחבר.</p></div>
+    </div>
+    <div class="card gt" style="margin-top:18px">
+      <p style="font-size:17px;line-height:1.6">מבין תשע האפליקציות שבדקנו בעולם, <b>רק אחת</b> מחברת מסחר, כרטיסים ומנויים לתוך האפליקציה. לגן בירושלים כבר יש את כל השלושה. הם פשוט לא בכיס של המבקר.</p>
+    </div>
+    <div class="foot">ובכל אלה יש עוד יתרון: כשההרשמות והרכישות עוברות דרך האפליקציה, אתם רואים סוף סוף מה עובד. לזה נגיע בהמשך.</div>
+  </div>
+</section>
+
+<!-- ══════════ 12 · AI ══════════ -->
+<section class="slide dark" id="s10">
+  <div class="pad">
+    <div class="eyebrow"><span class="num">08</span> האפליקציה</div>
+    <h2>וכאן אפשר להציע משהו שאף גן בוטני בעולם עוד לא מציע</h2>
+    <div class="two wide-l" style="margin-top:18px;align-items:center">
+      <div>
+        <div class="grid" style="grid-template-columns:1fr;gap:11px">
+          <div class="card" style="padding:15px 20px">
+            <h3>זיהוי צמח בצילום</h3>
+            <p>המבקר מצלם עלה או פרח ומקבל את השם, המוצא והסיפור. אפס מתשע האפליקציות בעולם עושות את זה.</p>
+          </div>
+          <div class="card" style="padding:15px 20px">
+            <h3>שאל את הגן</h3>
+            <p>"מה כדאי לראות עם ילד בן חמש בשעה וחצי?" תשובה מהתוכן של הגן עצמו, מהמאגר ומהמסלולים. לא מהאינטרנט.</p>
+          </div>
+          <div class="card" style="padding:15px 20px">
+            <h3>מסלול שמתאים את עצמו</h3>
+            <p>כמו הרגע הראשון בספוטיפיי שבו נשאלים מה מעניין אותך: משפחה, בוטניקה, נגישות. ומשם המסלול נבנה לפי העונה, הגיל והזמן הפנוי.</p>
+          </div>
+        </div>
+        <div class="card" style="margin-top:13px;background:rgba(255,255,255,.11);padding:16px 20px">
+          <p style="font-size:16.5px;line-height:1.5;color:#fff">
+          לפני שלוש שנים כל אחד מאלה היה פרויקט מחקר בתקציב של מיליונים. היום זו <b>שכבה דקה מעל תוכן שכבר קיים</b>.
+          זה מה שמאפשר להציע את זה בהיקף פיתוח שמתאים לגן, ולא לתאגיד.</p>
+        </div>
+      </div>
+      <div class="proto" data-demo="3" data-auto="2400">
+        <div class="dev sm st-0">
+          <div class="notch"></div>
+          <div class="cam"><img src="assets/lotus-a.jpg" alt=""></div>
+          <div class="ret"><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div></div>
+          <div class="scan"></div>
+          <div class="camlbl a">כוונו את המצלמה על העלה או הפרח</div>
+          <div class="camlbl b">מזהה את הצמח...</div>
+          <div class="res">
+            <div class="ph"><img src="assets/lotus-a.jpg" alt=""></div>
+            <div class="bd2">
+              <div class="mt">זוהה · התאמה גבוהה</div>
+              <div class="hd" style="font-size:17px;font-weight:600;color:var(--green);margin-top:5px">נלומבו נאה · לוטוס</div>
+              <div class="sc" style="font-size:11.5px;color:#8b938f;direction:ltr;text-align:right;margin-top:3px">Nelumbo nucifera</div>
+              <div class="cp" style="display:flex;gap:5px;flex-wrap:wrap;margin-top:10px">
+                <span class="now" style="font-size:10px;background:var(--plum);color:#fff;padding:3px 8px;border-radius:99px;font-weight:600">פורח עכשיו</span>
+                <span style="font-size:10px;background:var(--green-tint);color:var(--green);padding:3px 8px;border-radius:99px;font-weight:600">בריכת הלוטוס</span>
+              </div>
+              <div class="btn" style="margin-top:12px;background:var(--green);color:#fff;border-radius:99px;padding:9px;text-align:center;font-size:12.5px;font-weight:600">הוסיפו למסלול שלי</div>
+            </div>
+          </div>
+        </div>
+        <div class="pbar"><i class="on"></i><i></i><i></i></div>
+      </div>
+    </div>
+    <div class="foot">ומה שלא נציע: AR ו-VR. אף גן במדגם לא עושה את זה, ולגן בגודל הזה זו הוצאה בלי החזר.</div>
+  </div>
+</section>
+
+<!-- ══════════ 10 · מסלול הדגל ══════════ -->
+<section class="slide" id="s11">
+  <div class="pad">
+    <div class="eyebrow"><span class="num">09</span> מסלול הדגל</div>
+    <h2>300 הצמחים שאין להם עוד בית</h2>
+    <div class="lead">הגן הוא מאגר גנטי חי ליותר מ-300 צמחים בסכנת הכחדה בישראל ובעולם. אף אחת מתשע האפליקציות שבדקנו לא מספרת סיפור כזה, כי לרוב הגנים אין אותו.</div>
+    <div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:24px">
+      <div class="card"><h3>20 עד 30 עצירות</h3><p>לא כל האוסף. מסלול הליכה אחד שאפשר לסיים.</p></div>
+      <div class="card"><h3>טקסט קצר, אודיו אופציונלי</h3><p>מי שרוצה לקרוא קורא, מי שרוצה להאזין מאזין. שתי הגרסאות מאותו תוכן.</p></div>
+      <div class="card"><h3>עברית ואנגלית</h3><p>שתי שפות מהיום הראשון. תיירים וקהל מקומי על אותו מסלול.</p></div>
+      <div class="card tint"><h3>סיפור שאפשר לספר</h3><p>לתקשורת, לתורמים, לבתי ספר ולמשרד החינוך. המסלול הוא גם נכס יחסי ציבור, לא רק פיצ'ר.</p></div>
+    </div>
+    <div class="card gt" style="margin-top:18px">
+      <p style="font-size:17px;line-height:1.6"><b>ולמה זה זול:</b> אותה תשתית מפה, אותו כרטיס צמח. מה שנוסף הוא עריכת תוכן, ואת זה הגן יודע לעשות טוב יותר מכל ספק תוכנה. סן דייגו עשתה בדיוק את זה עם אוסף צמחי המרפא שלה, והפכה אותו לסיור הדגל של האפליקציה.</p>
+    </div>
+    <div class="foot">חלופות אפשריות לאותו מסלול: אוסף הבונסאי, אוסף האלונים, או צמחי מרפא ותבלין. ההחלטה שלכם, ולא שלנו.</div>
+  </div>
+</section>
+
+<!-- ══════════ 11 · היכרות עם הקהל ══════════ -->
+<section class="slide" id="s12">
+  <div class="pad">
+    <div class="eyebrow"><span class="num">10</span> מה שאתם מקבלים</div>
+    <h2>ולראשונה, תדעו מה באמת עובד</h2>
+    <div class="lead" style="margin-top:12px;max-width:none">היום קשה לדעת אילו מסלולים עובדים, אילו אירועים ממלאים ומה מושך את המבקרים. מרגע שיש מוצר דיגיטלי, זה נמדד.</div>
+    <div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:22px">
+      <div class="card"><h3>אילו מסלולים נבחרים</h3><p>ואיפה בדיוק מבקרים עוצרים באמצע ולא מסיימים.</p></div>
+      <div class="card"><h3>אילו צמחים נצפים</h3><p>מה שהמבקרים באמת מחפשים, לעומת מה שהנחנו שיחפשו.</p></div>
+      <div class="card"><h3>מי חוזר, ומתי</h3><p>האם ההתראה על הפריחה החזירה מבקרים, ואיזו עונה חזקה יותר.</p></div>
+      <div class="card"><h3>אילו אירועים ממירים</h3><p>מהצפייה ועד ההרשמה. איזה סוג סדנה מתמלא ואיזה לא.</p></div>
+    </div>
+    <div class="card gt" style="margin-top:18px">
+      <p style="font-size:17px;line-height:1.6"><b>ולמה זה חשוב דווקא כשהתקציב מוגבל:</b> זו התוספת הזולה ביותר בכל הפרויקט. Analytics מוטמע מהיום הראשון וכמעט לא מוסיף להיקף הפיתוח. אבל הוא זה שיקבע מה מרחיבים בהמשך, ומה מוטב לא לבנות בכלל. במקום להחליט על תוכן, אירועים ופיתוח מתוך תחושה, מחליטים מתוך נתונים.</p>
+    </div>
+    <div class="foot">וזו גם התשובה לשאלה "איך נדע שזה עבד". הפרויקט לא מסתיים בהשקה, הוא מסתיים במספרים.</div>
+  </div>
+</section>
+
+<!-- ══════════ 13 · מי אנחנו ══════════ -->
+<section class="slide navy" id="s13">
+  <div class="pad">
+    <div class="eyebrow"><span class="num">11</span> מי אנחנו</div>
+    <h2>200Apps</h2>
+    <div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:24px">
+      <div class="stat" style="background:rgba(255,255,255,.09)"><div class="v mono" style="color:#fff">300+</div><div class="l" style="color:#b3bdd4">מוצרים שפותחו עד היום</div></div>
+      <div class="stat" style="background:rgba(255,255,255,.09)"><div class="v mono" style="color:#fff">12</div><div class="l" style="color:#b3bdd4">שנים. נוסדנו ב-2014</div></div>
+      <div class="stat" style="background:rgba(255,255,255,.09)"><div class="v mono" style="color:#fff">2023</div><div class="l" style="color:#b3bdd4">חלק מקבוצת ATS</div></div>
+      <div class="stat" style="background:rgba(255,255,255,.09)"><div class="v" style="color:#fff">ירושלים</div><div class="l" style="color:#b3bdd4">הבית שלנו, כמו שלכם</div></div>
+    </div>
+    <p class="kicker" style="margin-top:22px;font-size:17.5px">מודל מקצה-לקצה: מחקר, אפיון ממשק, עיצוב, פיתוח, QA ותחזוקה. מפות אינטראקטיביות, מערכות תוכן, חנויות מקוונות ומנויים, ואפליקציות שרצות בשטח מול קהל אמיתי. חלק מהלקוחות:</p>
+    <div class="wall" style="margin-top:20px">
+      <img src="assets/clients/c01.png" alt=""><img src="assets/clients/c02.png" alt=""><img src="assets/clients/c03.png" alt="">
+      <img src="assets/clients/c04.png" alt=""><img src="assets/clients/c05.png" alt=""><img src="assets/clients/c06.png" alt="">
+      <img src="assets/clients/c07.png" alt=""><img src="assets/clients/c08.png" alt=""><img src="assets/clients/c09.png" alt="">
+    </div>
+    <div class="wall" style="margin-top:12px">
+      <img src="assets/clients/c10.png" alt=""><img src="assets/clients/c11.png" alt=""><img src="assets/clients/c12.png" alt="">
+      <img src="assets/clients/c13.png" alt=""><img src="assets/clients/c14.png" alt=""><img src="assets/clients/c15.png" alt="">
+      <img src="assets/clients/c16.png" alt=""><img src="assets/clients/c17.png" alt=""><img src="assets/clients/c18.png" alt="">
+    </div>
+    <div class="foot">מ-2014, מירושלים.</div>
+  </div>
+</section>
+
+<!-- ══════════ 12 · גן החיות ══════════ -->
+<section class="slide navy" id="s14">
+  <div class="pad">
+    <div class="eyebrow"><span class="num">12</span> הוכחה</div>
+    <h2>את זה כבר בנינו, באותה עיר</h2>
+    <div class="two wide-r" style="margin-top:22px">
+      <div>
+        <div class="card" style="background:rgba(255,255,255,.09)">
+          <h3 style="font-size:23px">גן החיות התנ"כי, ירושלים</h3>
+          <ul class="clean" style="margin-top:12px">
+            <li>אתר מלא</li>
+            <li>מפה אינטראקטיבית של השטח</li>
+            <li>נוטיפיקציות על אירועים</li>
+            <li>חדשות ועדכונים</li>
+          </ul>
+        </div>
+        <p class="kicker" style="margin-top:18px">אטרקציה ירושלמית, אותו סוג מבקר, אותו אתגר ניווט בשטח פתוח. הרכיב היקר באפליקציה שלכם, המפה האינטראקטיבית, הוא רכיב שכבר בנינו ותחזקנו.</p>
+      </div>
+      <div class="gifbox"><img src="assets/zoo-demo.gif" alt="הדגמה של אפליקציית גן החיות התנכי"></div>
+    </div>
+    <div class="foot">ולכן זו לא מחקר ופיתוח בשבילנו. זו התאמה של משהו שרץ.</div>
+  </div>
+</section>
+
+<!-- ══════════ מה שבנינו · Service Link ══════════ -->
+<section class="slide navy" id="s15">
+  <div class="pad">
+    <div class="eyebrow"><span class="num">13</span> מה שבנינו</div>
+    <h2>Service Link</h2>
+    <div class="two" style="margin-top:18px;grid-template-columns:.82fr 1.18fr;gap:32px;align-items:center">
+      <div>
+        <p class="pdesc">אפליקציה שמנהלת טכנאי שירות בצפון אמריקה. הטכנאי מקבל מסלול יומי על מפה, עם עצירות ממוספרות, ניווט ביניהן וניהול הקריאה בשטח. <b>זה הרכיב היקר באפליקציה שלכם, וכבר בנינו אותו.</b></p>
+        <div class="tags" style="margin-top:16px"><span>מפה חיה</span><span>סיכות ממוספרות</span><span>מסלול יומי</span><span>מיקום בזמן אמת</span><span>ניווט</span></div>
+      </div>
+      <div class="pshot pad-mint"><img src="assets/p-servicelink.png" alt="Service Link"></div>
+    </div>
+    <div class="foot">מפה, סיכות, מסלול ומיקום המבקר. אלה בדיוק אותם רכיבים, בפעולה, מול קהל אמיתי.</div>
+  </div>
+</section>
+
+<!-- ══════════ מה שבנינו · מיזם מיגור המלריה באפריקה ══════════ -->
+<section class="slide navy" id="s16">
+  <div class="pad">
+    <div class="eyebrow"><span class="num">14</span> מה שבנינו</div>
+    <h2>מיזם מיגור המלריה באפריקה</h2>
+    <div class="two" style="margin-top:18px;grid-template-columns:.82fr 1.18fr;gap:32px;align-items:center">
+      <div>
+        <p class="pdesc">מערכת שמנהלת קמפייני ריסוס בכפרים בגאנה. מפת לוויין מחולקת לאזורי סריקה, כל אזור נמדד באחוזי כיסוי, והדיווח מגיע מהשדה גם ממקומות בלי תשתית תקשורת.</p>
+        <div class="tags" style="margin-top:16px"><span>מפה מבוססת אזורים</span><span>דיווח מהשטח</span><span>עבודה בלי רשת</span><span>מדידת כיסוי</span></div>
+      </div>
+      <div class="pshot pad-dark"><img src="assets/p-malaria.png" alt="מיזם מיגור המלריה באפריקה"></div>
+    </div>
+    <div class="foot">כשמערכת צריכה לעבוד בשדה, בלי קליטה ובלי חשמל, זה נבדק. אצלכם זה 170 דונם בלב ירושלים.</div>
+  </div>
+</section>
+
+<!-- ══════════ מה שבנינו · Express City Wash ══════════ -->
+<section class="slide navy" id="s17">
+  <div class="pad">
+    <div class="eyebrow"><span class="num">15</span> מה שבנינו</div>
+    <h2>Express City Wash</h2>
+    <div class="two" style="margin-top:18px;grid-template-columns:.82fr 1.18fr;gap:32px;align-items:center">
+      <div>
+        <p class="pdesc">מערכת מנויים ל-24 סניפי שטיפת רכב. <b>40,000 מנויים בחודש</b> ו-100,000 שטיפות ביום: חיוב חוזר, מימוש בשטח, ניהול לקוחות ובקרה על כל סניף בנפרד.</p>
+        <div class="tags" style="margin-top:16px"><span>מנויים וחיוב חוזר</span><span>מימוש בשטח</span><span>ניהול לקוחות</span><span>דשבורד תפעולי</span></div>
+      </div>
+      <div class="pshot pad-light"><img src="assets/p-citywash.png" alt="Express City Wash"></div>
+    </div>
+    <div class="foot">זו התשתית שמאחורי מנויי הגן, חברי הידידים וחנות הזרעים. מסחר חוזר בקנה מידה, לא חנות אונליין קטנה.</div>
+  </div>
+</section>
+
+<!-- ══════════ מה שבנינו · SparkIL · הסוכנות היהודית ══════════ -->
+<section class="slide navy" id="s18">
+  <div class="pad">
+    <div class="eyebrow"><span class="num">16</span> מה שבנינו</div>
+    <h2>SparkIL · הסוכנות היהודית</h2>
+    <div class="two" style="margin-top:18px;grid-template-columns:.82fr 1.18fr;gap:32px;align-items:center">
+      <div>
+        <p class="pdesc">פלטפורמת הלוואות P2P שמחברת תומכים בעולם לעסקים קטנים בישראל. גיוס, מעקב על החזרים, תשלומים, סיפורי לווים וסינון לפי קטגוריות, בעברית ובאנגלית.</p>
+        <div class="tags" style="margin-top:16px"><span>פינטק ותשלומים</span><span>דו-לשוני</span><span>ניהול תוכן</span><span>קמפיינים</span></div>
+      </div>
+      <div class="pshot pad-light"><img src="assets/p-sparkil.png" alt="SparkIL · הסוכנות היהודית"></div>
+    </div>
+    <div class="foot">כשמערכת נוגעת בכספים של אנשים אחרים, אין מרווח לטעות. גם הרשמה לסדנה וגם רכישת זרעים הן אותה דיסציפלינה.</div>
+  </div>
+</section>
+
+<!-- ══════════ מה שבנינו · AMIT LMS ══════════ -->
+<section class="slide navy" id="s19">
+  <div class="pad">
+    <div class="eyebrow"><span class="num">17</span> מה שבנינו</div>
+    <h2>AMIT LMS</h2>
+    <div class="two" style="margin-top:18px;grid-template-columns:.82fr 1.18fr;gap:32px;align-items:center">
+      <div>
+        <p class="pdesc">מערכת למידה לרשת חינוך ארצית: ניהול תוכן ומסלולי למידה, עורך שיעורים, מעקב התקדמות אישי ודשבורדים למורים ולתלמידים.</p>
+        <div class="tags" style="margin-top:16px"><span>ניהול תוכן בקנה מידה</span><span>מסלולי למידה</span><span>מעקב התקדמות</span><span>חינוך</span></div>
+      </div>
+      <div class="pshot pad-violet"><img src="assets/p-amit.png" alt="AMIT LMS"></div>
+    </div>
+    <div class="foot">הגן מפעיל קמפוס שלם עם קורסים, סדנאות והשתלמויות מורי דרך. מערכות תוכן וחינוך הן בית מקצועי שלנו.</div>
+  </div>
+</section>
+
+<!-- ══════════ 15 · חתימה ══════════ -->
+<section class="slide dark closing" id="s20">
+  <div class="pad">
+    <img src="assets/garden-logo.svg" alt="" style="height:74px;width:auto;margin-bottom:34px">
+    <h2 style="font-size:44px;max-width:22ch">"where plants grow people"</h2>
+    <p class="lead" style="max-width:52ch;text-align:center">נשמח להמשיך את השיחה, ולראות את השבילים מקרוב.</p>
+    <div class="sig">
+      <div class="p"><div class="nm">אלכס יעקובוב</div><div class="rl">VP &amp; GM</div></div>
+      <div class="p"><div class="nm">חמי בן לביא</div><div class="rl">Head of Product Operations</div></div>
+    </div>
+    <div class="datestrip" style="margin-top:26px;justify-content:center">
+      <span>054-4608119</span><span>·</span>
+      <span dir="ltr">hemi@200apps.co</span><span>·</span>
+      <span dir="ltr">200apps.com</span>
+    </div>
+  </div>
+</section>
+
+</div></div>
+
+<div id="chrome"><div id="dots"></div><div id="cnt"></div></div>
+
+<script>
+(function(){
+  var stage=document.getElementById('stage'),
+      slides=[].slice.call(document.querySelectorAll('.slide')),
+      dots=document.getElementById('dots'),
+      cnt=document.getElementById('cnt'),
+      hint=document.getElementById('hint'),
+      i=0, N=slides.length;
+
+  function fit(){
+    var s=Math.min(window.innerWidth/1280, window.innerHeight/720)*0.965;
+    stage.style.transform='scale('+s+')';
+  }
+  window.addEventListener('resize',fit); fit();
+
+  slides.forEach(function(_,k){
+    var d=document.createElement('i');
+    d.onclick=function(){go(k)};
+    dots.appendChild(d);
+  });
+
+  /* ---------- prototype demos ---------- */
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var demos=[].slice.call(document.querySelectorAll('.proto')).map(function(p){
+    var d={
+      root:p,
+      dev:p.querySelector('.dev'),
+      bar:p.querySelector('.pbar'),
+      n:parseInt(p.dataset.demo,10),
+      ms:parseInt(p.dataset.auto,10)||2800,
+      step:0, timer:null
+    };
+    d.render=function(){
+      d.dev.className=d.dev.className.replace(/\bst-\d+\b/g,'').trim()+' st-'+d.step;
+      [].forEach.call(d.root.querySelectorAll('.sh'),function(sh){
+        sh.classList.toggle('on', parseInt(sh.dataset.st,10)===d.step);
+      });
+      [].forEach.call(d.bar.children,function(b,k){b.classList.toggle('on',k===d.step)});
+    };
+    d.next=function(){ d.step=(d.step+1)%d.n; d.render(); };
+    d.start=function(){
+      d.stop(); d.step=0; d.render();
+      if(!reduce) d.timer=setInterval(d.next,d.ms);
+    };
+    d.stop=function(){ if(d.timer){clearInterval(d.timer);d.timer=null} };
+    p.addEventListener('click',function(e){
+      e.stopPropagation();
+      d.next();
+      if(d.timer){clearInterval(d.timer);d.timer=setInterval(d.next,d.ms)}
+    });
+    d.render();
+    return d;
+  });
+
+  function syncDemos(){
+    demos.forEach(function(d){
+      if(d.root.closest('.slide')===slides[i]) d.start(); else d.stop();
+    });
+  }
+
+  function go(n){
+    i=Math.max(0,Math.min(N-1,n));
+    slides.forEach(function(s,k){s.classList.toggle('on',k===i)});
+    [].forEach.call(dots.children,function(d,k){d.classList.toggle('on',k===i)});
+    cnt.textContent=(i+1)+' / '+N;
+    syncDemos();
+  }
+
+  document.addEventListener('keydown',function(e){
+    var k=e.key;
+    if(k==='ArrowLeft'||k==='PageDown'||k===' '||k==='Enter'){go(i+1);e.preventDefault()}
+    else if(k==='ArrowRight'||k==='PageUp'||k==='Backspace'){go(i-1);e.preventDefault()}
+    else if(k==='Home'){go(0)} else if(k==='End'){go(N-1)}
+    else if(k==='f'||k==='F'){
+      if(document.fullscreenElement){document.exitFullscreen()}
+      else{document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen()}
+    }
+  });
+
+  // click right half = next, left half = prev (RTL reading order)
+  stage.addEventListener('click',function(e){
+    if(e.target.closest('#dots'))return;
+    var r=stage.getBoundingClientRect();
+    go(i + ((e.clientX-r.left) < r.width/2 ? 1 : -1));
+  });
+
+  setTimeout(function(){hint.style.opacity='0'},6000);
+  go(0);
+})();
+</script>
+<script data-goatcounter="https://200apps.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
