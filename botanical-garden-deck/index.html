@@ -60,6 +60,12 @@ b,strong{font-weight:600;color:var(--ink)}
 .navy .eyebrow{color:#9fb0d8}
 .navy .eyebrow .num{background:#3a5bd0}
 
+/* ---------- mid: content between the header and the foot ----------
+   .pad is a flex column and .foot has margin-top:auto, so a slide with short
+   content used to leave the whole slack as one gap above the foot. .mid takes
+   the slack instead and centres the content inside it. */
+.mid{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center}
+
 /* ---------- cards ---------- */
 .grid{display:grid;gap:16px}
 .card{background:#fff;border-radius:18px;padding:22px 24px}
@@ -286,11 +292,25 @@ b,strong{font-weight:600;color:var(--ink)}
 .tags span{font-size:11px;font-weight:600;background:rgba(255,255,255,.13);color:#dbe2f2;
   padding:4px 10px;border-radius:99px}
 
+/* ---------- benchmark screenshots ----------
+   fixed panel height + contain, so three shots of different aspect ratios
+   still sit on one baseline */
+.bench{background:#fff;border-radius:16px;padding:13px;height:248px;display:grid;place-items:center}
+.bench img{max-width:100%;max-height:222px;width:auto;height:auto;display:block;border-radius:5px}
+.bcap{font-size:13.5px;line-height:1.5;color:#bccdc7;margin-top:11px}
+
 /* ---------- questions panel ---------- */
 .qs{background:var(--green-tint);border-radius:18px;padding:18px 24px}
 .qs .h{font-size:14px;font-weight:600;letter-spacing:.05em;color:var(--green);margin-bottom:12px}
 .qs .row{display:flex;flex-wrap:wrap;gap:9px}
 .qs .q{background:#fff;border-radius:999px;padding:8px 16px;font-size:15px;color:var(--green);font-weight:500}
+/* benchmark models: keep the three card bodies on one baseline even when a
+   heading listing 4 gardens wraps to two lines */
+#s5 .card h3{min-height:50px}
+/* three lessons carry a whole slide, so give them more weight than a 4-up card */
+#s6 .card{padding:28px 30px}
+#s6 .card h3{font-size:20.5px}
+#s6 .card p{font-size:16px;line-height:1.62;margin-top:10px}
 
 /* ---------- gps annotation ---------- */
 .gps{position:absolute;top:50%;right:calc(100% + 10px);display:flex;align-items:center;gap:7px;z-index:4}
@@ -331,9 +351,13 @@ b,strong{font-weight:600;color:var(--ink)}
 .gifbox{border-radius:18px;overflow:hidden;background:#fff;height:392px;display:grid;place-items:center}
 .gifbox img{width:100%;height:100%;object-fit:cover;object-position:center}
 
-/* ---------- logo wall ---------- */
-.wall{display:grid;grid-template-columns:repeat(9,1fr);gap:12px;align-items:center}
-.wall img{width:100%;height:40px;object-fit:contain;filter:grayscale(1) brightness(0) invert(1);opacity:.62}
+/* ---------- logo wall ----------
+   One row, capped by BOTH height and width so a 6:1 wordmark and a square mark
+   read at the same optical weight. A fixed height alone made wide logos short
+   and square logos tall. Opacity is tuned per logo inline, not globally. */
+.wall{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.wall img{max-height:48px;max-width:118px;width:auto;height:auto;object-fit:contain;
+  filter:grayscale(1) brightness(0) invert(1)}
 
 /* ---------- phases ---------- */
 .phases{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -600,11 +624,11 @@ ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;backgro
       </div>
       <div class="stat">
         <svg class="ic" viewBox="0 0 24 24"><path d="M12 21v-8.4"/><path d="M12 12.6c0-4-2.9-6-6.8-6 0 4 2.9 6 6.8 6z"/><path d="M12 12.6c0-4 2.9-6 6.8-6 0 4-2.9 6-6.8 6z"/></svg>
-        <div class="v mono">7,000+</div><div class="l">מינים וזנים. האוסף הגדול בישראל ובמזרח התיכון</div>
+        <div class="v mono"><span dir="ltr">7,000+</span></div><div class="l">מינים וזנים. האוסף הגדול בישראל ובמזרח התיכון</div>
       </div>
       <div class="stat">
         <svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="9.4" r="2.2"/><path d="M12 7.2V4.6M9.8 9.4H7.2M14.2 9.4h2.6M10.3 7.7L8.6 6M13.7 7.7L15.4 6M10.3 11.1L8.6 12.8M13.7 11.1l1.7 1.7"/><path d="M12 14.4V21"/></svg>
-        <div class="v mono">300+</div><div class="l">צמחים בסכנת הכחדה. מאגר גנטי חי</div>
+        <div class="v mono"><span dir="ltr">300+</span></div><div class="l">צמחים בסכנת הכחדה. מאגר גנטי חי</div>
       </div>
       <div class="stat">
         <svg class="ic" viewBox="0 0 24 24"><circle cx="9.2" cy="7.8" r="2.9"/><path d="M3.4 19.6c0-3.2 2.6-5.8 5.8-5.8s5.8 2.6 5.8 5.8"/><circle cx="17.4" cy="9.2" r="2.2"/><path d="M16.6 13.8c2.5.5 4.4 2.7 4.4 5.4"/></svg>
@@ -677,7 +701,7 @@ ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;backgro
     <div class="eyebrow"><span class="num">03</span> בנצ'מרק</div>
     <h2>9 גנים בוטניים בעולם עם אפליקציה רשמית</h2>
     <div class="lead">בדקנו גנים בארצות הברית, אוסטרליה, ניו זילנד, בלארוס וברבדוס. הן מתחלקות לשלושה דגמים.</div>
-    <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:24px">
+    <div class="mid"><div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:24px">
       <div class="card">
         <div class="pill plum" style="margin-bottom:12px">רב-שירותית</div>
         <h3>Fairchild, מיאמי</h3>
@@ -686,14 +710,14 @@ ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;backgro
       </div>
       <div class="card">
         <div class="pill ghost" style="margin-bottom:12px">פרשנות וניווט</div>
-        <h3>שיקגו · אוסטרליה</h3>
-        <p>מפה, חיפוש צמח לפי שם וצבע, "מה פורח עכשיו", מסלולי הליכה, אודיו, ותוכן שעובד בלי רשת.</p>
-        <p style="margin-top:11px;color:#fff;font-weight:500">שיקגו: +10K הורדות, אבל עדכון אחרון 01.2025 ו-3.7★ ב-iOS.</p>
+        <h3>שיקגו · אוסטרליה · פיניקס · דארווין</h3>
+        <p>מפה, חיפוש צמח לפי שם וצבע, "מה פורח עכשיו", מסלולי הליכה, שירותים וחניה, ותוכן שעובד בלי רשת.</p>
+        <p style="margin-top:11px;color:#fff;font-weight:500">שיקגו: יותר מ-10K הורדות, אבל עדכון אחרון 01.2025 ו-3.7★ ב-iOS.</p>
       </div>
       <div class="card">
         <div class="pill ghost" style="margin-bottom:12px">מדריך סיור ממוקד</div>
-        <h3>סן דייגו · מינסק · אנדרומדה</h3>
-        <p>אודיו, תמונות וסיפורי מקום רב-לשוניים. מוצר צנוע, ממוקד באוסף אחד או בשביל אחד.</p>
+        <h3>סן דייגו · אוקלנד · מינסק · אנדרומדה</h3>
+        <p>סיור עצמי, סיפורי מקום, אודיו ותמונות. מוצר צנוע, ממוקד באוסף אחד או בשביל אחד.</p>
         <p style="margin-top:11px;color:#fff;font-weight:500">אנדרומדה: 4 שפות. סן דייגו: אנגלית וספרדית.</p>
       </div>
     </div>
@@ -704,7 +728,34 @@ ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;backgro
       <span class="pill ghost">Auckland</span><span class="pill ghost">Minsk</span>
       <span class="pill ghost">Andromeda, ברבדוס</span>
     </div>
+    </div>
     <div class="foot">נבדק ל-3 באוגוסט 2026, מתוך אתרי הגנים ודפי החנויות הרשמיים.</div>
+  </div>
+</section>
+
+<!-- ══════════ 5b · המסכים עצמם ══════════ -->
+<section class="slide dark" id="s5b">
+  <div class="pad">
+    <div class="eyebrow"><span class="num">03</span> בנצ'מרק</div>
+    <h2>וכך זה נראה אצלם, כבר היום</h2>
+    <div class="lead">אלה מסכים אמיתיים מתוך האפליקציות שבדקנו. אותם שלושה מסכים חוזרים כמעט בכולן: מפה, חיפוש צמח, ואודיו.</div>
+    <div class="mid">
+    <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:24px;gap:16px">
+      <div>
+        <div class="bench"><img src="assets/bench-screens.png" alt="מסכי אודיו, חיפוש ומפה מאפליקציה של גן בוטני"></div>
+        <div class="bcap">אודיו, חיפוש ומפה. שלושת המסכים שחוזרים בכל אפליקציה במדגם.</div>
+      </div>
+      <div>
+        <div class="bench"><img src="assets/bench-plant-map.png" alt="כרטיס צמח ומפת גן מאפליקציה של גן בוטני"></div>
+        <div class="bcap">כרטיס צמח מלא, ולידו מפת הגן. בדיוק התוכן שיש לכם באתר.</div>
+      </div>
+      <div>
+        <div class="bench"><img src="assets/bench-minsk.png" alt="שלושה מסכים מאפליקציית הגן הבוטני במינסק"></div>
+        <div class="bcap">מינסק: אוסף לפי עונה, אודיו, ובניית מסלול על המפה.</div>
+      </div>
+    </div>
+    </div>
+    <div class="foot">אין כאן פיצ'ר אחד שצריך להמציא. הבסיס הזה רץ בתשעה גנים, בחמש מדינות, כבר היום. מה שנשאר להחליט הוא איך הוא נראה בירושלים.</div>
   </div>
 </section>
 
@@ -713,13 +764,15 @@ ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;backgro
   <div class="pad">
     <div class="eyebrow"><span class="num">04</span> מה למדנו</div>
     <h2>מה באמת עובד, ומה רק נראה טוב במצגת</h2>
-    <div class="grid" style="grid-template-columns:1fr 1fr;margin-top:24px">
+    <div class="lead">ארבע מסקנות מתוך המדגם, וכל אחת מהן מגולמת בהצעה שלפניכם.</div>
+    <div class="mid"><div class="grid" style="grid-template-columns:1fr 1fr;margin-top:22px">
       <div class="card"><h3>ניווט לבד לא מספיק</h3><p>מפה חייבת סיבה להיפתח: חיפוש צמח מסוים, מסלול מותאם, פריחה עונתית. מפה סטטית שהועתקה מחוברת מודפסת לא מייצרת ערך שחוזר.</p></div>
       <div class="card"><h3>מידע עונתי הוא מנוע החזרה</h3><p>"מה פורח עכשיו" ואירועים מתחלפים נותנים סיבה לפתוח את האפליקציה <b>לפני</b> כל ביקור. מדריך אודיו שלא מתעדכן שימושי פעם אחת.</p></div>
       <div class="card"><h3>עבודה בלי רשת היא אסטרטגיה</h3><p>אוסטרליה מאפשרת להוריד מפות ותוכן מראש. זה מוריד תלות בקליטה בתוך הגן, וחוסך לתיירים חבילות נדידה.</p></div>
-      <div class="card tint"><h3>לא חייבים להתחיל בחנויות</h3><p>דארווין באוסטרליה העבירה ב-2026 את הניווט שלה לדפדפן, בלי התקנה. חסם נמוך בהרבה למבקר חד-פעמי. לכן נציע גם כניסה מהדפדפן, לצד האפליקציה.</p></div>
+      <div class="card"><h3>נגישות היא הפער הגדול</h3><p>ארבע מתשע מציעות כמה שפות, אבל כמעט אף אחת לא מצהירה על קורא מסך, הגדלת טקסט או כתוביות. אצלכם זה יכול להיות מסנן מסלול אמיתי, לא הצהרה.</p></div>
     </div>
-    <div class="foot">והערה על סדר גודל: +10K הורדות בשיקגו, +1K ברוב, +100 באוקלנד. זה לא שוק רווי. זה שוק שאף אחד עוד לא ניצח.</div>
+    </div>
+    <div class="foot">והערה על סדר גודל: מעל 10K הורדות בשיקגו, מעל 1K ברוב, ומעל 100 באוקלנד. זה לא שוק רווי. זה שוק שאף אחד עוד לא ניצח.</div>
   </div>
 </section>
 
@@ -727,8 +780,9 @@ ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;backgro
 <section class="slide dark" id="s7">
   <div class="pad">
     <div class="eyebrow"><span class="num">05</span> ההזדמנות</div>
-    <h2>מה 9 הגנים האלה עוד לא עשו</h2>
-    <div class="zeros" style="margin-top:30px">
+    <h2>ומה שעוד פנוי, אחרי שהבסיס יעבוד</h2>
+    <div class="lead">אלה לא הליבה של ההצעה. הליבה היא מה שכבר מוכח בתשעת הגנים. אלה כיוונים שנשארו פתוחים במדגם, וששווה לשקול בהמשך.</div>
+    <div class="mid"><div class="zeros" style="margin-top:26px">
       <div class="zero"><div class="z">0<small>/9</small></div><div class="l">זיהוי צמח בצילום, או שימוש כלשהו ב-AI</div></div>
       <div class="zero"><div class="z">0<small>/9</small></div><div class="l">מצב ילדים או משחק דיגיטלי</div></div>
       <div class="zero"><div class="z">0<small>/9</small></div><div class="l">מדע אזרחי ושיתוף תצפיות</div></div>
@@ -740,6 +794,7 @@ ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;backgro
       ולגן בירושלים <b>כבר יש</b> את חנות הזרעים, את הקורסים, את הסדנאות ואת האירועים שמביאים עשרות אלפי אורחים.
       הדבר היחיד שחסר הוא שהם יהיו בכיס של המבקר.</p>
     </div>
+    </div>
     <div class="foot">כלומר: הפער בין הגן לבין המובילות בעולם קטן בהרבה ממה שנראה. בשני מקומות הגן אפילו מקדים אותן.</div>
   </div>
 </section>
@@ -750,17 +805,18 @@ ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;backgro
     <div class="eyebrow"><span class="num">06</span> האפליקציה</div>
     <h2>מה שהגן כבר יודע, במקום שבו המבקר עומד</h2>
     <div class="lead" style="margin-top:12px;max-width:none">אפליקציה אחת בשתי החנויות, ובנוסף כניסה מיידית מהדפדפן דרך QR בשער למי שמבקר פעם אחת ולא רוצה להתקין.</div>
-    <div class="pillrow" style="margin-top:14px">
+    <div class="mid"><div class="pillrow" style="margin-top:14px">
       <span class="pill">iOS ואנדרואיד</span><span class="pill ghost">QR בשער</span>
       <span class="pill ghost">עברית ואנגלית</span><span class="pill ghost">עובדת בלי רשת</span>
     </div>
     <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:20px;gap:14px">
       <div class="card" style="padding:16px 20px"><h3>מפה חיה</h3><p>שש החלקות, כניסות, שירותים, מים, בית קפה וחניה. ומיקום המבקר עליה בזמן אמת.</p></div>
       <div class="card" style="padding:16px 20px"><h3>כרטיס צמח</h3><p>שם עממי ומדעי, אזור מוצא, עונת פריחה ותמונה. נשען על מאגר הצמחים שכבר קיים באתר שלכם.</p></div>
-      <div class="card" style="padding:16px 20px"><h3>מה פורח עכשיו</h3><p>התצוגה העונתית. זה הפיצ'ר שמחזיר מבקרים, לפי כל הגנים שבדקנו.</p></div>
+      <div class="card" style="padding:16px 20px"><h3>מה פורח עכשיו</h3><p>התצוגה העונתית, ומסלול שהולך בעקבות הפריחה של אותו שבוע. זה הפיצ'ר שמחזיר מבקרים, לפי כל הגנים שבדקנו.</p></div>
       <div class="card" style="padding:16px 20px"><h3>מסלולים מודרכים</h3><p>לפי נושא ולפי זמן: משפחות, בוטניקה, נגישות, מסלול קצר או ארוך.</p></div>
-      <div class="card" style="padding:16px 20px"><h3>מצב ילדים ומשחק בשטח</h3><p>חפש את המטמון, חידות מבוססות מקום ותגים דיגיטליים. אף אחת מ-9 האפליקציות בעולם לא עושה את זה.</p></div>
+      <div class="card" style="padding:16px 20px"><h3>מצב ילדים ומשחק בשטח</h3><p>חפש את המטמון, חידות מבוססות מקום ותגים דיגיטליים. הכי רלוונטי לקהל המשפחות שכבר מגיע אליכם.</p></div>
       <div class="card" style="padding:16px 20px"><h3>עבודה בלי רשת</h3><p>מפה ותוכן שנטענים מראש. בלי תלות בקליטה בתוך הגן ובלי חבילות נדידה לתיירים.</p></div>
+    </div>
     </div>
     <div class="foot">כל התוכן הזה כבר קיים אצלכם: מאגר הצמחים, עונות הפריחה והחלקות. האפליקציה לא כותבת אותו מחדש, היא מביאה אותו לשביל.</div>
   </div>
@@ -772,14 +828,15 @@ ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;backgro
     <div class="eyebrow"><span class="num">07</span> האפליקציה</div>
     <h2>ומה שממשיך אחרי שהמבקר יוצא מהשער</h2>
     <div class="lead" style="margin-top:12px;max-width:none">כאן הביקור החד-פעמי הופך לקשר שחוזר בכל עונה, ובדיוק כאן הגן כבר מחזיק את הנכסים: אירועים, קורסים, סדנאות וחנות זרעים.</div>
-    <div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:22px">
+    <div class="mid"><div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:22px">
       <div class="card"><h3>לוח אירועים והרשמה</h3><p>כל האירועים, הקורסים והסדנאות במקום אחד, עם הרשמה ורכישת כרטיס בלחיצה. בלי לעבור לאתר חיצוני.</p></div>
-      <div class="card"><h3>נוטיפיקציות על אירועים ופריחה</h3><p>"הלוטוסים בשיאם" או "נותרו 4 מקומות בסדנה". זו הסיבה שמבקר פותח את האפליקציה לפני שהוא מחליט לבוא.</p></div>
+      <div class="card"><h3>התראות על אירועים ופריחה</h3><p>"הלוטוסים בשיאם" או "נותרו 4 מקומות בסדנה". זו הסיבה שמבקר פותח את האפליקציה לפני שהוא מחליט לבוא.</p></div>
       <div class="card"><h3>חנות הזרעים בכיס</h3><p>המסחר שכבר קיים אצלכם, זמין למבקר בזמן שהוא עומד מול הצמח. כולל מבצעים והתראות.</p></div>
-      <div class="card"><h3>מועדפים ומדף אישי</h3><p>צמח או פינה שאהב נשמרים ומחכים לביקור הבא. זה מה שהופך מבקר לחבר.</p></div>
+      <div class="card"><h3>פרופיל אישי ומדף מועדפים</h3><p>צמח או פינה שאהב נשמרים ומחכים לביקור הבא. באותו מסך גם המנוי שלו, עם תזכורת לחדש לפני שהוא פג. זה מה שהופך מבקר לחבר.</p></div>
     </div>
     <div class="card gt" style="margin-top:18px">
-      <p style="font-size:17px;line-height:1.6">מבין תשע האפליקציות שבדקנו בעולם, <b>רק אחת</b> מחברת מסחר, כרטיסים ומנויים לתוך האפליקציה. לגן בירושלים כבר יש את כל השלושה. הם פשוט לא בכיס של המבקר.</p>
+      <p style="font-size:17px;line-height:1.6">Fairchild במיאמי היא היחידה במדגם שחיברה מסחר, כרטיסים ומנויים לתוך האפליקציה, <b>והיא גם בעלת המעורבות החזקה במדגם</b>. כלומר זה נבדק, וזה עובד. לגן בירושלים כבר יש את כל השלושה. הם פשוט לא בכיס של המבקר.</p>
+    </div>
     </div>
     <div class="foot">ובכל אלה יש עוד יתרון: כשההרשמות והרכישות עוברות דרך האפליקציה, אתם רואים סוף סוף מה עובד. לזה נגיע בהמשך.</div>
   </div>
@@ -788,14 +845,14 @@ ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;backgro
 <!-- ══════════ 12 · AI ══════════ -->
 <section class="slide dark" id="s10">
   <div class="pad">
-    <div class="eyebrow"><span class="num">08</span> האפליקציה</div>
-    <h2>וכאן אפשר להציע משהו שאף גן בוטני בעולם עוד לא מציע</h2>
+    <div class="eyebrow"><span class="num">08</span> רעיונות מתקדמים</div>
+    <h2>ושלושה רעיונות מתקדמים, לשלב הבא</h2>
     <div class="two wide-l" style="margin-top:18px;align-items:center">
       <div>
         <div class="grid" style="grid-template-columns:1fr;gap:11px">
           <div class="card" style="padding:15px 20px">
             <h3>זיהוי צמח בצילום</h3>
-            <p>המבקר מצלם עלה או פרח ומקבל את השם, המוצא והסיפור. אפס מתשע האפליקציות בעולם עושות את זה.</p>
+            <p>המבקר מצלם עלה או פרח ומקבל את השם, המוצא והסיפור, מתוך מאגר הצמחים שלכם.</p>
           </div>
           <div class="card" style="padding:15px 20px">
             <h3>שאל את הגן</h3>
@@ -805,11 +862,6 @@ ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;backgro
             <h3>מסלול שמתאים את עצמו</h3>
             <p>כמו הרגע הראשון בספוטיפיי שבו נשאלים מה מעניין אותך: משפחה, בוטניקה, נגישות. ומשם המסלול נבנה לפי העונה, הגיל והזמן הפנוי.</p>
           </div>
-        </div>
-        <div class="card" style="margin-top:13px;background:rgba(255,255,255,.11);padding:16px 20px">
-          <p style="font-size:16.5px;line-height:1.5;color:#fff">
-          לפני שלוש שנים כל אחד מאלה היה פרויקט מחקר בתקציב של מיליונים. היום זו <b>שכבה דקה מעל תוכן שכבר קיים</b>.
-          זה מה שמאפשר להציע את זה בהיקף פיתוח שמתאים לגן, ולא לתאגיד.</p>
         </div>
       </div>
       <div class="proto" data-demo="3" data-auto="2400">
@@ -837,7 +889,7 @@ ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;backgro
         <div class="pbar"><i class="on"></i><i></i><i></i></div>
       </div>
     </div>
-    <div class="foot">ומה שלא נציע: AR ו-VR. אף גן במדגם לא עושה את זה, ולגן בגודל הזה זו הוצאה בלי החזר.</div>
+    <div class="foot">לפני שלוש שנים כל אחד מאלה היה פרויקט מחקר בתקציב של מיליונים. היום זו <b>שכבה דקה מעל תוכן שכבר קיים</b>, ולכן זה נכנס להיקף פיתוח שמתאים לגן ולא לתאגיד. ומה שלא נציע: AR ו-VR, שאף גן במדגם לא עושה, ולגן בגודל הזה זו הוצאה בלי החזר.</div>
   </div>
 </section>
 
@@ -846,17 +898,18 @@ ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;backgro
   <div class="pad">
     <div class="eyebrow"><span class="num">09</span> מסלול הדגל</div>
     <h2>300 הצמחים שאין להם עוד בית</h2>
-    <div class="lead">הגן הוא מאגר גנטי חי ליותר מ-300 צמחים בסכנת הכחדה בישראל ובעולם. אף אחת מתשע האפליקציות שבדקנו לא מספרת סיפור כזה, כי לרוב הגנים אין אותו.</div>
-    <div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:24px">
+    <div class="lead">הגן הוא מאגר גנטי חי ליותר מ-300 צמחים בסכנת הכחדה בישראל ובעולם. זה נכס שרוב הגנים במדגם פשוט לא מחזיקים, ולכן גם אין להם מה לספר עליו.</div>
+    <div class="mid"><div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:24px">
       <div class="card"><h3>20 עד 30 עצירות</h3><p>לא כל האוסף. מסלול הליכה אחד שאפשר לסיים.</p></div>
       <div class="card"><h3>טקסט קצר, אודיו אופציונלי</h3><p>מי שרוצה לקרוא קורא, מי שרוצה להאזין מאזין. שתי הגרסאות מאותו תוכן.</p></div>
       <div class="card"><h3>עברית ואנגלית</h3><p>שתי שפות מהיום הראשון. תיירים וקהל מקומי על אותו מסלול.</p></div>
       <div class="card tint"><h3>סיפור שאפשר לספר</h3><p>לתקשורת, לתורמים, לבתי ספר ולמשרד החינוך. המסלול הוא גם נכס יחסי ציבור, לא רק פיצ'ר.</p></div>
     </div>
     <div class="card gt" style="margin-top:18px">
-      <p style="font-size:17px;line-height:1.6"><b>ולמה זה זול:</b> אותה תשתית מפה, אותו כרטיס צמח. מה שנוסף הוא עריכת תוכן, ואת זה הגן יודע לעשות טוב יותר מכל ספק תוכנה. סן דייגו עשתה בדיוק את זה עם אוסף צמחי המרפא שלה, והפכה אותו לסיור הדגל של האפליקציה.</p>
+      <p style="font-size:17px;line-height:1.6"><b>ולמה זה זול באופן יחסי:</b> אותה תשתית מפה, אותו כרטיס צמח. מה שנוסף הוא עריכת תוכן, ואת זה הגן יודע לעשות טוב יותר מכל ספק תוכנה. סן דייגו עשתה בדיוק את זה עם אוסף צמחי המרפא שלה, והפכה אותו לסיור הדגל של האפליקציה.</p>
     </div>
-    <div class="foot">חלופות אפשריות לאותו מסלול: אוסף הבונסאי, אוסף האלונים, או צמחי מרפא ותבלין. ההחלטה שלכם, ולא שלנו.</div>
+    </div>
+    <div class="foot">חלופות אפשריות לאותו מסלול: מסלול בעקבות הפריחה העונתית, אוסף הבונסאי, אוסף האלונים, או צמחי מרפא ותבלין. ההחלטה שלכם, ולא שלנו.</div>
   </div>
 </section>
 
@@ -866,7 +919,7 @@ ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;backgro
     <div class="eyebrow"><span class="num">10</span> מה שאתם מקבלים</div>
     <h2>ולראשונה, תדעו מה באמת עובד</h2>
     <div class="lead" style="margin-top:12px;max-width:none">היום קשה לדעת אילו מסלולים עובדים, אילו אירועים ממלאים ומה מושך את המבקרים. מרגע שיש מוצר דיגיטלי, זה נמדד.</div>
-    <div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:22px">
+    <div class="mid"><div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:22px">
       <div class="card"><h3>אילו מסלולים נבחרים</h3><p>ואיפה בדיוק מבקרים עוצרים באמצע ולא מסיימים.</p></div>
       <div class="card"><h3>אילו צמחים נצפים</h3><p>מה שהמבקרים באמת מחפשים, לעומת מה שהנחנו שיחפשו.</p></div>
       <div class="card"><h3>מי חוזר, ומתי</h3><p>האם ההתראה על הפריחה החזירה מבקרים, ואיזו עונה חזקה יותר.</p></div>
@@ -874,6 +927,7 @@ ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;backgro
     </div>
     <div class="card gt" style="margin-top:18px">
       <p style="font-size:17px;line-height:1.6"><b>ולמה זה חשוב דווקא כשהתקציב מוגבל:</b> זו התוספת הזולה ביותר בכל הפרויקט. Analytics מוטמע מהיום הראשון וכמעט לא מוסיף להיקף הפיתוח. אבל הוא זה שיקבע מה מרחיבים בהמשך, ומה מוטב לא לבנות בכלל. במקום להחליט על תוכן, אירועים ופיתוח מתוך תחושה, מחליטים מתוך נתונים.</p>
+    </div>
     </div>
     <div class="foot">וזו גם התשובה לשאלה "איך נדע שזה עבד". הפרויקט לא מסתיים בהשקה, הוא מסתיים במספרים.</div>
   </div>
@@ -884,22 +938,27 @@ ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;backgro
   <div class="pad">
     <div class="eyebrow"><span class="num">11</span> מי אנחנו</div>
     <h2>200Apps</h2>
+    <div class="mid">
     <div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:24px">
-      <div class="stat" style="background:rgba(255,255,255,.09)"><div class="v mono" style="color:#fff">300+</div><div class="l" style="color:#b3bdd4">מוצרים שפותחו עד היום</div></div>
+      <div class="stat" style="background:rgba(255,255,255,.09)"><div class="v mono" style="color:#fff"><span dir="ltr">300+</span></div><div class="l" style="color:#b3bdd4">מוצרים שפותחו עד היום</div></div>
       <div class="stat" style="background:rgba(255,255,255,.09)"><div class="v mono" style="color:#fff">12</div><div class="l" style="color:#b3bdd4">שנים. נוסדנו ב-2014</div></div>
       <div class="stat" style="background:rgba(255,255,255,.09)"><div class="v mono" style="color:#fff">2023</div><div class="l" style="color:#b3bdd4">חלק מקבוצת ATS</div></div>
       <div class="stat" style="background:rgba(255,255,255,.09)"><div class="v" style="color:#fff">ירושלים</div><div class="l" style="color:#b3bdd4">הבית שלנו, כמו שלכם</div></div>
     </div>
     <p class="kicker" style="margin-top:22px;font-size:17.5px">מודל מקצה-לקצה: מחקר, אפיון ממשק, עיצוב, פיתוח, QA ותחזוקה. מפות אינטראקטיביות, מערכות תוכן, חנויות מקוונות ומנויים, ואפליקציות שרצות בשטח מול קהל אמיתי. חלק מהלקוחות:</p>
-    <div class="wall" style="margin-top:20px">
-      <img src="assets/clients/c01.png" alt=""><img src="assets/clients/c02.png" alt=""><img src="assets/clients/c03.png" alt="">
-      <img src="assets/clients/c04.png" alt=""><img src="assets/clients/c05.png" alt=""><img src="assets/clients/c06.png" alt="">
-      <img src="assets/clients/c07.png" alt=""><img src="assets/clients/c08.png" alt=""><img src="assets/clients/c09.png" alt="">
+    <div class="wall" style="margin-top:24px">
+      <img src="assets/clients/c18.png" alt="גן החיות התנ&quot;כי" style="opacity:.70">
+      <img src="assets/clients/c07.png" alt="ירושמיים" style="opacity:.88">
+      <img src="assets/clients/c08.png" alt="הסוכנות היהודית" style="opacity:.72">
+      <img src="assets/clients/c03.png" alt="אמית" style="opacity:.68">
+      <img src="assets/clients/c09.png" alt="Express City Wash" style="opacity:.60">
+      <img src="assets/clients/c05.png" alt="Momentum" style="opacity:.66">
+      <img src="assets/clients/c17.png" alt="קידום" style="opacity:.58">
+      <img src="assets/clients/c06.png" alt="כינור לב" style="opacity:.72">
+      <img src="assets/clients/c04.png" alt="עוגן" style="opacity:.68">
+      <img src="assets/clients/c02.png" alt="Inpris" style="opacity:.78">
+      <img src="assets/clients/c12.png" alt="Toys R Us" style="opacity:.56">
     </div>
-    <div class="wall" style="margin-top:12px">
-      <img src="assets/clients/c10.png" alt=""><img src="assets/clients/c11.png" alt=""><img src="assets/clients/c12.png" alt="">
-      <img src="assets/clients/c13.png" alt=""><img src="assets/clients/c14.png" alt=""><img src="assets/clients/c15.png" alt="">
-      <img src="assets/clients/c16.png" alt=""><img src="assets/clients/c17.png" alt=""><img src="assets/clients/c18.png" alt="">
     </div>
     <div class="foot">מ-2014, מירושלים.</div>
   </div>
@@ -910,14 +969,14 @@ ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;backgro
   <div class="pad">
     <div class="eyebrow"><span class="num">12</span> הוכחה</div>
     <h2>את זה כבר בנינו, באותה עיר</h2>
-    <div class="two wide-r" style="margin-top:22px">
+    <div class="two" style="margin-top:22px;grid-template-columns:1fr 272px;gap:38px">
       <div>
         <div class="card" style="background:rgba(255,255,255,.09)">
           <h3 style="font-size:23px">גן החיות התנ"כי, ירושלים</h3>
           <ul class="clean" style="margin-top:12px">
             <li>אתר מלא</li>
             <li>מפה אינטראקטיבית של השטח</li>
-            <li>נוטיפיקציות על אירועים</li>
+            <li>התראות על אירועים</li>
             <li>חדשות ועדכונים</li>
           </ul>
         </div>
@@ -925,7 +984,7 @@ ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;backgro
       </div>
       <div class="gifbox"><img src="assets/zoo-demo.gif" alt="הדגמה של אפליקציית גן החיות התנכי"></div>
     </div>
-    <div class="foot">ולכן זו לא מחקר ופיתוח בשבילנו. זו התאמה של משהו שרץ.</div>
+    <div class="foot">ולכן זה לא מחקר ופיתוח בשבילנו. זו התאמה של משהו שרץ.</div>
   </div>
 </section>
 
@@ -971,7 +1030,7 @@ ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;backgro
         <p class="pdesc">מערכת מנויים ל-24 סניפי שטיפת רכב. <b>40,000 מנויים בחודש</b> ו-100,000 שטיפות ביום: חיוב חוזר, מימוש בשטח, ניהול לקוחות ובקרה על כל סניף בנפרד.</p>
         <div class="tags" style="margin-top:16px"><span>מנויים וחיוב חוזר</span><span>מימוש בשטח</span><span>ניהול לקוחות</span><span>דשבורד תפעולי</span></div>
       </div>
-      <div class="pshot pad-light"><img src="assets/p-citywash.png" alt="Express City Wash"></div>
+      <div class="pshot pad-light" style="height:272px"><img src="assets/p-citywash.png" alt="Express City Wash"></div>
     </div>
     <div class="foot">זו התשתית שמאחורי מנויי הגן, חברי הידידים וחנות הזרעים. מסחר חוזר בקנה מידה, לא חנות אונליין קטנה.</div>
   </div>
@@ -1003,7 +1062,7 @@ ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;backgro
         <p class="pdesc">מערכת למידה לרשת חינוך ארצית: ניהול תוכן ומסלולי למידה, עורך שיעורים, מעקב התקדמות אישי ודשבורדים למורים ולתלמידים.</p>
         <div class="tags" style="margin-top:16px"><span>ניהול תוכן בקנה מידה</span><span>מסלולי למידה</span><span>מעקב התקדמות</span><span>חינוך</span></div>
       </div>
-      <div class="pshot pad-violet"><img src="assets/p-amit.png" alt="AMIT LMS"></div>
+      <div class="pshot pad-violet"><img src="assets/p-amit.png" alt="AMIT LMS" style="width:100%;height:auto"></div>
     </div>
     <div class="foot">הגן מפעיל קמפוס שלם עם קורסים, סדנאות והשתלמויות מורי דרך. מערכות תוכן וחינוך הן בית מקצועי שלנו.</div>
   </div>
