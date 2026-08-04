@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>הזיכרון הולך איתך · יד ושם × 200Apps</title>
+<style>
+@font-face{font-family:Deck;src:url(assets/fonts/rubik-hebrew.woff2) format('woff2');
+  font-weight:300 900;font-display:swap;
+  unicode-range:U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F}
+@font-face{font-family:Deck;src:url(assets/fonts/rubik-latin.woff2) format('woff2');
+  font-weight:300 900;font-display:swap}
+
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  /* palette sampled from the live yadvashem.org: header #2F3778, surfaces #E8EBFC / #F4F6FE */
+  --base:#2F3778;
+  --base-deep:#1E285A;
+  --tint:#E8EBFC;
+  --tint-2:#D1D8FA;
+  --accent:#A9823C;
+  --accent-tint:#F4ECDC;
+  --bg:#F4F6FE;
+  --ink:#1B2033; --muted:#5C6480; --line:#DCE1F4;
+  --ours:#202532;
+}
+html,body{height:100%;background:#141a30;overflow:hidden}
+body{font-family:Deck,'Assistant','Heebo',Arial,sans-serif;color:var(--ink);
+  -webkit-font-smoothing:antialiased}
+
+#viewport{position:fixed;inset:0;display:grid;place-items:center}
+#stage{width:1280px;height:720px;position:relative;transform-origin:center center;
+  box-shadow:0 30px 90px rgba(0,0,0,.5)}
+.slide{position:absolute;inset:0;background:var(--bg);opacity:0;pointer-events:none;
+  transition:opacity .45s ease,transform .45s ease;transform:translateY(14px);overflow:hidden}
+.slide.on{opacity:1;pointer-events:auto;transform:none}
+.pad{position:absolute;inset:0;padding:52px 70px;display:flex;flex-direction:column}
+.slide::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:.03;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.eyebrow{font-size:12.5px;font-weight:600;letter-spacing:.13em;color:var(--accent);
+  margin-bottom:13px;display:flex;align-items:center;gap:10px}
+.eyebrow .num{background:var(--accent);color:#fff;border-radius:6px;padding:2px 8px;
+  font-size:11.5px;letter-spacing:.04em}
+h1{font-size:58px;font-weight:700;line-height:1.08;letter-spacing:-.015em}
+h2{font-size:37px;font-weight:700;line-height:1.16;letter-spacing:-.015em;color:var(--base)}
+h3{font-size:18px;font-weight:600;line-height:1.32;color:var(--base)}
+.lead{font-size:18px;line-height:1.62;color:var(--muted);margin-top:12px;max-width:70ch}
+.kicker{font-size:15.5px;line-height:1.62;color:var(--muted)}
+.foot{margin-top:auto;font-size:15.5px;line-height:1.6;color:var(--base);font-weight:500;
+  border-top:1px solid var(--line);padding-top:15px}
+.mono{font-variant-numeric:tabular-nums}
+b,strong{font-weight:600;color:var(--ink)}
+.src{font-size:12px;color:#8C93AC;font-weight:400;margin-top:9px;line-height:1.5}
+
+.dark{background:var(--base);color:#EEF1FC}
+.dark h2,.dark h3{color:#fff}
+.dark .lead,.dark .kicker{color:#BFC7EA}
+.dark .foot{color:#E4E8F8;border-top-color:rgba(255,255,255,.2)}
+.dark .eyebrow{color:#DCBE84}
+.dark .eyebrow .num{background:#A9823C;color:#fff}
+.dark b,.dark strong{color:#fff}
+.dark .card{background:rgba(255,255,255,.075)}
+.dark .card p{color:#BEC6E8}
+.dark .src{color:#9AA3CB}
+.dark ul.clean li{color:#EEF1FC}
+.dark ul.clean li::before{background:#DCBE84}
+.ours{background:var(--ours)}
+.ours h2,.ours h3{color:#fff}
+.ours .lead,.ours .kicker,.ours .card p{color:#AEB5C6}
+.ours .foot{color:#DCE0E9;border-top-color:rgba(255,255,255,.18)}
+.ours .eyebrow{color:#9FA8BC}
+.ours .eyebrow .num{background:#3C4456;color:#fff}
+.ours .card{background:rgba(255,255,255,.07)}
+.ours b,.ours strong{color:#fff}
+.ours .src{color:#8B93A5}
+
+.grid{display:grid;gap:14px}
+/* .fill: the main content block of a slide must consume the 430px body,
+   or the slack collects as a raw void above the margin-top:auto foot */
+.grid.fill{flex:1;min-height:0;align-content:center;grid-auto-rows:min-content}
+.grid.fill>.quote{align-items:center}
+.stack{flex:1;min-height:0;display:flex;flex-direction:column;gap:15px;margin-top:18px}
+.card{background:#fff;border-radius:17px;padding:20px 22px}
+.card p{font-size:14.5px;line-height:1.55;color:var(--muted);margin-top:7px}
+.card.tint{background:var(--tint)}
+.card.gold{background:var(--accent-tint)}
+.card.gold h3{color:#7A5C22}
+.card.gold p{color:#7A6438}
+.stat{background:#fff;border-radius:15px;padding:16px 18px}
+.stat .v{font-size:27px;font-weight:700;color:var(--base);line-height:1.05;letter-spacing:-.025em}
+.stat .l{font-size:13px;line-height:1.45;color:var(--muted);margin-top:6px}
+.dark .stat{background:rgba(255,255,255,.075)}
+.dark .stat .v{color:#fff}.dark .stat .l{color:#BEC6E8}
+.ic{width:25px;height:25px;stroke:var(--accent);stroke-width:1.5;fill:none;
+  stroke-linecap:round;stroke-linejoin:round;opacity:.8;display:block;margin-bottom:10px}
+.dark .ic,.ours .ic{stroke:#DCBE84;opacity:.92}
+.pill{display:inline-block;background:var(--base);color:#fff;border-radius:999px;
+  padding:6px 15px;font-size:13.5px;font-weight:500}
+.pill.ghost{background:transparent;color:var(--base);box-shadow:inset 0 0 0 1.5px var(--line)}
+.dark .pill.ghost{color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.3)}
+.pillrow{display:flex;flex-wrap:wrap;gap:8px}
+ul.clean{list-style:none}
+ul.clean li{font-size:15.5px;line-height:1.5;padding:7px 0;display:flex;gap:10px;
+  align-items:flex-start}
+ul.clean li::before{content:'';flex:0 0 6px;height:6px;border-radius:50%;
+  background:var(--accent);margin-top:9px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}
+.tags span{font-size:11px;font-weight:600;background:rgba(255,255,255,.13);color:#D5DAE6;
+  padding:4px 10px;border-radius:99px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:30px;flex:1;min-height:0;align-items:center}
+
+/* quote of their own words */
+.quote{background:#fff;border-radius:16px;padding:17px 20px;display:flex;gap:14px;
+  align-items:flex-start}
+.quote .g{flex:0 0 auto;font-size:12px;font-weight:700;color:#fff;background:var(--accent);
+  border-radius:7px;padding:4px 9px;letter-spacing:.02em;margin-top:2px}
+.quote .t{font-size:15px;line-height:1.55;color:var(--ink)}
+.dark .quote{background:rgba(255,255,255,.075)}
+.dark .quote .t{color:#EEF1FC}
+
+/* ── "why now": one continuous movement, archive → person → screen ── */
+.arc{position:relative;margin-top:20px;height:322px}
+.arc .an{position:absolute;top:158px}
+.arc .an .h{font-size:17px;font-weight:700;color:var(--base);line-height:1.3;margin-bottom:6px}
+.arc .an .p{font-size:14.5px;line-height:1.55;color:var(--muted)}
+.arc .an-r{right:54px;width:268px}
+.arc .an-c{right:424px;width:296px}
+.arc .an-l{right:806px;width:308px}
+.arc .y365{position:absolute;right:836px;top:236px;font-size:96px;font-weight:700;
+  color:var(--base);opacity:.04;line-height:1;letter-spacing:-.02em;pointer-events:none;z-index:-1}
+.ng{color:var(--accent)}
+.concl{margin-top:auto;font-size:19px;line-height:1.55;color:var(--base);font-weight:500;
+  border-top:2px solid var(--accent);padding-top:15px}
+.concl b{font-weight:700}
+
+/* ── "scattered": a broken axis with islands that mostly do not touch it ── */
+.scat{position:relative;height:294px;margin-top:20px}
+.scat .axis{position:absolute;top:142px;height:0;border-top:1.6px dashed rgba(47,55,120,.38)}
+.scat .ax1{right:0;width:352px}
+.scat .ax2{right:404px;width:316px}
+.scat .ax3{right:776px;width:364px}
+.scat .axis::before,.scat .axis::after{content:'';position:absolute;top:-5px;width:1.6px;
+  height:11px;background:rgba(47,55,120,.34)}
+.scat .axis::before{right:0}.scat .axis::after{left:0}
+.scat .ph{position:absolute;top:126px;font-size:12px;font-weight:700;letter-spacing:.14em;
+  color:var(--accent);background:var(--bg);padding:0 12px}
+.isle{position:absolute;background:#fff;border-radius:13px;padding:13px 16px;
+  box-shadow:0 3px 14px rgba(31,40,90,.07)}
+.isle .n{font-size:15px;font-weight:700;color:var(--base);line-height:1.25}
+.isle .d{font-size:13.5px;line-height:1.5;color:var(--muted);margin-top:5px}
+/* only some are tethered. the rest simply float. */
+.isle.tied::after{content:'';position:absolute;right:26px;width:1.4px;
+  background:rgba(47,55,120,.26)}
+.isle.up.tied::after{top:100%;height:var(--stem)}
+.isle.dn.tied::after{bottom:100%;height:var(--stem)}
+
+/* ── the finding: one continuous line, against the broken one above ── */
+.gapb{margin-top:auto;background:linear-gradient(to left,var(--accent-tint),rgba(244,236,220,.25));
+  border-radius:16px;padding:20px 26px 22px;position:relative;overflow:hidden}
+.gapb::before{content:'';position:absolute;top:0;right:0;left:0;height:3px;background:var(--accent)}
+.gapb .k{font-size:12.5px;font-weight:700;letter-spacing:.13em;color:var(--accent);margin-bottom:9px}
+.gapb .t{font-size:22px;line-height:1.45;font-weight:600;color:var(--base);max-width:74ch}
+.gapb .t b{font-weight:700}
+
+/* ── one person, five separate searches ── */
+.hub{position:relative;height:296px;margin-top:18px}
+.hub .q{position:absolute;right:10px;width:300px;top:94px;height:108px;background:#fff;
+  border-radius:14px;padding:18px 20px;display:flex;flex-direction:column;justify-content:center;
+  box-shadow:0 4px 18px rgba(31,40,90,.09)}
+.hub .q .ql{font-size:11.5px;font-weight:700;letter-spacing:.13em;color:var(--accent);margin-bottom:9px}
+.hub .q .qt{font-size:16px;line-height:1.42;color:var(--base);font-weight:600}
+.hub .src{position:absolute;right:440px;width:580px;height:52px;background:#fff;border-radius:11px;
+  padding:9px 16px;box-shadow:0 2px 10px rgba(31,40,90,.06);display:flex;flex-direction:column;
+  justify-content:center}
+.hub .src .k{font-size:11px;font-weight:700;letter-spacing:.11em;color:var(--accent)}
+.hub .src .v{font-size:15px;font-weight:600;color:var(--base);margin-top:3px}
+.hubnote{font-size:14.5px;line-height:1.55;color:var(--muted);margin-top:14px;max-width:82ch}
+
+/* ── product reveal: the screen is the slide, and each action points into it ── */
+.hero{position:relative;flex:1;min-height:0;margin-top:12px}
+.appscr{position:absolute;right:430px;width:340px;top:0;background:#fff;border-radius:24px;
+  padding:14px;box-shadow:0 20px 50px rgba(31,40,90,.22)}
+.appscr .bar{display:flex;align-items:center;gap:7px;font-size:11.5px;color:var(--muted);
+  font-weight:700;padding:2px 4px 11px}
+.appscr .bar .b{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.appscr .pr{display:flex;gap:13px}
+.appscr .pr img{width:104px;height:132px;object-fit:cover;border-radius:11px;flex:0 0 104px}
+.appscr .nm{font-size:17px;font-weight:700;color:var(--base);line-height:1.25}
+.appscr .mt{font-size:12px;color:var(--muted);line-height:1.5;margin-top:7px}
+.appscr .chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px}
+.appscr .chips span{font-size:10px;font-weight:700;background:var(--tint);color:var(--base);
+  padding:4px 9px;border-radius:99px}
+.appscr .ex{font-size:12.5px;line-height:1.55;color:var(--ink);background:var(--bg);
+  border-radius:10px;padding:11px 12px;margin-top:12px}
+.appscr .lk{display:flex;justify-content:space-between;font-size:11.5px;font-weight:700;
+  color:var(--accent);margin-top:11px;padding:0 3px}
+.appscr .sv{margin-top:11px;background:var(--base);color:#fff;border-radius:99px;padding:11px;
+  text-align:center;font-size:13px;font-weight:700}
+.appscr .sh{margin-top:7px;background:#fff;color:var(--base);border-radius:99px;padding:10px;
+  text-align:center;font-size:12.5px;font-weight:700;box-shadow:inset 0 0 0 1.5px var(--line)}
+.appscr .proto{position:absolute;top:-12px;right:18px;background:var(--accent);color:#fff;
+  font-size:9px;font-weight:700;letter-spacing:.06em;padding:4px 11px;border-radius:99px}
+.act{position:absolute}
+.act .w{font-size:22px;font-weight:700;color:var(--base);line-height:1.15}
+.act .s{font-size:13.5px;color:var(--muted);margin-top:5px;line-height:1.45}
+.act::after{content:'';position:absolute;top:17px;height:1.4px;background:var(--accent);opacity:.55}
+.act.r::after{right:100%;width:52px}
+.act.l::after{left:100%;width:42px}
+
+/* ── one relationship, four moments. the same token recurs in every screen. ── */
+.jrny{position:relative;display:grid;grid-template-columns:repeat(4,1fr);margin-top:12px;flex:1;min-height:0}
+.jline{position:absolute;right:126px;left:126px;bottom:84px;height:2px;border-radius:2px;
+  background:var(--accent);opacity:.62}
+.jcol{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;text-align:center}
+
+.mph{background:#0C1030;border-radius:26px;padding:5px;position:relative;
+  box-shadow:0 14px 34px rgba(12,16,48,.26)}
+.mph .in{border-radius:21px;overflow:hidden;background:#fff;display:flex;flex-direction:column;height:100%}
+.mph .nch{position:absolute;top:5px;left:50%;transform:translateX(-50%);width:48px;height:12px;
+  background:#0C1030;border-radius:0 0 8px 8px;z-index:9}
+.mph .hb{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:56px;height:2.8px;
+  border-radius:99px;background:rgba(0,0,0,.22);z-index:9}
+.mph .sb{display:flex;justify-content:space-between;padding:7px 11px 3px;font-size:7px;
+  font-weight:700;color:#1B2033}
+.mph .hd{font-size:9px;font-weight:700;color:var(--base);padding:3px 11px 7px}
+.mph .bd{flex:1;min-height:0;padding:0 9px;display:flex;flex-direction:column;gap:6px;justify-content:center}
+.mph .lb{font-size:7px;font-weight:700;letter-spacing:.08em;color:var(--accent)}
+/* the recurring token: the community the visitor saved */
+.tok{display:inline-flex;align-items:center;gap:4px;font-size:8px;font-weight:700;color:var(--accent);
+  background:#F7F1E4;padding:3px 8px;border-radius:99px;box-shadow:inset 0 0 0 1.2px rgba(169,130,60,.5)}
+.mph .crd{background:#F5F7FE;border-radius:8px;padding:7px 8px;text-align:right}
+.mph .crd .t{font-size:8.5px;font-weight:700;color:var(--base);line-height:1.3}
+.mph .crd .s{font-size:7px;color:var(--muted);margin-top:2px}
+.mph .mp{flex:1;min-height:44px;border-radius:8px;background:#E7EBE4;position:relative}
+.mph .mp i{position:absolute;top:42%;right:38%;width:7px;height:7px;border-radius:50%;
+  background:var(--accent);box-shadow:0 0 0 3.5px rgba(169,130,60,.26)}
+.mph .mp b{position:absolute;left:5px;bottom:4px;font-size:6.5px;color:var(--base);font-weight:700}
+.mph .prow{display:flex;align-items:center;gap:6px;background:#F5F7FE;border-radius:8px;padding:5px 6px}
+.mph .prow img{width:20px;height:25px;border-radius:4px;object-fit:cover;flex:0 0 20px}
+.mph .prow .t{font-size:8px;font-weight:700;color:var(--base);line-height:1.2;text-align:right}
+.mph .prow .s{font-size:6.5px;color:var(--accent);font-weight:700;margin-top:2px}
+.mph .dt{background:#F4ECDC;border-radius:8px;padding:7px 8px;text-align:right}
+.mph .dt .d{font-size:11px;font-weight:700;color:var(--base);line-height:1}
+.mph .dt .s{font-size:7px;color:#6B5836;margin-top:3px;font-weight:600}
+.mph .cta{background:var(--base);color:#fff;border-radius:8px;padding:6px;text-align:center;
+  font-size:8px;font-weight:700;margin:7px 9px 13px}
+.mph .cta.g{background:var(--accent)}
+
+/* the year-round stage carries the novelty, so it stands taller */
+.jcol .mph{width:154px;height:294px}
+.jcol.key .mph{width:170px;height:326px;box-shadow:0 20px 46px rgba(169,130,60,.34),0 0 0 2px rgba(169,130,60,.6)}
+.jdot{width:25px;height:25px;border-radius:50%;background:#fff;margin-top:11px;z-index:2;
+  box-shadow:0 0 0 2px var(--accent);display:grid;place-items:center;
+  font-size:11px;font-weight:700;color:var(--accent)}
+.jcol.key .jdot{background:var(--accent);color:#fff;box-shadow:0 0 0 5px rgba(169,130,60,.22)}
+.jk{font-size:16px;font-weight:700;color:var(--base);margin-top:9px}
+.jcol.key .jk{color:var(--accent)}
+.jp{font-size:12.5px;line-height:1.48;color:var(--muted);margin-top:4px;max-width:228px}
+
+/* ── one testimony screen. the capabilities are shown, not listed. ── */
+.tstage{position:relative;flex:1;min-height:0;margin-top:14px}
+.tscr{position:absolute;right:222px;width:700px;top:4px;background:#fff;border-radius:16px;
+  padding:13px;box-shadow:0 16px 40px rgba(31,40,90,.17)}
+.tscr .top{display:flex;gap:12px}
+.tscr .vid{flex:1;height:172px;border-radius:11px;background:#1E285A;position:relative;overflow:hidden}
+.tscr .vid .pl{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;
+  border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center}
+.tscr .vid .pl svg{width:14px;height:14px;fill:#1E285A}
+.tscr .vid .who{position:absolute;right:11px;bottom:10px;color:#fff;font-size:11.5px;font-weight:700}
+.tscr .vid .who span{display:block;font-size:9px;font-weight:500;opacity:.75;margin-top:2px}
+.tscr .rail{width:186px;flex:0 0 186px;display:flex;flex-direction:column;gap:6px}
+.tscr .rk{font-size:8.5px;font-weight:700;letter-spacing:.1em;color:var(--accent)}
+.tscr .ch{font-size:10px;padding:5px 8px;border-radius:7px;background:var(--bg);color:var(--base);font-weight:600}
+.tscr .ch.on{background:var(--accent-tint);color:var(--accent)}
+.tscr .mapm{height:44px;border-radius:8px;background:#E4EAE2;position:relative}
+.tscr .mapm i{position:absolute;top:38%;right:32%;width:8px;height:8px;border-radius:50%;
+  background:var(--accent);box-shadow:0 0 0 3px rgba(169,130,60,.24)}
+.tscr .mapm b{position:absolute;left:7px;bottom:5px;font-size:8px;color:var(--base);font-weight:700}
+.tscr .ppl{display:flex;gap:4px;flex-wrap:wrap}
+.tscr .ppl span{font-size:8.5px;font-weight:700;background:var(--tint);color:var(--base);
+  padding:3px 7px;border-radius:99px}
+.tscr .tr{margin-top:11px;border-top:1px solid var(--line);padding-top:10px;display:flex;
+  flex-direction:column;gap:5px}
+.tscr .tl{height:7px;border-radius:3px;background:var(--tint)}
+.tscr .tl.a{width:78%}.tscr .tl.b{width:54%}
+.tscr .hl{font-size:11px;line-height:1.5;color:var(--ink);background:var(--accent-tint);
+  border-radius:7px;padding:7px 9px}
+.tscr .btns{display:flex;gap:7px;margin-top:11px}
+.tscr .btn1{flex:1;background:var(--base);color:#fff;border-radius:99px;padding:7px;
+  text-align:center;font-size:10.5px;font-weight:700}
+.tscr .btn2{background:#fff;color:var(--base);border-radius:99px;padding:7px 14px;
+  font-size:10.5px;font-weight:700;box-shadow:inset 0 0 0 1.4px var(--line)}
+.tscr .proto{position:absolute;top:-11px;right:16px;background:var(--accent);color:#fff;
+  font-size:8.5px;font-weight:700;letter-spacing:.06em;padding:3px 9px;border-radius:99px}
+.cal{position:absolute;font-size:12.5px;font-weight:700;color:var(--accent);line-height:1.35}
+.cal::after{content:'';position:absolute;height:1.3px;background:var(--accent);opacity:.5}
+.cal.r::after{right:100%;width:34px;top:50%}
+.cal.l::after{left:100%;width:34px;top:50%}
+
+/* ══════════ product reveal ══════════ */
+.rev{position:relative;flex:1;min-height:0}
+.revside{position:absolute;right:0;top:16px;width:346px}
+.cl{position:absolute;right:392px;left:0;top:0;bottom:0;
+  display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr auto;
+  align-items:end;justify-items:center;column-gap:10px}
+
+/* a neutral device: thin bezel, soft shadow, no model mimicry */
+.ph{background:#171C3E;border-radius:26px;padding:4.5px;position:relative;
+  box-shadow:0 12px 30px rgba(16,21,58,.20),inset 0 1px 0 rgba(255,255,255,.13);
+  transition:opacity .55s ease,transform .55s cubic-bezier(.3,.9,.3,1)}
+.ph .in{position:absolute;inset:4.5px;border-radius:22px;overflow:hidden;background:#fff;
+  display:flex;flex-direction:column}
+.ph .in::after{content:'';position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(150deg,rgba(255,255,255,.34) 0%,rgba(255,255,255,0) 34%)}
+.ph .cam{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:26px;height:4.5px;
+  border-radius:99px;background:rgba(255,255,255,.20);z-index:9}
+.ph .hb{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:64px;height:3px;
+  border-radius:99px;background:rgba(0,0,0,.20);z-index:9}
+.ph .sb{display:flex;align-items:center;justify-content:space-between;padding:14px 13px 3px;
+  font-size:8px;font-weight:700;color:#1B2033}
+.pa,.pc{width:184px;height:378px}
+.pb{width:228px;height:454px}
+
+/* the sequence plays inside the screens, once */
+.pb,.pc{opacity:.5;transform:scale(.975)}
+.cl.k3 .pb,.cl.k4 .pb,.cl.k5 .pb{opacity:1;transform:scale(1)}
+.cl.k5 .pc{opacity:1;transform:scale(1)}
+.typed{opacity:0;transition:opacity .3s ease}
+.cl.k1 .typed,.cl.k2 .typed,.cl.k3 .typed,.cl.k4 .typed,.cl.k5 .typed{opacity:1}
+.selrow{box-shadow:0 0 0 0 rgba(169,130,60,0);transition:box-shadow .35s ease,background .35s ease}
+.cl.k2 .selrow,.cl.k3 .selrow,.cl.k4 .selrow,.cl.k5 .selrow{background:#F7F4EC;
+  box-shadow:0 0 0 1.6px rgba(169,130,60,.62)}
+.ctaMain{transition:transform .2s ease,filter .2s ease}
+.cl.k4 .ctaMain{transform:scale(.97);filter:brightness(1.35)}
+.savedEl{opacity:0;transform:translateY(8px);transition:opacity .45s ease,transform .45s ease}
+.cl.k5 .savedEl{opacity:1;transform:none}
+
+/* ── in-app UI ── */
+.uh{display:flex;align-items:center;gap:6px;padding:2px 12px 8px}
+.uh .t{font-size:11px;font-weight:700;color:var(--base)}
+.ub{flex:1;min-height:0;padding:0 12px;display:flex;flex-direction:column}
+.usec{font-size:7.5px;font-weight:700;letter-spacing:.1em;color:var(--accent);margin:10px 0 5px}
+.usrch{display:flex;align-items:center;gap:6px;background:#EEF1FC;border-radius:10px;padding:8px 10px;
+  font-size:10px;font-weight:700;color:var(--ink)}
+.usrch svg{width:10px;height:10px;stroke:var(--muted);stroke-width:2.4;fill:none;flex:0 0 10px}
+.urow{display:flex;align-items:center;gap:8px;padding:7px 6px;border-radius:9px}
+.urow+.urow{border-top:1px solid #EEF1FA}
+.urow .av{width:28px;height:28px;border-radius:7px;background:#E8EBFC;flex:0 0 28px;overflow:hidden}
+.urow .av img{width:100%;height:100%;object-fit:cover}
+.urow .t{font-size:9.5px;font-weight:700;color:var(--base);line-height:1.25}
+.urow .s{font-size:8px;color:var(--muted);margin-top:2px}
+.uhero{position:relative;height:152px;flex:0 0 152px}
+.uhero img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.uhero .vg{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,16,48,.93) 0%,rgba(12,16,48,.32) 48%,rgba(12,16,48,0) 80%)}
+.uhero .nm{position:absolute;right:12px;left:12px;bottom:10px;color:#fff}
+.uhero .nm .n1{font-size:13px;font-weight:700;line-height:1.2}
+.uhero .nm .n2{font-size:8.5px;opacity:.82;margin-top:3px;font-weight:500}
+.uchips{display:flex;gap:4px;flex-wrap:wrap;margin-top:10px}
+.uchips span{font-size:7.5px;font-weight:700;background:#E8EBFC;color:var(--base);padding:3px 7px;border-radius:99px}
+.uq{font-size:9px;line-height:1.6;color:var(--ink);background:#F7F8FE;border-radius:9px;
+  padding:8px 9px;margin-top:8px;border-inline-start:2.2px solid var(--accent)}
+.useg{display:flex;gap:3px;margin-top:8px;background:#EEF1FC;border-radius:9px;padding:2.5px}
+.useg span{flex:1;text-align:center;font-size:8px;font-weight:700;color:var(--muted);padding:4px 2px;border-radius:7px}
+.useg span.on{background:#fff;color:var(--base);box-shadow:0 1px 3px rgba(31,40,90,.12)}
+.ucta{background:var(--base);color:#fff;border-radius:10px;padding:9px;text-align:center;
+  font-size:10px;font-weight:700;margin:8px 12px 0}
+.ucta.o{background:#fff;color:var(--base);box-shadow:inset 0 0 0 1.3px #DCE1F4;margin-top:5px;margin-bottom:14px}
+.okbig{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 14px}
+.okbig .c{width:44px;height:44px;border-radius:50%;background:var(--accent);display:grid;place-items:center;margin-bottom:11px}
+.okbig .c svg{width:20px;height:20px;stroke:#fff;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.okbig .t{font-size:12px;font-weight:700;color:var(--base);text-align:center;line-height:1.35}
+.umem{background:#F4ECDC;border-radius:10px;padding:10px;margin-top:14px;width:100%;text-align:right}
+.umem .k{font-size:7.5px;font-weight:700;letter-spacing:.08em;color:var(--accent)}
+.umem .d{font-size:13px;font-weight:700;color:var(--base);margin-top:4px}
+.umem .s{font-size:8px;color:#6B5836;margin-top:2px}
+
+/* the three stages read as one row, at one height */
+.vb{text-align:center;padding-top:16px;max-width:210px}
+.vb .n{font-size:10.5px;font-weight:700;letter-spacing:.12em;color:var(--accent);margin-bottom:5px}
+.vb .w{font-size:18px;font-weight:700;color:var(--base);line-height:1.15}
+.vb .s{font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.45}
+
+/* two-column compare */
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:16px;flex:1;min-height:0}
+.col{border-radius:18px;padding:20px 22px;display:flex;flex-direction:column}
+.col .h{font-size:16px;font-weight:700;margin-bottom:12px;line-height:1.3}
+.col ul{list-style:none;flex:1;display:flex;flex-direction:column;justify-content:center}
+.col li{font-size:14px;line-height:1.45;padding:5px 0;display:flex;gap:9px;align-items:flex-start}
+.col li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;margin-top:8px}
+
+/* proof */
+.shot{height:404px;padding:15px;border-radius:16px;overflow:hidden;
+  box-shadow:0 16px 44px rgba(0,0,0,.32);display:grid;place-items:center}
+.shot img{max-width:100%;max-height:374px;width:auto;height:auto;display:block}
+.pdesc{font-size:16px;line-height:1.6;color:#AEB5C6}
+.pdesc b{color:#fff}
+
+/* logo wall */
+.wall{display:grid;grid-template-columns:repeat(8,1fr);gap:16px;align-items:center;
+  padding-bottom:6px}
+.wall img{width:100%;height:46px;object-fit:contain;filter:grayscale(1) brightness(0) invert(1);
+  opacity:.66}
+
+#chrome{position:fixed;bottom:13px;left:0;right:0;display:flex;justify-content:center;
+  align-items:center;gap:16px;z-index:20;font-size:12px;color:#7A83A8;pointer-events:none}
+#dots{display:flex;gap:5px;pointer-events:auto}
+#dots i{width:6px;height:6px;border-radius:50%;background:#3A4468;cursor:pointer;transition:.2s}
+#dots i.on{background:#C0A063;width:17px;border-radius:3px}
+#cnt{font-variant-numeric:tabular-nums;min-width:48px;text-align:center}
+#hint{position:fixed;top:13px;left:16px;font-size:11.5px;color:#525C82;z-index:20;
+  transition:opacity .6s}
+
+#rotate{display:none;position:fixed;inset:0;z-index:60;background:var(--base-deep);
+  align-items:center;justify-content:center;text-align:center;padding:36px}
+#rotate .t2{font-size:17px;font-weight:600;color:#fff;line-height:1.4}
+#rotate .s2{font-size:14px;color:#B3BCE4;line-height:1.6;margin-top:10px;max-width:24ch}
+@media (max-width:760px) and (orientation:portrait){#rotate{display:flex}}
+
+@media (prefers-reduced-motion:reduce){.slide{transition:none}}
+
+@media print{
+  @page{size:1280px 720px;margin:0}
+  html,body{overflow:visible;background:#fff;height:auto}
+  #viewport{position:static;display:block}
+  #stage{transform:none!important;box-shadow:none;width:1280px;height:auto}
+  .slide{position:relative;opacity:1!important;transform:none!important;height:720px;
+    break-after:page;page-break-after:always;pointer-events:auto;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .slide::after{display:none}
+  #chrome,#hint,#rotate{display:none}
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   DESIGN SYSTEM v2 — derived from the cover
+   The cover is: deep navy, one photograph, one light source, white
+   display type, gold eyebrow, and a great deal of air. Everything below
+   extends that language across the deck.
+
+   1. DARK SPINE          every content slide inherits the cover's navy
+   2. LIGHT IS THE PRODUCT the only white surfaces are app screens, so the
+                          product glows the way the prism opening does
+   3. NO WHITE BOXES      panels become translucent glass, not cards
+   4. ONE GOLD            eyebrow, one rule, one emphasis. never decoration
+   5. AIR OVER DENSITY    larger display type, fewer elements
+   ════════════════════════════════════════════════════════════════════ */
+:root{
+  --d1:#151C40; --d2:#1E285A; --d3:#28336B;
+  --onD:#EEF1FC; --onD-2:#AEB8DC; --onD-3:#7F8AB4;
+  --glass:rgba(255,255,255,.055); --glass-2:rgba(255,255,255,.085);
+  --hair:rgba(255,255,255,.10); --gold:#DCBE84;
+}
+/* 1 · the spine */
+.slide{background:radial-gradient(120% 90% at 88% 8%, #26315F 0%, var(--d2) 42%, var(--d1) 100%);
+  color:var(--onD)}
+.slide::after{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(46% 58% at 4% 30%, rgba(220,190,132,.10) 0%, rgba(220,190,132,0) 70%)}
+.slide>.pad{position:relative;z-index:2}
+h2{color:#fff;font-size:42px;line-height:1.14;letter-spacing:-.018em}
+.lead{color:var(--onD-2);font-size:18.5px}
+.eyebrow{color:var(--gold)}
+.eyebrow .num{background:rgba(220,190,132,.16);color:var(--gold)}
+.foot{color:var(--onD-2);border-top-color:var(--hair)}
+.foot b{color:#fff}
+.src{color:var(--onD-3)}
+b,strong{color:#fff}
+
+/* 3 · glass instead of cards */
+.card,.isle,.stat,.quote,.col,.hub .q,.hub .src{
+  background:var(--glass)!important;box-shadow:inset 0 0 0 1px var(--hair)!important;
+  backdrop-filter:blur(2px)}
+.card h3,.isle .n,.stat .v,.hub .q .qt,.hub .src .v,.col .h{color:#fff!important}
+.card p,.isle .d,.stat .l,.col li,.quote .t{color:var(--onD-2)!important}
+.card.gt,.card.tint{background:rgba(220,190,132,.10)!important;
+  box-shadow:inset 0 0 0 1px rgba(220,190,132,.26)!important}
+.ic{stroke:var(--gold)!important;opacity:.85}
+
+/* slide 2 · the three stages */
+.arc .an .h{color:#fff}.arc .an .p{color:var(--onD-2)}
+.arc .y365{color:#fff;opacity:.05}
+.concl{color:#fff;border-top-color:var(--gold)}
+.ng{color:var(--gold)}
+
+/* slide 3 · scattered islands */
+.scat .axis{border-top-color:rgba(255,255,255,.26)}
+.scat .axis::before,.scat .axis::after{background:rgba(255,255,255,.3)}
+.scat .ph{color:var(--gold);background:transparent}
+.isle.tied::after{background:rgba(255,255,255,.24)}
+.gapb{background:linear-gradient(to left,rgba(220,190,132,.16),rgba(220,190,132,.04))!important;
+  box-shadow:inset 0 0 0 1px rgba(220,190,132,.28)!important}
+.gapb .k{color:var(--gold)}.gapb .t{color:#fff}
+
+/* slide 4 · the hub */
+.hub .q .ql,.hub .src .k{color:var(--gold)}
+
+/* ── .lite · a single light slide, as slide 3 looked at 00:36.
+   deliberately reverses the dark spine for one slide only. ── */
+.slide.lite{background:#F4F6FE;color:var(--ink)}
+.slide.lite::after{background:none}
+.slide.lite h2{color:var(--base)}
+.slide.lite .lead{color:var(--muted)}
+.slide.lite .eyebrow{color:var(--accent)}
+.slide.lite .eyebrow .num{background:var(--accent);color:#fff}
+.slide.lite .foot{color:var(--base);border-top-color:var(--line)}
+.slide.lite b,.slide.lite strong,.slide.lite .foot b{color:var(--ink)}
+.slide.lite .isle{background:#fff!important;backdrop-filter:none;
+  box-shadow:0 3px 14px rgba(31,40,90,.07)!important}
+.slide.lite .isle .n{color:var(--base)!important}
+.slide.lite .isle .d{color:var(--muted)!important}
+.slide.lite .scat .axis{border-top-color:rgba(47,55,120,.38)}
+.slide.lite .scat .axis::before,.slide.lite .scat .axis::after{background:rgba(47,55,120,.34)}
+.slide.lite .scat .ph{color:var(--accent);background:#F4F6FE}
+.slide.lite .isle.tied::after{background:rgba(47,55,120,.26)}
+.slide.lite .gapb{box-shadow:none!important;
+  background:linear-gradient(to left,var(--accent-tint),rgba(244,236,220,.3))!important}
+.slide.lite .gapb .k{color:var(--accent)}
+.slide.lite .gapb .t{color:var(--base)}
+.slide.lite .gapb .t b{color:var(--base)}
+/* the capability prototype, on a light slide */
+.slide.lite .capttl{color:var(--base)}
+.slide.lite .capsub{color:var(--muted)}
+.slide.lite .caps .slot{background:#fff;box-shadow:0 2px 10px rgba(31,40,90,.06);opacity:.46}
+.slide.lite .caps .slot:hover{opacity:1;box-shadow:0 0 0 1.5px rgba(169,130,60,.6)}
+.slide.lite .caps .slot svg{stroke:var(--accent)}
+.slide.lite .caps .slot .n{color:var(--base)}
+.slide.lite .sp-0 .slot:nth-child(-n+1),
+.slide.lite .sp-1 .slot:nth-child(-n+1),
+.slide.lite .sp-2 .slot:nth-child(-n+1),
+.slide.lite .sp-3 .slot:nth-child(-n+2),
+.slide.lite .sp-4 .slot:nth-child(-n+2),
+.slide.lite .sp-5 .slot:nth-child(-n+2),
+.slide.lite .sp-6 .slot:nth-child(-n+3),
+.slide.lite .sp-7 .slot:nth-child(-n+3),
+.slide.lite .sp-8 .slot:nth-child(-n+3){opacity:1;background:var(--accent-tint);box-shadow:none}
+.slide.lite .sp-0 .slot:nth-child(1),
+.slide.lite .sp-1 .slot:nth-child(1),
+.slide.lite .sp-2 .slot:nth-child(1),
+.slide.lite .sp-3 .slot:nth-child(2),
+.slide.lite .sp-4 .slot:nth-child(2),
+.slide.lite .sp-5 .slot:nth-child(2),
+.slide.lite .sp-6 .slot:nth-child(3),
+.slide.lite .sp-7 .slot:nth-child(3),
+.slide.lite .sp-8 .slot:nth-child(3){background:var(--base)}
+.slide.lite .sp-0 .slot:nth-child(1) .n,
+.slide.lite .sp-1 .slot:nth-child(1) .n,
+.slide.lite .sp-2 .slot:nth-child(1) .n,
+.slide.lite .sp-3 .slot:nth-child(2) .n,
+.slide.lite .sp-4 .slot:nth-child(2) .n,
+.slide.lite .sp-5 .slot:nth-child(2) .n,
+.slide.lite .sp-6 .slot:nth-child(3) .n,
+.slide.lite .sp-7 .slot:nth-child(3) .n,
+.slide.lite .sp-8 .slot:nth-child(3) .n{color:#fff}
+.slide.lite .sp-0 .slot:nth-child(1) i,
+.slide.lite .sp-1 .slot:nth-child(1) i,
+.slide.lite .sp-2 .slot:nth-child(1) i,
+.slide.lite .sp-3 .slot:nth-child(2) i,
+.slide.lite .sp-4 .slot:nth-child(2) i,
+.slide.lite .sp-5 .slot:nth-child(2) i,
+.slide.lite .sp-6 .slot:nth-child(3) i,
+.slide.lite .sp-7 .slot:nth-child(3) i,
+.slide.lite .sp-8 .slot:nth-child(3) i{background:rgba(255,255,255,.16);color:#DCBE84}
+.slide.lite .cd .cdt{color:var(--base)}
+.slide.lite .cd li{color:var(--muted)}
+.slide.lite .cd li b{color:var(--ink)}
+.slide.lite .cd .cdn{color:#8C93AC}
+.slide.lite .dev{border-color:#252C52;box-shadow:0 22px 50px rgba(31,40,90,.26)}
+
+/* 2 · light is the product — app screens stay luminous */
+.ph,.mph{box-shadow:0 22px 54px rgba(0,0,0,.46),inset 0 1px 0 rgba(255,255,255,.14)!important}
+.ph .in,.mph .in{background:#fff}
+.vb .w,.jk{color:#fff}.vb .s,.jp{color:var(--onD-2)}
+.vb .n{color:var(--gold)}
+.jcol.key .jdot{color:var(--d1)}
+.jcol.key .jk{color:var(--gold)}
+.jdot{background:var(--d2);color:var(--gold);box-shadow:0 0 0 2px var(--gold)}
+.jcol.key .jdot{background:var(--gold);color:var(--d1)}
+
+/* slide 7 · the testimony viewer stays a lit screen */
+.tscr{box-shadow:0 26px 60px rgba(0,0,0,.48)!important}
+.cal{color:var(--gold)}.cal::after{background:var(--gold)}
+
+/* proof screenshots keep their own light panels, but sit on glass */
+.shot{box-shadow:0 20px 48px rgba(0,0,0,.42)}
+.pdesc{color:var(--onD-2)}.pdesc b{color:#fff}
+.tags span{background:rgba(255,255,255,.12);color:var(--onD)}
+.wall img{filter:grayscale(1) brightness(0) invert(1);opacity:.66}
+
+/* ══ the closing · logo, one line that belongs to them, one ask ══ */
+.closing .pad{align-items:center;justify-content:center;text-align:center}
+.closing h2{font-size:33px;max-width:26ch;line-height:1.32}
+.closing .vs{font-size:13.5px;color:var(--onD-3);margin-top:12px;letter-spacing:.04em}
+.ask{background:rgba(255,255,255,.09);box-shadow:inset 0 0 0 1px rgba(220,190,132,.24);
+  border-radius:18px;padding:22px 30px;max-width:64ch;margin-top:30px;text-align:center}
+.ask .al{font-size:12px;font-weight:700;letter-spacing:.13em;color:var(--gold);margin-bottom:10px}
+.ask p{font-size:22px;font-weight:700;line-height:1.4;color:#fff;letter-spacing:-.01em}
+.ask .p2{font-size:15.5px;line-height:1.55;color:var(--onD-2);margin-top:11px}
+.sig{margin-top:40px;display:flex;align-items:stretch}
+.sig .pp{padding:0 32px;text-align:center}
+.sig .pp+.pp{border-inline-start:1px solid rgba(255,255,255,.2)}
+.sig .nm{font-size:18px;font-weight:600;color:#fff}
+.sig .rl{font-size:13.5px;color:var(--onD-2);margin-top:4px}
+.closing .cx{margin-top:24px;font-size:13.5px;color:var(--onD-3);direction:ltr}
+
+/* ══ the gap · one number owns the slide, on the deck's one light pause ══ */
+.zero{display:grid;grid-template-columns:.84fr 1.16fr;gap:48px;align-items:center;
+  flex:1;min-height:0}
+.zero .num0{font-size:330px;font-weight:700;line-height:.76;letter-spacing:-.05em;
+  color:var(--base-deep);text-align:center;font-variant-numeric:tabular-nums}
+.zero .num0 .cap{display:block;font-size:14.5px;font-weight:600;letter-spacing:0;
+  line-height:1.45;color:var(--muted);margin:12px auto 0;max-width:27ch}
+.zero .say{font-size:33px;font-weight:700;line-height:1.3;color:var(--base);
+  letter-spacing:-.015em;max-width:22ch}
+.zero .rule{width:62px;height:2.5px;background:var(--accent);margin:24px 0 18px}
+.zero .ctx{font-size:16.5px;line-height:1.6;color:var(--muted);max-width:38ch}
+.zero .ctx b{color:var(--base);font-weight:700}
+
+/* ══ slide 3 · the fragmentation, shown with Yad Vashem's own surfaces.
+   deliberately not a grid: varied size, angle, depth and overlap, so each
+   screenshot reads as belonging to a different system. ══ */
+.frag{position:relative;flex:1;min-height:0;margin-top:14px}
+.fr{position:absolute;border-radius:4px;overflow:hidden;background:#fff}
+.fr img{display:block;width:100%;height:100%;object-fit:cover}
+.fr .lb{position:absolute;right:0;left:0;bottom:0;padding:17px 11px 8px;font-size:11px;
+  font-weight:700;color:#fff;letter-spacing:.01em;line-height:1.2;
+  background:linear-gradient(to top,rgba(8,12,34,.95) 12%,rgba(8,12,34,0))}
+/* hairlines that begin and end joining nothing: there is no journey yet */
+.frag .cut{position:absolute;height:0;border-top:1.4px dashed rgba(255,255,255,.17)}
+
+/* ══ distribution · one source in Jerusalem, two people in the world ══ */
+.dist{display:flex;flex-direction:column;align-items:center;flex:1;min-height:0;
+  justify-content:center;margin-top:8px}
+.dsrc{display:flex;align-items:center;gap:16px;padding:12px 24px;border-radius:14px;
+  background:rgba(220,190,132,.11);box-shadow:inset 0 0 0 1px rgba(220,190,132,.32)}
+.dsrc .k{font-size:10.5px;font-weight:700;letter-spacing:.13em;color:var(--gold);
+  padding-inline-end:16px;border-inline-end:1px solid rgba(220,190,132,.3)}
+.dsrc .v{font-size:16px;font-weight:700;color:#fff;line-height:1.3}
+.dsrc .s{font-size:12.5px;color:var(--onD-2);margin-top:2px}
+.dbranches{display:grid;grid-template-columns:1fr 1fr;gap:56px;width:100%}
+.dbr{display:flex;gap:17px;align-items:stretch}
+.mph2{width:176px;height:286px;flex:0 0 176px;background:#fff;border-radius:20px;
+  border:5px solid #0B1130;overflow:hidden;position:relative;
+  box-shadow:0 16px 38px rgba(0,0,0,.42)}
+.mph2 .cs{position:relative!important;opacity:1!important;height:100%;overflow:hidden}
+.mph2 .csh{padding:12px 11px 7px;font-size:11.5px}
+.mph2 .row{padding:7px 9px}
+.mph2 .btn2{padding:8px;font-size:10.5px}
+.mph2 .csb{padding:0 11px 12px;gap:6px}
+.dbr .txt{flex:1;display:flex;flex-direction:column;justify-content:center}
+.dbr .scen{align-self:flex-start;font-size:10.5px;font-weight:700;letter-spacing:.11em;
+  color:var(--onD-3);box-shadow:inset 0 0 0 1px var(--hair);padding:4px 11px;
+  border-radius:99px;margin-bottom:15px}
+.dbr .story{font-size:19.5px;font-weight:700;line-height:1.42;color:#fff;letter-spacing:-.012em}
+.dbr .res{margin-top:15px;padding-top:13px;border-top:1px solid rgba(220,190,132,.26);
+  font-size:13.5px;line-height:1.5;color:var(--onD-2)}
+.slide.lite .dsrc .v,.slide.lite .dbr .res{color:var(--base)}
+.slide.lite .dbr ol li{color:var(--muted)}
+
+/* ══ benchmark · few numbers, large. one gold, and it marks the finding ══ */
+.bignum{font-size:100px;font-weight:700;line-height:.9;letter-spacing:-.04em;color:#fff}
+.bignum.g{color:var(--gold)}
+.bignum small{font-size:44px;letter-spacing:-.02em}
+.bigsub{font-size:16px;font-weight:600;color:#fff;margin-top:14px;line-height:1.4}
+.bigcap{font-size:14.5px;line-height:1.55;color:var(--onD-2);margin-top:7px}
+/* one stacked bar: 36 institutions split three ways. every segment carries a
+   label, so the split never depends on colour alone. */
+.benchbar{display:flex;gap:2px;height:32px;margin-top:4px}
+.benchbar i{display:block;height:100%;border-radius:3px}
+.benchbar .b1{background:var(--gold)}
+.benchbar .b2{background:rgba(220,190,132,.44)}
+.benchbar .b3{background:rgba(255,255,255,.10)}
+.benchkey{display:flex;gap:26px;margin-top:14px;flex-wrap:wrap}
+.benchkey>div{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;
+  line-height:1.45;color:var(--onD-2)}
+.benchkey i{width:11px;height:11px;border-radius:3px;flex:0 0 11px;margin-top:4px}
+.benchkey b{color:#fff;font-weight:700;display:block;font-size:14.5px}
+.wall2{display:flex;align-items:center;justify-content:space-between;gap:24px;
+  padding:15px 22px;border-radius:14px;background:var(--glass);
+  box-shadow:inset 0 0 0 1px var(--hair);margin-top:auto}
+.wall2 img{height:33px;width:auto;max-width:158px;object-fit:contain;
+  filter:grayscale(1) brightness(0) invert(1);opacity:.72}
+.wall2 span{font-size:13px;font-weight:600;color:rgba(255,255,255,.6);white-space:nowrap}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px;
+  flex:1;min-height:0;align-content:center}
+.duocell{padding:24px 26px;border-radius:18px;background:var(--glass);
+  box-shadow:inset 0 0 0 1px var(--hair)}
+.duocell.hi{background:rgba(220,190,132,.10);box-shadow:inset 0 0 0 1.5px rgba(220,190,132,.42)}
+.duok{font-size:11.5px;font-weight:700;letter-spacing:.13em;color:var(--gold);margin-bottom:12px}
+
+/* ══ the core slide · a live capability prototype ══════════════════════
+   three columns that move as one: the accumulating capability list, the
+   description of the current one, and the screen it becomes on a phone. */
+/* .mid absorbs the slack, so it does not collect as one void above the foot */
+.mid{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center}
+.capstage{display:flex;flex-direction:row;align-items:flex-start;
+  justify-content:space-between;gap:34px;cursor:pointer}
+.capside{width:424px;flex:0 0 424px}
+.capttl{font-size:24px;font-weight:700;color:#fff;line-height:1.26;letter-spacing:-.012em}
+.capsub{font-size:12.5px;line-height:1.5;color:var(--onD-3);margin-top:7px}
+.caps{display:flex;flex-direction:column;gap:11px;margin-top:20px}
+.caps .slot{display:flex;align-items:center;gap:14px;padding:15px 18px;border-radius:13px;
+  background:var(--glass);box-shadow:inset 0 0 0 1px var(--hair);opacity:.44;
+  transition:opacity .22s ease,background .22s ease,box-shadow .22s ease}
+.caps .slot:hover{opacity:1;box-shadow:inset 0 0 0 1.5px rgba(220,190,132,.55)}
+.caps .slot i{flex:0 0 27px;height:27px;border-radius:50%;display:grid;place-items:center;
+  font-style:normal;font-size:13px;font-weight:700;
+  background:rgba(220,190,132,.16);color:var(--gold);transition:background .22s,color .22s}
+.caps .slot .n{font-size:17.5px;font-weight:700;color:var(--onD);line-height:1.25;
+  letter-spacing:-.012em;transition:color .22s ease}
+/* the rest is direction, not a commitment */
+.later{margin-top:24px;padding-top:16px;border-top:1px solid var(--hair)}
+.later .lk{font-size:10.5px;font-weight:700;letter-spacing:.12em;color:var(--onD-3);
+  margin-bottom:9px}
+.later .lv{font-size:13px;line-height:1.7;color:var(--onD-2)}
+.slide.lite .caps .slot i{background:var(--accent-tint);color:#8A6828}
+.slide.lite .caps .slot .n{color:var(--base)}
+.slide.lite .later{border-top-color:var(--line)}
+.slide.lite .later .lk{color:#98A0BB}
+.slide.lite .later .lv{color:var(--muted)}
+/* everything already shown stays lit; only the current one is solid gold */
+.sp-0 .slot:nth-child(-n+1),
+.sp-1 .slot:nth-child(-n+1),
+.sp-2 .slot:nth-child(-n+1),
+.sp-3 .slot:nth-child(-n+2),
+.sp-4 .slot:nth-child(-n+2),
+.sp-5 .slot:nth-child(-n+2),
+.sp-6 .slot:nth-child(-n+3),
+.sp-7 .slot:nth-child(-n+3),
+.sp-8 .slot:nth-child(-n+3){opacity:1;background:rgba(220,190,132,.11)}
+.sp-0 .slot:nth-child(1),
+.sp-1 .slot:nth-child(1),
+.sp-2 .slot:nth-child(1),
+.sp-3 .slot:nth-child(2),
+.sp-4 .slot:nth-child(2),
+.sp-5 .slot:nth-child(2),
+.sp-6 .slot:nth-child(3),
+.sp-7 .slot:nth-child(3),
+.sp-8 .slot:nth-child(3){background:var(--gold);box-shadow:none}
+.sp-0 .slot:nth-child(1) .n,
+.sp-1 .slot:nth-child(1) .n,
+.sp-2 .slot:nth-child(1) .n,
+.sp-3 .slot:nth-child(2) .n,
+.sp-4 .slot:nth-child(2) .n,
+.sp-5 .slot:nth-child(2) .n,
+.sp-6 .slot:nth-child(3) .n,
+.sp-7 .slot:nth-child(3) .n,
+.sp-8 .slot:nth-child(3) .n{color:var(--d1)}
+.sp-0 .slot:nth-child(1) i,
+.sp-1 .slot:nth-child(1) i,
+.sp-2 .slot:nth-child(1) i,
+.sp-3 .slot:nth-child(2) i,
+.sp-4 .slot:nth-child(2) i,
+.sp-5 .slot:nth-child(2) i,
+.sp-6 .slot:nth-child(3) i,
+.sp-7 .slot:nth-child(3) i,
+.sp-8 .slot:nth-child(3) i{background:rgba(0,0,0,.14);color:var(--d1)}
+
+.capdesc{width:400px;flex:0 0 400px;position:relative;height:404px}
+.cd{position:absolute;inset:0;opacity:0;transition:opacity .16s ease;
+  display:flex;flex-direction:column;justify-content:center}
+.sp-0 .cd[data-cd="0"],
+.sp-1 .cd[data-cd="0"],
+.sp-2 .cd[data-cd="0"],
+.sp-3 .cd[data-cd="1"],
+.sp-4 .cd[data-cd="1"],
+.sp-5 .cd[data-cd="1"],
+.sp-6 .cd[data-cd="2"],
+.sp-7 .cd[data-cd="2"],
+.sp-8 .cd[data-cd="2"]{opacity:1;transition:opacity .3s ease .16s}
+.cd .cdt{font-size:19px;font-weight:700;color:#fff;line-height:1.36;margin-bottom:14px}
+.cd ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.cd li{font-size:14.5px;line-height:1.54;color:var(--onD-2);position:relative;
+  padding-inline-start:16px}
+.cd li::before{content:'';position:absolute;inset-inline-start:0;top:.6em;
+  width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.cd li b{color:#fff;font-weight:600}
+.cd .cdn{font-size:11.5px;line-height:1.5;color:var(--onD-3);margin-top:13px}
+
+/* the device is the one lit object on the slide */
+.dev{width:196px;height:404px;background:#fff;border-radius:30px;position:relative;
+  overflow:hidden;border:7px solid #0B1130;flex:0 0 auto;
+  box-shadow:0 24px 56px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.12)}
+.dev .notch{position:absolute;top:7px;left:50%;transform:translateX(-50%);width:52px;height:4px;
+  border-radius:99px;background:rgba(0,0,0,.15);z-index:9}
+.cs{position:absolute;inset:0;background:#fff;z-index:6;opacity:0;
+  transition:opacity .16s ease;display:flex;flex-direction:column}
+.st-0 .cs[data-cs="0"],
+.st-1 .cs[data-cs="1"],
+.st-2 .cs[data-cs="2"],
+.st-3 .cs[data-cs="3"],
+.st-4 .cs[data-cs="4"],
+.st-5 .cs[data-cs="5"],
+.st-6 .cs[data-cs="6"],
+.st-7 .cs[data-cs="7"],
+.st-8 .cs[data-cs="8"]{opacity:1;transition:opacity .3s ease .16s}
+.cs .csh{padding:15px 13px 9px;font-size:13px;font-weight:700;color:var(--base);flex:0 0 auto}
+.cs .csb{padding:0 13px 14px;display:flex;flex-direction:column;justify-content:center;
+  gap:8px;flex:1;min-height:0}
+.cs .row{display:flex;align-items:center;gap:9px;background:#F1F3FB;border-radius:10px;
+  padding:8px 10px}
+.cs .row .t{font-size:11.5px;font-weight:600;color:var(--base);line-height:1.25}
+.cs .row .s2{font-size:9.5px;color:#8C93AC;margin-top:2px;line-height:1.35}
+.cs .row .tag{margin-inline-start:auto;font-size:9px;font-weight:700;color:var(--accent);flex:0 0 auto}
+.cs .row.gd{background:var(--accent-tint)}
+.cs .row.gd .t{color:#7A5C22}.cs .row.gd .s2{color:#9A7B3C}
+.cs .big{font-size:14px;font-weight:700;color:var(--base);line-height:1.28}
+.cs .sub{font-size:10px;color:#8C93AC;margin-top:3px;line-height:1.4}
+.cs .ph2{height:104px;border-radius:10px;overflow:hidden;flex:0 0 auto;background:#E8EBFC}
+.cs .ph2 img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.cs .fld{display:flex;justify-content:space-between;gap:8px;font-size:10px;padding:5px 0;
+  border-bottom:1px solid #ECEEF7}
+.cs .fld span:first-child{color:#98A0BB;flex:0 0 auto}
+.cs .fld span:last-child{color:var(--base);font-weight:600;text-align:left}
+.cs .chips{display:flex;gap:5px;flex-wrap:wrap}
+.cs .pill2{display:inline-flex;font-size:9.5px;background:var(--tint);color:var(--base);
+  padding:3px 8px;border-radius:99px;font-weight:600}
+.cs .pill2.on2{background:var(--accent);color:#fff}
+.cs .bar{height:4px;border-radius:99px;background:#E4E8F6;overflow:hidden}
+.cs .bar i{display:block;height:100%;background:var(--accent);border-radius:99px}
+.cs .srch{display:flex;align-items:center;gap:7px;background:#F1F3FB;border-radius:99px;
+  padding:7px 11px;font-size:11px;color:var(--base);font-weight:600}
+.cs .srch svg{width:12px;height:12px;flex:0 0 12px;fill:none;stroke:#98A0BB;stroke-width:2}
+.cs .lbl{font-size:9px;font-weight:700;letter-spacing:.1em;color:var(--accent)}
+.cs .av3{width:34px;height:34px;border-radius:8px;flex:0 0 34px;overflow:hidden;background:#E8EBFC}
+.cs .av3 img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.cs .play{width:34px;height:34px;border-radius:50%;background:var(--base);flex:0 0 34px;
+  display:grid;place-items:center}
+.cs .play svg{width:13px;height:13px;fill:#fff;stroke:none}
+.cs .chk{display:flex;align-items:center;gap:8px;font-size:10.5px;color:var(--base);font-weight:500}
+.cs .chk i{width:14px;height:14px;border-radius:4px;background:var(--base);flex:0 0 14px;
+  position:relative}
+.cs .chk i::after{content:'';position:absolute;inset:0;background:
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12l5 5L20 6'/%3E%3C/svg%3E") center/11px no-repeat}
+.cs .tog{display:flex;background:#F1F3FB;border-radius:99px;padding:3px}
+.cs .tog span{flex:1;text-align:center;font-size:10px;font-weight:600;padding:5px;
+  border-radius:99px;color:#8C93AC}
+.cs .tog span.a2{background:var(--base);color:#fff}
+.cs .pfd2{width:32px;height:32px;border-radius:8px;background:var(--base);color:#fff;
+  flex:0 0 32px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;line-height:1}
+.cs .pfd2 span{font-size:7px;font-weight:600;margin-top:2px;opacity:.85}
+.cs .btn2{margin-top:3px;background:var(--base);color:#fff;border-radius:99px;padding:9px;
+  text-align:center;font-size:11px;font-weight:700}
+.cs .btn2.g2{background:var(--accent)}
+.cs .kpis{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.cs .kp{background:#F1F3FB;border-radius:10px;padding:9px 10px}
+.cs .kv{font-size:16px;font-weight:700;color:var(--base);line-height:1}
+.cs .kl{font-size:8.5px;color:#8C93AC;margin-top:3px;line-height:1.3}
+.cs .tkt{background:var(--base);border-radius:11px;padding:11px 12px;color:#fff}
+.cs .tkt .k{font-size:8.5px;letter-spacing:.1em;color:#DCBE84;font-weight:700}
+.cs .tkt .v{font-size:13px;font-weight:700;margin-top:4px}
+.cs .tkt .s3{font-size:9.5px;color:#B6BEE0;margin-top:3px}
+.cs .qr{height:38px;margin-top:9px;border-radius:6px;background:
+  repeating-linear-gradient(90deg,#fff 0 3px,transparent 3px 6px);opacity:.9}
+.cs .stn{display:flex;gap:9px;align-items:flex-start}
+.cs .stn .dotc{width:9px;height:9px;border-radius:50%;background:var(--accent);flex:0 0 9px;
+  margin-top:3px;position:relative}
+.cs .stn .dotc::after{content:'';position:absolute;top:12px;left:4px;width:1.5px;height:15px;
+  background:rgba(169,130,60,.3)}
+.cs .stn:last-child .dotc::after{display:none}
+.cs .stn .t{font-size:11px;font-weight:600;color:var(--base);line-height:1.25}
+.cs .stn .s2{font-size:9px;color:#8C93AC;margin-top:2px}
+
+/* 5 · a full-bleed statement slide, for the section breaks */
+.hero-slide{padding:0}
+.hero-slide .bgimg{position:absolute;inset:0}
+.hero-slide .bgimg img{width:100%;height:100%;object-fit:cover}
+.hero-slide .veil{position:absolute;inset:0;
+  background:linear-gradient(to left,rgba(16,21,52,.96) 0%,rgba(16,21,52,.72) 44%,rgba(16,21,52,.18) 100%)}
+.hero-slide h2{font-size:52px;max-width:20ch}
+
+/* the live-site hotspot: now the phone screen on slide 2, "the next generation
+   meets it on a screen". clicking it opens the real memorial site. */
+.secret-gavriel{display:block;position:relative;z-index:3;cursor:pointer;border-radius:16px;
+  outline:2px solid transparent;outline-offset:7px;
+  transition:transform .28s ease,box-shadow .28s ease}
+.secret-gavriel:hover{transform:translateY(-4px)}
+.secret-gavriel:hover .phone-card{box-shadow:0 0 0 3.5px #fff,0 0 0 6px rgba(220,190,132,.55),
+  0 20px 44px rgba(0,0,0,.36)}
+.secret-gavriel:focus-visible{outline-color:rgba(220,190,132,.72)}
+
+/* ══ targeted UI repair · slides 2–5 ═══════════════════════════════ */
+/* v2 accidentally changed the full-slide flex canvas into a content-height
+   relative block. That is what pulled slide 5's footer over its headline. */
+.slide>.pad{position:absolute;inset:0;z-index:2}
+
+/* slide 2 · three beats, three real objects: the record, the person, the screen */
+.now-ui{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+  margin-top:24px;height:350px}
+.now-ui::before{content:'';position:absolute;top:100px;right:12%;left:12%;height:1.5px;
+  background:linear-gradient(to left,rgba(220,190,132,.25),var(--gold),rgba(220,190,132,.25))}
+.now-beat{position:relative;text-align:center;padding:0 18px;z-index:1}
+.now-object{height:200px;display:grid;place-items:center;margin-bottom:16px}
+.now-object .paper,.now-object .person-card,.now-object .phone-card{background:#fff;
+  box-shadow:0 14px 34px rgba(0,0,0,.28);position:relative}
+
+/* 1 · a page of testimony. the record is what outlives the witness. */
+.now-object .paper{width:140px;height:168px;border-radius:5px;transform:rotate(-2.4deg);
+  padding:5px;overflow:hidden}
+.now-object .paper img{display:block;width:100%;height:100%;object-fit:cover;
+  object-position:top center;filter:contrast(1.05)}
+.now-object .paper::after{content:'';position:absolute;right:5px;left:5px;bottom:5px;height:52px;
+  pointer-events:none;background:linear-gradient(to top,#fff 8%,rgba(255,255,255,0))}
+
+/* 2 · a name opens a person: face, name, story, place. no words needed. */
+.now-object .person-card{width:216px;height:134px;border-radius:12px;padding:14px;
+  display:flex;align-items:center;gap:13px}
+.now-object .person-card>img{width:74px;height:106px;flex:0 0 74px;object-fit:cover;
+  object-position:top center;border-radius:7px;filter:grayscale(.22) contrast(1.04)}
+.now-object .person-card .fc{flex:1;display:flex;flex-direction:column;justify-content:center;gap:11px}
+.now-object .person-card .fc .nm{height:7px;width:84%;border-radius:3px;background:var(--accent)}
+.now-object .person-card .fc .ln{display:flex;flex-direction:column;gap:6px}
+.now-object .person-card .fc .ln i{display:block;height:5px;border-radius:3px;background:#D8DAE4}
+.now-object .person-card .fc .ln i:nth-child(1){width:100%}
+.now-object .person-card .fc .ln i:nth-child(2){width:72%}
+.now-object .person-card .fc .pl{display:flex;align-items:center;gap:7px}
+.now-object .person-card .fc .pl svg{width:13px;height:13px;flex:0 0 13px;fill:none;
+  stroke:var(--accent);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.now-object .person-card .fc .pl i{display:block;height:5px;width:56%;border-radius:3px;background:#D8DAE4}
+
+/* 3 · the screen it is actually met on. this one is a live link. */
+.now-object .phone-card{width:100px;height:150px;border-radius:17px;padding:15px 7px 7px;
+  background:#101534;overflow:hidden;display:flex;flex-direction:column;gap:5px;
+  box-shadow:0 0 0 3.5px #fff,0 14px 34px rgba(0,0,0,.28)}
+.now-object .phone-card::before{content:'';position:absolute;top:6px;left:50%;
+  transform:translateX(-50%);width:26px;height:3.5px;border-radius:3px;
+  background:rgba(255,255,255,.32);z-index:2}
+.now-object .phone-card .ps-top{flex:0 0 12px;border-radius:3px;width:62%;
+  background:rgba(220,190,132,.34)}
+.now-object .phone-card .ps-img{flex:0 0 54px;border-radius:6px;overflow:hidden}
+.now-object .phone-card .ps-img img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.now-object .phone-card .ps-l{flex:0 0 5px;border-radius:2px;background:rgba(255,255,255,.3)}
+.now-object .phone-card .ps-l.w2{width:64%}
+.now-object .phone-card .ps-cta{margin-top:auto;flex:0 0 17px;border-radius:99px;
+  background:var(--gold);opacity:.94}
+
+.now-beat h3{font-size:17px;color:#fff;margin-top:2px}
+.now-beat p{font-size:13.5px;line-height:1.55;color:var(--onD-2);margin:7px auto 0;max-width:29ch}
+
+/* slide 3 · three explicit stages instead of floating islands */
+.touch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px;height:286px}
+.touch-stage{position:relative;padding:15px 16px 16px;border-radius:16px;background:var(--glass);
+  box-shadow:inset 0 0 0 1px var(--hair);display:flex;flex-direction:column}
+.touch-stage::after{content:'';position:absolute;top:46px;bottom:16px;right:0;width:2px;
+  background:linear-gradient(to bottom,var(--gold),rgba(220,190,132,0));opacity:.45}
+.touch-stage h3{display:flex;align-items:center;justify-content:space-between;color:#fff;font-size:16px;
+  padding-bottom:12px;border-bottom:1px solid var(--hair)}
+.touch-stage h3 small{font-size:10px;letter-spacing:.1em;color:var(--gold);font-weight:700}
+.touch-items{display:flex;flex-direction:column;gap:8px;justify-content:center;flex:1}
+.touch-item{padding:9px 11px;border-radius:10px;background:rgba(255,255,255,.045);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.07)}
+.touch-item b{display:block;font-size:13.5px;color:#fff!important;line-height:1.25}
+.touch-item span{display:block;font-size:11.7px;color:var(--onD-2);line-height:1.4;margin-top:3px}
+
+/* slide 4 · one query, five clearly numbered destinations */
+.source-flow{display:grid;grid-template-columns:300px 76px 1fr;gap:16px;direction:rtl;
+  align-items:center;margin-top:20px;height:294px}
+.query-card{height:128px;border-radius:16px;background:var(--glass-2);
+  box-shadow:inset 0 0 0 1px rgba(220,190,132,.24);padding:20px 22px;display:flex;
+  flex-direction:column;justify-content:center}
+.query-card .k{font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--gold);margin-bottom:10px}
+.query-card .q{font-size:17px;line-height:1.45;color:#fff;font-weight:600}
+.flow-x{display:grid;place-items:center;position:relative;height:100%}
+.flow-x::before,.flow-x::after{content:'';position:absolute;top:50%;height:1px;background:rgba(220,190,132,.42)}
+.flow-x::before{right:0;left:50%}.flow-x::after{left:0;right:50%}
+.flow-x span{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;z-index:1;
+  background:var(--d2);box-shadow:0 0 0 1px rgba(220,190,132,.5);color:var(--gold);
+  font-size:18px;font-weight:700}
+.source-list{display:flex;flex-direction:column;gap:7px;direction:rtl}
+.source-row{height:52px;border-radius:10px;background:var(--glass);box-shadow:inset 0 0 0 1px var(--hair);
+  display:grid;grid-template-columns:42px 132px 1fr;align-items:center;padding:0 12px;column-gap:12px}
+.source-row .ix{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(220,190,132,.12);color:var(--gold);font-size:10px;font-weight:700}
+.source-row .kind{font-size:10.5px;font-weight:700;letter-spacing:.08em;color:var(--gold)}
+.source-row .name{font-size:14px;font-weight:600;color:#fff}
+
+/* slide 5 · keep the title and prototype in separate columns */
+.rev{display:grid;grid-template-columns:346px minmax(0,1fr);gap:28px;direction:rtl;
+  flex:1;min-height:0;margin-top:0}
+.revside{position:static;align-self:start;padding-top:16px;width:auto}
+.cl{position:relative;inset:auto;right:auto;left:auto;top:auto;bottom:auto;width:100%;height:100%;
+  grid-template-columns:184px 228px 184px;grid-template-rows:1fr 64px;column-gap:16px;direction:rtl}
+.cl .ph,.cl .vb{direction:rtl}
+
+@media print{
+  .cl[data-once] .pb,.cl[data-once] .pc{opacity:1!important;transform:scale(1)!important}
+  .cl[data-once] .typed,.cl[data-once] .savedEl{opacity:1!important;transform:none!important}
+  .cl[data-once] .selrow{background:#F7F4EC!important;box-shadow:0 0 0 1.6px rgba(169,130,60,.62)!important}
+}
+
+</style>
+</head>
+<body>
+
+<div id="rotate"><div>
+  <div class="t2">סובבו את המכשיר לרוחב</div>
+  <div class="s2">המצגת בנויה למסך רחב. לצפייה נוחה מומלץ מחשב או טאבלט.</div>
+</div></div>
+<div id="hint">← מעבר לשקף הבא · F מסך מלא</div>
+
+<div id="viewport"><div id="stage">
+
+  <!-- ══ 1 · פתיחה שקטה. חמי מספר כאן את הסיפור. ══ -->
+  <section class="slide on dark" style="background:#1E285A">
+    <img src="assets/yv-cover.jpg" alt="" style="position:absolute;inset:0;width:100%;
+         height:100%;object-fit:cover">
+    <div style="position:absolute;inset:0;background:linear-gradient(to left,
+         rgba(21,28,64,.92) 0%,rgba(24,32,72,.5) 46%,rgba(30,40,90,0) 100%)"></div>
+    <div class="pad" style="justify-content:space-between;padding:52px 70px">
+      <div style="display:flex;align-items:center;gap:22px">
+        <img src="assets/target-logo.svg" alt="יד ושם" style="height:62px;width:auto">
+        <div style="width:1px;height:52px;background:rgba(255,255,255,.3)"></div>
+        <img src="assets/200apps-logo.png" alt="200Apps" style="height:66px;width:auto;
+             filter:brightness(0) invert(1);opacity:.92">
+      </div>
+      <div>
+        <div class="eyebrow" style="color:#DCBE84">הצעה לדיון</div>
+        <h1 style="color:#fff;max-width:22ch">אפליקציה רשמית<br>המחברת בין<br>ביקור, אדם וסיפור</h1>
+        <div class="lead" style="color:#C9D2F0;max-width:40ch;font-size:19px">
+          טכנולוגיית הדור הבא. <span style="color:#DCBE84">עבור הדור הבא.</span>
+        </div>
+      </div>
+      <div style="display:flex;gap:20px;font-size:13.5px;color:#A3AED6">
+        <span>אוגוסט 2026</span><span>·</span><span>יד ושם</span><span>·</span><span>200Apps</span>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- ══ 2 · למה עכשיו ══ -->
+  <section class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">01</span> למה עכשיו</div>
+      <h2 style="font-size:40px;line-height:1.15;max-width:17ch">ככל שהזמן עובר,<br>האחריות שלנו גדלה</h2>
+      <div class="lead" style="max-width:62ch;margin-top:10px">העדים הולכים ומתמעטים, המרחק מהאירועים גדל, והדור הבא פוגש את השואה באופן שונה מהדורות שקדמו לו.</div>
+
+      <div class="now-ui">
+        <article class="now-beat">
+          <div class="now-object">
+            <div class="paper"><img src="assets/page-of-testimony.png" alt="דף עד"></div>
+          </div>
+          <h3>העדות מתרחקת</h3>
+          <p>הדור שפגש ניצולים פנים אל פנים הולך ומתמעט, והמפגש הישיר עם העדות הופך נדיר.</p>
+          <div class="cdn" style="font-size:11px;color:var(--onD-3);margin-top:9px">דף עד מארכיון יד ושם, מוצג להמחשה בהסכמת המשפחה.</div>
+        </article>
+        <article class="now-beat">
+          <div class="now-object">
+            <div class="person-card">
+              <img src="assets/person-gavriel.png" alt="">
+              <div class="fc">
+                <span class="nm"></span>
+                <span class="ln"><i></i><i></i></span>
+                <span class="pl">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+                  <i></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <h3>הסיפור יוצר קשר</h3>
+          <p>זיכרון נשמר כאשר אדם פוגש שם, פנים, סיפור ומקום, ומרגיש שהם נוגעים גם בו.</p>
+        </article>
+        <article class="now-beat">
+          <div class="now-object">
+            <a class="secret-gavriel"
+               href="https://hemibl.github.io/gretzovsky-memorial-calendar/"
+               target="_blank" rel="noopener" aria-label="פתיחת אתר הזיכרון של סבא גבריאל"
+               onclick="event.stopPropagation()">
+              <div class="phone-card">
+                <div class="ps-top"></div>
+                <div class="ps-img"><img src="assets/person-gavriel.png" alt=""></div>
+                <div class="ps-l"></div>
+                <div class="ps-l w2"></div>
+                <div class="ps-cta"></div>
+              </div>
+            </a>
+          </div>
+          <h3><span class="ng">הדור הבא</span> פוגש אותו במסך</h3>
+          <p>שם הוא מגלה, לומד ומעצב את תפיסת עולמו. כדי שהזיכרון ימשיך לחיות, הוא צריך לדבר גם בשפה הזאת.</p>
+        </article>
+      </div>
+
+      <div class="concl">כדי שהזיכרון יעבור <b>אל הדור הבא</b>, הוא צריך להיות אישי, נגיש ונוכח גם מעבר לגבולות הר הזיכרון, <b>ולא רק ביום הזיכרון לשואה ולגבורה</b>.</div>
+    </div>
+  </section>
+
+  <!-- ══ 3 · איפה החוויה עומדת היום · the real surfaces, scattered ══ -->
+  <section class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">02</span> איפה החוויה עומדת היום</div>
+      <h2 style="font-size:40px;line-height:1.15">החוויה קיימת. היא פשוט מפוזרת.</h2>
+
+      <div class="frag">
+        <div class="cut" style="right:306px;top:250px;width:84px"></div>
+        <div class="cut" style="right:614px;top:132px;width:56px"></div>
+        <div class="cut" style="right:848px;top:296px;width:68px"></div>
+
+        <div class="fr" style="right:6px;top:40px;width:288px;height:184px;
+             transform:rotate(-2.4deg);box-shadow:0 22px 48px rgba(0,0,0,.5);z-index:6">
+          <img src="assets/frag/names.png" alt="" style="object-position:center 26%">
+          <div class="lb">המאגר המרכזי של שמות קרבנות השואה</div>
+        </div>
+
+        <div class="fr" style="right:246px;top:262px;width:224px;height:146px;
+             transform:rotate(1.8deg);box-shadow:0 16px 36px rgba(0,0,0,.44);z-index:4">
+          <img src="assets/frag/collections.png" alt="" style="object-position:center 34%">
+          <div class="lb">אוספים ומאגרי מידע</div>
+        </div>
+
+        <div class="fr" style="right:470px;top:20px;width:238px;height:154px;
+             transform:rotate(2.6deg);box-shadow:0 14px 32px rgba(0,0,0,.4);z-index:5">
+          <img src="assets/frag/tickets.png" alt="" style="object-position:center 20%">
+          <div class="lb">הזמנת ביקור וכרטוס</div>
+        </div>
+
+        <div class="fr" style="right:664px;top:236px;width:252px;height:164px;
+             transform:rotate(-1.6deg);box-shadow:0 22px 46px rgba(0,0,0,.48);z-index:7">
+          <img src="assets/frag/bloomberg.png" alt="" style="object-position:left top">
+          <div class="lb">המדריך בפלטפורמה משותפת</div>
+        </div>
+
+        <div class="fr" style="right:886px;top:28px;width:244px;height:158px;
+             transform:rotate(-3deg);box-shadow:0 16px 38px rgba(0,0,0,.44);z-index:5">
+          <img src="assets/frag/education.png" alt="" style="object-position:center 28%">
+          <div class="lb">חומרי חינוך והוראה</div>
+        </div>
+
+        <div class="fr" style="right:920px;top:292px;width:208px;height:134px;
+             transform:rotate(2.2deg);box-shadow:0 12px 28px rgba(0,0,0,.38);z-index:3">
+          <img src="assets/frag/store.png" alt="" style="object-position:center 36%">
+          <div class="lb">חנות ותרומות</div>
+        </div>
+      </div>
+
+      <div class="concl">מה שחסר הוא <b>רצף אחד</b> שמחבר את האדם לפני הביקור, במהלכו וגם אחריו.</div>
+    </div>
+  </section>
+
+  <!-- ══ 4 · קהילה אחת, חמישה מקורות ══ -->
+  <section class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">03</span> דוגמה אחת מתוך יותר מ-5,000 קהילות</div>
+      <h2 style="font-size:40px;line-height:1.15">כדי למצוא סיפור אחד, צריך לחפש בחמישה מקומות.</h2>
+      <div class="lead" style="max-width:74ch">הקהילה של זדז'יינצ'יול מופיעה כיום בכמה מוקדים שונים ביד ושם. כל אחד מהם מספר חלק אחר מהסיפור.</div>
+
+      <div class="source-flow">
+        <div class="query-card">
+          <div class="k">מבקר מחפש</div>
+          <div class="q">"מאיפה הגיעה המשפחה שלי — ומה קרה לקהילה?"</div>
+        </div>
+        <div class="flow-x"><span>×5</span></div>
+        <div class="source-list">
+          <div class="source-row"><div class="ix">01</div><div class="kind">היסטוריה</div><div class="name">האנציקלופדיה של הגטאות</div></div>
+          <div class="source-row"><div class="ix">02</div><div class="kind">אנשים ושמות</div><div class="name">המאגר המרכזי של שמות קרבנות השואה</div></div>
+          <div class="source-row"><div class="ix">03</div><div class="kind">תצלומים וסרטים</div><div class="name">מאגר האוספים</div></div>
+          <div class="source-row"><div class="ix">04</div><div class="kind">סיפור משפחתי</div><div class="name">תערוכה מקוונת</div></div>
+          <div class="source-row"><div class="ix">05</div><div class="kind">הנצחה פיזית</div><div class="name">בקעת הקהילות</div></div>
+        </div>
+      </div>
+
+      <div class="gapb">
+        <div class="t" style="font-size:25px">זה לא פער בתוכן. <b>זו שכבת חיבור שחסרה.</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 4b · בנצ'מרק · הקטגוריה קיימת ══ -->
+  <section class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">04</span> בנצ'מרק בינלאומי</div>
+      <h2 style="font-size:38px;line-height:1.15">המובייל כבר הפך לערוץ מוסדי בעולם ההנצחה</h2>
+
+      <div class="two" style="margin-top:14px;grid-template-columns:.72fr 1.28fr;
+           align-items:center;gap:44px">
+        <div>
+          <div class="bignum">58<small>%</small></div>
+          <div class="bigsub">21 מתוך 36 המוסדות שנבדקו</div>
+          <div class="bigcap">מפעילים לפחות מוצר מובייל אחד, פעיל ורשמי.</div>
+        </div>
+        <div>
+          <div class="benchbar">
+            <i class="b1" style="flex:16"></i><i class="b2" style="flex:5"></i><i class="b3" style="flex:15"></i>
+          </div>
+          <div class="benchkey">
+            <div><i style="background:var(--gold)"></i><span><b>16 · אפליקציה ייעודית</b>ממותגת, בבעלות המוסד</span></div>
+            <div><i style="background:rgba(220,190,132,.44)"></i><span><b>5 · פלטפורמת ספק</b>Bloomberg Connects ודומותיה</span></div>
+            <div><i style="background:rgba(255,255,255,.10)"></i><span><b>15 · ללא מוצר פעיל</b>שניתן היה לאמת</span></div>
+          </div>
+          <div class="src" style="margin-top:16px">הספירה כוללת גם מוצרים מצומצמים, כגון אפליקציית נגישות
+            או כלי חינוכי. אפליקציה ייעודית וממותגת נמצאה ב-44% מהמוסדות.</div>
+        </div>
+      </div>
+
+      <div class="wall2">
+        <span>36 מוסדות · 14 מדינות</span>
+        <img src="assets/bench/buchenwald.svg" alt="Buchenwald Memorial">
+        <img src="assets/bench/dachau.svg" alt="KZ-Gedenkstätte Dachau">
+        <img src="assets/bench/montreal.png" alt="Musée Holocauste Montréal">
+        <span>Mauthausen</span>
+        <span>Anne Frank House</span>
+        <span>Illinois Holocaust Museum</span>
+        <span>Jewish Museum Berlin</span>
+      </div>
+
+      <div class="foot">המסקנה אינה שלכל מוסד חייבת להיות אפליקציה, אלא שהמובייל
+        כבר אינו ניסוי. הוא ערוץ מוסדי מוכר.
+        <div class="src">בנצ'מרק בינלאומי, אוגוסט 2026: מוזיאונים, אתרי מחנות, אנדרטאות ומרכזי תיעוד.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 4c · בנצ'מרק · הפער · the one light pause in the deck ══ -->
+  <section class="slide lite">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">05</span> בנצ'מרק בינלאומי</div>
+
+      <div class="zero">
+        <div class="num0">0
+          <span class="cap">מתוך 21 האפליקציות הפעילות שנבדקו</span>
+        </div>
+        <div>
+          <div class="say">באף אחת לא מצאנו חיבור מאומת בין הביקור לבין חיפוש שמי של קרבנות.</div>
+          <div class="rule"></div>
+          <div class="ctx"><b>71% יודעות להדריך את הביקור.</b><br>
+            0 מחברות אותו לאדם ולקשר שנמשך אחריו.</div>
+          <div class="src" style="margin-top:18px;max-width:46ch">לא נמצא חיפוש שמות מאומת של
+            קורבנות כחלק ממסע המבקר, באף אחת מ-21 האפליקציות הפעילות במדגם. "לא נמצא" מתאר
+            את המדגם שנבדק, ואינו טענה לגבי מוצר אזורי או פיילוט שאינו מופץ לציבור.</div>
+        </div>
+      </div>
+
+      <div class="foot">ההזדמנות אינה עוד מדריך קולי, אלא חיבור בין הביקור לבין מאגר השמות,
+        העדויות והקהילות.
+        <div class="src">לוגואים להמחשה. המוסדות אינם קשורים ל-200Apps.</div></div>
+    </div>
+  </section>
+
+  <!-- ══ 5 · חשיפת המוצר ══ -->
+  <section class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">06</span> ההצעה</div>
+      <div class="rev">
+        <div class="revside">
+          <h2 style="font-size:38px;line-height:1.16">לא רק למצוא שם.<br>לפגוש אדם.</h2>
+          <div class="lead" style="max-width:30ch;font-size:17px">שם אחד פותח משפחה, קהילה, מקום וסיפור חיים.</div>
+        </div>
+        <div class="cl k0" data-once>
+          <div class="ph pa"><div class="in"><div class="sb"><span>9:41</span><span>▮</span></div>
+              <div class="uh"><div class="t">יד ושם</div></div>
+              <div class="ub">
+                <div class="usrch"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3"/></svg><span class="typed">זדז'יינצ'יול</span></div>
+                <div class="usec">אנשים</div>
+                <div class="urow selrow"><div class="av"><img src="assets/person-gavriel.png" alt=""></div><div><div class="t">ר' גוטל גבריאל גרצובסקי</div><div class="s">ניצול · יומן ועדות</div></div></div>
+                <div class="urow"><div class="av"></div><div><div class="t">שלמה גרצובסקי</div><div class="s">נספה · אב</div></div></div>
+              </div></div><div class="cam"></div><div class="hb"></div></div>
+          <div class="ph pb"><div class="in">
+              <div class="uhero"><img src="assets/person-hero.jpg" alt=""><div class="vg"></div>
+                <div class="nm"><div class="n1">ר' גוטל גבריאל גרצובסקי</div>
+                <div class="n2">נולד בזטיל (זדז'יינצ'יול) · מערב בלארוס</div></div></div>
+              <div class="ub">
+                <div class="uchips"><span>זדז'יינצ'יול</span><span>ניצול</span><span>13 תחנות</span></div>
+                <div class="uq">"עיירה של שלושת אלפים יהודים, ודחסו אותם בשלושה רחובות קטנים."</div>
+                <div class="useg"><span class="on">העדות</span><span>היומן</span><span>מפת המסע</span></div>
+              </div>
+              <div class="ucta ctaMain">שמור לסיפור שלי</div>
+              <div class="ucta o">הוסף למסלול ביקור</div>
+            </div><div class="cam"></div><div class="hb"></div></div>
+          <div class="ph pc"><div class="in"><div class="sb"><span>9:41</span><span>▮</span></div>
+              <div class="uh"><div class="t">הסיפורים שלי</div></div>
+              <div class="okbig">
+                <div class="c savedEl"><svg viewBox="0 0 24 24"><path d="M4 12.5l5.2 5.2L20 7"/></svg></div>
+                <div class="t savedEl">נשמר לסיפור שלי</div>
+                <div class="umem savedEl"><div class="k">מועד הזיכרון הבא</div><div class="d">כ"ב באב</div>
+                  <div class="s">שלמה גרצובסקי · אב</div></div>
+              </div>
+              <div class="ucta o savedEl">שתף עם המשפחה</div>
+            </div><div class="cam"></div><div class="hb"></div></div>
+          <div class="vb"><div class="n">01</div><div class="w">לגלות</div><div class="s">חיפוש שם, קהילה או מקום.</div></div>
+          <div class="vb"><div class="n">02</div><div class="w">לפגוש</div><div class="s">כל המקורות מתחברים סביב אדם אחד.</div></div>
+          <div class="vb"><div class="n">03</div><div class="w">להעביר הלאה</div><div class="s">לשמור, לשתף ולשאת את הסיפור הלאה.</div></div>
+        </div>
+      </div>
+      <div class="foot">האפליקציה מחברת את חלקי הסיפור, ומאפשרת <b>להבין אותו, לשמור אותו ולהעביר אותו הלאה</b>.
+        <div class="src" style="margin-top:5px">מסכי הדגמה. הפרטים מבוססים על סיפור משפחתו של אחד מאנשי הצוות ומוצגים בהסכמת המשפחה. אין באלה תחליף לרשומה הארכיונית.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 6 · הקשר המתמשך ══ -->
+  <section class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">07</span> הקשר המתמשך</div>
+      <h2 style="font-size:40px;line-height:1.15">הביקור לא מסתיים ביציאה מהשער.</h2>
+      <div class="lead" style="max-width:78ch">האפליקציה מלווה את האדם מההכנה לביקור, דרך המפגש במקום, ועד להמשך הקשר עם הסיפור לאחריו.</div>
+
+      <div class="jrny">
+        <div class="jline"></div>
+        <div class="jcol ">
+          <div class="mph"><div class="in"><div class="sb"><span>9:41</span><span>▮</span></div><div class="hd">מסלול הביקור שלי</div>
+              <div class="bd">
+                <div class="lb">שמרתי</div>
+                <div><span class="tok">זדז'יינצ'יול</span></div>
+                <div class="crd"><div class="t">בעקבות הקהילה</div><div class="s">4 תחנות · 90 דקות</div></div>
+                </div><div class="cta">הוסף למסלול</div></div><div class="nch"></div><div class="hb"></div></div>
+          <div class="jdot">1</div>
+          <div class="jk">לפני הביקור</div>
+          <div class="jp">שומרים שם, קהילה או נושא, ובונים מסלול אישי.</div>
+        </div>
+        <div class="jcol ">
+          <div class="mph"><div class="in"><div class="sb"><span>9:41</span><span>▮</span></div><div class="hd">בקעת הקהילות</div>
+              <div class="bd">
+                <div class="mp"><i></i><b>אתם נמצאים כאן</b></div>
+                <div class="lb">נפתח לפי המקום</div>
+                <div><span class="tok">זדז'יינצ'יול</span></div>
+                <div class="crd"><div class="t">הקהילה ששמרת נמצאת כאן</div><div class="s">חקוקה באבן · שורה 12</div></div>
+              </div><div class="cta">שמור להמשך</div></div><div class="nch"></div><div class="hb"></div></div>
+          <div class="jdot">2</div>
+          <div class="jk">במהלך הביקור</div>
+          <div class="jp">הסיפור נפתח לפי המקום שבו המבקר עומד.</div>
+        </div>
+        <div class="jcol ">
+          <div class="mph"><div class="in"><div class="sb"><span>9:41</span><span>▮</span></div><div class="hd">הסיפורים שלי</div>
+              <div class="bd">
+                <div><span class="tok">זדז'יינצ'יול</span></div>
+                <div class="prow"><img src="assets/person-gavriel.png" alt=""><div><div class="t">ר' גוטל גבריאל<br>גרצובסקי</div><div class="s">✓ נשמר בביקור</div></div></div>
+                </div><div class="cta">שתף עם המשפחה</div></div><div class="nch"></div><div class="hb"></div></div>
+          <div class="jdot">3</div>
+          <div class="jk">אחרי הביקור</div>
+          <div class="jp">הסיפורים שנשמרו חוזרים הביתה עם האדם.</div>
+        </div>
+        <div class="jcol key">
+          <div class="mph"><div class="in"><div class="sb"><span>9:41</span><span>▮</span></div><div class="hd">מועד זיכרון קרוב</div>
+              <div class="bd">
+                <div class="dt"><div class="d">כ"ב באב</div><div class="s">שלמה גרצובסקי · אב</div></div>
+                <div class="lb">קהילות ששמרתי</div>
+                <div><span class="tok">זדז'יינצ'יול</span></div>
+                <div class="prow"><img src="assets/person-gavriel.png" alt=""><div><div class="t">הסיפור ששמרת</div><div class="s">להמשיך מהמקום שעצרת</div></div></div>
+              </div><div class="cta g">חזור לסיפור ששמרת</div></div><div class="nch"></div><div class="hb"></div></div>
+          <div class="jdot">4</div>
+          <div class="jk">לאורך השנה</div>
+          <div class="jp">הזיכרון ממשיך לחיות דרך מועדים, קהילות ותוכן המשך.</div>
+        </div>
+      </div>
+
+      <div class="foot">אותו אדם. אותו סיפור. לאורך כל הדרך. <b>זה מה שהופך ביקור לקשר.</b></div>
+    </div>
+  </section>
+
+  <!-- ══ 11 · תפוצה · מקור אחד, שני תרחישים ══ -->
+  <section class="slide">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">08</span> מורים, תלמידים ותפוצות</div>
+      <h2 style="font-size:38px;line-height:1.16">התוכן נוצר בירושלים.<br>האפליקציה מביאה אותו לכיתה ולקהילה.</h2>
+
+      <div class="dist">
+        <div class="dsrc">
+          <div class="k">יד ושם, ירושלים</div>
+          <div>
+            <div class="v">עדות, תצלום, דף עד, מערך שיעור</div>
+            <div class="s">החומר כבר קיים, מהימן וערוך.</div>
+          </div>
+        </div>
+
+        <svg viewBox="0 0 1140 54" width="100%" height="54" aria-hidden="true" style="display:block">
+          <path d="M570 0V20M570 20H1052V50M570 20H454V50" fill="none"
+                stroke="rgba(220,190,132,.42)" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="1052" cy="51" r="2.8" fill="rgba(220,190,132,.6)"/>
+          <circle cx="454" cy="51" r="2.8" fill="rgba(220,190,132,.6)"/>
+        </svg>
+
+        <div class="dbranches">
+          <div class="dbr">
+            <div class="mph2">
+              <div class="cs" dir="ltr" style="text-align:left">
+                <div class="csh">Parcours élève</div>
+                <div class="csb">
+                  <div class="chips"><span class="pill2 on2">L'enfance dans la Shoah</span></div>
+                  <div class="row"><div><div class="t">Langue</div><div class="s2">Français</div></div></div>
+                  <div class="row"><div><div class="t">Niveau</div><div class="s2">3e · 14 ans</div></div></div>
+                  <div class="row"><div><div class="t">3 étapes</div><div class="s2">avant la visite</div></div></div>
+                  <div class="btn2">Envoyer à la classe</div>
+                </div>
+              </div>
+            </div>
+            <div class="txt">
+              <div class="scen">תרחיש אפשרי</div>
+              <div class="story">מורה בפריז שולחת לכיתה מסלול לימוד בצרפתית, לקראת הביקור.</div>
+              <div class="res">היא בונה, מתאימה לגיל ולשפה, ושולחת. התלמידים מקבלים את זה בטלפון.</div>
+            </div>
+          </div>
+
+          <div class="dbr">
+            <div class="mph2">
+              <div class="cs">
+                <div class="csh">הקהילה שלך</div>
+                <div class="csb">
+                  <div class="chips"><span class="pill2 on2">זדז'יינצ'יול</span></div>
+                  <div class="row"><div class="av3"><img src="assets/person-gavriel.png" alt=""></div><div><div class="t">ר' גוטל גבריאל גרצובסקי</div><div class="s2">מזדז'נצ'ול, קהילת המוצא</div></div></div>
+                  <div class="row gd"><div class="pfd2">י"ד<span>אב</span></div><div><div class="t">מועד הזיכרון</div><div class="s2">של קהילת המוצא</div></div></div>
+                  <div class="row"><div><div class="t">ערכת טקס</div><div class="s2">מוכנה לשיתוף</div></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="txt">
+              <div class="scen">תרחיש אפשרי</div>
+              <div class="story">קהילה בבואנוס איירס מקבלת ערכת זיכרון סביב אדם שמוצאו מהקהילה.</div>
+              <div class="res">הסיפור, מועד הזיכרון המקומי והערכה לטקס, במקום אחד.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="foot">החומר כבר נוצר ביד ושם. מה שחסר הוא הדרך להביא אותו בזמן, בשפה ובהקשר הנכונים.</div>
+    </div>
+  </section>
+
+  <!-- ══ 12 · האפליקציה · שקף הליבה, פרוטוטייפ חי (drop "lite" for dark) ══ -->
+  <section class="slide lite">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">09</span> האפליקציה</div>
+
+      <div class="mid">
+      <div class="proto capstage sp-0" data-demo="9" data-auto="4100">
+        <div class="capside">
+          <div class="capttl">שלושה דברים שהמוצר צריך לעשות היטב</div>
+          <div class="capsub">הקהלים, מסעות המשתמש והיקף הגרסה הראשונה ייקבעו ב-Discovery, יחד איתכם.</div>
+          <div class="caps">
+            <div class="slot" data-step="0"><i>1</i><div class="n">לחבר אדם לסיפור</div></div>
+            <div class="slot" data-step="3"><i>2</i><div class="n">ללוות את הביקור</div></div>
+            <div class="slot" data-step="6"><i>3</i><div class="n">לשמור על הקשר אחריו</div></div>
+          </div>
+          <div class="later">
+            <div class="lk">כיווני המשך, לא התחייבות למוצר</div>
+            <div class="lv">פרופיל ופרסונליזציה · עדויות: פרקים, תמלול ותרגום · הנגשה רב-שכבתית ·
+              מצב מורה וקבוצה · תרומה והנצחה בהקשר · דשבורד מוסדי</div>
+          </div>
+        </div>
+        <div class="capdesc">
+          <div class="cd" data-cd="0">
+            <div class="cdt">שם אחד פותח אדם, משפחה, קהילה ומקום</div>
+            <ul>
+              <li>חיפוש שם, קהילה או עיר מוצא, מתוך המאגר המרכזי של שמות קרבנות השואה</li>
+              <li><b>כל המקורות על אותו אדם מתכנסים לעמוד אחד:</b> דף עד, עדות, תצלום ומסמך</li>
+              <li>ומשם מסע עם תחנות, תאריכים ומקומות, מחובר לנקודה בהר הזיכרון</li>
+            </ul>
+          </div>
+          <div class="cd" data-cd="1">
+            <div class="cdt">מפה שיודעת איפה המבקר עומד, ומסלול שמתאים לו</div>
+            <ul>
+              <li>המוזיאון, יד לילד, היכל השמות ובקעת הקהילות במפה אחת, עם ניווט חזרה לשער</li>
+              <li><b>מסלול לפי הזמן הפנוי, הגיל והשפה</b>, והכנה רגשית לפני הכניסה</li>
+              <li>ההזמנה והכרטיס באותו רצף, בלי מעבר לאתר חיצוני באמצע</li>
+            </ul>
+          </div>
+          <div class="cd" data-cd="2">
+            <div class="cdt">מה שנוגע במבקר חוזר איתו הביתה, ונשאר</div>
+            <ul>
+              <li>שמירת שם, קהילה או עדות, והמשך מהמקום שבו עצר</li>
+              <li><b>מועדי זיכרון לאורך השנה</b>, לפי הקהילה והתאריכים שהמשתמש בחר</li>
+              <li>תזכורת אחת שנוגעת, לפי העדפה. המשתמש בוחר תדירות, ואפשר לכבות</li>
+            </ul>
+          </div>
+        </div>
+        <div class="dev st-0">
+          <div class="notch"></div>
+
+          <div class="cs" data-cs="0">
+            <div class="csh">חיפוש</div>
+            <div class="csb">
+              <div class="srch"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3"/></svg><span>זדז'יינצ'יול</span></div>
+              <div class="lbl">אנשים</div>
+              <div class="row gd"><div class="av3"><img src="assets/person-gavriel.png" alt=""></div><div><div class="t">ר' גוטל גבריאל גרצובסקי</div><div class="s2">ניצול · עדות ויומן</div></div></div>
+              <div class="row"><div class="av3"></div><div><div class="t">שלמה גרצובסקי</div><div class="s2">נספה · אב</div></div></div>
+              <div class="lbl">קהילה</div>
+              <div class="row"><div><div class="t">זדז'יינצ'יול (זטיל)</div><div class="s2">מערב בלארוס · בקעת הקהילות</div></div></div>
+            </div>
+          </div>
+          <div class="cs" data-cs="1">
+            <div class="csh">דף עד</div>
+            <div class="csb">
+              <div class="ph2"><img src="assets/page-of-testimony.png" alt=""></div>
+              <div>
+                <div class="big">שלמה גרצובסקי</div>
+                <div class="sub">נספה · אביו של ר' גוטל גבריאל</div>
+              </div>
+              <div>
+                <div class="fld"><span>קהילה</span><span>זדז'יינצ'יול</span></div>
+                <div class="fld"><span>הוגש בידי</span><span>בנו</span></div>
+                <div class="fld"><span>מקורות</span><span>דף עד · עדות הבן · מסמך</span></div>
+              </div>
+              <div class="chips"><span class="pill2 on2">דף העד</span><span class="pill2">עדות הבן</span><span class="pill2">מפת המסע</span></div>
+            </div>
+          </div>
+          <div class="cs" data-cs="2">
+            <div class="csh">מפת המסע</div>
+            <div class="csb">
+              <div class="stn"><div class="dotc"></div><div><div class="t">זטיל, לפני המלחמה</div><div class="s2">עיירה של שלושת אלפים יהודים</div></div></div>
+              <div class="stn"><div class="dotc"></div><div><div class="t">הגטו, 1941</div><div class="s2">שלושה רחובות קטנים</div></div></div>
+              <div class="stn"><div class="dotc"></div><div><div class="t">האקציה השנייה, 1942</div><div class="s2">מתוך העדות המצולמת</div></div></div>
+              <div class="stn"><div class="dotc"></div><div><div class="t">אל הפרטיזנים, 1943</div><div class="s2">יערות נאליבוקי</div></div></div>
+              <div class="row gd"><div><div class="t">בהר הזיכרון</div><div class="s2">בקעת הקהילות · חקוק באבן</div></div></div>
+            </div>
+          </div>
+          <div class="cs" data-cs="3" style="padding:0">
+            <svg viewBox="0 0 182 390" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="182" height="390" fill="#EEF1FC"/>
+              <path d="M0 0H182v104c-52 14-112-14-182-2z" fill="#DCE2F6"/>
+              <path d="M0 102c70-12 130 16 182 2v112c-62 12-120-14-182-2z" fill="#E4E8F8"/>
+              <path d="M0 214c62-12 120 14 182 2v96c-62 12-120-10-182 2z" fill="#DDE3F4"/>
+              <path d="M0 314c62-12 120 10 182-2v78H0z" fill="#E7EAF7"/>
+              <g fill="none" stroke-linecap="round">
+                <path d="M146 368c-28-32-40-72-36-118 4-44-40-60-36-104 4-40 34-56 38-100" stroke="#CBD3EC" stroke-width="9"/>
+                <path d="M110 250c-30 12-64 36-70 80" stroke="#CBD3EC" stroke-width="7.5"/>
+                <path d="M146 368c-28-32-40-72-36-118 4-44-40-60-36-104 4-40 34-56 38-100" stroke="#fff" stroke-width="5.6"/>
+                <path d="M110 250c-30 12-64 36-70 80" stroke="#fff" stroke-width="4.4"/>
+              </g>
+              <g font-family="Deck" font-size="7.2" font-weight="600">
+                <g><circle cx="74" cy="146" r="8.4" fill="#fff" stroke="#2F3778" stroke-width="1.7"/>
+                   <text x="74" y="148.6" fill="#2F3778" text-anchor="middle" font-size="6.4">מוזיאון</text></g>
+                <g><circle cx="110" cy="250" r="8.4" fill="#fff" stroke="#2F3778" stroke-width="1.7"/>
+                   <text x="110" y="252.6" fill="#2F3778" text-anchor="middle" font-size="6.2">בקעה</text></g>
+                <g><circle cx="40" cy="330" r="8.4" fill="#fff" stroke="#2F3778" stroke-width="1.7"/>
+                   <text x="40" y="332.6" fill="#2F3778" text-anchor="middle" font-size="6.4">יד לילד</text></g>
+                <g><circle cx="148" cy="370" r="7.6" fill="#2F3778"/>
+                   <text x="148" y="372.6" fill="#fff" text-anchor="middle" font-size="6.2">שער</text></g>
+                <text x="58" y="124" fill="#6B7398" text-anchor="middle">היכל השמות</text>
+                <text x="150" y="232" fill="#6B7398" text-anchor="end">שירותים</text>
+              </g>
+              <g>
+                <circle cx="96" cy="196" r="12" fill="#A9823C" opacity=".2"/>
+                <circle cx="96" cy="196" r="5.6" fill="#A9823C" stroke="#fff" stroke-width="2.4"/>
+              </g>
+            </svg>
+          </div>
+          <div class="cs" data-cs="4">
+            <div class="csh">מסלול הביקור שלי</div>
+            <div class="csb">
+              <div class="row"><div><div class="t">שעה אחת</div><div class="s2">המוזיאון והיכל השמות</div></div></div>
+              <div class="row gd"><div><div class="t">שעתיים · נבחר</div><div class="s2">בתוספת בקעת הקהילות</div></div><div class="tag">✓</div></div>
+              <div class="row"><div><div class="t">חצי יום</div><div class="s2">כולל יד לילד ומרכז הלמידה</div></div></div>
+              <div class="row"><div><div class="t">עם ילדים</div><div class="s2">מותאם גיל · עומק מבוקר</div></div></div>
+              <div class="tog"><span class="a2">עברית</span><span>English</span></div>
+            </div>
+          </div>
+          <div class="cs" data-cs="5">
+            <div class="csh">הביקור שלי</div>
+            <div class="csb">
+              <div class="tkt">
+                <div class="k">כרטיס כניסה</div>
+                <div class="v">יד ושם · הר הזיכרון</div>
+                <div class="s3">שלישי, 12 בנובמבר · 10:30</div>
+                <div class="qr"></div>
+              </div>
+              <div class="row"><div><div class="t">מסלול שעתיים</div><div class="s2">נשמר · מוכן לביקור</div></div></div>
+              <div class="row"><div><div class="t">הגעה וחניה</div><div class="s2">ניווט לשער</div></div></div>
+            </div>
+          </div>
+          <div class="cs" data-cs="6">
+            <div class="csh">הסיפורים שלי</div>
+            <div class="csb">
+              <div class="row"><div class="av3"><img src="assets/person-gavriel.png" alt=""></div><div><div class="t">ר' גוטל גבריאל גרצובסקי</div><div class="s2">✓ נשמר בביקור</div></div></div>
+              <div class="row"><div><div class="t">זדז'יינצ'יול</div><div class="s2">קהילה · 4 מקורות</div></div></div>
+              <div class="row"><div><div class="t">העדות, פרק 2</div><div class="s2">עצרת ב-14:06</div></div><div class="tag">המשך</div></div>
+              <div class="btn2">שתף עם המשפחה</div>
+            </div>
+          </div>
+          <div class="cs" data-cs="7">
+            <div class="csh">מועדי זיכרון</div>
+            <div class="csb">
+              <div class="row gd"><div class="pfd2">כ"ב<span>אב</span></div><div><div class="t">שלמה גרצובסקי</div><div class="s2">תאריך שסימנת</div></div></div>
+              <div class="row"><div class="pfd2">י"ד<span>אב</span></div><div><div class="t">חיסול קהילת זדז'יינצ'יול</div><div class="s2">מתוך הארכיון</div></div></div>
+              <div class="row"><div class="pfd2">27<span>ינו</span></div><div><div class="t">יום הזיכרון הבינלאומי</div><div class="s2">תוכן מותאם לקהילה שלך</div></div></div>
+              <div class="row"><div><div class="t">תדירות ההתראות</div><div class="s2">אתם בוחרים · אפשר לכבות</div></div></div>
+            </div>
+          </div>
+          <div class="cs" data-cs="8">
+            <div class="csh">עדות מצולמת</div>
+            <div class="csb">
+              <div class="ph2" style="height:88px;display:grid;place-items:center;background:#2F3778">
+                <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></div>
+              </div>
+              <div class="big">האקציה השנייה, 1942</div>
+              <div class="bar"><i style="width:34%"></i></div>
+              <div style="display:flex;justify-content:space-between;font-size:9px;color:#8C93AC">
+                <span dir="ltr">14:06</span><span dir="ltr">1:12:40</span></div>
+              <div class="row"><div><div class="t">"ודחסו אותם בשלושה רחובות קטנים"</div><div class="s2">תמלול מסונכרן · 9 שפות</div></div></div>
+              <div class="chips"><span class="pill2">4 פרקים</span><span class="pill2 on2">מקום על המפה</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="foot">כל התוכן הזה כבר קיים אצלכם. האפליקציה אינה כותבת אותו מחדש, היא מחברת אותו למסע אחד.
+        <div class="src">שום פריט אינו מגיע למשתמש בלי המחקר והעריכה שלכם. הכלים מארגנים חומר קיים, ואינם מייצרים עדות.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 15 · מי אנחנו ══ -->
+  <section class="slide ours">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">10</span> מי אנחנו</div>
+      <h2>200Apps</h2>
+      <div class="lead" style="color:#AEB5C6;max-width:64ch">בונים מוצרים טכנולוגיים ומלווים
+        חברות, ארגונים ומוסדות. מקצה לקצה: מחקר, אפיון ממשק, עיצוב, פיתוח, QA ותחזוקה.</div>
+      <div class="stack" style="gap:24px">
+        <div class="grid fill" style="grid-template-columns:repeat(4,1fr)">
+          <div class="stat" style="background:rgba(255,255,255,.07)">
+            <div class="v" style="color:#fff">2014</div>
+            <div class="l" style="color:#AEB5C6">שנת ההיווסדות</div></div>
+          <div class="stat" style="background:rgba(255,255,255,.07)">
+            <div class="v" style="color:#fff">12 שנה</div>
+            <div class="l" style="color:#AEB5C6">של ליווי חברות, ארגונים ומוסדות</div></div>
+          <div class="stat" style="background:rgba(255,255,255,.07)">
+            <div class="v" style="color:#fff"><span dir="ltr">300+</span></div>
+            <div class="l" style="color:#AEB5C6">מוצרים שנבנו ושוחררו</div></div>
+          <div class="stat" style="background:rgba(255,255,255,.07)">
+            <div class="v" style="color:#fff">תוכן וחינוך</div>
+            <div class="l" style="color:#AEB5C6">הבית המקצועי שלנו, לא תחום שנכנסנו אליו</div></div>
+        </div>
+        <div class="wall">
+          <img src="assets/clients/c08.png" alt=""><img src="assets/clients/c03.png" alt="">
+          <img src="assets/clients/c05.png" alt=""><img src="assets/clients/c06.png" alt="">
+          <img src="assets/clients/c04.png" alt=""><img src="assets/clients/c11.png" alt="">
+          <img src="assets/clients/c17.png" alt=""><img src="assets/clients/c14.png" alt="">
+        </div>
+      </div>
+      <div class="foot">שלושת השקפים הבאים אינם רשימת לוגואים. הם שלוש מערכות שכבר בנינו,
+        שכל אחת מהן מחזיקה רכיב שהמוצר הזה זקוק לו.</div>
+    </div>
+  </section>
+
+  <!-- ══ 16 · הוכחה: מפה ומיקום מבקר, בירושלים ══ -->
+  <section class="slide ours">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">11</span> מה שבנינו</div>
+      <h2>גן החיות התנ"כי, ירושלים</h2>
+      <div class="two" style="margin-top:16px;grid-template-columns:.88fr 1.12fr;align-items:center">
+        <div>
+          <p class="pdesc">אתר מלא ואפליקציה עם <b>מפה אינטראקטיבית של השטח, ומיקום המבקר עליה</b>,
+            עדכונים ואירועים. אתר ביקור ירושלמי, מתחם פתוח, ואותו אתגר בדיוק:
+            אדם שעומד במקום מסוים וצריך לדעת מה כאן ולאן ממשיכים.</p>
+          <div class="tags"><span>מפה אינטראקטיבית</span><span>מיקום בשטח</span>
+            <span>ניהול תוכן</span><span>התראות ואירועים</span></div>
+        </div>
+        <div class="shot" style="background:#fff"><img src="assets/zoo-phone.gif" alt=""></div>
+      </div>
+      <div class="foot">הרכיב היקר במוצר כזה, הניווט במתחם, הוא רכיב שכבר בנינו ותחזקנו.
+        עבורנו זו לא פריצת דרך אלא התאמה של משהו שרץ.</div>
+    </div>
+  </section>
+
+  <!-- ══ 17 · הוכחה: חינוך ══ -->
+  <section class="slide ours">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">12</span> מה שבנינו</div>
+      <h2>AMIT LMS</h2>
+      <div class="two" style="margin-top:16px;grid-template-columns:.88fr 1.12fr;align-items:center">
+        <div>
+          <p class="pdesc">מערכת למידה לרשת חינוך ארצית: <b>עורך שיעורים למורה, מסלולי למידה,
+            מעקב התקדמות אישי</b> ודשבורדים למורים ולתלמידים.</p>
+          <div class="tags"><span>עורך תוכן למורה</span><span>מסלולי למידה</span>
+            <span>מעקב התקדמות</span><span>קנה מידה ארצי</span></div>
+        </div>
+        <div class="shot" style="background:#EEF0F4"><img src="assets/p-amit.png" alt=""></div>
+      </div>
+      <div class="foot">כלים חינוכיים מותאמים לקהלים ולגילים, מול רשת חינוך שלמה.
+        זה בדיוק הסוג של מערכת שאנחנו בונים ומתחזקים.</div>
+    </div>
+  </section>
+
+  <!-- ══ 18 · הוכחה: תפוצות וגיוס ══ -->
+  <section class="slide ours">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">13</span> מה שבנינו</div>
+      <h2>SparkIL · הסוכנות היהודית</h2>
+      <div class="two" style="margin-top:16px;grid-template-columns:.88fr 1.12fr;align-items:center">
+        <div>
+          <p class="pdesc">פלטפורמה שמחברת <b>תומכים יהודים בעולם לאנשים בישראל</b>, דרך
+            סיפור אישי של אדם אחד עם שם ופנים. גיוס, תשלומים, מעקב, ושתי שפות.</p>
+          <div class="tags"><span>קהל בתפוצות</span><span>סיפור אישי</span>
+            <span>תשלומים וגיוס</span><span>דו-לשוני</span></div>
+        </div>
+        <div class="shot" style="background:#F5F2F8"><img src="assets/p-sparkil.png" alt=""></div>
+      </div>
+      <div class="foot">מוסד לאומי, קהל בתפוצות, וגיוס שעובד דרך סיפור של אדם אחד
+        ולא דרך סטטיסטיקה. זה בדיוק המבנה שנדרש כאן.</div>
+    </div>
+  </section>
+
+  <!-- ══ 19 · הסיום ══ -->
+  <section class="slide dark closing" style="background:#1E285A">
+    <div class="pad">
+      <img src="assets/target-logo.svg" alt="יד ושם"
+           style="height:66px;width:auto;margin-bottom:28px;filter:brightness(0) invert(1);opacity:.92">
+      <h2>"וְנָתַתִּי לָהֶם בְּבֵיתִי וּבְחוֹמֹתַי יָד וָשֵׁם"</h2>
+      <div class="vs">ישעיהו נ"ו, ה</div>
+
+      <div class="ask">
+        <div class="al">הצעד הבא</div>
+        <p>תהליך Discovery משותף</p>
+        <div class="p2">עם צוותי הדיגיטל, התוכן, החינוך וחוויית המבקר, כדי להגדיר את
+          הקהלים, מסעות המשתמש וליבת המוצר הנכונה ליד ושם.</div>
+      </div>
+
+      <div class="sig">
+        <div class="pp"><div class="nm">אלכס יעקובוב</div><div class="rl">מנכ"ל 200Apps</div></div>
+        <div class="pp"><div class="nm">חמי בן לביא</div><div class="rl">Head of Product Operations</div></div>
+      </div>
+      <div class="cx">hemi@200apps.co · 054-4608119</div>
+    </div>
+  </section>
+
+</div></div>
+
+<div id="chrome"><div id="dots"></div><div id="cnt"></div></div>
+
+<script>
+(function(){
+  var stage=document.getElementById('stage'),
+      slides=[].slice.call(document.querySelectorAll('.slide')),
+      dots=document.getElementById('dots'),
+      cnt=document.getElementById('cnt'),
+      hint=document.getElementById('hint'),
+      i=0, N=slides.length;
+
+  function fit(){
+    stage.style.transform='scale('+Math.min(innerWidth/1280,innerHeight/720)*0.965+')';
+  }
+  addEventListener('resize',fit); fit();
+
+  slides.forEach(function(_,k){
+    var d=document.createElement('i'); d.onclick=function(){go(k)}; dots.appendChild(d);
+  });
+
+  function go(n){
+    i=Math.max(0,Math.min(N-1,n));
+    slides.forEach(function(s,k){s.classList.toggle('on',k===i)});
+    [].forEach.call(dots.children,function(d,k){d.classList.toggle('on',k===i)});
+    cnt.textContent=(i+1)+' / '+N;
+    syncDemos();
+    syncOnce();
+  }
+
+  addEventListener('keydown',function(e){
+    var k=e.key;
+    if(k==='ArrowLeft'||k==='PageDown'||k===' '||k==='Enter'){go(i+1);e.preventDefault()}
+    else if(k==='ArrowRight'||k==='PageUp'||k==='Backspace'){go(i-1);e.preventDefault()}
+    else if(k==='Home'){go(0)} else if(k==='End'){go(N-1)}
+    else if(e.code==='KeyP'){demos.forEach(function(d){d.toggle()});e.preventDefault()}
+    else if(e.code==='ArrowDown'){demos.forEach(function(d){d.stop();d.next()});e.preventDefault()}
+    else if(e.code==='ArrowUp'){demos.forEach(function(d){d.stop();d.prev()});e.preventDefault()}
+    else if(e.code==='KeyF'){document.fullscreenElement?document.exitFullscreen()
+      :document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen()}
+  });
+  stage.addEventListener('click',function(e){
+    if(e.target.closest('#dots'))return;
+    var r=stage.getBoundingClientRect();
+    go(i+((e.clientX-r.left)<r.width/2?1:-1));
+  });
+
+  /* ── prototype engine ── */
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var demos=[].slice.call(document.querySelectorAll('.proto[data-demo]')).map(function(pr){
+    var d={root:pr,scr:pr.querySelector('[data-stage]')||pr.querySelector('.scr')||pr.querySelector('.dev'),bar:pr.querySelector('.pbar'),
+           n:parseInt(pr.dataset.demo,10),ms:parseInt(pr.dataset.auto,10)||3200,step:0,timer:null};
+    d.render=function(){
+      if(d.scr)d.scr.className=d.scr.className.replace(/\bst-\d+\b/g,'').trim()+' st-'+d.step;
+      /* stamp the step on the container too, so the accumulating capability list
+         and the description column can react to it in CSS */
+      d.root.className=d.root.className.replace(/\bsp-\d+\b/g,'').trim()+' sp-'+d.step;
+      if(d.bar)[].forEach.call(d.bar.children,function(b,k){b.classList.toggle('on',k===d.step)});
+    };
+    d.next=function(){d.step=(d.step+1)%d.n;d.render()};
+    d.start=function(){d.stop();if(!d.seen){d.seen=true;d.step=0}d.render();
+      if(!reduce)d.timer=setInterval(d.next,d.ms)};
+    d.toggle=function(){d.timer?d.stop():(d.timer=setInterval(d.next,d.ms))};
+    d.prev=function(){d.step=(d.step+d.n-1)%d.n;d.render()};
+    d.stop=function(){if(d.timer){clearInterval(d.timer);d.timer=null}};
+    d.bump=function(){if(d.timer){clearInterval(d.timer);d.timer=setInterval(d.next,d.ms)}};
+    pr.addEventListener('click',function(e){e.stopPropagation();d.next();d.bump()});
+    /* every capability is directly selectable, so Hemi can jump back to one */
+    [].forEach.call(pr.querySelectorAll('.caps .slot'),function(sl,k){
+      sl.addEventListener('click',function(e){e.stopPropagation();
+        d.step=sl.dataset.step!==undefined?+sl.dataset.step:k;d.render();d.stop()});
+    });
+    d.render(); return d;
+  });
+  function syncDemos(){demos.forEach(function(d){
+    d.root.closest('.slide')===slides[i]?d.start():d.stop()})}
+
+  /* the product reveal runs once, for 5.6 seconds, and rests on the final state */
+  function syncOnce(){
+    var root=slides[i].querySelector('[data-once]');
+    if(!root||root.dataset.played)return;
+    root.dataset.played='true';
+    function show(step){
+      root.className=root.className.replace(/\bk\d+\b/g,'').trim()+' k'+step;
+    }
+    if(reduce){show(5);return}
+    [[600,1],[1500,2],[2500,3],[4100,4],[5600,5]].forEach(function(pair){
+      setTimeout(function(){show(pair[1])},pair[0]);
+    });
+  }
+
+  setTimeout(function(){hint.style.opacity='0'},6000);
+  go(0);
+})();
+</script>
+<script data-goatcounter="https://200apps.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
