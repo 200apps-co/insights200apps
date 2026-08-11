@@ -20,10 +20,10 @@
 <script>document.documentElement.classList.add('js');</script>
 <style>
   :root{
-    --stone:#f5efe4; --stone-2:#ece4d4; --paper:#fffdf8;
-    --ink:#2a2a2f; --muted:#7b7568; --line:#e4dcca;
-    --navy:#28374b; --navy2:#1b2735; --accent:#a9823c; --accent-soft:#efe6cf;
-    --gold2:#cdaa5e;
+    --stone: #f2f6fc; --stone-2: #e6eef9; --paper: #ffffff;
+    --ink: #182238; --muted: #6b7488; --line: #d8e2f2;
+    --navy: #123d8a; --navy2: #0e2d69; --accent: #1060d0; --accent-soft: #e1ecfb;
+    --gold2: #e2b56f;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -140,6 +140,7 @@
   }
 .sticky-cta{position:fixed;bottom:22px;left:22px;z-index:200;display:inline-flex;align-items:center;gap:9px;background:#25D366;color:#fff!important;border:none!important;border-radius:40px;padding:12px 20px;font-weight:700;font-size:14.5px;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.3);transition:transform .2s;}.sticky-cta:hover{transform:translateY(-2px);}.sticky-cta svg{width:20px;height:20px;flex:none;}@media print{.sticky-cta{display:none;}}@media(max-width:640px){.foot{padding-bottom:80px;}.sticky-cta{bottom:16px;left:16px;padding:11px 17px;font-size:13.5px;}}
 .ai-band{background:linear-gradient(150deg,var(--navy),var(--navy2));color:#e9ecf1;border-radius:16px;padding:26px 30px;margin-top:10px;}.ai-band .k{font-size:13px;letter-spacing:1px;color:var(--gold2);font-weight:700;margin-bottom:10px;}.ai-band h3{font-size:22px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.3;}.ai-band p{font-size:15px;line-height:1.8;color:#d7dce4;max-width:74ch;}.ai-band p b{color:#fff;}.cta-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;}.cta-btn{display:inline-flex;align-items:center;gap:8px;border-radius:40px;padding:12px 22px;font-weight:700;font-size:15px;text-decoration:none;border:none;transition:transform .2s;}.cta-btn:hover{transform:translateY(-2px);}.cta-btn.mail{background:#fff;color:var(--navy);}.cta-btn.wa{background:#25D366;color:#fff;}.cta-btn svg{width:18px;height:18px;flex:none;}@media(max-width:640px){.cta-actions{flex-direction:column;}.cta-btn{justify-content:center;}.ai-band{padding:20px 20px;}.ai-band h3{font-size:19px;}}
+.band.light{background:var(--paper);color:var(--ink);border:1px solid var(--line);}.band.light .k{color:var(--accent);}.band.light h2{color:var(--navy);}.band.light p{color:var(--ink);}.band.light p b{color:var(--navy);}
 </style>
 </head>
 <body>
@@ -160,52 +161,33 @@
   </div>
 
   <div class="pad">
-    <div class="eyebrow"><span class="he">הצעה לפגישה · אפליקציה לספרייה הלאומית</span><span class="en">A proposal to meet · An app for the National Library of Israel</span></div>
-    <h1 class="serif">
-      <span class="he">אנו ב-200Apps מאמינים שהספרייה הלאומית היא בדיוק המקום שאפליקציה נבנתה עבורה.</span>
-      <span class="en">At 200Apps, we believe the National Library of Israel is exactly the place an app is built for.</span>
-    </h1>
-    <p class="lead">
-      <span class="he">אתם הבית של הזיכרון והתרבות של עם ישראל ומדינת ישראל, ויש לכם שני נכסים סופר משמעותיים: <b>קהל חוזר ונאמן</b> - חוקרים, סטודנטים, אוהבי תרבות וקהל יהודי בכל העולם, ו<b>אוצר דיגיטלי אדיר</b> - מיליוני פריטים: כתבי יד, ארכיונים אישיים, עיתונות היסטורית, מפות, תצלומים, הקלטות ומוזיקה.<br>אפליקציה יכולה לקחת את כל העושר הזה ישירות אל כיס הקהל, ולשנות מקצה לקצה את הדרך שבה הוא פוגש את האוצרות שלכם.</span>
-      <span class="en">You are the home of the memory and culture of the Jewish people and the State of Israel, with two hugely valuable assets: <b>a loyal, returning audience</b> - researchers, students, culture lovers and a Jewish public worldwide, and <b>an enormous digital treasure</b> - millions of items: manuscripts, personal archives, historical press, maps, photographs, recordings and music.<br>An app can bring all of this wealth straight into your audience's pocket, and transform, end to end, the way they meet your treasures.</span>
-    </p>
+    <div class="eyebrow"><span class="he">200Apps × הספרייה הלאומית · הצעה לפגישה</span><span class="en">200Apps × National Library of Israel · A proposal to meet</span></div>
+    <h1 class="serif"><span class="he">מה אם האוצר הלאומי לא היה מחכה שיבואו אליו?</span><span class="en">What if the national treasure didn't wait to be visited?</span></h1>
+    <p class="lead"><span class="he">מיליוני פריטים, קהל נאמן בישראל ובעולם - והזדמנות לקחת את הקשר איתו הרבה מעבר לביקור או לחיפוש.<br>אנחנו רואים כאן פוטנציאל למוצר מובייל שיחבר ביניהם, והכנו כמה כיוונים ששווה לבחון יחד.</span><span class="en">Millions of items, a loyal audience in Israel and worldwide - and an opportunity to take that relationship far beyond a visit or a search.<br>We see potential here for a mobile product that connects them, and we've prepared a few directions worth exploring together.</span></p>
   </div>
 
   <div class="band">
-    <div class="k"><span class="he">התמונה הגדולה</span><span class="en">The big picture</span></div>
-    <h2 class="serif"><span class="he">איך אפליקציה משנה את הדרך שבה הקהל פוגש את אוצרות הספרייה</span><span class="en">How an app changes the way the audience meets the Library's treasures</span></h2>
-    <p>
-      <span class="he">היום האוצרות מחולקים בין כמה מקומות: חלקם בבניין הפיזי החדש, חלקם באתר ובקטלוג, וחלקם באוספים הדיגיטליים, ביוטיוב ובניוזלטר.<br>הקהל פוגש אותם בפיסות, קופץ בין מקורות ולא תמיד מוצא את הפריט או האירוע שהוא מבקש.</span>
-      <span class="en">Today the treasures are divided across several places: some in the new physical building, some on the website and catalog, and some in the digital collections, on YouTube and the newsletter.<br>The audience meets them in pieces, hopping between sources and not always finding the item or event it's looking for.</span>
-    </p>
-    <p>
-      <span class="he"><b>אפליקציה מרכזת את הכל למקום אחד, זמינה תמיד, ומכירה את היוזרים והיוזריות.</b><br>
-      פריט או אירוע רלוונטי מוצג באופן ישיר ומיידי.<br>הרצאה או פרק שהתחלת ממשיכים בדיוק מהמקום שבו עצרת.<br>אוצר שאהבת נשמר על המדף האישי וממתין לחזרה הבאה.</span>
-      <span class="en"><b>An app centralizes everything into one place, always available, and knows its users.</b><br>
-      A relevant item or event appears directly and instantly.<br>A lecture or episode you began resumes right where you left off.<br>A treasure you loved is saved on your personal shelf, waiting for your next visit.</span>
-    </p>
-    <p>
-      <span class="he">במקום קהל שמגיע פעם אחת ונעלם, נוצרת <b>קהילה שנשארת מחוברת לאוצר הלאומי</b> לאורך כל השנה, חוקרת לעומק ובאופן אישי.</span>
-      <span class="en">Instead of an audience that visits once and disappears, <b>a community forms that stays connected to the national treasure</b> all year round, exploring deeper and personally.</span>
-    </p>
-    <div class="chips">
-      <span class="chip"><b class="he">זמינות</b><b class="en">Always on</b> · <span class="he">האוסף כולו במקום אחד, גם לא-מקוון</span><span class="en">the whole collection in one place, even offline</span></span>
-      <span class="chip"><b class="he">גילוי</b><b class="en">Discovery</b> · <span class="he">אוצר ליום, לפי מה שמעניין אותך</span><span class="en">a treasure a day, by what interests you</span></span>
-      <span class="chip"><b class="he">רציפות</b><b class="en">Continuity</b> · <span class="he">ממשיכים, שומרים, חוזרים</span><span class="en">resume, save, return</span></span>
-      <span class="chip"><b class="he">קהילה</b><b class="en">Community</b> · <span class="he">חוקרים, שואלים, לומדים יחד</span><span class="en">research, ask, learn together</span></span>
-    </div>
+    <div class="k"><span class="he">ההזדמנות</span><span class="en">The opportunity</span></div>
+    <h2 class="serif"><span class="he">למה דווקא כאן</span><span class="en">Why here</span></h2>
+    <p><span class="he">לספרייה הלאומית יש שילוב נדיר: אוצר דיגיטלי עצום מצד אחד, וקהל שיש לו סיבה אמיתית לחזור אליו שוב ושוב מצד שני - חוקרים, סטודנטים, אוהבי תרבות וקהילות יהודיות ברחבי העולם.<br>היום הקהל פוגש את הספרייה במגוון נקודות - בבניין, באתר, בקטלוג, באוספים ובתוכן הדיגיטלי. אנחנו רואים הזדמנות להוסיף מעל כל אלה שכבה אחרת של קשר: אישי יותר, רציף יותר, כזה שנמשך גם בין מפגש למפגש.<br>זו נקודת המוצא שלנו לשיחה.</span><span class="en">The National Library has a rare combination: an enormous digital treasure on one side, and an audience with a real reason to return again and again on the other - researchers, students, culture lovers and Jewish communities around the world.<br>Today the audience meets the Library at many points - in the building, on the website, in the catalog, in the collections and in its digital content. We see an opportunity to add, above all of these, another layer of relationship: more personal, more continuous, one that lasts between encounters too.<br>That's our starting point for a conversation.</span></p>
+  </div>
+
+  <div class="band light">
+    <div class="k"><span class="he">למה מובייל</span><span class="en">Why mobile</span></div>
+    <h2 class="serif"><span class="he">למה אפליקציה, ולא עוד אתר</span><span class="en">Why an app, not just another site</span></h2>
+    <p><span class="he">אתר מצוין במיוחד כשמגיעים עם צורך: לחפש, למצוא, לקרוא או להירשם. אפליקציה יכולה להוסיף משהו אחר - המשכיות.<br>תוכן שממשיך מהמקום שבו עצרת, פריט שנשמר למדף שלך, האזנה בדרך ותזכורת כשמתפרסם משהו שבאמת מעניין אותך.<br>מערכת יחסים לאורך זמן, ולא רק ביקור חד-פעמי.</span><span class="en">A website is at its best when you arrive with a need: to search, find, read or sign up. An app can add something else - continuity.<br>Content that resumes where you left off, an item saved to your shelf, listening on the way, and a reminder when something you truly care about is published.<br>A relationship over time, not just a one-time visit.</span></p>
   </div>
 
   <div class="pad">
-    <div class="sec-label"><span class="he">ארבע ליבות לאפליקציה</span><span class="en">Four cores of the app</span></div>
+    <div class="sec-label"><span class="he">שלושה כיוונים ששווה לבחון יחד</span><span class="en">Three directions worth exploring together</span></div>
 
     <div class="pillar">
       <div class="pnum">1</div>
       <div>
-        <h3 class="serif"><span class="he">אוצרות האומה בכיס</span><span class="en">The nation's treasures in your pocket</span></h3>
+        <h3 class="serif"><span class="he">לגלות את האוסף, לא רק לחפש בו</span><span class="en">Discover the collection, not just search it</span></h3>
         <p>
-          <span class="he">היום הגישה למיליוני הפריטים דורשת קטלוג, חיפוש וסבלנות, והרבה מהאוצר נשאר נחלת החוקרים בלבד.<br>אפליקציה עושה שני דברים: <b>מנגישה את האוסף הדיגיטלי המלא</b> (כתבי יד, עיתונות היסטורית, מפות, תצלומים, מוזיקה וארכיונים, זמינים תמיד), <b>והופכת אותו לחוויית גילוי</b>: "אוצר ליום", מסלולים נושאיים, ומדף אישי לשמירת מה שנגע בך.<br>כך האוצר הלאומי הופך ממאגר למחקר לחוויה חיה שכל אדם יכול לגעת בה.</span>
-          <span class="en">Today, reaching millions of items takes a catalog, a search and patience, and much of the treasure stays with researchers alone.<br>An app does two things: it <b>opens up the full digital collection</b> (manuscripts, historical press, maps, photographs, music and archives, always available), <b>and turns it into a discovery experience</b>: a "treasure a day," thematic journeys, and a personal shelf to save what moved you.<br>The national treasure turns from a research database into a living experience anyone can touch.</span>
+          <span class="he">כתבי יד, עיתונות היסטורית, מפות, תצלומים ומוזיקה - לא רק כמאגר שמגיעים אליו כשמחפשים משהו, אלא כחוויית גילוי: אוצר ליום, מסלולים נושאיים ומדף אישי לדברים שרוצים לשמור.</span>
+          <span class="en">Manuscripts, historical press, maps, photographs and music - not just a database you turn to when searching for something, but a discovery experience: a treasure a day, thematic journeys, and a personal shelf for the things you want to keep.</span>
         </p>
       </div>
     </div>
@@ -213,10 +195,10 @@
     <div class="pillar">
       <div class="pnum">2</div>
       <div>
-        <h3 class="serif"><span class="he">חיפוש והתאמה אישית בעידן ה-AI</span><span class="en">Search and personalization in the age of AI</span></h3>
+        <h3 class="serif"><span class="he">האוסף, בדרך שלך</span><span class="en">The collection, your way</span></h3>
         <p>
-          <span class="he">יש מיליוני פריטים, אבל לא הכל מתאים לכל אחד, ולא תמיד קל למצוא.<br>כמו הרגע הראשון בספוטיפיי שבו האפליקציה שואלת מה מעניין אותך, גם כאן <b>כל אחד בוחר את תחומי העניין שלו</b> - היסטוריה, שירה, מוזיקה, גנאלוגיה - ובעזרת AI מקבל <b>המלצות והצעות מסע לפי טעם</b>, וכן <b>חיפוש בשפה חופשית</b> על פני האוסף ("מצא לי מכתבים על...").<br>התראות על תערוכות והרצאות רלוונטיות, ורכישת כרטיס בלחיצה אחת. המעבר מ"קטלוג לכולם" ל<b>"ספרייה אישית"</b>.</span>
-          <span class="en">There are millions of items, but not all fit everyone, and finding is not always easy.<br>Like that first Spotify moment where the app asks what you're into, here too <b>each person picks their interests</b> - history, poetry, music, genealogy - and with AI gets <b>recommendations and journey suggestions by taste</b>, plus <b>natural-language search</b> across the collection ("find me letters about...").<br>Notifications about relevant exhibitions and lectures, and one-tap ticket purchase. From a "catalog for everyone" to <b>a personal library</b>.</span>
+          <span class="he">כל אחד בוחר מה מעניין אותו - היסטוריה, שירה, מוזיקה, גנאלוגיה - ומקבל הצעות מסע לפי טעם, כולל חיפוש בשפה חופשית ("מצא לי מכתבים על...").<br>בבוקר מתגלה פריט חדש. בדרך לעבודה מאזינים לסיפור שמאחוריו. בערב הוא כבר על המדף האישי, מחכה.</span>
+          <span class="en">Each person chooses what interests them - history, poetry, music, genealogy - and gets journeys by taste, including free-language search ("find me letters about...").<br>In the morning a new item appears. On the way to work you hear the story behind it. By evening it's already on your personal shelf, waiting.</span>
         </p>
       </div>
     </div>
@@ -224,31 +206,21 @@
     <div class="pillar">
       <div class="pnum">3</div>
       <div>
-        <h3 class="serif"><span class="he">סטרימינג מהאוסף, בבית שלכם</span><span class="en">Streaming from the collection, inside your own home</span></h3>
+        <h3 class="serif"><span class="he">לתת קול לאוסף</span><span class="en">Give the collection a voice</span></h3>
         <p>
-          <span class="he">היום ההרצאות, הקונצרטים והפודקאסטים הם לינק שמוציא את המשתמש ליוטיוב, וההקלטות ההיסטוריות שמורות באוסף הצליל בלי חוויית האזנה מודרנית.<br>אפליקציה נותנת <b>חוויית סטרימינג אמיתית</b> לאודיו ולווידאו: האזנה וצפייה רציפות, שמירה והאזנה גם לא-מקוון, פלייליסטים, וסיורי תערוכה מוקלטים, <b>הכל בתוך הבית של הספרייה הלאומית, בלי לצאת ממנו</b>.<br>כמו ספוטיפיי או נטפליקס, אבל של האוצר שלכם.</span>
-          <span class="en">Today lectures, concerts and podcasts are a link that sends the user out to YouTube, and the historical recordings sit in the Sound Archive with no modern listening experience.<br>An app delivers <b>a real streaming experience</b> for audio and video: continuous listening and viewing, save and offline playback, playlists, and recorded exhibition tours, <b>all inside the National Library's own home, without ever leaving it</b>.<br>Like Spotify or Netflix, but for your treasure.</span>
+          <span class="he">הרצאות, קונצרטים, פודקאסטים והקלטות היסטוריות, כחוויית האזנה וצפייה רציפה שאפשר להמשיך מהמקום שעצרת, בדרך או בבית.<br>הכל בתוך הבית של הספרייה, בלי לצאת החוצה.</span>
+          <span class="en">Lectures, concerts, podcasts and historical recordings, as a continuous listening and viewing experience you can resume where you left off, on the way or at home.<br>All inside the Library's home, without leaving it.</span>
         </p>
       </div>
     </div>
 
-    <div class="pillar">
-      <div class="pnum">4</div>
-      <div>
-        <h3 class="serif"><span class="he">היכרות אמיתית עם הקהל</span><span class="en">Truly knowing your audience</span></h3>
-        <p>
-          <span class="he">עד היום קשה לדעת מי באמת פוגש את האוצרות, אילו אוספים מדברים לקהל ומה פחות.<br>עם <b>Firebase ו-Analytics</b> מובנים באפליקציה, אתם מכירים את קהל המשתמשים והמשתמשות באופן מדויק: אילו אוספים והרצאות מחזיקים, מי חוזר, מה נשמר ומה ננטש.<br><b>תובנות אמיתיות</b> שמאפשרות להחליט על תערוכות, תוכן ופעילות מתוך נתונים, לא מתוך תחושה.</span>
-          <span class="en">Until now it's hard to know who really meets the treasures, which collections speak to the audience and which less.<br>With <b>Firebase and Analytics</b> built into the app, you know your audience precisely: which collections and lectures hold, who returns, what's saved and what's abandoned.<br><b>Real insight</b> that lets you shape exhibitions, content and programming from data, not from a hunch.</span>
-        </p>
-      </div>
-    </div>
+  </div>
 
-    <div class="ai-band"><div class="k"><span class="he">בעידן ה-AI</span><span class="en">In the age of AI</span></div><h3 class="serif"><span class="he">מוצר שה-AI טבוע בו, מהיום הראשון</span><span class="en">A product with AI built in, from day one</span></h3><p><span class="he">אנחנו ב-200Apps בונים מוצרים שה-AI חלק מהם: <b>חיפוש חכם בשפה חופשית</b> על האוסף, <b>המלצות אישיות</b> לפי טעם, והנגשה חכמה של תוכן לכל אדם. וגם התהליך שלנו עצמו AI-native מקצה לקצה, כך שהבנייה היום <b>מהירה, עשירה ומדויקת</b> יותר מאי פעם.</span><span class="en">At 200Apps we build products with AI woven in: <b>smart natural-language search</b> across the collection, <b>personal recommendations</b> by taste, and smart content accessibility for everyone. And our process itself is AI-native end to end, so building today is <b>faster, richer and more precise</b> than ever.</span></p></div>
-    <div class="who">
+  <div class="who">
       <div class="k"><span class="he">מי אנחנו</span><span class="en">Who we are</span></div>
       <p>
-        <span class="he">200Apps (מאאתיים אפליקציות) <b>בונה מוצרים טכנולוגיים ומלווה חברות, ארגונים ועסקים כבר 12 שנה</b>.<br>נוסדנו ב-2014 ובנינו מעל 300 מוצרים במודל מקצה-לקצה: מחקר, אפיון ממשק, עיצוב, פיתוח, QA ותחזוקה, עם ניסיון עמוק בתוכן, חינוך וקהילות דיגיטליות.<br>אנחנו ב-200Apps שותפים יחד אתכם ביצירת מוצר טכנולוגי שמתרגם רעיון למערכת חיה. מוזמנים להתרשם מהעבודות שלנו באתר: <a href="https://www.200apps.com" target="_blank" rel="noopener">200apps.com</a></span>
-        <span class="en">200Apps <b>builds technology products and partners with companies, organizations and businesses, for 12 years</b>.<br>Founded in 2014, we've built 300+ products end-to-end: research, UX, design, development, QA and maintenance, with deep experience in content, education and digital communities.<br>At 200Apps we partner with you, together, in creating a technology product that turns an idea into a living system. See our work at: <a href="https://www.200apps.com" target="_blank" rel="noopener">200apps.com</a></span>
+        <span class="he">200Apps (מאאתיים אפליקציות) <b>בונה מוצרים דיגיטליים כבר 12 שנה, מעל 300 מוצרים</b>, במודל מקצה-לקצה: מחקר, עיצוב, פיתוח ותחזוקה, עם ניסיון עמוק בתוכן, חינוך וקהילות.<br>אנחנו לא מגיעים עם תשובה מוכנה. אנחנו מגיעים עם ניסיון, קריאה ראשונית של ההזדמנות, וכמה השערות שכדאי לבדוק יחד. <a href="https://www.200apps.com" target="_blank" rel="noopener">200apps.com</a></span>
+        <span class="en">200Apps <b>has built digital products for 12 years, 300+ of them</b>, end-to-end: research, design, development and maintenance, with deep experience in content, education and communities.<br>We don't arrive with a ready answer. We arrive with experience, an early read of the opportunity, and a few hypotheses worth testing together. <a href="https://www.200apps.com" target="_blank" rel="noopener">200apps.com</a></span>
       </p>
       <div class="clients">
         <div class="ttl"><span class="he">מותגים שכבר עובדים איתנו</span><span class="en">Brands already working with us</span></div>
@@ -261,7 +233,7 @@
     <div class="cta">
       <div>
         <div class="t serif"><span class="he">בואו ניפגש לשיחה קצרה.</span><span class="en">Let's meet for a short conversation.</span></div>
-        <div class="s"><span class="he">נשמח ממש להיפגש, להכיר ולחשוב יחד על בניית מוצר מובייל ייחודי שיתאים לצרכים של הספרייה הלאומית.</span><span class="en">We'd truly love to meet, get to know you, and think together about building a unique mobile product tailored to the National Library's needs.</span></div><div class="cta-actions"><a class="cta-btn mail" href="mailto:hemi@200apps.co?subject=%D7%94%D7%A6%D7%A2%D7%94%20-%20%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%94%20%D7%9C%D7%A1%D7%A4%D7%A8%D7%99%D7%99%D7%94%20%D7%94%D7%9C%D7%90%D7%95%D7%9E%D7%99%D7%AA"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg><span class="he">שליחת מייל</span><span class="en">Email us</span></a><a class="cta-btn wa" href="https://wa.me/972553192012?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%93%D7%91%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A1%D7%A4%D7%A8%D7%99%D7%99%D7%94%20%D7%94%D7%9C%D7%90%D7%95%D7%9E%D7%99%D7%AA." target="_blank" rel="noopener"><svg viewBox="0 0 32 32" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M16 .4C7.4.4.5 7.3.5 15.9c0 2.8.7 5.4 2 7.7L.4 31.6l8.2-2.1c2.2 1.2 4.8 1.9 7.4 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.4 16 .4zm0 28.3c-2.4 0-4.6-.6-6.5-1.8l-.5-.3-4.9 1.3 1.3-4.8-.3-.5C3.6 20.8 3 18.4 3 15.9 3 8.7 8.8 2.9 16 2.9S29 8.7 29 15.9 23.2 28.7 16 28.7zm7.1-9.7c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1 0 1.8 1.3 3.6 1.5 3.8.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.7.2-1.8z"/></svg><span class="he">בואו נדבר על הספרייה הלאומית</span><span class="en">Let's talk about the National Library</span></a></div>
+        <div class="s"><span class="he">הכיוונים כאן הם נקודת פתיחה לשיחה.<br>בואו ניפגש, נכיר, ונראה אם יש פה משהו ששווה לבנות יחד.</span><span class="en">The directions here are a starting point for a conversation.<br>Let's meet, get to know each other, and see if there's something here worth building together.</span></div><div class="cta-actions"><a class="cta-btn mail" href="mailto:hemi@200apps.co?subject=%D7%94%D7%A6%D7%A2%D7%94%20-%20%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%94%20%D7%9C%D7%A1%D7%A4%D7%A8%D7%99%D7%99%D7%94%20%D7%94%D7%9C%D7%90%D7%95%D7%9E%D7%99%D7%AA"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg><span class="he">שליחת מייל</span><span class="en">Email us</span></a><a class="cta-btn wa" href="https://wa.me/972553192012?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%93%D7%91%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A1%D7%A4%D7%A8%D7%99%D7%99%D7%94%20%D7%94%D7%9C%D7%90%D7%95%D7%9E%D7%99%D7%AA." target="_blank" rel="noopener"><svg viewBox="0 0 32 32" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M16 .4C7.4.4.5 7.3.5 15.9c0 2.8.7 5.4 2 7.7L.4 31.6l8.2-2.1c2.2 1.2 4.8 1.9 7.4 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.4 16 .4zm0 28.3c-2.4 0-4.6-.6-6.5-1.8l-.5-.3-4.9 1.3 1.3-4.8-.3-.5C3.6 20.8 3 18.4 3 15.9 3 8.7 8.8 2.9 16 2.9S29 8.7 29 15.9 23.2 28.7 16 28.7zm7.1-9.7c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1 0 1.8 1.3 3.6 1.5 3.8.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.7.2-1.8z"/></svg><span class="he">בואו נדבר על הספרייה הלאומית</span><span class="en">Let's talk about the National Library</span></a></div>
       </div>
       <div class="sig">
         <div class="nm">חמי בן לביא · Hemi Ben-Lavi</div>
@@ -274,7 +246,7 @@
 
   <div class="foot">
     <span><a href="https://www.200apps.com" target="_blank" rel="noopener" style="border:none;color:var(--muted);">200apps.com</a></span>
-    <span><span class="he">הוכן במיוחד עבור הספרייה הלאומית · יולי 2026</span><span class="en">Prepared for the National Library of Israel · July 2026</span></span>
+    <span><span class="he">הוכן במיוחד עבור הספרייה הלאומית · אוגוסט 2026</span><span class="en">Prepared for the National Library of Israel · August 2026</span></span>
   </div>
 
 </div>
