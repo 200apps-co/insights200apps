@@ -191,6 +191,12 @@ ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;
 }
 
 /* ── deck chrome on the green/plum scheme ── */
+/* the stage is positioned in pixels, not centred by the grid: a viewport narrower
+   than 1280px made the unscaled box overflow, and in RTL that pushed the slide
+   off to one side. Also kills iOS rubber-band scrolling. */
+html,body{position:fixed;inset:0;width:100%;height:100%;overflow:hidden;overscroll-behavior:none}
+#viewport{position:fixed;inset:0;display:block;overflow:hidden}
+#stage{position:absolute;top:0;left:0;transform-origin:0 0}
 html,body{background:#0c1512}
 .dark ul.clean li::before{background:#e0b3c8}
 .dark .ic{stroke:#e0b3c8}
@@ -2442,9 +2448,13 @@ ul.clean li::before{background:var(--base)}
       i=0, N=slides.length;
 
   function fit(){
-    stage.style.transform='scale('+Math.min(innerWidth/1280,innerHeight/720)*0.965+')';
+    var vv=window.visualViewport, vw=vv?vv.width:innerWidth, vh=vv?vv.height:innerHeight,
+        s=Math.min(vw/1280,vh/720)*0.965;
+    stage.style.transform='translate('+((vw-1280*s)/2)+'px,'+((vh-720*s)/2)+'px) scale('+s+')';
   }
-  addEventListener('resize',fit); fit();
+  addEventListener('resize',fit);
+  if(window.visualViewport)visualViewport.addEventListener('resize',fit);
+  addEventListener('orientationchange',function(){setTimeout(fit,120)}); fit();
 
   slides.forEach(function(_,k){
     var d=document.createElement('i'); d.onclick=function(){go(k)}; dots.appendChild(d);
