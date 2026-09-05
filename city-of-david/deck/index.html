@@ -191,6 +191,33 @@ ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;
 }
 
 /* ── deck chrome on the green/plum scheme ── */
+/* ══ direction 1, variant: the screen and the argument talk to each other ══ */
+.v06 h2{font-size:34px;max-width:32ch;line-height:1.18}
+.fx6{display:grid;grid-template-columns:1fr 340px;gap:44px;align-items:stretch;
+  flex:1;min-height:0;margin-top:10px;position:relative}
+.v06 .textcol{display:flex;flex-direction:column;justify-content:center;min-width:0}
+.v06 .blocks{display:flex;flex-direction:column}
+.v06 .blk{display:grid;grid-template-columns:24px 1fr;gap:14px;align-items:start;padding:11px 0}
+.v06 .blk+.blk{border-top:1px solid rgba(27,60,52,.10)}
+.v06 .bi{width:22px;height:22px;color:var(--base);opacity:.78;margin-top:3px}
+.v06 .blk[data-tie] .bi{color:#914569;opacity:.95}
+.v06 .blk b{display:block;font-size:19.5px;font-weight:700;color:var(--base);line-height:1.25;letter-spacing:-.01em}
+.v06 .blk span{display:block;font-size:16px;line-height:1.48;color:#4d5854;margin-top:5px;max-width:40ch}
+/* the phone is the hero: bigger, and cropped by the slide edge on purpose */
+.v06 .phcol6{position:relative}
+.v06 .phcol6 .proto{position:absolute;left:14px;top:-14px;
+  transform:scale(1.14);transform-origin:top left}
+.v06 .cod .dev{box-shadow:0 0 0 1px rgba(27,60,52,.14),0 30px 70px rgba(27,60,52,.34)}
+/* the frame is cropped by the slide edge, so its step dots go with it */
+.v06 .phcol6 .pbar{display:none}
+/* the finding is the conclusion of the slide, not a note under a rule */
+.v06 .conclude{display:flex;align-items:center;gap:13px;margin-top:20px;
+  background:rgba(145,69,105,.07);box-shadow:inset 0 0 0 1px rgba(145,69,105,.18);
+  border-radius:14px;padding:10px 20px}
+.v06 .conclude svg{width:21px;height:21px;color:#914569;flex:0 0 21px}
+.v06 .conclude span{font-size:16.5px;line-height:1.45;color:var(--ink)}
+.v06 .conclude b{color:var(--base);font-weight:700}
+.v06 .conclude b.hot{color:#914569}
 /* ══ "what exists today", variant: two surfaces and the join between them ══ */
 .v03 h2{font-size:33px;max-width:40ch;line-height:1.18}
 .ex2{display:grid;grid-template-columns:1fr 88px 1fr;align-items:stretch;gap:0;
@@ -1688,19 +1715,37 @@ ul.clean li::before{background:var(--base)}
   </div>
 </section>
 
-<!-- ══ 7 · product · Direction 1: the ticket becomes an ongoing relationship (was Direction 2) ══ -->
-<section class="slide" data-act="product">
+<!-- ══ 7 · product · Direction 1: the ticket becomes an ongoing relationship ══ -->
+<section class="slide v06" data-act="product">
   <div class="pad">
     <div class="eyebrow"><span class="num">06</span>כיוון 1 · קשר והכנסה</div>
     <h2>האזור האישי יכול להפוך את הכרטיס לקשר מתמשך</h2>
-    <div class="fx">
-      <div class="rows">
-        <div class="r"><b>מה המבקר מקבל</b><span>הכרטיס, ההזמנות והמועדים במקום אחד, לפני הביקור ואחריו.</span></div>
-        <div class="r"><b>הערך לעיר דוד</b><span>הצעה נוספת ברגע רלוונטי, פחות פניות למרכז ההזמנות וסיבה לחזור.</span></div>
-        <div class="r"><b>מה נדרש כדי להפעיל</b><span>חיבור למערכת ההזמנות ולאזור האישי הקיימים, כרטיס QR והזמנת חלונות זמן.</span></div>
-        <div class="r"><b>הניסוי הקטן ביותר</b><span>בסיום המסלול מציגים הצעה להללויה בקישור או בקוד ייחודי, ומודדים כניסות ורכישות - עוד לפני חיבור מלא למערכת ההזמנות.</span></div>
+    <div class="fx6">
+      <div class="textcol">
+      <div class="blocks">
+        <div class="blk">
+          <svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.4" y="6.6" width="17.2" height="10.8" rx="2"/><path d="M12 6.6v10.8" stroke-dasharray="2 2.4"/><path d="M3.4 10.6h1.6M19 10.6h1.6"/></svg>
+          <div><b>מה המבקר מקבל</b><span>הכרטיס, ההזמנות והמועדים במקום אחד - לפני הביקור ואחריו.</span></div>
+        </div>
+        <div class="blk">
+          <svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.6v14.8M6.4 9.6h11.2M6.4 14.4h11.2"/><circle cx="12" cy="12" r="8.4"/></svg>
+          <div><b>הערך לעיר דוד</b><span>הצעה נוספת ברגע רלוונטי, פחות פניות למרכז ההזמנות וסיבה לחזור.</span></div>
+        </div>
+        <div class="blk">
+          <svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3.6v5M15 3.6v5"/><path d="M6.4 8.6h11.2v3.2a5.6 5.6 0 0 1-11.2 0z"/><path d="M12 17.4V21"/></svg>
+          <div><b>מה נדרש כדי להפעיל</b><span>חיבור למערכת ההזמנות ולאזור האישי הקיימים, כרטיס QR וחלונות זמן.</span></div>
+        </div>
+        <div class="blk">
+          <svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.6 3.6h4.8M10.6 3.6v6L5.8 18.2a1.6 1.6 0 0 0 1.4 2.4h9.6a1.6 1.6 0 0 0 1.4-2.4L13.4 9.6v-6"/><path d="M8.4 14.8h7.2"/></svg>
+          <div><b>הניסוי הקטן ביותר</b><span>הצעה להללויה בסיום המסלול, בקוד ייחודי. מודדים כניסות ורכישות עוד לפני חיבור מלא.</span></div>
+        </div>
       </div>
-      <div class="phcol"><div class="proto cod" data-demo="3" data-auto="2800">
+      <div class="conclude">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.6"/><path d="M12 8.2v4.4l3 1.8"/></svg>
+      <span><b>המקום הפנוי:</b> בסקירה שלנו לא מצאנו אתר שמאפשר להזמין מתוך האפליקציה מופע, סיור או חוויה נוספת. <b class="hot">כאן אפשר להיות הראשונים.</b></span>
+      </div>
+      </div>
+      <div class="phcol6"><div class="proto cod" data-demo="3" data-auto="2800">
 
   <!-- the foundation's lyre, once, in two colourings: brand two-tone and ink -->
   <svg class="defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -1860,7 +1905,6 @@ ul.clean li::before{background:var(--base)}
 
 </div></div>
     </div>
-    <div class="foot">בסקירה שלנו לא מצאנו אתר שמאפשר להזמין מתוך האפליקציה מופע, סיור או חוויה נוספת. כאן אפשר להיות הראשונים, לא להשלים פער.</div>
   </div>
 </section>
 
