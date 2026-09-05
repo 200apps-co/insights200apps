@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" data-app="events">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no">
+<meta name="robots" content="noindex,nofollow">
+<title>הספרייה הלאומית בכיס · אירועים ושעות · המחשה של 200Apps</title>
+
+<!--
+  PROTOTYPE — feature slide "אירועים ושעות" · decks/national-library/
+  Self-contained: no CDN, no remote font, no external image, no network request of any
+  kind. The only file references are the deck's own local Rubik subset, declared with two
+  fallback paths so it resolves from _proto/ or from the deck root.
+
+  Contract, per skills/pitch-deck/references/prototypes.md and the controller inside
+  skills/pitch-deck/templates/deck.html:
+    .proto[data-demo][data-auto]  ->  .dev receives st-0 / st-1 / st-2
+                                  ->  .sh[data-st=K] receives .on at step K
+                                  ->  .pbar children receive .on at step K
+  There is no data-step attribute anywhere. Every visual change hangs off .st-K on .dev.
+  One persistent background (header band + calendar strip + events list) is drawn once and
+  never rebuilt; the steps move state inside it.
+
+  CONTENT PROVENANCE — everything named on screen is from _prep/facts.md:
+    "מארק אליהו | קיץ בגן הספרייה הלאומית | יום ג׳ • י״ט באלול • 1 בספטמבר • 21:00 - 23:00"
+    "מרסדס בנד | קיץ בגן הספרייה הלאומית | יום ה׳ • כ״א באלול • 3 בספטמבר • 21:00 - 23:00"
+    תערוכת הקבע ״אוצר מילים״ · שיחי גלריה · סיור מודרך למבוגרים ולילדים ·
+    "הכניסה לאולמות הקריאה תתאפשר רק בהצגת כרטיס קורא אישי" ·
+    "הכניסה לספרייה מקפלן 1 או מרופין 36 (כולל חניון בתשלום וחנייה נגישה)" ·
+    "צפו בפירוט שעות הפתיחה של כלל מתחמי הספרייה, האולמות ומרכז המבקרים" ·
+    חנות הספרייה · הכתובת קפלן 1, קריית הממשלה, ירושלים.
+  The blue is #1a61d9, read out of assets/nli-logo-horizontal-blue.svg; the paper is
+  #FEFAF7, the value sampled off nli.org.il in facts.md. The mark below is the library's
+  own emblem path, lifted verbatim from that same logo file.
+
+  DELIBERATELY ABSENT — NO INVENTED NUMBERS:
+   * No clock times for the gallery talk or the tour. facts.md has dates for the two
+     concerts only, so those two carry a date and the other two carry
+     "מועד מלוח האירועים" — a binding to their calendar, not a time I made up.
+   * No opening-hours figures. facts.md records that hours are published per space and
+     does not record the values, so each row shows a live-sync slot instead of digits.
+   * No ticket price and no seat count. The payment row is drawn as an integration point
+     into the library's own ticketing. Do not fill any of these in from memory.
+-->
+
+<style>
+@font-face{font-family:Deck;
+  src:url(../assets/fonts/rubik-hebrew.woff2) format('woff2'),
+      url(assets/fonts/rubik-hebrew.woff2) format('woff2');
+  font-weight:300 900;font-display:swap;
+  unicode-range:U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F}
+@font-face{font-family:Deck;
+  src:url(../assets/fonts/rubik-latin.woff2) format('woff2'),
+      url(assets/fonts/rubik-latin.woff2) format('woff2');
+  font-weight:300 900;font-display:swap}
+
+/* ── standalone viewing shell only. Nothing here travels with .proto ── */
+html,body{margin:0;padding:0;height:100%}
+body{background:#0F1626;display:flex;align-items:center;justify-content:center;
+  font-family:Deck,'Assistant','Heebo','Arial Hebrew',Arial,sans-serif}
+
+/* ══════════════════════════════════════════════════════════════════════
+   .nli — the prototype. Self-sufficient and specificity-armoured: every
+   rule carries the .nli scope, one class more than the deck template's own
+   .proto/.dev/.sh rules, so it renders identically standalone, in an
+   iframe, or pasted inline into a slide.
+   EVERY box below has a definite pixel height. No percentage heights: the
+   phone sits in a centred flex parent, where height:100% resolves to zero.
+   Frame 224x380 with a 7px border-box border => inner canvas is 210 x 366,
+   and every absolute coordinate below is inside that 210x366.
+   ══════════════════════════════════════════════════════════════════════ */
+.nli *{margin:0;padding:0;box-sizing:border-box}
+.nli{
+  --nb:#1a61d9;        /* the library's own blue, from its logo file */
+  --nb-d:#123f8f;
+  --ink:#17203A;
+  --mut:#7C7671;
+  --paper:#FEFAF7;     /* nli.org.il page background, sampled */
+  --line:#EDE4DC;
+  --ok:#1B7A4B;
+  --amb:#A85F09;
+  font-family:Deck,'Assistant','Heebo','Arial Hebrew',Arial,sans-serif;
+  direction:rtl;position:relative;
+  display:flex;flex-direction:column;align-items:center;gap:9px;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── the phone ── */
+.nli .dev{width:224px;height:380px;background:var(--paper);border-radius:31px;
+  position:relative;overflow:hidden;cursor:pointer;border:7px solid #131A2B;
+  box-shadow:0 18px 46px rgba(0,0,0,.42)}
+.nli .notch{position:absolute;top:6px;left:50%;transform:translateX(-50%);
+  width:50px;height:4px;border-radius:99px;background:rgba(255,255,255,.30);z-index:9}
+
+/* ══ persistent background layer — drawn once, never rebuilt between steps ══ */
+.nli .bg{position:absolute;inset:0;z-index:1;background:var(--paper)}
+.nli .bg .band{position:absolute;top:0;right:0;left:0;height:104px;
+  background:linear-gradient(158deg,#2470E8 0%,#1a61d9 46%,#123F8F 100%)}
+.nli .bg .wm{position:absolute;top:-14px;left:-26px;width:120px;height:100px;
+  opacity:.11;color:#fff}
+.nli .bg .wm svg{width:120px;height:100px;display:block}
+
+/* ── status strip ── */
+.nli .sbar{position:absolute;top:11px;right:18px;left:18px;height:11px;z-index:6;
+  display:flex;align-items:center;justify-content:space-between;color:#fff;
+  font-size:7.6px;font-weight:600;letter-spacing:.02em}
+.nli .sbar .rt{display:flex;align-items:center;gap:4px}
+.nli .sbar .bat{width:14px;height:7px;border:1px solid rgba(255,255,255,.85);
+  border-radius:2px;position:relative}
+.nli .sbar .bat::after{content:'';position:absolute;top:1px;bottom:1px;right:1px;
+  width:8px;background:#fff;border-radius:1px}
+.nli .sbar .wifi{width:9px;height:7px;background:
+  linear-gradient(to top,#fff 0 55%,rgba(255,255,255,.45) 55% 100%);
+  clip-path:polygon(50% 100%,0 22%,100% 22%)}
+
+/* ── app top bar (persistent; only its section label swaps) ── */
+.nli .tb{position:absolute;top:28px;right:12px;left:12px;height:26px;z-index:5;
+  display:flex;align-items:center;gap:6px;color:#fff}
+.nli .tb .mk{width:16px;height:13px;flex:0 0 16px;display:block;color:#fff}
+.nli .tb .nm{font-size:9.1px;font-weight:600;white-space:nowrap;letter-spacing:-.015em}
+.nli .tb .sec{margin-inline-start:auto;font-size:7.1px;font-weight:600;
+  padding:3px 6px;border-radius:99px;background:rgba(255,255,255,.20);
+  white-space:nowrap;transition:background .35s ease}
+.nli .tb .sec span{display:none}
+.nli .st-0 .tb .s0,.nli .st-1 .tb .s1,.nli .st-2 .tb .s2{display:inline}
+
+/* ── the person's own week strip (persistent; markers change per step) ── */
+.nli .cal{position:absolute;top:60px;right:11px;left:11px;height:46px;z-index:4;
+  background:#fff;border-radius:12px;padding:5px 4px;display:flex;gap:1px;
+  box-shadow:0 7px 18px rgba(12,32,72,.20)}
+.nli .cal .d{flex:1 1 0;height:36px;border-radius:8px;display:flex;
+  flex-direction:column;align-items:center;justify-content:center;gap:1px;
+  transition:background .35s ease,box-shadow .35s ease}
+.nli .cal .dw{font-size:6.6px;color:#A39C96;line-height:8px}
+.nli .cal .dn{font-size:10.5px;font-weight:700;color:var(--ink);line-height:12px;
+  font-variant-numeric:tabular-nums}
+.nli .cal .dot{width:4px;height:4px;border-radius:99px;background:transparent;
+  transition:background .3s ease}
+.nli .cal .d.today{background:var(--nb)}
+.nli .cal .d.today .dw{color:rgba(255,255,255,.82)}
+.nli .cal .d.today .dn{color:#fff}
+/* the seat lands in the person's own calendar the moment it is taken */
+.nli .st-1 .cal .d.today .dot,.nli .st-2 .cal .d.today .dot{background:#fff}
+/* and the day whose hours change is ringed on the same strip */
+.nli .st-2 .cal .d.tom{background:#FFF4E2;box-shadow:inset 0 0 0 1.5px #E0A24A}
+.nli .st-2 .cal .d.tom .dot{background:var(--amb)}
+
+/* ── the events list (persistent; card state changes per step) ── */
+.nli .lst{position:absolute;top:114px;right:11px;left:11px;height:158px;z-index:3;
+  display:flex;flex-direction:column;gap:6px}
+.nli .ec{background:#fff;border:1px solid var(--line);border-radius:11px;
+  position:relative;overflow:hidden;
+  transition:border-color .4s ease,box-shadow .4s ease,transform .4s ease}
+.nli .ec::before{content:'';position:absolute;top:0;bottom:0;right:0;width:0;
+  background:var(--nb);transition:width .4s ease}
+
+/* card 1 — the dated concert, the only one that carries a real clock time */
+.nli .e1{height:74px;padding:6px 9px 4px}
+.nli .e1 .r1{display:flex;align-items:center;gap:5px;height:14px}
+.nli .e1 .ttl{font-size:11px;font-weight:700;color:var(--ink);line-height:14px}
+.nli .e1 .now{font-size:6.8px;font-weight:700;color:#fff;background:var(--nb);
+  padding:2px 5px;border-radius:99px;line-height:8px;white-space:nowrap}
+.nli .e1 .sub{font-size:8px;color:#5F6B84;line-height:11px;margin-top:1px}
+.nli .e1 .when{font-size:7.2px;color:var(--mut);line-height:10px;margin-top:1px;
+  white-space:nowrap}
+.nli .e1 .r4{display:flex;align-items:center;gap:5px;margin-top:4px;height:20px}
+
+/* cards 2 and 3 — real programme categories, no invented clock time */
+.nli .e2,.nli .e3{height:36px;padding:0 9px;display:flex;align-items:center;gap:6px}
+.nli .ec .tx{min-width:0}
+.nli .ec .t2{font-size:9.2px;font-weight:600;color:var(--ink);line-height:12px;
+  white-space:nowrap}
+.nli .ec .m2{font-size:6.8px;color:var(--mut);line-height:10px;white-space:nowrap;
+  letter-spacing:-.01em}
+.nli .ec .sync{display:inline-flex;align-items:center;gap:3px}
+.nli .ec .sync i{width:3px;height:3px;border-radius:99px;background:#C3BCB5;
+  display:inline-block}
+
+/* the action every entry carries — this is the line the category stops at */
+.nli .act{margin-inline-start:auto;flex:0 0 auto;height:20px;padding:0 8px;
+  border-radius:99px;background:var(--nb);color:#fff;font-size:7.6px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;white-space:nowrap;
+  transition:background .35s ease,color .35s ease}
+.nli .e2 .act,.nli .e3 .act{background:#EAF1FE;color:var(--nb)}
+.nli .act .a1{display:none}
+/* once the seat is taken, card 1 keeps the seat and stops offering it */
+.nli .st-1 .e1,.nli .st-2 .e1{border-color:var(--nb);
+  box-shadow:0 8px 20px rgba(26,97,217,.20)}
+.nli .st-1 .e1::before,.nli .st-2 .e1::before{width:3px}
+.nli .st-1 .e1 .act,.nli .st-2 .e1 .act{background:#E4F3EA;color:var(--ok)}
+.nli .st-1 .e1 .act .a0,.nli .st-2 .e1 .act .a0{display:none}
+.nli .st-1 .e1 .act .a1,.nli .st-2 .e1 .act .a1{display:inline}
+.nli .e1 .seat{font-size:7px;color:var(--mut);line-height:10px;opacity:0;
+  transition:opacity .4s ease}
+.nli .st-1 .e1 .seat,.nli .st-2 .e1 .seat{opacity:1}
+
+/* ── the push that arrives on step 2 — hours moved on the space you booked into ── */
+.nli .note{position:absolute;top:26px;right:9px;left:9px;height:40px;z-index:7;
+  background:#fff;border-radius:13px;padding:7px 9px;
+  display:flex;gap:7px;align-items:flex-start;
+  box-shadow:0 10px 26px rgba(9,22,52,.34);
+  opacity:0;transform:translateY(-16px);pointer-events:none;
+  transition:opacity .42s ease,transform .42s cubic-bezier(.22,.9,.24,1)}
+.nli .st-2 .note{opacity:1;transform:none}
+.nli .note .ic{width:17px;height:17px;flex:0 0 17px;border-radius:5px;
+  background:var(--nb);display:flex;align-items:center;justify-content:center;
+  color:#fff;margin-top:1px}
+.nli .note .ic svg{width:11px;height:9px;display:block}
+.nli .note .nh{font-size:7.4px;font-weight:700;color:var(--ink);line-height:10px;
+  display:flex;align-items:center;gap:4px}
+.nli .note .nh em{font-style:normal;font-weight:600;color:#A29B95;font-size:6.6px;
+  margin-inline-start:auto}
+.nli .note .nb2{font-size:8.2px;color:#2C3550;line-height:11px;margin-top:2px}
+.nli .note .nb2 b{color:var(--amb);font-weight:700}
+
+/* ── bottom sheets. One per step; the controller writes .on. ── */
+.nli .sh{position:absolute;right:0;left:0;bottom:0;z-index:6;background:#fff;
+  border-radius:20px 20px 0 0;padding:9px 12px 12px;
+  box-shadow:0 -6px 26px rgba(9,22,52,.20);
+  transform:translateY(102%);transition:transform .5s cubic-bezier(.22,.9,.24,1)}
+.nli .sh.on{transform:none}
+.nli .sh[data-st="0"]{height:96px}
+.nli .sh[data-st="1"]{height:150px}
+.nli .sh[data-st="2"]{height:168px}
+.nli .grab{width:32px;height:3.5px;border-radius:99px;background:#E2DCD5;
+  margin:0 auto 8px}
+.nli .hd{font-size:10.6px;font-weight:700;color:var(--ink);line-height:14px;
+  display:flex;align-items:center;gap:5px}
+.nli .hd .ok{width:12px;height:12px;flex:0 0 12px;border-radius:99px;background:var(--ok);
+  color:#fff;font-size:8px;display:flex;align-items:center;justify-content:center;
+  line-height:1}
+.nli .hd .inc{margin-inline-start:auto;font-size:6.6px;font-weight:700;color:var(--ok);
+  background:#E4F3EA;border-radius:99px;padding:2px 6px;white-space:nowrap;line-height:9px}
+.nli .sc{font-size:7.4px;color:var(--mut);line-height:11px;margin-top:2px;
+  white-space:nowrap;letter-spacing:-.01em}
+
+/* step 0 — the ask */
+.nli .cta{height:26px;border-radius:9px;background:var(--nb);color:#fff;
+  font-size:9.4px;font-weight:700;display:flex;align-items:center;
+  justify-content:center;margin-top:6px}
+.nli .idn{font-size:6.8px;color:#9A938D;line-height:10px;margin-top:5px;
+  display:flex;align-items:center;gap:4px}
+.nli .idn i{width:3px;height:3px;border-radius:99px;background:var(--nb);
+  display:inline-block;flex:0 0 3px}
+
+/* step 1 — what a taken seat actually carries */
+.nli .ir{height:26px;border-radius:8px;background:#F8F5F1;padding:0 7px;
+  display:flex;align-items:center;gap:6px;margin-top:4px}
+.nli .ir b{font-size:7.6px;font-weight:700;color:var(--ink);white-space:nowrap}
+.nli .ir span{font-size:7px;color:var(--mut);line-height:9px;
+  margin-inline-start:auto;text-align:left}
+.nli .nxt{height:22px;margin-top:5px;border-radius:99px;background:#EAF1FE;
+  padding:0 8px;display:flex;align-items:center;gap:5px}
+.nli .nxt .k{font-size:6.8px;font-weight:700;color:var(--nb);white-space:nowrap}
+.nli .nxt .v{font-size:7px;color:#3E4B68;white-space:nowrap}
+.nli .nxt .go{margin-inline-start:auto;font-size:6.8px;font-weight:700;color:#fff;
+  background:var(--nb);border-radius:99px;padding:2px 6px;white-space:nowrap}
+
+/* step 2 — hours, per space, from one source */
+.nli .hr{height:30px;display:flex;align-items:center;gap:6px}
+.nli .hr + .hr{border-top:1px solid #F1ECE6}
+.nli .hr .hn{font-size:8.6px;font-weight:700;color:var(--ink);line-height:11px;
+  white-space:nowrap}
+.nli .hr .hs{font-size:6.8px;color:var(--mut);line-height:9px;white-space:nowrap}
+.nli .hr .pill{margin-inline-start:auto;flex:0 0 auto;height:17px;padding:0 7px;
+  border-radius:99px;font-size:6.8px;font-weight:700;display:flex;align-items:center;
+  gap:4px;white-space:nowrap}
+.nli .hr .live{background:#EDF7F1;color:var(--ok)}
+.nli .hr .live i{width:4px;height:4px;border-radius:99px;background:var(--ok);
+  display:inline-block;animation:nlipulse 1.9s ease-in-out infinite}
+.nli .hr .chg{background:#FFF2DF;color:var(--amb)}
+@keyframes nlipulse{0%,100%{opacity:1}50%{opacity:.28}}
+.nli .src{font-size:6.6px;color:#A8A19B;line-height:9px;margin-top:7px;
+  padding-top:6px;border-top:1px solid #F1ECE6}
+
+/* ── step pips under the phone, driven by the same controller ── */
+.nli .pbar{display:flex;gap:5px;align-items:center}
+.nli .pbar i{font-style:normal;font-size:7.4px;font-weight:600;color:#7C8AA8;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);
+  border-radius:99px;padding:3px 7px;line-height:9px;white-space:nowrap;
+  transition:background .3s ease,color .3s ease,border-color .3s ease}
+.nli .pbar i.on{background:#2470E8;border-color:#2470E8;color:#fff}
+</style>
+</head>
+<body>
+
+<!-- one emblem, defined once and referenced. It is the library's own mark,
+     path data lifted verbatim from assets/nli-logo-horizontal-blue.svg. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="nlimark" viewBox="253 0 89 74">
+    <path fill="currentColor" d="M297.516 12.871C297.845 12.871 298.137 12.6516 298.247 12.3226C300.514 4.82796 309.398 3 326.507 3H341.387V12.871H322.742C307.606 12.871 301.391 16.5269 298.978 18.7204C298.613 19.1226 298.064 19.3785 297.516 19.4516C296.968 19.3785 296.456 19.1226 296.054 18.7204C293.641 16.5269 287.462 12.871 272.29 12.871H253.645V3H268.525C285.598 3 294.482 4.82796 296.748 12.3226C296.894 12.6151 297.15 12.8344 297.516 12.871ZM297.516 60.2882C297.041 60.2882 296.602 60.1419 296.236 59.8495C293.458 57.4366 285.525 51.9893 271.047 51.9893H253.645V61.8602H271.047C286.694 61.8602 291.447 68.3677 292.544 70.3785C292.763 70.7441 293.165 71 293.568 71H301.428C301.867 71 302.269 70.7806 302.488 70.3785C303.585 68.3677 308.337 61.8602 323.985 61.8602H341.387V51.9893H323.985C309.507 51.9893 301.574 57.4366 298.796 59.8495C298.43 60.1419 297.991 60.2882 297.516 60.2882Z"/>
+  </symbol>
+</svg>
+
+<div class="proto nli" data-demo="3" data-auto="2800">
+
+  <div class="dev st-0">
+    <div class="notch"></div>
+
+    <!-- ══ persistent background: band, week strip and the list live here and are
+         never rebuilt. Steps only change state inside them. ══ -->
+    <div class="bg">
+      <div class="band"></div>
+      <div class="wm"><svg><use href="#nlimark"/></svg></div>
+    </div>
+
+    <div class="sbar">
+      <span>20:41</span>
+      <span class="rt"><span class="wifi"></span><span class="bat"></span></span>
+    </div>
+
+    <div class="tb">
+      <svg class="mk" aria-hidden="true"><use href="#nlimark"/></svg>
+      <span class="nm">הספרייה הלאומית של ישראל</span>
+      <span class="sec">
+        <span class="s0">אירועים</span>
+        <span class="s1">המקום שמור</span>
+        <span class="s2">שעות פתיחה</span>
+      </span>
+    </div>
+
+    <!-- the week the person is actually in. 1 בספטמבר is יום ג׳, from the library's
+         own listing line; the rest of the strip follows from it. -->
+    <div class="cal">
+      <div class="d today"><span class="dw">ג׳</span><span class="dn">1</span><span class="dot"></span></div>
+      <div class="d tom"><span class="dw">ד׳</span><span class="dn">2</span><span class="dot"></span></div>
+      <div class="d"><span class="dw">ה׳</span><span class="dn">3</span><span class="dot"></span></div>
+      <div class="d"><span class="dw">ו׳</span><span class="dn">4</span><span class="dot"></span></div>
+      <div class="d"><span class="dw">ש׳</span><span class="dn">5</span><span class="dot"></span></div>
+      <div class="d"><span class="dw">א׳</span><span class="dn">6</span><span class="dot"></span></div>
+      <div class="d"><span class="dw">ב׳</span><span class="dn">7</span><span class="dot"></span></div>
+    </div>
+
+    <div class="lst">
+
+      <!-- the one entry with a verified date and clock time -->
+      <div class="ec e1">
+        <div class="r1">
+          <span class="ttl">מארק אליהו</span>
+          <span class="now">היום · 21:00</span>
+        </div>
+        <div class="sub">קיץ בגן הספרייה הלאומית</div>
+        <div class="when">יום ג׳ • י״ט באלול • 1 בספטמבר • 21:00 - 23:00</div>
+        <div class="r4">
+          <span class="seat">שמור על שמכם</span>
+          <span class="act"><span class="a0">שריון מקום</span><span class="a1">מקומכם שמור ✓</span></span>
+        </div>
+      </div>
+
+      <div class="ec e2">
+        <div class="tx">
+          <div class="t2">שיח גלריה · ״אוצר מילים״</div>
+          <div class="m2">תערוכת הקבע <span class="sync"><i></i>מועד מלוח האירועים</span></div>
+        </div>
+        <span class="act"><span class="a0">שריון מקום</span></span>
+      </div>
+
+      <div class="ec e3">
+        <div class="tx">
+          <div class="t2">סיור מודרך בספרייה</div>
+          <div class="m2">למבוגרים ולילדים <span class="sync"><i></i>מועד מלוח האירועים</span></div>
+        </div>
+        <span class="act"><span class="a0">שריון מקום</span></span>
+      </div>
+
+    </div>
+
+    <!-- ══ step 2 overlay: the notice for the space they were heading to ══ -->
+    <div class="note">
+      <span class="ic"><svg aria-hidden="true"><use href="#nlimark"/></svg></span>
+      <div>
+        <div class="nh">הספרייה הלאומית<em>עכשיו</em></div>
+        <div class="nb2"><b>מרכז המבקרים</b> · שעות פתיחה אחרות מחר</div>
+      </div>
+    </div>
+
+    <!-- ══ step 0 — an event you can act on, not an event you can read about ══ -->
+    <div class="sh" data-st="0">
+      <div class="grab"></div>
+      <div class="hd">מארק אליהו · קיץ בגן הספרייה הלאומית</div>
+      <div class="sc">יום ג׳ • י״ט באלול • 1 בספטמבר • 21:00 - 23:00</div>
+      <div class="cta">שריון מקום</div>
+      <div class="idn"><i></i>שריון על שם · דורש זיהוי, לא רק צפייה בלוח</div>
+    </div>
+
+    <!-- ══ step 1 — the seat is taken, and it carries the visit with it ══ -->
+    <div class="sh" data-st="1">
+      <div class="grab"></div>
+      <div class="hd"><span class="ok">✓</span>המקום שמור · מארק אליהו<span class="inc">ביומן שלכם</span></div>
+      <div class="sc">יום ג׳ • י״ט באלול • 1 בספטמבר • 21:00 - 23:00</div>
+      <div class="ir"><b>כניסה</b><span>מקפלן 1 או מרופין 36 · חניון בתשלום</span></div>
+      <div class="ir"><b>כרטוס ותשלום</b><span>ממערכת הכרטוס של הספרייה</span></div>
+      <div class="nxt">
+        <span class="k">הבא בסדרה</span>
+        <span class="v">מרסדס בנד · יום ה׳ • 3 בספטמבר</span>
+        <span class="go">שריון</span>
+      </div>
+    </div>
+
+    <!-- ══ step 2 — hours per space, from the library's own hours page ══ -->
+    <div class="sh" data-st="2">
+      <div class="grab"></div>
+      <div class="hd">שעות פתיחה · לפי מתחם</div>
+      <div class="hr">
+        <div>
+          <div class="hn">אולמות הקריאה</div>
+          <div class="hs">כניסה בהצגת כרטיס קורא אישי</div>
+        </div>
+        <span class="pill live"><i></i>מסונכרן</span>
+      </div>
+      <div class="hr">
+        <div>
+          <div class="hn">מרכז המבקרים</div>
+          <div class="hs">סיורים, תערוכות וחנות הספרייה</div>
+        </div>
+        <span class="pill chg">שינוי מחר</span>
+      </div>
+      <div class="hr">
+        <div>
+          <div class="hn">מתחמי הספרייה</div>
+          <div class="hs">גן הספרייה · קפלן 1, ירושלים</div>
+        </div>
+        <span class="pill live"><i></i>מסונכרן</span>
+      </div>
+      <div class="src">השעות נטענות מעמוד שעות הפתיחה של הספרייה: כלל המתחמים, האולמות ומרכז המבקרים. מקור אחד, גם באתר וגם באפליקציה.</div>
+    </div>
+
+  </div>
+
+  <!-- the controller writes .on onto these in step order -->
+  <div class="pbar"><i>מה קורה</i><i>מקום שמור</i><i>שעות</i></div>
+
+</div>
+
+<script>
+/* Local controller — the same logic as the one in templates/deck.html, so the file
+   demonstrates itself when opened on its own. When the deck embeds it in an iframe the
+   parent drives the step by postMessage and this timer stands down, so there are never
+   two competing timers. ?step=N freezes one step, for screenshotting. */
+(function () {
+  var embedded = (window.parent !== window);
+  var frozen = (location.search.match(/step=(\d+)/) || [])[1];
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  [].forEach.call(document.querySelectorAll('.proto'), function (p) {
+    var dev = p.querySelector('.dev'), bar = p.querySelector('.pbar');
+    var n = parseInt(p.dataset.demo, 10) || 1;
+    var ms = parseInt(p.dataset.auto, 10) || 2800;
+    var step = frozen ? Math.min(n - 1, parseInt(frozen, 10)) : 0;
+    var timer = null;
+
+    function render() {
+      dev.className = dev.className.replace(/\bst-\d+\b/g, '').trim() + ' st-' + step;
+      [].forEach.call(p.querySelectorAll('.sh'), function (sh) {
+        sh.classList.toggle('on', parseInt(sh.dataset.st, 10) === step);
+      });
+      if (bar) [].forEach.call(bar.children, function (b, k) {
+        b.classList.toggle('on', k === step);
+      });
+    }
+    function next() { step = (step + 1) % n; render(); }
+
+    p.addEventListener('click', function (e) {
+      e.stopPropagation(); next();
+      if (timer) { clearInterval(timer); timer = setInterval(next, ms); }
+    });
+
+    render();
+    if (embedded) {
+      addEventListener('message', function (e) {
+        var d = e.data; if (!d || d.deck !== 'proto') return;
+        step = Math.max(0, Math.min(n - 1, parseInt(d.step, 10) || 0)); render();
+      });
+    } else if (!reduce && !frozen) {
+      timer = setInterval(next, ms);
+    }
+  });
+})();
+</script>
+</body>
+
+<style id="app-shell">
+html .dev{width:218px!important;height:374px!important;border:4px solid #0f1412!important;border-radius:38px!important;box-shadow:0 30px 60px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.3) inset!important}
+html .dev .notch,html .nli .notch{top:5px!important;width:54px!important;height:10px!important;border-radius:99px!important;background:#0f1412!important;z-index:30!important}
+html .dev::before{content:'';position:absolute;bottom:5px;left:50%;transform:translateX(-50%);width:76px;height:3.5px;border-radius:99px;background:rgba(26,26,26,.28);z-index:30;pointer-events:none}
+html,body{height:100%;margin:0;overflow:hidden}
+body{min-height:100vh}
+.cap{display:none!important}
+#shell{width:auto!important;height:auto!important}
+#appnav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:center;gap:6px;
+  padding:10px 12px;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);font-family:Deck,Rubik,'Assistant',Arial,sans-serif}
+#appnav a{color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:7px 13px;border-radius:99px;
+  background:rgba(255,255,255,.12);white-space:nowrap}
+#appnav a.on{background:#F7D663;color:#1A1A1A}
+#appnav .t{position:absolute;left:12px;top:0;bottom:0;display:flex;align-items:center;font-size:11px;color:#C9C3BC;direction:ltr}
+@media (max-width:759px){#appnav .t{display:none}}
+#fitwrap{position:static}
+#fitwrap .proto{position:fixed;transform-origin:0 0;margin:0}
+</style>
+<nav id="appnav">
+  <a href="index.html" data-k="daily">ההרגל היומי</a>
+  <a href="neli.html" data-k="neli">נֶלִי בכיס</a>
+  <a href="events.html" data-k="events">אירועים ושעות</a>
+  <span class="t">200Apps · המחשה</span>
+</nav>
+<script>
+(function(){
+  var k=document.documentElement.getAttribute('data-app');
+  [].forEach.call(document.querySelectorAll('#appnav a'),function(a){a.classList.toggle('on',a.dataset.k===k)});
+  var p=document.querySelector('.proto'); if(!p)return;
+  var w=document.createElement('div'); w.id='fitwrap'; p.parentNode.insertBefore(w,p); w.appendChild(p);
+  function fit(){
+    var vw=document.documentElement.clientWidth||innerWidth, vh=document.documentElement.clientHeight||innerHeight;
+    var pw=p.offsetWidth||224, ph=p.offsetHeight||420;
+    var sc=Math.min((vw-20)/pw,(vh-110)/ph); sc=Math.max(.9,Math.min(sc,2.4));
+    p.style.left=Math.round((vw-pw*sc)/2)+'px'; p.style.top=Math.round(48+(vh-48-ph*sc)/2)+'px';
+    p.style.transform='scale('+sc+')';
+  }
+  addEventListener('resize',fit); setTimeout(fit,30); setTimeout(fit,400); fit();
+})();
+</script>
+</html>
