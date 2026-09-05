@@ -191,6 +191,49 @@ ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;
 }
 
 /* ── deck chrome on the green/plum scheme ── */
+/* ══ a find becomes a story, variant: one horizontal reading, right to left ══ */
+.v07 .eyebrow{font-size:14.5px}
+.v07 h2{font-size:33px;max-width:38ch;line-height:1.18;margin-bottom:6px}
+.v07 .story{flex:1;min-height:0;max-height:322px;display:grid;grid-template-columns:226px 1fr 232px;
+  gap:36px;align-items:center;margin-top:14px}
+/* the find opens the story: lighter, and lifted to sit with the other two zones */
+.v07 .fimg{position:relative;height:214px;border-radius:16px;overflow:hidden;margin:0;
+  transform:translateY(-26px);box-shadow:0 12px 30px rgba(27,60,52,.16)}
+.v07 .fimg img{width:100%;height:100%;object-fit:cover;object-position:52% 46%;
+  display:block;transform:scale(1.16);filter:brightness(1.09) contrast(.93)}
+.v07 .fimg figcaption{position:absolute;bottom:0;right:0;left:0;padding:30px 14px 11px;
+  font-size:14.5px;line-height:1.4;color:#f3efe6;
+  background:linear-gradient(to top,rgba(11,26,22,.78),rgba(11,26,22,0))}
+/* the beats: air carries the rhythm, and the type is crisp enough to project */
+.v07 .beats{display:flex;flex-direction:column;gap:11px;padding:0 4px}
+.v07 .beat{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:baseline}
+.v07 .beat b{font-size:15px;font-weight:700;color:var(--base);letter-spacing:.02em;white-space:nowrap}
+.v07 .beat span{font-size:16px;line-height:1.5;color:#414d49;max-width:43ch}
+.v07 .beat+.beat{border-top:1px solid rgba(27,60,52,.05);padding-top:11px}
+/* the beat about the screen runs all the way to it */
+.v07 .beat.digital b{color:#914569}
+.v07 .beat.digital{position:relative}
+.v07 .beat.digital::after{content:'';position:absolute;left:-72px;top:11px;width:78px;height:1.5px;
+  background:linear-gradient(to left,rgba(145,69,105,.6),rgba(145,69,105,.18))}
+.v07 .beat.digital::before{content:'';position:absolute;left:-76px;top:8px;width:7px;height:7px;
+  border-radius:50%;background:#914569;opacity:.8}
+/* the screen: higher, a little closer, a little larger */
+.v07 .phcol{align-self:center;zoom:.78;transform:translate(16px,-26px);transform-origin:center}
+.v07 .phcol .pbar{display:none}
+/* the site keeps producing: a lead, a headline find, then the detail */
+.v07 .living{margin-top:12px;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start;
+  background:linear-gradient(to left,rgba(27,60,52,.06),rgba(27,60,52,.02));
+  border-radius:14px;padding:11px 22px;position:relative}
+.v07 .living::before{content:'';position:absolute;right:0;top:12px;bottom:12px;width:2.5px;
+  border-radius:99px;background:#914569;opacity:.55}
+.v07 .living b{font-size:15px;font-weight:700;color:var(--base);white-space:nowrap;letter-spacing:.02em;
+  padding-top:2px}
+.v07 .living .lv em{display:block;font-style:normal;font-weight:700;font-size:17px;color:var(--base);
+  line-height:1.3}
+.v07 .living .lv span{display:block;font-size:15.5px;line-height:1.5;color:#4d5854;margin-top:3px}
+/* the principle closes the slide: a statement, not a footer */
+.v07 .foot{margin-top:18px;border-top:0;padding-top:0;font-size:17.5px;color:#414d49;max-width:74%}
+.v07 .foot b{color:var(--base);font-weight:700}
 /* ══ product scope, variant: one story, right to left ══ */
 /* the header zone closes up: the badge, the title and the grid read as one block */
 .v08 .mid{justify-content:flex-start;padding-top:6px}
@@ -1925,20 +1968,23 @@ ul.clean li::before{background:var(--base)}
   </div>
 </section>
 
-<!-- ══ 8 · product · Direction 2: a find becomes a story (was Direction 3 + Content principle, merged) ══ -->
-<section class="slide" data-act="product">
+<!-- ══ 8 · product · Direction 2: a find becomes a story ══ -->
+<section class="slide v07" data-act="product">
   <div class="pad">
     <div class="eyebrow"><span class="num">07</span>כיוון 2 · ממצא הופך לסיפור</div>
-    <h2 style="max-width:30ch">הממצא לא רק מספר מה היה. הוא פותח שאלה שנשארת עם המבקר.</h2>
-    <div class="find find3">
-      <div class="fimg"><img src="assets/world/bulla-adoniyahu-eliyahu-yanai.jpg" alt=""><span>בולה "לאדניהו אשר על הבית" · גודל אמיתי: כסנטימטר · באדיבות עיר דוד</span></div>
-      <div class="rows">
-        <div class="r"><b>ממצא ומשמעות</b><span>בולה בגודל סנטימטר מהמאה השביעית לפנה"ס, שנמצאה בסינון העפר בעמק צורים. "לאדניהו אשר על הבית" - התפקיד הבכיר בחצר מלך יהודה.</span></div>
-        <div class="r"><b>שאלה</b><span>מה יכול חפץ קטן לספר על מי שהחזיק בכוח, ועל האחריות שבאה איתו?</span></div>
-        <div class="r"><b>בממשק הדיגיטלי</b><span>עומדים בתחנה, רואים על המסך איך נראה המקום אז, ואז מגלים את הממצא עצמו - כמו בהדגמה שלצדכם.</span></div>
-        <div class="r"><b>תפקיד המוצר</b><span>השכבה הדיגיטלית מציגה את העדות, פותחת שאלה ולא מכתיבה תשובה.</span></div>
+    <h2>הממצא לא רק מספר מה היה. הוא פותח שאלה שנשארת עם המבקר.</h2>
+    <div class="story">
+      <figure class="fimg">
+        <img src="assets/world/bulla-adoniyahu-eliyahu-yanai.jpg" alt="">
+        <figcaption>בולה "לאדניהו אשר על הבית" · כסנטימטר · באדיבות עיר דוד</figcaption>
+      </figure>
+      <div class="beats">
+        <div class="beat"><b>ממצא ומשמעות</b><span>בולה בגודל סנטימטר מהמאה השביעית לפנה"ס, מסינון העפר בעמק צורים. "לאדניהו אשר על הבית" - התפקיד הבכיר בחצר מלך יהודה.</span></div>
+        <div class="beat"><b>שאלה</b><span>מה יכול חפץ קטן לספר על מי שהחזיק בכוח, ועל האחריות שבאה איתו?</span></div>
+        <div class="beat digital"><b>בממשק הדיגיטלי</b><span>עומדים בתחנה, רואים על המסך איך נראה המקום אז, ואז מגלים את הממצא עצמו.</span></div>
+        <div class="beat"><b>תפקיד המוצר</b><span>השכבה הדיגיטלית מציגה את העדות, פותחת שאלה ולא מכתיבה תשובה.</span></div>
       </div>
-      <div class="phcol" style="zoom:.78"><div class="proto tn" data-demo="4" data-auto="2800">
+      <div class="phcol"><div class="proto tn" data-demo="4" data-auto="2800">
   <div class="dev st-0">
     <div class="notch"></div>
 
@@ -2019,11 +2065,8 @@ ul.clean li::before{background:var(--base)}
   <div class="pbar"><i></i><i></i><i></i><i></i></div>
 </div></div>
     </div>
-    <div class="kickphoto">
-      <img src="assets/world/burnt-wood-beams-reut-wilf.jpg" alt="">
-      <div class="kt">הגילויים ממשיכים באותה צורה: <b>קורות עץ שרופות מחורבן 586 לפנה"ס</b> (למעלה, מחניון גבעתי), שנבדקות בימים אלה בשיטת תיארוך טבעות עצים שעשויה לצמצם את חלון הזמן לכ-10 שנים. מי שנשאר בקשר יקבל את הממצא הבא כשיתגלה. <span class="cr">באדיבות עיר דוד</span></div>
-    </div>
-    <div class="foot">מרשים, אך לא נקודת ההתחלה. את השאלות המדויקות מפתחים עם המדריכים ואנשי התוכן שלכם - הן צריכות לצמוח מהמקום, לא מתבנית.</div>
+    <div class="living"><b>הגילויים ממשיכים</b><div class="lv"><em>קורות עץ שרופות מ-586 לפנה"ס</em><span>נבדקות בימים אלה בתיארוך טבעות עצים, שעשוי לצמצם את חלון הזמן לכ-10 שנים. מי שנשאר בקשר יקבל את הממצא הבא כשיתגלה.</span></div></div>
+    <div class="foot"><b>מרשים, אך לא נקודת ההתחלה.</b> את השאלות המדויקות מפתחים עם המדריכים ואנשי התוכן שלכם - הן צריכות לצמוח מהמקום, לא מתבנית.</div>
   </div>
 </section>
 
