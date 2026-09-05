@@ -191,6 +191,17 @@ ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;
 }
 
 /* ── deck chrome on the green/plum scheme ── */
+/* the device frame: current proportions (19.5:9), a thin bezel and a dynamic
+   island instead of the old earpiece slot. The 3:5 body with a speaker slit
+   read as a 2017 handset. */
+.dev{width:214px!important;height:462px!important;border-radius:34px!important;
+  border:5px solid #0e1a16!important;
+  box-shadow:0 0 0 1.5px rgba(255,255,255,.10),0 22px 54px rgba(0,0,0,.45)!important}
+.dev .notch{top:9px!important;width:58px!important;height:15px!important;
+  border-radius:99px!important;background:#0e1a16!important;z-index:20!important}
+.dev::after{content:'';position:absolute;bottom:6px;left:50%;transform:translateX(-50%);
+  width:92px;height:4px;border-radius:99px;background:rgba(0,0,0,.28);z-index:20;pointer-events:none}
+.dark .dev::after,.ours .dev::after{background:rgba(255,255,255,.30)}
 /* the stage is positioned in pixels, not centred by the grid: a viewport narrower
    than 1280px made the unscaled box overflow, and in RTL that pushed the slide
    off to one side. Also kills iOS rubber-band scrolling. */
@@ -480,7 +491,7 @@ ul.clean li::before{background:var(--base)}
    beside it fills in as each is covered, so the slide accumulates instead of
    arriving all at once. Every slot is also clickable, to go back to one. */
 .capstage{flex-direction:row!important;align-items:center;gap:30px}
-.capstage .dev{zoom:1.16}
+.capstage .dev{zoom:1}
 .capside{width:410px;flex:0 0 410px}
 .capttl{font-size:27px;font-weight:700;color:var(--base);line-height:1.25;letter-spacing:-.01em}
 .caphint{font-size:14.5px;color:var(--muted);margin-top:7px}
@@ -529,7 +540,7 @@ ul.clean li::before{background:var(--base)}
    rather than a floating list: status bar, branded header, bottom tab bar */
 .pchrome{position:absolute;top:0;right:0;left:0;z-index:8;pointer-events:none}
 .pstatus{display:flex;align-items:center;justify-content:space-between;
-  padding:7px 14px 2px;font-size:9.5px;font-weight:600;color:var(--base)}
+  padding:12px 16px 3px;font-size:9.5px;font-weight:600;color:var(--base)}
 .pstatus .rt{display:flex;align-items:center;gap:4px}
 .pstatus svg{width:11px;height:11px;fill:var(--base)}
 .phead{display:flex;align-items:center;gap:7px;padding:5px 13px 8px;
@@ -539,7 +550,7 @@ ul.clean li::before{background:var(--base)}
 .phead .lyre svg{width:11px;height:11px;fill:var(--base)}
 .phead b{font-size:11.5px;font-weight:600;line-height:1.1;color:#fff}
 .phead span{font-size:8.5px;color:#B3AC93;margin-inline-start:auto}
-.ptabs{position:absolute;right:0;left:0;bottom:0;z-index:8;height:44px;background:#fff;
+.ptabs{position:absolute;right:0;left:0;bottom:0;z-index:8;height:48px;background:#fff;
   border-top:1px solid #eceee9;display:grid;grid-template-columns:repeat(4,1fr);
   align-items:center;pointer-events:none}
 .ptabs .t{display:flex;flex-direction:column;align-items:center;gap:3px;
@@ -556,8 +567,8 @@ ul.clean li::before{background:var(--base)}
 .st-5 .ptabs .t:nth-child(4) svg,.st-6 .ptabs .t:nth-child(4) svg,.st-8 .ptabs .t:nth-child(4) svg{stroke:var(--base)}
 /* the dashboard is the institution's screen, not the visitor's app */
 .st-9 .pchrome,.st-9 .ptabs{opacity:0}
-.cs{position:absolute;top:0;right:0;left:0;bottom:44px;background:#fff;z-index:6;opacity:0;
-  padding-top:51px;
+.cs{position:absolute;top:0;right:0;left:0;bottom:48px;background:#fff;z-index:6;opacity:0;
+  padding-top:57px;
   transition:opacity .16s ease;display:flex;flex-direction:column}
 .st-0 .cs[data-cs="0"],.st-1 .cs[data-cs="1"],.st-2 .cs[data-cs="2"],.st-3 .cs[data-cs="3"],
 .st-4 .cs[data-cs="4"],.st-5 .cs[data-cs="5"],.st-6 .cs[data-cs="6"],.st-7 .cs[data-cs="7"],
@@ -718,11 +729,11 @@ ul.clean li::before{background:var(--base)}
 /* ═══ prototypes ═══ */
 .proto.pt /* ═══════════════ the phone: one persistent map, .proto.pt overlays driven by .st-K ═══════════════ */
 .dev{--base:#1B3C34;--acc:#914569;--bg:#F6F4F0;--ink:#1B3C34;--mute:#5f6a66;
-  position:absolute;top:0;left:0;width:224px;height:380px;background:var(--bg);overflow:hidden;
+  position:absolute;top:0;left:0;width:214px;height:462px;background:var(--bg);overflow:hidden;
   transform-origin:0 0;font-family:Deck,Rubik,system-ui,-apple-system,sans-serif;color:var(--ink);
   -webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;
   touch-action:manipulation;cursor:pointer;line-height:1.25}
-.proto.pt .dev.framed{border-radius:31px;box-shadow:0 0 0 7px #0f2019,0 24px 60px rgba(0,0,0,.5)}
+.proto.pt .dev.framed{border-radius:34px;box-shadow:0 0 0 7px #0f2019,0 24px 60px rgba(0,0,0,.5)}
 .proto.pt .dev *{box-sizing:border-box;margin:0;padding:0}
 .proto.pt /* language: every string exists twice; .en on the frame swaps them */
 .dev .en{display:none}
@@ -828,9 +839,9 @@ ul.clean li::before{background:var(--base)}
 
 
 /* pocket-tour inside the deck frame */
-.proto.pt .dev{position:relative;top:auto;left:auto;transform:none!important;width:224px;height:380px;
-  border-radius:31px;border:7px solid #EBE9E5;
-  box-shadow:0 0 0 1px rgba(0,0,0,.4),0 22px 54px rgba(0,0,0,.55);transform-origin:center}
+.proto.pt .dev{position:relative;top:auto;left:auto;transform:none!important;
+  width:214px;height:462px;border-radius:34px;border:5px solid #EBE9E5;
+  box-shadow:0 0 0 1.5px rgba(0,0,0,.45),0 22px 54px rgba(0,0,0,.55);transform-origin:center}
 
 
 
@@ -849,7 +860,7 @@ ul.clean li::before{background:var(--base)}
   display:flex;flex-direction:column;align-items:center;gap:12px;position:relative}
 
 /* -- phone -- */
-.tn .dev{width:224px;height:380px;background:#1B3C34;border-radius:31px;position:relative;
+.tn .dev{width:214px;height:462px;background:#1B3C34;border-radius:34px;position:relative;
   overflow:hidden;border:7px solid #1B3C34;cursor:pointer;box-shadow:0 18px 46px rgba(0,0,0,.4)}
 .tn .notch{position:absolute;top:7px;left:50%;transform:translateX(-50%);width:52px;height:4px;
   border-radius:99px;background:rgba(255,255,255,.28);z-index:9}
@@ -1023,7 +1034,7 @@ ul.clean li::before{background:var(--base)}
 .cod .defs{position:absolute;width:0;height:0;overflow:hidden}
 
 /* ── phone ── */
-.cod .dev{width:224px;height:380px;background:var(--c-bg);border-radius:31px;
+.cod .dev{width:214px;height:462px;background:var(--c-bg);border-radius:34px;
   position:relative;overflow:hidden;border:7px solid #0f2019;cursor:pointer;
   box-shadow:0 18px 46px rgba(0,0,0,.42)}
 .cod .notch{position:absolute;top:7px;left:50%;transform:translateX(-50%);
@@ -1262,7 +1273,7 @@ ul.clean li::before{background:var(--base)}
         <h2 style="max-width:16ch">המבקר מגיע לתחנה.<br>הסיפור כבר מחכה לו.</h2>
         <div class="lead" style="color:#dfe8e4;font-size:20px;max-width:34ch">סיור עצמאי ואישי, ליחיד, למשפחה או לקבוצה. מתקדם לאורך המסלול, בשפה ובקצב שנבחרו, וגם בלי קליטה.</div>
       </div>
-      <div class="phcol" style="transform:scale(1.16);transform-origin:center"><div class="proto pt" data-demo="4" data-auto="3400" data-auto-solo="4800">
+      <div class="phcol" style="transform:scale(.98);transform-origin:center"><div class="proto pt" data-demo="4" data-auto="3400" data-auto-solo="4800">
   <div class="dev st-0" dir="rtl">
 
     <!-- ══ persistent layer: the redrawn map. viewBox is taller than the frame and is
@@ -2557,13 +2568,13 @@ ul.clean li::before{background:var(--base)}
     if(inDeck)return;
     var W=innerWidth,H=innerHeight,s;
     if(W<600||embedded){
-      s=W/224;p.classList.add('fill');dev.classList.remove('framed');
+      s=W/214;p.classList.add('fill');dev.classList.remove('framed');
       p.style.width=W+'px';p.style.height=H+'px';
       dev.style.height=Math.round(H/s)+'px';dev.style.transform='scale('+s+')';
     }else{
-      s=Math.min((H-90)/380,(W-40)/224,2.4);p.classList.remove('fill');dev.classList.add('framed');
-      dev.style.height='380px';dev.style.transform='scale('+s+')';
-      p.style.width=Math.round(224*s)+'px';p.style.height=Math.round(380*s)+'px';
+      s=Math.min((H-90)/462,(W-40)/214,2.4);p.classList.remove('fill');dev.classList.add('framed');
+      dev.style.height='462px';dev.style.transform='scale('+s+')';
+      p.style.width=Math.round(214*s)+'px';p.style.height=Math.round(462*s)+'px';
     }
   }
   addEventListener('resize',fit);addEventListener('orientationchange',fit);fit();
