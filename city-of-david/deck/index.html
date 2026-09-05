@@ -191,6 +191,23 @@ ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;
 }
 
 /* ── deck chrome on the green/plum scheme ── */
+/* ══ product scope, variant: one story, right to left ══ */
+/* the header zone closes up: the badge, the title and the grid read as one block */
+.v08 .mid{justify-content:flex-start;padding-top:6px}
+.v08 .capttl{font-size:25px;color:#33463f;line-height:1.2}
+.v08 .caphint{color:#7d857f;margin-top:5px}
+.v08 .caps{margin-top:13px}
+/* the screen carries more weight, and leans toward the message */
+.v08 .capstage{gap:26px;position:relative}
+.v08 .capside{align-self:flex-start;margin-top:52px}
+.v08 .capstage .dev{zoom:1.09;margin-inline-end:22px}
+/* a capability that has not come up yet is still legible */
+.v08 .caps .slot{opacity:.84}
+.v08 .caps .slot svg{opacity:.85}
+/* the closing note steps back */
+.v08 .foot{opacity:.66;font-size:14.5px;border-top-color:rgba(27,60,52,.10);padding-top:14px}
+
+.v08 .sp-0 .slot:nth-child(-n+1), .v08 .sp-1 .slot:nth-child(-n+2), .v08 .sp-2 .slot:nth-child(-n+3), .v08 .sp-3 .slot:nth-child(-n+4), .v08 .sp-4 .slot:nth-child(-n+5), .v08 .sp-5 .slot:nth-child(-n+6), .v08 .sp-6 .slot:nth-child(-n+7), .v08 .sp-7 .slot:nth-child(-n+8), .v08 .sp-8 .slot:nth-child(-n+9), .v08 .sp-9 .slot:nth-child(-n+10){opacity:1}
 /* ══ direction 1, variant: the screen and the argument talk to each other ══ */
 .v06 h2{font-size:34px;max-width:32ch;line-height:1.18}
 .fx6{display:grid;grid-template-columns:1fr 340px;gap:44px;align-items:stretch;
@@ -2011,7 +2028,7 @@ ul.clean li::before{background:var(--base)}
 </section>
 
 <!-- ══ 9 · product · What the app would include - one capability at a time ══ -->
-<section class="slide" data-act="product">
+<section class="slide v08" data-act="product">
   <div class="pad">
     <div class="eyebrow"><span class="num">08</span>תכולת המוצר</div>
     <div class="mid">
