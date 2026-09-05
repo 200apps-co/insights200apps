@@ -191,6 +191,28 @@ ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;
 }
 
 /* ── deck chrome on the green/plum scheme ── */
+/* ══ the economics, variant: five ways read as a model, and a left column ══ */
+.v10 h2{font-size:36px;max-width:34ch}
+.v10 .econ{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1.3fr;
+  gap:46px;align-items:start;margin-top:20px}
+/* the five ways, grouped: revenue, efficiency, funding */
+.v10 .ways{display:flex;flex-direction:column;gap:20px}
+.v10 .wgrp+.wgrp{border-top:1px solid rgba(27,60,52,.10);padding-top:20px}
+.v10 .wlab{font-size:14.5px;font-weight:700;letter-spacing:.10em;color:#8b938f;margin-bottom:9px}
+.v10 .way{display:grid;grid-template-columns:36px 1fr;gap:16px;align-items:start;padding:6px 0}
+.v10 .way i{width:34px;height:34px;border-radius:10px;background:var(--base);color:#fff;
+  font-style:normal;font-weight:700;font-size:19px;display:grid;place-items:center;margin-top:1px}
+.v10 .way b{display:block;font-size:20px;font-weight:700;color:var(--base);line-height:1.25;
+  letter-spacing:-.01em}
+.v10 .way span{display:block;font-size:16px;color:#5f6a66;line-height:1.45;margin-top:4px}
+/* the left column: the point first, the questions under it */
+.v10 .leftcol{display:flex;flex-direction:column;gap:20px;padding-top:2px;height:100%}
+.v10 .pilotq{background:rgba(27,60,52,.05);border-radius:16px;padding:24px 26px 26px}
+.v10 .pilotq h3{font-size:17px;font-weight:700;color:#914569;margin-bottom:14px}
+.v10 .pilotq ul{list-style:none;display:flex;flex-direction:column;gap:17px;margin:0;padding:0}
+.v10 .pilotq li{position:relative;padding-inline-start:16px;font-size:16.5px;line-height:1.45;color:#414d49}
+.v10 .pilotq li::before{content:'';position:absolute;inset-inline-start:0;top:.62em;width:5px;height:5px;
+  border-radius:50%;background:rgba(145,69,105,.55)}
 /* ══ a find becomes a story, variant: one horizontal reading, right to left ══ */
 .v07 .eyebrow{font-size:14.5px}
 .v07 h2{font-size:33px;max-width:38ch;line-height:1.18;margin-bottom:6px}
@@ -2390,27 +2412,37 @@ ul.clean li::before{background:var(--base)}
 </section>
 
 <!-- ══ 10 · product · Economic model of the product ══ -->
-<section class="slide" data-act="product">
+<section class="slide v10" data-act="product">
   <div class="pad">
     <div class="eyebrow"><span class="num">10</span>המודל הכלכלי של המוצר</div>
-    <h2 style="max-width:36ch">חמש דרכים שבהן המוצר מחזיר את ההשקעה</h2>
-    <div class="two fill" style="align-items:stretch;margin-top:14px;grid-template-columns:1.25fr 1fr">
-      <ol class="nl">
-        <li><span><div><b>ערך הכלול בכרטיס</b><span>מעלה את הערך הנתפס של הכרטיס הקיים.</span></div></span></li>
-        <li><span><div><b>שדרוג בתשלום</b><span>סיור דיגיטלי עשיר, כמוצר נוסף לצד הכניסה.</span></div></span></li>
-        <li><span><div><b>מכירת חוויות נוספות</b><span>הללויה, אומגה, סיורים, חנות וביקור נוסף.</span></div></span></li>
-        <li><span><div><b>חיסכון תפעולי</b><span>פחות פניות, יותר שירות עצמי ומענה בשפות נוספות.</span></div></span></li>
-        <li><span><div><b>מימון חיצוני</b><span>שותף תוכן, תרומה או תקציב ייעודי.</span></div></span></li>
-      </ol>
-      <div class="card tint">
-        <h3>מה הפיילוט צריך להוכיח</h3>
-        <ul class="proof-q">
-          <li>האם המבקר רוכש חוויה נוספת?</li>
-          <li>האם הוא נשאר בקשר אחרי הביקור?</li>
-          <li>האם נחסכות פניות או פעולות תפעוליות?</li>
-          <li>האם ניתן לתת מענה לעוד קהלים ושפות?</li>
-        </ul>
-        <p style="margin-top:14px"><b>לא צריך לבחור מודל היום.</b> התשובות לשאלות האלה יגידו איזה שילוב מתאים.</p>
+    <h2>חמש דרכים שבהן המוצר מחזיר את ההשקעה</h2>
+    <div class="econ">
+      <div class="ways">
+        <div class="wgrp">
+          <div class="wlab">הכנסה</div>
+          <div class="way"><i>1</i><div><b>ערך הכלול בכרטיס</b><span>מעלה את הערך הנתפס של הכרטיס הקיים.</span></div></div>
+          <div class="way"><i>2</i><div><b>שדרוג בתשלום</b><span>סיור דיגיטלי עשיר, כמוצר נוסף לצד הכניסה.</span></div></div>
+          <div class="way"><i>3</i><div><b>מכירת חוויות נוספות</b><span>הללויה, אומגה, סיורים, חנות וביקור נוסף.</span></div></div>
+        </div>
+        <div class="wgrp">
+          <div class="wlab">יעילות</div>
+          <div class="way"><i>4</i><div><b>חיסכון תפעולי</b><span>פחות פניות, יותר שירות עצמי ומענה בשפות נוספות.</span></div></div>
+        </div>
+        <div class="wgrp">
+          <div class="wlab">מימון</div>
+          <div class="way"><i>5</i><div><b>מימון חיצוני</b><span>שותף תוכן, תרומה או תקציב ייעודי.</span></div></div>
+        </div>
+      </div>
+      <div class="leftcol">
+        <aside class="pilotq">
+          <h3>מה הפיילוט צריך להוכיח</h3>
+          <ul>
+            <li>האם המבקר רוכש חוויה נוספת?</li>
+            <li>האם הוא נשאר בקשר אחרי הביקור?</li>
+            <li>האם נחסכות פניות או פעולות תפעוליות?</li>
+            <li>האם ניתן לתת מענה לעוד קהלים ושפות?</li>
+          </ul>
+        </aside>
       </div>
     </div>
   </div>
