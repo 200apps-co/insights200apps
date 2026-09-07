@@ -33,7 +33,7 @@ body{font-family:Deck,'Assistant','Heebo',Arial,sans-serif;color:var(--ink);
   -webkit-font-smoothing:antialiased}
 
 /* ── fixed stage, scaled to fit: every slide is laid out against known pixels ── */
-#viewport{position:fixed;inset:0;display:grid;place-items:center}
+#viewport{position:fixed;inset:0;display:grid;place-items:center;place-content:center}
 #stage{width:1280px;height:720px;position:relative;transform-origin:center center;
   box-shadow:0 30px 90px rgba(0,0,0,.5)}
 .slide{position:absolute;inset:0;background:var(--bg);opacity:0;pointer-events:none;
@@ -2338,11 +2338,32 @@ html, .pf-events{margin:0;padding:0;height:100%}
       i=0, N=slides.length,
       reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  function viewportSize(){
+    var vv=window.visualViewport;
+    if(vv)return{w:vv.width,h:vv.height};
+    return{w:document.documentElement.clientWidth||innerWidth,
+           h:document.documentElement.clientHeight||innerHeight};
+  }
   function fit(){
     if(!stage)return;
-    stage.style.transform='scale('+Math.min(innerWidth/1280,innerHeight/720)*0.965+')';
+    var v=viewportSize(),
+        s=Math.min(v.w/1280,v.h/720)*0.965;
+    if(!isFinite(s)||s<=0)return;
+    stage.style.transform='scale('+s+')';
   }
-  addEventListener('resize',fit); fit();
+  /* real viewport can change without a 'resize' firing on window: pinch-zoom and
+     mobile toolbar show/hide only reach visualViewport; fullscreen toggles and a
+     bfcache restore (back/forward navigation) can land on a stale scale too */
+  addEventListener('resize',fit);
+  addEventListener('orientationchange',fit);
+  addEventListener('fullscreenchange',fit);
+  addEventListener('webkitfullscreenchange',fit);
+  addEventListener('pageshow',fit);
+  if(window.visualViewport){
+    visualViewport.addEventListener('resize',fit);
+    visualViewport.addEventListener('scroll',fit);
+  }
+  fit();
 
   /* every lookup below is guarded: a missing chrome block must not take
      navigation and the prototypes down with it. */
