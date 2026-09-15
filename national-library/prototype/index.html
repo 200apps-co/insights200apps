@@ -1954,7 +1954,8 @@ html, .pf-events{margin:0;padding:0;height:100%}
 .cs .tick .tkf{margin-top:7px}
 /* bottom CTAs: never under the home indicator (deck) or the tab bar (prototype) */
 .shots .cs .csb{padding-bottom:26px}
-body.protopage .app .cs .csb .cta{position:sticky;bottom:0;z-index:5}
+.cs .csb > *{flex-shrink:0}
+body.protopage .app .cs .csb .cta{position:sticky;bottom:54px;z-index:5}
 body.protopage .app .cs .csb .cta::before{content:'';position:absolute;left:-13px;right:-13px;top:-12px;bottom:-10px;background:linear-gradient(180deg,rgba(249,248,245,0),#F9F8F5 45%);z-index:-1;pointer-events:none}
 /* microinteractions (prototype): heart pop, notification rise */
 @keyframes hpop{0%{transform:scale(1)}50%{transform:scale(1.12)}100%{transform:scale(1)}}
