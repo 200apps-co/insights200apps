@@ -1830,6 +1830,25 @@ html, .pf-events{margin:0;padding:0;height:100%}
 .fx .rows .r{padding:16px 0;grid-template-columns:190px 1fr}
 .fx .rows .r b{font-size:16.5px}
 .fx .rows .r span{font-size:17.5px;line-height:1.6}
+/* logos on every slide (Hemi, 15.9): NLI + 200Apps, top-left, opposite the eyebrow */
+.slide .lg{position:absolute;top:46px;left:76px;display:flex;align-items:center;gap:14px;z-index:3}
+.slide .lg img{height:28px;width:auto;display:block}
+.slide .lg img.b{height:22px;opacity:.85}
+.slide .lg i{width:1px;height:24px;background:var(--line)}
+.dark .lg i{background:rgba(255,255,255,.28)}
+.closing .lgc{display:flex;align-items:center;justify-content:center;gap:22px;margin-bottom:38px}
+.closing .lgc i{width:1px;height:40px;background:rgba(255,255,255,.25)}
+/* no orphan words: balanced headings, pretty paragraphs */
+h2,h3,.cs .tt,.cs .ntitle,.cs .big,.cs .pcap b,.cs .tkt{text-wrap:balance}
+p,.foot,.lead,.kicker,.rows .r span,.r2 span,ul.clean li,.cs .ss,.cs .ntext,.cs .mu,.cs .curat,.tabs4 .goal{text-wrap:pretty}
+/* the "בשבילי" slide: the phone is the hero */
+.slide.s-hero .fx .phcol .proto.shots{transform:scale(1.12);transform-origin:top center;top:166px;left:106px}
+/* the events slide: what she went to, and what follows from it */
+.evnote{display:flex;flex-direction:column;gap:9px;background:#fff;border-radius:14px;padding:16px 22px;max-width:620px;align-self:flex-start;box-shadow:0 1px 3px rgba(26,26,26,.06)}
+.evnote div{display:flex;gap:14px;align-items:baseline}
+.evnote b{color:var(--accent);font-size:12.5px;font-weight:700;letter-spacing:.08em;white-space:nowrap;min-width:38px}
+.evnote span{font-size:15.5px;line-height:1.45;color:var(--ink);text-wrap:pretty}
+.evnote i{font-style:normal;color:var(--muted);padding:0 2px}
 @media print{.ph-lock .ncard{animation:none!important}}
 </style>
 </head>
@@ -1861,6 +1880,7 @@ html, .pf-events{margin:0;padding:0;height:100%}
   </section>
   <section class="slide dark" data-act="them">
     <div class="pad">
+      <div class="lg"><img src="assets/nli-logo-horizontal-white.svg" alt=""><i></i><img class="b" src="assets/200apps-badge-white.png" alt="200Apps"></div>
       <div class="eyebrow"><span class="num">01</span> מה שעלה בפגישה</div>
       <h2>מטרה אחת: להפוך את הספרייה לחלק קבוע מהשבוע.</h2>
       <div class="chain">
@@ -1876,11 +1896,12 @@ html, .pf-events{margin:0;padding:0;height:100%}
           <h3>להשתמש בקלות</h3>
           <p>חיפוש, הזמנות, כרטיס קורא והתמצאות - בלי לחפש איפה עושים כל דבר.</p></div>
       </div>
-      <div class="foot">ארבעה טאבים ושלוש התראות, כפי שעלה בשיחה. <b>כל מסך בהמשך נבחן מול שלוש המטרות האלה.</b></div>
+      <div class="foot"><b>כל יכולת שנציע צריכה לשרת לפחות אחת משלוש המטרות.</b></div>
     </div>
   </section>
   <section class="slide" data-act="product">
     <div class="pad">
+      <div class="lg"><img src="assets/nli-logo-horizontal-blue.svg" alt=""><i></i><img class="b" src="assets/200apps-badge.png" alt="200Apps"></div>
       <div class="eyebrow"><span class="num">02</span> המבנה</div>
       <h2>ארבעה טאבים. שלוש התראות.</h2>
       <div class="tabs4">
@@ -1906,23 +1927,23 @@ html, .pf-events{margin:0;padding:0;height:100%}
       <div class="foot">זה המבנה שעלה בפגישה, בסדר שבו עלה. <b>בשקפים הבאים: כל טאב מקרוב, על מסך.</b></div>
     </div>
   </section>
-  <section class="slide" data-act="product">
-    <div class="pad">
+  <section class="slide " data-act="product">
+    <div class="pad"><div class="lg"><img src="assets/nli-logo-horizontal-blue.svg" alt=""><i></i><img class="b" src="assets/200apps-badge.png" alt="200Apps"></div>
       <div class="eyebrow"><span class="num">03</span> מקרוב · 1 מתוך 4 · פרופיל</div>
       <h2 style="font-size:31px;line-height:1.22;max-width:30ch">הספרייה מכירה אותי.</h2>
       <div class="fx">
-        <div class="txtcol"><div class="rows"><div class="r"><b>מה המשתמש רואה</b><span>כרטיס קורא, פרטים אישיים, השאלות, הזמנות, הרשמות והתראות.</span></div><div class="r"><b>למה זה חשוב</b><span>במקום ארבע פעולות נפרדות, למשתמש יש נקודת כניסה אחת לכל הקשר שלו עם הספרייה.</span></div><div class="r"><b>מה צריך כדי לחבר</b><span>חיבור לכרטיס הקורא ולמידע שכבר קיים על הזמנות, השאלות והרשמות.</span></div></div></div>
+        <div class="txtcol"><div class="rows"><div class="r"><b>מה המשתמש רואה</b><span>כרטיס קורא, פרטים אישיים, השאלות, הזמנות, הרשמות והתראות.</span></div><div class="r"><b>למה זה חשוב</b><span>במקום ארבע פעולות נפרדות, למשתמש יש נקודת כניסה אחת לכל הקשר שלו עם הספרייה.</span></div><div class="r"><b>מה נדרש</b><span>כרטיס הקורא והמידע שכבר קיים על השאלות, הזמנות והרשמות.</span></div></div></div>
         <div class="phcol"><div style="display:grid;place-items:center"><div class="proto shots ph-prof" data-demo="3" data-rest="1"><div class="dev st-1"><div class="notch"></div><div class="cs" data-cs="0" data-id="prof-card" data-tab="prof"><div class="csh"><i></i>כרטיס הקורא שלי</div><div class="csb"><div class="wcard"><div class="wtop"><span class="wmark">הספרייה הלאומית</span><span class="wst">בתוקף</span></div><div class="wname">כרטיס קורא · נועה לוי</div><div class="wsub">כניסה לאולמות הקריאה · הזמנות · הרשמות</div><div class="wbar"><i></i></div><div class="wnum">•••• •••• ••••</div></div><div class="stat3" data-go="prof-loans"><div><b>2</b><span>השאלות</span></div><div><b>1</b><span>הזמנה מוכנה</span></div><div><b>1</b><span>הרשמה</span></div></div><div class="rw"><div class="th" style="background:url(assets/thumb-lobby.jpg) center/cover"></div><div><div class="tt">הכניסה נסרקה</div><div class="ss">היום · מרכז המבקרים</div></div><div class="tg g">✓</div></div><div class="btn l" data-go="prof-settings">פרטים אישיים והתראות</div></div></div><div class="cs" data-cs="1" data-id="prof-loans" data-tab="prof"><div class="csh"><span class="back" data-go="prof-card">›</span><i></i>ההשאלות וההזמנות שלי</div><div class="csb"><div class="noti"><i></i><div><div class="tt">הפריט שהזמנת מוכן</div><div class="ss">בדלפק אולם הקריאה הראשי · 7 ימי עבודה</div></div></div><div class="rw"><div class="th c"></div><div><div class="tt">כתב יד · מהמחסן</div><div class="ss">כתבי יד עבריים</div></div><div class="tg ">מוכן</div></div><div class="rw"><div class="th" style="background:url(assets/cover-reading-hall.jpg) center 40%/cover"></div><div><div class="tt">ספר · הביתה</div><div class="ss">להחזרה עוד 12 ימים</div></div><div class="tg g">הארכה</div></div><div class="mu">היסטוריית ההשאלות</div><div class="rw"><div class="th b"></div><div><div class="tt">עיתון · סריקה</div><div class="ss">נמסר במייל · אוגוסט</div></div><div class="tg m">הושלם</div></div></div></div><div class="cs" data-cs="2" data-id="prof-settings" data-tab="prof"><div class="csh"><span class="back" data-go="prof-card">›</span><i></i>פרטים אישיים והתראות</div><div class="csb"><div class="card2"><div class="fld"><span>שם</span><span>נועה לוי</span></div><div class="fld"><span>כרטיס קורא</span><span>בתוקף · •••• 4821</span></div><div class="fld" style="border-bottom:0"><span>מנוי</span><span>השאלה הביתה · 3 חודשים</span></div></div><div class="mu">על מה לקבל התראה</div><div class="chk"><i></i>הספר שלך מחכה לך בספרייה</div><div class="chk"><i></i>הודעה על הופעה או אירוע מתחום העניין</div><div class="chk"><i></i>הצעת קריאה · פעם ביום, 08:30</div><div class="mu">תחומי עניין</div><div class="chips"><span class="cp on">תנ״ך ומקרא</span><span class="cp on">מוזיקה ישראלית</span><span class="cp on">היסטוריה של ירושלים</span><span class="cp o">+ הוספה</span></div></div></div></div><div class="pbar"><i>כרטיס הקורא</i><i class="on">ההשאלות שלי</i><i>התראות</i></div></div></div></div>
       </div>
-      <div class="foot">המטרה: להשתמש בקלות. <b>נקודת כניסה אחת, במקום ארבע.</b></div>
+      <div class="foot">המטרה: להשתמש בקלות. <b>נקודת כניסה אחת לכל הקשר שלי עם הספרייה.</b></div>
     </div>
   </section>
-  <section class="slide" data-act="product">
-    <div class="pad">
+  <section class="slide " data-act="product">
+    <div class="pad"><div class="lg"><img src="assets/nli-logo-horizontal-blue.svg" alt=""><i></i><img class="b" src="assets/200apps-badge.png" alt="200Apps"></div>
       <div class="eyebrow"><span class="num">04</span> מקרוב · 2 מתוך 4 · הספרייה</div>
       <h2 style="font-size:31px;line-height:1.22;max-width:30ch">לא רק למצוא ספר. לדעת מה עושים איתו עכשיו.</h2>
       <div class="fx">
-        <div class="txtcol"><div class="rows"><div class="r"><b>מה המשתמש רואה</b><span>חיפוש בקטלוג, איתור באולם, זמינות, הזמנה, חדרי לימוד ושעות פתיחה.</span></div><div class="r"><b>למה זה חשוב</b><span>החיפוש הופך מפעולת מידע לפעולה שאפשר להשלים.</span></div><div class="r"><b>מה צריך כדי לחבר</b><span>חיבור לקטלוג, להזמנות ולמידע התפעולי שכבר קיים.</span></div></div></div>
+        <div class="txtcol"><div class="rows"><div class="r"><b>מה המשתמש רואה</b><span>חיפוש בקטלוג, זמינות, איתור באולם, הזמנה, חדרי לימוד ושעות פתיחה.</span></div><div class="r"><b>למה זה חשוב</b><span>החיפוש הופך מפעולת מידע לפעולה שאפשר להשלים.</span></div><div class="r"><b>מה נדרש</b><span>חיבור לקטלוג, להזמנות ולמידע התפעולי שכבר קיים.</span></div></div></div>
         <div class="phcol"><div style="display:grid;place-items:center"><div class="proto shots ph-lib" data-demo="3" data-rest="1"><div class="dev st-1"><div class="notch"></div><div class="cs" data-cs="0" data-id="lib-hub" data-tab="lib"><div class="csh"><i></i>הספרייה</div><div class="csb"><div class="srch" data-go="lib-where"><b>חיפוש בקטלוג · ספרים, כתבי יד, עיתונים</b></div><div class="pic short"><img src="assets/thumb-building-night.jpg" alt=""><div class="pcap"><b>פתוח עכשיו · אולם הקריאה הראשי עד 20:00</b><span>מרכז המבקרים עד 18:00 · בית הקפה עד 19:00</span></div></div><div class="grid2"><div class="it" data-go="lib-rooms"><div class="ig" style="background:url(assets/cover-reading-hall.jpg) center 40%/cover"></div><div class="in">חדר לימוד</div><div class="ip">עד שבועיים מראש</div></div><div class="it" data-go="prof-loans"><div class="ig" style="background:url(assets/thumb-lobby.jpg) center/cover"></div><div class="in">ההזמנות שלי</div><div class="ip">פריט מחכה בדלפק</div></div></div><div class="rw"><div class="th ico">נ</div><div><div class="tt">נֶלִי · הנציגה הדיגיטלית</div><div class="ss">שאלו על האוסף, בכתב או בקול</div></div><div class="tg g">שיחה</div></div></div></div><div class="cs" data-cs="1" data-id="lib-where" data-tab="lib"><div class="csh"><span class="back" data-go="lib-hub">›</span><i></i>חיפוש בקטלוג</div><div class="csb"><div class="inp"><span>רחובות הנהר</span><b>חיפוש</b></div><div class="card2"><div class="big">רחובות הנהר</div><div class="mu">אורי צבי גרינברג · ספר</div><div class="fld"><span>עותקים</span><span>לאולם · להשאלה הביתה</span></div><div class="fld" style="border-bottom:0"><span>איפה זה</span><span>במחסן · מגיע לקומה 0</span></div></div><div class="floors"><svg viewBox="0 0 186 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="0" y="0" width="186" height="96" fill="#F6F6F4"/>
 <rect x="8" y="8" width="170" height="17" rx="3" fill="#E4EFEA" stroke="#2F6E60" stroke-width="1"/><circle cx="17" cy="16.5" r="3" fill="#2F6E60"/><text class="hi" x="172" y="20" font-size="7.2" text-anchor="start">קומה 0 · אולם הקריאה הראשי · הפריט מגיע לכאן</text>
 <rect x="8" y="29" width="170" height="17" rx="3" fill="#E6E6E3"/><text x="172" y="41" font-size="7.2" text-anchor="start">קומה 1- · מדעי הרוח · אסלאם</text>
@@ -1932,72 +1953,74 @@ html, .pf-events{margin:0;padding:0;height:100%}
       <div class="foot">המטרה: להתמצא ולהשתמש בקלות. <b>פחות שאלות בדלפק ובמוקד על ״איפה״ ו״מתי״.</b></div>
     </div>
   </section>
-  <section class="slide" data-act="product">
-    <div class="pad">
+  <section class="slide s-hero" data-act="product">
+    <div class="pad"><div class="lg"><img src="assets/nli-logo-horizontal-blue.svg" alt=""><i></i><img class="b" src="assets/200apps-badge.png" alt="200Apps"></div>
       <div class="eyebrow"><span class="num">05</span> מקרוב · 3 מתוך 4 · בשבילי</div>
-      <h2 style="font-size:31px;line-height:1.22;max-width:30ch">הסיבה לפתוח את האפליקציה גם כשלא חיפשתי משהו.</h2>
+      <h2 style="font-size:31px;line-height:1.22;max-width:30ch">סיבה לחזור, גם כשלא חיפשתי משהו.</h2>
       <div class="fx">
-        <div class="txtcol"><div class="rows"><div class="r"><b>מה המשתמש רואה</b><span>פיד קצר שמתחדש: דמות מהיום, אירוע היסטורי, פריט מהאוסף, טקסט או המלצה לפי תחומי עניין.</span></div><div class="r"><b>למה זה חשוב</b><span>הספרייה עוברת מיעד שמגיעים אליו כשצריך משהו, למקום שחוזרים אליו מתוך עניין.</span></div><div class="r"><b>מה צריך כדי לחבר</b><span>בחירה של כמה מקורות תוכן קיימים ודרך פשוטה להתאים אותם לתחומי עניין.</span></div></div></div>
+        <div class="txtcol"><div class="rows"><div class="r"><b>מה המשתמש רואה</b><span>פיד קצר שמתחדש: דמות שקשורה להיום, אירוע היסטורי, פריט מהאוסף, טקסט או המלצה לפי תחומי עניין.</span></div><div class="r"><b>למה זה חשוב</b><span>הספרייה עוברת מיעד שמגיעים אליו כשצריך משהו, למקום שחוזרים אליו מתוך עניין.</span></div><div class="r"><b>מה נדרש</b><span>בחירה של כמה מקורות תוכן קיימים ודרך פשוטה להתאים אותם לתחומי עניין.</span></div></div></div>
         <div class="phcol"><div style="display:grid;place-items:center"><div class="proto shots ph-daily" data-demo="3" data-rest="0"><div class="dev st-0"><div class="notch"></div><div class="cs" data-cs="0" data-id="feed" data-tab="feed"><div class="csh"><i></i>בשבילי · היום</div><div class="csb"><div class="chips row1"><span class="cp on">תנ״ך ומקרא</span><span class="cp on">מוזיקה ישראלית</span><span class="cp on">היסטוריה של ירושלים</span></div><div class="rw" data-go="item"><div class="th c"></div><div><div class="tt">אורי צבי גרינברג</div><div class="ss"><b class="lb">דמות היום</b> · 130 שנה להולדתו · הארכיון בספרייה</div></div></div><div class="rw" data-go="item"><div class="th b"></div><div><div class="tt">דבר, 22.9.1948</div><div class="ss"><b class="lb">קרה היום</b> · עיתונות היסטורית · לפני 78 שנה</div></div></div><div class="hcard" data-go="item"><img src="assets/thumb-archive-photo.jpg" alt=""><span class="hb">כי סימנת: היסטוריה של ירושלים</span><div class="hc"><div class="ht">תצלום היסטורי</div><div class="hm">אוסף התצלומים · 2,500,000 פריטים</div></div></div><div class="rw"><div class="th c"></div><div><div class="tt">פיוט</div><div class="ss">פיוטים ותפילות · עם הקלטה</div></div><div class="tg g">▶ 3 דק׳</div></div></div></div><div class="cs" data-cs="1" data-id="item" data-tab="feed"><div class="pic tall2"><img src="assets/thumb-archive-photo.jpg" alt=""><span class="ptag">כי סימנת: היסטוריה של ירושלים</span><div class="pcap"><b>תצלום היסטורי מאוסף התצלומים</b><span>אוסף התצלומים · 2,500,000 פריטים</span></div></div><div class="csb tight"><div class="mu" style="display:flex;align-items:center;gap:6px"><span class="back" data-go="feed">›</span>חזרה</div><div class="curat">הספרנים בחרו לצרף שורה אחת של הקשר. לקרוא דקה, להאזין שלוש, או פשוט לשמור.</div><div class="ctr"><div class="btn save"><span class="t1">שמירה למדף</span><span class="t2">✓ נשמר למדף</span></div><div class="btn l">האזנה · 3 דק׳</div></div><span class="tap t-save"></span><div class="toast">נשמר למדף שלך · נוסף לתחום "תנ״ך ומקרא"</div><div class="fld"><span>נשמר על ידי</span><span>1,240 קוראים</span></div><div class="mu dim">מחר בשעה 08:30: פיוט מאוסף הפיוטים והתפילות</div></div></div><div class="cs" data-cs="2" data-id="shelf" data-tab="feed"><div class="csh"><i></i>המדף שלי</div><div class="csb"><div class="chips row1"><span class="cp on">תנ״ך ומקרא</span><span class="cp on">מוזיקה ישראלית</span><span class="cp on">היסטוריה של ירושלים</span></div><div class="hcard"><img src="assets/thumb-archive-photo.jpg" alt=""><span class="hb">נוסף היום</span><div class="hc"><div class="ht">תצלום היסטורי</div><div class="hm">אוסף התצלומים · היסטוריה של ירושלים</div></div></div><div class="grid2"><div class="it"><div class="ig" style="background:url(assets/cover-reading-hall.jpg) center 40%/cover"></div><div class="in">אולם הקריאה</div><div class="ip">תצלום · נשמר בביקור</div></div><div class="it"><div class="ig" style="background:url(assets/thumb-blog-portrait.jpg) center 20%/cover"></div><div class="in">כתבה מהספרנים</div><div class="ip">מגזין הספרייה · לקריאה</div></div></div><div class="rw"><div class="th c"></div><div><div class="tt">פיוט</div><div class="ss">פיוטים ותפילות · עם הקלטה</div></div><div class="tg g">▶ 3 דק׳</div></div></div></div></div><div class="pbar"><i class="on">בשבילי</i><i>הפריט</i><i>המדף שלי</i></div></div></div></div>
       </div>
       <div class="foot">המטרה: <b>להיכנס לפחות פעם בשבוע.</b></div>
     </div>
   </section>
-  <section class="slide" data-act="product">
-    <div class="pad">
+  <section class="slide " data-act="product">
+    <div class="pad"><div class="lg"><img src="assets/nli-logo-horizontal-blue.svg" alt=""><i></i><img class="b" src="assets/200apps-badge.png" alt="200Apps"></div>
       <div class="eyebrow"><span class="num">06</span> מקרוב · 4 מתוך 4 · אירועים</div>
-      <h2 style="font-size:31px;line-height:1.22;max-width:30ch">ברי סחרוף מופיע בספרייה. מי שזה רלוונטי לו צריך לדעת.</h2>
+      <h2 style="font-size:31px;line-height:1.22;max-width:30ch">ברי סחרוף מופיע בספרייה.<br>מי שזה מעניין אותו צריך לדעת.</h2>
       <div class="fx">
-        <div class="txtcol"><div class="rows"><div class="r"><b>מה המשתמש רואה</b><span>אירועים שמתאימים לו, שמירת אירוע, כרטיסים ותזכורת.</span></div><div class="r"><b>למה זה חשוב</b><span>לוח האירועים הופך מקטלוג שצריך לחפש בו, לערוץ שמביא קהל לאירועים.</span></div><div class="r"><b>מה צריך כדי לחבר</b><span>חיבור ללוח האירועים ולמערכת ההרשמה.</span></div></div></div>
+        <div class="txtcol"><div class="rows"><div class="r"><b>מה המשתמש רואה</b><span>אירועים שמתאימים לו, שמירת אירוע, כרטיסים ותזכורת.</span></div><div class="r"><b>למה זה חשוב</b><span>לוח האירועים הופך ממקום שצריך לחפש בו, לערוץ שמביא קהל לאירועים.</span></div><div class="r"><b>מה נדרש</b><span>חיבור ללוח האירועים ולמערכת ההרשמה.</span></div></div><div class="evnote"><div><b>היית</b><span>ברי סחרוף · מופע להקה בגן הספרייה · יולי 2024</span></div><div><b>לכן</b><span><i>←</i> כשאמא באה הנה | שרים ומספרים נעמי שמר · 13.10 · 20:30</span></div></div></div>
         <div class="phcol"><div style="display:grid;place-items:center"><div class="proto shots ph-events" data-demo="2" data-rest="0"><div class="dev st-0"><div class="notch"></div><div class="cs" data-cs="0" data-id="events" data-tab="ev"><div class="csh"><i></i>אירועים · לפי העניין שלך</div><div class="csb"><div class="pic" data-go="ev-ticket"><img src="assets/thumb-concert.jpg" alt=""><span class="ptag">מוזיקה · כי סימנת: מוזיקה ישראלית</span><div class="pcap"><b>כשאמא באה הנה | שרים ומספרים נעמי שמר</b><span>יום ג׳ · 13 באוקטובר · 20:30 · לרכישת כרטיסים</span></div></div><div class="rw" data-go="ev-ticket"><div class="pfd">ה׳<span>15.10</span></div><div><div class="tt">מיכה שטרית</div><div class="ss">מופע להקה · 20:30</div></div><div class="tg g">כרטיסים</div></div><div class="rw"><div class="pfd">ו׳<span>30.10</span></div><div><div class="tt">סודות התערוכה</div><div class="ss">שישי בגלריה · 10:00</div></div><div class="tg m">פרטים</div></div><div class="rw"><div class="th" style="background:url(assets/thumb-concert.jpg) center/cover"></div><div><div class="tt">ברי סחרוף</div><div class="ss">קיץ בגן הספרייה · היית</div></div><div class="tg ">היית ✓</div></div></div></div><div class="cs" data-cs="1" data-id="ev-ticket" data-tab="ev"><div class="csh"><span class="back" data-go="events">›</span><i></i>המקום שמור</div><div class="csb"><div class="tick"><div class="tk1"><span class="tkok">✓ מקומכם שמור</span><span class="tkn">2 מקומות</span></div><div class="tkt">כשאמא באה הנה | שרים ומספרים נעמי שמר</div><div class="tkm">יום ג׳ · ב׳ בחשוון · 13 באוקטובר · 20:30</div><div class="wbar"><i></i></div><div class="tkf"><span>סריקה בכניסה</span><span>כניסה מקפלן 1</span></div></div><div class="rw"><div class="th" style="background:url(assets/thumb-lobby.jpg) center/cover"></div><div><div class="tt">נוסף ליומן</div><div class="ss">תזכורת שעה לפני</div></div><div class="tg g">✓</div></div><div class="rw"><div class="th" style="background:url(assets/thumb-building-night.jpg) center/cover"></div><div><div class="tt">איך מגיעים</div><div class="ss">קפלן 1 או רופין 36 · חניון בתשלום</div></div><div class="tg m">מפה</div></div><div class="btn l">שיתוף הכרטיס</div></div></div></div><div class="pbar"><i class="on">השבוע</i><i>המקום שמור</i></div></div></div></div>
       </div>
       <div class="foot">המטרה: <b>להגיע יותר לספרייה.</b></div>
     </div>
   </section>
-  <section class="slide" data-act="product">
-    <div class="pad">
+  <section class="slide " data-act="product">
+    <div class="pad"><div class="lg"><img src="assets/nli-logo-horizontal-blue.svg" alt=""><i></i><img class="b" src="assets/200apps-badge.png" alt="200Apps"></div>
       <div class="eyebrow"><span class="num">07</span> התראות</div>
       <h2 style="font-size:31px;line-height:1.22;max-width:30ch">לא ״עוד נוטיפיקציות״. שלוש סיבות אמיתיות לפתוח.</h2>
       <div class="fx">
-        <div class="txtcol"><div class="rows"><div class="r"><b>הספר שלך מחכה לך</b><span>פעולה שכבר התחלת.</span></div><div class="r"><b>משהו שמעניין אותך קורה בספרייה</b><span>אירוע על בסיס תחום עניין או התנהגות קודמת.</span></div><div class="r"><b>יש לנו משהו שכדאי לך לקרוא</b><span>המלצה מתוך תחומי העניין שלך.</span></div></div></div>
+        <div class="txtcol"><div class="rows"><div class="r"><b>הספר שלך מחכה לך</b><span>פעולה שכבר התחלת.</span></div><div class="r"><b>אירוע שמעניין אותך קורה בספרייה</b><span>אירוע על בסיס תחום עניין או התנהגות קודמת.</span></div><div class="r"><b>יש לנו משהו שכדאי לך לקרוא</b><span>המלצה מתוך תחומי העניין שלך.</span></div></div></div>
         <div class="phcol"><div style="display:grid;place-items:center"><div class="proto shots ph-lock" data-demo="1" data-rest="0"><div class="dev st-0"><div class="notch"></div><div class="cs dark" data-cs="0" data-id="lock" data-tab=""><div class="lockbg"></div><div class="lock multi"><div class="ltime">08:30</div><div class="ldate">יום ג׳ · י״א בתשרי</div>
 <div class="nstack">
 <div class="ncard" data-go="prof-loans"><div class="nhead"><span class="nlimark">הספרייה הלאומית</span><span>עכשיו</span></div><div class="nbody"><div class="nthumb c"></div><div><div class="ntitle">הספר שלך מחכה לך בספרייה.</div><div class="ntext">הפריט שהזמנת הגיע לדלפק אולם הקריאה הראשי. שמור לך 7 ימי עבודה.</div></div></div><div class="nact"><span>ההזמנות שלי</span><span>איך מגיעים</span></div></div>
-<div class="ncard sm" data-go="ev-ticket"><div class="nhead"><span class="nlimark">הספרייה הלאומית</span><span>לפני שעה</span></div><div class="nbody"><div class="nthumb" style="background:url(assets/thumb-concert.jpg) center/cover"></div><div><div class="ntitle">משהו שמעניין אותך קורה בספרייה</div><div class="ntext">כשאמא באה הנה | נעמי שמר · 13.10</div></div></div></div>
+<div class="ncard sm" data-go="ev-ticket"><div class="nhead"><span class="nlimark">הספרייה הלאומית</span><span>לפני שעה</span></div><div class="nbody"><div class="nthumb" style="background:url(assets/thumb-concert.jpg) center/cover"></div><div><div class="ntitle">אירוע שמעניין אותך קורה בספרייה</div><div class="ntext">כשאמא באה הנה | נעמי שמר · 13.10</div></div></div></div>
 <div class="ncard sm" data-go="feed"><div class="nhead"><span class="nlimark">הספרייה הלאומית</span><span>הבוקר</span></div><div class="nbody"><div class="nthumb c"></div><div><div class="ntitle">יש לנו משהו שכדאי לך לקרוא</div><div class="ntext">130 שנה להולדת אורי צבי גרינברג</div></div></div></div>
 </div></div></div></div><div class="pbar"><i class="on">מסך הנעילה</i></div></div></div></div>
       </div>
-      <div class="foot">כל התראה נשענת על הקשר: <b>פעולה שעשיתי, תחום שבחרתי או משהו שהתעניינתי בו.</b></div>
+      <div class="foot">כל התראה נשענת על הקשר: <b>פעולה שהמשתמש עשה, תחום שבחר או משהו שהתעניין בו.</b></div>
     </div>
   </section>
   <section class="slide" data-act="product">
     <div class="pad">
+      <div class="lg"><img src="assets/nli-logo-horizontal-blue.svg" alt=""><i></i><img class="b" src="assets/200apps-badge.png" alt="200Apps"></div>
       <div class="eyebrow"><span class="num">08</span> למה חוזרים</div>
       <h2>למה שהמשתמש יחזור בשבוע הבא?</h2>
       <div class="chain">
         <div class="card"><div class="cn">1</div>
-          <h3>טריגר</h3>
+          <h3>סיבה לפתוח</h3>
           <p>ספר שמחכה, אירוע רלוונטי או תוכן חדש.</p></div>
         <div class="ca">←</div>
         <div class="card"><div class="cn">2</div>
-          <h3>פעולה</h3>
+          <h3>משהו לעשות</h3>
           <p>פתיחה, קריאה, שמירה או הזמנה.</p></div>
         <div class="ca">←</div>
         <div class="card"><div class="cn">3</div>
-          <h3>ערך מצטבר</h3>
+          <h3>סיבה לחזור שוב</h3>
           <p>האפליקציה לומדת מה רלוונטי לו, והוא מקבל יותר מהספרייה.</p></div>
       </div>
     </div>
   </section>
   <section class="slide" data-act="close">
     <div class="pad">
+      <div class="lg"><img src="assets/nli-logo-horizontal-blue.svg" alt=""><i></i><img class="b" src="assets/200apps-badge.png" alt="200Apps"></div>
       <div class="eyebrow"><span class="num">09</span> הצעד הבא</div>
       <h2 style="max-width:26ch">להסכים על המבנה. ולפתוח את שאלות התשתית.</h2>
       <div class="lead" style="max-width:60ch;margin-top:10px">זה המבנה שעלה מהפגישה הקודמת. עכשיו צריך לבדוק מה נכון, ומה אפשר לחבר בפועל.</div>
       <div class="two" style="align-items:stretch;margin-top:18px;grid-template-columns:1fr 1.15fr;gap:36px">
         <div class="card tint" style="padding:22px 26px;display:flex;flex-direction:column;justify-content:center">
           <div class="r2"><b>מה</b><span>לאשר את ארבעת הטאבים ושלושת סוגי ההתראות.</span></div>
-          <div class="r2"><b>מי</b><span>נציג תוכן, מי שאחראי על הקטלוג, כרטיס הקורא והאירועים, ומוצר וטכנולוגיה מצדנו.</span></div>
+          <div class="r2"><b>מי</b><span>נציג תוכן + בעלי המערכות הרלוונטיות + מוצר וטכנולוגיה מצדנו.</span></div>
           <div class="r2"><b>מתי</b><span>פגישת עבודה אחת.</span></div>
         </div>
         <div style="display:flex;flex-direction:column;justify-content:center">
@@ -2005,7 +2028,7 @@ html, .pf-events{margin:0;padding:0;height:100%}
           <ul class="clean">
             <li>מה נכנס לגרסה הראשונה</li>
             <li>אילו מערכות כבר מאפשרות חיבור</li>
-            <li>איפה יש חסם אמיתי</li>
+            <li>מה עדיין חסר כדי לחבר</li>
             <li>מה נכון להכניס לפרוטוטייפ</li>
           </ul>
         </div>
@@ -2014,12 +2037,12 @@ html, .pf-events{margin:0;padding:0;height:100%}
     </div>
   </section><section class="slide dark closing" data-act="close">
     <div class="pad">
-      <img src="assets/nli-logo-horizontal-white.svg" alt="" style="height:54px;width:auto;margin-bottom:38px;opacity:.95">
+      <div class="lgc"><img src="assets/nli-logo-horizontal-white.svg" alt="" style="height:50px;width:auto;opacity:.95"><i></i><img src="assets/200apps-badge-white.png" alt="200Apps" style="height:36px;width:auto;opacity:.85"></div>
       <h2 class="endh">לא צריך להחליט עכשיו על מוצר.<br>צריך לבחור איפה מתחילים.</h2>
       <div class="ask end">
         <div class="al">הצעד הבא</div>
         <div class="ask1">פגישת עבודה אחת.</div>
-        <p>נבחר קהל אחד, שימוש אחד ומטרה אחת.<br>ומשם נבנה תרחיש קונקרטי שאפשר לבדוק.</p>
+        <p>נבחר קהל אחד, צורך אחד ומטרה אחת.<br>ומשם נבנה תרחיש קונקרטי שאפשר לבדוק.</p>
       </div>
       <div class="endfoot"><span>אלכס יעקבוב</span><i></i><span>חמי בן לביא</span><i></i><span>200Apps</span><i></i><span dir="ltr">hemi@200apps.co</span><i></i><span dir="ltr">054-4608119</span></div>
     </div>
