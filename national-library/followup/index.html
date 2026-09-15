@@ -1846,6 +1846,20 @@ html, .pf-events{margin:0;padding:0;height:100%}
 /* no orphan words: balanced headings, pretty paragraphs */
 h2,h3,.cs .tt,.cs .ntitle,.cs .big,.cs .pcap b,.cs .tkt{text-wrap:balance}
 p,.foot,.lead,.kicker,.rows .r span,.r2 span,ul.clean li,.cs .ss,.cs .ntext,.cs .mu,.cs .curat,.tabs4 .goal{text-wrap:pretty}
+/* chain slides (2 and 9): fuller cards, bigger and higher-contrast type, titles above the numbers (Hemi, 15.9) */
+.slide .chain{margin-top:22px;gap:10px;align-content:center}
+.slide .chain .card{padding:28px 30px 26px;min-height:300px;justify-content:flex-start}
+.slide .chain .cn{width:30px;height:30px;font-size:13.5px;border-radius:9px;margin-bottom:18px;opacity:.9}
+.slide .chain h3{font-size:29px;line-height:1.22;margin-bottom:14px;font-weight:700}
+.slide .chain p{font-size:21px;line-height:1.58}
+.slide:not(.dark) .chain .card p{color:#33403c}
+.slide.dark .chain .card{background:rgba(255,255,255,.095)}
+.slide.dark .chain .card p{color:#E6EEEA}
+.slide .chain .ca svg{width:46px;height:18px}
+.slide .chain .ca svg path{stroke-width:1.8}
+.slide.dark .chain .ca{color:#B9CFC7}
+.slide.s-chain .foot{font-size:18.5px;padding-top:20px}
+.slide.s-chain.dark .foot{color:#F0F5F2}
 /* the "בשבילי" slide: the phone is the hero */
 .slide.s-hero .fx .phcol .proto.shots{transform:scale(1.12);transform-origin:top center;top:166px;left:106px}
 /* the events slide: what she went to, and what follows from it */
@@ -1918,7 +1932,7 @@ p,.foot,.lead,.kicker,.rows .r span,.r2 span,ul.clean li,.cs .ss,.cs .ntext,.cs 
       <div class="covfoot"><span>ספטמבר 2026</span><i></i><span>הספרייה הלאומית של ישראל</span><i></i><span>200Apps</span></div>
     </div>
   </section>
-  <section class="slide dark" data-act="them">
+  <section class="slide dark s-chain" data-act="them">
     <div class="pad">
       <div class="lg"><img src="assets/nli-logo-horizontal-white.svg" alt=""><i></i><img class="b" src="assets/200apps-badge-white.png" alt="200Apps"></div>
       <div class="eyebrow"><span class="num">01</span> מה שעלה בפגישה</div>
@@ -2031,7 +2045,7 @@ p,.foot,.lead,.kicker,.rows .r span,.r2 span,ul.clean li,.cs .ss,.cs .ntext,.cs 
       <div class="foot">כל התראה נשענת על הקשר: <b>פעולה שהמשתמש עשה, תחום שבחר או משהו שהתעניין בו.</b></div>
     </div>
   </section>
-  <section class="slide" data-act="product">
+  <section class="slide s-chain" data-act="product">
     <div class="pad">
       <div class="lg"><img src="assets/nli-logo-horizontal-blue.svg" alt=""><i></i><img class="b" src="assets/200apps-badge.png" alt="200Apps"></div>
       <div class="eyebrow"><span class="num">08</span> למה חוזרים</div>
