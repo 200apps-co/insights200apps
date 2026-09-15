@@ -2,7 +2,7 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
 <meta property="og:type" content="website"><meta property="og:locale" content="he_IL">
 <meta property="og:title" content="הספרייה הלאומית · פרוטוטייפ"><meta property="og:description" content="פרופיל, הספרייה, פיד ואירועים: המחשה אינטראקטיבית של המבנה שעלה בפגישה.">
@@ -1854,6 +1854,15 @@ body.protopage .proto-side{position:fixed;top:22px;right:26px;display:flex;flex-
 body.protopage .proto-side button{background:rgba(255,255,255,.08);color:#dfe8e4;border:1px solid rgba(255,255,255,.14);border-radius:99px;padding:6px 14px;font:500 13px Deck,Arial,sans-serif;cursor:pointer}
 body.protopage .proto-side button:hover{background:rgba(255,255,255,.16)}
 body.protopage .proto-logo{position:fixed;top:22px;left:26px;height:34px;width:auto;opacity:.9}
+/* on a real phone the app fills the screen: no drawn frame, no desktop chrome */
+body.protopage .app{touch-action:manipulation;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+body.protopage.mobile .proto-logo,body.protopage.mobile .proto-side,body.protopage.mobile .proto-cap{display:none}
+body.protopage.mobile #stage .shots .dev{border:0;border-radius:0;box-shadow:none;background:#fff}
+body.protopage.mobile #stage .shots .dev .notch,body.protopage.mobile #stage .shots .dev::before{display:none}
+body.protopage.mobile .app .cs{border-radius:0}
+body.protopage.mobile .app .cs .lock.multi{padding-top:46px}
+body.protopage.mobile .app .tabbar{height:54px;padding-bottom:12px}
+body.protopage.mobile .app .cs .csb{padding-bottom:66px}
 </style>
 </head>
 <body class="protopage">
@@ -1876,11 +1885,21 @@ body.protopage .proto-logo{position:fixed;top:22px;left:26px;height:34px;width:a
       screens=[].slice.call(app.querySelectorAll('.cs')),
       tabs=[].slice.call(app.querySelectorAll('.tabbar span')),
       scale=document.getElementById('proto-scale');
+  var dev=app.querySelector('.dev');
+  function vp(){var v=window.visualViewport;return v?{w:v.width,h:v.height}:{w:innerWidth,h:innerHeight}}
   function fit(){
-    var s=Math.min((innerHeight-120)/440,(innerWidth-80)/214,2.4);
-    scale.style.transform='scale('+s+')';
+    var v=vp(), mob=matchMedia('(max-width:760px)').matches;
+    document.body.classList.toggle('mobile',mob);
+    if(mob){
+      /* the screen IS the phone: width fills the viewport, height follows it */
+      var s=v.w/214; dev.style.height=(v.h/s)+'px'; scale.style.transform='scale('+s+')';
+    } else {
+      dev.style.height=''; var s2=Math.min((v.h-120)/440,(v.w-80)/214,2.4); scale.style.transform='scale('+s2+')';
+    }
   }
-  addEventListener('resize',fit); fit();
+  addEventListener('resize',fit); addEventListener('orientationchange',fit);
+  if(window.visualViewport)visualViewport.addEventListener('resize',fit);
+  fit();
   function show(id){
     var target=null;
     screens.forEach(function(s){var on=s.dataset.id===id; s.classList.toggle('on',on); if(on)target=s});
