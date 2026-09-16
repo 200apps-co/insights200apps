@@ -2018,6 +2018,79 @@ p,.foot,.lead,.kicker,.rows .r span,.r2 span,ul.clean li,.cs .ss,.cs .ntext,.cs 
 .slide.dark .chain .ca{color:#B9CFC7}
 .slide.s-chain .foot{font-size:18.5px;padding-top:20px}
 .slide.s-chain.dark .foot{color:#F0F5F2}
+/* ══ scope slide (16.9): four levels in three layers each; a quiet strip of tracks; four big steps ══ */
+.tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:8px}
+.tiers .card{display:flex;flex-direction:column;padding:16px 18px 14px;min-height:0;border:1.5px solid transparent;border-radius:18px}
+.tiers .card.focus{border:2px solid var(--base);background:#F1F7F3}
+.tiers .card.quiet{background:#FBFAF7;border-color:var(--line)}
+.tiers .card.quiet h3,.tiers .card.quiet .tc,.tiers .card.quiet .tv{color:#4A5552}
+.tiers .card.quiet .tn{background:#ECEBE6;color:#4A5552}
+.tiers .tierh{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.tiers .tn{width:26px;height:26px;border-radius:8px;background:var(--tint);color:var(--base);font-weight:700;font-size:13.5px;display:grid;place-items:center;flex:0 0 26px}
+.tiers .card.focus .tn{background:var(--base);color:#fff}
+.tiers h3{font-size:21px;line-height:1.2;margin:0}
+.tiers .ts{font-size:15px;color:var(--muted);line-height:1.35;margin-bottom:9px}
+.tiers .tc{font-size:15.5px;line-height:1.4;color:var(--ink);text-wrap:pretty}
+.tiers .tv{margin-top:8px;padding-top:9px;border-top:1px solid var(--line);font-size:16px;line-height:1.4;color:var(--base);font-weight:700;text-wrap:balance}
+/* price: strong but below the level name; charcoal, no badge */
+.tiers .tp{margin-top:auto;padding-top:10px;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.tiers .tp span{font-size:11.5px;color:var(--muted);letter-spacing:.04em}
+.tiers .tp b{font-size:18px;font-weight:700;color:var(--ink);white-space:nowrap}
+.tiers .sub2{margin-top:auto;padding-top:6px}
+.tiers .sub2 .st2 .hd{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.tiers .sub2 .st2 b{font-size:14.5px;color:var(--base);font-weight:700}
+.tiers .sub2 .st2 i{font-style:normal;font-size:16.5px;font-weight:700;color:var(--ink);white-space:nowrap}
+.tiers .sub2 .st2 .sd{font-size:12.5px;color:var(--muted);line-height:1.35;margin-top:1px}
+.tiers .sub2 hr{border:0;border-top:1px dashed var(--line);margin:5px 0}
+.pdisc{font-size:13px;color:var(--muted);margin-top:8px;line-height:1.4;text-wrap:pretty}
+.s-scope .foot{padding-top:13px;margin-top:14px}
+.s-scope .lead{margin-top:4px}
+.tiers .card.focus h3{font-size:23px}
+.tiers .card.focus .tv{font-size:16.5px}
+.tiers .tnote{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.35}
+.golaunch{margin-top:9px}
+.golaunch .golbl{font-size:12.5px;font-weight:700;letter-spacing:.09em;color:var(--accent);margin-bottom:8px}
+.golaunch .gostrip{display:grid;grid-template-columns:1fr 1fr;background:var(--tint);border-radius:14px;padding:10px 20px}
+.golaunch .track{padding:0 4px}
+.golaunch .track:first-child{border-inline-end:1px solid rgba(27,60,52,.18);padding-inline-end:20px}
+.golaunch .track:last-child{padding-inline-start:20px}
+.golaunch .track{display:flex;align-items:center;gap:16px}
+.golaunch .track b{font-size:15.5px;color:var(--base);white-space:nowrap}
+.golaunch .track .flow{display:flex;flex-wrap:nowrap;gap:6px 14px;font-size:14.5px;color:var(--ink);line-height:1.4}
+.golaunch .track .gstep{display:inline-flex;align-items:center;gap:6px}
+.golaunch .track .gstep i{font-style:normal;width:18px;height:18px;border-radius:50%;background:var(--base);color:#fff;font-size:10.5px;font-weight:700;display:grid;place-items:center;flex:0 0 18px}
+.golaunch .tlh{font-size:12.5px;font-weight:700;letter-spacing:.09em;color:var(--accent);margin-top:16px}
+.tl2{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:10px;position:relative}
+.tl2::before{content:'';position:absolute;top:14px;right:60px;left:60px;height:2px;background:var(--line)}
+.tl2 .m{display:flex;align-items:center;gap:10px;position:relative}
+.tl2 .m i{width:28px;height:28px;border-radius:50%;background:var(--base);color:#fff;font-style:normal;font-weight:700;font-size:13.5px;display:grid;place-items:center;flex:0 0 28px;box-shadow:0 0 0 4px var(--bg)}
+.tl2 .m span{font-size:15px;font-weight:600;color:var(--ink);background:var(--bg);padding:0 4px}
+/* entrance: cards right-to-left at 120ms, then the strip, then the four steps */
+.slide.on .tiers .card{animation:riseIn .36s cubic-bezier(.2,.8,.2,1) both}
+.slide.on .tiers .card:nth-child(1){animation-delay:.25s}
+.slide.on .tiers .card:nth-child(2){animation-delay:.37s}
+.slide.on .tiers .card:nth-child(3){animation-delay:.49s}
+.slide.on .tiers .card:nth-child(4){animation-delay:.61s}
+.slide.on .pdisc,.slide.on .golaunch .golbl,.slide.on .golaunch .gostrip{animation:riseIn .36s ease .85s both}
+.slide.on .tl2 .m{animation:riseIn .32s ease both}
+.slide.on .tl2 .m:nth-child(1){animation-delay:1.05s}
+.slide.on .tl2 .m:nth-child(2){animation-delay:1.15s}
+.slide.on .tl2 .m:nth-child(3){animation-delay:1.25s}
+.slide.on .tl2 .m:nth-child(4){animation-delay:1.35s}
+@media print{.tiers .card,.pdisc,.golaunch .golbl,.golaunch .gostrip,.tl2 .m{animation:none!important}}
+/* ══ decision slide (16.9): three choices, not three features ══ */
+.dec3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:26px;flex:1;min-height:0;align-content:center}
+.dec3 .card{display:flex;flex-direction:column;padding:30px 32px 26px;min-height:292px;border-radius:20px}
+.dec3 .decn{width:36px;height:36px;border-radius:11px;background:var(--accent);color:#fff;font-weight:700;font-size:16px;display:grid;place-items:center;margin-bottom:18px}
+.dec3 h3{font-size:32px;line-height:1.1;margin-bottom:8px}
+.dec3 .dq{font-size:18px;color:var(--muted);line-height:1.4}
+.dec3 .do{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-size:17.5px;line-height:1.5;color:var(--ink);font-weight:500;text-wrap:pretty}
+.slide.on .dec3 .card{animation:riseIn .4s cubic-bezier(.2,.8,.2,1) both}
+.slide.on .dec3 .card:nth-child(1){animation-delay:.25s}
+.slide.on .dec3 .card:nth-child(2){animation-delay:.42s}
+.slide.on .dec3 .card:nth-child(3){animation-delay:.59s}
+.closing .askg{font-size:13.5px;color:#9fb5ae;margin-top:14px;letter-spacing:.01em}
+@media print{.dec3 .card{animation:none!important}}
 /* the "בשבילי" slide: the phone is the hero */
 .slide.s-hero .fx .phcol .proto.shots{transform:scale(1.12);transform-origin:top center;top:166px;left:106px}
 /* the events slide: what she went to, and what follows from it */
