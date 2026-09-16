@@ -2020,31 +2020,33 @@ p,.foot,.lead,.kicker,.rows .r span,.r2 span,ul.clean li,.cs .ss,.cs .ntext,.cs 
 .slide.s-chain.dark .foot{color:#F0F5F2}
 /* ══ scope slide (16.9): four levels in three layers each; a quiet strip of tracks; four big steps ══ */
 .tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:14px}
-.tiers .card{display:flex;flex-direction:column;padding:18px 20px 16px;min-height:198px;border:1.5px solid transparent;border-radius:18px}
-.tiers .card.lead{border:2px solid var(--base);background:#F1F7F3}
+.tiers .card{display:flex;flex-direction:column;padding:18px 20px 16px;min-height:206px;border:1.5px solid transparent;border-radius:18px}
+.tiers .card.focus{border:2px solid var(--base);background:#F1F7F3}
 .tiers .card.quiet{background:#FBFAF7;border-color:var(--line)}
 .tiers .card.quiet h3,.tiers .card.quiet .tc,.tiers .card.quiet .tv{color:#4A5552}
 .tiers .card.quiet .tn{background:#ECEBE6;color:#4A5552}
-.tiers .th{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.tiers .tierh{display:flex;align-items:center;gap:10px;margin-bottom:4px}
 .tiers .tn{width:26px;height:26px;border-radius:8px;background:var(--tint);color:var(--base);font-weight:700;font-size:13.5px;display:grid;place-items:center;flex:0 0 26px}
-.tiers .card.lead .tn{background:var(--base);color:#fff}
+.tiers .card.focus .tn{background:var(--base);color:#fff}
 .tiers h3{font-size:21px;line-height:1.2;margin:0}
 .tiers .ts{font-size:15px;color:var(--muted);line-height:1.35;margin-bottom:12px}
 .tiers .tc{font-size:15.5px;line-height:1.5;color:var(--ink);text-wrap:pretty}
-.tiers .tv{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-size:15px;line-height:1.4;color:var(--base);font-weight:600;text-wrap:pretty}
-.tiers .tv span{display:block;font-size:11.5px;font-weight:700;letter-spacing:.08em;color:var(--accent);margin-bottom:3px}
-.tiers .card.quiet .tv span{color:#7A8582}
+.tiers .tv{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-size:16px;line-height:1.4;color:var(--base);font-weight:700;text-wrap:balance}
+.tiers .card.focus h3{font-size:23px}
+.tiers .card.focus .tv{font-size:16.5px}
 .tiers .tnote{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.35}
-.go{margin-top:30px}
-.go .gl{font-size:12.5px;font-weight:700;letter-spacing:.09em;color:var(--accent);margin-bottom:8px}
-.go .gostrip{display:grid;grid-template-columns:1fr 1fr;background:var(--tint);border-radius:14px;padding:12px 20px}
-.go .track{padding:0 4px}
-.go .track:first-child{border-inline-end:1px solid rgba(27,60,52,.18);padding-inline-end:20px}
-.go .track:last-child{padding-inline-start:20px}
-.go .track b{display:block;font-size:15.5px;color:var(--base);margin-bottom:2px}
-.go .track .flow{font-size:15px;color:var(--ink);line-height:1.45}
-.go .track .flow i{font-style:normal;color:var(--muted);padding:0 5px}
-.tl2{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px;position:relative}
+.golaunch{margin-top:26px}
+.golaunch .golbl{font-size:12.5px;font-weight:700;letter-spacing:.09em;color:var(--accent);margin-bottom:8px}
+.golaunch .gostrip{display:grid;grid-template-columns:1fr 1fr;background:var(--tint);border-radius:14px;padding:12px 20px}
+.golaunch .track{padding:0 4px}
+.golaunch .track:first-child{border-inline-end:1px solid rgba(27,60,52,.18);padding-inline-end:20px}
+.golaunch .track:last-child{padding-inline-start:20px}
+.golaunch .track b{display:block;font-size:15.5px;color:var(--base);margin-bottom:2px}
+.golaunch .track .flow{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14.5px;color:var(--ink);line-height:1.4;margin-top:4px}
+.golaunch .track .gstep{display:inline-flex;align-items:center;gap:6px}
+.golaunch .track .gstep i{font-style:normal;width:18px;height:18px;border-radius:50%;background:var(--base);color:#fff;font-size:10.5px;font-weight:700;display:grid;place-items:center;flex:0 0 18px}
+.golaunch .tlh{font-size:12.5px;font-weight:700;letter-spacing:.09em;color:var(--accent);margin-top:16px}
+.tl2{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px;position:relative}
 .tl2::before{content:'';position:absolute;top:14px;right:60px;left:60px;height:2px;background:var(--line)}
 .tl2 .m{display:flex;align-items:center;gap:10px;position:relative}
 .tl2 .m i{width:28px;height:28px;border-radius:50%;background:var(--base);color:#fff;font-style:normal;font-weight:700;font-size:13.5px;display:grid;place-items:center;flex:0 0 28px;box-shadow:0 0 0 4px var(--bg)}
@@ -2055,17 +2057,17 @@ p,.foot,.lead,.kicker,.rows .r span,.r2 span,ul.clean li,.cs .ss,.cs .ntext,.cs 
 .slide.on .tiers .card:nth-child(2){animation-delay:.37s}
 .slide.on .tiers .card:nth-child(3){animation-delay:.49s}
 .slide.on .tiers .card:nth-child(4){animation-delay:.61s}
-.slide.on .go .gl,.slide.on .go .gostrip{animation:riseIn .36s ease .85s both}
+.slide.on .golaunch .golbl,.slide.on .golaunch .gostrip,.slide.on .golaunch .tlh{animation:riseIn .36s ease .85s both}
 .slide.on .tl2 .m{animation:riseIn .32s ease both}
 .slide.on .tl2 .m:nth-child(1){animation-delay:1.05s}
 .slide.on .tl2 .m:nth-child(2){animation-delay:1.15s}
 .slide.on .tl2 .m:nth-child(3){animation-delay:1.25s}
 .slide.on .tl2 .m:nth-child(4){animation-delay:1.35s}
-@media print{.tiers .card,.go .gl,.go .gostrip,.tl2 .m{animation:none!important}}
+@media print{.tiers .card,.golaunch .golbl,.golaunch .gostrip,.golaunch .tlh,.tl2 .m{animation:none!important}}
 /* ══ decision slide (16.9): three choices, not three features ══ */
 .dec3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:26px;flex:1;min-height:0;align-content:center}
 .dec3 .card{display:flex;flex-direction:column;padding:30px 32px 26px;min-height:292px;border-radius:20px}
-.dec3 .dn{width:36px;height:36px;border-radius:11px;background:var(--accent);color:#fff;font-weight:700;font-size:16px;display:grid;place-items:center;margin-bottom:18px}
+.dec3 .decn{width:36px;height:36px;border-radius:11px;background:var(--accent);color:#fff;font-weight:700;font-size:16px;display:grid;place-items:center;margin-bottom:18px}
 .dec3 h3{font-size:32px;line-height:1.1;margin-bottom:8px}
 .dec3 .dq{font-size:18px;color:var(--muted);line-height:1.4}
 .dec3 .do{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-size:17.5px;line-height:1.5;color:var(--ink);font-weight:500;text-wrap:pretty}
@@ -2278,33 +2280,34 @@ p,.foot,.lead,.kicker,.rows .r span,.r2 span,ul.clean li,.cs .ss,.cs .ntext,.cs 
       <h2 style="font-size:31px;line-height:1.22">לא חייבים לבנות הכול ביום הראשון.</h2>
       <div class="lead" style="margin-top:6px;font-size:17.5px">אפשר לבחור נקודת התחלה, ולהוסיף שכבות ככל שלומדים מה באמת עובד.</div>
       <div class="tiers">
-        <div class="card"><div class="th"><span class="tn">1</span><h3>בסיסי</h3></div><div class="ts">פרופיל + ספרייה</div>
-          <div class="tc">כרטיס קורא, הזמנות, חיפוש, חדרי לימוד</div>
-          <div class="tv"><span>הערך</span>שימוש פשוט ונוח יותר</div></div>
-        <div class="card"><div class="th"><span class="tn">2</span><h3>בסיסי+</h3></div><div class="ts">אירועים</div>
-          <div class="tc">אירועים, הרשמה, תזכורות</div>
-          <div class="tv"><span>הערך</span>סיבה להגיע יותר לספרייה</div></div>
-        <div class="card lead"><div class="th"><span class="tn">3</span><h3>מתקדם</h3></div><div class="ts">פיד אישי</div>
-          <div class="tc">תוכן מותאם, לייקים, הצעות קריאה, למידה מהתנהגות</div>
-          <div class="tv"><span>הערך</span>סיבה לחזור גם כשלא חיפשתי משהו</div></div>
-        <div class="card quiet"><div class="th"><span class="tn">4</span><h3>מתקדם+</h3></div><div class="ts">קהילה + למידה מתקדמת</div>
-          <div class="tc">תגובות, קהילה, <span dir="ltr">segmentation, experimentation</span></div>
-          <div class="tv"><span>הערך</span>פלטפורמה רחבה יותר</div><div class="tnote">דורש מחקר, מדיניות ותפעול רחבים יותר</div></div>
+        <div class="card"><div class="tierh"><span class="tn">1</span><h3>בסיסי</h3></div><div class="ts">פרופיל + שירותי הספרייה</div>
+          <div class="tc">כרטיס קורא, הזמנות, חיפוש, חדרי לימוד ומידע לביקור.</div>
+          <div class="tv">שימוש פשוט ונוח יותר.</div></div>
+        <div class="card"><div class="tierh"><span class="tn">2</span><h3>בסיסי+</h3></div><div class="ts">+ אירועים והגעה</div>
+          <div class="tc">אירועים, הרשמה, תזכורות וחיבור בין עניין לבין ביקור בספרייה.</div>
+          <div class="tv">יותר סיבות להגיע לספרייה.</div></div>
+        <div class="card focus"><div class="tierh"><span class="tn">3</span><h3>מתקדם</h3></div><div class="ts">+ פיד אישי והתאמה</div>
+          <div class="tc">תוכן מותאם, הצעות קריאה, לייקים ואותות העדפה, ולמידה מהתנהגות.</div>
+          <div class="tv">סיבה לחזור גם כשלא חיפשתי משהו.</div></div>
+        <div class="card quiet"><div class="tierh"><span class="tn">4</span><h3>מורחב</h3></div><div class="ts">קהילה + למידה מתקדמת</div>
+          <div class="tc">תגובות ושיח סביב תוכן, פילוח קהלים, ניסויים ולמידה מתקדמת.</div>
+          <div class="tv">פלטפורמה רחבה יותר, עם שכבת קהילה ולמידה.</div><div class="tnote">דורש מחקר, מדיניות ותפעול רחבים יותר</div></div>
       </div>
-      <div class="go">
-        <div class="gl">איך יוצאים לדרך</div>
+      <div class="golaunch">
+        <div class="golbl">איך יוצאים לדרך</div>
         <div class="gostrip">
-          <div class="track"><b>מסלול מואץ</b><div class="flow">MVP <i>←</i> פרוטוטייפ <i>←</i> פיתוח</div></div>
-          <div class="track"><b>מסלול מבוסס מחקר</b><div class="flow">מחקר + פרוטוטייפ במקביל <i>←</i> תעדוף <i>←</i> פיתוח</div></div>
+          <div class="track"><b>מסלול מואץ</b><div class="flow"><span class="gstep"><i>1</i>אפיון ממוקד</span><span class="gstep"><i>2</i>פרוטוטייפ</span><span class="gstep"><i>3</i>פיתוח</span></div></div>
+          <div class="track"><b>מסלול מבוסס מחקר</b><div class="flow"><span class="gstep"><i>1</i>מחקר + פרוטוטייפ במקביל</span><span class="gstep"><i>2</i>תעדוף</span><span class="gstep"><i>3</i>פיתוח</span></div></div>
         </div>
+        <div class="tlh">4 חודשים לגרסה ראשונה</div>
         <div class="tl2">
           <div class="m"><i>1</i><span>מחקר ואפיון</span></div>
-          <div class="m"><i>2</i><span>פרוטוטייפ</span></div>
+          <div class="m"><i>2</i><span>פרוטוטייפ ובדיקות</span></div>
           <div class="m"><i>3</i><span>פיתוח</span></div>
           <div class="m"><i>4</i><span>השקה ומדידה</span></div>
         </div>
       </div>
-      <div class="foot"><b>גרסה ראשונה בתוך עד 4 חודשים.</b></div>
+      <div class="foot">המטרה: <b>גרסה ראשונה בתוך עד 4 חודשים.</b></div>
     </div>
   </section>
   <section class="slide" data-act="close">
@@ -2314,9 +2317,9 @@ p,.foot,.lead,.kicker,.rows .r span,.r2 span,ul.clean li,.cs .ss,.cs .ntext,.cs 
       <h2>בסוף הפגישה צריך לבחור שלושה דברים.</h2>
       <div class="lead" style="margin-top:8px">לא מפרט מלא ולא התחייבות לפיתוח. רק כיוון שמאפשר להתקדם.</div>
       <div class="dec3">
-        <div class="card"><div class="dn">1</div><h3>היקף</h3><div class="dq">איפה נכון להתחיל</div><div class="do">בסיסי / בסיסי+ / מתקדם / מתקדם+</div></div>
-        <div class="card"><div class="dn">2</div><h3>מסלול</h3><div class="dq">איך נכון לצאת לדרך</div><div class="do">מסלול מואץ או מסלול מבוסס מחקר</div></div>
-        <div class="card"><div class="dn">3</div><h3>צוות</h3><div class="dq">מי צריך להיות בחדר הבא</div><div class="do">תוכן + בעלי המערכות הרלוונטיות + מוצר וטכנולוגיה</div></div>
+        <div class="card"><div class="decn">1</div><h3>היקף</h3><div class="dq">איפה נכון להתחיל</div><div class="do">בסיסי / בסיסי+ / מתקדם / מתקדם+</div></div>
+        <div class="card"><div class="decn">2</div><h3>מסלול</h3><div class="dq">איך נכון לצאת לדרך</div><div class="do">מסלול מואץ או מסלול מבוסס מחקר</div></div>
+        <div class="card"><div class="decn">3</div><h3>צוות</h3><div class="dq">מי צריך להיות בחדר הבא</div><div class="do">תוכן + בעלי המערכות הרלוונטיות + מוצר וטכנולוגיה</div></div>
       </div>
       <div class="foot">אם נסכים על שלושת אלה, <b>אפשר להפוך את הכיוון לתכנית עבודה קונקרטית.</b></div>
     </div>
