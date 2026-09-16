@@ -2062,6 +2062,19 @@ p,.foot,.lead,.kicker,.rows .r span,.r2 span,ul.clean li,.cs .ss,.cs .ntext,.cs 
 .slide.on .tl2 .m:nth-child(3){animation-delay:1.25s}
 .slide.on .tl2 .m:nth-child(4){animation-delay:1.35s}
 @media print{.tiers .card,.go .gl,.go .gostrip,.tl2 .m{animation:none!important}}
+/* ══ decision slide (16.9): three choices, not three features ══ */
+.dec3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:26px;flex:1;min-height:0;align-content:center}
+.dec3 .card{display:flex;flex-direction:column;padding:30px 32px 26px;min-height:292px;border-radius:20px}
+.dec3 .dn{width:36px;height:36px;border-radius:11px;background:var(--accent);color:#fff;font-weight:700;font-size:16px;display:grid;place-items:center;margin-bottom:18px}
+.dec3 h3{font-size:32px;line-height:1.1;margin-bottom:8px}
+.dec3 .dq{font-size:18px;color:var(--muted);line-height:1.4}
+.dec3 .do{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-size:17.5px;line-height:1.5;color:var(--ink);font-weight:500;text-wrap:pretty}
+.slide.on .dec3 .card{animation:riseIn .4s cubic-bezier(.2,.8,.2,1) both}
+.slide.on .dec3 .card:nth-child(1){animation-delay:.25s}
+.slide.on .dec3 .card:nth-child(2){animation-delay:.42s}
+.slide.on .dec3 .card:nth-child(3){animation-delay:.59s}
+.closing .askg{font-size:13.5px;color:#9fb5ae;margin-top:14px;letter-spacing:.01em}
+@media print{.dec3 .card{animation:none!important}}
 /* the "בשבילי" slide: the phone is the hero */
 .slide.s-hero .fx .phcol .proto.shots{transform:scale(1.12);transform-origin:top center;top:166px;left:106px}
 /* the events slide: what she went to, and what follows from it */
@@ -2297,27 +2310,15 @@ p,.foot,.lead,.kicker,.rows .r span,.r2 span,ul.clean li,.cs .ss,.cs .ntext,.cs 
   <section class="slide" data-act="close">
     <div class="pad">
       <div class="lg"><img src="assets/nli-logo-horizontal-blue.svg" alt=""><i></i><img class="b" src="assets/200apps-badge.png" alt="200Apps"></div>
-      <div class="eyebrow"><span class="num">10</span> הצעד הבא</div>
-      <h2 style="max-width:26ch">להסכים על המבנה. ולפתוח את שאלות התשתית.</h2>
-      <div class="lead" style="max-width:60ch;margin-top:10px">זה המבנה שעלה מהפגישה הקודמת. עכשיו צריך לבדוק מה נכון, ומה אפשר לחבר בפועל.</div>
-      <div class="two" style="align-items:stretch;margin-top:18px;grid-template-columns:1fr 1.15fr;gap:36px">
-        <div class="card tint" style="padding:22px 26px;display:flex;flex-direction:column;justify-content:center">
-          <div class="r2"><b>מה</b><span>לאשר את ארבעת הטאבים ושלושת סוגי ההתראות.</span></div>
-          <div class="r2"><b>מי</b><span>נציג תוכן + בעלי המערכות הרלוונטיות + מוצר וטכנולוגיה מצדנו.</span></div>
-          <div class="r2"><b>מתי</b><span>פגישת עבודה אחת.</span></div>
-        </div>
-        <div style="display:flex;flex-direction:column;justify-content:center">
-          <h3 style="font-size:21px;margin-bottom:6px">בסוף הפגישה נדע:</h3>
-          <ul class="clean">
-            <li>מה נכנס לגרסה הראשונה</li>
-            <li>אילו מערכות כבר מאפשרות חיבור</li>
-            <li>מה עדיין חסר כדי לחבר</li>
-            <li>מה נכון להכניס לפרוטוטייפ</li>
-            <li>מה נכון למדוד בגרסה הראשונה</li>
-          </ul>
-        </div>
+      <div class="eyebrow"><span class="num">10</span> ההחלטה</div>
+      <h2>בסוף הפגישה צריך לבחור שלושה דברים.</h2>
+      <div class="lead" style="margin-top:8px">לא מפרט מלא ולא התחייבות לפיתוח. רק כיוון שמאפשר להתקדם.</div>
+      <div class="dec3">
+        <div class="card"><div class="dn">1</div><h3>היקף</h3><div class="dq">איפה נכון להתחיל</div><div class="do">בסיסי / בסיסי+ / מתקדם / מתקדם+</div></div>
+        <div class="card"><div class="dn">2</div><h3>מסלול</h3><div class="dq">איך נכון לצאת לדרך</div><div class="do">מסלול מואץ או מסלול מבוסס מחקר</div></div>
+        <div class="card"><div class="dn">3</div><h3>צוות</h3><div class="dq">מי צריך להיות בחדר הבא</div><div class="do">תוכן + בעלי המערכות הרלוונטיות + מוצר וטכנולוגיה</div></div>
       </div>
-      <div class="foot">מה אנחנו לא מבקשים: <b>לא תקציב, לא התחייבות ולא החלטה על מוצר.</b> רק הסכמה על המבנה, ושלוש תשובות.</div>
+      <div class="foot">אם נסכים על שלושת אלה, <b>אפשר להפוך את הכיוון לתכנית עבודה קונקרטית.</b></div>
     </div>
   </section><section class="slide dark closing" data-act="close">
     <div class="pad">
@@ -2326,7 +2327,7 @@ p,.foot,.lead,.kicker,.rows .r span,.r2 span,ul.clean li,.cs .ss,.cs .ntext,.cs 
       <div class="ask end">
         <div class="al">הצעד הבא</div>
         <div class="ask1">פגישת עבודה אחת.</div>
-        <p>נבחר קהל אחד, צורך אחד ומטרה אחת.<br>ומשם נבנה תרחיש קונקרטי שאפשר לבדוק.</p>
+        <p>נבחר רמת היקף, מסלול עבודה וצוות מצומצם.<br>משם נבנה גרסה ראשונה קונקרטית שאפשר לבדוק.</p><div class="askg">המטרה: לצאת מהפגישה הבאה עם scope ברור ותכנית עבודה.</div><p style="display:none"></p>
       </div>
       <div class="endfoot"><span>אלכס יעקבוב</span><i></i><span>חמי בן לביא</span><i></i><span>200Apps</span><i></i><span dir="ltr">hemi@200apps.co</span><i></i><span dir="ltr">054-4608119</span></div>
     </div>
