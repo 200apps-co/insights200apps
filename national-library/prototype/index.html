@@ -2024,9 +2024,11 @@ p,.foot,.lead,.kicker,.rows .r span,.r2 span,ul.clean li,.cs .ss,.cs .ntext,.cs 
 .tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:22px}
 .tiers .card{display:flex;flex-direction:column;padding:20px 20px 0;min-height:0;border:1.5px solid transparent;border-radius:18px;overflow:hidden}
 .tiers .card.focus{background:#EAF3EE;border-color:rgba(27,60,52,.55)}
-.tiers .card.quiet{background:#FAF9F6;border-color:#E6E3DC}
-.tiers .card.quiet h3,.tiers .card.quiet .ts,.tiers .card.quiet .tc,.tiers .card.quiet .tv,.tiers .card.quiet .tp b{color:#5A6461}
-.tiers .card.quiet .tn{background:#EFEDE8;color:#5A6461}
+.tiers .card.quiet{background:#FBFAF7;border-color:var(--line)}
+.tiers .card.quiet h3{color:#3F4B47}
+.tiers .card.quiet .ts,.tiers .card.quiet .tc,.tiers .card.quiet .tv{color:#4E5955}
+.tiers .card.quiet .tp b{color:#3A4441}
+.tiers .card.quiet .tn{background:#ECEAE4;color:#4E5955}
 .tiers .tierh{display:flex;align-items:center;gap:10px;margin-bottom:9px}
 .tiers .tn{width:26px;height:26px;border-radius:8px;background:var(--tint);color:var(--base);font-weight:700;font-size:13.5px;display:grid;place-items:center;flex:0 0 26px}
 .tiers .card.focus .tn{background:var(--base);color:#fff}
@@ -2040,22 +2042,23 @@ p,.foot,.lead,.kicker,.rows .r span,.r2 span,ul.clean li,.cs .ss,.cs .ntext,.cs 
 .tiers .tp{margin:auto -20px 0;min-height:74px;padding:12px 20px;background:rgba(27,60,52,.045);border-top:1px solid rgba(27,60,52,.08);display:flex;align-items:center}
 .tiers .card.focus .tp{background:rgba(27,60,52,.075);border-top-color:rgba(27,60,52,.14)}
 .tiers .tp b{font-size:22px;font-weight:700;color:var(--ink);white-space:nowrap;letter-spacing:-.01em}
-.tiers .tp.two{flex-direction:column;align-items:stretch;justify-content:center;gap:5px}
-.tiers .tp.two .pr{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
-.tiers .tp.two .pr span{font-size:15px;font-weight:600;color:var(--base);white-space:nowrap}
+.tiers .tp.two{flex-direction:column;align-items:flex-start;justify-content:center;gap:4px}
+.tiers .tp.two .pr{display:flex;align-items:baseline;gap:7px;white-space:nowrap}
+.tiers .tp.two .pr span{font-size:15.5px;font-weight:600;color:var(--base)}
+.tiers .tp.two .pr i{font-style:normal;color:rgba(27,60,52,.45);font-size:15px}
 .tiers .tp.two .pr b{font-size:18.5px}
-.pdisc{font-size:14px;color:var(--muted);margin-top:12px;line-height:1.4;text-wrap:pretty}
-.golaunch{margin-top:34px}
+.pdisc{font-size:15px;color:#556059;margin-top:12px;line-height:1.45;text-wrap:pretty}
+.golaunch{margin-top:32px}
 .golaunch .golbl{font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--accent);margin-bottom:9px}
-.golaunch .gostrip{display:grid;grid-template-columns:1fr 1fr;background:var(--tint);border-radius:14px;padding:13px 22px}
-.golaunch .track{display:flex;align-items:center;gap:16px;padding:0 4px}
-.golaunch .track:first-child{border-inline-end:1px solid rgba(27,60,52,.18);padding-inline-end:22px}
-.golaunch .track:last-child{padding-inline-start:22px}
+.golaunch .gostrip{display:grid;grid-template-columns:1fr 1fr;background:var(--tint);border-radius:14px;padding:17px 26px}
+.golaunch .track{display:flex;align-items:center;gap:20px;padding:0 4px}
+.golaunch .track:first-child{border-inline-end:1.5px solid rgba(27,60,52,.3);padding-inline-end:30px}
+.golaunch .track:last-child{padding-inline-start:30px}
 .golaunch .track b{font-size:16px;color:var(--base);white-space:nowrap}
-.golaunch .track .flow{display:flex;flex-wrap:nowrap;gap:6px 16px;font-size:15.5px;color:var(--ink);line-height:1.4}
+.golaunch .track .flow{display:flex;flex-wrap:nowrap;gap:6px 18px;font-size:15.5px;color:var(--ink);line-height:1.4}
 .golaunch .track .gstep{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
 .golaunch .track .gstep i{font-style:normal;width:18px;height:18px;border-radius:50%;background:var(--base);color:#fff;font-size:10.5px;font-weight:700;display:grid;place-items:center;flex:0 0 18px}
-.s-scope .foot{padding-top:14px;margin-top:auto}
+.s-scope .foot{padding-top:14px;margin-top:16px}
 /* entrance: cards right-to-left at 120ms, then the disclaimer and the strip */
 .slide.on .tiers .card{animation:riseIn .36s cubic-bezier(.2,.8,.2,1) both}
 .slide.on .tiers .card:nth-child(1){animation-delay:.25s}
