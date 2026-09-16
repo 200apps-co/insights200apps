@@ -2043,6 +2043,25 @@ p,.foot,.lead,.kicker,.rows .r span,.r2 span,ul.clean li,.cs .ss,.cs .ntext,.cs 
 .slide.on .whyc:nth-child(3){animation-delay:.75s}
 .slide.on .whyend{animation:riseIn .4s ease 1s both}
 @media print{.whyimg,.whyc,.whyend{animation:none!important}}
+/* ══ 200Apps slide (16.9): the credibility pattern from the first deck (stats + logo wall), in this deck's green ══ */
+.s-us .lead{max-width:56ch;margin-top:12px}
+.s-us .stats3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+.s-us .stat{padding:22px 24px 20px}
+.s-us .stat .v{font-size:44px;letter-spacing:-.025em}
+.s-us .stat .v.txt{font-size:30px;letter-spacing:-.01em;padding-top:8px}
+.s-us .stat .l{font-size:15.5px;margin-top:9px}
+.s-us .walllbl{font-size:12.5px;font-weight:700;letter-spacing:.11em;color:var(--accent-soft);margin:34px 0 16px}
+.s-us .wall{justify-content:center;gap:24px 34px}
+.s-us .wall img.uwl{height:46px}
+.s-us .wall img.uwm{height:40px}
+.s-us .wall img.uws{height:31px}
+.s-us .foot{font-size:18px}
+.slide.on .s-us-stat{animation:riseIn .4s cubic-bezier(.2,.8,.2,1) both}
+.slide.on .s-us-stat:nth-child(1){animation-delay:.3s}
+.slide.on .s-us-stat:nth-child(2){animation-delay:.42s}
+.slide.on .s-us-stat:nth-child(3){animation-delay:.54s}
+.slide.on .s-us .walllbl,.slide.on .s-us .wall{animation:riseIn .5s ease .8s both}
+@media print{.s-us-stat,.s-us .walllbl,.s-us .wall{animation:none!important}}
 /* ══ scope slide (16.9, redesign): four steps of one product; each card shows what is added, the value, the price ══ */
 .s-scope h2{font-size:33px;line-height:1.2}
 .s-scope .lead{margin-top:6px;font-size:18px}
@@ -2317,10 +2336,36 @@ p,.foot,.lead,.kicker,.rows .r span,.r2 span,ul.clean li,.cs .ss,.cs .ntext,.cs 
       </div>
     </div>
   </section>
+  <section class="slide dark s-us" data-act="us">
+    <div class="pad">
+      <div class="lg"><img src="assets/nli-logo-horizontal-white.svg" alt=""><i></i><img class="b" src="assets/200apps-badge-white.png" alt="200Apps"></div>
+      <div class="eyebrow"><span class="num">10</span> מי אנחנו</div>
+      <h2>200Apps · מוצר מקצה לקצה</h2>
+      <div class="lead">200Apps היא חברת מוצר ופיתוח ירושלמית שמלווה ארגונים משלב הרעיון ועד מוצר שעובד בשטח.</div>
+      <div class="stats3">
+        <div class="stat s-us-stat"><div class="v mono">12+</div><div class="l">שנות ניסיון</div></div>
+        <div class="stat s-us-stat"><div class="v mono">כ-300</div><div class="l">מוצרים מקצה לקצה</div></div>
+        <div class="stat s-us-stat"><div class="v txt">קורת גג אחת</div><div class="l">מוצר, UX/UI, פיתוח, דאטה ו-AI</div></div>
+      </div>
+      <div class="walllbl">חלק מהמותגים שעובדים איתנו</div>
+      <div class="wall">
+        <img class="uwl" src="assets/clients/c08.png" alt="הסוכנות היהודית">
+        <img class="uwl asis" src="assets/clients/c18-white.png" alt="גן החיות התנ״כי">
+        <img class="uwl" src="assets/clients/c10.png" alt="המכללה האקדמית בית ברל">
+        <img class="uwm" src="assets/clients/c03.png" alt="אמית">
+        <img class="uws" src="assets/clients/c17.png" alt="קידום">
+        <img class="uwm" src="assets/clients/c07.png" alt="ירושליים">
+        <img class="uws" src="assets/clients/c05.png" alt="Momentum">
+        <img class="uwm" src="assets/clients/c04.png" alt="עוגן">
+        <img class="uwm" src="assets/clients/c06.png" alt="כינור לב">
+      </div>
+      <div class="foot">היתרון כאן הוא לא רק לבנות אפליקציה, <b>אלא לחבר מוצר חדש למערכות, לתוכן ולתהליכים שכבר קיימים בספרייה.</b></div>
+    </div>
+  </section>
   <section class="slide s-scope" data-act="product">
     <div class="pad">
       <div class="lg"><img src="assets/nli-logo-horizontal-blue.svg" alt=""><i></i><img class="b" src="assets/200apps-badge.png" alt="200Apps"></div>
-      <div class="eyebrow"><span class="num">10</span> היקף ומסלול</div>
+      <div class="eyebrow"><span class="num">11</span> היקף ומסלול</div>
       <h2>לא חייבים לבנות הכול ביום הראשון.</h2>
       <div class="lead">אפשר לבחור נקודת התחלה, ולהוסיף שכבות ככל שלומדים מה באמת עובד.</div>
       <div class="tiers">
@@ -2355,7 +2400,7 @@ p,.foot,.lead,.kicker,.rows .r span,.r2 span,ul.clean li,.cs .ss,.cs .ntext,.cs 
   <section class="slide" data-act="close">
     <div class="pad">
       <div class="lg"><img src="assets/nli-logo-horizontal-blue.svg" alt=""><i></i><img class="b" src="assets/200apps-badge.png" alt="200Apps"></div>
-      <div class="eyebrow"><span class="num">11</span> ההחלטה</div>
+      <div class="eyebrow"><span class="num">12</span> ההחלטה</div>
       <h2>בסוף הפגישה צריך לבחור שלושה דברים.</h2>
       <div class="lead" style="margin-top:8px">לא מפרט מלא ולא התחייבות לפיתוח. רק כיוון שמאפשר להתקדם.</div>
       <div class="dec3">
