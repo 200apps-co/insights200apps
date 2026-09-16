@@ -2018,6 +2018,48 @@ p,.foot,.lead,.kicker,.rows .r span,.r2 span,ul.clean li,.cs .ss,.cs .ntext,.cs 
 .slide.dark .chain .ca{color:#B9CFC7}
 .slide.s-chain .foot{font-size:18.5px;padding-top:20px}
 .slide.s-chain.dark .foot{color:#F0F5F2}
+/* ══ scope slide (16.9): four levels as a decision, not a price list; two tracks; four-month line ══ */
+.tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:10px}
+.tiers .card{display:flex;flex-direction:column;padding:16px 18px 14px;min-height:226px;border:1.5px solid transparent;border-radius:18px}
+.tiers .card.lead{border-color:rgba(27,60,52,.42);background:#F2F7F4}
+.tiers .th{display:flex;align-items:center;gap:9px;margin-bottom:4px}
+.tiers .tn{width:24px;height:24px;border-radius:7px;background:var(--tint);color:var(--base);font-weight:700;font-size:12.5px;display:grid;place-items:center;flex:0 0 24px}
+.tiers .card.lead .tn{background:var(--base);color:#fff}
+.tiers h3{font-size:19px;line-height:1.2;margin:0}
+.tiers .ts{font-size:13.5px;color:var(--muted);margin-bottom:8px;line-height:1.35}
+.tiers .plus{font-size:11.5px;color:var(--muted);letter-spacing:.02em;margin-bottom:3px}
+.tiers ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:3px}
+.tiers li{font-size:13.5px;line-height:1.4;color:var(--ink);padding-inline-start:12px;position:relative;text-wrap:pretty}
+.tiers li::before{content:'';position:absolute;inset-inline-start:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--accent);opacity:.8}
+.tiers .tv{margin-top:auto;padding-top:10px;border-top:1px solid var(--line);font-size:13.5px;line-height:1.4;color:var(--base);font-weight:600;text-wrap:pretty}
+.tiers .tnote{font-size:11.5px;color:var(--muted);margin-top:5px;line-height:1.35}
+.go{margin-top:16px}
+.go .gl{font-size:12.5px;font-weight:700;letter-spacing:.09em;color:var(--accent);margin-bottom:8px}
+.go .tracks{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.go .track{background:var(--tint);border-radius:14px;padding:12px 16px 11px}
+.go .track b{display:block;font-size:15.5px;color:var(--base);margin-bottom:3px}
+.go .track .flow{font-size:13.5px;color:var(--ink);line-height:1.45}
+.go .track .flow i{font-style:normal;color:var(--muted);padding:0 4px}
+.go .track .sub{font-size:12.5px;color:var(--muted);margin-top:2px}
+.tl{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px;position:relative;padding-top:12px}
+.tl::before{content:'';position:absolute;top:15px;right:8px;left:8px;height:1px;background:var(--line)}
+.tl .m{position:relative;padding-top:6px}
+.tl .m::before{content:'';position:absolute;top:-3px;inset-inline-start:0;width:9px;height:9px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+.tl .m b{display:block;font-size:13px;color:var(--base)}
+.tl .m span{font-size:12.5px;color:var(--ink);line-height:1.35}
+/* entrance: cards right-to-left at 120ms, then the tracks, then the months */
+.slide.on .tiers .card{animation:riseIn .36s cubic-bezier(.2,.8,.2,1) both}
+.slide.on .tiers .card:nth-child(1){animation-delay:.25s}
+.slide.on .tiers .card:nth-child(2){animation-delay:.37s}
+.slide.on .tiers .card:nth-child(3){animation-delay:.49s}
+.slide.on .tiers .card:nth-child(4){animation-delay:.61s}
+.slide.on .go .gl,.slide.on .go .track{animation:riseIn .36s ease .85s both}
+.slide.on .tl .m{animation:riseIn .32s ease both}
+.slide.on .tl .m:nth-child(1){animation-delay:1.05s}
+.slide.on .tl .m:nth-child(2){animation-delay:1.15s}
+.slide.on .tl .m:nth-child(3){animation-delay:1.25s}
+.slide.on .tl .m:nth-child(4){animation-delay:1.35s}
+@media print{.tiers .card,.go .gl,.go .track,.tl .m{animation:none!important}}
 /* the "בשבילי" slide: the phone is the hero */
 .slide.s-hero .fx .phcol .proto.shots{transform:scale(1.12);transform-origin:top center;top:166px;left:106px}
 /* the events slide: what she went to, and what follows from it */
@@ -2214,10 +2256,46 @@ p,.foot,.lead,.kicker,.rows .r span,.r2 span,ul.clean li,.cs .ss,.cs .ntext,.cs 
       </div>
     </div>
   </section>
+  <section class="slide" data-act="product">
+    <div class="pad">
+      <div class="lg"><img src="assets/nli-logo-horizontal-blue.svg" alt=""><i></i><img class="b" src="assets/200apps-badge.png" alt="200Apps"></div>
+      <div class="eyebrow"><span class="num">09</span> היקף ומסלול</div>
+      <h2 style="font-size:31px;line-height:1.22">לא חייבים לבנות הכול ביום הראשון.</h2>
+      <div class="lead" style="margin-top:6px;font-size:17px">אפשר לבחור את נקודת ההתחלה, ולהוסיף שכבות ככל שלומדים מה המשתמשים באמת צריכים.</div>
+      <div class="tiers">
+        <div class="card"><div class="th"><span class="tn">1</span><h3>בסיסי</h3></div><div class="ts">פרופיל + הספרייה</div>
+          <ul><li>כרטיס קורא, פרטים אישיים, השאלות והזמנות</li><li>חיפוש בקטלוג ואיתור פריטים</li><li>הזמנת חדרי לימוד ומידע לביקור</li><li>התראות תפעוליות</li></ul>
+          <div class="tv">מוצר שימושי שמרכז את הפעולות המרכזיות במקום אחד</div></div>
+        <div class="card"><div class="th"><span class="tn">2</span><h3>בסיסי+</h3></div><div class="ts">+ אירועים</div><div class="plus">כולל בסיסי, ובנוסף:</div>
+          <ul><li>אירועים רלוונטיים</li><li>הרשמה ושמירת מקום</li><li>תזכורות לפני אירוע</li><li>חיבור בין עניין לבין הגעה לספרייה</li></ul>
+          <div class="tv">מוצר שלא רק עוזר להשתמש בספרייה, אלא גם מביא אליה</div></div>
+        <div class="card lead"><div class="th"><span class="tn">3</span><h3>מתקדם</h3></div><div class="ts">+ פיד אישי</div><div class="plus">כולל בסיסי+, ובנוסף:</div>
+          <ul><li>פיד תוכן מותאם אישית</li><li>הצעות קריאה ותוכן לפי תחומי עניין</li><li>לייקים, שמירה ואותות העדפה</li><li>התאמה הדרגתית לפי התנהגות</li><li>מדידה ולמידה: מה מחזיר משתמשים</li></ul>
+          <div class="tv">מוצר שנותן סיבה לחזור גם כשלא חיפשתי משהו</div></div>
+        <div class="card"><div class="th"><span class="tn">4</span><h3>מתקדם+</h3></div><div class="ts">קהילה + פרסונליזציה מתקדמת</div><div class="plus">כולל מתקדם, ובנוסף:</div>
+          <ul><li>שיח ותגובות סביב תוכן</li><li>פעילות קהילתית</li><li>פרסונליזציה דינמית עמוקה יותר</li><li><span dir="ltr">segmentation / experimentation</span></li><li>dashboard להבנת קהלים והתנהגות</li></ul>
+          <div class="tv">פלטפורמה רחבה יותר, עם שכבת קהילה ולמידה מתקדמת</div><div class="tnote">דורש שכבת מחקר, מדיניות ותפעול רחבה יותר</div></div>
+      </div>
+      <div class="go">
+        <div class="gl">איך יוצאים לדרך</div>
+        <div class="tracks">
+          <div class="track"><b>מסלול מואץ</b><div class="flow">מתבססים על מה שכבר למדנו <i>←</i> מגדירים גרסה ראשונה <i>←</i> פרוטוטייפ <i>←</i> פיתוח</div><div class="sub">מתאים כשיש רצון להגיע מהר לשטח</div></div>
+          <div class="track"><b>מסלול מבוסס מחקר</b><div class="flow">מחקר מוצר ומשתמשים + פרוטוטייפ במקביל <i>←</i> תעדוף <i>←</i> פיתוח</div><div class="sub">כחודשיים של מחקר, בלי לעצור את ההתקדמות</div></div>
+        </div>
+        <div class="tl">
+          <div class="m"><b>חודש 1</b><span>מחקר, אפיון וחיבורי מערכות</span></div>
+          <div class="m"><b>חודש 2</b><span>פרוטוטייפ ובדיקות</span></div>
+          <div class="m"><b>חודש 3</b><span>פיתוח</span></div>
+          <div class="m"><b>חודש 4</b><span>פיתוח, הטמעה ומדידה</span></div>
+        </div>
+      </div>
+      <div class="foot">המטרה: <b>להגיע לגרסה ראשונה בתוך עד 4 חודשים.</b></div>
+    </div>
+  </section>
   <section class="slide" data-act="close">
     <div class="pad">
       <div class="lg"><img src="assets/nli-logo-horizontal-blue.svg" alt=""><i></i><img class="b" src="assets/200apps-badge.png" alt="200Apps"></div>
-      <div class="eyebrow"><span class="num">09</span> הצעד הבא</div>
+      <div class="eyebrow"><span class="num">10</span> הצעד הבא</div>
       <h2 style="max-width:26ch">להסכים על המבנה. ולפתוח את שאלות התשתית.</h2>
       <div class="lead" style="max-width:60ch;margin-top:10px">זה המבנה שעלה מהפגישה הקודמת. עכשיו צריך לבדוק מה נכון, ומה אפשר לחבר בפועל.</div>
       <div class="two" style="align-items:stretch;margin-top:18px;grid-template-columns:1fr 1.15fr;gap:36px">
