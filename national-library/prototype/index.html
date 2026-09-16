@@ -2018,6 +2018,31 @@ p,.foot,.lead,.kicker,.rows .r span,.r2 span,ul.clean li,.cs .ss,.cs .ntext,.cs 
 .slide.dark .chain .ca{color:#B9CFC7}
 .slide.s-chain .foot{font-size:18.5px;padding-top:20px}
 .slide.s-chain.dark .foot{color:#F0F5F2}
+/* ══ WHY slide (16.9): the building on the left, the principle on the right ══ */
+.s-why .whyimg{position:absolute;top:0;left:0;width:590px;height:100%;object-fit:cover;object-position:58% center;display:block}
+.s-why .whyfade{position:absolute;top:0;left:0;width:590px;height:100%;pointer-events:none;
+  background:linear-gradient(to left, var(--bg) 0, rgba(246,244,240,.6) 5%, rgba(246,244,240,0) 15%),
+             linear-gradient(to bottom, rgba(27,60,52,.42) 0, rgba(27,60,52,0) 30%),
+             rgba(27,60,52,.05)}
+.s-why .pad{padding-left:642px}
+.s-why .lg i{background:rgba(255,255,255,.35)}
+.s-why h2{font-size:38px;line-height:1.18;text-wrap:balance}
+.s-why .lead{margin-top:12px;font-size:18px;line-height:1.55;text-wrap:pretty}
+.whyp{display:flex;flex-direction:column;gap:12px;margin-top:24px}
+.whyc{background:#fff;border-radius:14px;padding:13px 18px 14px}
+.whyc h3{font-size:19px;line-height:1.25;margin:0 0 4px;color:var(--base)}
+.whyc p{font-size:15.5px;line-height:1.45;color:var(--ink);margin:0;text-wrap:pretty}
+.whyend{margin-top:auto;padding-top:18px;font-size:19.5px;line-height:1.45;color:var(--base);font-weight:500;text-wrap:pretty}
+.whyend::before{content:'';display:block;width:44px;height:3px;border-radius:2px;background:var(--accent);margin-bottom:12px}
+.whyend b{color:var(--ink);font-weight:700}
+@keyframes whyIn{from{opacity:0;transform:scale(1.035)}to{opacity:1;transform:none}}
+.slide.on .whyimg{animation:whyIn 1.1s cubic-bezier(.2,.8,.2,1) both}
+.slide.on .whyc{animation:riseIn .4s cubic-bezier(.2,.8,.2,1) both}
+.slide.on .whyc:nth-child(1){animation-delay:.45s}
+.slide.on .whyc:nth-child(2){animation-delay:.6s}
+.slide.on .whyc:nth-child(3){animation-delay:.75s}
+.slide.on .whyend{animation:riseIn .4s ease 1s both}
+@media print{.whyimg,.whyc,.whyend{animation:none!important}}
 /* ══ scope slide (16.9, redesign): four steps of one product; each card shows what is added, the value, the price ══ */
 .s-scope h2{font-size:33px;line-height:1.2}
 .s-scope .lead{margin-top:6px;font-size:18px}
