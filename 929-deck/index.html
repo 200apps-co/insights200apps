@@ -1,0 +1,2047 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAESklEQVR42sWXT4he5RXGf8957/0+GaiN0KYmM0tj64BNyRQrCDNk3UW7KS1dtA1oiaDLIHQTuhPssrtYQoNQpXTpxo3NFFcyaQQdKVkVklGaQtKok5n75zwuvjuZb5JJjZN/Z3Pfc7m8z3vPe85zziN2WgC55dSzRw+H/JzsIxZPyj5g8ZisGeQaVCZfusdqLX8hc9WhNSUXLJ1L67320rsf3A5D2+9PBvw+Yakaz3IM6ZjwAiqjAWR4eHt9iwmknVu7b4xWsE9vXuI0nO22sW58NXkxenzxqajKGUX5oZ3gHnAOiLvsfovdfEqBAhWkwO7fz7b/dfPp8sdbmLoBfvDodyO8TJT9ZNeCCyi4J+YE9URVk/1/MrXYrL37LzgZE4D5+ZGif2sbnPregcOwV012LVH2K/o3mZ8fARQ46/H4e7+JGP92G/y+WcHZRoxmy8bo3/21M+cCCKzjdhoc3Hdz2Gms40Conlt8usA5UMUDNXc9HInAi6iqhpR/UOA9qqrAiyFrgYdkshbCcOgravu+YA+kcSgEBybMqAd4AAmM4EBY7Lsts97XNDAW+0LWzMCgD/gKjKyZQB7x8LJwFNstddfG4lsbzW39vZygxP9pHhquxZP+LU0datq/K4tdCUhVYF8bElYoAuf/QNrhS7q71HEfWM1OhiqQ+XrpmkOQSxDXbb9apZ5I548h1sn8XZV6AvuXQLPnSFhNGF/f5gUVnIy08UpXj17r0RWye5Mop9rgjyr+2O7+hvONLnxqI6t3TP4TFX1NKjcIy+shuLIzimbTo3ck/YpUQWozuxnhH8mak/xZ38c3Dc+OcvM7WBt75SKZq2H4ZDIn2jfupXpkAefb4+wvGX5amatI68posIrkXvA5Qbc3/vAkAvBJCC7sLCvJ2dpFL7UlTkixP7qmGQpgAEsh+S56yBbzXQgrVqZ7tKIKZ/cXd66jeuQEmY2+UQz6tsM1eBPCmP1kFIluzzUgr0SSy7jrJoSkYqcj+hM4hXkZ+NAb8bicL46VH1pxmEIneKGZGa0Bs8MArK9DQLjrEi1He3H5I5vzqExIxklmdVzSUef1K+BRj95yUG325Q+haknoddsaN+0pFE/i9CA47nAYKbY5315c/kgA47ml5yPqU862BWpFNVytsFtASAVjyNao0mTOz70MUq2irjO75zcv/v1PE10w/9dqfO1b7yvq7w+aIKaSskzWzkFolGE95d85OFHVzvaDzUf/+wyrP+smYVtdbdzr52R/mahqUE5Cqq1QDOstMN3k34kwmYCT/WX3+gWrq80NXQAno//8z5djZu5tKZ5VVHNbU8vU305X3J1Is9xmnEqKqpC5kl33k+bTf0xLs5vF6UI9nn30GMExOY/cG3Ea5zCnNy9dOw0r7S7idHfpPHNw6Qd96DmJBZtDsg8a9gnPII2mMj+xG6N1wVVLaxIXbFZK+r31tbPnb4fxJUFYQq6F3VrcAAAAAElFTkSuQmCC">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>929 · מאתר תוכן לחוויית לימוד · 200Apps</title>
+<style>
+@font-face{font-family:Deck;src:url(assets/fonts/rubik-hebrew.woff2) format('woff2');
+  font-weight:300 900;font-display:swap;
+  unicode-range:U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F}
+@font-face{font-family:Deck;src:url(assets/fonts/rubik-latin.woff2) format('woff2');
+  font-weight:300 900;font-display:swap}
+@font-face{font-family:Lit;src:url(assets/fonts/frank-hebrew.woff2) format('woff2');
+  font-weight:400 700;font-display:swap;
+  unicode-range:U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F}
+@font-face{font-family:Lit;src:url(assets/fonts/frank-latin.woff2) format('woff2');
+  font-weight:400 700;font-display:swap}
+
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#F7F4EE;            /* warm white */
+  --sand:#EAE3D8;          /* light sand */
+  --ink:#242322;           /* charcoal */
+  --muted:#6B6355;
+  --line:#DBD3C6;
+  --coral:#D94D58;         /* primary accent */
+  --mustard:#E7AC32;       /* secondary accent */
+  --blue:#526AA6;          /* restrained blue */
+  --base:#242322;          /* headings = charcoal */
+  --base-deep:#1C1B1A;
+  --tint:#EAE3D8;
+  --accent:#D94D58;
+  --accent-tint:#F6E7E4;
+  --ours:#242322;
+}
+html,body{height:100%;background:#1C1B1A;overflow:hidden}
+body{font-family:Deck,'Assistant','Heebo',Arial,sans-serif;color:var(--ink);
+  -webkit-font-smoothing:antialiased}
+
+#viewport{position:fixed;inset:0;display:grid;place-items:center}
+#stage{width:1280px;height:720px;position:relative;transform-origin:center center;
+  box-shadow:0 30px 90px rgba(0,0,0,.5)}
+.slide{position:absolute;inset:0;background:var(--bg);opacity:0;pointer-events:none;
+  transition:opacity .45s ease,transform .45s ease;transform:translateY(14px);overflow:hidden}
+.slide.on{opacity:1;pointer-events:auto;transform:none}
+.pad{position:absolute;inset:0;padding:50px 76px 48px;display:flex;flex-direction:column}
+.slide::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* type */
+.eyebrow{font-size:12.5px;font-weight:600;letter-spacing:.12em;color:var(--muted);
+  margin-bottom:18px;display:flex;align-items:center;gap:9px}
+.eyebrow .num{color:var(--coral);font-size:12.5px;font-weight:700;letter-spacing:.04em;font-variant-numeric:tabular-nums}
+.eyebrow .num::after{content:'';display:inline-block;width:14px;height:1px;background:var(--line);vertical-align:middle;margin-inline-start:9px}
+h1{font-family:Lit,Deck,serif;font-size:62px;font-weight:600;line-height:1.14;letter-spacing:0}
+h2{font-family:Deck;font-size:52px;font-weight:700;line-height:1.16;letter-spacing:-.015em;color:var(--ink);text-wrap:balance;max-width:26ch}
+h3{font-size:19px;font-weight:600;line-height:1.35;color:var(--base)}
+.lead{font-size:19px;line-height:1.65;color:var(--muted);margin-top:12px}
+.kicker{font-size:16px;line-height:1.6;color:var(--muted)}
+.foot{margin-top:auto;font-size:17px;line-height:1.6;color:var(--ink);font-weight:400;
+  border-top:1px solid var(--line);padding-top:18px}
+.mono{font-variant-numeric:tabular-nums}
+b,strong{font-weight:600;color:var(--ink)}
+.foot b{font-weight:600}
+
+/* dark + ours variants: every colour overridden */
+.dark{background:#242322;color:#F2EFE8}
+.dark h2,.dark h3{color:#fff}
+.dark .lead,.dark .kicker{color:#C9C2B4}
+.dark .foot{color:#E8E3D9;border-top-color:rgba(255,255,255,.16)}
+.dark .eyebrow{color:#A79E8C}
+.dark .eyebrow .num{color:#E8927A}
+.dark .eyebrow .num::after{background:rgba(255,255,255,.22)}
+.dark b,.dark strong{color:#fff}
+.dark .card{background:transparent;border-inline-start-color:rgba(255,255,255,.22)}
+.dark .card p{color:#C9C2B4}
+.dark ul.clean li{color:#fff}
+.dark ul.clean li::before{background:#E8927A}
+.ours{background:#242322;color:#F2EFE8}
+.ours h2,.ours h3{color:#fff}
+.ours .lead,.ours .kicker,.ours .card p{color:#C9C2B4}
+.ours .foot{color:#E8E3D9;border-top-color:rgba(255,255,255,.16)}
+.ours .eyebrow{color:#A79E8C}
+.ours .card{background:transparent;border-inline-start-color:rgba(255,255,255,.22)}
+.ours b,.ours strong{color:#fff}
+.ours ul.clean li{color:#fff}
+.ours ul.clean li::before{background:#E8927A}
+
+/* components */
+.grid{display:grid;gap:16px}
+.card{background:transparent;border-radius:0;padding:0;border-inline-start:2px solid var(--line);padding-inline-start:20px}
+.card p{font-size:15.5px;line-height:1.6;color:var(--muted);margin-top:8px}
+.card.tint{background:var(--sand);border:0;padding:22px 26px;border-radius:14px}
+.card.gt{background:var(--sand);border:0;padding:22px 26px;border-radius:14px}
+.stat{background:transparent;border-radius:0;padding:0}
+.stat .v{font-family:Lit,Deck,serif;font-size:42px;font-weight:600;color:var(--ink);line-height:1;letter-spacing:0}
+.stat .l{font-size:14px;line-height:1.5;color:var(--muted);margin-top:9px}
+.dark .stat,.ours .stat{background:transparent}
+.dark .stat .v,.ours .stat .v{color:#fff}.dark .stat .l,.ours .stat .l{color:#C9C2B4}
+.ic{width:24px;height:24px;stroke:var(--coral);stroke-width:1.5;fill:none;
+  stroke-linecap:round;stroke-linejoin:round;opacity:.85;display:block;margin-bottom:11px}
+.dark .ic,.ours .ic{stroke:#E8927A;opacity:.95}
+.pill{display:inline-block;background:var(--base);color:#fff;border-radius:999px;
+  padding:7px 16px;font-size:14px;font-weight:500}
+.pill.ghost{background:transparent;color:var(--base);box-shadow:inset 0 0 0 1.5px var(--line)}
+.dark .pill.ghost{color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.3)}
+.pillrow{display:flex;flex-wrap:wrap;gap:9px}
+ul.clean{list-style:none}
+ul.clean li{font-size:16.5px;line-height:1.5;padding:9px 0;display:flex;gap:11px;align-items:flex-start}
+ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;background:var(--coral);margin-top:11px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}
+.tags span{font-size:12px;font-weight:600;background:transparent;color:#C9C2B4;padding:0;border-radius:0}
+.tags span+span::before{content:'· ';color:rgba(255,255,255,.35)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:32px;flex:1;min-height:0;align-items:center}
+
+/* quotes */
+.quote{background:transparent;border-radius:0;padding:0 0 0 0;position:relative;border-inline-start:3px solid var(--coral);padding-inline-start:26px}
+.quote .q{font-family:Lit,Deck,serif;font-size:30px;line-height:1.5;font-weight:400;color:var(--ink)}
+.quote .who{font-size:13.5px;color:var(--muted);margin-top:14px;display:flex;gap:8px;align-items:center}
+.quote .who i{display:inline-block;width:16px;height:1.5px;background:var(--muted);border-radius:2px}
+.quote .mark{display:none}
+.quote .take{font-size:16px;line-height:1.6;color:var(--muted);margin-top:16px}
+.dark .quote{background:transparent;border-inline-start-color:#E8927A}
+.dark .quote .q{color:#F2EFE8;font-size:21px;font-weight:400}
+.dark .quote .who{color:#A79E8C}
+.dark .quote .mark{color:rgba(255,255,255,.08)}
+.star{display:inline-flex;gap:2px;color:#C9C2B4;font-size:12px;letter-spacing:.05em}
+
+/* channel lists (slide 3) */
+.chan h3{font-size:14px;letter-spacing:.04em;color:var(--accent);font-weight:600;margin-bottom:8px}
+.chan ul{list-style:none}
+.chan li{font-size:15px;line-height:1.45;padding:5px 0;color:var(--ink);display:flex;gap:9px;align-items:flex-start}
+.chan li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;background:var(--base);margin-top:9px;opacity:.5}
+
+/* static phone (slide 5, today) */
+.phone{width:230px;height:470px;border-radius:40px;border:3px solid #2A2724;overflow:hidden;
+  position:relative;background:#fff;box-shadow:0 26px 52px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.16)}
+.phone::after,.mock::after{content:'';position:absolute;top:6px;left:50%;transform:translateX(-50%);width:44px;height:8px;border-radius:99px;background:#1C1B1A;z-index:30}
+.phone img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.dark .phone,.dark .mock{border-color:#4A453D}
+.dark .mock .hd{background:#3A342E}
+.cap{font-size:13.5px;color:#C9C2B4;text-align:center;margin-top:12px;line-height:1.45}
+
+/* proposed mini-mock (slide 5, static) */
+.mock{width:202px;height:410px;border-radius:36px;border:3px solid #2A2724;overflow:hidden;
+  position:relative;background:#FAF7F2;box-shadow:0 26px 52px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.16);font-size:10px;color:#242322;text-align:right}
+.mock .hd{background:#3A342E;color:#fff;padding:24px 13px 12px}
+.mock .hd .t{font-size:12.5px;font-weight:600}
+.mock .hd .s{font-size:9.5px;color:#C9C2B4;margin-top:2px}
+.mock .strip{display:flex;gap:5px;padding:9px 12px 4px;flex-wrap:wrap;align-items:center}
+.mock .strip .lbl{font-size:9.5px;color:#5b5b66;margin-inline-end:2px}
+.mock .chip{background:#F3E7E2;color:#C0454F;border-radius:99px;padding:2px 8px;font-size:9px;font-weight:600}
+.mock .row{background:#fff;margin:7px 11px 0;border-radius:11px;padding:9px 10px}
+.mock .row .rt{font-size:10.5px;font-weight:600;color:#2A2724;line-height:1.3}
+.mock .row .ra{font-size:9px;color:#5b5b66;margin-top:2px}
+.mock .row .tg{display:flex;gap:4px;margin-top:5px}
+.mock .row .tg span{font-size:8.5px;background:#F1ECE3;color:#2A2724;border-radius:99px;padding:1px 7px}
+.mock .row .tg span.on{background:#C0454F;color:#fff}
+.mock .more{margin:8px 11px 0;font-size:9.5px;color:#C0454F;font-weight:600}
+
+/* feature slide left column */
+.feat li{font-size:16px;line-height:1.5;padding:8px 0;display:flex;gap:12px;align-items:flex-start;list-style:none}
+.feat li .k{flex:0 0 auto;font-size:12.5px;font-weight:600;color:var(--accent);background:var(--accent-tint);
+  border-radius:99px;padding:3px 10px;margin-top:2px;white-space:nowrap}
+
+/* habit composition (slide 9) */
+.hab{background:transparent;border:0;box-shadow:none;border-top:1px solid var(--line);border-radius:0;padding:18px 0 0;height:392px;display:flex;flex-direction:column}
+.hab .hh{font-size:14.5px;font-weight:600;color:var(--base);margin-bottom:10px}
+.hab .art{flex:1;display:grid;place-items:center}
+.hab .hf{font-size:13px;line-height:1.45;color:var(--muted)}
+.ring{width:150px;height:150px;position:relative}
+.ring svg{width:150px;height:150px;transform:rotate(-90deg)}
+.ring .c{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring .c b{font-size:26px;color:var(--base);font-weight:700;letter-spacing:-.02em;line-height:1}
+.ring .c span{font-size:11.5px;color:var(--muted);margin-top:4px}
+.chk{width:172px;background:var(--bg);border-radius:14px;padding:12px 14px}
+.chk .r{display:flex;align-items:center;gap:9px;font-size:12.5px;padding:6px 0;color:var(--ink)}
+.chk .r i{width:16px;height:16px;border-radius:50%;background:var(--accent);flex:0 0 16px;position:relative}
+.chk .r i::after{content:'';position:absolute;left:5px;top:2px;width:4px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.chk .r i.o{background:transparent;box-shadow:inset 0 0 0 1.5px var(--line)}
+.chk .r i.o::after{display:none}
+.chk .streak{margin-top:8px;font-size:12px;font-weight:600;color:var(--accent)}
+.notif{width:196px;background:#2A2724;color:#fff;border-radius:16px;padding:12px 14px;box-shadow:0 12px 30px rgba(26,26,66,.25)}
+.notif .a{font-size:10px;color:#E8927A;display:flex;justify-content:space-between}
+.notif .t{font-size:13px;font-weight:600;margin-top:5px;line-height:1.35}
+.notif .s{font-size:11px;color:#C9C2B4;margin-top:3px;line-height:1.4}
+.badge{display:flex;flex-direction:column;align-items:center;gap:10px}
+.badge .b{width:92px;height:92px;border-radius:50%;background:var(--accent-tint);display:grid;place-items:center}
+.badge .b svg{width:44px;height:44px;stroke:var(--accent);stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.badge .bt{font-size:12.5px;font-weight:600;color:var(--base);text-align:center;line-height:1.35}
+.badge .wa{font-size:11.5px;color:#fff;background:var(--base);border-radius:99px;padding:5px 12px}
+
+/* infrastructure (slide 10) */
+.pillar{background:#fff;border-radius:20px;padding:30px 28px 26px;min-height:392px;display:flex;flex-direction:column}
+.pillar .n{font-size:13px;font-weight:600;color:var(--accent);letter-spacing:.06em}
+.pillar h3{font-size:22px;margin-top:10px}
+.pillar p{font-size:15.5px;line-height:1.6;color:var(--muted);margin-top:12px}
+.pillar .why{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:13.5px;color:var(--base);font-weight:500;line-height:1.45}
+
+/* proof (slide 11) */
+.shot{height:300px;padding:0;border-radius:0;overflow:visible;box-shadow:none;display:grid;place-items:center;background:transparent}
+.shot img{max-width:100%;max-height:268px;width:auto;height:auto;display:block;border-radius:10px;box-shadow:0 7px 18px rgba(36,35,34,.13)}
+.shot.fill{padding:0;background:transparent;box-shadow:none;overflow:visible}
+.shot.fill img{max-width:none;max-height:none;width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:14px;box-shadow:0 7px 18px rgba(36,35,34,.13)}
+.pdesc{font-size:16.5px;line-height:1.65;color:#C9C2B4}
+.slide:not(.ours):not(.dark) .pdesc{color:var(--ink)}
+.slide:not(.ours):not(.dark) .pdesc b{color:var(--base)}
+.slide:not(.ours):not(.dark) .tags span{background:var(--accent-tint);color:var(--accent)}
+.pdesc b{color:#fff}
+.apps{display:flex;gap:14px;align-items:center;margin-top:14px}
+.apps img{width:38px;height:38px;border-radius:9px;display:block}
+.apps .an{font-size:12.5px;color:#C9C2B4;line-height:1.3}
+.apps .an b{display:block;font-size:13px;color:#fff}
+.apps .sep{width:1px;height:34px;background:rgba(255,255,255,.18)}
+
+/* next step (slide 12) */
+.step{background:#fff;border-radius:18px;padding:22px 22px 20px;display:flex;gap:16px;align-items:flex-start}
+.step .no{flex:0 0 38px;height:38px;border-radius:50%;background:var(--base);color:#fff;display:grid;place-items:center;font-weight:700;font-size:16px}
+.step h3{font-size:18px}
+.step p{font-size:14.5px;line-height:1.55;color:var(--muted);margin-top:6px}
+
+/* questions (slide 13) */
+.qs{display:grid;grid-template-columns:1fr 1fr;gap:26px 40px;margin-top:24px;flex:1;align-content:center}
+.qs div{display:flex;gap:14px;align-items:flex-start;font-size:19.5px;line-height:1.55;color:#fff;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.qs div span{flex:0 0 auto;font-size:12.5px;font-weight:600;color:#E8927A;font-variant-numeric:tabular-nums;margin-top:4px}
+.sig{display:flex;gap:36px;align-items:flex-end;margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.18)}
+.sig .p{font-size:14px;line-height:1.5;color:#C9C2B4}
+.sig .p b{display:block;font-size:16px;color:#fff;font-weight:600}
+.sig .c{margin-inline-start:auto;font-size:13.5px;color:#C9C2B4;direction:ltr;text-align:right;line-height:1.6}
+
+/* prototype (scaffold controller) */
+.proto{display:flex;flex-direction:column;align-items:center;gap:10px;position:relative}
+.dev{width:214px;height:440px;background:#fff;border-radius:40px;position:relative;overflow:hidden;cursor:pointer;
+  border:3px solid #2A2724;box-shadow:0 12px 26px rgba(36,35,34,.13),0 3px 7px rgba(36,35,34,.07),0 0 0 1px rgba(255,255,255,.5) inset}
+.dev .notch{position:absolute;top:6px;left:50%;transform:translateX(-50%);width:50px;height:9px;border-radius:99px;background:#1C1B1A;z-index:30}
+.dev::before{content:'';position:absolute;bottom:5px;left:50%;transform:translateX(-50%);width:76px;height:3.5px;border-radius:99px;background:rgba(26,26,26,.28);z-index:30;pointer-events:none}
+.dark .dev{border-color:#4A453D}
+.bglayer{position:absolute;inset:0}
+.bglayer svg,.bglayer img{width:100%;height:100%;display:block}
+.tb{position:absolute;top:15px;right:11px;left:11px;background:#fff;border-radius:99px;padding:8px 12px;font-size:11.5px;color:#8b938f;display:flex;align-items:center;gap:7px;box-shadow:0 3px 13px rgba(0,0,0,.15);z-index:5;opacity:0;transform:translateY(-8px);transition:opacity .4s ease,transform .4s ease}
+.st-1 .tb,.st-2 .tb,.st-3 .tb,.st-4 .tb{opacity:1;transform:none}
+.sh{position:absolute;right:0;left:0;bottom:0;background:#fff;border-radius:20px 20px 0 0;padding:14px 15px 16px;box-shadow:0 -4px 24px rgba(0,0,0,.15);z-index:6;transform:translateY(102%);transition:transform .48s cubic-bezier(.22,.9,.24,1)}
+.sh.on{transform:none}
+.sh .grab{width:34px;height:3.5px;border-radius:99px;background:#DDD5C8;margin:0 auto 10px}
+.sh .hd{font-size:15px;font-weight:600;color:var(--base);line-height:1.25}
+.sh .sc{font-size:11px;color:#8b938f;margin-top:3px;direction:ltr;text-align:right}
+.wl{position:absolute;inset:0;background:var(--base);z-index:8;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;padding:26px;text-align:center;opacity:0;pointer-events:none;transition:opacity .5s ease}
+.st-0 .wl{opacity:1}
+.pbar{display:flex;gap:6px}
+.pbar i{width:6px;height:6px;border-radius:99px;background:#cdd0dc;transition:.3s}
+.pbar i.on{background:var(--coral);width:18px}
+.dark .pbar i{background:rgba(255,255,255,.26)}
+.dark .pbar i.on{background:#E8927A}
+/* --- proto: learning-paths --- */
+/* ── learning-paths prototype (lp-) ─────────────────────────────
+   Inner screen: 210 x 366 px (224x380 frame minus 7px border).
+   One persistent home screen + two pushed screens driven by .st-K. */
+.lp-scr{position:absolute;top:0;right:0;left:0;height:434px;background:#fafafa;color:#393939;
+  font-size:10px;line-height:1.3;overflow:hidden}
+.lp-scr svg{display:block;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* home (persistent background) */
+.lp-home{z-index:1}
+.lp-bar{position:absolute;top:0;right:0;left:0;height:44px;padding:20px 12px 0;display:flex;
+  align-items:center;justify-content:space-between}
+.lp-bar b{font-size:13px;color:#2A2724;font-weight:700}
+.lp-929{font-size:10px;font-weight:700;color:#C0454F;direction:ltr;letter-spacing:.4px}
+
+.lp-daily{position:absolute;top:50px;right:12px;left:12px;height:80px;background:#2A2724;
+  border-radius:14px;padding:10px 12px;color:#fff;display:flex;align-items:center;
+  justify-content:space-between;gap:8px}
+.lp-dtx{min-width:0;flex:1}
+.lp-k{font-size:9px;opacity:.72}
+.lp-t{font-size:13px;font-weight:700;margin-top:2px;line-height:1.2}
+.lp-v{font-size:9.5px;opacity:.86;margin-top:4px;white-space:nowrap;overflow:hidden;
+  text-overflow:ellipsis;line-height:1.6}
+.lp-go{flex:0 0 auto;background:#C0454F;color:#fff;font-size:9.5px;font-weight:600;
+  padding:5px 10px;border-radius:99px}
+
+.lp-sec{position:absolute;right:12px;left:12px;display:flex;justify-content:space-between;
+  align-items:baseline}
+.lp-sec b{font-size:11px;color:#2A2724;font-weight:700}
+.lp-sec span{font-size:9px;color:#C0454F}
+.lp-sec1{top:140px}
+.lp-sec2{top:232px}
+.lp-row{position:absolute;right:0;left:0;display:flex;gap:6px;padding-right:12px;overflow:hidden}
+.lp-row1{top:158px;height:64px}
+.lp-row2{top:250px;height:52px}
+
+.lp-tile{flex:0 0 54px;height:64px;background:#F3E7E2;border-radius:10px;display:flex;
+  flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:9.5px;
+  color:#2A2724;font-weight:500;text-align:center;padding:0 3px}
+.lp-tile svg{width:18px;height:18px;color:#2A2724}
+.lp-tile.lp-hot{background:#C0454F;color:#fff;font-weight:600}
+.lp-tile.lp-hot svg{color:#fff}
+.lp-tile .lp-mo{font-size:9px;font-weight:500;background:rgba(255,255,255,.22);
+  padding:1px 5px;border-radius:99px;white-space:nowrap;line-height:1.3}
+
+.lp-ser{flex:0 0 88px;height:52px;background:#fff;border:1px solid #dfe3f3;border-radius:10px;
+  padding:7px 8px;display:flex;flex-direction:column;justify-content:space-between}
+.lp-ser b{font-size:9.5px;color:#2A2724;font-weight:600;line-height:1.25}
+.lp-ser span{font-size:9px;color:#C0454F}
+
+.lp-tabs{position:absolute;bottom:0;right:0;left:0;height:42px;background:#fff;
+  border-top:1px solid #E3DACD;display:flex;justify-content:space-around;align-items:center;
+  padding:0 4px}
+.lp-tab{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:9px;color:#8A8172}
+.lp-tab svg{width:15px;height:15px}
+.lp-tab.lp-on{color:#C0454F;font-weight:600}
+
+/* pushed screens: slide in from the left edge (RTL forward navigation) */
+.lp-pack,.lp-pace{transform:translateX(-104%);
+  transition:transform .45s cubic-bezier(.22,.9,.24,1);box-shadow:8px 0 18px rgba(0,0,0,.12)}
+.lp-pack{z-index:3}
+.lp-pace{z-index:4}
+.st-1 .lp-pack,.st-2 .lp-pack{transform:none}
+.st-2 .lp-pace{transform:none}
+
+.lp-hd{position:absolute;top:0;right:0;left:0;background:#2A2724 url(assets/chapter-shmuel-b-6.jpg) center/cover;color:#fff;box-shadow:inset 0 0 0 2000px rgba(16,18,46,.72);
+  padding:20px 12px 10px;border-radius:0 0 18px 18px}
+.lp-pack .lp-hd{height:94px}
+.lp-pace .lp-hd{height:64px}
+.lp-hrow{display:flex;align-items:center;justify-content:space-between;height:16px}
+.lp-hlab{display:flex;align-items:center;gap:4px;font-size:9px;opacity:.78}
+.lp-hlab svg{width:12px;height:12px}
+.lp-pill{font-size:9px;background:#C0454F;color:#fff;padding:1px 7px;border-radius:99px;
+  white-space:nowrap}
+.lp-htit{font-size:13px;font-weight:700;margin-top:8px;line-height:1.2}
+.lp-hdesc{font-size:9.5px;opacity:.8;margin-top:3px;white-space:nowrap;overflow:hidden;
+  text-overflow:ellipsis}
+
+.lp-cnt{position:absolute;top:102px;right:12px;left:12px;height:36px;display:flex;gap:4px}
+.lp-cnt div{flex:1;background:#F3E7E2;border-radius:8px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;line-height:1.1;gap:2px}
+.lp-cnt div.lp-wide{flex:1.5}
+.lp-cnt b{font-size:12px;color:#2A2724;font-weight:700}
+.lp-cnt span{font-size:9px;color:#5a5f78;white-space:nowrap}
+
+.lp-list{position:absolute;top:146px;right:12px;left:12px}
+.lp-it{display:flex;align-items:center;gap:8px;height:30px;border-bottom:1px solid #eceef4}
+.lp-chip{flex:0 0 auto;min-width:36px;text-align:center;font-size:9px;padding:2px 5px;
+  border-radius:5px;background:#F3E7E2;color:#2A2724;font-weight:600;line-height:1.3}
+.lp-chip.lp-au{background:#2A2724;color:#fff}
+.lp-itx{min-width:0;flex:1}
+.lp-tt{font-size:10px;color:#393939;font-weight:500;white-space:nowrap;overflow:hidden;
+  text-overflow:ellipsis;line-height:1.25}
+.lp-ss{font-size:9px;color:#8A8172;line-height:1.2;margin-top:1px}
+
+/* pace picker */
+.lp-opts{position:absolute;top:72px;right:12px;left:12px;display:flex;flex-direction:column;gap:6px}
+.lp-opt{height:38px;border:1.5px solid #dfe3f3;border-radius:10px;background:#fff;display:flex;
+  align-items:center;gap:8px;padding:0 10px}
+.lp-rd{width:12px;height:12px;border-radius:50%;border:1.5px solid #b7bfdc;flex:0 0 auto;background:#fff}
+.lp-opt.lp-sel{border-color:#C0454F;background:#F3E7E2}
+.lp-opt.lp-sel .lp-rd{border-color:#C0454F;background:radial-gradient(#C0454F 0 3.5px,#fff 4px)}
+.lp-opt b{font-size:10.5px;color:#2A2724;font-weight:600;display:block;line-height:1.2}
+.lp-opt span{font-size:9px;color:#6b7089;display:block;line-height:1.2;margin-top:1px}
+.lp-prev{position:absolute;top:206px;right:12px;left:12px;display:flex;align-items:center;gap:5px;
+  font-size:9.5px;color:#6b7089}
+.lp-prev svg{width:12px;height:12px}
+.lp-btn{position:absolute;top:224px;right:12px;left:12px;height:30px;background:#2A2724;color:#fff;
+  border-radius:99px;font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.lp-prog{position:absolute;top:260px;right:12px;left:12px}
+.lp-prog div{display:flex;justify-content:space-between;font-size:9px;color:#6b7089}
+.lp-prog i{display:block;height:3px;background:#F3E7E2;border-radius:99px;margin-top:3px;position:relative}
+.lp-prog i:after{content:"";position:absolute;top:0;right:0;height:3px;width:8.33%;background:#C0454F;border-radius:99px}
+/* --- proto: personal-reading --- */
+/* ── personal-reading prototype (all classes prefixed pr-) ──
+   palette: bg #fafafa · ink #393939 · navy #2A2724 · accent #C0454F · tint #F3E7E2 · grey #6B6355 */
+.pr-bg,.pr-ob,.pr-shl{font-family:Deck,Arial,sans-serif;color:#393939;direction:rtl;text-align:right}
+.pr-bg svg,.pr-ob svg,.pr-shl svg{display:block;flex:none}
+
+/* persistent background: the chapter page for דברים לב */
+.pr-bg{position:absolute;inset:0;background:#fafafa;overflow:hidden}
+.pr-top{position:absolute;top:16px;right:12px;left:12px;height:18px;display:flex;align-items:center;justify-content:space-between}
+.pr-brand{font-size:12px;font-weight:700;color:#2A2724;letter-spacing:.2px;line-height:18px;direction:ltr}
+.pr-brand small{font-size:8px;font-weight:500;color:#6B6355;margin-left:4px;letter-spacing:0}
+.pr-icons{display:flex;gap:9px;color:#393939}
+.pr-hd{position:absolute;top:40px;right:10px;left:10px}
+.pr-kicker{font-size:9.5px;color:#6B6355;line-height:12px;display:flex;align-items:center;gap:5px;white-space:nowrap}
+.pr-kicker b{font-weight:600;color:#2A2724;background:#F3E7E2;border-radius:99px;padding:0 6px;line-height:13px;font-size:9px}
+.pr-verse{margin-top:5px;font-size:11.5px;font-weight:600;color:#2A2724;line-height:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* "מותאם לך" strip */
+.pr-fit{position:absolute;top:78px;right:8px;left:8px;height:26px;display:flex;align-items:center;gap:3px;
+  padding:0 5px;border-radius:9px;background:#f1f2f6;transition:background .45s ease,box-shadow .45s ease}
+.st-2 .pr-fit{background:#F3E7E2;box-shadow:0 0 0 1px #C0454F inset}
+.pr-fit-lbl{font-size:9px;font-weight:700;color:#2A2724;white-space:nowrap;margin-left:1px}
+.pr-fchip{font-size:9px;line-height:16px;height:18px;padding:0 5px;border-radius:99px;background:#fff;color:#2A2724;white-space:nowrap;border:1px solid #d9dcea}
+.pr-fchip.pr-dp{display:grid;grid-auto-flow:column;align-items:center;gap:3px;padding-left:4px;padding-right:5px;background:#C0454F;color:#fff;border-color:#C0454F}
+.pr-fchip.pr-dp .pr-sw{display:grid}
+.pr-sw>i{grid-area:1/1;font-style:normal;transition:opacity .3s ease;white-space:nowrap}
+.pr-sw>i.b{opacity:0}
+.st-2 .pr-sw>i.a{opacity:0}
+.st-2 .pr-sw>i.b{opacity:1}
+.st-2 .pr-fchip.pr-dp{animation:pr-pulse .9s ease-out 2}
+@keyframes pr-pulse{0%{box-shadow:0 0 0 0 rgba(58,91,208,.55)}100%{box-shadow:0 0 0 7px rgba(58,91,208,0)}}
+.pr-fchip.pr-dp svg{color:#fff;opacity:.9}
+
+/* article list: cards are absolutely positioned so a step change slides them, not re-renders them */
+.pr-list{position:absolute;top:112px;right:10px;left:10px;height:208px;overflow:visible}
+.pr-card{position:absolute;right:0;left:0;height:48px;padding:5px 8px 0;border-radius:10px;background:#fff;
+  border:1px solid #E4DFD6;box-shadow:0 1px 3px rgba(26,26,66,.06);
+  transition:top .55s cubic-bezier(.22,.9,.24,1),opacity .4s ease,transform .4s ease}
+.pr-card.pr-hit{border-color:#E4B9BC;background:#FDF7F6;box-shadow:0 1px 3px rgba(192,69,79,.10)}
+.pr-card.pr-hit::before{content:"";position:absolute;top:9px;right:-1px;width:3px;height:30px;border-radius:99px;background:#C0454F}
+.pr-ttl{font-size:10.5px;font-weight:600;color:#2A2724;line-height:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pr-au{margin-top:1px;font-size:9px;color:#6B6355;line-height:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pr-meta{margin-top:3px;display:flex;align-items:center;gap:3px;min-width:0}
+.pr-tag{font-size:9px;line-height:13px;height:13px;padding:0 5px;border-radius:99px;background:#F3E7E2;color:#2A2724;white-space:nowrap;flex:none}
+.pr-tag.pr-dep{display:grid;background:#C0454F;color:#fff}
+.pr-full{font-size:9px;line-height:13px;color:#C0454F;text-decoration:underline;text-underline-offset:2px;white-space:nowrap;margin-right:auto;opacity:0;transition:opacity .3s ease .3s}
+.st-2 .pr-full{opacity:1}
+.pr-badge{position:absolute;top:-6px;left:8px;font-size:9px;line-height:13px;padding:0 6px;border-radius:99px;background:#C0454F;color:#fff;font-weight:600;
+  opacity:0;transform:translateY(3px);transition:opacity .3s ease .35s,transform .3s ease .35s}
+.st-2 .pr-badge{opacity:1;transform:none}
+
+.pr-c1{top:0;z-index:2}                         .st-2 .pr-c1{top:53px}
+.pr-c2{top:53px;z-index:3}                      .st-2 .pr-c2{top:0}
+.pr-c3{top:106px;z-index:1}                     .st-2 .pr-c3{top:159px;opacity:0;transform:scale(.94)}
+.pr-c4{top:159px;z-index:1;opacity:0;transform:scale(.94)}  .st-2 .pr-c4{top:106px;opacity:1;transform:none}
+
+.pr-more{position:absolute;top:159px;right:0;left:0;height:30px;z-index:4;border-radius:10px;background:#f1f2f6;padding:4px 8px 0}
+.pr-more-t{font-size:9.5px;font-weight:600;color:#2A2724;line-height:12px;display:flex;align-items:center;justify-content:space-between}
+.pr-more-t svg{color:#6B6355}
+.pr-more-s{margin-top:1px;font-size:9px;color:#6B6355;line-height:11px;display:grid}
+.pr-more-s>i{grid-area:1/1;font-style:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:opacity .3s ease}
+.pr-more-s>i.b{opacity:0}
+.st-2 .pr-more-s>i.a{opacity:0}
+.st-2 .pr-more-s>i.b{opacity:1}
+
+/* bottom sheets: one line each, own inner class (scaffold .hd is sized for map demos) */
+.pr-shl{font-size:10.5px;font-weight:600;color:#2A2724;line-height:14px;display:flex;align-items:center;gap:6px}
+.pr-shl svg{color:#C0454F}
+
+/* step 0: onboarding, fills .wl regardless of its padding */
+.pr-ob{position:absolute;inset:0;background:#fafafa;display:flex;flex-direction:column;text-align:right;color:#393939}
+.pr-ob-hd{background:#2A2724;color:#fff;padding:30px 14px 16px;flex:none}
+.pr-ob-brand{font-size:11px;font-weight:700;line-height:14px;direction:ltr;text-align:right}
+.pr-ob-brand small{font-size:8px;font-weight:500;opacity:.75;margin-left:4px}
+.pr-ob-q{margin-top:12px;font-size:13px;font-weight:700;line-height:16px}
+.pr-ob-s{margin-top:3px;font-size:9.5px;line-height:12px;opacity:.78}
+.pr-ob-bd{padding:16px 12px 18px;flex:1 1 auto;display:flex;flex-direction:column}
+.pr-lbl{font-size:9px;font-weight:600;color:#6B6355;line-height:11px;margin-bottom:6px}
+.pr-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.pr-chip{display:inline-flex;align-items:center;gap:3px;font-size:10px;line-height:20px;height:20px;padding:0 8px;border-radius:99px;background:#F3E7E2;color:#2A2724;white-space:nowrap}
+.pr-chip svg{display:none}
+.pr-chip.on{background:#C0454F;color:#fff;font-weight:600;padding-right:6px}
+.pr-chip.on svg{display:block}
+.pr-seg{display:flex;gap:2px;padding:2px;border-radius:8px;background:#F3E7E2}
+.pr-seg span{flex:1 1 auto;font-size:9.5px;line-height:18px;height:18px;padding:0 4px;text-align:center;border-radius:6px;color:#2A2724;white-space:nowrap}
+.pr-seg span.on{background:#C0454F;color:#fff;font-weight:600}
+.pr-btn{margin-top:auto;height:30px;line-height:30px;text-align:center;border-radius:9px;background:#2A2724;color:#fff;font-size:11px;font-weight:600}
+.pr-skip{margin-top:9px;text-align:center;font-size:9.5px;line-height:12px;color:#6B6355}
+.pr-skip u{color:#C0454F;text-underline-offset:2px}
+/* --- proto: consumption-modes --- */
+/* ── consumption-modes prototype (all classes prefixed cm-) ── */
+.cm-scr{position:absolute;inset:0;background:#fafafa;color:#393939;
+  font-family:Deck,Arial,sans-serif;direction:rtl;text-align:right;overflow:hidden}
+.cm-scr svg{display:block}
+
+/* persistent header: chapter title + mode switcher (the thread through all 3 steps) */
+.cm-hdr{position:absolute;top:0;right:0;left:0;height:68px;background:#2A2724;color:#fff;
+  padding:15px 12px 0;z-index:3}
+.cm-ttl{font-size:13px;font-weight:700;line-height:1.2}
+.cm-sub{font-size:8.5px;opacity:.72;margin-top:1px;line-height:1.2}
+.cm-bm{position:absolute;left:12px;top:17px;width:13px;height:13px;stroke:#fff;fill:none;
+  stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;opacity:.85}
+.cm-seg{position:absolute;right:10px;left:10px;top:43px;height:19px;
+  background:rgba(255,255,255,.14);border-radius:99px;display:flex;padding:2px}
+.cm-tab{flex:1;font-size:8.5px;font-weight:500;color:rgba(255,255,255,.82);display:flex;
+  align-items:center;justify-content:center;border-radius:99px;transition:background .35s,color .35s}
+.st-0 .cm-tab:nth-child(1),.st-1 .cm-tab:nth-child(2),.st-2 .cm-tab:nth-child(3){
+  background:#fff;color:#2A2724;font-weight:600}
+
+/* persistent background layer: the chapter, reading mode */
+.cm-body{position:absolute;top:68px;right:0;left:0;bottom:0;
+  transition:opacity .4s ease,transform .4s ease}
+.st-1 .cm-body{opacity:0;transform:translateY(-6px)}
+.st-2 .cm-body{opacity:.32}
+.cm-tools{height:26px;display:flex;align-items:center;gap:7px;padding:0 12px;background:#fff;
+  border-bottom:1px solid #e9eaf1;font-size:9.5px;color:#8F8878;white-space:nowrap}
+.cm-tools b{font-weight:600;color:#393939;font-size:10px}
+.cm-tools .cm-fs{display:flex;align-items:center;gap:5px}
+.cm-tools .cm-sep{width:1px;height:12px;background:#e3e5ee}
+.cm-tools .cm-ico{width:11px;height:11px;stroke:#8F8878;fill:none;stroke-width:1.6;
+  stroke-linecap:round;stroke-linejoin:round}
+.cm-tools .cm-night{display:flex;align-items:center;gap:4px}
+.cm-sw{width:18px;height:10px;border-radius:99px;background:#d9dce8;position:relative}
+.cm-sw::after{content:"";position:absolute;top:1.5px;right:1.5px;width:7px;height:7px;
+  border-radius:99px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.15)}
+.cm-tools .cm-share{margin-inline-start:auto}
+.cm-verses{padding:11px 13px 0}
+.cm-v{font-size:12.5px;line-height:1.85;margin:0 0 5px;color:#393939}
+.cm-n{font-size:8px;font-weight:600;color:#C0454F;vertical-align:top;position:relative;top:2px;
+  margin-inline-end:3px}
+.cm-hl{background:#eef1fc;border-radius:9px;padding:3px 8px 6px;margin:0 -8px 7px}
+.cm-pill{display:inline-flex;align-items:center;gap:3px;background:#F3E7E2;color:#C0454F;
+  font-size:8.5px;font-weight:600;border-radius:99px;padding:2px 7px;line-height:1.3;margin-top:1px}
+.cm-pill svg{width:9px;height:9px;stroke:#C0454F;fill:none;stroke-width:1.7;stroke-linecap:round}
+.cm-more{margin:12px 13px 0;padding:7px 10px;border:1px solid #e9eaf1;border-radius:10px;background:#fff;
+  display:flex;align-items:center;gap:8px}
+.cm-more div{flex:1;min-width:0}
+.cm-mk{font-size:8px;color:#8F8878;font-weight:500;line-height:1.2}
+.cm-mt{font-size:10px;font-weight:600;color:#2A2724;margin-top:2px;line-height:1.25;white-space:nowrap;
+  overflow:hidden;text-overflow:ellipsis}
+.cm-ma{font-size:8.5px;color:#8F8878;margin-top:1px;line-height:1.2}
+.cm-more svg{width:11px;height:11px;stroke:#8F8878;fill:none;stroke-width:1.7;stroke-linecap:round;
+  stroke-linejoin:round;flex:none}
+
+/* step 1 overlay: listen mode */
+.cm-listen{position:absolute;top:68px;right:0;left:0;bottom:0;padding:9px 10px 0;opacity:0;
+  transform:translateY(14px);transition:opacity .45s ease,transform .45s ease;pointer-events:none}
+.st-1 .cm-listen{opacity:1;transform:none;pointer-events:auto}
+.cm-card{background:#2A2724;color:#fff;border-radius:14px;padding:9px 11px 8px;
+  box-shadow:0 8px 20px rgba(26,26,66,.22)}
+.cm-card .cm-t{font-size:10.5px;font-weight:600;line-height:1.25;display:flex;align-items:center;gap:5px}
+.cm-eq{display:flex;align-items:flex-end;gap:1.5px;height:9px;flex:none}
+.cm-eq i{width:2px;background:#F3E7E2;border-radius:1px;height:3px}
+.st-1 .cm-eq i{animation:cm-eq .9s ease-in-out infinite alternate}
+.st-1 .cm-eq i:nth-child(2){animation-delay:.2s}
+.st-1 .cm-eq i:nth-child(3){animation-delay:.45s}
+@keyframes cm-eq{from{height:3px}to{height:9px}}
+.cm-card .cm-s{font-size:9px;opacity:.72;margin-top:1px;line-height:1.2}
+.cm-prog{height:3px;background:rgba(255,255,255,.22);border-radius:99px;margin-top:9px;overflow:hidden;
+  direction:ltr}
+.cm-prog i{display:block;height:100%;width:0;background:#fff;border-radius:99px;transition:width .1s}
+.st-1 .cm-prog i{width:41%;transition:width 3s linear}
+.cm-time{display:flex;justify-content:space-between;font-size:7.5px;opacity:.7;margin-top:3px;
+  direction:ltr;line-height:1.2}
+.cm-ctl{display:flex;align-items:center;justify-content:space-between;margin-top:5px}
+.cm-chip{background:#F3E7E2;color:#2A2724;font-size:8px;font-weight:700;border-radius:99px;
+  padding:2px 6px;direction:ltr;line-height:1.3}
+.cm-play{display:flex;align-items:center;gap:9px}
+.cm-play svg{width:11px;height:11px;stroke:#fff;fill:none;stroke-width:1.7;stroke-linecap:round;
+  stroke-linejoin:round}
+.cm-pb{width:22px;height:22px;border-radius:99px;background:#fff;display:flex;align-items:center;
+  justify-content:center}
+.cm-play .cm-pb svg{width:9px;height:9px;fill:#2A2724;stroke:none}
+.cm-hp{width:14px;height:14px;stroke:#fff;fill:none;stroke-width:1.6;stroke-linecap:round;
+  stroke-linejoin:round;opacity:.9}
+.cm-plh{display:flex;align-items:center;justify-content:space-between;margin:9px 3px 5px}
+.cm-plh b{font-size:10px;font-weight:700;color:#2A2724;display:flex;align-items:center;gap:4px}
+.cm-plh b svg{width:10px;height:10px;stroke:#C0454F;fill:none;stroke-width:1.7;stroke-linecap:round}
+.cm-plh span{font-size:8px;color:#8F8878}
+.cm-row{display:flex;align-items:center;gap:7px;background:#fff;border:1px solid #e9eaf1;
+  border-radius:9px;padding:3px 7px;margin-bottom:4px;font-size:9.5px;color:#393939;height:24px}
+.cm-ri{width:16px;height:16px;border-radius:6px;background:#F3E7E2;display:flex;align-items:center;
+  justify-content:center;flex:none}
+.cm-ri svg{width:10px;height:10px;stroke:#C0454F;fill:none;stroke-width:1.7;stroke-linecap:round;
+  stroke-linejoin:round}
+.cm-rt{flex:1;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cm-rp{width:11px;height:11px;stroke:#8F8878;fill:none;stroke-width:1.6;stroke-linecap:round;
+  stroke-linejoin:round;flex:none}
+
+/* step 2 overlay: ask the chapter */
+.cm-scrim{position:absolute;top:68px;right:0;left:0;bottom:0;background:rgba(26,26,66,.16);
+  opacity:0;transition:opacity .4s;pointer-events:none}
+.st-2 .cm-scrim{opacity:1}
+.cm-chat{position:absolute;top:126px;right:0;left:0;bottom:0;background:#fff;
+  border-radius:18px 18px 0 0;box-shadow:0 -6px 24px rgba(26,26,66,.18);padding:10px 11px 0;
+  transform:translateY(104%);transition:transform .5s cubic-bezier(.22,.9,.24,1);z-index:4}
+.st-2 .cm-chat{transform:none}
+.cm-ch{display:flex;align-items:center;gap:5px;font-size:10.5px;font-weight:700;color:#2A2724;
+  margin-bottom:5px;line-height:1.2}
+.cm-ch svg{width:12px;height:12px;stroke:#C0454F;fill:none;stroke-width:1.7;stroke-linecap:round;
+  stroke-linejoin:round}
+.cm-ch span{margin-inline-start:auto;font-size:8px;color:#8F8878;font-weight:500}
+.cm-bub{max-width:170px;font-size:9.5px;line-height:1.45;padding:6px 9px;border-radius:12px;
+  opacity:0;transform:translateY(6px);transition:opacity .35s ease,transform .35s ease}
+.cm-bu{background:#2A2724;color:#fff;margin-inline-start:auto;border-end-end-radius:4px;
+  width:max-content}
+.cm-ba{background:#EFEBE3;color:#393939;border-end-start-radius:4px;margin-top:5px}
+.st-2 .cm-bu{opacity:1;transform:none;transition-delay:.4s}
+.st-2 .cm-ba{opacity:1;transform:none;transition-delay:1s}
+.cm-src{display:inline-flex;align-items:flex-start;gap:4px;background:#F3E7E2;color:#C0454F;
+  font-size:8px;font-weight:500;line-height:1.35;border-radius:8px;padding:3px 7px;margin-top:3px;
+  max-width:170px;opacity:0;transition:opacity .35s ease}
+.st-2 .cm-src{opacity:1;transition-delay:1.4s}
+.cm-src svg{width:9px;height:9px;flex:none;stroke:#C0454F;fill:none;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round;margin-top:1px}
+
+/* bottom-sheet subtitle (own class - .sh .sc in the scaffold is LTR) */
+.cm-shs{font-size:9.5px;color:#8F8878;margin-top:3px;line-height:1.4}
+
+
+
+/* ── features page (ההצעה · תכולת המוצר), after national-library slide 8 ── */
+.c8h{font-family:Deck;font-size:46px;font-weight:700;line-height:1.16;letter-spacing:-.015em;margin-bottom:0}
+.c8h b{font-weight:700;color:var(--coral)}
+.stepper{display:grid;grid-template-columns:318px 280px 1fr;gap:40px;margin:10px 0 0}
+.stp{font-size:13px;font-weight:700;letter-spacing:.05em;color:var(--base)}
+.stp:last-child{text-align:center}
+.capstage{display:flex;flex-direction:row;align-items:stretch;gap:34px;height:468px;margin-top:0}
+.cap8 .dev{width:222px;height:458px;border-radius:40px}
+.cap8 .capdesc{height:280px}
+.capside{width:318px;flex:0 0 318px;display:flex;flex-direction:column;justify-content:center}
+.caps{display:flex;flex-direction:column;gap:1px}
+.lay{font-size:11.5px;font-weight:700;letter-spacing:.08em;color:var(--muted);margin:7px 0 2px;opacity:.75}
+.lay:first-child{margin-top:0}
+.slot{display:flex;align-items:center;gap:10px;padding:5px 12px;border-radius:10px;cursor:pointer;opacity:.8;transition:background .25s,opacity .25s}
+.slot:hover{background:rgba(58,91,208,.08);opacity:1}
+.slot svg{width:17px;height:17px;flex:0 0 17px;stroke:var(--muted);stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.slot .n{font-size:14.5px;font-weight:600;color:var(--ink);line-height:1.25}
+.slot .nb{margin-inline-start:auto;flex:0 0 20px;width:20px;height:20px;border-radius:99px;background:var(--accent-tint);color:var(--accent);font-style:normal;font-size:11px;font-weight:700;display:grid;place-items:center}
+.slot .nb.x{background:transparent}
+.slot.act{background:var(--accent);opacity:1}
+.slot.act .n{color:#fff}.slot.act svg{stroke:#fff}.slot.act .nb{background:#fff;color:var(--accent)}.slot.act .nb.x{background:transparent}
+.legend{display:flex;align-items:center;gap:6px;margin-top:10px;padding-top:9px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);line-height:1.35}
+.legend .nb{width:18px;height:18px;border-radius:6px;background:var(--accent);color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center;font-style:normal}
+.midcol{flex:0 0 280px;width:280px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.capdesc{position:relative;height:300px;background:transparent;border-inline-start:2px solid var(--line);padding:0 22px}
+.cd{position:absolute;inset:0;padding:0 22px;opacity:0;transition:opacity .25s ease;display:flex;flex-direction:column;justify-content:center}
+.cd .cdt{font-family:Deck;font-size:25px;line-height:1.3;color:var(--ink);font-weight:700}
+.cd .cdt::after{content:'';display:block;width:36px;height:3px;border-radius:2px;background:var(--accent);margin:12px 0 14px}
+.cd ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.cd li{font-size:14.5px;line-height:1.5;color:var(--ink);position:relative;padding-inline-start:16px}
+.cd li::before{content:'';position:absolute;inset-inline-start:0;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.cd li b{color:var(--ink);font-weight:600}
+.orgval{background:transparent;border-top:1px solid var(--line);padding:12px 0 0;display:flex;gap:12px;align-items:flex-start}
+.orgval .ol,.measure .ol{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--accent);white-space:nowrap;margin-top:3px}
+.orgval p{font-size:13.5px;line-height:1.5;color:var(--ink);margin:0}
+.orgval b{color:var(--base);font-weight:700}
+.phcol8{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+/* step wiring: the controller puts st-K on the wrapper too */
+.cap8 .cs{position:absolute;inset:0;opacity:0;transition:opacity .3s;background:#FAF7F2}
+.cap8.sp-0 .cs[data-cs="0"],.cap8.sp-1 .cs[data-cs="1"],.cap8.sp-2 .cs[data-cs="2"],.cap8.sp-3 .cs[data-cs="3"],.cap8.sp-4 .cs[data-cs="4"],.cap8.sp-5 .cs[data-cs="5"],.cap8.sp-6 .cs[data-cs="6"],.cap8.sp-7 .cs[data-cs="7"],.cap8.sp-8 .cs[data-cs="8"],.cap8 .dev.st-0 .cs[data-cs="0"],.cap8 .dev.st-1 .cs[data-cs="1"],.cap8 .dev.st-2 .cs[data-cs="2"],.cap8 .dev.st-3 .cs[data-cs="3"],.cap8 .dev.st-4 .cs[data-cs="4"],.cap8 .dev.st-5 .cs[data-cs="5"],.cap8 .dev.st-6 .cs[data-cs="6"],.cap8 .dev.st-7 .cs[data-cs="7"],.cap8 .dev.st-8 .cs[data-cs="8"]{opacity:1}
+.cap8.sp-0 .cd[data-cd="0"],.cap8.sp-1 .cd[data-cd="1"],.cap8.sp-2 .cd[data-cd="2"],.cap8.sp-3 .cd[data-cd="3"],.cap8.sp-4 .cd[data-cd="4"],.cap8.sp-5 .cd[data-cd="5"],.cap8.sp-6 .cd[data-cd="6"],.cap8.sp-7 .cd[data-cd="7"],.cap8.sp-8 .cd[data-cd="8"]{opacity:1}
+.cap8.sp-0 .slot[data-i="0"],.cap8.sp-1 .slot[data-i="1"],.cap8.sp-2 .slot[data-i="2"],.cap8.sp-3 .slot[data-i="3"],.cap8.sp-4 .slot[data-i="4"],.cap8.sp-5 .slot[data-i="5"],.cap8.sp-6 .slot[data-i="6"],.cap8.sp-7 .slot[data-i="7"],.cap8.sp-8 .slot[data-i="8"]{background:var(--accent);opacity:1}
+.cap8.sp-0 .slot[data-i="0"] .n,.cap8.sp-1 .slot[data-i="1"] .n,.cap8.sp-2 .slot[data-i="2"] .n,.cap8.sp-3 .slot[data-i="3"] .n,.cap8.sp-4 .slot[data-i="4"] .n,.cap8.sp-5 .slot[data-i="5"] .n,.cap8.sp-6 .slot[data-i="6"] .n,.cap8.sp-7 .slot[data-i="7"] .n,.cap8.sp-8 .slot[data-i="8"] .n{color:#fff}
+.cap8.sp-0 .slot[data-i="0"] svg,.cap8.sp-1 .slot[data-i="1"] svg,.cap8.sp-2 .slot[data-i="2"] svg,.cap8.sp-3 .slot[data-i="3"] svg,.cap8.sp-4 .slot[data-i="4"] svg,.cap8.sp-5 .slot[data-i="5"] svg,.cap8.sp-6 .slot[data-i="6"] svg,.cap8.sp-7 .slot[data-i="7"] svg,.cap8.sp-8 .slot[data-i="8"] svg{stroke:#fff}
+.cap8.sp-0 .slot[data-i="0"] .nb,.cap8.sp-1 .slot[data-i="1"] .nb,.cap8.sp-2 .slot[data-i="2"] .nb,.cap8.sp-3 .slot[data-i="3"] .nb,.cap8.sp-4 .slot[data-i="4"] .nb,.cap8.sp-5 .slot[data-i="5"] .nb,.cap8.sp-6 .slot[data-i="6"] .nb,.cap8.sp-7 .slot[data-i="7"] .nb,.cap8.sp-8 .slot[data-i="8"] .nb{background:#fff;color:var(--accent)}
+/* phone screens for the features page (fp-) */
+.fp-hd{background:#2A2724;color:#fff;padding:26px 14px 12px}
+.fp-hd .t{font-size:12.5px;font-weight:600}.fp-hd .s{font-size:9.5px;color:#C9C2B4;margin-top:2px}
+.fp-body{padding:10px 12px;display:flex;flex-direction:column;gap:7px;text-align:right}
+.fp-card{background:#fff;border-radius:11px;padding:9px 10px;box-shadow:0 1px 3px rgba(26,26,66,.06)}
+.fp-card .rt{font-size:10.5px;font-weight:600;color:#2A2724;line-height:1.3}.fp-card .ra{font-size:9px;color:#6B6355;margin-top:2px}
+.fp-tg{display:flex;gap:4px;margin-top:5px;flex-wrap:wrap}.fp-tg span{font-size:8.5px;background:#F1ECE3;color:#2A2724;border-radius:99px;padding:1px 7px}.fp-tg span.on{background:#C0454F;color:#fff}
+.fp-lbl{font-size:9.5px;font-weight:700;color:#6B6355;letter-spacing:.04em;margin-top:2px}
+.fp-chips{display:flex;gap:5px;flex-wrap:wrap}.fp-chips span{font-size:9px;background:#F3E7E2;color:#C0454F;border-radius:99px;padding:3px 8px;font-weight:600}.fp-chips span.k{background:#C0454F;color:#fff}
+.fp-btn{background:#2A2724;color:#fff;border-radius:99px;padding:8px 12px;font-size:10.5px;font-weight:600;text-align:center}
+.fp-btn.l{background:#fff;color:#2A2724;box-shadow:inset 0 0 0 1px #d9d9e0}
+.fp-row{display:flex;align-items:center;gap:8px;background:#fff;border-radius:10px;padding:8px 10px}
+.fp-row .ic8{width:22px;height:22px;border-radius:7px;background:#F3E7E2;flex:0 0 22px}
+.fp-row .rt{font-size:10.5px;font-weight:600;color:#2A2724}.fp-row .ra{font-size:8.5px;color:#6B6355}
+.fp-row .rb{margin-inline-start:auto;font-size:9px;color:#C0454F;font-weight:700;white-space:nowrap}
+.fp-seg{display:flex;background:#EDE6DC;border-radius:99px;padding:3px;gap:2px}.fp-seg span{flex:1;text-align:center;font-size:9.5px;padding:5px 0;border-radius:99px;color:#6B6355;font-weight:600}.fp-seg span.on{background:#2A2724;color:#fff}
+.fp-player{background:#2A2724;color:#fff;border-radius:14px;padding:12px}
+.fp-player .pt{font-size:11px;font-weight:600}.fp-player .ps{font-size:9px;color:#C9C2B4;margin-top:2px}
+.fp-player .bar{height:3px;background:rgba(255,255,255,.2);border-radius:2px;margin:10px 0 5px}.fp-player .bar i{display:block;width:41%;height:100%;background:#E8927A;border-radius:2px}
+.fp-player .pm{display:flex;justify-content:space-between;font-size:8.5px;color:#C9C2B4;direction:ltr}
+.fp-lock{position:absolute;inset:0;background:linear-gradient(180deg,#3A342E,#1C1B1A);color:#fff;text-align:center;padding:64px 12px 0}
+.fp-lock .tm{font-size:38px;font-weight:300;letter-spacing:-.02em}.fp-lock .dt{font-size:10px;color:#C9C2B4;margin-top:2px}
+.fp-notif{margin:26px 4px 0;background:rgba(255,255,255,.96);color:#2A2724;border-radius:14px;padding:10px 12px;text-align:right}
+.fp-notif .a{font-size:8.5px;color:#C0454F;display:flex;justify-content:space-between;font-weight:700}.fp-notif .t{font-size:11px;font-weight:600;margin-top:4px;line-height:1.35}.fp-notif .s{font-size:9px;color:#5b5b66;margin-top:2px;line-height:1.4}
+.fp-ring{display:flex;align-items:center;gap:10px}
+.fp-ring svg{width:54px;height:54px;transform:rotate(-90deg);flex:0 0 54px}
+.fp-ring .c b{display:block;font-size:16px;color:#2A2724;font-weight:700;line-height:1}.fp-ring .c span{font-size:9px;color:#6B6355}
+.fp-chk{display:flex;align-items:center;gap:7px;font-size:10px;color:#242322;padding:4px 0}
+.fp-chk i{width:13px;height:13px;border-radius:50%;background:#C0454F;position:relative;flex:0 0 13px}
+.fp-chk i::after{content:'';position:absolute;left:4px;top:1.5px;width:3px;height:6.5px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.fp-chk i.o{background:transparent;box-shadow:inset 0 0 0 1.5px #d9d9e0}.fp-chk i.o::after{display:none}
+.fp-av{display:flex}.fp-av i{width:20px;height:20px;border-radius:50%;background:#E6C9B8;border:2px solid #fff;margin-inline-end:-6px}
+.fp-av i:nth-child(2){background:#E8927A}.fp-av i:nth-child(3){background:#D08A6E}.fp-av i:nth-child(4){background:#F3E7E2}
+.fp-social{display:flex;align-items:center;gap:8px;background:#fff;border-radius:10px;padding:9px 12px;font-size:10.5px;font-weight:600;color:#2A2724;box-shadow:inset 0 0 0 1px #d9d9e0}
+.fp-social i{width:14px;height:14px;border-radius:50%;background:#C0454F;flex:0 0 14px}
+.fp-ai{background:#F3E7E2;border-radius:10px;padding:8px 10px}.fp-ai .t{font-size:9.5px;font-weight:700;color:#C0454F}.fp-ai .fp-tg{margin-top:5px}
+.fp-ok{display:flex;gap:6px;margin-top:6px}.fp-ok span{flex:1;text-align:center;font-size:9px;border-radius:99px;padding:4px 0;font-weight:600}.fp-ok .y{background:#2A2724;color:#fff}.fp-ok .n2{background:#fff;color:#2A2724;box-shadow:inset 0 0 0 1px #d9d9e0}
+
+/* ── close-up slides: four rows beside a pinned phone (national-library format) ── */
+.fx{display:grid;grid-template-columns:1fr 290px;gap:0;flex:1;min-height:0;align-items:start;margin-top:10px}
+.txtcol{display:flex;flex-direction:column;justify-content:flex-start;gap:14px;padding-top:2px}
+.rows{display:flex;flex-direction:column;gap:2px}
+.rows .r{display:grid;grid-template-columns:172px 1fr;gap:16px;align-items:start;padding:9px 0;border-bottom:1px solid var(--line)}
+.rows .r:last-child{border-bottom:0}
+.rows .r b{font-size:15px;color:var(--base);line-height:1.45;font-weight:600}
+.rows .r span{font-size:15.5px;line-height:1.5;color:var(--ink)}
+.measure{display:flex;gap:12px;align-items:flex-start;background:transparent;border-top:1px solid var(--line);padding:12px 0 0}
+.measure p{font-size:14px;line-height:1.5;color:var(--ink);margin:0}
+.fx .phcol{position:static}
+.fx .phcol .proto{position:absolute;left:74px;top:140px;margin:0;transform:scale(1.15);transform-origin:top center}
+.h2c{font-size:48px;line-height:1.14;max-width:22ch}
+.h2l{font-size:45px;line-height:1.18;max-width:30ch}
+
+/* ── one core, two faces (slide 12) ── */
+.core3{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:18px;margin-top:18px;align-items:stretch}
+.face{background:#fff;border-radius:18px;padding:18px 20px 16px;display:flex;flex-direction:column}
+.face .fh{font-size:18px;font-weight:700;color:var(--base);line-height:1.25}
+.face .fh span{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-top:3px;letter-spacing:.04em}
+.face ul{list-style:none;margin-top:10px;display:flex;flex-direction:column;gap:7px}
+.face li{font-size:14.5px;line-height:1.45;color:var(--ink);position:relative;padding-inline-start:14px}
+.face li::before{content:'';position:absolute;inset-inline-start:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.face .fn{margin-top:auto;padding-top:10px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);line-height:1.45}
+.corebox{background:var(--base);color:#fff;border-radius:18px;padding:18px 20px 16px;display:flex;flex-direction:column;gap:7px;position:relative}
+.corebox::before,.corebox::after{content:'';position:absolute;top:50%;width:18px;height:2px;background:#E6C9B8}
+.corebox::before{right:-18px}.corebox::after{left:-18px}
+.corebox .ch{font-size:18px;font-weight:700;margin-bottom:4px}
+.corebox .ci{font-size:14px;line-height:1.4;background:rgba(255,255,255,.09);border-radius:10px;padding:7px 10px}
+.corebox .cf{margin-top:auto;padding-top:10px;font-size:13px;color:#C9C2B4;line-height:1.45;border-top:1px solid rgba(255,255,255,.16)}
+.seq{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.seq div{display:flex;gap:10px;align-items:center;background:var(--accent-tint);border-radius:12px;padding:9px 12px}
+.seq b{flex:0 0 24px;height:24px;border-radius:50%;background:var(--base);color:#fff;display:grid;place-items:center;font-size:12.5px}
+.seq span{font-size:13.5px;line-height:1.4;color:var(--base)}
+
+/* ── product wall (why 200Apps) ── */
+.wallgrid{display:flex;flex-direction:column;gap:6px}
+.wl-lay{font-size:11.5px;font-weight:700;letter-spacing:.08em;color:#E8927A;margin-top:2px}
+.wl-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 18px}
+.wl-row.three{grid-template-columns:repeat(3,1fr)}
+.wl-it{display:flex;gap:11px;align-items:center;background:rgba(255,255,255,.07);border-radius:14px;padding:9px 12px;min-height:58px}
+.wl-it img{width:40px;height:40px;border-radius:10px;flex:0 0 40px;object-fit:cover}
+.wl-it img.logo{border-radius:8px;background:#fff;object-fit:contain;padding:4px}
+.wl-txt{width:40px;height:40px;border-radius:10px;flex:0 0 40px;background:#C0454F;color:#fff;display:grid;place-items:center;font-size:9.5px;font-weight:700}
+.wl-it b{display:block;font-size:14px;color:#fff;font-weight:600;line-height:1.25}
+.wl-it span{display:block;font-size:11.5px;color:#C9C2B4;line-height:1.4;margin-top:2px}
+.edu{display:flex;flex-direction:column}
+.edu .tags{margin-top:10px}
+
+/* ── form-factor options ── */
+.opts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;flex:1;min-height:0;align-content:center;margin-top:10px}
+.opts .card{display:flex;flex-direction:column;justify-content:center;min-height:230px;padding:24px 22px}
+.opts .card h3{font-size:19.5px}
+.opts .card p{font-size:14.5px}
+.opts .card.now{box-shadow:inset 0 0 0 2px var(--accent)}
+.opts .card .tagnow{display:inline-block;font-size:11px;font-weight:700;color:var(--accent);background:var(--accent-tint);border-radius:99px;padding:3px 9px;margin-bottom:10px;align-self:flex-start}
+
+
+/* review 2: labelled step bar, path progress row, example cards, source lines, principles row, compact wall */
+.pbar.lbl i{width:auto;height:auto;font-size:11px;color:var(--muted);background:transparent;padding:3px 9px;border-radius:99px;line-height:1.2}
+.pbar.lbl i.on{background:var(--accent-tint);color:var(--accent);font-weight:600}
+.lp-next{position:absolute;top:118px;right:10px;left:10px;background:#F3E7E2;border-radius:11px;padding:8px 10px;display:flex;align-items:center;justify-content:space-between;gap:8px;z-index:2}
+.lp-next span{display:block;font-size:8.5px;color:#C0454F;font-weight:700}
+.lp-next b{display:block;font-size:10px;color:#2A2724;font-weight:600;margin-top:2px}
+.lp-next em{font-style:normal;background:#2A2724;color:#fff;border-radius:99px;padding:5px 10px;font-size:9.5px;font-weight:600;flex:0 0 auto}
+.lp-pack .lp-list{margin-top:52px}
+.ex3.plain .card{background:transparent;padding:2px 0;border-inline-start:2px solid var(--line);padding-inline-start:20px}
+.ex3 .card h3{font-size:19px}
+.ex3 .card p{font-size:16px;line-height:1.6;margin-top:8px}
+.src{font-size:12px;color:var(--muted);margin-top:auto;padding-top:14px;line-height:1.5}
+.src.dk{color:#9fa6c4}
+.prin{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.prin div{background:var(--accent-tint);border-radius:12px;padding:10px 14px;font-size:14px;line-height:1.45;color:var(--base)}
+.prin b{color:var(--base);font-weight:700}
+.wl-row.four{grid-template-columns:repeat(4,1fr)}
+.wl-it.sm{min-height:52px;padding:8px 12px;gap:10px}
+.wl-it.sm b{font-size:14.5px}
+.corebox .ci{font-size:13.5px}
+.face li{font-size:14px}
+
+/* first-step rows (CTA) */
+.r2{display:grid;grid-template-columns:64px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--line)}
+.r2:last-child{border-bottom:0}
+.r2 b{color:var(--base);font-weight:600;font-size:16px}
+.r2 span{font-size:16px;line-height:1.5;color:var(--ink)}
+.dark .r2{border-bottom-color:rgba(255,255,255,.14)}
+.dark .r2 b{color:#E8927A}
+.dark .r2 span{color:#e6e9f5}
+
+
+/* round 9: article mock, learning-path progress, balanced wall, pilot next-steps */
+.col5{display:flex;flex-direction:column;align-items:center}
+.cap5{font-size:13.5px;font-weight:600;color:#fff;margin-bottom:10px;text-align:center}
+.col5 .cap{max-width:240px;margin-bottom:16px}
+.mock .art{padding:10px 12px 0}
+.mock .atit{font-size:13px;font-weight:700;color:#2A2724;line-height:1.3}
+.mock .aau{font-size:9px;color:#6B6355;margin-top:3px}
+.mock .atb{display:flex;gap:4px;margin-top:8px;flex-wrap:nowrap;align-items:center}
+.mock .atb span{font-size:8px;padding:2px 6px!important;background:#F1ECE3;color:#C0454F;border-radius:99px;padding:2px 7px;font-weight:600}
+.mock .atb span.on{background:#C0454F;color:#fff}
+.mock .abody{font-size:10px;line-height:1.65;color:#242322;margin-top:8px;text-align:justify}
+.mock .amore{margin:10px 11px 0;border-top:1px solid #E3DACD;padding-top:8px}
+.mock .aml{font-size:8.5px;font-weight:700;color:#6B6355;letter-spacing:.04em}
+.mock .amr{font-size:9px;color:#2A2724;background:#FAF7F2;border-radius:8px;padding:5px 7px;margin-top:5px;line-height:1.35}
+.phone,.mock{margin-inline:auto}
+.lp-prg{position:absolute;top:104px;right:10px;left:10px;background:#fff;border-radius:11px;padding:8px 10px;z-index:2;box-shadow:0 1px 3px rgba(26,26,66,.07)}
+.lp-prgt{display:flex;justify-content:space-between;align-items:baseline;font-size:9.5px;color:#6B6355}
+.lp-prgt b{font-size:11px;color:#C0454F}
+.lp-prgb{height:4px;border-radius:99px;background:#EDE6DC;margin-top:5px;overflow:hidden}
+.lp-prgb i{display:block;width:25%;height:100%;background:#C0454F;border-radius:99px}
+.lp-prgs{font-size:8.5px;color:#8A8172;margin-top:5px}
+.lp-pack .lp-next{top:172px}
+.lp-pack .lp-list{margin-top:108px}
+.lp-it.done .lp-tt{color:#6B6355}
+.lp-it .lp-v{margin-inline-start:auto;font-style:normal;color:#C0454F;font-size:11px;font-weight:700}
+.lp-it .lp-nx{margin-inline-start:auto;font-style:normal;background:#C0454F;color:#fff;border-radius:99px;padding:2px 8px;font-size:8.5px;font-weight:700}
+.wall2{margin-top:16px;display:flex;flex-direction:column;gap:16px;flex:1;min-height:0;justify-content:center}
+.w2row{display:flex;align-items:center;gap:16px}
+.w2lab{flex:0 0 150px;font-size:13.5px;font-weight:700;letter-spacing:.06em;color:#E8927A}
+.w2items{flex:1;display:flex;gap:12px}
+.w2it{flex:1;display:flex;align-items:center;gap:12px;background:transparent;border-top:1px solid rgba(255,255,255,.18);border-radius:0;padding:14px 0 0;min-height:56px}
+.w2it img{width:40px;height:40px;border-radius:10px;flex:0 0 40px;object-fit:cover}
+.w2it img.logo{background:#fff;object-fit:contain;padding:4px;border-radius:8px}
+.w2tx{width:34px;height:34px;border-radius:9px;flex:0 0 34px;background:#C0454F;color:#fff;display:grid;place-items:center;font-size:8.5px;font-weight:700}
+.w2it b{font-size:16px;color:#fff;font-weight:600;line-height:1.2}
+.nxt{background:transparent;border-bottom:1px solid var(--line);padding:11px 0;font-size:15.5px;line-height:1.5;color:var(--muted)}
+
+
+/* round 10: teaser mock, learner questions, phases */
+.cap5.lt{color:var(--base)}
+.cap.lt{color:var(--muted)}
+.phone.lt{border-color:#2a2a4e;box-shadow:0 22px 44px rgba(26,26,66,.22)}
+.mock .tz{padding:9px 11px;display:flex;flex-direction:column;gap:7px}
+.tzcard{background:#F3E7E2;border-radius:11px;padding:9px 10px}
+.tzcard .tzt{font-size:13px;font-weight:700;color:#2A2724}
+.tzcard .tzs{font-size:9px;color:#C0454F;margin-top:3px;font-weight:600}
+.tzcard .tzb{margin-top:7px;background:#2A2724;color:#fff;border-radius:99px;padding:5px 0;text-align:center;font-size:9.5px;font-weight:600}
+.tzprog{display:flex;align-items:center;gap:9px;background:#fff;border-radius:11px;padding:7px 10px}
+.tzprog svg{width:38px;height:38px;flex:0 0 38px}
+.tzprog b{display:block;font-size:11px;color:#2A2724}
+.tzprog span{display:block;font-size:9px;color:#C0454F;font-weight:600;margin-top:1px}
+.tzrow{background:#fff;border-radius:10px;padding:7px 10px}
+.tzrow .rt{font-size:10.5px;font-weight:600;color:#2A2724;line-height:1.25}
+.tzrow .ra{font-size:9px;color:#6B6355;margin-top:2px}
+.askgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px;flex:1;min-height:0;align-content:center}
+.ask{background:#fff;border-radius:16px;padding:20px 22px;display:flex;flex-direction:column}
+.ask .q{font-size:17.5px;line-height:1.45;font-weight:600;color:var(--base)}
+.ask .a{font-size:14px;line-height:1.5;color:var(--muted);margin-top:auto;padding-top:12px;border-top:1px solid var(--line)}
+.phase{background:transparent;border-radius:0;padding:0;display:flex;flex-direction:column;min-height:300px;border-top:2px solid var(--line)}
+.phase .pn{font-family:Deck;font-size:58px;font-weight:700;color:var(--coral);margin:14px 0 6px;line-height:1;letter-spacing:-.02em}
+.phase h3{font-family:Deck;font-size:24px;font-weight:700}
+.phase p{font-size:15.5px;line-height:1.6;color:var(--muted);margin-top:10px}
+.phase .pd{margin-top:10px;font-size:13.5px;color:var(--base);display:flex;gap:10px;align-items:baseline}
+.phase .pd.first{margin-top:auto;padding-top:14px;border-top:1px solid var(--line)}
+.phase .pd span{flex:0 0 42px;font-size:11.5px;font-weight:700;letter-spacing:.06em;color:var(--accent)}
+.split{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.split div{background:transparent;border-top:1px solid var(--line);padding:12px 0 0;font-size:14.5px;line-height:1.5;color:var(--muted)}
+
+
+/* round 10: world models + white space */
+.models{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.model{background:#fff;border-radius:16px;padding:22px 24px;min-height:210px;display:flex;flex-direction:column}
+.model.here{box-shadow:inset 0 0 0 2px var(--accent)}
+.model .mh{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.model .mh b{font-size:18px;color:var(--base);font-weight:700;line-height:1.25}
+.model .mh span{font-size:12px;font-weight:700;color:var(--accent);white-space:nowrap}
+.model .mn{font-size:12.5px;color:var(--muted);margin-top:7px;line-height:1.45;direction:ltr;text-align:right}
+.model p{font-size:15px;line-height:1.55;color:var(--ink);margin-top:10px}
+.wsrow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:18px}
+.ws{background:#fff;border-radius:14px;padding:16px 18px;min-height:112px}
+.ws b{display:block;font-size:26px;font-weight:700;color:var(--base);letter-spacing:-.01em;font-variant-numeric:tabular-nums;direction:ltr;text-align:right}
+.ws span{display:block;font-size:13px;line-height:1.45;color:var(--muted);margin-top:6px}
+.ws.hi{background:var(--accent-tint)}
+.ws.hi b{color:var(--accent)}
+.ws.hi span{color:var(--base)}
+
+
+/* round 11: rich product mocks (their own chapter illustrations) */
+.mock2{width:230px;height:470px;border-radius:40px;border:3px solid #2A2724;overflow:hidden;position:relative;
+  background:#fff;box-shadow:0 28px 56px rgba(0,0,0,.46),0 0 0 1px rgba(255,255,255,.14);
+  font-size:10px;color:#242322;text-align:right;display:flex;flex-direction:column;margin-inline:auto}
+.dark .mock2{border-color:#4A453D}
+.mock2::after{content:'';position:absolute;top:6px;left:50%;transform:translateX(-50%);width:44px;height:8px;border-radius:99px;background:#1C1B1A;z-index:30}
+.m2top{height:40px;flex:0 0 40px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 12px 6px;background:#fff}
+.m2top img{height:15px;width:auto}
+.m2top span{font-size:8.5px;color:#8A8172}
+.m2hero{position:relative;flex:0 0 138px;overflow:hidden}
+.m2hero img{width:100%;height:100%;object-fit:cover;display:block}
+.m2hs{position:absolute;inset:auto 0 0 0;padding:16px 12px 10px;background:linear-gradient(to top,rgba(10,12,28,.88),rgba(10,12,28,0))}
+.m2hs .k{display:block;font-size:8px;font-weight:700;letter-spacing:.1em;color:#F8AF23}
+.m2hs b{display:block;font-size:14px;color:#fff;font-weight:700;margin-top:2px;line-height:1.2}
+.m2body{flex:1;min-height:0;padding:11px 12px 9px;display:flex;flex-direction:column;gap:7px;background:#fff;overflow:hidden}
+.m2len{display:flex;background:#F1ECE3;border-radius:99px;padding:3px;gap:2px}
+.m2len span{flex:1;text-align:center;font-size:8.5px;padding:5px 0;border-radius:99px;color:#6B6355;font-weight:600}
+.m2len span.on{background:#2A2724;color:#fff}
+.m2cta{background:#C0454F;color:#fff;border-radius:11px;padding:9px 0;text-align:center;font-size:10.5px;font-weight:600}
+.m2prog{display:flex;align-items:center;gap:9px;background:#FAF7F2;border-radius:11px;padding:8px 10px}
+.m2prog svg{width:34px;height:34px;flex:0 0 34px}
+.m2prog b{display:block;font-size:10.5px;color:#2A2724}
+.m2prog span{display:block;font-size:8.5px;color:#C0454F;font-weight:700;margin-top:1px}
+.m2lbl{font-size:8.5px;font-weight:700;color:#8A8172;letter-spacing:.04em}
+.m2row{display:flex;gap:8px;align-items:center}
+.m2row i{flex:0 0 34px;height:34px;border-radius:9px;background:#F3E7E2;display:block;overflow:hidden}
+.m2row i img{width:100%;height:100%;object-fit:cover}
+.m2row>div{flex:1;min-width:0}
+.m2row .t{font-size:10px;font-weight:600;color:#2A2724;line-height:1.25}
+.m2row .s{font-size:8.5px;color:#6B6355;margin-top:2px}
+.m2chips{display:flex;gap:5px}
+.m2chips span{font-size:8.5px;background:#F1ECE3;color:#2A2724;border-radius:99px;padding:4px 9px;font-weight:600}
+.m2chips span.k{background:#F8AF23;color:#3d2f00}
+.m2tags{display:flex;gap:5px}
+.m2tags span{font-size:8.5px;border-radius:99px;padding:3px 8px;background:#F1ECE3;color:#6B6355;font-weight:600}
+.m2tags span.on{background:#C0454F;color:#fff}
+.m2title{font-size:15px;font-weight:700;color:#1C1B1A;line-height:1.28;letter-spacing:-.01em}
+.m2au{display:flex;align-items:center;gap:7px;font-size:8.5px;color:#6B6355}
+.m2au i{width:20px;height:20px;border-radius:50%;background:#2A2724;color:#fff;display:grid;place-items:center;font-size:9px;font-weight:700;font-style:normal}
+.m2tools{display:flex;gap:5px;border-top:1px solid #EFE9E0;border-bottom:1px solid #EFE9E0;padding:7px 0}
+.m2tools span{flex:1;text-align:center;font-size:8.5px;color:#6B6355;font-weight:600}
+.m2tools span.on{color:#C0454F}
+.m2text{font-size:10px;line-height:1.9;color:#242322;text-align:justify;position:relative;overflow:hidden;flex:1;min-height:0}
+.m2text::after{content:'';position:absolute;inset:auto 0 0 0;height:26px;background:linear-gradient(to top,#fff,rgba(255,255,255,0))}
+.m2more{flex:0 0 auto;background:#FAF7F2;padding:8px 12px 12px}
+.m2more .l{font-size:8.5px;font-weight:700;color:#8A8172;margin-bottom:6px}
+.m2more .r{display:flex;gap:7px;align-items:center;background:#fff;border-radius:9px;padding:6px 8px;margin-top:5px}
+.m2more .r>div{flex:1;min-width:0}
+.m2more .r b{display:block;font-size:9.5px;color:#2A2724;font-weight:600;line-height:1.25}
+.m2more .r span{display:block;font-size:8px;color:#6B6355;margin-top:2px}
+.m2more .r i{flex:0 0 26px;height:26px;border-radius:7px;background:#F3E7E2;overflow:hidden}
+.m2more .r i img{width:100%;height:100%;object-fit:cover}
+
+
+/* round 12: the one-time choice strip */
+.pick{background:transparent;border-top:1px solid var(--line);padding:14px 0 0;display:flex;flex-wrap:wrap;gap:7px;align-items:center}
+.pick .pl{font-size:11.5px;font-weight:700;letter-spacing:.06em;color:var(--muted);margin-inline-end:4px}
+.pick .pc{font-size:13px;border-radius:99px;padding:5px 12px;background:var(--sand);color:var(--muted);font-weight:600}
+.pick .pc.on{background:var(--accent);color:#fff}
+.pick .pd{flex:0 0 100%;font-size:12.5px;color:var(--muted);margin-top:2px}
+.pick .pd b{color:var(--base)}
+
+
+/* round 12b: note lines, desktop window, tagging demo, topics */
+.note{background:rgba(255,255,255,.07);border-radius:14px;padding:16px 20px;margin-bottom:12px}
+.note.tint{background:rgba(58,91,208,.24)}
+.note .nt{font-size:17px;font-weight:600;color:#fff;line-height:1.35}
+.note .ns{font-size:13.5px;color:#C9C2B4;line-height:1.5;margin-top:5px}
+.win{background:#fff;border-radius:10px;overflow:hidden;margin:2px 0 10px;box-shadow:0 6px 16px rgba(26,26,66,.10)}
+.win .wb{display:flex;align-items:center;gap:4px;background:#EFE9E0;padding:5px 8px}
+.win .wb i{width:6px;height:6px;border-radius:50%;background:#c9cede}
+.win .wb span{margin-inline-start:auto;font-size:8px;color:#8A8172;direction:ltr}
+.win .wc{display:flex;gap:6px;padding:8px}
+.win .wart{flex:1;background:#FAF7F2;border-radius:6px;padding:7px 8px}
+.win .wart b{display:block;font-size:9.5px;color:#2A2724;line-height:1.3}
+.win .wart span{display:block;font-size:8px;color:#6B6355;margin-top:2px}
+.win .wside{flex:0 0 68px;display:flex;flex-direction:column;gap:3px}
+.win .wside em{font-style:normal;font-size:7.5px;font-weight:700;color:#C0454F}
+.win .wside i{height:9px;border-radius:3px;background:#F3E7E2;display:block}
+.tagdemo{display:flex;flex-wrap:wrap;gap:5px;align-items:center;background:rgba(255,255,255,.06);border-radius:10px;padding:8px 10px}
+.tagdemo .td{font-size:11px;font-weight:700;color:#E8927A}
+.tagdemo .tg{font-size:11.5px;background:rgba(255,255,255,.12);color:#fff;border-radius:99px;padding:3px 9px}
+.tagdemo .ok{font-size:11.5px;background:#C0454F;color:#fff;border-radius:99px;padding:3px 10px;font-weight:600}
+.topics{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:26px;flex:1;min-height:0;align-content:center}
+.tp{background:transparent;border-radius:0;border-top:2px solid var(--line);padding-top:24px;display:flex;flex-direction:column}
+.tp b{font-family:Deck;display:block;font-size:30px;color:var(--ink);font-weight:700}
+.tp span{display:block;font-size:18px;line-height:1.7;color:var(--muted);margin-top:22px}
+
+
+/* round 13: four asks, world conclusion, merged pilot */
+.askgrid.four{grid-template-columns:repeat(2,1fr);gap:30px 42px}
+.askgrid.four .ask{padding:26px 28px}
+.askgrid.four .ask .q{font-size:21px;line-height:1.4}
+.askgrid.four .ask .a{font-size:15px;margin-top:12px;padding-top:0;border-top:0}
+.ask .lead-to{margin-top:auto;padding-top:12px;font-size:12.5px;font-weight:700;color:var(--accent);letter-spacing:.03em}
+.concl{display:grid;grid-template-columns:1.25fr 1fr;gap:24px;margin-top:20px;flex:1;min-height:0;align-content:center}
+.concl .ct{background:#fff;border-radius:18px;padding:26px 30px;font-size:19px;line-height:1.65;color:var(--ink);display:flex;flex-direction:column;justify-content:center}
+.concl .ct b{color:var(--base)}
+.cnums{display:flex;flex-direction:column;gap:10px;justify-content:center}
+.cnums div{background:#fff;border-radius:14px;padding:14px 18px;display:flex;gap:14px;align-items:baseline}
+.cnums b{flex:0 0 auto;font-size:21px;color:var(--base);font-weight:700;white-space:nowrap}
+.cnums span{font-size:14px;line-height:1.45;color:var(--muted)}
+.cnums .hi{background:var(--accent-tint)}
+.cnums .hi b{color:var(--accent)}
+.cnums .hi span{color:var(--base)}
+.phase.hi{border-top-color:var(--coral)}
+
+
+/* round 13b: prototype fill, pace row */
+.pr-bot{position:absolute;top:224px;right:10px;left:10px;display:flex;flex-direction:column;gap:6px}
+.pr-done{background:#2A2724;color:#fff;border-radius:10px;padding:8px 0;text-align:center;font-size:10px;font-weight:600}
+.pr-nx{background:#fff;border-radius:10px;padding:7px 10px;display:flex;align-items:baseline;gap:8px}
+.pr-nx b{font-size:10px;color:#2A2724;font-weight:600}
+.pr-nx span{font-size:8.5px;color:#6B6355;margin-inline-start:auto}
+.cm-srcrow{display:flex;gap:7px;align-items:center;background:#FAF7F2;border-radius:9px;padding:6px 8px;margin-top:6px}
+.cm-srcrow i{flex:0 0 24px;height:24px;border-radius:7px;background:#F3E7E2;display:block}
+.cm-srcrow i.b{background:#EFE9E0}
+.cm-srcrow b{display:block;font-size:9.5px;font-weight:600;color:#2A2724;line-height:1.2}
+.cm-srcrow span{display:block;font-size:8px;color:#6B6355;margin-top:1px}
+.cm-ask{margin-top:8px;background:#F1ECE3;border-radius:99px;padding:7px 12px;font-size:9px;color:#8A8172}
+.lp-pace2{position:absolute;top:214px;right:10px;left:10px;background:#fff;border-radius:11px;padding:7px 10px;display:flex;align-items:center;gap:8px;z-index:2;box-shadow:0 1px 3px rgba(26,26,66,.07)}
+.lp-pace2 span{font-size:8.5px;color:#8A8172;font-weight:700}
+.lp-pace2 b{font-size:10px;color:#2A2724}
+.lp-pace2 em{margin-inline-start:auto;font-style:normal;font-size:9px;color:#C0454F;font-weight:700}
+.lp-pack .lp-list{margin-top:150px}
+
+
+/* ══ redesign: cover, archive ══ */
+.cov{background:var(--bg)}
+.covpanel{position:absolute;top:0;bottom:0;right:0;width:39%;padding:52px 58px 44px 38px;display:flex;flex-direction:column;justify-content:space-between;z-index:2}
+.covart{position:absolute;top:0;bottom:0;left:0;width:61%;overflow:hidden}
+.covart img{width:100%;height:100%;object-fit:cover;object-position:46% 45%;display:block;filter:brightness(1.16) saturate(1.05) contrast(.98)}
+.covart::after{content:"";position:absolute;inset:0;background:linear-gradient(to left,var(--bg) 0%,rgba(247,244,238,.85) 3%,rgba(247,244,238,0) 16%)}
+.covlogos{display:flex;align-items:center;gap:16px}
+.covlogos .l929{height:38px;width:auto}
+.covlogos .l200{height:42px;width:auto;opacity:.85}
+.covrule{width:1px;height:28px;background:var(--line)}
+.coveb{font-size:12.5px;font-weight:600;letter-spacing:.14em;color:var(--coral);margin-bottom:18px}
+.cov h1{font-size:53px;color:var(--ink);line-height:1.2}
+.covlead{font-family:Deck;font-size:17px;line-height:1.75;color:var(--muted);margin-top:22px;max-width:30ch}
+.covmeta{font-size:12.5px;color:var(--muted)}
+.archgrid{display:grid;grid-template-columns:1.12fr .88fr;gap:42px;margin-top:16px;align-items:center}
+.archhero .hn{font-family:Lit,Deck,serif;font-size:108px;line-height:.95;color:var(--ink);letter-spacing:-.01em}
+.archhero .hl{font-size:18px;line-height:1.6;color:var(--muted);margin-top:12px;max-width:30ch}
+.archhero .hl b{color:var(--ink)}
+.archsub{display:flex;gap:34px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.archsub b{font-family:Lit,Deck,serif;font-size:30px;color:var(--ink);display:block;line-height:1}
+.archsub span{display:block;font-size:13.5px;line-height:1.5;color:var(--muted);margin-top:6px;max-width:22ch}
+.archart{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.archart figure{margin:0}
+.archart img{width:100%;height:150px;object-fit:cover;border-radius:4px;display:block}
+.archart figcaption{font-size:12px;color:var(--muted);margin-top:8px}
+.archrow{display:grid;grid-template-columns:1.25fr .95fr .8fr;gap:30px;margin-top:20px}
+.archrow div{font-size:14.5px;line-height:1.6;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+.archrow span{display:block;font-size:12.5px;font-weight:700;letter-spacing:.06em;color:var(--coral);margin-bottom:7px}
+/* asks: no boxes */
+.ask{background:transparent;border-radius:0;padding:0;border-inline-start:2px solid var(--line);padding-inline-start:22px}
+.askgrid.four .ask{padding:0 0 0 0;padding-inline-start:22px}
+.askgrid.four .ask .q{font-family:Lit,Deck,serif;font-size:25px;line-height:1.4;font-weight:400;color:var(--ink)}
+.ask .a{font-size:15px;line-height:1.6;color:var(--muted);margin-top:10px;border-top:0;padding-top:0}
+.ask .lead-to{margin-top:12px;padding-top:0;font-size:12.5px;font-weight:700;color:var(--coral)}
+
+
+/* ══ redesign 2: closing, world, notes ══ */
+.clo{background:#242322;color:#F2EFE8}
+.cloart{position:absolute;top:0;bottom:0;left:0;width:44%;overflow:hidden}
+.cloart img{width:100%;height:100%;object-fit:cover;object-position:40% 45%;display:block;opacity:.95;filter:brightness(1.1) saturate(1.04)}
+.cloart::after{content:"";position:absolute;inset:0;background:linear-gradient(to left,#242322 0%,rgba(36,35,34,.85) 6%,rgba(36,35,34,0) 26%)}
+.clopanel{position:absolute;top:0;bottom:0;right:0;width:58%;padding:58px 76px 48px 40px;display:flex;flex-direction:column;justify-content:center;z-index:2}
+.clo .eyebrow{color:#A79E8C}
+.clo .eyebrow .num{color:#E8927A}
+.clo h2{color:#fff;font-size:40px}
+.cloline{font-family:Lit,Deck,serif;font-size:27px;line-height:1.5;color:#fff;margin-top:20px;max-width:34ch}
+.closub{font-size:16.5px;line-height:1.7;color:#C9C2B4;margin-top:18px;max-width:52ch}
+.closig{display:flex;gap:34px;align-items:flex-end;margin-top:46px;padding-top:22px;border-top:1px solid rgba(255,255,255,.16)}
+.closig b{display:block;font-size:15.5px;color:#fff;font-weight:600}
+.closig span{display:block;font-size:13px;color:#A79E8C;margin-top:3px}
+.closig .cc{margin-inline-start:auto;font-size:13px;color:#A79E8C;direction:ltr;text-align:right;line-height:1.6}
+.wgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;margin-top:22px;flex:1;min-height:0;align-content:start}
+.wtext p{font-size:19px;line-height:1.7;color:var(--ink);margin-bottom:14px;max-width:44ch}
+.wtext p b{color:var(--ink);font-weight:600}
+.wmodels{display:flex;gap:26px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.wmodels b{font-family:Lit,Deck,serif;font-size:26px;color:var(--muted);display:block;line-height:1}
+.wmodels span{display:block;font-size:12.5px;line-height:1.4;color:var(--muted);margin-top:5px;max-width:13ch}
+.wmodels .on b{color:var(--coral)}
+.wmodels .on span{color:var(--ink)}
+.wnums{display:flex;flex-direction:column;gap:20px}
+.wnums div{display:grid;grid-template-columns:auto auto 1fr;gap:10px;align-items:baseline;border-top:1px solid var(--line);padding-top:14px}
+.wnums em{font-family:Lit,Deck,serif;font-style:normal;font-size:38px;color:var(--ink);line-height:1}
+.wnums i{font-style:normal;font-size:13px;color:var(--muted)}
+.wnums span{font-size:14.5px;line-height:1.5;color:var(--muted)}
+.wnums .hi em{color:var(--coral)}
+.wnums .hi span{color:var(--ink)}
+.note{background:transparent;border-radius:0;padding:0;margin-bottom:18px;border-inline-start:2px solid rgba(255,255,255,.22);padding-inline-start:20px}
+.note.tint{background:transparent;border-inline-start-color:#E8927A}
+.note .nt{font-size:17px;font-weight:600;color:#fff;line-height:1.4}
+.note .ns{font-size:13.5px;color:#C9C2B4;line-height:1.55;margin-top:6px}
+
+
+/* ══ paths: real 929 programme covers ══ */
+.pathgrid{display:grid;grid-template-columns:1fr 290px;gap:0;flex:1;min-height:0;align-items:start;margin-top:12px}
+.pathcol{display:flex;flex-direction:column;gap:16px;padding-top:2px}
+.pathlab{font-size:12.5px;font-weight:700;letter-spacing:.06em;color:var(--coral)}
+.covers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:560px}
+.covers figure{margin:0}
+.covers img{width:100%;height:126px;object-fit:cover;border-radius:3px;display:block}
+.covers figcaption{font-family:Lit,Deck,serif;font-size:16px;color:var(--ink);margin-top:8px}
+.pathrows{display:flex;flex-direction:column;gap:2px;max-width:620px}
+.pathrows div{display:grid;grid-template-columns:140px 1fr;gap:16px;padding:10px 0;border-bottom:1px solid var(--line)}
+.pathrows div:last-child{border-bottom:0}
+.pathrows b{font-size:15px;color:var(--ink);font-weight:600}
+.pathrows span{font-size:15.5px;line-height:1.55;color:var(--muted)}
+.pacebox{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.pacebox .pl{font-size:12.5px;font-weight:700;letter-spacing:.06em;color:var(--muted);margin-inline-end:4px}
+.pacebox .pc{font-size:13.5px;border-radius:99px;padding:5px 13px;background:var(--sand);color:var(--muted);font-weight:600}
+.pacebox .pc.on{background:var(--coral);color:#fff}
+.pathgrid .phcol .proto{position:absolute;left:74px;top:150px;margin:0;transform:scale(1.12);transform-origin:top center}
+
+
+/* archive: real article titles */
+.archrow .titl ul{list-style:none;margin:2px 0 0}
+.archrow .titl li{font-family:Lit,Deck,serif;font-size:15.5px;line-height:1.45;color:var(--ink);padding:2px 0}
+.archrow .titl li i{font-family:Deck;font-style:normal;font-size:12.5px;color:var(--muted);margin-inline-start:7px}
+.archrow .titl em{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:8px}
+
+
+/* ══ round 15: scale, hard splits, new compositions ══ */
+.covart::after{display:none}
+.covart{width:55%}
+.covpanel{width:45%;padding:50px 64px 44px 48px}
+.cov h1{font-family:Lit,Deck,serif;font-size:82px;line-height:1.0;color:var(--ink);font-weight:600;letter-spacing:-.012em}
+.cov h1 em{font-style:normal;color:var(--coral)}
+.cov h1 .c929{display:block;font-size:.7em;line-height:1;margin-bottom:14px;letter-spacing:.01em}
+.cov h1{margin-top:-4px}
+.covlead{font-family:Deck;font-size:18px;line-height:1.7;color:var(--muted);margin-top:26px;max-width:32ch}
+.coveb{font-size:13.5px;letter-spacing:.04em;margin-bottom:20px}
+
+/* slide 9 */
+.pgrid{display:grid;grid-template-columns:1.08fr .92fr;gap:44px;flex:1;min-height:0;align-items:start;margin-top:14px}
+.pchoice{display:flex;flex-direction:column}
+.plab{font-size:13px;font-weight:700;letter-spacing:.03em;color:var(--coral);margin-bottom:14px}
+.pchips{display:flex;flex-wrap:wrap;gap:9px;max-width:362px}
+.pchips span{font-family:Deck;font-size:18.5px;font-weight:600;border-radius:99px;padding:8px 17px;background:var(--sand);color:var(--muted)}
+.pchips span.on{background:var(--coral);color:#fff}
+.ptype{font-size:17px;color:var(--muted);margin-top:18px}
+.ptype b{color:var(--ink)}
+.parrow{color:var(--coral);height:50px;margin:20px 0 8px;width:230px}
+.parrow svg{width:100%;height:100%;display:block}
+.presult p{font-size:16.5px;line-height:1.7;color:var(--muted);margin-top:10px;max-width:46ch}
+.presult{margin-top:24px}
+.pres-t{font-size:24px;font-weight:700;line-height:1.35;color:var(--ink);letter-spacing:-.01em;max-width:24ch}
+.pgrid{position:relative}
+.pconn{position:absolute;top:198px;right:585px;width:158px;height:14px;color:var(--coral);pointer-events:none}
+.pconn svg{width:100%;height:100%;display:block}
+.presult p b{color:var(--ink)}
+.pnote{margin-top:32px;padding-top:18px;border-top:1px solid var(--line);font-size:16px;line-height:1.65;color:var(--muted);max-width:46ch}
+.pnote b{color:var(--ink);margin-inline-end:8px}
+.pphone{position:relative}
+.pphone .proto{position:absolute;left:150px;top:44px;transform:scale(1.07);transform-origin:top center}
+
+/* slide 10 */
+.bigcovers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:14px}
+.bigcovers figure{margin:0}
+.bcw{position:relative;height:266px;border-radius:3px;overflow:hidden}
+.bigcovers img{width:100%;height:100%;object-fit:cover;display:block}
+.bcw i{position:absolute;top:12px;right:12px;font-style:normal;font-family:Deck;font-size:11.5px;font-weight:700;letter-spacing:.03em;color:#fff;background:var(--coral);border-radius:99px;padding:4px 11px}
+.bct{background:var(--sand);display:grid;place-items:center;padding:24px;border:1px solid var(--line)}
+.bcx{text-align:center}
+.bcx b{font-family:Lit,Deck,serif;font-size:44px;font-weight:600;color:var(--ink);line-height:1.22;display:block}
+.bcx em{display:block;font-style:normal;font-family:Deck;font-size:13px;color:var(--muted);margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.bigcovers figcaption{font-family:Lit,Deck,serif;font-size:22px;color:var(--ink);margin-top:11px;line-height:1.25}
+.bigcovers figcaption span{display:block;font-family:Deck;font-size:13px;color:var(--muted);margin-top:5px;line-height:1.45}
+.bigcovers figure.open .bcw{outline:3px solid var(--coral);outline-offset:-3px}
+.pathsub{font-size:17px;line-height:1.6;color:var(--muted);margin-top:12px;max-width:62ch}
+.opsteps .rest b{color:var(--muted)}
+.opsteps .rest span{color:var(--muted);font-size:15px}
+.opsteps .done em{color:#9E9584}
+.opsteps .now em{color:var(--coral);font-weight:700}
+.pathfoot{display:grid;grid-template-columns:1fr 300px;gap:40px;margin-top:22px;flex:1;min-height:0}
+.pfx p{font-size:17.5px;line-height:1.65;color:var(--muted);max-width:52ch}
+.pfx p b{color:var(--ink)}
+.pfx p.sm{font-size:15.5px;margin-top:10px}
+.pfx .pacebox{margin-top:20px}
+.pfph{position:relative}
+.pfph .proto{position:absolute;left:44px;top:-286px;transform:scale(1.08);transform-origin:top center}
+
+/* slide 20 */
+.cloart::after{background:linear-gradient(to left,#242322 0%,rgba(36,35,34,.9) 4%,rgba(36,35,34,0) 22%)}
+.cloart{width:40%}
+.clopanel{width:60%;padding:56px 72px 46px 40px}
+.clo h2{font-family:Deck;color:#fff;font-size:56px;font-weight:700;line-height:1.12;letter-spacing:-.015em;max-width:20ch}
+.cloline{font-family:Deck;font-size:23px;font-weight:400;line-height:1.6;color:#E6E1D6;margin-top:24px;max-width:40ch}
+.clo h2 em{font-style:normal;color:#EC6A72}
+.closub{font-size:16px;line-height:1.7;color:#A79E8C;margin-top:16px;max-width:46ch}
+.cloout{margin-top:34px;display:grid;gap:14px;max-width:44ch}
+.cloout div{font-size:17px;line-height:1.5;color:#E6E1D6;display:grid;grid-template-columns:44px 1fr;align-items:baseline}
+.cloout b{font-family:Lit,Deck,serif;font-size:20px;color:#E8927A;font-weight:600}
+.closig{margin-top:82px;padding-top:26px}
+
+
+
+/* slide 14 - who we are (200Apps) */
+.abhead{display:flex;justify-content:space-between;align-items:flex-end;gap:30px}
+.abhead .abl{height:44px;width:auto;margin-bottom:2px;opacity:.92}
+.ablead{font-size:18.5px;line-height:1.7;color:var(--muted);margin-top:16px;max-width:60ch}
+.abnums{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:30px;border-top:1px solid var(--line);padding-top:30px}
+.abnums b{font-family:Lit,Deck,serif;font-size:80px;line-height:.92;color:var(--ink);display:block;letter-spacing:-.015em;font-weight:600}
+.abnums span{display:block;font-size:15.5px;line-height:1.5;color:var(--muted);margin-top:10px;max-width:24ch}
+.abflow{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:34px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px 0}
+.abflow div i{font-style:normal;font-family:Deck;font-size:12.5px;font-weight:700;color:var(--coral);display:block}
+.abflow div span{display:block;font-size:19.5px;color:var(--ink);margin-top:7px;line-height:1.25}
+.absec{margin-top:16px;font-size:15.5px;line-height:1.6;color:var(--muted)}
+.abprod{margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}
+.abprod .lab{font-size:13px;font-weight:700;letter-spacing:.03em;color:var(--coral);margin-bottom:14px}
+.abprod .row{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.pit{display:flex;align-items:center;gap:9px}
+.pit img{width:40px;height:40px;border-radius:10px;flex:none;object-fit:cover}
+.pit .ptx{width:40px;height:40px;border-radius:10px;flex:none;background:var(--coral);color:#fff;display:grid;place-items:center;font-size:8.5px;font-weight:700}
+.pit b{font-size:14.5px;color:var(--ink);font-weight:600;line-height:1.2}
+.abwall{margin-top:auto;padding-top:22px;border-top:1px solid var(--line);display:flex;align-items:center;gap:28px}
+.abwall .lab{flex:0 0 auto;font-size:13px;font-weight:700;letter-spacing:.03em;color:var(--coral)}
+.abwall .row{flex:1;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.abwall img{max-height:42px;max-width:112px;width:auto;height:auto;object-fit:contain;filter:grayscale(1)}
+
+/* slide 16 - stage duration under the stage name */
+.phase .pw{font-size:13px;font-weight:700;letter-spacing:.03em;color:var(--coral);margin-top:6px}
+
+/* slide 16 - what the Koren screens prove */
+.kb{list-style:none;margin:26px 0 0;padding:0}
+.kb li{font-size:16.5px;line-height:1.55;color:var(--muted);padding:13px 0;border-top:1px solid var(--line)}
+.kb li b{color:var(--ink);font-weight:700;margin-inline-end:5px}
+
+/* slide 13 - site, shared services, app */
+.bridge{display:grid;grid-template-columns:1fr 1.14fr 1fr;gap:38px;flex:1;min-height:0;margin-top:26px;align-items:stretch}
+.bcol{padding-top:18px;border-top:1px solid var(--line)}
+.bmid{padding:18px 30px 22px;border-top:2px solid var(--coral);background:var(--sand);position:relative;display:flex;flex-direction:column}
+.bmid::before,.bmid::after{content:"";position:absolute;top:46px;width:38px;border-top:1px solid var(--coral)}
+.bmid::before{right:-38px}.bmid::after{left:-38px}
+.bk{font-family:Deck;font-size:22px;font-weight:700;color:var(--ink);line-height:1.2}
+.bk.c{color:var(--coral)}
+.bsub{font-size:13px;color:var(--muted);margin-top:5px}
+.bcol p{font-size:15.5px;line-height:1.6;color:var(--muted);margin-top:14px}
+.bcol p b{display:block;color:var(--ink);font-weight:700;margin-bottom:4px}
+.bwin,.bph{background:#fff;border:1px solid var(--line);border-radius:8px;margin-top:16px;overflow:hidden}
+.bwb{display:flex;align-items:center;gap:5px;background:var(--sand);padding:7px 10px}
+.bwb i{width:6px;height:6px;border-radius:99px;background:#CFC6B6}
+.bwb span{margin-inline-start:auto;font-size:10px;color:var(--muted);direction:ltr}
+.bwc{padding:13px 14px 16px}
+.bwc b{display:block;font-size:13px;color:var(--ink);line-height:1.3}
+.bwc span{display:block;font-size:10.5px;color:var(--muted);margin-top:4px}
+.bwc u,.bpc u{display:block;height:6px;border-radius:99px;background:var(--sand);margin-top:9px;text-decoration:none}
+.bwc u.s,.bpc u.s{width:62%}
+.bph{border-radius:14px}
+.bpb{height:22px;background:#242322}
+.bpc{padding:12px 13px 15px}
+.bpc b{display:block;font-size:12.5px;color:var(--ink)}
+.bpc em{display:block;font-style:normal;font-size:10.5px;color:var(--muted);margin-top:11px;padding-top:9px;border-top:1px solid var(--line)}
+.bsvc{list-style:none;margin:16px 0 0;padding:0;counter-reset:bs}
+.bsvc li{counter-increment:bs;font-size:15.5px;line-height:1.55;color:var(--muted);padding:11px 0;border-bottom:1px solid #DDD4C5;position:relative;padding-inline-start:30px}
+.bsvc li:last-child{border-bottom:0}
+.bsvc li::before{content:counter(bs,decimal-leading-zero);position:absolute;inset-inline-start:0;top:13px;font-family:Deck;font-size:12px;font-weight:700;color:var(--coral)}
+.bsvc li b{color:var(--ink);font-weight:700}
+.btag{margin-top:auto;padding-top:16px;border-top:1px solid #DDD4C5}
+.btr{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:9px}
+.btr b{color:var(--muted);font-size:13px;font-weight:400;margin:0 1px}
+.btag .l{display:block;font-size:12px;font-weight:700;letter-spacing:.03em;color:var(--muted)}
+.btag .ai{font-size:12px;font-weight:700;color:var(--coral)}
+.btag .tg{font-size:12px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:3px 11px;color:var(--ink)}
+.btag .ok{font-size:12px;background:var(--coral);color:#fff;border-radius:99px;padding:3px 11px;font-weight:600}
+.bfoot{margin-top:22px;padding-top:20px;border-top:1px solid var(--line);font-size:17px;line-height:1.6;color:var(--muted);max-width:92ch}
+.bfoot b{color:var(--ink);font-weight:700}
+
+/* slide 11 - the two other ways, shown rather than described */
+.w3{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:6px}
+.w3p{margin:0}
+.w3c{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 15px 15px;min-height:196px}
+.w3tools{display:flex;align-items:center;gap:8px;padding-bottom:10px;border-bottom:1px solid var(--line);margin-bottom:11px}
+.w3tools span{font-size:12px;font-weight:700;color:var(--muted);background:var(--sand);border-radius:6px;padding:2px 8px}
+.w3tools b{margin-inline-start:auto;font-size:11.5px;color:var(--muted);font-weight:600}
+.w3v{font-family:Lit,Deck,serif;font-size:15.5px;line-height:1.6;color:var(--ink);margin:0 0 8px;display:flex;gap:7px}
+.w3v i{font-style:normal;font-family:Deck;font-size:10.5px;color:var(--coral);font-weight:700;flex:none;padding-top:4px}
+.w3pill{display:inline-block;font-size:11.5px;color:var(--coral);background:var(--accent-tint);border-radius:99px;padding:4px 11px;margin-top:2px}
+.w3pt{font-size:14px;font-weight:700;color:var(--ink);line-height:1.3}
+.w3ps{font-size:11.5px;color:var(--muted);margin-top:3px}
+.w3bar{height:4px;border-radius:99px;background:var(--sand);margin-top:14px;overflow:hidden}
+.w3bar i{display:block;width:41%;height:100%;background:var(--coral)}
+.w3tm{display:flex;justify-content:space-between;font-size:10.5px;color:var(--muted);margin-top:6px}
+.w3ctl{display:flex;align-items:center;gap:10px;margin-top:12px}
+.w3ctl span{font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:3px 9px}
+.w3ctl b{font-size:13px;color:#fff;background:var(--coral);width:26px;height:26px;border-radius:99px;display:grid;place-items:center}
+.w3nx{margin-top:13px;padding-top:10px;border-top:1px solid var(--line);font-size:11.5px;color:var(--muted);line-height:1.45}
+.w3p figcaption{font-size:14.5px;line-height:1.5;color:var(--muted);margin-top:12px}
+.w3p figcaption b{color:var(--ink);font-weight:700;margin-inline-end:5px}
+.w3x{margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}
+.w3x p{font-size:16px;line-height:1.65;color:var(--muted);max-width:58ch}
+.w3x p b{color:var(--ink)}
+.w3x p.sm{font-size:14.5px;margin-top:9px;color:var(--muted)}
+
+/* open path strip (slide 10) */
+.openpath{margin-top:26px;display:grid;grid-template-columns:262px 1fr;gap:34px;align-items:start;
+  border-top:2px solid var(--coral);padding-top:18px;position:relative}
+.openpath::before{content:"";position:absolute;top:-18px;right:0;width:calc((100% - 44px)/3);height:18px;border-right:2px solid var(--coral)}
+.ophead .opt{font-family:Deck;font-size:19px;color:var(--muted)}
+.ophead .opt b{color:var(--ink);font-weight:700}
+.ophead .opm{font-size:13.5px;color:var(--muted);margin-top:7px;line-height:1.5}
+.opbar{height:4px;border-radius:99px;background:var(--sand);margin-top:12px;overflow:hidden}
+.opbar i{display:block;width:25%;height:100%;background:var(--coral)}
+.opsteps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;align-items:start}
+.opsteps div b{font-family:Deck;font-size:15.5px;font-weight:700;color:var(--ink);display:block}
+.opsteps div span{display:block;font-family:Lit,Deck,serif;font-size:17.5px;color:var(--ink);margin-top:6px;line-height:1.25}
+.opsteps div em{display:block;font-style:normal;font-size:12px;color:var(--muted);margin-top:4px;line-height:1.4}
+.opsteps .done b{color:#9E9584}
+.opsteps .done span{color:#9E9584}
+.opsteps .now{background:#F6E7E4;border-radius:4px;margin:-8px -10px;padding:8px 10px}
+.opsteps .now b{color:var(--coral)}
+.pathline{margin-top:26px;padding-top:18px;border-top:1px solid var(--line)}
+.pathline p{font-size:17px;line-height:1.65;color:var(--muted);max-width:78ch}
+.pathline p b{color:var(--ink)}
+
+
+/* archive v2: one big illustration */
+.a2grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;min-height:0;align-items:center;margin-top:10px}
+.a2quote{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:start}
+.a2quote .q{font-family:Lit,Deck,serif;font-size:21px;line-height:1.5;color:var(--ink);text-wrap:balance}
+.a2quote .t{font-size:15.5px;line-height:1.6;color:var(--muted)}
+.a2quote .t b{display:block;color:var(--coral);font-size:12.5px;font-weight:700;letter-spacing:.03em;margin-bottom:7px}
+.a2art img{width:100%;height:300px;object-fit:cover;border-radius:3px;display:block}
+.a2cap{font-size:12.5px;color:var(--muted);margin-top:10px}
+.a2hero b{font-family:Lit,Deck,serif;font-size:96px;line-height:.9;color:var(--ink);display:block;letter-spacing:-.01em}
+.a2hero span{display:block;font-size:18.5px;line-height:1.55;color:var(--muted);margin-top:14px;max-width:32ch}
+.a2hero em{font-style:normal;color:var(--ink);font-weight:600}
+.a2sub{display:flex;gap:40px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.a2sub b{font-family:Lit,Deck,serif;font-size:32px;color:var(--ink);display:block;line-height:1}
+.a2sub span{display:block;font-size:13.5px;line-height:1.5;color:var(--muted);margin-top:6px;max-width:22ch}
+.a2titl{margin-top:18px;padding-top:15px;border-top:1px solid var(--line)}
+.a2titl ul{list-style:none;margin:8px 0 0;columns:2;column-gap:32px}
+.a2titl li{font-family:Lit,Deck,serif;font-size:16px;line-height:1.45;color:var(--ink);padding:3px 0;break-inside:avoid}
+.a2titl li i{font-family:Deck;font-style:normal;font-size:12px;color:var(--muted);margin-inline-start:6px}
+.a2titl em{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:10px}
+
+/* audit: micro-label contrast unified (AA) */
+.lp-tab,.lp-ss,.cm-tools,.cm-mk,.cm-ma,.cm-plh span,.cm-shs,.sh .sc,.tb{color:#6B6355}
+
+/* chrome */
+#chrome{position:fixed;bottom:14px;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:16px;z-index:20;font-size:12px;color:#8a8aa6;pointer-events:none}
+#dots{display:flex;gap:5px;pointer-events:auto}
+#dots i{width:6px;height:6px;border-radius:50%;background:#4a463f;cursor:pointer;transition:.2s}
+#dots i.on{background:#D94D58;width:17px;border-radius:3px}
+#cnt{font-variant-numeric:tabular-nums;min-width:44px;text-align:center}
+#hint{position:fixed;top:14px;left:16px;font-size:11.5px;color:#6a6a8a;z-index:20;transition:opacity .6s}
+
+#rotate{display:none;position:fixed;inset:0;z-index:60;background:var(--base-deep);align-items:center;justify-content:center;text-align:center;padding:36px}
+#rotate .t2{font-size:17px;font-weight:600;color:#fff;line-height:1.4}
+#rotate .s2{font-size:14px;color:#C9C2B4;line-height:1.6;margin-top:10px;max-width:24ch}
+@media (max-width:760px) and (orientation:portrait){#rotate{display:flex}}
+@media (prefers-reduced-motion:reduce){.slide,.sh,.wl,.tb,.lp-pack,.lp-pace,.lp-scr,.pr-card,.pr-fit,.pr-sw>i,.pr-full,.pr-badge,.pr-more-s>i,.cm-body,.cm-listen,.cm-scrim,.cm-chat,.cm-bub,.cm-src,.cm-prog i,.cm-tab{transition:none!important}.st-2 .pr-fchip.pr-dp,.st-1 .cm-eq i,.cm-eq i{animation:none!important}}
+
+@media print{
+  @page{size:1280px 720px;margin:0}
+  html,body{overflow:visible;background:#fff;height:auto}
+  #viewport{position:static;display:block}
+  #stage{transform:none!important;box-shadow:none;width:1280px;height:auto}
+  .slide{position:relative;opacity:1!important;transform:none!important;height:720px;break-after:page;page-break-after:always;pointer-events:auto;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .slide::after{display:none}
+  #chrome,#hint,#rotate{display:none}
+}
+</style>
+</head>
+<body>
+
+<div id="rotate"><div>
+  <div class="t2">סובבו את המכשיר לרוחב</div>
+  <div class="s2">המצגת בנויה למסך רחב. לצפייה נוחה מומלץ מחשב או טאבלט.</div>
+</div></div>
+<div id="hint">← → מעבר בין שקפים · F מסך מלא</div>
+
+<div id="viewport"><div id="stage">
+<!-- ══ 1 · open · cover ══ -->
+  <section class="slide on cov" data-act="open">
+    <div class="covart"><img src="assets/cover.jpg" alt=""></div>
+    <div class="covpanel">
+      <div class="covlogos">
+        <img src="assets/929-logo.svg" alt="929" class="l929">
+        <span class="covrule"></span>
+        <img src="assets/200apps-logo.png" alt="200Apps" class="l200">
+      </div>
+      <div>
+        <div class="coveb">הצעה לדיון · צוות 929</div>
+        <h1><span class="c929">929</span>חוויית לימוד<br><em>אישית</em></h1>
+        <div class="covlead">התוכן שבניתם, בחוויית קריאה והאזנה אישית, לצד הפרק היומי ובמסלולים לבחירה.</div>
+      </div>
+      <div class="covmeta">ספטמבר 2026 · הוכן עבור צוות 929 · 200Apps</div>
+    </div>
+  </section>
+
+  <section class="slide" data-act="them">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">01</span> מה שמענו, ומה כבר בנוי</div>
+      <h2>ארכיון עשיר וקהילת לומדים</h2>
+      <div class="a2grid">
+        <div class="a2art">
+          <img src="assets/art/chapter-shmuel-b-6.jpg" alt="">
+          <div class="a2cap">איור הפרק היומי · שמואל ב ו</div>
+        </div>
+        <div class="a2text">
+          <div class="a2hero"><b>17,824</b><span>מאמרים נכתבו סביב הפרקים, בידי <em>900 כותבים</em></span></div>
+          <div class="a2sub">
+            <div><b>929</b><span>פרקים, מבראשית ועד סוף התנ"ך, לפי הסדר</span></div>
+            <div><b>254</b><span>קבוצות לימוד פעילות</span></div>
+          </div>
+          <div class="a2titl">
+            <span class="plab">מה נכתב סביב פרק אחד, שמואל ב ו</span>
+            <ul><li>עליצות מלכותית <i>אמיר אשל</i></li><li>הכביסה המלוכלכת בחוץ <i>יהושע אנגלמן</i></li><li>בדידות סטרילית <i>קרני אלדד</i></li><li>צופה בדוד, חושבת על פלטיאל <i>יוכי ברנדס</i></li></ul>
+            <em>13 כתבות בעלות שם כותב, מתוך 23 פריטים סביב הפרק הזה</em>
+          </div>
+        </div>
+      </div>
+      <div class="a2quote">
+        <div class="q">"את התוכן אנחנו רוצים לשמר, אבל למצוא דרכי תצוגה וחוויות משתמש טובות יותר לצרוך אותו."</div>
+        <div class="t"><b>מה שמענו</b> לשפר את הדרך שבה צורכים את התוכן הקיים, ולהרחיב את אפשרויות הלימוד מעבר לפרק היומי, גם מעבר לתנ"ך.</div>
+      </div>
+      <div class="src">מקור: 929.org.il, דף הבית ודף ההצטרפות ועמוד הפרק (page/269), נבדק 16.9.2026. הציטוט מהשיחה המקדימה עם צוות 929.</div>
+    </div>
+  </section>
+
+  <section class="slide" data-act="them">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">02</span> דוגמאות לשאלות בזמן הלימוד</div>
+      <h2 class="h2l">מה לומד שואל את עצמו בערב, מול הפרק</h2>
+      <div class="askgrid four">
+        <div class="ask"><div class="q">"יש לי שבע דקות. מה הכי שווה לקרוא היום?"</div><div class="a">התקציר כבר קיים לכל פרק, אבל אינו מוצע לפי הזמן שיש ללומד.</div><div class="lead-to">מוביל ל: בחירת אורך</div></div>
+        <div class="ask"><div class="q">"אני אוהב מחקר, לא פרשנות קלאסית. אפשר לקבל קודם את זה?"</div><div class="a">17,824 המאמרים קיימים, אך אין להם תגית שמאפשרת להציע לפי העדפה.</div><div class="lead-to">מוביל ל: התאמה אישית</div></div>
+        <div class="ask"><div class="q">"הפרק מדבר על מנהיגות. יש עוד משהו על זה בתנ''ך?"</div><div class="a">"קריאה לפי נושאים" קיימת באתר, אך אינה מחוברת לפרק שנקרא עכשיו.</div><div class="lead-to">מוביל ל: מסלולי לימוד</div></div>
+        <div class="ask"><div class="q">"אני בדרך לעבודה. אפשר לשמוע את הפרק ואת הכתבה?"</div><div class="a">הקריינות, "מסע 929" ו"ויהי פודקאסט!" קיימים, אך לא כפלייליסט אחד לדרך.</div><div class="lead-to">מוביל ל: האזנה ושאלות</div></div>
+      </div>
+      <div class="foot">התשובה לכל אחת מהן כבר קיימת ב-929. <b>היא פשוט לא נמצאת במקום שבו נשאלת השאלה.</b></div>
+    </div>
+  </section>
+
+  <section class="slide dark" data-act="them">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">03</span> למה עכשיו</div>
+      <h2>קשיים שעלו בביקורות משתמשים</h2>
+      <div class="lead" style="max-width:66ch">האפליקציה הקיימת בחנויות מציגה את תכני האתר. הביקורות עליה מספרות סיפור עקבי: אוהבים את התוכן, נתקעים בדרך לפרק.</div>
+      <div class="grid" style="grid-template-columns:1.25fr .75fr;margin-top:22px;gap:26px;align-items:start">
+        <div class="grid" style="gap:12px">
+          <div class="quote" style="padding:20px 24px 18px"><div class="q">"רעיון מעולה ומבורך, אך האפליקציה מלאה באגים. חבל"</div><div class="who"><span class="star">★★★☆☆</span>גוגל פליי · יוני 2024</div></div>
+          <div class="quote" style="padding:20px 24px 18px"><div class="q">"היישומון מתנתק באופן אקראי ודורש התחברות מחדש מדי פעם"</div><div class="who"><span class="star">★★★☆☆</span>גוגל פליי · ספטמבר 2023</div></div>
+        </div>
+        <div class="note"><div class="nt">גרסת ה-iOS עודכנה לאחרונה ב-2.6.2020</div><div class="ns">גרסת האנדרואיד עודכנה ב-7.9.2026 (App Store ו-Google Play, נבדק 9.9.2026).</div></div><div class="note tint"><div class="nt">הביקורות קדמו לעדכון האחרון</div><div class="ns">נבדוק יחד אילו מהקשיים עדיין קיימים, ואילו כבר נפתרו.</div></div>
+      </div>
+      <div class="src dk">112 ביקורות כתובות בגוגל פליי נקראו ביולי 2026, 53 מהן בדירוג 3 כוכבים ומטה. התקנות וביקורות אינן מדד למשתמשים פעילים.</div>
+    </div>
+  </section>
+
+  <section class="slide" data-act="world">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">04</span> מה עושים בעולם</div>
+      <h2>מה מצאנו ב-12 מוצרי לימוד</h2>
+      <div class="wgrid">
+        <div class="wtext">
+          <p>929 נמצאת בדגם של <b>מנה יומית עם פרשנות</b>, יחד עם Bible in One Year, Lectio 365, Pray As You Go והרמב"ם היומי.</p>
+          <p>מה שמפריד בינה לבין הדגם המתקדם יותר אינו תוכן, אלא שלושה רכיבים: <b>מסלול, בחירת אורך ומעקב.</b></p>
+          <div class="wmodels">
+            <div><b>4</b><span>הקורפוס בכיס</span></div>
+            <div class="on"><b>5</b><span>מנה יומית עם פרשנות</span></div>
+            <div><b>3</b><span>תוכנית אישית סביב הטקסט</span></div>
+          </div>
+        </div>
+        <div class="wnums">
+          <div><em>6</em><i>מתוך 12</i><span>כבר מציעות מסלולים נושאיים לצד המחזור היומי</span></div>
+          <div><em>4</em><i>מתוך 12</i><span>מאפשרות לבחור אורך לאותה מנה יומית</span></div>
+          <div class="hi"><em>0</em><i>מתוך 12</i><span>מאפשרות שאלה חופשית על הטקסט עם מקורות מזוהים</span></div>
+        </div>
+      </div>
+      <div class="src">בדקנו 12 אפליקציות לימוד יומי שהמפרסם שלהן הוא המוסד שמפעיל את תוכנית הלימוד, מרשומות החנויות ומאתרי המוצר. זה המדגם שנבדק, ולא תמונה של כל השוק. נבדק ב-16.9.2026; אין בדגימה מוסדות מוסלמיים או הינדיים, ולכן כיוון הטעות האפשרית הוא תת-ספירה.</div>
+      <div class="foot">האזנה כבר קיימת ב-10 מתוך 12, ו-929 עומדת ברף. <b>הפער הוא בסדר, בקצב ובהתאמה.</b></div>
+    </div>
+  </section>
+
+  <section class="slide dark" data-act="product">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">05</span> מה אנחנו מציעים</div>
+      <h2 style="font-size:44px">לשמר את התוכן, לשדרג את החוויה</h2>
+      <div class="lead" style="max-width:70ch;margin-top:8px">אותו כותב, אותו טקסט, ודרך חדשה לפגוש אותם. מימין הכתבה כפי שהיא היום, משמאל אותה כתבה בהמחשה המוצעת.</div>
+      <div style="display:flex;justify-content:center;gap:80px;align-items:flex-start;margin-top:14px">
+        <div class="col5">
+          <div class="cap5">המצב הקיים</div>
+          <div class="phone"><img src="assets/current-app/app-04-t60s-nobar.png" alt=""></div>
+          <div class="cap">הכתבה כפי שהיא מוצגת היום</div>
+        </div>
+        <div class="col5">
+          <div class="cap5">המחשה מוצעת</div>
+          <div class="mock2">
+            <div class="m2top"><img src="assets/929-logo.svg" alt=""><span>פרשת השבוע · האזינו</span></div>
+            <div class="m2hero"><img src="assets/chapter-haazinu.jpg" alt="">
+              <div class="m2hs"><span class="k">דברים לב</span><b>שירת האזינו</b></div></div>
+            <div class="m2body">
+              <div class="m2tags"><span class="on">מחקר</span><span>מאמר אקדמי</span><span>6 דק׳</span></div>
+              <div class="m2title">מתי נכתבה שירת 'האזינו'</div>
+              <div class="m2au"><i>ד</i>דוד כהן-צמח · חוקר מקרא</div>
+              <div class="m2tools"><span>א+</span><span>א-</span><span class="on">האזנה</span><span>שמירה</span></div>
+              <div class="m2text">שירת האזינו היא שירה מופלאה, נשגבת ועל זמנית. יש לה מאפיינים סגנוניים מתקופות שונות, והשאלה מתי נכתבה מלווה את המחקר מאז ימי הביניים. נהוג לחלק את השירה לארבעה חלקים, ולכל אחד מהם אופי משלו.</div>
+            </div>
+            <div class="m2more"><div class="l">עוד סביב הפרק</div>
+              <div class="r"><i><img src="assets/chapter-haazinu.jpg" alt=""></i><div><b>שירת האזינו רלוונטית מתמיד</b><span>יואל בן נון · פרשנות</span></div></div>
+            </div>
+          </div>
+          <div class="cap">אותה כתבה, בגודל אות שנשלט, עם האזנה ועם שאר הכתבות מתחתיה</div>
+        </div>
+      </div>
+      <div class="foot">אותו טקסט, אותם כותבים. <b>השינוי הוא בחוויה, לא בתוכן.</b></div>
+    </div>
+  </section>
+
+  <section class="slide" data-act="product">
+    <div class="pad">
+      <div class="eyebrow" style="margin-bottom:6px"><span class="num">06</span> החוויה המוצעת</div>
+      <h2 class="c8h">הפרק היומי במרכז, עם <b>אפשרויות להעמקה אישית</b></h2>
+      <div class="capstage proto cap8" data-demo="7" data-auto="3800" data-loop="1">
+        <div class="capside"><div class="caps"><div class="lay">שלוש יכולות מרכזיות</div><div class="slot" data-i="0"><svg viewBox="0 0 24 24"><path d="M4 5h7v14H4zM13 5h7v14h-7z"/><path d="M13 9.5h7"/></svg><div class="n">התאמה אישית</div><i class="nb">1</i></div><div class="slot" data-i="1"><svg viewBox="0 0 24 24"><path d="M5 19c4-6 3-9 7-9s3 5 7-5"/><circle cx="5" cy="19" r="1.5"/><circle cx="19" cy="5" r="1.5"/></svg><div class="n">מסלולי לימוד</div><i class="nb">2</i></div><div class="slot" data-i="2"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 16 0"/><rect x="3" y="12" width="4" height="6" rx="1.5"/><rect x="17" y="12" width="4" height="6" rx="1.5"/></svg><div class="n">קריאה, האזנה ושאלות</div><i class="nb">3</i></div><div class="lay">כלים שתומכים בחוויה</div><div class="slot" data-i="3"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v5l3 2"/></svg><div class="n">תקציר ליום עמוס</div><i class="nb x"></i></div><div class="slot" data-i="4"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12l2.4 2.4 4.6-4.8"/></svg><div class="n">מעקב וסימון "קראתי"</div><i class="nb x"></i></div><div class="slot" data-i="5"><svg viewBox="0 0 24 24"><path d="M18 9.4a6 6 0 1 0-12 0c0 5.6-2.4 7.2-2.4 7.2h16.8S18 15 18 9.4z"/><path d="M13.7 20.2a2 2 0 0 1-3.4 0"/></svg><div class="n">תזכורת בזמן שבחרת</div><i class="nb x"></i></div><div class="slot" data-i="6"><svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2.5 19c.6-3 3-4.5 5.5-4.5s4.9 1.5 5.5 4.5M11 19c.4-2.7 2.5-4.5 5-4.5s4.6 1.8 5.5 4.5"/></svg><div class="n">חיבור לקהילה הקיימת</div><i class="nb x"></i></div></div>
+          <div class="legend"><i class="nb">1</i><i class="nb">2</i><i class="nb">3</i><span>בשלוש הראשונות נעמיק בשקפים הבאים.</span></div></div>
+        <div class="midcol"><div class="capdesc"><div class="cd" data-cd="0"><div class="cdt">הלומד בוחר, והארכיון מסתדר סביבו.</div><ul><li><b>תחומי עניין וסוג תוכן</b> שהוא סימן, לא שאנחנו ניחשנו</li><li><b>כל התוכן נשאר נגיש</b>, גם נקודות מבט שלא נבחרו</li></ul></div><div class="cd" data-cd="1"><div class="cdt">הפרק היומי נשאר הלב. לצדו, מסלולים לבחירה.</div><ul><li><b>תיק נושא או סדרה</b>: מנהיגות, ספר משלי, 20 השירים של רחל</li><li><b>התקדמות ברצף</b>, בקצב אישי, וממשיכים מהמקום האחרון</li></ul></div><div class="cd" data-cd="2"><div class="cdt">אותו פרק, שלוש דרכים ללמוד אותו.</div><ul><li><b>קריאה נקייה או האזנה</b>, בשליטה מהאוזניות</li><li><b>שאלה</b> שמפנה למקורות מזוהים, ומציגה גם דעות שונות</li></ul></div><div class="cd" data-cd="3"><div class="cdt">אין זמן לפרק שלם? יש תקציר.</div><ul><li><b>התקציר שכבר קיים</b> לכל פרק, כ-3 דקות</li><li>פספסת? <b>השלמה בתקציר</b>, והרצף נשמר</li></ul></div><div class="cd" data-cd="4"><div class="cdt">לדעת איפה אני.</div><ul><li>סימון <b>"קראתי"</b> והתקדמות מתוך 929</li><li>מה ש<b>הלומדים ביקשו בחזרה</b> בביקורות</li></ul></div><div class="cd" data-cd="5"><div class="cdt">תזכורת אחת, בזמן שבחרת.</div><ul><li><b>זמן הפוש</b> נקבע על ידי הלומד</li><li>על הפרק, או על <b>כתבה מתחום העניין</b>. משפט אחד, פעולה אחת</li></ul></div><div class="cd" data-cd="6"><div class="cdt">הקהילה שכבר קיימת, במרחק לחיצה.</div><ul><li><b>קבוצות הוואטסאפ</b> הפעילות של 929, מתוך העמוד</li><li><b>מי לומד איתי</b> במסלול, בהצטרפות מהעמוד הראשי</li></ul></div></div>
+          <div class="orgval"><span class="ol">מה נמדד</span><p>אילו תכנים נפתחים, אילו מסלולים מושלמים, והאם חוזרים ללמוד.</p></div></div>
+        <div class="phcol8"><div class="dev st-0"><div class="notch"></div><div class="cs" data-cs="0"><div class="fp-hd"><div class="t">הפרק היומי · שמואל ב ו</div><div class="s">929 · ממשיכים מהמקום שעצרתי</div></div><div class="fp-body"><div class="fp-seg"><span class="on">תקציר · 3 דק׳</span><span>הפרק · 7 דק׳</span><span>האזנה · 36</span></div><div class="fp-btn">פתיחת הפרק</div><div class="fp-card"><div class="fp-ring"><svg viewBox="0 0 74 74"><circle cx="37" cy="37" r="30" stroke="#E2DED5" stroke-width="7" fill="none"/><circle cx="37" cy="37" r="30" stroke="#C0454F" stroke-width="7" fill="none" stroke-linecap="round" stroke-dasharray="188" stroke-dashoffset="134"/></svg><div class="c"><b>269</b><span>מתוך 929 פרקים</span><div style="font-size:9.5px;color:#C0454F;font-weight:700;margin-top:4px">7 ימים ברצף</div></div></div></div><div class="fp-lbl">מותאם לך</div><div class="fp-card"><div class="rt">צופה בדוד, חושבת על פלטיאל</div><div class="ra">יוכי ברנדס · ספרות</div></div><div class="fp-lbl">מסלולים</div><div class="fp-chips"><span class="k">מנהיגות</span><span>אור</span><span>ספר משלי</span></div></div></div><div class="cs" data-cs="1"><div class="fp-hd"><div class="t">מסלולים</div><div class="s">הפרק היומי נשאר הלב</div></div><div class="fp-body"><div class="fp-player" style="padding:11px 12px"><div class="ps">הפרק היומי · שמואל ב</div><div class="pt">שמואל ב ו</div><div class="fp-btn" style="background:#C0454F;margin-top:8px;padding:6px 10px;font-size:9.5px;width:max-content">ממשיכים</div></div><div class="fp-lbl">תיקי נושא</div><div class="fp-chips"><span class="k">מנהיגות · נושא החודש</span><span>אור</span><span>חושך</span><span>גוף ונפש</span><span>צדק חברתי</span></div><div class="fp-lbl">סדרות</div><div class="fp-row"><div class="ic8"></div><div><div class="rt">20 השירים הגדולים של רחל</div><div class="ra">סדרה · 20 מפגשים</div></div><div class="rb">התחילו</div></div><div class="fp-row"><div class="ic8"></div><div><div class="rt">ספר משלי</div><div class="ra">סדרה · שבתות בלבד</div></div><div class="rb">התחילו</div></div><div class="fp-row"><div class="ic8"></div><div><div class="rt">מדרשים על אהבה</div><div class="ra">סדרה</div></div><div class="rb">התחילו</div></div></div></div><div class="cs" data-cs="2"><div class="fp-hd"><div class="t">דברים לב</div><div class="s">שירת האזינו · פרשת השבוע</div></div><div class="fp-body"><div class="fp-seg"><span>קריאה</span><span class="on">האזנה</span><span>שאל את הפרק</span></div><div class="fp-player"><div class="pt">מסע 929 של הרב שי פירון</div><div class="ps">דברים - פרק לב · 1.25x · שליטה מהאוזניות</div><div class="bar"><i></i></div><div class="pm"><span>14:48</span><span>36:00</span></div></div><div class="fp-lbl">פלייליסט: מנהיגות · הבא בתור</div><div class="fp-row"><div class="ic8"></div><div><div class="rt">קריינות הפרק</div><div class="ra">7 דק׳</div></div></div><div class="fp-row"><div class="ic8"></div><div><div class="rt">בקטנה על הפרק</div><div class="ra">4 דק׳</div></div></div><div class="fp-row"><div class="ic8"></div><div><div class="rt">ויהי פודקאסט!</div><div class="ra">פרק</div></div></div><div class="fp-btn l">שאל את הפרק: "למה משה פונה אל השמים?"</div></div></div><div class="cs" data-cs="3"><div class="fp-hd"><div class="t">שמואל ב ו</div><div class="s">הפרק היומי · כמה זמן יש לך היום?</div></div><div class="fp-body"><div class="fp-seg" style="font-size:8.5px"><span class="on" style="font-size:8.5px">תקציר · 3 דק׳</span><span style="font-size:8.5px">הפרק · 7 דק׳</span><span style="font-size:8.5px">האזנה · 36 דק׳</span></div><div class="fp-card" style="background:#F3E7E2"><div class="rt" style="color:#C0454F">התקציר היומי</div><div class="ra" style="color:#242322;line-height:1.5;margin-top:4px">דוד מעלה את ארון ה׳ לירושלים. הדרך נקטעת במות עוזא, ונשלמת בריקוד של המלך לפני הארון ובוויכוח עם מיכל.</div><div class="fp-tg" style="margin-top:7px"><span class="on">קריאה 3 דק׳</span><span>האזנה 4 דק׳</span></div></div><div class="fp-row"><div class="ic8"></div><div><div class="rt">רוצה עוד? כתבה אחת מהתחום שלך</div><div class="ra">מחקר · טור קצר</div></div><div class="rb">לקריאה</div></div><div class="fp-card"><div class="rt">פספסת השבוע: שמואל ב ה</div><div class="ra">השלמה בתקציר · 3 דק׳ · הרצף נשמר</div></div><div class="fp-btn">סיימתי להיום</div></div></div><div class="cs" data-cs="4"><div class="fp-hd"><div class="t">ההתקדמות שלי</div><div class="s">929 פרקים, יום אחר יום</div></div><div class="fp-body"><div class="fp-card"><div class="fp-ring"><svg viewBox="0 0 74 74"><circle cx="37" cy="37" r="30" stroke="#E2DED5" stroke-width="7" fill="none"/><circle cx="37" cy="37" r="30" stroke="#C0454F" stroke-width="7" fill="none" stroke-linecap="round" stroke-dasharray="188" stroke-dashoffset="134"/></svg><div class="c"><b>269</b><span>מתוך 929 פרקים</span><div style="font-size:9.5px;color:#C0454F;font-weight:700;margin-top:4px">7 ימים ברצף</div></div></div></div><div class="fp-card"><div class="fp-lbl" style="margin-bottom:4px">השבוע</div><div class="fp-chk"><i></i>שמואל ב ד</div><div class="fp-chk"><i></i>שמואל ב ה</div><div class="fp-chk"><i class="o"></i>שמואל ב ו · היום</div></div><div class="fp-card"><div class="rt">סיימתם את ספר שמואל א</div><div class="ra">תג השלמה · 31 פרקים</div></div><div class="fp-card"><div class="rt">תיק "מנהיגות"</div><div class="ra">מפגש 4 מתוך 12</div></div></div></div><div class="cs" data-cs="5"><div class="fp-lock"><div class="tm">07:30</div><div class="dt">יום ד׳ · הזמן שבחרת</div><div class="fp-notif"><div class="a"><span>929</span><span>עכשיו</span></div><div class="t">הפרק של היום מחכה: שמואל ב ו</div><div class="s">7 דקות קריאה, או תקציר של 3 דקות</div></div><div class="fp-notif" style="margin-top:8px;opacity:.85"><div class="a"><span>929 · תיק מנהיגות</span><span>אתמול</span></div><div class="t">כתבה חדשה בתחום שבחרת</div><div class="s">שופטים ד · דבורה</div></div><div style="font-size:9px;color:#C9C2B4;margin-top:22px">תזכורת אחת ביום · בזמן ובנושא שבחרת</div></div></div><div class="cs" data-cs="6"><div class="fp-hd"><div class="t">929 - לימוד פרקי התנ"ך</div><div class="s">הפרק היומי · שמואל ב ו</div></div><div class="fp-body"><div class="fp-chips"><span>קריינות</span><span>תקציר</span><span>כתבות עומק</span></div><div class="fp-lbl">קבוצות וואטסאפ פעילות</div><div class="fp-row"><div class="ic8" style="background:#dcfce7"></div><div><div class="rt">קצרים על הפרק</div><div class="ra">קבוצת תוכן</div></div><div class="rb">הצטרפות</div></div><div class="fp-row"><div class="ic8" style="background:#dcfce7"></div><div><div class="rt">תזכורות לשיעורים</div><div class="ra">קבוצת תזכורות</div></div><div class="rb">הצטרפות</div></div><div class="fp-card"><div class="fp-lbl">לומדים איתך במסלול היום</div><div style="display:flex;align-items:center;gap:8px;margin-top:5px"><div class="fp-av"><i></i><i></i><i></i><i></i></div><span style="font-size:9.5px;color:#6B6355">ועוד רבים</span></div></div><div class="fp-btn">הצטרפות למסלול</div><div class="fp-btn l">שאל את הפרק</div></div></div></div></div>
+      </div>
+    <div class="foot" style="padding-top:12px;margin-top:10px">שבע יכולות, ארכיון אחד. <b>בשלוש הראשונות נעמיק עכשיו.</b></div>
+    </div>
+  </section>
+
+  <section class="slide" data-act="product">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">07</span> מקרוב · 1 מתוך 3 · התאמה אישית</div>
+      <h2 class="h2c">התוכן לפי תחומי העניין של הלומד</h2>
+      <div class="pgrid">
+        <div class="pconn"><svg viewBox="0 0 160 12" preserveAspectRatio="none"><path d="M159 6 H13" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M20 1.5 L13 6 L20 10.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="pchoice">
+          <div class="plab">הלומד בוחר, פעם אחת</div>
+          <div class="pchips">
+            <span class="on">מחקר</span><span class="on">ספרות</span>
+            <span>פרשנות קלאסית</span><span>פילוסופיה</span><span>אמנות</span>
+          </div>
+          <div class="ptype">סוג התוכן: טור קצר · <b>מאמר אקדמי</b> · פרשנות יצירתית</div>
+          <div class="presult">
+            <div class="pres-t">ומאז כל פרק נפתח במה שמתאים לו</div>
+            <p>שאר הכתבות, כולל נקודות מבט שלא בחר, נמצאות מתחת. מי שלא בוחר מקבל תמהיל מאוזן, בלי הרשמה.</p>
+          </div>
+          <div class="pnote"><b>מה נדרש</b> תיוג לפי נושא וסוג, בעזרת AI ובאישור העורך, וחשבון שזוכר את הבחירה.</div>
+        </div>
+        <div class="pphone"><div class="proto" data-demo="3" data-auto="3600" data-start="1">
+  <div class="dev st-0">
+    <div class="notch"></div>
+
+    <!-- persistent layer: chapter page, דברים לב -->
+    <div class="pr-bg">
+      <div class="pr-top">
+        <div class="pr-brand">929<small>- תנך ביחד</small></div>
+        <div class="pr-icons">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </div>
+      </div>
+
+      <div class="pr-hd">
+        <div class="pr-kicker"><b>הפרק היומי</b> שמואל ב ו · דוד מעלה את הארון</div>
+        <div class="pr-verse">וְדָוִד מְכַרְכֵּר בְּכָל־עֹז לִפְנֵי ה׳…</div>
+      </div>
+
+      <div class="pr-fit">
+        <span class="pr-fit-lbl">מותאם לך</span>
+        <span class="pr-fchip">מחקר</span>
+        <span class="pr-fchip">ספרות</span>
+        <span class="pr-fchip pr-dp">
+          <span class="pr-sw"><i class="a">מאמר אקדמי</i><i class="b">טור קצר</i></span>
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </span>
+      </div>
+
+      <div class="pr-list">
+        <div class="pr-card pr-c1 pr-hit">
+          <div class="pr-ttl">צופה בדוד, חושבת על פלטיאל</div>
+          <div class="pr-au">יוכי ברנדס</div>
+          <div class="pr-meta">
+            <span class="pr-tag">ספרות</span>
+            <span class="pr-tag pr-dep pr-sw"><i class="a">מאמר אקדמי</i><i class="b">תקציר · טור קצר</i></span>
+            <span class="pr-full">המאמר המלא</span>
+          </div>
+        </div>
+        <div class="pr-card pr-c2">
+          <div class="pr-ttl">ממעמקים קראתיך · מיטיבי לכת</div>
+          <div class="pr-au">עיון מעמיק בשמואל ב ו</div>
+          <div class="pr-meta">
+            <span class="pr-tag">מחקר</span>
+            <span class="pr-tag pr-dep">מאמר אקדמי</span>
+          </div>
+        </div>
+        <div class="pr-card pr-c3">
+          <div class="pr-ttl">המלך, הנסיכה והארון</div>
+          <div class="pr-au">מיכאל הנדלזלץ</div>
+          <div class="pr-meta">
+            <span class="pr-tag">ספרות</span>
+          </div>
+        </div>
+        <div class="pr-card pr-c4">
+          <div class="pr-ttl">רבע שעה על הפרק</div>
+          <div class="pr-au">הרב בני לאו</div>
+          <div class="pr-meta">
+            <span class="pr-tag">פרשנות</span>
+            <span class="pr-tag pr-dep">האזנה</span>
+          </div>
+        </div>
+        <div class="pr-bot"><div class="pr-done">סיימתי לקרוא · סימון</div><div class="pr-nx"><b>הפרק הבא: שמואל ב ז</b><span>מחר, 07:30</span></div></div>
+        <div class="pr-more">
+          <div class="pr-more-t">עוד 12 פריטים סביב הפרק
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="pr-more-s">
+            <i class="a">חצי שעה על הפרק · 929 בקטנה</i>
+            <i class="b">משפט וחצי על הפרק היומי · 929 בקטנה</i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- step 1 sheet -->
+
+    <!-- step 2 sheet -->
+
+    <!-- step 0: onboarding, shown by the controller only on st-0 -->
+    <div class="wl">
+      <div class="pr-ob">
+        <div class="pr-ob-hd">
+          <div class="pr-ob-brand">929<small>- תנך ביחד</small></div>
+          <div class="pr-ob-q">מה מעניין אותך?</div>
+          <div class="pr-ob-s">נבחר יחד מה יופיע לך ליד כל פרק</div>
+        </div>
+        <div class="pr-ob-bd">
+          <div class="pr-lbl">תחומי עניין</div>
+          <div class="pr-chips">
+            <span class="pr-chip">פרשנות קלאסית</span>
+            <span class="pr-chip on"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>מחקר</span>
+            <span class="pr-chip">פילוסופיה</span>
+            <span class="pr-chip">אמנות</span>
+            <span class="pr-chip on"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>ספרות</span>
+          </div>
+          <div class="pr-lbl">סוג התוכן המועדף</div>
+          <div class="pr-seg">
+            <span>טור קצר</span><span class="on">מאמר אקדמי</span><span>פרשנות יצירתית</span>
+          </div>
+          <div class="pr-btn">המשך</div>
+          <div class="pr-skip"><u>אפשר גם לדלג</u> · נתאים לך אוטומטית</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pbar"><i class="on"></i><i></i><i></i></div>
+</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-act="product">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">08</span> מקרוב · 2 מתוך 3 · מסלולי לימוד</div>
+      <h2 class="h2c">מסלולי לימוד, בתנ"ך ומעבר לו</h2>
+      <div class="pathsub">מארזי הקריאה כבר שלכם. מה שחסר להם: קצב, מעקב ומקום לצד הפרק היומי.</div>
+      <div class="bigcovers">
+        <figure class="open"><div class="bcw"><img src="assets/art/packs/pack-hakol-hevel.jpg" alt=""><i>פתוח עכשיו</i></div><figcaption>הכול הבל<span>מארז קריאה · קהלת</span></figcaption></figure>
+        <figure><div class="bcw"><img src="assets/art/packs/pack-et-mi-at-ohevet.jpg" alt=""></div><figcaption>את מי את אוהבת<span>מארז קריאה · יוסף ואחיו</span></figcaption></figure>
+        <figure><div class="bcw bct"><div class="bcx"><b>מעבר<br>לתנ"ך</b><em>מתוך רשימת המסלולים שלכם</em></div></div><figcaption>20 השירים הגדולים של רחל<span>סדרה · 20 מפגשים</span></figcaption></figure>
+      </div>
+      <div class="openpath">
+        <div class="ophead">
+          <div class="opt">המסלול הפתוח · <b>הכול הבל</b></div>
+          <div class="opm">2 מתוך 7 מפגשים · בקצב שבחרתי</div>
+          <div class="opbar"><i></i></div>
+        </div>
+        <div class="opsteps">
+          <div class="done"><b>קהלת א</b><span>הבל הבלים</span><em>הושלם</em></div>
+          <div class="done"><b>קהלת ג</b><span>לכל זמן ועת</span><em>הושלם</em></div>
+          <div class="now"><b>קהלת ז</b><span>טוב שם משמן טוב</span><em>המפגש הבא</em></div>
+          <div><b>קהלת ט</b><span>לך אכול בשמחה לחמך</span><em>לפנינו</em></div>
+          <div class="rest"><b>עוד 3</b><span>מפגשים בהמשך</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="slide" data-act="product">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">09</span> מקרוב · 3 מתוך 3 · קריאה, האזנה ושאלות</div>
+      <h2 class="h2c">אותו פרק, שלוש דרכים ללמוד אותו</h2>
+      <div class="fx">
+        <div class="txtcol">
+          <div class="w3">
+            <figure class="w3p">
+              <div class="w3c">
+                <div class="w3tools"><span>א+</span><span>א-</span><b>לילה</b></div>
+                <p class="w3v"><i>יד</i>וְדָוִד מְכַרְכֵּר בְּכָל־עֹז לִפְנֵי ה׳, וְדָוִד חָגוּר אֵפוֹד בָּד</p>
+                <p class="w3v"><i>טז</i>וַתֵּרֶא אֶת־הַמֶּלֶךְ דָּוִד מְפַזֵּז וּמְכַרְכֵּר לִפְנֵי ה׳, וַתִּבֶז לוֹ בְּלִבָּהּ</p>
+                <div class="w3pill">ביאור שטיינזלץ</div>
+              </div>
+              <figcaption><b>קריאה</b> גודל אות נשלט, מצב לילה, ובאור לצד הפסוק</figcaption>
+            </figure>
+            <figure class="w3p">
+              <div class="w3c">
+                <div class="w3pt">מסע 929 של הרב שי פירון</div>
+                <div class="w3ps">שמואל ב · פרק ו</div>
+                <div class="w3bar"><i></i></div>
+                <div class="w3tm"><span dir="ltr">14:48</span><span dir="ltr">36:00</span></div>
+                <div class="w3ctl"><span>1.25x</span><b>▶</b><span>מהאוזניות</span></div>
+                <div class="w3nx">פלייליסט: מנהיגות · הבא בתור: קריינות הפרק</div>
+              </div>
+              <figcaption><b>האזנה</b> פלייליסט לפי נושא, בשליטה מהאוזניות</figcaption>
+            </figure>
+          </div>
+          <div class="w3x">
+            <p><b>השאלה</b> נשענת על מקורות מזוהים מתוך 929 ומפנה לכתבות ולכותבים. כשיש מחלוקת מוצגות גם דעות שונות, וכשאין תשובה במקורות המערכת אומרת זאת.</p>
+            <p class="sm"><b>ול-929</b> מה שואלים על הפרק, ומה עדיין לא נמצא בתוכן.</p>
+          </div>
+        </div>
+        <div class="phcol"><div class="proto" data-demo="3" data-auto="4200" data-start="2">
+  <div class="dev st-0">
+    <div class="notch"></div>
+    <div class="cm-scr">
+
+      <!-- persistent header: chapter + mode switcher -->
+      <div class="cm-hdr">
+        <div class="cm-ttl">שמואל ב ו</div>
+        <div class="cm-sub">דוד מעלה את הארון · הפרק היומי</div>
+        <svg class="cm-bm" viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4z"/></svg>
+        <div class="cm-seg">
+          <div class="cm-tab">קריאה</div>
+          <div class="cm-tab">האזנה</div>
+          <div class="cm-tab">שאל את הפרק</div>
+        </div>
+      </div>
+
+      <!-- persistent background: reading mode -->
+      <div class="cm-body">
+        <div class="cm-tools">
+          <div class="cm-fs"><b>א+</b><b>א-</b></div>
+          <div class="cm-sep"></div>
+          <div class="cm-night">
+            <svg class="cm-ico" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+            <span>לילה</span><div class="cm-sw"></div>
+          </div>
+          <svg class="cm-ico cm-share" viewBox="0 0 24 24"><path d="M12 15V4M8 8l4-4 4 4M5 13v6h14v-6"/></svg>
+        </div>
+        <div class="cm-verses">
+          <div class="cm-hl">
+            <p class="cm-v"><span class="cm-n">יד</span>וְדָוִד מְכַרְכֵּר בְּכָל־עֹז לִפְנֵי ה׳ וְדָוִד חָגוּר אֵפוֹד בָּד</p>
+            <div class="cm-pill"><svg viewBox="0 0 24 24"><path d="M4 5h7v14H4zM13 5h7v14h-7z"/></svg>ביאור שטיינזלץ</div>
+          </div>
+          <p class="cm-v"><span class="cm-n">טז</span>וּמִיכַל בַּת־שָׁאוּל נִשְׁקְפָה בְּעַד הַחַלּוֹן וַתֵּרֶא אֶת־הַמֶּלֶךְ דָּוִד מְפַזֵּז וּמְכַרְכֵּר לִפְנֵי ה׳ וַתִּבֶז לוֹ בְּלִבָּהּ</p>
+          <p class="cm-v"><span class="cm-n">כא</span>וַיֹּאמֶר דָּוִד אֶל־מִיכַל לִפְנֵי ה׳ אֲשֶׁר בָּחַר־בִּי מֵאָבִיךְ</p>
+        </div>
+        <div class="cm-more">
+          <div>
+            <div class="cm-mk">כתבות על הפרק</div>
+            <div class="cm-mt">המלך, הנסיכה והארון</div>
+            <div class="cm-ma">מיכאל הנדלזלץ</div>
+          </div>
+          <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+        </div>
+      </div>
+
+      <!-- step 1 overlay: listen mode -->
+      <div class="cm-listen">
+        <div class="cm-card">
+          <div class="cm-t"><span class="cm-eq"><i></i><i></i><i></i></span>מסע 929 של הרב שי פירון</div>
+          <div class="cm-s">שמואל ב · פרק ו</div>
+          <div class="cm-prog"><i></i></div>
+          <div class="cm-time"><span>14:48</span><span>36:00</span></div>
+          <div class="cm-ctl">
+            <span class="cm-chip">1.25x</span>
+            <div class="cm-play">
+              <svg viewBox="0 0 24 24"><path d="M18 5v14M14 12 6 18V6z"/></svg>
+              <div class="cm-pb"><svg viewBox="0 0 24 24"><path d="M7 4h4v16H7zM13 4h4v16h-4z"/></svg></div>
+              <svg viewBox="0 0 24 24"><path d="M6 5v14M10 12l8-6v12z"/></svg>
+            </div>
+            <svg class="cm-hp" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2M4 14h3v6H4zM17 14h3v6h-3z"/></svg>
+          </div>
+        </div>
+        <div class="cm-plh">
+          <b><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h7M18 12v7l4-2"/></svg>פלייליסט: מנהיגות</b>
+          <span>הבא בתור</span>
+        </div>
+        <div class="cm-row">
+          <div class="cm-ri"><svg viewBox="0 0 24 24"><path d="M12 3a3 3 0 0 1 3 3v6a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3zM6 11a6 6 0 0 0 12 0M12 17v4"/></svg></div>
+          <div class="cm-rt">קריינות הפרק</div>
+          <svg class="cm-rp" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="cm-row">
+          <div class="cm-ri"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div>
+          <div class="cm-rt">בקטנה על הפרק</div>
+          <svg class="cm-rp" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="cm-row">
+          <div class="cm-ri"><svg viewBox="0 0 24 24"><path d="M5 19a1 1 0 1 0 0-.1M5 12a7 7 0 0 1 7 7M5 5a14 14 0 0 1 14 14"/></svg></div>
+          <div class="cm-rt">ויהי פודקאסט!</div>
+          <svg class="cm-rp" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+      </div>
+
+      <!-- step 2 overlay: ask the chapter -->
+      <div class="cm-scrim"></div>
+      <div class="cm-chat">
+        <div class="cm-ch">
+          <svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></svg>
+          שאל את הפרק<span>שמואל ב ו</span>
+        </div>
+        <div class="cm-bub cm-bu">למה מיכל בזה לדוד כשראתה אותו מרקד?</div>
+        <div class="cm-bub cm-ba">מיכל רואה מלך מפזז באפוד בד ולא בגדי מלכות. הכתוב מציג את הריקוד כעבודת ה׳, ואת הבוז שלה כקריאה של כבוד מלכות</div>
+        <div class="cm-src"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6zM14 3v4h4M9 12h6M9 16h6"/></svg><span>2 מקורות מזוהים · יש גם דעה אחרת</span></div><div class="cm-srcrow"><div><b>צופה בדוד, חושבת על פלטיאל</b><span>יוכי ברנדס · ספרות</span></div></div><div class="cm-srcrow"><div><b>ביאור הרב שטיינזלץ</b><span>פסוק אחר פסוק</span></div></div><div class="cm-ask">שאלה נוספת על הפרק</div>
+      </div>
+
+    </div>
+
+    <!-- bottom sheets, one per step (controller toggles .on) -->
+  </div>
+  <div class="pbar lbl"><i>קריאה</i><i>האזנה</i><i class="on">שאל את הפרק</i></div>
+</div></div>
+      </div>
+    </section>
+
+  <section class="slide" data-act="product">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">10</span> אתר ואפליקציה</div>
+      <h2 class="h2l">שירותים משותפים לאתר ולאפליקציה</h2>
+      <div class="lead" style="max-width:74ch;margin-top:8px">האתר צפוי להתחדש בשנה הבאה, ואפליקציה ייעודית אין. ההצעה היא לבנות את השירותים פעם אחת, לשניהם.</div>
+      <div class="bridge">
+        <div class="bcol">
+          <div class="bk">האתר</div>
+          <div class="bsub">מתחדש בשנה הבאה</div>
+          <div class="bwin">
+            <div class="bwb"><i></i><i></i><i></i><span>929.org.il</span></div>
+            <div class="bwc"><b>צופה בדוד, חושבת על פלטיאל</b><span>יוכי ברנדס · ספרות</span><u></u><u class="s"></u></div>
+          </div>
+          <p><b>הבית של הארכיון.</b> קריאה ארוכה, חיפוש, ומי שמגיע מגוגל או מקישור שקיבל. גם ללא הרשמה.</p>
+        </div>
+        <div class="bmid">
+          <div class="bk c">שירותים משותפים</div>
+          <ol class="bsvc">
+            <li><b>תוכן מתויג</b> לפי נושא וסוג</li>
+            <li><b>חשבון אחד</b> להעדפות, להתקדמות ולסימון "קראתי"</li>
+            <li><b>מנוע מסלולים</b>, תזכורות ומדידה</li>
+          </ol>
+          <div class="btag">
+            <span class="l">איך מתייגים</span>
+            <div class="btr"><span class="ai">AI מציע</span><span class="tg">מחקר</span><span class="tg">ספרות</span><b>←</b><span class="ok">אישור העורך</span></div>
+          </div>
+        </div>
+        <div class="bcol">
+          <div class="bk">האפליקציה</div>
+          <div class="bsub">iOS ואנדרואיד</div>
+          <div class="bph">
+            <div class="bpb"></div>
+            <div class="bpc"><b>הפרק היומי · שמואל ב ו</b><u></u><u class="s"></u><em>האזנה · פוש · קריאה בלי קליטה</em></div>
+          </div>
+          <p><b>הכיס של הלומד הקבוע.</b> תזכורת בבוקר, האזנה בדרך, קריאה בלי קליטה, והמשך מהמקום שעצר.</p>
+        </div>
+      </div>
+      <div class="bfoot">האחריות לתוכן ולעריכה נשארת בידי 929. <b>הפיתוח משתלב בתוכנית חידוש האתר, וסדר העדיפויות וההיקף נקבעים יחד.</b></div>
+    </div>
+  </section>
+
+  <section class="slide" data-act="us">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">11</span> מי אנחנו</div>
+      <h2 class="h2c">200Apps · מאתיים אפליקציות</h2>
+      <div class="ablead">אנחנו מתכננים ומפתחים מוצרים דיגיטליים מקצה לקצה: מחקר, אפיון, עיצוב, פיתוח, בקרת איכות ותחזוקה. חלק גדול מהלקוחות שלנו הם ארגונים שהתוכן הוא הלב שלהם.</div>
+      <div class="abnums">
+        <div><b dir="ltr">12</b><span>שנים. נוסדנו ב-2014</span></div>
+        <div><b dir="ltr">300+</b><span>מוצרים דיגיטליים</span></div>
+        <div><b dir="ltr">100+</b><span>חטיבות ותיכונים במערכת הלמידה שבנינו</span></div>
+      </div>
+      <div class="absec">מ-2023 אנחנו חלק מקבוצת ATS, שנותנת גב לפרויקטים ארוכי טווח.</div>
+      <div class="abprod">
+        <div class="lab">מוצרי תוכן ולימוד בעברית שבנינו</div>
+        <div class="row">
+          <div class="pit"><img src="assets/proof/icons/rambam.png" alt=""><b>הרמב"ם היומי</b></div>
+          <div class="pit"><img src="assets/proof/icons/pniney.png" alt=""><b>פניני הלכה</b></div>
+          <div class="pit"><img src="assets/proof/icons/time4mishna.png" alt=""><b>Time4Mishna</b></div>
+          <div class="pit"><span class="ptx">פשיטא</span><b>פשיטא</b></div>
+          <div class="pit"><img src="assets/proof/icons/koren.png" alt=""><b>סידור קורן</b></div>
+          <div class="pit"><img src="assets/proof/icons/levshalem.png" alt=""><b>סידור לב שלם</b></div>
+        </div>
+      </div>
+      <div class="abwall">
+        <div class="lab">חלק מהלקוחות</div>
+        <div class="row">
+          <img src="assets/clients/c03.png" alt="אמי״ת" style="opacity:.60">
+          <img src="assets/clients/c08.png" alt="הסוכנות היהודית" style="opacity:.66">
+          <img src="assets/clients/c10.png" alt="המכללה האקדמית בית ברל" style="opacity:.70">
+          <img src="assets/clients/c17.png" alt="קידום" style="opacity:.52">
+          <img src="assets/clients/c18.png" alt="גן החיות התנ״כי" style="opacity:.62">
+          <img src="assets/clients/c06.png" alt="כינור לב" style="opacity:.64">
+          <img src="assets/clients/c04.png" alt="עוגן" style="opacity:.60">
+          <img src="assets/clients/c07.png" alt="ירושמיים" style="opacity:.78">
+          <img src="assets/clients/c05.png" alt="Momentum" style="opacity:.58">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-act="us">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">12</span> הוכחה · לימוד יומי, בחירת אורך והאזנה</div>
+      <h2>אפליקציות לימוד יומי שבנינו</h2>
+      <div class="grid" style="grid-template-columns:1fr 1fr;gap:30px;margin-top:16px;flex:1;min-height:0;align-content:center">
+        <div class="edu">
+          <div style="display:flex;gap:12px;justify-content:center">
+            <div class="shot" style="height:352px"><img src="assets/proof/pniney-he-home.png" alt="" style="max-height:352px"></div>
+            <div class="shot" style="height:352px"><img src="assets/proof/pniney-he-listen.png" alt="" style="max-height:352px"></div>
+          </div>
+          <h3 style="margin-top:14px;font-size:21px">פניני הלכה</h3>
+          <p class="pdesc" style="font-size:15px;margin-top:6px">סדרת פניני הלכה של ישיבת הר ברכה: <b>הפנינה היומית</b> עם תזכורת, וקריאה והאזנה על אותו טקסט.</p>
+        </div>
+        <div class="edu">
+          <div style="display:flex;gap:12px;justify-content:center">
+            <div class="shot fill" style="height:352px;width:172px;border-radius:12px"><img src="assets/proof/rambam/rambam-screen-1.png" alt=""></div>
+            <div class="shot fill" style="height:352px;width:172px;border-radius:12px"><img src="assets/proof/rambam/rambam-screen-5.png" alt=""></div>
+          </div>
+          <h3 style="margin-top:14px;font-size:21px">הרמב"ם היומי</h3>
+          <p class="pdesc" style="font-size:15px;margin-top:6px">פרק ביום, והלומד בוחר כמה זמן יש לו: <b>סרטון של דקה וחצי, תקציר, אודיו או הטקסט המלא</b>. מי שפספס משלים בתקציר.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-act="us">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">13</span> סידור קורן · טקסט עברי מנוקד וכלי קריאה והאזנה</div>
+      <h2>סידור קורן</h2>
+      <div class="two" style="margin-top:18px;grid-template-columns:1fr 1fr;align-items:start;gap:40px">
+        <div style="padding-top:4px">
+          <p class="pdesc" style="font-size:18.5px;line-height:1.65;max-width:34ch">סידור מלא לנייד, שנבנה עם Koren Publishers Jerusalem.</p>
+          <ul class="kb">
+            <li><b>טקסט מנוקד במלואו</b> בטיפוגרפיה של קורן</li>
+            <li><b>שלושה נוסחים</b> ושליטה בגודל האות</li>
+            <li><b>האזנה בבקרת מהירות</b> <span dir="ltr">x1 / x2 / x4</span></li>
+          </ul>
+        </div>
+        <div style="display:flex;gap:16px;justify-content:center">
+          <div class="shot" style="height:472px"><img src="assets/proof/proof-koren-text.png" alt="" style="max-height:472px"></div>
+          <div class="shot" style="height:472px"><img src="assets/proof/proof-koren-listen.png" alt="" style="max-height:472px"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-act="us">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">14</span> אמי"ת וקידום · מסלולים ומעקב התקדמות במערכות למידה</div>
+      <h2>מסלולים ומעקב, בקנה מידה</h2>
+      <div class="grid" style="grid-template-columns:1fr 1fr;gap:26px;margin-top:14px;flex:1;min-height:0;align-content:center">
+        <div class="edu">
+          <div class="shot" style="height:346px"><img src="assets/proof/amit/amit-feedback.png" alt="" style="max-height:346px"></div>
+          <h3 style="margin-top:14px;font-size:21px">אמי"ת · מערכת למידה</h3>
+          <p class="pdesc" style="font-size:15px;margin-top:6px">מעקב התקדמות אישי ברשת של <b>100+ חטיבות ותיכונים</b>: ציון לכל תרגיל מול ממוצע הקורס, משוב מהמורה, ומסלול המשך, בתצוגה אחת למורה ולתלמיד.</p>
+        </div>
+        <div class="edu">
+          <div class="shot" style="height:346px"><img src="assets/proof/kidum/kidum-site-3.png" alt="" style="max-height:306px;border-radius:14px"></div>
+          <h3 style="margin-top:14px;font-size:21px">קידום</h3>
+          <p class="pdesc" style="font-size:15px;margin-top:6px">אפליקציית התרגול של רשת ההכנה לפסיכומטרי: <b>3,000 מילים</b>, סרטוני לימוד, ומעקב אחר קצב ההתקדמות על בסיס יום-יומי.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-act="close">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">15</span> איך מתחילים</div>
+      <h2>בדיקה, פיילוט והחלטה על הרחבה</h2>
+      <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px;flex:1;min-height:0;align-content:center">
+        <div class="phase"><div class="pn">1</div><h3>בדיקה</h3><div class="pw">שבועיים</div>
+          <p>עוברים על הארכיון, על התיוג הקיים ועל תכנית חידוש האתר, ומסמנים מה אפשר לעשות כבר היום ומה דורש עבודת תוכן.</p>
+          <div class="pd first"><span>התוצר</span>מפת היתכנות וכיוון מומלץ</div></div>
+        <div class="phase hi"><div class="pn">2</div><h3>פיילוט</h3><div class="pw">6 עד 8 שבועות</div>
+          <p>נושא אחד מתויג, מסלול לימוד אחד שנבנה ממנו, וקבוצת לומדים אמיתית של 929. בודקים אם הם מתחילים, משלימים וחוזרים.</p>
+          <div class="pd first"><span>התוצר</span>ממצאים מהלומדים מול מדדים שנקבעו מראש</div></div>
+        <div class="phase"><div class="pn">3</div><h3>החלטה</h3><div class="pw">מיד אחרי הפיילוט</div>
+          <p>לפי מה שהלומדים עשו בפועל מחליטים יחד אם מרחיבים, באיזה היקף, ואיך זה משתלב באתר המתחדש.</p>
+          <div class="pd first"><span>התוצר</span>אפיון והיקף לשלב הבנייה</div></div>
+      </div>
+      <div class="split">
+        <div><b>929 מוביל</b> את התוכן, העריכה והאישור המקצועי</div>
+        <div><b>אנחנו מובילים</b> את המוצר, החוויה והטכנולוגיה</div>
+        <div><b>ממשיכים לשלב הבא</b> רק אחרי החלטה משותפת</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-act="close">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">16</span> נושאים להחלטה משותפת</div>
+      <h2>שלושה נושאים שנרצה לדון בהם יחד</h2>
+      <div class="topics">
+        <div class="tp"><b>חידוש האתר והאפליקציה</b><span>באיזה שלב התהליך ומי מוביל אותו. ובעיקר: במה השניים יהיו שונים זה מזה, ומי הפרסונה של כל אחד מהם.</span></div>
+        <div class="tp"><b>התוכן והתשתיות</b><span>איך הארכיון מאוחסן ומתויג היום, ומה מתאפשר על התשתית הקיימת בלי עבודת תוכן גדולה.</span></div>
+        <div class="tp"><b>בחירת הפיילוט</b><span>איזה נושא, איזו קבוצת לומדים, ואילו מדדים יגדירו הצלחה.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide clo" data-act="close">
+    <div class="cloart"><img src="assets/cover.jpg" alt=""></div>
+    <div class="clopanel">
+      <div class="eyebrow"><span class="num">17</span> הצעד הבא</div>
+      <h2>מפגש עבודה<br>להגדרת <em>הפיילוט</em></h2>
+      <div class="cloline">נבחר נושא וקבוצת לומדים, נגדיר מדדי הצלחה ונמפה את התשתיות הנדרשות.</div>
+      <div class="closub">שעתיים עם צוות התוכן ועם מי שמוביל את חידוש האתר.</div>
+      <div class="closig">
+        <div><b>חמי בן לביא</b><span>Head of Product Operations · 200Apps</span></div>
+        <div><b>אלכס יעקובוב</b><span>CTO · 200Apps</span></div>
+        <div class="cc">hemi@200apps.co<br>054-4608119</div>
+      </div>
+    </div>
+  </section>
+
+</div></div>
+
+<div id="chrome"><div id="dots"></div><div id="cnt"></div></div>
+
+<script>
+(function(){
+  var stage=document.getElementById('stage'),
+      slides=[].slice.call(document.querySelectorAll('.slide')),
+      dots=document.getElementById('dots'),
+      cnt=document.getElementById('cnt'),
+      hint=document.getElementById('hint'),
+      i=0, N=slides.length;
+  function fit(){stage.style.transform='scale('+Math.min(innerWidth/1280,innerHeight/720)*0.965+')';}
+  addEventListener('resize',fit); fit();
+  slides.forEach(function(_,k){var d=document.createElement('i'); d.onclick=function(){go(k)}; dots.appendChild(d);});
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var demos=[].slice.call(document.querySelectorAll('.proto')).map(function(p){
+    var d={root:p,dev:p.querySelector('.dev'),bar:p.querySelector('.pbar'),
+           n:parseInt(p.dataset.demo,10)||1,ms:parseInt(p.dataset.auto,10)||2800,step:parseInt(p.dataset.start,10)||0,timer:null};
+    d.render=function(){
+      d.dev.className=d.dev.className.replace(/\bst-\d+\b/g,'').trim()+' st-'+d.step;
+      d.root.className=d.root.className.replace(/\bsp-\d+\b/g,'').trim()+' sp-'+d.step;
+      [].forEach.call(d.root.querySelectorAll('.sh'),function(sh){sh.classList.toggle('on',parseInt(sh.dataset.st,10)===d.step)});
+      if(d.bar)[].forEach.call(d.bar.children,function(b,k){b.classList.toggle('on',k===d.step)});
+    };
+    d.next=function(){d.step=(d.step+1)%d.n;d.render()};
+    d.start=function(){d.stop();d.step=reduce?d.n-1:(parseInt(p.dataset.start,10)||0);d.render();if(!reduce)d.timer=setInterval(function(){if(d.step>=d.n-1){if(d.root.dataset.loop){d.step=-1}else{d.stop();return}}d.next()},d.ms)};
+    d.stop=function(){if(d.timer){clearInterval(d.timer);d.timer=null}};
+    p.addEventListener('click',function(e){e.stopPropagation();d.stop();d.next()});
+    [].forEach.call(p.querySelectorAll('[data-i]'),function(el){
+      el.addEventListener('click',function(e){e.stopPropagation();d.stop();d.step=parseInt(el.dataset.i,10)||0;d.render()});
+    });
+    d.render(); return d;
+  });
+  var ringT=null;
+  function ringAnim(sl){
+    var arc=sl.querySelector('#ring-arc'),num=sl.querySelector('#ring-num'),today=sl.querySelector('#ring-today'),streak=sl.querySelector('#ring-streak');
+    if(!arc||reduce||performance.now()<3000)return;
+    if(ringT){clearTimeout(ringT);ringT=null}
+    arc.style.transition='none';arc.setAttribute('stroke-dashoffset','402');num.textContent='0';today.classList.add('o');streak.textContent='6 ימים ברצף';
+    var t0=null;
+    function step(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/1200),e=1-Math.pow(1-k,3);
+      arc.setAttribute('stroke-dashoffset',String(402-(402-286)*e));num.textContent=String(Math.round(269*e));
+      if(k<1)requestAnimationFrame(step)}
+    setTimeout(function(){requestAnimationFrame(step)},300);
+    ringT=setTimeout(function(){today.classList.remove('o');streak.textContent='7 ימים ברצף'},1700);
+  }
+  function syncDemos(){demos.forEach(function(d){if(d.root.closest('.slide')===slides[i])d.start(); else d.stop();});}
+  function go(n){
+    i=Math.max(0,Math.min(N-1,n));
+    slides.forEach(function(s,k){s.classList.toggle('on',k===i)});
+    [].forEach.call(dots.children,function(d,k){d.classList.toggle('on',k===i)});
+    cnt.textContent=(i+1)+' / '+N;
+    try{history.replaceState(null,'','#'+(i+1))}catch(e){}
+    syncDemos();ringAnim(slides[i]);
+  }
+  addEventListener('keydown',function(e){
+    var k=e.key;
+    if(k==='ArrowLeft'||k==='PageDown'||k===' '||k==='Enter'){go(i+1);e.preventDefault()}
+    else if(k==='ArrowRight'||k==='PageUp'||k==='Backspace'){go(i-1);e.preventDefault()}
+    else if(k==='Home'){go(0)} else if(k==='End'){go(N-1)}
+    else if(k==='f'||k==='F'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen()}
+  });
+  stage.addEventListener('click',function(e){
+    if(e.target.closest('#dots'))return;
+    var r=stage.getBoundingClientRect();
+    go(i+((e.clientX-r.left)<r.width/2?1:-1));
+  });
+  setTimeout(function(){hint.style.opacity='0'},6000);
+  var h0=parseInt((location.hash||'').slice(1),10);
+  go(h0>0?h0-1:0);
+})();
+</script>
+</body>
+</html>
