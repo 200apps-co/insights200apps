@@ -847,7 +847,7 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .phase .pd.first{margin-top:6px;padding-top:14px;border-top:1px solid var(--line)}
 .phase .pd span{flex:0 0 42px;font-size:11.5px;font-weight:700;letter-spacing:.06em;color:var(--accent)}
 .split{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:auto;padding-top:20px;border-top:1px solid var(--line);position:relative}
-.split .sl{position:absolute;top:-10px;right:0;background:var(--bg);padding-inline-end:12px;border:0;font-size:12.5px;font-weight:700;letter-spacing:.03em;color:var(--muted)}
+.split .sl{position:absolute;top:-28px;right:0;background:transparent;padding:0;border:0;font-size:12.5px;font-weight:700;letter-spacing:.03em;color:var(--muted);line-height:1}
 .split div{background:transparent;border-top:0;padding:14px 0 0;font-size:14.5px;line-height:1.5;color:var(--muted)}
 
 
@@ -1214,12 +1214,13 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 /* slides 13 + 15 - one shape for the two-project proof slides */
 .proof2{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:14px;flex:1;min-height:0;align-content:center}
 .pvh{font-family:Deck;font-size:22px;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:14px;text-align:center}
-.pvs{display:flex;gap:20px;align-items:flex-start;justify-content:center;height:344px}
+.pvs{display:flex;gap:20px;align-items:center;justify-content:center;height:344px}
 .pvs.one{justify-content:center}
 .proof2 .shot{height:auto;display:flex;justify-content:center;place-items:initial}
 .proof2 .shot.big img{max-height:344px;max-width:none;width:auto;height:344px;border-radius:12px}
-.proof2 .shot.big.wide img{height:auto;width:auto;max-height:262px;max-width:404px;border-radius:12px}
+.proof2 .shot.big.kph img{height:344px;width:auto;max-width:none;border-radius:10px}
 .proof2 .shot.big.course img{height:auto;width:380px;max-height:none;border-radius:8px;border:1px solid var(--line)}
+
 .proof2 .shot.sml img{max-height:262px;width:auto;height:262px;border-radius:10px;opacity:.95}
 .pvlbl{font-size:14.5px;font-weight:600;color:var(--coral);margin-top:18px;text-align:center}
 .proof2 .pdesc{font-size:15.5px;line-height:1.6;color:var(--muted);margin-top:8px;text-align:center;max-width:46ch;margin-inline:auto}
@@ -1454,7 +1455,7 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
         <div class="q">"את התוכן אנחנו רוצים לשמר, אבל למצוא דרכי תצוגה וחוויות משתמש טובות יותר לצרוך אותו."</div>
         <div class="t"><b>מה שמענו</b> לשפר את הדרך שבה צורכים את התוכן הקיים, ולהרחיב את אפשרויות הלימוד מעבר לפרק היומי, גם מעבר לתנ"ך.</div>
       </div>
-      <div class="src">מקור: 929.org.il, דף הבית, דף ההצטרפות ועמוד הפרק (page/269), נבדק 16.9.2026. הציטוט מהשיחה המקדימה עם צוות 929.</div>
+      <div class="src">מקור: <span dir="ltr">929.org.il</span>, דף הבית, דף ההצטרפות ועמוד הפרק (<span dir="ltr">page/269</span>), נבדק 16.9.2026. הציטוט מהשיחה המקדימה עם צוות 929.</div>
     </div>
   </section>
 
@@ -1532,7 +1533,7 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
         <div class="col5">
           <div class="cap5">המחשה מוצעת</div>
           <div class="mock2">
-            <div class="m2top"><img src="assets/929-logo.svg" alt=""><span>פרשת השבוע · האזינו</span></div>
+            <div class="m2top"><img src="assets/929-logo.svg" alt=""><span>דברים לב</span></div>
             <div class="m2hero"><img src="assets/chapter-haazinu.jpg" alt="">
               <div class="m2hs"><span class="k">דברים לב</span><b>שירת האזינו</b></div></div>
             <div class="m2body">
@@ -1598,7 +1599,7 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
     <!-- persistent layer: chapter page, דברים לב -->
     <div class="pr-bg">
       <div class="pr-top">
-        <div class="pr-brand">929<small>- תנך ביחד</small></div>
+        <div class="pr-brand">929<small> · תנ"ך ביחד</small></div>
         <div class="pr-icons">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -1674,7 +1675,7 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
     <div class="wl">
       <div class="pr-ob">
         <div class="pr-ob-hd">
-          <div class="pr-ob-brand">929<small>- תנך ביחד</small></div>
+          <div class="pr-ob-brand">929<small> · תנ"ך ביחד</small></div>
           <div class="pr-ob-q">מה מעניין אותך?</div>
           <div class="pr-ob-s">נבחר יחד מה יופיע לך ליד כל פרק</div>
         </div>
@@ -1957,7 +1958,7 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
         <div class="edu">
           <h3 class="pvh">פניני הלכה</h3>
           <div class="pvs">
-            <div class="shot big"><img src="assets/proof/pniney-he-listen.png" alt=""></div>
+            <div class="shot big"><img src="assets/proof/pniney-he-reading.png" alt=""></div>
             <div class="shot sml"><img src="assets/proof/pniney-he-home.png" alt=""></div>
           </div>
           <div class="pvlbl">קריאה והאזנה על אותו טקסט, באותו מסך</div>
@@ -1966,8 +1967,8 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
         <div class="edu">
           <h3 class="pvh">הרמב"ם היומי</h3>
           <div class="pvs">
-            <div class="shot big"><img src="assets/proof/rambam/rambam-screen-1.png" alt=""></div>
-            <div class="shot sml"><img src="assets/proof/rambam/rambam-screen-5.png" alt=""></div>
+            <div class="shot big"><img src="assets/proof/rambam/rambam-duration.png" alt=""></div>
+            <div class="shot sml"><img src="assets/proof/rambam/rambam-books.png" alt=""></div>
           </div>
           <div class="pvlbl">הלומד בוחר כמה זמן יש לו היום</div>
           <p class="pdesc">פרק ביום: <b>סרטון של דקה וחצי, תקציר, אודיו או הטקסט המלא</b>. מי שפספס משלים בתקציר.</p>
@@ -1981,10 +1982,10 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
       <h2>סידור קורן</h2>
       <div class="two" style="margin-top:18px;grid-template-columns:1fr 1fr;align-items:start;gap:40px">
         <div style="padding-top:4px">
-          <p class="pdesc" style="font-size:18.5px;line-height:1.65;max-width:38ch">סידור מלא לנייד, שנבנה עם <span dir="ltr" style="white-space:nowrap">Koren Publishers Jerusalem</span>.</p>
+          <p class="pdesc" style="font-size:18.5px;line-height:1.65;max-width:38ch">סידור מלא לנייד, שנבנה עם <span dir="ltr" style="white-space:nowrap">Koren Publishers Jerusalem.</span></p>
           <ul class="kb">
             <li><b>טקסט מנוקד במלואו</b> בטיפוגרפיה של קורן</li>
-            <li><b>שליטה בגודל האות</b>, בשלושה נוסחים</li>
+            <li><b>שליטה בגודל האות,</b> בשלושה נוסחים</li>
             <li><b>האזנה בבקרת מהירות</b> <span dir="ltr">×1 / ×2 / ×4</span></li>
           </ul>
         </div>
@@ -2006,13 +2007,13 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
           <div class="pvs one">
             <div class="shot big course"><img src="assets/proof/amit/amit-course-shmuel-b.png" alt=""></div>
           </div>
-          <div class="pvlbl">קורס תנ"ך שמואל ב׳ · 3 יחידות, 14 שיעורים</div>
-          <p class="pdesc">מערכת הלמידה של רשת אמי"ת, ב-<b>100+ חטיבות ותיכונים</b>.<br>השיעור ה-14 בקורס הזה: <b>העלאת ארון ה׳ לעיר דוד</b>.</p>
+          <div class="pvlbl">שיעור 14: העלאת ארון ה׳ לעיר דוד</div>
+          <p class="pdesc">מערכת הלמידה של רשת אמי"ת, ב-<b>100+ חטיבות ותיכונים</b>.<br>קורס תנ"ך שמואל ב׳: <b>3 יחידות, 14 שיעורים</b>.</p>
         </div>
         <div class="edu">
           <h3 class="pvh">קידום</h3>
           <div class="pvs one">
-            <div class="shot big wide"><img src="assets/proof/kidum/kidum-crop.png" alt=""></div>
+            <div class="shot big kph"><img src="assets/proof/kidum/kidum-phone.png" alt=""></div>
           </div>
           <div class="pvlbl">מסלול התקדמות ושינון, יום אחר יום</div>
           <p class="pdesc">אפליקציית התרגול של רשת ההכנה לפסיכומטרי:<br><b>3,000 מילים</b>, סרטוני לימוד ומעקב קצב יומי.</p>
