@@ -136,7 +136,7 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .chan li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;background:var(--base);margin-top:9px;opacity:.5}
 
 /* static phone (slide 5, today) */
-.phone{width:212px;height:432px;border-radius:38px;border:3px solid #2A2724;overflow:hidden;
+.phone{width:200px;height:408px;border-radius:36px;border:3px solid #2A2724;overflow:hidden;
   position:relative;background:#fff}
 .phone,.mock,.mock2,.dev{box-shadow:0 12px 26px rgba(36,35,34,.16),0 3px 7px rgba(36,35,34,.08)}
 .dark .phone,.dark .mock,.dark .mock2,.dark .dev{box-shadow:0 18px 40px rgba(0,0,0,.40),0 0 0 1px rgba(255,255,255,.08)}
@@ -237,7 +237,7 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .proto{display:flex;flex-direction:column;align-items:center;gap:10px;position:relative}
 .proto::after{content:"המחשה מוצעת";position:absolute;top:-21px;left:0;right:0;text-align:center;font-size:11.5px;letter-spacing:.04em;color:var(--muted);opacity:.75}
 .capstage.proto::after{content:none}
-.phcol8 .mocklbl{font-size:11.5px;letter-spacing:.04em;color:var(--muted);opacity:.75;margin-top:10px}
+.phcol8 .mocklbl{order:-1;font-size:11.5px;letter-spacing:.04em;color:var(--muted);opacity:.75;margin-bottom:10px}
 .dark .proto::after{color:#A79E8C}
 .dev{width:214px;height:440px;background:#fff;border-radius:40px;position:relative;overflow:hidden;cursor:pointer;
   border:3px solid #2A2724}
@@ -600,13 +600,18 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .stepper{display:grid;grid-template-columns:318px 280px 1fr;gap:40px;margin:10px 0 0}
 .stp{font-size:13px;font-weight:700;letter-spacing:.05em;color:var(--base)}
 .stp:last-child{text-align:center}
-.capstage{display:flex;flex-direction:row;align-items:stretch;gap:40px;height:470px;margin-top:14px}
+.capstage{display:flex;flex-direction:row;align-items:stretch;gap:44px;height:474px;margin-top:12px}
 .cap8 .dev{width:222px;height:458px;border-radius:40px}
-.cap8 .capdesc{height:280px}
-.capside{width:322px;flex:0 0 322px;display:flex;flex-direction:column;justify-content:center}
-.caps{display:flex;flex-direction:column;gap:1px}
+.cap8 .capdesc{height:176px}
+.capside{width:100%;display:block}
+.capright{flex:1;min-width:0;display:flex;flex-direction:column}
+.caps{display:flex;flex-wrap:wrap;gap:6px}
+.caps .lay{flex:0 0 100%}
+.caps .slot{flex:0 0 100%;max-width:430px}
+.caps .slot.sm{flex:0 0 auto;background:var(--sand);border-radius:99px;padding:6px 13px;opacity:1}
+.caps .slot.sm svg{width:14px;height:14px;flex:0 0 14px}
+.caps .slot.sm .nb{display:none}
 .caps .lay:first-child{margin-top:0}
-.caps .slot.sm{padding:6px 13px}
 .caps .slot.sm .n{font-size:13.5px;font-weight:500;color:var(--muted)}
 .lay{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--muted);margin:14px 0 6px;opacity:1}
 .lay:first-child{margin-top:0}
@@ -620,20 +625,20 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .slot.act .n{color:#fff}.slot.act svg{stroke:#fff}.slot.act .nb{background:#fff;color:var(--accent)}.slot.act .nb.x{background:transparent}
 .legend{display:flex;align-items:center;gap:6px;margin-top:10px;padding-top:9px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);line-height:1.35}
 .legend .nb{width:18px;height:18px;border-radius:6px;background:var(--accent);color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center;font-style:normal}
-.midcol{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:14px}
-.capdesc{position:relative;height:300px;background:transparent;padding:0}
+.midcol{width:100%;display:block}
+.capdesc{position:relative;height:176px;background:transparent;padding:0}
 .cd{position:absolute;inset:0;padding:0 22px;opacity:0;transition:opacity .25s ease;display:flex;flex-direction:column;justify-content:center}
-.cd .cdt{font-family:Deck;font-size:26px;line-height:1.3;color:var(--ink);font-weight:700}
-.cd .cdt::after{content:'';display:block;width:36px;height:3px;border-radius:2px;background:var(--accent);margin:12px 0 14px}
-.cd ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.cd .cdt{font-family:Deck;font-size:25px;line-height:1.28;color:var(--ink);font-weight:700;max-width:30ch}
+.cd .cdt::after{content:'';display:block;width:34px;height:3px;border-radius:2px;background:var(--accent);margin:10px 0 12px}
+.cd ul{list-style:none;display:flex;flex-direction:column;gap:8px;max-width:58ch}
 .cd li{font-size:15.5px;line-height:1.55;color:var(--ink);position:relative;padding-inline-start:17px}
 .cd li::before{content:'';position:absolute;inset-inline-start:0;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
 .cd li b{color:var(--ink);font-weight:600}
-.orgval{background:transparent;border-top:1px solid var(--line);padding:12px 0 0;display:flex;gap:12px;align-items:flex-start}
+.orgval{margin-top:auto;background:transparent;border-top:1px solid var(--line);padding:14px 0 0;display:flex;gap:12px;align-items:flex-start}
 .orgval .ol,.measure .ol{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--accent);white-space:nowrap;margin-top:3px}
 .orgval p{font-size:14.5px;line-height:1.5;color:var(--muted);margin:0}
 .orgval b{color:var(--base);font-weight:700}
-.phcol8{flex:0 0 268px;width:268px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.phcol8{flex:0 0 268px;width:268px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
 /* step wiring: the controller puts st-K on the wrapper too */
 .cap8 .cs{position:absolute;inset:0;opacity:0;transition:opacity .3s;background:#FAF7F2}
 .cap8.sp-0 .cs[data-cs="0"],.cap8.sp-1 .cs[data-cs="1"],.cap8.sp-2 .cs[data-cs="2"],.cap8.sp-3 .cs[data-cs="3"],.cap8.sp-4 .cs[data-cs="4"],.cap8.sp-5 .cs[data-cs="5"],.cap8.sp-6 .cs[data-cs="6"],.cap8.sp-7 .cs[data-cs="7"],.cap8.sp-8 .cs[data-cs="8"],.cap8 .dev.st-0 .cs[data-cs="0"],.cap8 .dev.st-1 .cs[data-cs="1"],.cap8 .dev.st-2 .cs[data-cs="2"],.cap8 .dev.st-3 .cs[data-cs="3"],.cap8 .dev.st-4 .cs[data-cs="4"],.cap8 .dev.st-5 .cs[data-cs="5"],.cap8 .dev.st-6 .cs[data-cs="6"],.cap8 .dev.st-7 .cs[data-cs="7"],.cap8 .dev.st-8 .cs[data-cs="8"]{opacity:1}
@@ -749,7 +754,7 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .ex3.plain .card{background:transparent;padding:2px 0;border-inline-start:2px solid var(--line);padding-inline-start:20px}
 .ex3 .card h3{font-size:19px}
 .ex3 .card p{font-size:16px;line-height:1.6;margin-top:8px}
-.src{font-size:14px;color:var(--muted);margin-top:auto;padding-top:14px;line-height:1.55;max-width:118ch}
+.src{font-size:13.5px;color:var(--muted);margin-top:auto;padding-top:12px;line-height:1.5;max-width:130ch}
 .src.dk{color:#BBB3A3}
 .prin{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
 .prin div{background:var(--accent-tint);border-radius:12px;padding:10px 14px;font-size:14px;line-height:1.45;color:var(--base)}
@@ -773,7 +778,7 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 /* round 9: article mock, learning-path progress, balanced wall, pilot next-steps */
 .col5{display:flex;flex-direction:column;align-items:center}
 .cap5{font-size:14.5px;font-weight:600;color:#fff;margin-bottom:12px;text-align:center;letter-spacing:.02em}
-.col5 .cap{max-width:224px;margin-bottom:0}
+.col5 .cap{max-width:230px;margin-bottom:0}
 .mock .art{padding:10px 12px 0}
 .mock .atit{font-size:13px;font-weight:700;color:#2A2724;line-height:1.3}
 .mock .aau{font-size:9px;color:#6B6355;margin-top:3px}
@@ -863,7 +868,7 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 
 
 /* round 11: rich product mocks (their own chapter illustrations) */
-.mock2{width:212px;height:432px;border-radius:38px;border:3px solid #2A2724;overflow:hidden;position:relative;
+.mock2{width:200px;height:408px;border-radius:36px;border:3px solid #2A2724;overflow:hidden;position:relative;
   background:#fff;font-size:10px;color:#242322;text-align:right;display:flex;flex-direction:column;margin-inline:auto}
 .dark .mock2{border-color:#4A453D}
 .mock2::after{content:'';position:absolute;top:6px;left:50%;transform:translateX(-50%);width:44px;height:8px;border-radius:99px;background:#1C1B1A;z-index:30}
@@ -1218,10 +1223,10 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .proof2 .pdesc b{color:var(--ink);font-weight:700}
 
 /* slide 6 - three labels tied to the proposed screen */
-.cmp6{display:flex;justify-content:center;align-items:flex-start;gap:54px;margin-top:24px}
-.ann6{position:relative;width:192px;height:432px;margin-top:34px;flex:none}
-.ann6>div{position:absolute;right:0;width:100%;display:flex;align-items:center;gap:0}
-.ann6>div::before{content:"";flex:0 0 26px;height:1px;background:rgba(255,255,255,.34)}
+.cmp6{display:flex;justify-content:center;align-items:flex-start;gap:54px;margin-top:16px}
+.ann6{position:relative;width:196px;height:408px;margin-top:34px;flex:none}
+.ann6>div{position:absolute;right:-54px;width:calc(100% + 54px);display:flex;align-items:center;gap:0}
+.ann6>div::before{content:"";flex:0 0 82px;height:1px;background:rgba(255,255,255,.34)}
 .ann6 span{font-size:14px;line-height:1.4;color:#E8E3D9;padding-inline-start:10px}
 
 /* slide 5 - three capabilities measured on one scale of 12 */
@@ -1344,14 +1349,14 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 
 
 /* archive v2: one big illustration */
-.a2grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;min-height:0;align-items:center;margin-top:10px}
-.a2quote{margin-top:24px;padding:20px 26px;background:var(--sand);border-radius:4px;display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:start}
-.a2quote .q{font-family:Lit,Deck,serif;font-size:22px;line-height:1.5;color:var(--ink);text-wrap:balance}
+.a2grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:44px;flex:none;align-items:center;margin-top:8px}
+.a2quote{margin-top:20px;padding:17px 24px;background:var(--sand);border-radius:4px;display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:start}
+.a2quote .q{font-family:Lit,Deck,serif;font-size:20.5px;line-height:1.45;color:var(--ink);text-wrap:balance}
 .a2quote .t{font-size:16px;line-height:1.6;color:var(--muted)}
 .a2quote .t b{display:block;color:var(--coral);font-size:12.5px;font-weight:700;letter-spacing:.03em;margin-bottom:7px}
-.a2art img{width:100%;height:300px;object-fit:cover;border-radius:3px;display:block}
+.a2art img{width:100%;height:274px;object-fit:cover;border-radius:3px;display:block}
 .a2cap{font-size:12.5px;color:var(--muted);margin-top:10px}
-.a2hero b{font-family:Lit,Deck,serif;font-size:82px;line-height:.9;color:var(--ink);display:block;letter-spacing:-.01em}
+.a2hero b{font-family:Lit,Deck,serif;font-size:70px;line-height:.9;color:var(--ink);display:block;letter-spacing:-.01em}
 .a2hero span{display:block;font-size:19px;line-height:1.5;color:var(--muted);margin-top:8px;max-width:30ch}
 .a2hero em{font-style:normal;color:var(--ink);font-weight:600}
 .a2sub{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
@@ -1361,7 +1366,7 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .a2titl ul{list-style:none;margin:10px 0 0;columns:2;column-gap:28px}
 .a2titl li{font-family:Lit,Deck,serif;font-size:16.5px;line-height:1.4;color:var(--ink);padding:2px 0;break-inside:avoid}
 .a2titl li i{font-family:Deck;font-style:normal;font-size:12px;color:var(--muted);margin-inline-start:6px}
-.a2titl em{display:block;font-style:normal;font-size:14px;color:var(--muted);margin-top:11px}
+.a2note{font-size:14px;line-height:1.5;color:var(--muted);margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
 
 /* audit: micro-label contrast unified (AA) */
 .lp-tab,.lp-ss,.cm-tools,.cm-mk,.cm-ma,.cm-plh span,.cm-shs,.sh .sc,.tb{color:#6B6355}
@@ -1430,21 +1435,21 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
         <div class="a2text">
           <div class="a2hero"><b>17,824</b><span>מאמרים נכתבו סביב הפרקים, בידי <em>900 כותבים</em></span></div>
           <div class="a2sub">
-            <div><b>929</b><span>פרקים, מבראשית ועד סוף התנ"ך, לפי הסדר</span></div>
+            <div><b>929</b><span>פרקים, מבראשית ועד סוף התנ"ך</span></div>
             <div><b>254</b><span>קבוצות לימוד פעילות</span></div>
           </div>
           <div class="a2titl">
             <span class="plab">מה נכתב סביב פרק אחד, שמואל ב ו</span>
             <ul><li>עליצות מלכותית <i>אמיר אשל</i></li><li>הכביסה המלוכלכת בחוץ <i>יהושע אנגלמן</i></li><li>בדידות סטרילית <i>קרני אלדד</i></li><li>צופה בדוד, חושבת על פלטיאל <i>יוכי ברנדס</i></li></ul>
-            <em>13 כתבות בעלות שם כותב, מתוך 23 פריטים סביב הפרק הזה</em>
           </div>
+          <div class="a2note">13 כתבות בעלות שם כותב, מתוך 23 פריטים סביב הפרק הזה</div>
         </div>
       </div>
       <div class="a2quote">
         <div class="q">"את התוכן אנחנו רוצים לשמר, אבל למצוא דרכי תצוגה וחוויות משתמש טובות יותר לצרוך אותו."</div>
         <div class="t"><b>מה שמענו</b> לשפר את הדרך שבה צורכים את התוכן הקיים, ולהרחיב את אפשרויות הלימוד מעבר לפרק היומי, גם מעבר לתנ"ך.</div>
       </div>
-      <div class="src">מקור: 929.org.il, דף הבית ודף ההצטרפות ועמוד הפרק (page/269), נבדק 16.9.2026. הציטוט מהשיחה המקדימה עם צוות 929.</div>
+      <div class="src">מקור: 929.org.il, דף הבית, דף ההצטרפות ועמוד הפרק (page/269), נבדק 16.9.2026. הציטוט מהשיחה המקדימה עם צוות 929.</div>
     </div>
   </section>
 
@@ -1536,12 +1541,12 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
               <div class="r"><i><img src="assets/chapter-haazinu.jpg" alt=""></i><div><b>שירת האזינו רלוונטית מתמיד</b><span>יואל בן נון · פרשנות</span></div></div>
             </div>
           </div>
-          <div class="cap">אותה כתבה, עם גודל אות נשלט והאזנה</div>
+          <div class="cap">גודל אות נשלט והאזנה</div>
         </div>
         <div class="ann6">
-          <div style="top:166px"><span>סוג התוכן ואורך הקריאה</span></div>
-          <div style="top:236px"><span>כלי קריאה והאזנה</span></div>
-          <div style="top:362px"><span>שאר הכתבות על אותו פרק</span></div>
+          <div style="top:194px"><span>סוג התוכן ואורך הקריאה</span></div>
+          <div style="top:270px"><span>כלי קריאה והאזנה</span></div>
+          <div style="top:344px"><span>שאר הכתבות על אותו פרק</span></div>
         </div>
       </div>
       <div class="foot">אותו טקסט, אותם כותבים. <b>השינוי הוא בחוויה, לא בתוכן.</b></div>
@@ -1553,10 +1558,10 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
       <div class="eyebrow"><span class="num">06</span> החוויה המוצעת</div>
       <h2 class="c8h">הפרק היומי במרכז, עם <b>אפשרויות להעמקה אישית</b></h2>
       <div class="capstage proto cap8" data-demo="7" data-auto="3800" data-loop="1">
-        <div class="capside"><div class="caps"><div class="lay">שלוש יכולות מרכזיות</div><div class="slot" data-i="0"><svg viewBox="0 0 24 24"><path d="M4 5h7v14H4zM13 5h7v14h-7z"/><path d="M13 9.5h7"/></svg><div class="n">התאמה אישית</div><i class="nb">1</i></div><div class="slot" data-i="1"><svg viewBox="0 0 24 24"><path d="M5 19c4-6 3-9 7-9s3 5 7-5"/><circle cx="5" cy="19" r="1.5"/><circle cx="19" cy="5" r="1.5"/></svg><div class="n">מסלולי לימוד</div><i class="nb">2</i></div><div class="slot" data-i="2"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 16 0"/><rect x="3" y="12" width="4" height="6" rx="1.5"/><rect x="17" y="12" width="4" height="6" rx="1.5"/></svg><div class="n">קריאה, האזנה ושאלות</div><i class="nb">3</i></div><div class="lay">כלים שתומכים בחוויה</div><div class="slot sm" data-i="3"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v5l3 2"/></svg><div class="n">תקציר ליום עמוס</div><i class="nb x"></i></div><div class="slot sm" data-i="4"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12l2.4 2.4 4.6-4.8"/></svg><div class="n">מעקב וסימון "קראתי"</div><i class="nb x"></i></div><div class="slot sm" data-i="5"><svg viewBox="0 0 24 24"><path d="M18 9.4a6 6 0 1 0-12 0c0 5.6-2.4 7.2-2.4 7.2h16.8S18 15 18 9.4z"/><path d="M13.7 20.2a2 2 0 0 1-3.4 0"/></svg><div class="n">תזכורת בזמן שבחרת</div><i class="nb x"></i></div><div class="slot sm" data-i="6"><svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2.5 19c.6-3 3-4.5 5.5-4.5s4.9 1.5 5.5 4.5M11 19c.4-2.7 2.5-4.5 5-4.5s4.6 1.8 5.5 4.5"/></svg><div class="n">חיבור לקהילה הקיימת</div><i class="nb x"></i></div></div>
+        <div class="capright"><div class="midcol"><div class="capdesc"><div class="cd" data-cd="0"><div class="cdt">הלומד בוחר, והארכיון מסתדר סביבו.</div><ul><li><b>תחומי עניין וסוג תוכן</b> שהוא סימן, לא שאנחנו ניחשנו</li><li><b>כל התוכן נשאר נגיש</b>, גם נקודות מבט שלא נבחרו</li></ul></div><div class="cd" data-cd="1"><div class="cdt">הפרק היומי נשאר הלב. לצדו, מסלולים לבחירה.</div><ul><li><b>תיק נושא או סדרה</b>: מנהיגות, ספר משלי, 20 השירים של רחל</li><li><b>התקדמות ברצף</b>, בקצב אישי, וממשיכים מהמקום האחרון</li></ul></div><div class="cd" data-cd="2"><div class="cdt">אותו פרק, שלוש דרכים ללמוד אותו.</div><ul><li><b>קריאה נקייה או האזנה</b>, בשליטה מהאוזניות</li><li><b>שאלה</b> שמפנה למקורות מזוהים, ומציגה גם דעות שונות</li></ul></div><div class="cd" data-cd="3"><div class="cdt">אין זמן לפרק שלם? יש תקציר.</div><ul><li><b>התקציר שכבר קיים</b> לכל פרק, כ-3 דקות</li><li>פספסת? <b>השלמה בתקציר</b>, והרצף נשמר</li></ul></div><div class="cd" data-cd="4"><div class="cdt">לדעת איפה אני.</div><ul><li>סימון <b>"קראתי"</b> והתקדמות מתוך 929</li><li>מה ש<b>הלומדים ביקשו בחזרה</b> בביקורות</li></ul></div><div class="cd" data-cd="5"><div class="cdt">תזכורת אחת, בזמן שבחרת.</div><ul><li><b>זמן הפוש</b> נקבע על ידי הלומד</li><li>על הפרק, או על <b>כתבה מתחום העניין</b>. משפט אחד, פעולה אחת</li></ul></div><div class="cd" data-cd="6"><div class="cdt">הקהילה שכבר קיימת, במרחק לחיצה.</div><ul><li><b>קבוצות הוואטסאפ</b> הפעילות של 929, מתוך העמוד</li><li><b>מי לומד איתי</b> במסלול, בהצטרפות מהעמוד הראשי</li></ul></div></div>
+          </div><div class="capside"><div class="caps"><div class="lay">שלוש יכולות מרכזיות</div><div class="slot" data-i="0"><svg viewBox="0 0 24 24"><path d="M4 5h7v14H4zM13 5h7v14h-7z"/><path d="M13 9.5h7"/></svg><div class="n">התאמה אישית</div><i class="nb">1</i></div><div class="slot" data-i="1"><svg viewBox="0 0 24 24"><path d="M5 19c4-6 3-9 7-9s3 5 7-5"/><circle cx="5" cy="19" r="1.5"/><circle cx="19" cy="5" r="1.5"/></svg><div class="n">מסלולי לימוד</div><i class="nb">2</i></div><div class="slot" data-i="2"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 16 0"/><rect x="3" y="12" width="4" height="6" rx="1.5"/><rect x="17" y="12" width="4" height="6" rx="1.5"/></svg><div class="n">קריאה, האזנה ושאלות</div><i class="nb">3</i></div><div class="lay">כלים שתומכים בחוויה</div><div class="slot sm" data-i="3"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v5l3 2"/></svg><div class="n">תקציר ליום עמוס</div><i class="nb x"></i></div><div class="slot sm" data-i="4"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12l2.4 2.4 4.6-4.8"/></svg><div class="n">מעקב וסימון "קראתי"</div><i class="nb x"></i></div><div class="slot sm" data-i="5"><svg viewBox="0 0 24 24"><path d="M18 9.4a6 6 0 1 0-12 0c0 5.6-2.4 7.2-2.4 7.2h16.8S18 15 18 9.4z"/><path d="M13.7 20.2a2 2 0 0 1-3.4 0"/></svg><div class="n">תזכורת בזמן שבחרת</div><i class="nb x"></i></div><div class="slot sm" data-i="6"><svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2.5 19c.6-3 3-4.5 5.5-4.5s4.9 1.5 5.5 4.5M11 19c.4-2.7 2.5-4.5 5-4.5s4.6 1.8 5.5 4.5"/></svg><div class="n">חיבור לקהילה הקיימת</div><i class="nb x"></i></div></div>
           </div>
-        <div class="midcol"><div class="capdesc"><div class="cd" data-cd="0"><div class="cdt">הלומד בוחר, והארכיון מסתדר סביבו.</div><ul><li><b>תחומי עניין וסוג תוכן</b> שהוא סימן, לא שאנחנו ניחשנו</li><li><b>כל התוכן נשאר נגיש</b>, גם נקודות מבט שלא נבחרו</li></ul></div><div class="cd" data-cd="1"><div class="cdt">הפרק היומי נשאר הלב. לצדו, מסלולים לבחירה.</div><ul><li><b>תיק נושא או סדרה</b>: מנהיגות, ספר משלי, 20 השירים של רחל</li><li><b>התקדמות ברצף</b>, בקצב אישי, וממשיכים מהמקום האחרון</li></ul></div><div class="cd" data-cd="2"><div class="cdt">אותו פרק, שלוש דרכים ללמוד אותו.</div><ul><li><b>קריאה נקייה או האזנה</b>, בשליטה מהאוזניות</li><li><b>שאלה</b> שמפנה למקורות מזוהים, ומציגה גם דעות שונות</li></ul></div><div class="cd" data-cd="3"><div class="cdt">אין זמן לפרק שלם? יש תקציר.</div><ul><li><b>התקציר שכבר קיים</b> לכל פרק, כ-3 דקות</li><li>פספסת? <b>השלמה בתקציר</b>, והרצף נשמר</li></ul></div><div class="cd" data-cd="4"><div class="cdt">לדעת איפה אני.</div><ul><li>סימון <b>"קראתי"</b> והתקדמות מתוך 929</li><li>מה ש<b>הלומדים ביקשו בחזרה</b> בביקורות</li></ul></div><div class="cd" data-cd="5"><div class="cdt">תזכורת אחת, בזמן שבחרת.</div><ul><li><b>זמן הפוש</b> נקבע על ידי הלומד</li><li>על הפרק, או על <b>כתבה מתחום העניין</b>. משפט אחד, פעולה אחת</li></ul></div><div class="cd" data-cd="6"><div class="cdt">הקהילה שכבר קיימת, במרחק לחיצה.</div><ul><li><b>קבוצות הוואטסאפ</b> הפעילות של 929, מתוך העמוד</li><li><b>מי לומד איתי</b> במסלול, בהצטרפות מהעמוד הראשי</li></ul></div></div>
-          <div class="orgval"><span class="ol">מה נמדד</span><p>אילו תכנים נפתחים, אילו מסלולים מושלמים, והאם חוזרים ללמוד.</p></div></div>
+        <div class="orgval"><span class="ol">מה נמדד</span><p>אילו תכנים נפתחים, אילו מסלולים מושלמים, והאם חוזרים ללמוד.</p></div></div>
         <div class="phcol8"><div class="dev st-0"><div class="notch"></div><div class="cs" data-cs="0"><div class="fp-hd"><div class="t">הפרק היומי · שמואל ב ו</div><div class="s">929 · ממשיכים מהמקום שעצרתי</div></div><div class="fp-body"><div class="fp-seg"><span class="on">תקציר · 3 דק׳</span><span>הפרק · 7 דק׳</span><span>האזנה · 36</span></div><div class="fp-btn">פתיחת הפרק</div><div class="fp-card"><div class="fp-ring"><svg viewBox="0 0 74 74"><circle cx="37" cy="37" r="30" stroke="#E2DED5" stroke-width="7" fill="none"/><circle cx="37" cy="37" r="30" stroke="#C0454F" stroke-width="7" fill="none" stroke-linecap="round" stroke-dasharray="188" stroke-dashoffset="134"/></svg><div class="c"><b>269</b><span>מתוך 929 פרקים</span><div style="font-size:9.5px;color:#C0454F;font-weight:700;margin-top:4px">7 ימים ברצף</div></div></div></div><div class="fp-lbl">מותאם לך</div><div class="fp-card"><div class="rt">צופה בדוד, חושבת על פלטיאל</div><div class="ra">יוכי ברנדס · ספרות</div></div><div class="fp-lbl">מסלולים</div><div class="fp-chips"><span class="k">מנהיגות</span><span>אור</span><span>ספר משלי</span></div></div></div><div class="cs" data-cs="1"><div class="fp-hd"><div class="t">מסלולים</div><div class="s">הפרק היומי נשאר הלב</div></div><div class="fp-body"><div class="fp-player" style="padding:11px 12px"><div class="ps">הפרק היומי · שמואל ב</div><div class="pt">שמואל ב ו</div><div class="fp-btn" style="background:#C0454F;margin-top:8px;padding:6px 10px;font-size:9.5px;width:max-content">ממשיכים</div></div><div class="fp-lbl">תיקי נושא</div><div class="fp-chips"><span class="k">מנהיגות · נושא החודש</span><span>אור</span><span>חושך</span><span>גוף ונפש</span><span>צדק חברתי</span></div><div class="fp-lbl">סדרות</div><div class="fp-row"><div class="ic8"></div><div><div class="rt">20 השירים הגדולים של רחל</div><div class="ra">סדרה · 20 מפגשים</div></div><div class="rb">התחילו</div></div><div class="fp-row"><div class="ic8"></div><div><div class="rt">ספר משלי</div><div class="ra">סדרה · שבתות בלבד</div></div><div class="rb">התחילו</div></div><div class="fp-row"><div class="ic8"></div><div><div class="rt">מדרשים על אהבה</div><div class="ra">סדרה</div></div><div class="rb">התחילו</div></div></div></div><div class="cs" data-cs="2"><div class="fp-hd"><div class="t">דברים לב</div><div class="s">שירת האזינו · פרשת השבוע</div></div><div class="fp-body"><div class="fp-seg"><span>קריאה</span><span class="on">האזנה</span><span>שאל את הפרק</span></div><div class="fp-player"><div class="pt">מסע 929 של הרב שי פירון</div><div class="ps">דברים - פרק לב · 1.25x · שליטה מהאוזניות</div><div class="bar"><i></i></div><div class="pm"><span>14:48</span><span>36:00</span></div></div><div class="fp-lbl">פלייליסט: מנהיגות · הבא בתור</div><div class="fp-row"><div class="ic8"></div><div><div class="rt">קריינות הפרק</div><div class="ra">7 דק׳</div></div></div><div class="fp-row"><div class="ic8"></div><div><div class="rt">בקטנה על הפרק</div><div class="ra">4 דק׳</div></div></div><div class="fp-row"><div class="ic8"></div><div><div class="rt">ויהי פודקאסט!</div><div class="ra">פרק</div></div></div><div class="fp-btn l">שאל את הפרק: "למה משה פונה אל השמים?"</div></div></div><div class="cs" data-cs="3"><div class="fp-hd"><div class="t">שמואל ב ו</div><div class="s">הפרק היומי · כמה זמן יש לך היום?</div></div><div class="fp-body"><div class="fp-seg" style="font-size:8.5px"><span class="on" style="font-size:8.5px">תקציר · 3 דק׳</span><span style="font-size:8.5px">הפרק · 7 דק׳</span><span style="font-size:8.5px">האזנה · 36 דק׳</span></div><div class="fp-card" style="background:#F3E7E2"><div class="rt" style="color:#C0454F">התקציר היומי</div><div class="ra" style="color:#242322;line-height:1.5;margin-top:4px">דוד מעלה את ארון ה׳ לירושלים. הדרך נקטעת במות עוזא, ונשלמת בריקוד של המלך לפני הארון ובוויכוח עם מיכל.</div><div class="fp-tg" style="margin-top:7px"><span class="on">קריאה 3 דק׳</span><span>האזנה 4 דק׳</span></div></div><div class="fp-row"><div class="ic8"></div><div><div class="rt">רוצה עוד? כתבה אחת מהתחום שלך</div><div class="ra">מחקר · טור קצר</div></div><div class="rb">לקריאה</div></div><div class="fp-card"><div class="rt">פספסת השבוע: שמואל ב ה</div><div class="ra">השלמה בתקציר · 3 דק׳ · הרצף נשמר</div></div><div class="fp-btn">סיימתי להיום</div></div></div><div class="cs" data-cs="4"><div class="fp-hd"><div class="t">ההתקדמות שלי</div><div class="s">929 פרקים, יום אחר יום</div></div><div class="fp-body"><div class="fp-card"><div class="fp-ring"><svg viewBox="0 0 74 74"><circle cx="37" cy="37" r="30" stroke="#E2DED5" stroke-width="7" fill="none"/><circle cx="37" cy="37" r="30" stroke="#C0454F" stroke-width="7" fill="none" stroke-linecap="round" stroke-dasharray="188" stroke-dashoffset="134"/></svg><div class="c"><b>269</b><span>מתוך 929 פרקים</span><div style="font-size:9.5px;color:#C0454F;font-weight:700;margin-top:4px">7 ימים ברצף</div></div></div></div><div class="fp-card"><div class="fp-lbl" style="margin-bottom:4px">השבוע</div><div class="fp-chk"><i></i>שמואל ב ד</div><div class="fp-chk"><i></i>שמואל ב ה</div><div class="fp-chk"><i class="o"></i>שמואל ב ו · היום</div></div><div class="fp-card"><div class="rt">סיימתם את ספר שמואל א</div><div class="ra">תג השלמה · 31 פרקים</div></div><div class="fp-card"><div class="rt">תיק "מנהיגות"</div><div class="ra">מפגש 4 מתוך 12</div></div></div></div><div class="cs" data-cs="5"><div class="fp-lock"><div class="tm">07:30</div><div class="dt">יום ד׳ · הזמן שבחרת</div><div class="fp-notif"><div class="a"><span>929</span><span>עכשיו</span></div><div class="t">הפרק של היום מחכה: שמואל ב ו</div><div class="s">7 דקות קריאה, או תקציר של 3 דקות</div></div><div class="fp-notif" style="margin-top:8px;opacity:.85"><div class="a"><span>929 · תיק מנהיגות</span><span>אתמול</span></div><div class="t">כתבה חדשה בתחום שבחרת</div><div class="s">שופטים ד · דבורה</div></div><div style="font-size:9px;color:#C9C2B4;margin-top:22px">תזכורת אחת ביום · בזמן ובנושא שבחרת</div></div></div><div class="cs" data-cs="6"><div class="fp-hd"><div class="t">929 - לימוד פרקי התנ"ך</div><div class="s">הפרק היומי · שמואל ב ו</div></div><div class="fp-body"><div class="fp-chips"><span>קריינות</span><span>תקציר</span><span>כתבות עומק</span></div><div class="fp-lbl">קבוצות וואטסאפ פעילות</div><div class="fp-row"><div class="ic8" style="background:#dcfce7"></div><div><div class="rt">קצרים על הפרק</div><div class="ra">קבוצת תוכן</div></div><div class="rb">הצטרפות</div></div><div class="fp-row"><div class="ic8" style="background:#dcfce7"></div><div><div class="rt">תזכורות לשיעורים</div><div class="ra">קבוצת תזכורות</div></div><div class="rb">הצטרפות</div></div><div class="fp-card"><div class="fp-lbl">לומדים איתך במסלול היום</div><div style="display:flex;align-items:center;gap:8px;margin-top:5px"><div class="fp-av"><i></i><i></i><i></i><i></i></div><span style="font-size:9.5px;color:#6B6355">ועוד רבים</span></div></div><div class="fp-btn">הצטרפות למסלול</div><div class="fp-btn l">שאל את הפרק</div></div></div></div><div class="mocklbl">המחשה מוצעת</div></div>
       </div>
     <div class="foot" style="padding-top:12px;margin-top:10px">שבע יכולות, ארכיון אחד. <b>בשלוש הראשונות נעמיק עכשיו.</b></div>
@@ -1568,7 +1573,6 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
       <div class="eyebrow"><span class="num">07</span> מקרוב · 1 מתוך 3 · התאמה אישית</div>
       <h2 class="h2c">התוכן לפי תחומי העניין של הלומד</h2>
       <div class="pgrid">
-        <div class="pconn"><svg viewBox="0 0 166 12" preserveAspectRatio="none"><path d="M165 6 H13" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M20 1.5 L13 6 L20 10.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="pchoice">
           <div class="plab">הלומד בוחר, פעם אחת</div>
           <div class="pchips">
