@@ -24,7 +24,7 @@
   --bg:#F7F4EE;            /* warm white */
   --sand:#EAE3D8;          /* light sand */
   --ink:#242322;           /* charcoal */
-  --muted:#6B6355;
+  --muted:#5C5548;
   --line:#DBD3C6;
   --coral:#D94D58;         /* primary accent */
   --mustard:#E7AC32;       /* secondary accent */
@@ -56,11 +56,11 @@ body{font-family:Deck,'Assistant','Heebo',Arial,sans-serif;color:var(--ink);
 .eyebrow .num{color:var(--coral);font-size:12.5px;font-weight:700;letter-spacing:.04em;font-variant-numeric:tabular-nums}
 .eyebrow .num::after{content:'';display:inline-block;width:14px;height:1px;background:var(--line);vertical-align:middle;margin-inline-start:9px}
 h1{font-family:Lit,Deck,serif;font-size:62px;font-weight:600;line-height:1.14;letter-spacing:0}
-h2{font-family:Deck;font-size:52px;font-weight:700;line-height:1.16;letter-spacing:-.015em;color:var(--ink);text-wrap:balance;max-width:26ch}
+h2{font-family:Deck;font-size:48px;font-weight:700;line-height:1.16;letter-spacing:-.015em;color:var(--ink);text-wrap:balance;max-width:26ch}
 h3{font-size:19px;font-weight:600;line-height:1.35;color:var(--base)}
-.lead{font-size:19px;line-height:1.65;color:var(--muted);margin-top:12px}
-.kicker{font-size:16px;line-height:1.6;color:var(--muted)}
-.foot{margin-top:auto;font-size:17px;line-height:1.6;color:var(--ink);font-weight:400;
+.lead{font-size:20px;line-height:1.6;color:var(--muted);margin-top:12px}
+.kicker{font-size:17px;line-height:1.6;color:var(--muted)}
+.foot{margin-top:auto;font-size:18px;line-height:1.6;color:var(--ink);font-weight:400;
   border-top:1px solid var(--line);padding-top:18px}
 .mono{font-variant-numeric:tabular-nums}
 b,strong{font-weight:600;color:var(--ink)}
@@ -136,17 +136,19 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .chan li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;background:var(--base);margin-top:9px;opacity:.5}
 
 /* static phone (slide 5, today) */
-.phone{width:230px;height:470px;border-radius:40px;border:3px solid #2A2724;overflow:hidden;
-  position:relative;background:#fff;box-shadow:0 26px 52px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.16)}
+.phone{width:212px;height:432px;border-radius:38px;border:3px solid #2A2724;overflow:hidden;
+  position:relative;background:#fff}
+.phone,.mock,.mock2,.dev{box-shadow:0 12px 26px rgba(36,35,34,.16),0 3px 7px rgba(36,35,34,.08)}
+.dark .phone,.dark .mock,.dark .mock2,.dark .dev{box-shadow:0 18px 40px rgba(0,0,0,.40),0 0 0 1px rgba(255,255,255,.08)}
 .phone::after,.mock::after{content:'';position:absolute;top:6px;left:50%;transform:translateX(-50%);width:44px;height:8px;border-radius:99px;background:#1C1B1A;z-index:30}
 .phone img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
 .dark .phone,.dark .mock{border-color:#4A453D}
 .dark .mock .hd{background:#3A342E}
-.cap{font-size:13.5px;color:#C9C2B4;text-align:center;margin-top:12px;line-height:1.45}
+.cap{font-size:14.5px;color:#D8D2C6;text-align:center;margin-top:14px;line-height:1.45}
 
 /* proposed mini-mock (slide 5, static) */
-.mock{width:202px;height:410px;border-radius:36px;border:3px solid #2A2724;overflow:hidden;
-  position:relative;background:#FAF7F2;box-shadow:0 26px 52px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.16);font-size:10px;color:#242322;text-align:right}
+.mock{width:202px;height:410px;border-radius:38px;border:3px solid #2A2724;overflow:hidden;
+  position:relative;background:#FAF7F2;font-size:10px;color:#242322;text-align:right}
 .mock .hd{background:#3A342E;color:#fff;padding:24px 13px 12px}
 .mock .hd .t{font-size:12.5px;font-weight:600}
 .mock .hd .s{font-size:9.5px;color:#C9C2B4;margin-top:2px}
@@ -233,9 +235,13 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 
 /* prototype (scaffold controller) */
 .proto{display:flex;flex-direction:column;align-items:center;gap:10px;position:relative}
+.proto::after{content:"המחשה מוצעת";position:absolute;top:-21px;left:0;right:0;text-align:center;font-size:11.5px;letter-spacing:.04em;color:var(--muted);opacity:.75}
+.capstage.proto::after{content:none}
+.phcol8 .mocklbl{font-size:11.5px;letter-spacing:.04em;color:var(--muted);opacity:.75;margin-top:10px}
+.dark .proto::after{color:#A79E8C}
 .dev{width:214px;height:440px;background:#fff;border-radius:40px;position:relative;overflow:hidden;cursor:pointer;
-  border:3px solid #2A2724;box-shadow:0 12px 26px rgba(36,35,34,.13),0 3px 7px rgba(36,35,34,.07),0 0 0 1px rgba(255,255,255,.5) inset}
-.dev .notch{position:absolute;top:6px;left:50%;transform:translateX(-50%);width:50px;height:9px;border-radius:99px;background:#1C1B1A;z-index:30}
+  border:3px solid #2A2724}
+.dev .notch{position:absolute;top:6px;left:50%;transform:translateX(-50%);width:46px;height:8px;border-radius:99px;background:#1C1B1A;z-index:30}
 .dev::before{content:'';position:absolute;bottom:5px;left:50%;transform:translateX(-50%);width:76px;height:3.5px;border-radius:99px;background:rgba(26,26,26,.28);z-index:30;pointer-events:none}
 .dark .dev{border-color:#4A453D}
 .bglayer{position:absolute;inset:0}
@@ -589,42 +595,45 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 
 
 /* ── features page (ההצעה · תכולת המוצר), after national-library slide 8 ── */
-.c8h{font-family:Deck;font-size:46px;font-weight:700;line-height:1.16;letter-spacing:-.015em;margin-bottom:0}
+.c8h{font-family:Deck;font-size:46px;margin-top:0;font-weight:700;line-height:1.16;letter-spacing:-.015em;margin-bottom:0}
 .c8h b{font-weight:700;color:var(--coral)}
 .stepper{display:grid;grid-template-columns:318px 280px 1fr;gap:40px;margin:10px 0 0}
 .stp{font-size:13px;font-weight:700;letter-spacing:.05em;color:var(--base)}
 .stp:last-child{text-align:center}
-.capstage{display:flex;flex-direction:row;align-items:stretch;gap:34px;height:468px;margin-top:0}
+.capstage{display:flex;flex-direction:row;align-items:stretch;gap:40px;height:470px;margin-top:14px}
 .cap8 .dev{width:222px;height:458px;border-radius:40px}
 .cap8 .capdesc{height:280px}
-.capside{width:318px;flex:0 0 318px;display:flex;flex-direction:column;justify-content:center}
+.capside{width:322px;flex:0 0 322px;display:flex;flex-direction:column;justify-content:center}
 .caps{display:flex;flex-direction:column;gap:1px}
-.lay{font-size:11.5px;font-weight:700;letter-spacing:.08em;color:var(--muted);margin:7px 0 2px;opacity:.75}
+.caps .lay:first-child{margin-top:0}
+.caps .slot.sm{padding:6px 13px}
+.caps .slot.sm .n{font-size:13.5px;font-weight:500;color:var(--muted)}
+.lay{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--muted);margin:14px 0 6px;opacity:1}
 .lay:first-child{margin-top:0}
-.slot{display:flex;align-items:center;gap:10px;padding:5px 12px;border-radius:10px;cursor:pointer;opacity:.8;transition:background .25s,opacity .25s}
+.slot{display:flex;align-items:center;gap:11px;padding:9px 13px;border-radius:8px;cursor:pointer;opacity:.85;transition:background .25s,opacity .25s}
 .slot:hover{background:rgba(58,91,208,.08);opacity:1}
 .slot svg{width:17px;height:17px;flex:0 0 17px;stroke:var(--muted);stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.slot .n{font-size:14.5px;font-weight:600;color:var(--ink);line-height:1.25}
+.slot .n{font-size:15px;font-weight:600;color:var(--ink);line-height:1.25}
 .slot .nb{margin-inline-start:auto;flex:0 0 20px;width:20px;height:20px;border-radius:99px;background:var(--accent-tint);color:var(--accent);font-style:normal;font-size:11px;font-weight:700;display:grid;place-items:center}
 .slot .nb.x{background:transparent}
 .slot.act{background:var(--accent);opacity:1}
 .slot.act .n{color:#fff}.slot.act svg{stroke:#fff}.slot.act .nb{background:#fff;color:var(--accent)}.slot.act .nb.x{background:transparent}
 .legend{display:flex;align-items:center;gap:6px;margin-top:10px;padding-top:9px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);line-height:1.35}
 .legend .nb{width:18px;height:18px;border-radius:6px;background:var(--accent);color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center;font-style:normal}
-.midcol{flex:0 0 280px;width:280px;display:flex;flex-direction:column;justify-content:center;gap:12px}
-.capdesc{position:relative;height:300px;background:transparent;border-inline-start:2px solid var(--line);padding:0 22px}
+.midcol{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:14px}
+.capdesc{position:relative;height:300px;background:transparent;padding:0}
 .cd{position:absolute;inset:0;padding:0 22px;opacity:0;transition:opacity .25s ease;display:flex;flex-direction:column;justify-content:center}
-.cd .cdt{font-family:Deck;font-size:25px;line-height:1.3;color:var(--ink);font-weight:700}
+.cd .cdt{font-family:Deck;font-size:26px;line-height:1.3;color:var(--ink);font-weight:700}
 .cd .cdt::after{content:'';display:block;width:36px;height:3px;border-radius:2px;background:var(--accent);margin:12px 0 14px}
 .cd ul{list-style:none;display:flex;flex-direction:column;gap:10px}
-.cd li{font-size:14.5px;line-height:1.5;color:var(--ink);position:relative;padding-inline-start:16px}
+.cd li{font-size:15.5px;line-height:1.55;color:var(--ink);position:relative;padding-inline-start:17px}
 .cd li::before{content:'';position:absolute;inset-inline-start:0;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
 .cd li b{color:var(--ink);font-weight:600}
 .orgval{background:transparent;border-top:1px solid var(--line);padding:12px 0 0;display:flex;gap:12px;align-items:flex-start}
 .orgval .ol,.measure .ol{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--accent);white-space:nowrap;margin-top:3px}
-.orgval p{font-size:13.5px;line-height:1.5;color:var(--ink);margin:0}
+.orgval p{font-size:14.5px;line-height:1.5;color:var(--muted);margin:0}
 .orgval b{color:var(--base);font-weight:700}
-.phcol8{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.phcol8{flex:0 0 268px;width:268px;display:flex;flex-direction:column;align-items:center;justify-content:center}
 /* step wiring: the controller puts st-K on the wrapper too */
 .cap8 .cs{position:absolute;inset:0;opacity:0;transition:opacity .3s;background:#FAF7F2}
 .cap8.sp-0 .cs[data-cs="0"],.cap8.sp-1 .cs[data-cs="1"],.cap8.sp-2 .cs[data-cs="2"],.cap8.sp-3 .cs[data-cs="3"],.cap8.sp-4 .cs[data-cs="4"],.cap8.sp-5 .cs[data-cs="5"],.cap8.sp-6 .cs[data-cs="6"],.cap8.sp-7 .cs[data-cs="7"],.cap8.sp-8 .cs[data-cs="8"],.cap8 .dev.st-0 .cs[data-cs="0"],.cap8 .dev.st-1 .cs[data-cs="1"],.cap8 .dev.st-2 .cs[data-cs="2"],.cap8 .dev.st-3 .cs[data-cs="3"],.cap8 .dev.st-4 .cs[data-cs="4"],.cap8 .dev.st-5 .cs[data-cs="5"],.cap8 .dev.st-6 .cs[data-cs="6"],.cap8 .dev.st-7 .cs[data-cs="7"],.cap8 .dev.st-8 .cs[data-cs="8"]{opacity:1}
@@ -683,8 +692,8 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .measure p{font-size:14px;line-height:1.5;color:var(--ink);margin:0}
 .fx .phcol{position:static}
 .fx .phcol .proto{position:absolute;left:74px;top:140px;margin:0;transform:scale(1.15);transform-origin:top center}
-.h2c{font-size:48px;line-height:1.14;max-width:22ch}
-.h2l{font-size:45px;line-height:1.18;max-width:30ch}
+.h2c{font-size:46px;line-height:1.15;max-width:23ch}
+.h2l{font-size:43px;line-height:1.19;max-width:31ch}
 
 /* ── one core, two faces (slide 12) ── */
 .core3{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:18px;margin-top:18px;align-items:stretch}
@@ -740,8 +749,8 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .ex3.plain .card{background:transparent;padding:2px 0;border-inline-start:2px solid var(--line);padding-inline-start:20px}
 .ex3 .card h3{font-size:19px}
 .ex3 .card p{font-size:16px;line-height:1.6;margin-top:8px}
-.src{font-size:12px;color:var(--muted);margin-top:auto;padding-top:14px;line-height:1.5}
-.src.dk{color:#9fa6c4}
+.src{font-size:14px;color:var(--muted);margin-top:auto;padding-top:14px;line-height:1.55;max-width:118ch}
+.src.dk{color:#BBB3A3}
 .prin{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
 .prin div{background:var(--accent-tint);border-radius:12px;padding:10px 14px;font-size:14px;line-height:1.45;color:var(--base)}
 .prin b{color:var(--base);font-weight:700}
@@ -763,8 +772,8 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 
 /* round 9: article mock, learning-path progress, balanced wall, pilot next-steps */
 .col5{display:flex;flex-direction:column;align-items:center}
-.cap5{font-size:13.5px;font-weight:600;color:#fff;margin-bottom:10px;text-align:center}
-.col5 .cap{max-width:240px;margin-bottom:16px}
+.cap5{font-size:14.5px;font-weight:600;color:#fff;margin-bottom:12px;text-align:center;letter-spacing:.02em}
+.col5 .cap{max-width:224px;margin-bottom:0}
 .mock .art{padding:10px 12px 0}
 .mock .atit{font-size:13px;font-weight:700;color:#2A2724;line-height:1.3}
 .mock .aau{font-size:9px;color:#6B6355;margin-top:3px}
@@ -815,7 +824,7 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .tzrow{background:#fff;border-radius:10px;padding:7px 10px}
 .tzrow .rt{font-size:10.5px;font-weight:600;color:#2A2724;line-height:1.25}
 .tzrow .ra{font-size:9px;color:#6B6355;margin-top:2px}
-.askgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px;flex:1;min-height:0;align-content:center}
+.askgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:14px;flex:1;min-height:0;align-content:center}
 .ask{background:#fff;border-radius:16px;padding:20px 22px;display:flex;flex-direction:column}
 .ask .q{font-size:17.5px;line-height:1.45;font-weight:600;color:var(--base)}
 .ask .a{font-size:14px;line-height:1.5;color:var(--muted);margin-top:auto;padding-top:12px;border-top:1px solid var(--line)}
@@ -849,9 +858,8 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 
 
 /* round 11: rich product mocks (their own chapter illustrations) */
-.mock2{width:230px;height:470px;border-radius:40px;border:3px solid #2A2724;overflow:hidden;position:relative;
-  background:#fff;box-shadow:0 28px 56px rgba(0,0,0,.46),0 0 0 1px rgba(255,255,255,.14);
-  font-size:10px;color:#242322;text-align:right;display:flex;flex-direction:column;margin-inline:auto}
+.mock2{width:212px;height:432px;border-radius:38px;border:3px solid #2A2724;overflow:hidden;position:relative;
+  background:#fff;font-size:10px;color:#242322;text-align:right;display:flex;flex-direction:column;margin-inline:auto}
 .dark .mock2{border-color:#4A453D}
 .mock2::after{content:'';position:absolute;top:6px;left:50%;transform:translateX(-50%);width:44px;height:8px;border-radius:99px;background:#1C1B1A;z-index:30}
 .m2top{height:40px;flex:0 0 40px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 12px 6px;background:#fff}
@@ -938,7 +946,7 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 
 
 /* round 13: four asks, world conclusion, merged pilot */
-.askgrid.four{grid-template-columns:repeat(2,1fr);gap:30px 42px}
+.askgrid.four{grid-template-columns:repeat(2,1fr);gap:40px 46px;align-content:center}
 .askgrid.four .ask{padding:26px 28px}
 .askgrid.four .ask .q{font-size:21px;line-height:1.4}
 .askgrid.four .ask .a{font-size:15px;margin-top:12px;padding-top:0;border-top:0}
@@ -979,16 +987,16 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .cov{background:var(--bg)}
 .covpanel{position:absolute;top:0;bottom:0;right:0;width:39%;padding:52px 58px 44px 38px;display:flex;flex-direction:column;justify-content:space-between;z-index:2}
 .covart{position:absolute;top:0;bottom:0;left:0;width:61%;overflow:hidden}
-.covart img{width:100%;height:100%;object-fit:cover;object-position:46% 45%;display:block;filter:brightness(1.16) saturate(1.05) contrast(.98)}
+.covart img{width:100%;height:100%;object-fit:cover;object-position:46% 45%;display:block;filter:brightness(1.24) saturate(1.06) contrast(.97)}
 .covart::after{content:"";position:absolute;inset:0;background:linear-gradient(to left,var(--bg) 0%,rgba(247,244,238,.85) 3%,rgba(247,244,238,0) 16%)}
-.covlogos{display:flex;align-items:center;gap:16px}
+.covlogos{display:flex;align-items:center;gap:16px;justify-content:flex-start;margin-inline-end:0}
 .covlogos .l929{height:38px;width:auto}
 .covlogos .l200{height:42px;width:auto;opacity:.85}
 .covrule{width:1px;height:28px;background:var(--line)}
 .coveb{font-size:12.5px;font-weight:600;letter-spacing:.14em;color:var(--coral);margin-bottom:18px}
 .cov h1{font-size:53px;color:var(--ink);line-height:1.2}
 .covlead{font-family:Deck;font-size:17px;line-height:1.75;color:var(--muted);margin-top:22px;max-width:30ch}
-.covmeta{font-size:12.5px;color:var(--muted)}
+.covmeta{font-size:13.5px;color:var(--muted)}
 .archgrid{display:grid;grid-template-columns:1.12fr .88fr;gap:42px;margin-top:16px;align-items:center}
 .archhero .hn{font-family:Lit,Deck,serif;font-size:108px;line-height:.95;color:var(--ink);letter-spacing:-.01em}
 .archhero .hl{font-size:18px;line-height:1.6;color:var(--muted);margin-top:12px;max-width:30ch}
@@ -1004,10 +1012,10 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .archrow div{font-size:14.5px;line-height:1.6;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
 .archrow span{display:block;font-size:12.5px;font-weight:700;letter-spacing:.06em;color:var(--coral);margin-bottom:7px}
 /* asks: no boxes */
-.ask{background:transparent;border-radius:0;padding:0;border-inline-start:2px solid var(--line);padding-inline-start:22px}
+.ask{background:transparent;border-radius:0;padding:0;border-inline-start:1px solid var(--line);padding-inline-start:24px}
 .askgrid.four .ask{padding:0 0 0 0;padding-inline-start:22px}
-.askgrid.four .ask .q{font-family:Lit,Deck,serif;font-size:25px;line-height:1.4;font-weight:400;color:var(--ink)}
-.ask .a{font-size:15px;line-height:1.6;color:var(--muted);margin-top:10px;border-top:0;padding-top:0}
+.askgrid.four .ask .q{font-family:Lit,Deck,serif;font-size:24px;line-height:1.4;font-weight:400;color:var(--ink);max-width:24ch;min-height:2.8em}
+.ask .a{font-size:15.5px;line-height:1.6;color:var(--muted);margin-top:12px;border-top:0;padding-top:0;min-height:3.2em}
 .ask .lead-to{margin-top:12px;padding-top:0;font-size:12.5px;font-weight:700;color:var(--coral)}
 
 
@@ -1026,12 +1034,12 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .closig b{display:block;font-size:15.5px;color:#fff;font-weight:600}
 .closig span{display:block;font-size:13px;color:#A79E8C;margin-top:3px}
 .closig .cc{margin-inline-start:auto;font-size:13px;color:#A79E8C;direction:ltr;text-align:right;line-height:1.6}
-.wgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;margin-top:22px;flex:1;min-height:0;align-content:start}
-.wtext p{font-size:19px;line-height:1.7;color:var(--ink);margin-bottom:14px;max-width:44ch}
+.wgrid{display:grid;grid-template-columns:.86fr 1.14fr;gap:56px;margin-top:18px;flex:1;min-height:0;align-content:center}
+.wtext p{font-size:19px;line-height:1.65;color:var(--ink);margin-bottom:14px;max-width:36ch}
 .wtext p b{color:var(--ink);font-weight:600}
-.wmodels{display:flex;gap:26px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.wmodels{display:flex;gap:26px;margin-top:26px;padding:18px 22px;background:var(--sand);border-radius:4px}
 .wmodels b{font-family:Lit,Deck,serif;font-size:26px;color:var(--muted);display:block;line-height:1}
-.wmodels span{display:block;font-size:12.5px;line-height:1.4;color:var(--muted);margin-top:5px;max-width:13ch}
+.wmodels span{display:block;font-size:13.5px;line-height:1.4;color:var(--muted);margin-top:5px;max-width:14ch}
 .wmodels .on b{color:var(--coral)}
 .wmodels .on span{color:var(--ink)}
 .wnums{display:flex;flex-direction:column;gap:20px}
@@ -1080,19 +1088,24 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .covpanel{width:45%;padding:50px 64px 44px 48px}
 .cov h1{font-family:Lit,Deck,serif;font-size:82px;line-height:1.0;color:var(--ink);font-weight:600;letter-spacing:-.012em}
 .cov h1 em{font-style:normal;color:var(--coral)}
-.cov h1 .c929{display:block;font-size:.7em;line-height:1;margin-bottom:14px;letter-spacing:.01em}
+.cov h1 .c929{display:block;font-size:.5em;line-height:1;margin-bottom:16px;letter-spacing:.02em;color:var(--muted)}
 .cov h1{margin-top:-4px}
-.covlead{font-family:Deck;font-size:18px;line-height:1.7;color:var(--muted);margin-top:26px;max-width:32ch}
+.covlead{font-family:Deck;font-size:20px;line-height:1.65;color:var(--ink);margin-top:28px;max-width:34ch}
 .coveb{font-size:13.5px;letter-spacing:.04em;margin-bottom:20px}
 
 /* slide 9 */
 .pgrid{display:grid;grid-template-columns:1.08fr .92fr;gap:44px;flex:1;min-height:0;align-items:start;margin-top:14px}
 .pchoice{display:flex;flex-direction:column}
 .plab{font-size:13px;font-weight:700;letter-spacing:.03em;color:var(--coral);margin-bottom:14px}
-.pchips{display:flex;flex-wrap:wrap;gap:9px;max-width:362px}
-.pchips span{font-family:Deck;font-size:18.5px;font-weight:600;border-radius:99px;padding:8px 17px;background:var(--sand);color:var(--muted)}
+.pchips{display:flex;flex-wrap:wrap;gap:8px;max-width:330px}
+.pchips span{font-family:Deck;font-size:15.5px;font-weight:600;border-radius:99px;padding:7px 15px;background:var(--sand);color:var(--muted);display:inline-flex;align-items:center;gap:6px}
+.pchips span.on::before{content:"";width:13px;height:13px;border-radius:99px;background:#fff;flex:none;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round' d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/13px no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round' d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/13px no-repeat}
 .pchips span.on{background:var(--coral);color:#fff}
-.ptype{font-size:17px;color:var(--muted);margin-top:18px}
+.ptype{margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
+.plab2{display:block;font-size:13px;font-weight:700;letter-spacing:.03em;color:var(--muted)}
+.pt2{display:block;font-size:17px;color:var(--muted);margin-top:8px}
 .ptype b{color:var(--ink)}
 .parrow{color:var(--coral);height:50px;margin:20px 0 8px;width:230px}
 .parrow svg{width:100%;height:100%;display:block}
@@ -1100,13 +1113,13 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .presult{margin-top:24px}
 .pres-t{font-size:24px;font-weight:700;line-height:1.35;color:var(--ink);letter-spacing:-.01em;max-width:24ch}
 .pgrid{position:relative}
-.pconn{position:absolute;top:198px;right:585px;width:158px;height:14px;color:var(--coral);pointer-events:none}
+.pconn{position:absolute;top:196px;right:592px;width:166px;height:12px;color:var(--coral);pointer-events:none}
 .pconn svg{width:100%;height:100%;display:block}
 .presult p b{color:var(--ink)}
 .pnote{margin-top:32px;padding-top:18px;border-top:1px solid var(--line);font-size:16px;line-height:1.65;color:var(--muted);max-width:46ch}
 .pnote b{color:var(--ink);margin-inline-end:8px}
 .pphone{position:relative}
-.pphone .proto{position:absolute;left:150px;top:44px;transform:scale(1.07);transform-origin:top center}
+.pphone .proto{position:absolute;left:142px;top:40px;transform:scale(1.06);transform-origin:top center}
 
 /* slide 10 */
 .bigcovers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:14px}
@@ -1171,6 +1184,34 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .abwall .lab{flex:0 0 auto;font-size:13px;font-weight:700;letter-spacing:.03em;color:var(--coral)}
 .abwall .row{flex:1;display:flex;align-items:center;justify-content:space-between;gap:18px}
 .abwall img{max-height:42px;max-width:112px;width:auto;height:auto;object-fit:contain;filter:grayscale(1)}
+
+/* slide 6 - three labels tied to the proposed screen */
+.cmp6{display:flex;justify-content:center;align-items:flex-start;gap:54px;margin-top:24px}
+.ann6{position:relative;width:192px;height:432px;margin-top:34px;flex:none}
+.ann6>div{position:absolute;right:0;width:100%;display:flex;align-items:center;gap:0}
+.ann6>div::before{content:"";flex:0 0 26px;height:1px;background:rgba(255,255,255,.34)}
+.ann6 span{font-size:14px;line-height:1.4;color:#E8E3D9;padding-inline-start:10px}
+
+/* slide 5 - three capabilities measured on one scale of 12 */
+.wbars{display:flex;flex-direction:column;gap:36px}
+.wb{display:grid;grid-template-columns:1fr 168px 58px;gap:20px;align-items:center}
+.wbt{font-size:17.5px;line-height:1.45;color:var(--ink)}
+.wbr{height:14px;border-radius:2px;background:var(--sand);position:relative;overflow:hidden}
+.wbr i{display:block;height:100%;background:var(--ink);border-radius:2px}
+.wb b{font-family:Lit,Deck,serif;font-size:28px;font-weight:400;color:var(--ink);text-align:left;font-variant-numeric:tabular-nums}
+.wb.hi .wbt{font-weight:600}
+.wb.hi .wbr{border:1px solid var(--coral);background:transparent}
+.wb.hi b{color:var(--coral)}
+
+/* slide 4 - the caveat belongs with the quotes, the dates in one group */
+.caveat{font-size:15px;line-height:1.6;color:#C9C2B4;margin-top:4px;padding-inline-start:16px;border-inline-start:2px solid rgba(255,255,255,.22)}
+.caveat b{color:#fff;font-weight:600}
+.vers{border-top:1px solid rgba(255,255,255,.18);padding-top:16px}
+.vlab{font-size:13px;font-weight:700;letter-spacing:.04em;color:#E8927A;margin-bottom:14px}
+.vrow{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.vrow span{font-size:16px;color:#C9C2B4}
+.vrow b{font-family:Lit,Deck,serif;font-size:24px;color:#fff;font-weight:400;font-variant-numeric:tabular-nums}
+.vnote{font-size:13.5px;line-height:1.5;color:#A79E8C;margin-top:12px}
 
 /* slide 16 - stage duration under the stage name */
 .phase .pw{font-size:13px;font-weight:700;letter-spacing:.03em;color:var(--coral);margin-top:6px}
@@ -1270,23 +1311,23 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 
 /* archive v2: one big illustration */
 .a2grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;min-height:0;align-items:center;margin-top:10px}
-.a2quote{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:start}
-.a2quote .q{font-family:Lit,Deck,serif;font-size:21px;line-height:1.5;color:var(--ink);text-wrap:balance}
-.a2quote .t{font-size:15.5px;line-height:1.6;color:var(--muted)}
+.a2quote{margin-top:24px;padding:20px 26px;background:var(--sand);border-radius:4px;display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:start}
+.a2quote .q{font-family:Lit,Deck,serif;font-size:22px;line-height:1.5;color:var(--ink);text-wrap:balance}
+.a2quote .t{font-size:16px;line-height:1.6;color:var(--muted)}
 .a2quote .t b{display:block;color:var(--coral);font-size:12.5px;font-weight:700;letter-spacing:.03em;margin-bottom:7px}
 .a2art img{width:100%;height:300px;object-fit:cover;border-radius:3px;display:block}
 .a2cap{font-size:12.5px;color:var(--muted);margin-top:10px}
-.a2hero b{font-family:Lit,Deck,serif;font-size:96px;line-height:.9;color:var(--ink);display:block;letter-spacing:-.01em}
-.a2hero span{display:block;font-size:18.5px;line-height:1.55;color:var(--muted);margin-top:14px;max-width:32ch}
+.a2hero b{font-family:Lit,Deck,serif;font-size:82px;line-height:.9;color:var(--ink);display:block;letter-spacing:-.01em}
+.a2hero span{display:block;font-size:19px;line-height:1.5;color:var(--muted);margin-top:8px;max-width:30ch}
 .a2hero em{font-style:normal;color:var(--ink);font-weight:600}
-.a2sub{display:flex;gap:40px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
-.a2sub b{font-family:Lit,Deck,serif;font-size:32px;color:var(--ink);display:block;line-height:1}
-.a2sub span{display:block;font-size:13.5px;line-height:1.5;color:var(--muted);margin-top:6px;max-width:22ch}
-.a2titl{margin-top:18px;padding-top:15px;border-top:1px solid var(--line)}
-.a2titl ul{list-style:none;margin:8px 0 0;columns:2;column-gap:32px}
-.a2titl li{font-family:Lit,Deck,serif;font-size:16px;line-height:1.45;color:var(--ink);padding:3px 0;break-inside:avoid}
+.a2sub{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.a2sub b{font-family:Lit,Deck,serif;font-size:34px;color:var(--ink);display:block;line-height:1}
+.a2sub span{display:block;font-size:15px;line-height:1.5;color:var(--muted);margin-top:7px;max-width:24ch}
+.a2titl{margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
+.a2titl ul{list-style:none;margin:10px 0 0;columns:2;column-gap:28px}
+.a2titl li{font-family:Lit,Deck,serif;font-size:16.5px;line-height:1.4;color:var(--ink);padding:2px 0;break-inside:avoid}
 .a2titl li i{font-family:Deck;font-style:normal;font-size:12px;color:var(--muted);margin-inline-start:6px}
-.a2titl em{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:10px}
+.a2titl em{display:block;font-style:normal;font-size:14px;color:var(--muted);margin-top:11px}
 
 /* audit: micro-label contrast unified (AA) */
 .lp-tab,.lp-ss,.cm-tools,.cm-mk,.cm-ma,.cm-plh span,.cm-shs,.sh .sc,.tb{color:#6B6355}
@@ -1392,12 +1433,18 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
       <div class="eyebrow"><span class="num">03</span> למה עכשיו</div>
       <h2>קשיים שעלו בביקורות משתמשים</h2>
       <div class="lead" style="max-width:66ch">האפליקציה הקיימת בחנויות מציגה את תכני האתר. הביקורות עליה מספרות סיפור עקבי: אוהבים את התוכן, נתקעים בדרך לפרק.</div>
-      <div class="grid" style="grid-template-columns:1.25fr .75fr;margin-top:22px;gap:26px;align-items:start">
-        <div class="grid" style="gap:12px">
+      <div class="grid" style="grid-template-columns:1.5fr 1fr;margin-top:20px;gap:40px;align-items:start;flex:1;min-height:0;align-content:center">
+        <div class="grid" style="gap:14px">
           <div class="quote" style="padding:20px 24px 18px"><div class="q">"רעיון מעולה ומבורך, אך האפליקציה מלאה באגים. חבל"</div><div class="who"><span class="star">★★★☆☆</span>גוגל פליי · יוני 2024</div></div>
           <div class="quote" style="padding:20px 24px 18px"><div class="q">"היישומון מתנתק באופן אקראי ודורש התחברות מחדש מדי פעם"</div><div class="who"><span class="star">★★★☆☆</span>גוגל פליי · ספטמבר 2023</div></div>
+          <div class="caveat">הביקורות קדמו לעדכון האחרון. <b>נבדוק יחד אילו מהקשיים עדיין קיימים, ואילו כבר נפתרו.</b></div>
         </div>
-        <div class="note"><div class="nt">גרסת ה-iOS עודכנה לאחרונה ב-2.6.2020</div><div class="ns">גרסת האנדרואיד עודכנה ב-7.9.2026 (App Store ו-Google Play, נבדק 9.9.2026).</div></div><div class="note tint"><div class="nt">הביקורות קדמו לעדכון האחרון</div><div class="ns">נבדוק יחד אילו מהקשיים עדיין קיימים, ואילו כבר נפתרו.</div></div>
+        <div class="vers">
+          <div class="vlab">מתי עודכנה האפליקציה</div>
+          <div class="vrow"><span>iOS</span><b dir="ltr">2.6.2020</b></div>
+          <div class="vrow"><span>אנדרואיד</span><b dir="ltr">7.9.2026</b></div>
+          <div class="vnote">App Store ו-Google Play, נבדק 9.9.2026</div>
+        </div>
       </div>
       <div class="src dk">112 ביקורות כתובות בגוגל פליי נקראו ביולי 2026, 53 מהן בדירוג 3 כוכבים ומטה. התקנות וביקורות אינן מדד למשתמשים פעילים.</div>
     </div>
@@ -1417,10 +1464,10 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
             <div><b>3</b><span>תוכנית אישית סביב הטקסט</span></div>
           </div>
         </div>
-        <div class="wnums">
-          <div><em>6</em><i>מתוך 12</i><span>כבר מציעות מסלולים נושאיים לצד המחזור היומי</span></div>
-          <div><em>4</em><i>מתוך 12</i><span>מאפשרות לבחור אורך לאותה מנה יומית</span></div>
-          <div class="hi"><em>0</em><i>מתוך 12</i><span>מאפשרות שאלה חופשית על הטקסט עם מקורות מזוהים</span></div>
+        <div class="wbars">
+          <div class="wb"><div class="wbt">מסלולים נושאיים לצד המחזור היומי</div><div class="wbr"><i style="width:50%"></i></div><b dir="ltr">6/12</b></div>
+          <div class="wb"><div class="wbt">בחירת אורך לאותה מנה יומית</div><div class="wbr"><i style="width:33.3%"></i></div><b dir="ltr">4/12</b></div>
+          <div class="wb hi"><div class="wbt">שאלה חופשית על הטקסט עם מקורות מזוהים</div><div class="wbr"><i style="width:0"></i></div><b dir="ltr">0/12</b></div>
         </div>
       </div>
       <div class="src">בדקנו 12 אפליקציות לימוד יומי שהמפרסם שלהן הוא המוסד שמפעיל את תוכנית הלימוד, מרשומות החנויות ומאתרי המוצר. זה המדגם שנבדק, ולא תמונה של כל השוק. נבדק ב-16.9.2026; אין בדגימה מוסדות מוסלמיים או הינדיים, ולכן כיוון הטעות האפשרית הוא תת-ספירה.</div>
@@ -1432,12 +1479,11 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
     <div class="pad">
       <div class="eyebrow"><span class="num">05</span> מה אנחנו מציעים</div>
       <h2 style="font-size:44px">לשמר את התוכן, לשדרג את החוויה</h2>
-      <div class="lead" style="max-width:70ch;margin-top:8px">אותו כותב, אותו טקסט, ודרך חדשה לפגוש אותם. מימין הכתבה כפי שהיא היום, משמאל אותה כתבה בהמחשה המוצעת.</div>
-      <div style="display:flex;justify-content:center;gap:80px;align-items:flex-start;margin-top:14px">
+      <div class="cmp6">
         <div class="col5">
           <div class="cap5">המצב הקיים</div>
           <div class="phone"><img src="assets/current-app/app-04-t60s-nobar.png" alt=""></div>
-          <div class="cap">הכתבה כפי שהיא מוצגת היום</div>
+          <div class="cap">הכתבה כפי שהיא היום</div>
         </div>
         <div class="col5">
           <div class="cap5">המחשה מוצעת</div>
@@ -1456,7 +1502,12 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
               <div class="r"><i><img src="assets/chapter-haazinu.jpg" alt=""></i><div><b>שירת האזינו רלוונטית מתמיד</b><span>יואל בן נון · פרשנות</span></div></div>
             </div>
           </div>
-          <div class="cap">אותה כתבה, בגודל אות שנשלט, עם האזנה ועם שאר הכתבות מתחתיה</div>
+          <div class="cap">אותה כתבה, עם גודל אות נשלט והאזנה</div>
+        </div>
+        <div class="ann6">
+          <div style="top:166px"><span>סוג התוכן ואורך הקריאה</span></div>
+          <div style="top:236px"><span>כלי קריאה והאזנה</span></div>
+          <div style="top:362px"><span>שאר הכתבות על אותו פרק</span></div>
         </div>
       </div>
       <div class="foot">אותו טקסט, אותם כותבים. <b>השינוי הוא בחוויה, לא בתוכן.</b></div>
@@ -1465,14 +1516,14 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 
   <section class="slide" data-act="product">
     <div class="pad">
-      <div class="eyebrow" style="margin-bottom:6px"><span class="num">06</span> החוויה המוצעת</div>
+      <div class="eyebrow"><span class="num">06</span> החוויה המוצעת</div>
       <h2 class="c8h">הפרק היומי במרכז, עם <b>אפשרויות להעמקה אישית</b></h2>
       <div class="capstage proto cap8" data-demo="7" data-auto="3800" data-loop="1">
-        <div class="capside"><div class="caps"><div class="lay">שלוש יכולות מרכזיות</div><div class="slot" data-i="0"><svg viewBox="0 0 24 24"><path d="M4 5h7v14H4zM13 5h7v14h-7z"/><path d="M13 9.5h7"/></svg><div class="n">התאמה אישית</div><i class="nb">1</i></div><div class="slot" data-i="1"><svg viewBox="0 0 24 24"><path d="M5 19c4-6 3-9 7-9s3 5 7-5"/><circle cx="5" cy="19" r="1.5"/><circle cx="19" cy="5" r="1.5"/></svg><div class="n">מסלולי לימוד</div><i class="nb">2</i></div><div class="slot" data-i="2"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 16 0"/><rect x="3" y="12" width="4" height="6" rx="1.5"/><rect x="17" y="12" width="4" height="6" rx="1.5"/></svg><div class="n">קריאה, האזנה ושאלות</div><i class="nb">3</i></div><div class="lay">כלים שתומכים בחוויה</div><div class="slot" data-i="3"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v5l3 2"/></svg><div class="n">תקציר ליום עמוס</div><i class="nb x"></i></div><div class="slot" data-i="4"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12l2.4 2.4 4.6-4.8"/></svg><div class="n">מעקב וסימון "קראתי"</div><i class="nb x"></i></div><div class="slot" data-i="5"><svg viewBox="0 0 24 24"><path d="M18 9.4a6 6 0 1 0-12 0c0 5.6-2.4 7.2-2.4 7.2h16.8S18 15 18 9.4z"/><path d="M13.7 20.2a2 2 0 0 1-3.4 0"/></svg><div class="n">תזכורת בזמן שבחרת</div><i class="nb x"></i></div><div class="slot" data-i="6"><svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2.5 19c.6-3 3-4.5 5.5-4.5s4.9 1.5 5.5 4.5M11 19c.4-2.7 2.5-4.5 5-4.5s4.6 1.8 5.5 4.5"/></svg><div class="n">חיבור לקהילה הקיימת</div><i class="nb x"></i></div></div>
-          <div class="legend"><i class="nb">1</i><i class="nb">2</i><i class="nb">3</i><span>בשלוש הראשונות נעמיק בשקפים הבאים.</span></div></div>
+        <div class="capside"><div class="caps"><div class="lay">שלוש יכולות מרכזיות</div><div class="slot" data-i="0"><svg viewBox="0 0 24 24"><path d="M4 5h7v14H4zM13 5h7v14h-7z"/><path d="M13 9.5h7"/></svg><div class="n">התאמה אישית</div><i class="nb">1</i></div><div class="slot" data-i="1"><svg viewBox="0 0 24 24"><path d="M5 19c4-6 3-9 7-9s3 5 7-5"/><circle cx="5" cy="19" r="1.5"/><circle cx="19" cy="5" r="1.5"/></svg><div class="n">מסלולי לימוד</div><i class="nb">2</i></div><div class="slot" data-i="2"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 16 0"/><rect x="3" y="12" width="4" height="6" rx="1.5"/><rect x="17" y="12" width="4" height="6" rx="1.5"/></svg><div class="n">קריאה, האזנה ושאלות</div><i class="nb">3</i></div><div class="lay">כלים שתומכים בחוויה</div><div class="slot sm" data-i="3"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v5l3 2"/></svg><div class="n">תקציר ליום עמוס</div><i class="nb x"></i></div><div class="slot sm" data-i="4"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12l2.4 2.4 4.6-4.8"/></svg><div class="n">מעקב וסימון "קראתי"</div><i class="nb x"></i></div><div class="slot sm" data-i="5"><svg viewBox="0 0 24 24"><path d="M18 9.4a6 6 0 1 0-12 0c0 5.6-2.4 7.2-2.4 7.2h16.8S18 15 18 9.4z"/><path d="M13.7 20.2a2 2 0 0 1-3.4 0"/></svg><div class="n">תזכורת בזמן שבחרת</div><i class="nb x"></i></div><div class="slot sm" data-i="6"><svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2.5 19c.6-3 3-4.5 5.5-4.5s4.9 1.5 5.5 4.5M11 19c.4-2.7 2.5-4.5 5-4.5s4.6 1.8 5.5 4.5"/></svg><div class="n">חיבור לקהילה הקיימת</div><i class="nb x"></i></div></div>
+          </div>
         <div class="midcol"><div class="capdesc"><div class="cd" data-cd="0"><div class="cdt">הלומד בוחר, והארכיון מסתדר סביבו.</div><ul><li><b>תחומי עניין וסוג תוכן</b> שהוא סימן, לא שאנחנו ניחשנו</li><li><b>כל התוכן נשאר נגיש</b>, גם נקודות מבט שלא נבחרו</li></ul></div><div class="cd" data-cd="1"><div class="cdt">הפרק היומי נשאר הלב. לצדו, מסלולים לבחירה.</div><ul><li><b>תיק נושא או סדרה</b>: מנהיגות, ספר משלי, 20 השירים של רחל</li><li><b>התקדמות ברצף</b>, בקצב אישי, וממשיכים מהמקום האחרון</li></ul></div><div class="cd" data-cd="2"><div class="cdt">אותו פרק, שלוש דרכים ללמוד אותו.</div><ul><li><b>קריאה נקייה או האזנה</b>, בשליטה מהאוזניות</li><li><b>שאלה</b> שמפנה למקורות מזוהים, ומציגה גם דעות שונות</li></ul></div><div class="cd" data-cd="3"><div class="cdt">אין זמן לפרק שלם? יש תקציר.</div><ul><li><b>התקציר שכבר קיים</b> לכל פרק, כ-3 דקות</li><li>פספסת? <b>השלמה בתקציר</b>, והרצף נשמר</li></ul></div><div class="cd" data-cd="4"><div class="cdt">לדעת איפה אני.</div><ul><li>סימון <b>"קראתי"</b> והתקדמות מתוך 929</li><li>מה ש<b>הלומדים ביקשו בחזרה</b> בביקורות</li></ul></div><div class="cd" data-cd="5"><div class="cdt">תזכורת אחת, בזמן שבחרת.</div><ul><li><b>זמן הפוש</b> נקבע על ידי הלומד</li><li>על הפרק, או על <b>כתבה מתחום העניין</b>. משפט אחד, פעולה אחת</li></ul></div><div class="cd" data-cd="6"><div class="cdt">הקהילה שכבר קיימת, במרחק לחיצה.</div><ul><li><b>קבוצות הוואטסאפ</b> הפעילות של 929, מתוך העמוד</li><li><b>מי לומד איתי</b> במסלול, בהצטרפות מהעמוד הראשי</li></ul></div></div>
           <div class="orgval"><span class="ol">מה נמדד</span><p>אילו תכנים נפתחים, אילו מסלולים מושלמים, והאם חוזרים ללמוד.</p></div></div>
-        <div class="phcol8"><div class="dev st-0"><div class="notch"></div><div class="cs" data-cs="0"><div class="fp-hd"><div class="t">הפרק היומי · שמואל ב ו</div><div class="s">929 · ממשיכים מהמקום שעצרתי</div></div><div class="fp-body"><div class="fp-seg"><span class="on">תקציר · 3 דק׳</span><span>הפרק · 7 דק׳</span><span>האזנה · 36</span></div><div class="fp-btn">פתיחת הפרק</div><div class="fp-card"><div class="fp-ring"><svg viewBox="0 0 74 74"><circle cx="37" cy="37" r="30" stroke="#E2DED5" stroke-width="7" fill="none"/><circle cx="37" cy="37" r="30" stroke="#C0454F" stroke-width="7" fill="none" stroke-linecap="round" stroke-dasharray="188" stroke-dashoffset="134"/></svg><div class="c"><b>269</b><span>מתוך 929 פרקים</span><div style="font-size:9.5px;color:#C0454F;font-weight:700;margin-top:4px">7 ימים ברצף</div></div></div></div><div class="fp-lbl">מותאם לך</div><div class="fp-card"><div class="rt">צופה בדוד, חושבת על פלטיאל</div><div class="ra">יוכי ברנדס · ספרות</div></div><div class="fp-lbl">מסלולים</div><div class="fp-chips"><span class="k">מנהיגות</span><span>אור</span><span>ספר משלי</span></div></div></div><div class="cs" data-cs="1"><div class="fp-hd"><div class="t">מסלולים</div><div class="s">הפרק היומי נשאר הלב</div></div><div class="fp-body"><div class="fp-player" style="padding:11px 12px"><div class="ps">הפרק היומי · שמואל ב</div><div class="pt">שמואל ב ו</div><div class="fp-btn" style="background:#C0454F;margin-top:8px;padding:6px 10px;font-size:9.5px;width:max-content">ממשיכים</div></div><div class="fp-lbl">תיקי נושא</div><div class="fp-chips"><span class="k">מנהיגות · נושא החודש</span><span>אור</span><span>חושך</span><span>גוף ונפש</span><span>צדק חברתי</span></div><div class="fp-lbl">סדרות</div><div class="fp-row"><div class="ic8"></div><div><div class="rt">20 השירים הגדולים של רחל</div><div class="ra">סדרה · 20 מפגשים</div></div><div class="rb">התחילו</div></div><div class="fp-row"><div class="ic8"></div><div><div class="rt">ספר משלי</div><div class="ra">סדרה · שבתות בלבד</div></div><div class="rb">התחילו</div></div><div class="fp-row"><div class="ic8"></div><div><div class="rt">מדרשים על אהבה</div><div class="ra">סדרה</div></div><div class="rb">התחילו</div></div></div></div><div class="cs" data-cs="2"><div class="fp-hd"><div class="t">דברים לב</div><div class="s">שירת האזינו · פרשת השבוע</div></div><div class="fp-body"><div class="fp-seg"><span>קריאה</span><span class="on">האזנה</span><span>שאל את הפרק</span></div><div class="fp-player"><div class="pt">מסע 929 של הרב שי פירון</div><div class="ps">דברים - פרק לב · 1.25x · שליטה מהאוזניות</div><div class="bar"><i></i></div><div class="pm"><span>14:48</span><span>36:00</span></div></div><div class="fp-lbl">פלייליסט: מנהיגות · הבא בתור</div><div class="fp-row"><div class="ic8"></div><div><div class="rt">קריינות הפרק</div><div class="ra">7 דק׳</div></div></div><div class="fp-row"><div class="ic8"></div><div><div class="rt">בקטנה על הפרק</div><div class="ra">4 דק׳</div></div></div><div class="fp-row"><div class="ic8"></div><div><div class="rt">ויהי פודקאסט!</div><div class="ra">פרק</div></div></div><div class="fp-btn l">שאל את הפרק: "למה משה פונה אל השמים?"</div></div></div><div class="cs" data-cs="3"><div class="fp-hd"><div class="t">שמואל ב ו</div><div class="s">הפרק היומי · כמה זמן יש לך היום?</div></div><div class="fp-body"><div class="fp-seg" style="font-size:8.5px"><span class="on" style="font-size:8.5px">תקציר · 3 דק׳</span><span style="font-size:8.5px">הפרק · 7 דק׳</span><span style="font-size:8.5px">האזנה · 36 דק׳</span></div><div class="fp-card" style="background:#F3E7E2"><div class="rt" style="color:#C0454F">התקציר היומי</div><div class="ra" style="color:#242322;line-height:1.5;margin-top:4px">דוד מעלה את ארון ה׳ לירושלים. הדרך נקטעת במות עוזא, ונשלמת בריקוד של המלך לפני הארון ובוויכוח עם מיכל.</div><div class="fp-tg" style="margin-top:7px"><span class="on">קריאה 3 דק׳</span><span>האזנה 4 דק׳</span></div></div><div class="fp-row"><div class="ic8"></div><div><div class="rt">רוצה עוד? כתבה אחת מהתחום שלך</div><div class="ra">מחקר · טור קצר</div></div><div class="rb">לקריאה</div></div><div class="fp-card"><div class="rt">פספסת השבוע: שמואל ב ה</div><div class="ra">השלמה בתקציר · 3 דק׳ · הרצף נשמר</div></div><div class="fp-btn">סיימתי להיום</div></div></div><div class="cs" data-cs="4"><div class="fp-hd"><div class="t">ההתקדמות שלי</div><div class="s">929 פרקים, יום אחר יום</div></div><div class="fp-body"><div class="fp-card"><div class="fp-ring"><svg viewBox="0 0 74 74"><circle cx="37" cy="37" r="30" stroke="#E2DED5" stroke-width="7" fill="none"/><circle cx="37" cy="37" r="30" stroke="#C0454F" stroke-width="7" fill="none" stroke-linecap="round" stroke-dasharray="188" stroke-dashoffset="134"/></svg><div class="c"><b>269</b><span>מתוך 929 פרקים</span><div style="font-size:9.5px;color:#C0454F;font-weight:700;margin-top:4px">7 ימים ברצף</div></div></div></div><div class="fp-card"><div class="fp-lbl" style="margin-bottom:4px">השבוע</div><div class="fp-chk"><i></i>שמואל ב ד</div><div class="fp-chk"><i></i>שמואל ב ה</div><div class="fp-chk"><i class="o"></i>שמואל ב ו · היום</div></div><div class="fp-card"><div class="rt">סיימתם את ספר שמואל א</div><div class="ra">תג השלמה · 31 פרקים</div></div><div class="fp-card"><div class="rt">תיק "מנהיגות"</div><div class="ra">מפגש 4 מתוך 12</div></div></div></div><div class="cs" data-cs="5"><div class="fp-lock"><div class="tm">07:30</div><div class="dt">יום ד׳ · הזמן שבחרת</div><div class="fp-notif"><div class="a"><span>929</span><span>עכשיו</span></div><div class="t">הפרק של היום מחכה: שמואל ב ו</div><div class="s">7 דקות קריאה, או תקציר של 3 דקות</div></div><div class="fp-notif" style="margin-top:8px;opacity:.85"><div class="a"><span>929 · תיק מנהיגות</span><span>אתמול</span></div><div class="t">כתבה חדשה בתחום שבחרת</div><div class="s">שופטים ד · דבורה</div></div><div style="font-size:9px;color:#C9C2B4;margin-top:22px">תזכורת אחת ביום · בזמן ובנושא שבחרת</div></div></div><div class="cs" data-cs="6"><div class="fp-hd"><div class="t">929 - לימוד פרקי התנ"ך</div><div class="s">הפרק היומי · שמואל ב ו</div></div><div class="fp-body"><div class="fp-chips"><span>קריינות</span><span>תקציר</span><span>כתבות עומק</span></div><div class="fp-lbl">קבוצות וואטסאפ פעילות</div><div class="fp-row"><div class="ic8" style="background:#dcfce7"></div><div><div class="rt">קצרים על הפרק</div><div class="ra">קבוצת תוכן</div></div><div class="rb">הצטרפות</div></div><div class="fp-row"><div class="ic8" style="background:#dcfce7"></div><div><div class="rt">תזכורות לשיעורים</div><div class="ra">קבוצת תזכורות</div></div><div class="rb">הצטרפות</div></div><div class="fp-card"><div class="fp-lbl">לומדים איתך במסלול היום</div><div style="display:flex;align-items:center;gap:8px;margin-top:5px"><div class="fp-av"><i></i><i></i><i></i><i></i></div><span style="font-size:9.5px;color:#6B6355">ועוד רבים</span></div></div><div class="fp-btn">הצטרפות למסלול</div><div class="fp-btn l">שאל את הפרק</div></div></div></div></div>
+        <div class="phcol8"><div class="dev st-0"><div class="notch"></div><div class="cs" data-cs="0"><div class="fp-hd"><div class="t">הפרק היומי · שמואל ב ו</div><div class="s">929 · ממשיכים מהמקום שעצרתי</div></div><div class="fp-body"><div class="fp-seg"><span class="on">תקציר · 3 דק׳</span><span>הפרק · 7 דק׳</span><span>האזנה · 36</span></div><div class="fp-btn">פתיחת הפרק</div><div class="fp-card"><div class="fp-ring"><svg viewBox="0 0 74 74"><circle cx="37" cy="37" r="30" stroke="#E2DED5" stroke-width="7" fill="none"/><circle cx="37" cy="37" r="30" stroke="#C0454F" stroke-width="7" fill="none" stroke-linecap="round" stroke-dasharray="188" stroke-dashoffset="134"/></svg><div class="c"><b>269</b><span>מתוך 929 פרקים</span><div style="font-size:9.5px;color:#C0454F;font-weight:700;margin-top:4px">7 ימים ברצף</div></div></div></div><div class="fp-lbl">מותאם לך</div><div class="fp-card"><div class="rt">צופה בדוד, חושבת על פלטיאל</div><div class="ra">יוכי ברנדס · ספרות</div></div><div class="fp-lbl">מסלולים</div><div class="fp-chips"><span class="k">מנהיגות</span><span>אור</span><span>ספר משלי</span></div></div></div><div class="cs" data-cs="1"><div class="fp-hd"><div class="t">מסלולים</div><div class="s">הפרק היומי נשאר הלב</div></div><div class="fp-body"><div class="fp-player" style="padding:11px 12px"><div class="ps">הפרק היומי · שמואל ב</div><div class="pt">שמואל ב ו</div><div class="fp-btn" style="background:#C0454F;margin-top:8px;padding:6px 10px;font-size:9.5px;width:max-content">ממשיכים</div></div><div class="fp-lbl">תיקי נושא</div><div class="fp-chips"><span class="k">מנהיגות · נושא החודש</span><span>אור</span><span>חושך</span><span>גוף ונפש</span><span>צדק חברתי</span></div><div class="fp-lbl">סדרות</div><div class="fp-row"><div class="ic8"></div><div><div class="rt">20 השירים הגדולים של רחל</div><div class="ra">סדרה · 20 מפגשים</div></div><div class="rb">התחילו</div></div><div class="fp-row"><div class="ic8"></div><div><div class="rt">ספר משלי</div><div class="ra">סדרה · שבתות בלבד</div></div><div class="rb">התחילו</div></div><div class="fp-row"><div class="ic8"></div><div><div class="rt">מדרשים על אהבה</div><div class="ra">סדרה</div></div><div class="rb">התחילו</div></div></div></div><div class="cs" data-cs="2"><div class="fp-hd"><div class="t">דברים לב</div><div class="s">שירת האזינו · פרשת השבוע</div></div><div class="fp-body"><div class="fp-seg"><span>קריאה</span><span class="on">האזנה</span><span>שאל את הפרק</span></div><div class="fp-player"><div class="pt">מסע 929 של הרב שי פירון</div><div class="ps">דברים - פרק לב · 1.25x · שליטה מהאוזניות</div><div class="bar"><i></i></div><div class="pm"><span>14:48</span><span>36:00</span></div></div><div class="fp-lbl">פלייליסט: מנהיגות · הבא בתור</div><div class="fp-row"><div class="ic8"></div><div><div class="rt">קריינות הפרק</div><div class="ra">7 דק׳</div></div></div><div class="fp-row"><div class="ic8"></div><div><div class="rt">בקטנה על הפרק</div><div class="ra">4 דק׳</div></div></div><div class="fp-row"><div class="ic8"></div><div><div class="rt">ויהי פודקאסט!</div><div class="ra">פרק</div></div></div><div class="fp-btn l">שאל את הפרק: "למה משה פונה אל השמים?"</div></div></div><div class="cs" data-cs="3"><div class="fp-hd"><div class="t">שמואל ב ו</div><div class="s">הפרק היומי · כמה זמן יש לך היום?</div></div><div class="fp-body"><div class="fp-seg" style="font-size:8.5px"><span class="on" style="font-size:8.5px">תקציר · 3 דק׳</span><span style="font-size:8.5px">הפרק · 7 דק׳</span><span style="font-size:8.5px">האזנה · 36 דק׳</span></div><div class="fp-card" style="background:#F3E7E2"><div class="rt" style="color:#C0454F">התקציר היומי</div><div class="ra" style="color:#242322;line-height:1.5;margin-top:4px">דוד מעלה את ארון ה׳ לירושלים. הדרך נקטעת במות עוזא, ונשלמת בריקוד של המלך לפני הארון ובוויכוח עם מיכל.</div><div class="fp-tg" style="margin-top:7px"><span class="on">קריאה 3 דק׳</span><span>האזנה 4 דק׳</span></div></div><div class="fp-row"><div class="ic8"></div><div><div class="rt">רוצה עוד? כתבה אחת מהתחום שלך</div><div class="ra">מחקר · טור קצר</div></div><div class="rb">לקריאה</div></div><div class="fp-card"><div class="rt">פספסת השבוע: שמואל ב ה</div><div class="ra">השלמה בתקציר · 3 דק׳ · הרצף נשמר</div></div><div class="fp-btn">סיימתי להיום</div></div></div><div class="cs" data-cs="4"><div class="fp-hd"><div class="t">ההתקדמות שלי</div><div class="s">929 פרקים, יום אחר יום</div></div><div class="fp-body"><div class="fp-card"><div class="fp-ring"><svg viewBox="0 0 74 74"><circle cx="37" cy="37" r="30" stroke="#E2DED5" stroke-width="7" fill="none"/><circle cx="37" cy="37" r="30" stroke="#C0454F" stroke-width="7" fill="none" stroke-linecap="round" stroke-dasharray="188" stroke-dashoffset="134"/></svg><div class="c"><b>269</b><span>מתוך 929 פרקים</span><div style="font-size:9.5px;color:#C0454F;font-weight:700;margin-top:4px">7 ימים ברצף</div></div></div></div><div class="fp-card"><div class="fp-lbl" style="margin-bottom:4px">השבוע</div><div class="fp-chk"><i></i>שמואל ב ד</div><div class="fp-chk"><i></i>שמואל ב ה</div><div class="fp-chk"><i class="o"></i>שמואל ב ו · היום</div></div><div class="fp-card"><div class="rt">סיימתם את ספר שמואל א</div><div class="ra">תג השלמה · 31 פרקים</div></div><div class="fp-card"><div class="rt">תיק "מנהיגות"</div><div class="ra">מפגש 4 מתוך 12</div></div></div></div><div class="cs" data-cs="5"><div class="fp-lock"><div class="tm">07:30</div><div class="dt">יום ד׳ · הזמן שבחרת</div><div class="fp-notif"><div class="a"><span>929</span><span>עכשיו</span></div><div class="t">הפרק של היום מחכה: שמואל ב ו</div><div class="s">7 דקות קריאה, או תקציר של 3 דקות</div></div><div class="fp-notif" style="margin-top:8px;opacity:.85"><div class="a"><span>929 · תיק מנהיגות</span><span>אתמול</span></div><div class="t">כתבה חדשה בתחום שבחרת</div><div class="s">שופטים ד · דבורה</div></div><div style="font-size:9px;color:#C9C2B4;margin-top:22px">תזכורת אחת ביום · בזמן ובנושא שבחרת</div></div></div><div class="cs" data-cs="6"><div class="fp-hd"><div class="t">929 - לימוד פרקי התנ"ך</div><div class="s">הפרק היומי · שמואל ב ו</div></div><div class="fp-body"><div class="fp-chips"><span>קריינות</span><span>תקציר</span><span>כתבות עומק</span></div><div class="fp-lbl">קבוצות וואטסאפ פעילות</div><div class="fp-row"><div class="ic8" style="background:#dcfce7"></div><div><div class="rt">קצרים על הפרק</div><div class="ra">קבוצת תוכן</div></div><div class="rb">הצטרפות</div></div><div class="fp-row"><div class="ic8" style="background:#dcfce7"></div><div><div class="rt">תזכורות לשיעורים</div><div class="ra">קבוצת תזכורות</div></div><div class="rb">הצטרפות</div></div><div class="fp-card"><div class="fp-lbl">לומדים איתך במסלול היום</div><div style="display:flex;align-items:center;gap:8px;margin-top:5px"><div class="fp-av"><i></i><i></i><i></i><i></i></div><span style="font-size:9.5px;color:#6B6355">ועוד רבים</span></div></div><div class="fp-btn">הצטרפות למסלול</div><div class="fp-btn l">שאל את הפרק</div></div></div></div><div class="mocklbl">המחשה מוצעת</div></div>
       </div>
     <div class="foot" style="padding-top:12px;margin-top:10px">שבע יכולות, ארכיון אחד. <b>בשלוש הראשונות נעמיק עכשיו.</b></div>
     </div>
@@ -1483,14 +1534,14 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
       <div class="eyebrow"><span class="num">07</span> מקרוב · 1 מתוך 3 · התאמה אישית</div>
       <h2 class="h2c">התוכן לפי תחומי העניין של הלומד</h2>
       <div class="pgrid">
-        <div class="pconn"><svg viewBox="0 0 160 12" preserveAspectRatio="none"><path d="M159 6 H13" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M20 1.5 L13 6 L20 10.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="pconn"><svg viewBox="0 0 166 12" preserveAspectRatio="none"><path d="M165 6 H13" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M20 1.5 L13 6 L20 10.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="pchoice">
           <div class="plab">הלומד בוחר, פעם אחת</div>
           <div class="pchips">
             <span class="on">מחקר</span><span class="on">ספרות</span>
             <span>פרשנות קלאסית</span><span>פילוסופיה</span><span>אמנות</span>
           </div>
-          <div class="ptype">סוג התוכן: טור קצר · <b>מאמר אקדמי</b> · פרשנות יצירתית</div>
+          <div class="ptype"><span class="plab2">וגם סוג התוכן המועדף</span><span class="pt2">טור קצר · <b>מאמר אקדמי</b> · פרשנות יצירתית</span></div>
           <div class="presult">
             <div class="pres-t">ומאז כל פרק נפתח במה שמתאים לו</div>
             <p>שאר הכתבות, כולל נקודות מבט שלא בחר, נמצאות מתחת. מי שלא בוחר מקבל תמהיל מאוזן, בלי הרשמה.</p>
