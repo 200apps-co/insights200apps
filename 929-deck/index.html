@@ -828,15 +828,20 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .ask{background:#fff;border-radius:16px;padding:20px 22px;display:flex;flex-direction:column}
 .ask .q{font-size:17.5px;line-height:1.45;font-weight:600;color:var(--base)}
 .ask .a{font-size:14px;line-height:1.5;color:var(--muted);margin-top:auto;padding-top:12px;border-top:1px solid var(--line)}
-.phase{background:transparent;border-radius:0;padding:0;display:flex;flex-direction:column;min-height:300px;border-top:2px solid var(--line)}
-.phase .pn{font-family:Deck;font-size:58px;font-weight:700;color:var(--coral);margin:14px 0 6px;line-height:1;letter-spacing:-.02em}
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:16px;position:relative}
+.phases::before{content:"";position:absolute;top:-1px;right:0;left:0;height:2px;background:var(--line)}
+.phase{background:transparent;border-radius:0;padding:0;display:flex;flex-direction:column;min-height:372px;position:relative}
+.phase::after{content:"";position:absolute;top:-6px;inset-inline-end:-22px;width:10px;height:10px;border-top:2px solid var(--line);border-left:2px solid var(--line);transform:rotate(-45deg);background:var(--bg)}
+.phase:first-child::after{content:none}
+.phase .pn{font-family:Deck;font-size:52px;font-weight:700;color:var(--coral);margin:18px 0 4px;line-height:1;letter-spacing:-.02em}
 .phase h3{font-family:Deck;font-size:24px;font-weight:700}
-.phase p{font-size:15.5px;line-height:1.6;color:var(--muted);margin-top:10px}
+.phase p{font-size:15.5px;line-height:1.6;color:var(--muted);margin-top:12px;min-height:5.2em}
 .phase .pd{margin-top:10px;font-size:13.5px;color:var(--base);display:flex;gap:10px;align-items:baseline}
 .phase .pd.first{margin-top:auto;padding-top:14px;border-top:1px solid var(--line)}
 .phase .pd span{flex:0 0 42px;font-size:11.5px;font-weight:700;letter-spacing:.06em;color:var(--accent)}
-.split{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
-.split div{background:transparent;border-top:1px solid var(--line);padding:12px 0 0;font-size:14.5px;line-height:1.5;color:var(--muted)}
+.split{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:auto;padding-top:20px;border-top:1px solid var(--line);position:relative}
+.split .sl{position:absolute;top:-10px;right:0;background:var(--bg);padding-inline-end:12px;border:0;font-size:12.5px;font-weight:700;letter-spacing:.03em;color:var(--muted)}
+.split div{background:transparent;border-top:0;padding:14px 0 0;font-size:14.5px;line-height:1.5;color:var(--muted)}
 
 
 /* round 10: world models + white space */
@@ -939,10 +944,12 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .tagdemo .td{font-size:11px;font-weight:700;color:#E8927A}
 .tagdemo .tg{font-size:11.5px;background:rgba(255,255,255,.12);color:#fff;border-radius:99px;padding:3px 9px}
 .tagdemo .ok{font-size:11.5px;background:#C0454F;color:#fff;border-radius:99px;padding:3px 10px;font-weight:600}
-.topics{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:26px;flex:1;min-height:0;align-content:center}
-.tp{background:transparent;border-radius:0;border-top:2px solid var(--line);padding-top:24px;display:flex;flex-direction:column}
-.tp b{font-family:Deck;display:block;font-size:30px;color:var(--ink);font-weight:700}
-.tp span{display:block;font-size:18px;line-height:1.7;color:var(--muted);margin-top:22px}
+.topics{display:flex;flex-direction:column;gap:0;margin-top:22px;flex:1;min-height:0;justify-content:center}
+.tp{display:grid;grid-template-columns:56px 300px 1fr;gap:28px;align-items:baseline;padding:34px 0;border-bottom:1px solid var(--line)}
+.tp:last-child{border-bottom:0}
+.tp i{font-family:Lit,Deck,serif;font-style:normal;font-size:26px;color:var(--coral);line-height:1}
+.tp b{font-family:Deck;display:block;font-size:27px;color:var(--ink);font-weight:700;line-height:1.25}
+.tp span{display:block;font-size:19px;line-height:1.65;color:var(--muted);margin-top:0;max-width:56ch}
 
 
 /* round 13: four asks, world conclusion, merged pilot */
@@ -961,7 +968,8 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .cnums .hi{background:var(--accent-tint)}
 .cnums .hi b{color:var(--accent)}
 .cnums .hi span{color:var(--base)}
-.phase.hi{border-top-color:var(--coral)}
+.phase.hi .pn{color:var(--coral)}
+.phase.hi .pw{background:var(--accent-tint);color:var(--coral)}
 
 
 /* round 13b: prototype fill, pace row */
@@ -970,10 +978,10 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .pr-nx{background:#fff;border-radius:10px;padding:7px 10px;display:flex;align-items:baseline;gap:8px}
 .pr-nx b{font-size:10px;color:#2A2724;font-weight:600}
 .pr-nx span{font-size:8.5px;color:#6B6355;margin-inline-start:auto}
-.cm-srcrow{display:flex;gap:7px;align-items:center;background:#FAF7F2;border-radius:9px;padding:6px 8px;margin-top:6px}
+.cm-srcrow{display:flex;gap:7px;align-items:center;background:#FDF7F6;border:1px solid #E7CFCF;border-radius:9px;padding:7px 9px;margin-top:6px}
 .cm-srcrow i{flex:0 0 24px;height:24px;border-radius:7px;background:#F3E7E2;display:block}
 .cm-srcrow i.b{background:#EFE9E0}
-.cm-srcrow b{display:block;font-size:9.5px;font-weight:600;color:#2A2724;line-height:1.2}
+.cm-srcrow b{display:block;font-size:10px;font-weight:700;color:#2A2724;line-height:1.2}
 .cm-srcrow span{display:block;font-size:8px;color:#6B6355;margin-top:1px}
 .cm-ask{margin-top:8px;background:#F1ECE3;border-radius:99px;padding:7px 12px;font-size:9px;color:#8A8172}
 .lp-pace2{position:absolute;top:214px;right:10px;left:10px;background:#fff;border-radius:11px;padding:7px 10px;display:flex;align-items:center;gap:8px;z-index:2;box-shadow:0 1px 3px rgba(26,26,66,.07)}
@@ -1030,10 +1038,11 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .clo h2{color:#fff;font-size:40px}
 .cloline{font-family:Lit,Deck,serif;font-size:27px;line-height:1.5;color:#fff;margin-top:20px;max-width:34ch}
 .closub{font-size:16.5px;line-height:1.7;color:#C9C2B4;margin-top:18px;max-width:52ch}
-.closig{display:flex;gap:34px;align-items:flex-end;margin-top:46px;padding-top:22px;border-top:1px solid rgba(255,255,255,.16)}
-.closig b{display:block;font-size:15.5px;color:#fff;font-weight:600}
-.closig span{display:block;font-size:13px;color:#A79E8C;margin-top:3px}
-.closig .cc{margin-inline-start:auto;font-size:13px;color:#A79E8C;direction:ltr;text-align:right;line-height:1.6}
+.closig{display:flex;gap:56px;align-items:flex-start;margin-top:46px;padding-top:24px;border-top:1px solid rgba(255,255,255,.18)}
+.closig b{display:block;font-size:17px;color:#fff;font-weight:600}
+.closig span{display:block;font-size:14px;color:#BBB3A3;margin-top:5px}
+.closig .cc{margin-inline-start:0;font-size:14.5px;color:#E6E1D6;direction:ltr;text-align:right;line-height:1.7;margin-top:9px}
+.closig .cc a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.28)}
 .wgrid{display:grid;grid-template-columns:.86fr 1.14fr;gap:56px;margin-top:18px;flex:1;min-height:0;align-content:center}
 .wtext p{font-size:19px;line-height:1.65;color:var(--ink);margin-bottom:14px;max-width:36ch}
 .wtext p b{color:var(--ink);font-weight:600}
@@ -1124,20 +1133,27 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 /* slide 10 */
 .bigcovers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:14px}
 .bigcovers figure{margin:0}
-.bcw{position:relative;height:266px;border-radius:3px;overflow:hidden}
+.bcw{position:relative;height:238px;border-radius:3px;overflow:hidden}
 .bigcovers img{width:100%;height:100%;object-fit:cover;display:block}
 .bcw i{position:absolute;top:12px;right:12px;font-style:normal;font-family:Deck;font-size:11.5px;font-weight:700;letter-spacing:.03em;color:#fff;background:var(--coral);border-radius:99px;padding:4px 11px}
-.bct{background:var(--sand);display:grid;place-items:center;padding:24px;border:1px solid var(--line)}
-.bcx{text-align:center}
-.bcx b{font-family:Lit,Deck,serif;font-size:44px;font-weight:600;color:var(--ink);line-height:1.22;display:block}
-.bcx em{display:block;font-style:normal;font-family:Deck;font-size:13px;color:var(--muted);margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.bct{background:var(--sand);display:grid;place-items:center;padding:24px;border:1px solid var(--line);border-top:3px solid var(--coral);position:relative;overflow:hidden}
+.bcx{text-align:center;position:relative;z-index:1}
+.bcn{position:absolute;top:-58px;left:50%;transform:translateX(-50%);font-family:Lit,Deck,serif;font-size:150px;line-height:1;color:var(--ink);opacity:.07;z-index:-1}
+.bcx b{font-family:Lit,Deck,serif;font-size:42px;font-weight:600;color:var(--ink);line-height:1.2;display:block;letter-spacing:.01em}
+.bcx em{display:block;font-style:normal;font-family:Deck;font-size:13px;color:var(--muted);margin-top:16px;padding-top:13px;border-top:1px solid #CFC5B4;max-width:22ch;margin-inline:auto;line-height:1.45}
 .bigcovers figcaption{font-family:Lit,Deck,serif;font-size:22px;color:var(--ink);margin-top:11px;line-height:1.25}
 .bigcovers figcaption span{display:block;font-family:Deck;font-size:13px;color:var(--muted);margin-top:5px;line-height:1.45}
-.bigcovers figure.open .bcw{outline:3px solid var(--coral);outline-offset:-3px}
+.bigcovers figure.open .bcw{outline:2px solid rgba(217,77,88,.55);outline-offset:-2px}
 .pathsub{font-size:17px;line-height:1.6;color:var(--muted);margin-top:12px;max-width:62ch}
 .opsteps .rest b{color:var(--muted)}
 .opsteps .rest span{color:var(--muted);font-size:15px}
-.opsteps .done em{color:#9E9584}
+.opsteps div em{display:flex;align-items:center;gap:7px}
+.mk{width:12px;height:12px;border-radius:99px;flex:none;display:inline-block}
+.mk.ok{background:#8C8474;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round' d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/11px no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round' d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/11px no-repeat;border-radius:0}
+.mk.nx{background:var(--coral)}
+.mk.up{border:1.5px solid #B9AF9D;background:transparent}
+.opsteps .done em{color:#7E7668}
+.opsteps .done b,.opsteps .done span{color:#6E6759}
 .opsteps .now em{color:var(--coral);font-weight:700}
 .pathfoot{display:grid;grid-template-columns:1fr 300px;gap:40px;margin-top:22px;flex:1;min-height:0}
 .pfx p{font-size:17.5px;line-height:1.65;color:var(--muted);max-width:52ch}
@@ -1154,7 +1170,7 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .clo h2{font-family:Deck;color:#fff;font-size:56px;font-weight:700;line-height:1.12;letter-spacing:-.015em;max-width:20ch}
 .cloline{font-family:Deck;font-size:23px;font-weight:400;line-height:1.6;color:#E6E1D6;margin-top:24px;max-width:40ch}
 .clo h2 em{font-style:normal;color:#EC6A72}
-.closub{font-size:16px;line-height:1.7;color:#A79E8C;margin-top:16px;max-width:46ch}
+.closub{font-size:16.5px;line-height:1.7;color:#BBB3A3;margin-top:18px;max-width:46ch}
 .cloout{margin-top:34px;display:grid;gap:14px;max-width:44ch}
 .cloout div{font-size:17px;line-height:1.5;color:#E6E1D6;display:grid;grid-template-columns:44px 1fr;align-items:baseline}
 .cloout b{font-family:Lit,Deck,serif;font-size:20px;color:#E8927A;font-weight:600}
@@ -1166,24 +1182,40 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .abhead{display:flex;justify-content:space-between;align-items:flex-end;gap:30px}
 .abhead .abl{height:44px;width:auto;margin-bottom:2px;opacity:.92}
 .ablead{font-size:18.5px;line-height:1.7;color:var(--muted);margin-top:16px;max-width:60ch}
-.abnums{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:30px;border-top:1px solid var(--line);padding-top:30px}
-.abnums b{font-family:Lit,Deck,serif;font-size:80px;line-height:.92;color:var(--ink);display:block;letter-spacing:-.015em;font-weight:600}
-.abnums span{display:block;font-size:15.5px;line-height:1.5;color:var(--muted);margin-top:10px;max-width:24ch}
+.abnums{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:28px;border-top:1px solid var(--line);padding-top:28px;align-items:start}
+.abnums b{font-family:Lit,Deck,serif;font-size:80px;line-height:1;height:80px;color:var(--ink);display:block;letter-spacing:-.015em;font-weight:600}
+.abnums span{display:block;font-size:15.5px;line-height:1.5;color:var(--muted);margin-top:14px;max-width:26ch}
 .abflow{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:34px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px 0}
 .abflow div i{font-style:normal;font-family:Deck;font-size:12.5px;font-weight:700;color:var(--coral);display:block}
 .abflow div span{display:block;font-size:19.5px;color:var(--ink);margin-top:7px;line-height:1.25}
 .absec{margin-top:16px;font-size:15.5px;line-height:1.6;color:var(--muted)}
-.abprod{margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}
+.abprod{margin-top:26px;padding:20px 24px;background:var(--sand);border-radius:4px}
 .abprod .lab{font-size:13px;font-weight:700;letter-spacing:.03em;color:var(--coral);margin-bottom:14px}
 .abprod .row{display:flex;align-items:center;justify-content:space-between;gap:14px}
 .pit{display:flex;align-items:center;gap:9px}
 .pit img{width:40px;height:40px;border-radius:10px;flex:none;object-fit:cover}
 .pit .ptx{width:40px;height:40px;border-radius:10px;flex:none;background:var(--coral);color:#fff;display:grid;place-items:center;font-size:8.5px;font-weight:700}
 .pit b{font-size:14.5px;color:var(--ink);font-weight:600;line-height:1.2}
-.abwall{margin-top:auto;padding-top:22px;border-top:1px solid var(--line);display:flex;align-items:center;gap:28px}
+.abwall{margin-top:24px;margin-bottom:8px;padding-top:0;border-top:0;display:flex;align-items:center;gap:28px}
 .abwall .lab{flex:0 0 auto;font-size:13px;font-weight:700;letter-spacing:.03em;color:var(--coral)}
 .abwall .row{flex:1;display:flex;align-items:center;justify-content:space-between;gap:18px}
-.abwall img{max-height:42px;max-width:112px;width:auto;height:auto;object-fit:contain;filter:grayscale(1)}
+.abwall img{width:auto;height:auto;object-fit:contain;filter:grayscale(1)}
+.abwall img.lg{max-height:42px;max-width:74px}
+.abwall img.md{max-height:32px;max-width:104px}
+.abwall img.sm{max-height:24px;max-width:124px}
+
+/* slides 13 + 15 - one shape for the two-project proof slides */
+.proof2{display:grid;grid-template-columns:1fr 1fr;gap:46px;margin-top:18px;flex:1;min-height:0;align-content:center}
+.pvh{font-family:Deck;font-size:22px;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:14px}
+.pvs{display:flex;gap:16px;align-items:flex-start;height:300px}
+.pvs.one{justify-content:flex-start}
+.proof2 .shot{height:auto;display:block;place-items:initial}
+.proof2 .shot.big img{max-height:300px;max-width:none;width:auto;height:300px;border-radius:12px}
+.proof2 .shot.big.wide img{height:auto;width:auto;max-height:238px;max-width:366px;border-radius:12px}
+.proof2 .shot.sml img{max-height:238px;width:auto;height:238px;border-radius:10px;opacity:.94}
+.pvlbl{font-size:14.5px;font-weight:600;color:var(--coral);margin-top:16px}
+.proof2 .pdesc{font-size:15.5px;line-height:1.6;color:var(--muted);margin-top:8px}
+.proof2 .pdesc b{color:var(--ink);font-weight:700}
 
 /* slide 6 - three labels tied to the proposed screen */
 .cmp6{display:flex;justify-content:center;align-items:flex-start;gap:54px;margin-top:24px}
@@ -1214,18 +1246,19 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .vnote{font-size:13.5px;line-height:1.5;color:#A79E8C;margin-top:12px}
 
 /* slide 16 - stage duration under the stage name */
-.phase .pw{font-size:13px;font-weight:700;letter-spacing:.03em;color:var(--coral);margin-top:6px}
+.phase .pw{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.03em;color:var(--ink);background:var(--sand);border-radius:99px;padding:4px 12px;margin-top:10px;width:max-content}
 
 /* slide 16 - what the Koren screens prove */
-.kb{list-style:none;margin:26px 0 0;padding:0}
-.kb li{font-size:16.5px;line-height:1.55;color:var(--muted);padding:13px 0;border-top:1px solid var(--line)}
+.kb{list-style:none;margin:30px 0 0;padding:0}
+.kb li{font-size:16.5px;line-height:1.55;color:var(--muted);padding:26px 0;border-top:1px solid var(--line);position:relative}
+.kb li em{font-style:normal;display:block;font-size:13px;color:var(--coral);margin-top:6px}
 .kb li b{color:var(--ink);font-weight:700;margin-inline-end:5px}
 
 /* slide 13 - site, shared services, app */
 .bridge{display:grid;grid-template-columns:1fr 1.14fr 1fr;gap:38px;flex:1;min-height:0;margin-top:26px;align-items:stretch}
 .bcol{padding-top:18px;border-top:1px solid var(--line)}
-.bmid{padding:18px 30px 22px;border-top:2px solid var(--coral);background:var(--sand);position:relative;display:flex;flex-direction:column}
-.bmid::before,.bmid::after{content:"";position:absolute;top:46px;width:38px;border-top:1px solid var(--coral)}
+.bmid{padding:18px 28px 22px;border-top:2px solid var(--coral);background:var(--sand);position:relative;display:flex;flex-direction:column;align-self:start}
+.bmid::before,.bmid::after{content:"";position:absolute;top:120px;width:38px;border-top:1px solid var(--coral)}
 .bmid::before{right:-38px}.bmid::after{left:-38px}
 .bk{font-family:Deck;font-size:22px;font-weight:700;color:var(--ink);line-height:1.2}
 .bk.c{color:var(--coral)}
@@ -1251,41 +1284,42 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .bsvc li:last-child{border-bottom:0}
 .bsvc li::before{content:counter(bs,decimal-leading-zero);position:absolute;inset-inline-start:0;top:13px;font-family:Deck;font-size:12px;font-weight:700;color:var(--coral)}
 .bsvc li b{color:var(--ink);font-weight:700}
-.btag{margin-top:auto;padding-top:16px;border-top:1px solid #DDD4C5}
+.btag{margin-top:26px;padding-top:16px;border-top:1px solid #DDD4C5;padding-inline-start:14px;border-inline-start:2px solid #DDD4C5}
 .btr{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:9px}
 .btr b{color:var(--muted);font-size:13px;font-weight:400;margin:0 1px}
 .btag .l{display:block;font-size:12px;font-weight:700;letter-spacing:.03em;color:var(--muted)}
 .btag .ai{font-size:12px;font-weight:700;color:var(--coral)}
 .btag .tg{font-size:12px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:3px 11px;color:var(--ink)}
 .btag .ok{font-size:12px;background:var(--coral);color:#fff;border-radius:99px;padding:3px 11px;font-weight:600}
-.bfoot{margin-top:22px;padding-top:20px;border-top:1px solid var(--line);font-size:17px;line-height:1.6;color:var(--muted);max-width:92ch}
-.bfoot b{color:var(--ink);font-weight:700}
+.bfoot{margin-top:26px;padding-top:20px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.bfoot div{font-size:16.5px;line-height:1.6;color:var(--muted)}
+.bfoot b{color:var(--ink);font-weight:700;margin-inline-end:5px}
 
 /* slide 11 - the two other ways, shown rather than described */
 .w3{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:6px}
 .w3p{margin:0}
-.w3c{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 15px 15px;min-height:196px}
+.w3c{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 17px 17px;min-height:214px}
 .w3tools{display:flex;align-items:center;gap:8px;padding-bottom:10px;border-bottom:1px solid var(--line);margin-bottom:11px}
-.w3tools span{font-size:12px;font-weight:700;color:var(--muted);background:var(--sand);border-radius:6px;padding:2px 8px}
-.w3tools b{margin-inline-start:auto;font-size:11.5px;color:var(--muted);font-weight:600}
-.w3v{font-family:Lit,Deck,serif;font-size:15.5px;line-height:1.6;color:var(--ink);margin:0 0 8px;display:flex;gap:7px}
+.w3tools span{font-size:14px;font-weight:700;color:var(--ink);background:var(--sand);border-radius:7px;padding:4px 11px}
+.w3tools b{margin-inline-start:auto;font-size:13px;color:var(--muted);font-weight:600}
+.w3v{font-family:Lit,Deck,serif;font-size:16.5px;line-height:1.6;color:var(--ink);margin:0 0 8px;display:flex;gap:7px}
 .w3v i{font-style:normal;font-family:Deck;font-size:10.5px;color:var(--coral);font-weight:700;flex:none;padding-top:4px}
-.w3pill{display:inline-block;font-size:11.5px;color:var(--coral);background:var(--accent-tint);border-radius:99px;padding:4px 11px;margin-top:2px}
-.w3pt{font-size:14px;font-weight:700;color:var(--ink);line-height:1.3}
-.w3ps{font-size:11.5px;color:var(--muted);margin-top:3px}
-.w3bar{height:4px;border-radius:99px;background:var(--sand);margin-top:14px;overflow:hidden}
+.w3pill{display:inline-block;font-size:12.5px;color:var(--coral);background:var(--accent-tint);border-radius:99px;padding:4px 11px;margin-top:2px}
+.w3pt{font-size:15.5px;font-weight:700;color:var(--ink);line-height:1.3}
+.w3ps{font-size:13px;color:var(--muted);margin-top:4px}
+.w3bar{height:6px;border-radius:99px;background:var(--sand);margin-top:16px;overflow:hidden}
 .w3bar i{display:block;width:41%;height:100%;background:var(--coral)}
-.w3tm{display:flex;justify-content:space-between;font-size:10.5px;color:var(--muted);margin-top:6px}
+.w3tm{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:7px;font-variant-numeric:tabular-nums}
 .w3ctl{display:flex;align-items:center;gap:10px;margin-top:12px}
-.w3ctl span{font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:3px 9px}
-.w3ctl b{font-size:13px;color:#fff;background:var(--coral);width:26px;height:26px;border-radius:99px;display:grid;place-items:center}
-.w3nx{margin-top:13px;padding-top:10px;border-top:1px solid var(--line);font-size:11.5px;color:var(--muted);line-height:1.45}
-.w3p figcaption{font-size:14.5px;line-height:1.5;color:var(--muted);margin-top:12px}
-.w3p figcaption b{color:var(--ink);font-weight:700;margin-inline-end:5px}
-.w3x{margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}
-.w3x p{font-size:16px;line-height:1.65;color:var(--muted);max-width:58ch}
-.w3x p b{color:var(--ink)}
-.w3x p.sm{font-size:14.5px;margin-top:9px;color:var(--muted)}
+.w3ctl span{font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:4px 11px}
+.w3ctl b{font-size:15px;color:#fff;background:var(--coral);width:32px;height:32px;border-radius:99px;display:grid;place-items:center}
+.w3nx{margin-top:15px;padding-top:12px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);line-height:1.45}
+.w3h{margin-bottom:11px}
+.w3h b{display:block;font-family:Deck;font-size:20px;font-weight:700;color:var(--ink);line-height:1.2}
+.w3h span{display:block;font-size:14px;line-height:1.45;color:var(--muted);margin-top:5px;min-height:2.9em}
+.w3x{margin-top:26px;padding-top:20px;border-top:1px solid var(--line);display:grid;grid-template-columns:1.35fr 1fr;gap:38px}
+.w3x b{display:block;font-size:13px;font-weight:700;letter-spacing:.03em;color:var(--coral);margin-bottom:8px}
+.w3x p{font-size:15.5px;line-height:1.6;color:var(--muted);margin:0}
 
 /* open path strip (slide 10) */
 .openpath{margin-top:26px;display:grid;grid-template-columns:262px 1fr;gap:34px;align-items:start;
@@ -1668,7 +1702,7 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
       <div class="bigcovers">
         <figure class="open"><div class="bcw"><img src="assets/art/packs/pack-hakol-hevel.jpg" alt=""><i>פתוח עכשיו</i></div><figcaption>הכול הבל<span>מארז קריאה · קהלת</span></figcaption></figure>
         <figure><div class="bcw"><img src="assets/art/packs/pack-et-mi-at-ohevet.jpg" alt=""></div><figcaption>את מי את אוהבת<span>מארז קריאה · יוסף ואחיו</span></figcaption></figure>
-        <figure><div class="bcw bct"><div class="bcx"><b>מעבר<br>לתנ"ך</b><em>מתוך רשימת המסלולים שלכם</em></div></div><figcaption>20 השירים הגדולים של רחל<span>סדרה · 20 מפגשים</span></figcaption></figure>
+        <figure><div class="bcw bct"><div class="bcx"><span class="bcn">20</span><b>מעבר<br>לתנ"ך</b><em>סדרה, מתוך רשימת המסלולים שלכם</em></div></div><figcaption>20 השירים הגדולים של רחל<span>סדרה · 20 מפגשים</span></figcaption></figure>
       </div>
       <div class="openpath">
         <div class="ophead">
@@ -1677,10 +1711,10 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
           <div class="opbar"><i></i></div>
         </div>
         <div class="opsteps">
-          <div class="done"><b>קהלת א</b><span>הבל הבלים</span><em>הושלם</em></div>
-          <div class="done"><b>קהלת ג</b><span>לכל זמן ועת</span><em>הושלם</em></div>
-          <div class="now"><b>קהלת ז</b><span>טוב שם משמן טוב</span><em>המפגש הבא</em></div>
-          <div><b>קהלת ט</b><span>לך אכול בשמחה לחמך</span><em>לפנינו</em></div>
+          <div class="done"><b>קהלת א</b><span>הבל הבלים</span><em><i class="mk ok"></i>הושלם</em></div>
+          <div class="done"><b>קהלת ג</b><span>לכל זמן ועת</span><em><i class="mk ok"></i>הושלם</em></div>
+          <div class="now"><b>קהלת ז</b><span>טוב שם משמן טוב</span><em><i class="mk nx"></i>המפגש הבא</em></div>
+          <div><b>קהלת ט</b><span>לך אכול בשמחה לחמך</span><em><i class="mk up"></i>לפנינו</em></div>
           <div class="rest"><b>עוד 3</b><span>מפגשים בהמשך</span></div>
         </div>
       </div>
@@ -1696,15 +1730,16 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
         <div class="txtcol">
           <div class="w3">
             <figure class="w3p">
+              <div class="w3h"><b>קריאה</b><span>גודל אות נשלט, מצב לילה, וביאור לצד הפסוק</span></div>
               <div class="w3c">
                 <div class="w3tools"><span>א+</span><span>א-</span><b>לילה</b></div>
                 <p class="w3v"><i>יד</i>וְדָוִד מְכַרְכֵּר בְּכָל־עֹז לִפְנֵי ה׳, וְדָוִד חָגוּר אֵפוֹד בָּד</p>
                 <p class="w3v"><i>טז</i>וַתֵּרֶא אֶת־הַמֶּלֶךְ דָּוִד מְפַזֵּז וּמְכַרְכֵּר לִפְנֵי ה׳, וַתִּבֶז לוֹ בְּלִבָּהּ</p>
                 <div class="w3pill">ביאור שטיינזלץ</div>
               </div>
-              <figcaption><b>קריאה</b> גודל אות נשלט, מצב לילה, ובאור לצד הפסוק</figcaption>
             </figure>
             <figure class="w3p">
+              <div class="w3h"><b>האזנה</b><span>פלייליסט לפי נושא, בשליטה מהאוזניות</span></div>
               <div class="w3c">
                 <div class="w3pt">מסע 929 של הרב שי פירון</div>
                 <div class="w3ps">שמואל ב · פרק ו</div>
@@ -1713,12 +1748,11 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
                 <div class="w3ctl"><span>1.25x</span><b>▶</b><span>מהאוזניות</span></div>
                 <div class="w3nx">פלייליסט: מנהיגות · הבא בתור: קריינות הפרק</div>
               </div>
-              <figcaption><b>האזנה</b> פלייליסט לפי נושא, בשליטה מהאוזניות</figcaption>
             </figure>
           </div>
           <div class="w3x">
-            <p><b>השאלה</b> נשענת על מקורות מזוהים מתוך 929 ומפנה לכתבות ולכותבים. כשיש מחלוקת מוצגות גם דעות שונות, וכשאין תשובה במקורות המערכת אומרת זאת.</p>
-            <p class="sm"><b>ול-929</b> מה שואלים על הפרק, ומה עדיין לא נמצא בתוכן.</p>
+            <div><b>שאל את הפרק</b><p>התשובה נשענת על מקורות מזוהים מתוך 929 ומפנה לכתבות ולכותבים. כשיש מחלוקת מוצגות גם דעות שונות, וכשאין תשובה במקורות המערכת אומרת זאת.</p></div>
+            <div><b>ומה 929 מקבלת</b><p>מה שואלים על הפרק, ומה עדיין לא נמצא בתוכן.</p></div>
           </div>
         </div>
         <div class="phcol"><div class="proto" data-demo="3" data-auto="4200" data-start="2">
@@ -1821,7 +1855,7 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 
     <!-- bottom sheets, one per step (controller toggles .on) -->
   </div>
-  <div class="pbar lbl"><i>קריאה</i><i>האזנה</i><i class="on">שאל את הפרק</i></div>
+  <div class="pbar"><i></i><i></i><i class="on"></i></div>
 </div></div>
       </div>
     </section>
@@ -1863,7 +1897,7 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
           <p><b>הכיס של הלומד הקבוע.</b> תזכורת בבוקר, האזנה בדרך, קריאה בלי קליטה, והמשך מהמקום שעצר.</p>
         </div>
       </div>
-      <div class="bfoot">האחריות לתוכן ולעריכה נשארת בידי 929. <b>הפיתוח משתלב בתוכנית חידוש האתר, וסדר העדיפויות וההיקף נקבעים יחד.</b></div>
+      <div class="bfoot"><div><b>929</b>אחראית על התוכן, העריכה והאישור המקצועי.</div><div><b>הפיתוח</b>משתלב בתוכנית חידוש האתר, וסדר העדיפויות וההיקף נקבעים יחד.</div></div>
     </div>
   </section>
 
@@ -1892,15 +1926,15 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
       <div class="abwall">
         <div class="lab">חלק מהלקוחות</div>
         <div class="row">
-          <img src="assets/clients/c03.png" alt="אמי״ת" style="opacity:.60">
-          <img src="assets/clients/c08.png" alt="הסוכנות היהודית" style="opacity:.66">
-          <img src="assets/clients/c10.png" alt="המכללה האקדמית בית ברל" style="opacity:.70">
-          <img src="assets/clients/c17.png" alt="קידום" style="opacity:.52">
-          <img src="assets/clients/c18.png" alt="גן החיות התנ״כי" style="opacity:.62">
-          <img src="assets/clients/c06.png" alt="כינור לב" style="opacity:.64">
-          <img src="assets/clients/c04.png" alt="עוגן" style="opacity:.60">
-          <img src="assets/clients/c07.png" alt="ירושמיים" style="opacity:.78">
-          <img src="assets/clients/c05.png" alt="Momentum" style="opacity:.58">
+          <img src="assets/clients/c03.png" alt="אמי״ת" class="lg" style="opacity:.60">
+          <img src="assets/clients/c08.png" alt="הסוכנות היהודית" class="md" style="opacity:.66">
+          <img src="assets/clients/c10.png" alt="המכללה האקדמית בית ברל" class="sm" style="opacity:.70">
+          <img src="assets/clients/c17.png" alt="קידום" class="md" style="opacity:.52">
+          <img src="assets/clients/c18.png" alt="גן החיות התנ״כי" class="md" style="opacity:.62">
+          <img src="assets/clients/c06.png" alt="כינור לב" class="lg" style="opacity:.64">
+          <img src="assets/clients/c04.png" alt="עוגן" class="lg" style="opacity:.60">
+          <img src="assets/clients/c07.png" alt="ירושמיים" class="md" style="opacity:.78">
+          <img src="assets/clients/c05.png" alt="Momentum" class="sm" style="opacity:.58">
         </div>
       </div>
     </div>
@@ -1910,26 +1944,27 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
     <div class="pad">
       <div class="eyebrow"><span class="num">12</span> הוכחה · לימוד יומי, בחירת אורך והאזנה</div>
       <h2>אפליקציות לימוד יומי שבנינו</h2>
-      <div class="grid" style="grid-template-columns:1fr 1fr;gap:30px;margin-top:16px;flex:1;min-height:0;align-content:center">
+      <div class="proof2">
         <div class="edu">
-          <div style="display:flex;gap:12px;justify-content:center">
-            <div class="shot" style="height:352px"><img src="assets/proof/pniney-he-home.png" alt="" style="max-height:352px"></div>
-            <div class="shot" style="height:352px"><img src="assets/proof/pniney-he-listen.png" alt="" style="max-height:352px"></div>
+          <h3 class="pvh">פניני הלכה</h3>
+          <div class="pvs">
+            <div class="shot big"><img src="assets/proof/pniney-he-listen.png" alt=""></div>
+            <div class="shot sml"><img src="assets/proof/pniney-he-home.png" alt=""></div>
           </div>
-          <h3 style="margin-top:14px;font-size:21px">פניני הלכה</h3>
-          <p class="pdesc" style="font-size:15px;margin-top:6px">סדרת פניני הלכה של ישיבת הר ברכה: <b>הפנינה היומית</b> עם תזכורת, וקריאה והאזנה על אותו טקסט.</p>
+          <div class="pvlbl">קריאה והאזנה על אותו טקסט, באותו מסך</div>
+          <p class="pdesc">סדרת פניני הלכה של ישיבת הר ברכה, עם <b>הפנינה היומית</b> ותזכורת יומית.</p>
         </div>
         <div class="edu">
-          <div style="display:flex;gap:12px;justify-content:center">
-            <div class="shot fill" style="height:352px;width:172px;border-radius:12px"><img src="assets/proof/rambam/rambam-screen-1.png" alt=""></div>
-            <div class="shot fill" style="height:352px;width:172px;border-radius:12px"><img src="assets/proof/rambam/rambam-screen-5.png" alt=""></div>
+          <h3 class="pvh">הרמב"ם היומי</h3>
+          <div class="pvs">
+            <div class="shot big"><img src="assets/proof/rambam/rambam-screen-1.png" alt=""></div>
+            <div class="shot sml"><img src="assets/proof/rambam/rambam-screen-5.png" alt=""></div>
           </div>
-          <h3 style="margin-top:14px;font-size:21px">הרמב"ם היומי</h3>
-          <p class="pdesc" style="font-size:15px;margin-top:6px">פרק ביום, והלומד בוחר כמה זמן יש לו: <b>סרטון של דקה וחצי, תקציר, אודיו או הטקסט המלא</b>. מי שפספס משלים בתקציר.</p>
+          <div class="pvlbl">הלומד בוחר כמה זמן יש לו היום</div>
+          <p class="pdesc">פרק ביום: <b>סרטון של דקה וחצי, תקציר, אודיו או הטקסט המלא</b>. מי שפספס משלים בתקציר.</p>
         </div>
       </div>
-    </div>
-  </section>
+      </section>
 
   <section class="slide" data-act="us">
     <div class="pad">
@@ -1937,11 +1972,11 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
       <h2>סידור קורן</h2>
       <div class="two" style="margin-top:18px;grid-template-columns:1fr 1fr;align-items:start;gap:40px">
         <div style="padding-top:4px">
-          <p class="pdesc" style="font-size:18.5px;line-height:1.65;max-width:34ch">סידור מלא לנייד, שנבנה עם Koren Publishers Jerusalem.</p>
+          <p class="pdesc" style="font-size:18.5px;line-height:1.65;max-width:38ch">סידור מלא לנייד, שנבנה עם <span dir="ltr" style="white-space:nowrap">Koren Publishers Jerusalem</span>.</p>
           <ul class="kb">
             <li><b>טקסט מנוקד במלואו</b> בטיפוגרפיה של קורן</li>
-            <li><b>שלושה נוסחים</b> ושליטה בגודל האות</li>
-            <li><b>האזנה בבקרת מהירות</b> <span dir="ltr">x1 / x2 / x4</span></li>
+            <li><b>שלושה נוסחים</b> ושליטה בגודל האות<em>הכפתור אֲ/א בראש המסך</em></li>
+            <li><b>האזנה בבקרת מהירות</b><em>הבוררים <span dir="ltr">x1 x2 x4</span> מתחת לנגן</em></li>
           </ul>
         </div>
         <div style="display:flex;gap:16px;justify-content:center">
@@ -1956,26 +1991,31 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
     <div class="pad">
       <div class="eyebrow"><span class="num">14</span> אמי"ת וקידום · מסלולים ומעקב התקדמות במערכות למידה</div>
       <h2>מסלולים ומעקב, בקנה מידה</h2>
-      <div class="grid" style="grid-template-columns:1fr 1fr;gap:26px;margin-top:14px;flex:1;min-height:0;align-content:center">
+      <div class="proof2">
         <div class="edu">
-          <div class="shot" style="height:346px"><img src="assets/proof/amit/amit-feedback.png" alt="" style="max-height:346px"></div>
-          <h3 style="margin-top:14px;font-size:21px">אמי"ת · מערכת למידה</h3>
-          <p class="pdesc" style="font-size:15px;margin-top:6px">מעקב התקדמות אישי ברשת של <b>100+ חטיבות ותיכונים</b>: ציון לכל תרגיל מול ממוצע הקורס, משוב מהמורה, ומסלול המשך, בתצוגה אחת למורה ולתלמיד.</p>
+          <h3 class="pvh">אמי"ת · מערכת למידה</h3>
+          <div class="pvs one">
+            <div class="shot big"><img src="assets/proof/amit/amit-feedback.png" alt=""></div>
+          </div>
+          <div class="pvlbl">ציון מול ממוצע הקורס, ומשוב מהמורה</div>
+          <p class="pdesc">מעקב התקדמות אישי ברשת של <b>100+ חטיבות ותיכונים</b>,<br>בתצוגה אחת למורה ולתלמיד.</p>
         </div>
         <div class="edu">
-          <div class="shot" style="height:346px"><img src="assets/proof/kidum/kidum-site-3.png" alt="" style="max-height:306px;border-radius:14px"></div>
-          <h3 style="margin-top:14px;font-size:21px">קידום</h3>
-          <p class="pdesc" style="font-size:15px;margin-top:6px">אפליקציית התרגול של רשת ההכנה לפסיכומטרי: <b>3,000 מילים</b>, סרטוני לימוד, ומעקב אחר קצב ההתקדמות על בסיס יום-יומי.</p>
+          <h3 class="pvh">קידום</h3>
+          <div class="pvs one">
+            <div class="shot big wide"><img src="assets/proof/kidum/kidum-crop.png" alt=""></div>
+          </div>
+          <div class="pvlbl">מסלול התקדמות ושינון, יום אחר יום</div>
+          <p class="pdesc">אפליקציית התרגול של רשת ההכנה לפסיכומטרי:<br><b>3,000 מילים</b>, סרטוני לימוד ומעקב קצב יומי.</p>
         </div>
       </div>
-    </div>
-  </section>
+      </section>
 
   <section class="slide" data-act="close">
     <div class="pad">
       <div class="eyebrow"><span class="num">15</span> איך מתחילים</div>
       <h2>בדיקה, פיילוט והחלטה על הרחבה</h2>
-      <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px;flex:1;min-height:0;align-content:center">
+      <div class="phases">
         <div class="phase"><div class="pn">1</div><h3>בדיקה</h3><div class="pw">שבועיים</div>
           <p>עוברים על הארכיון, על התיוג הקיים ועל תכנית חידוש האתר, ומסמנים מה אפשר לעשות כבר היום ומה דורש עבודת תוכן.</p>
           <div class="pd first"><span>התוצר</span>מפת היתכנות וכיוון מומלץ</div></div>
@@ -1987,6 +2027,7 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
           <div class="pd first"><span>התוצר</span>אפיון והיקף לשלב הבנייה</div></div>
       </div>
       <div class="split">
+        <div class="sl">מי מוביל מה, לאורך כל שלושת השלבים</div>
         <div><b>929 מוביל</b> את התוכן, העריכה והאישור המקצועי</div>
         <div><b>אנחנו מובילים</b> את המוצר, החוויה והטכנולוגיה</div>
         <div><b>ממשיכים לשלב הבא</b> רק אחרי החלטה משותפת</div>
@@ -1999,9 +2040,9 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
       <div class="eyebrow"><span class="num">16</span> נושאים להחלטה משותפת</div>
       <h2>שלושה נושאים שנרצה לדון בהם יחד</h2>
       <div class="topics">
-        <div class="tp"><b>חידוש האתר והאפליקציה</b><span>באיזה שלב התהליך ומי מוביל אותו. ובעיקר: במה השניים יהיו שונים זה מזה, ומי הפרסונה של כל אחד מהם.</span></div>
-        <div class="tp"><b>התוכן והתשתיות</b><span>איך הארכיון מאוחסן ומתויג היום, ומה מתאפשר על התשתית הקיימת בלי עבודת תוכן גדולה.</span></div>
-        <div class="tp"><b>בחירת הפיילוט</b><span>איזה נושא, איזו קבוצת לומדים, ואילו מדדים יגדירו הצלחה.</span></div>
+        <div class="tp"><i>01</i><b>חידוש האתר והאפליקציה</b><span>באיזה שלב התהליך ומי מוביל אותו. ובעיקר: במה השניים יהיו שונים זה מזה, ומי הפרסונה של כל אחד מהם.</span></div>
+        <div class="tp"><i>02</i><b>התוכן והתשתיות</b><span>איך הארכיון מאוחסן ומתויג היום, ומה מתאפשר על התשתית הקיימת בלי עבודת תוכן גדולה.</span></div>
+        <div class="tp"><i>03</i><b>בחירת הפיילוט</b><span>איזה נושא, איזו קבוצת לומדים, ואילו מדדים יגדירו הצלחה.</span></div>
       </div>
     </div>
   </section>
@@ -2014,9 +2055,8 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
       <div class="cloline">נבחר נושא וקבוצת לומדים, נגדיר מדדי הצלחה ונמפה את התשתיות הנדרשות.</div>
       <div class="closub">שעתיים עם צוות התוכן ועם מי שמוביל את חידוש האתר.</div>
       <div class="closig">
-        <div><b>חמי בן לביא</b><span>Head of Product Operations · 200Apps</span></div>
+        <div><b>חמי בן לביא</b><span>Head of Product Operations · 200Apps</span><span class="cc"><a href="mailto:hemi@200apps.co">hemi@200apps.co</a> · <a href="tel:+972544608119">054-4608119</a></span></div>
         <div><b>אלכס יעקובוב</b><span>CTO · 200Apps</span></div>
-        <div class="cc">hemi@200apps.co<br>054-4608119</div>
       </div>
     </div>
   </section>
