@@ -600,22 +600,22 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .stepper{display:grid;grid-template-columns:318px 280px 1fr;gap:40px;margin:10px 0 0}
 .stp{font-size:13px;font-weight:700;letter-spacing:.05em;color:var(--base)}
 .stp:last-child{text-align:center}
-.capstage{display:flex;flex-direction:row;align-items:stretch;gap:44px;height:474px;margin-top:12px}
+.capstage{display:flex;flex-direction:row;align-items:stretch;gap:40px;height:430px;margin-top:10px}
 .cap8 .dev{width:222px;height:458px;border-radius:40px}
-.cap8 .capdesc{height:176px}
+.cap8 .capdesc{height:152px}
 .capside{width:100%;display:block}
 .capright{flex:1;min-width:0;display:flex;flex-direction:column}
 .caps{display:flex;flex-wrap:wrap;gap:6px}
 .caps .lay{flex:0 0 100%}
-.caps .slot{flex:0 0 100%;max-width:430px}
+.caps .slot{flex:0 0 100%;max-width:520px}
 .caps .slot.sm{flex:0 0 auto;background:var(--sand);border-radius:99px;padding:6px 13px;opacity:1}
 .caps .slot.sm svg{width:14px;height:14px;flex:0 0 14px}
 .caps .slot.sm .nb{display:none}
 .caps .lay:first-child{margin-top:0}
 .caps .slot.sm .n{font-size:13.5px;font-weight:500;color:var(--muted)}
-.lay{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--muted);margin:14px 0 6px;opacity:1}
+.lay{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--muted);margin:10px 0 5px;opacity:1}
 .lay:first-child{margin-top:0}
-.slot{display:flex;align-items:center;gap:11px;padding:9px 13px;border-radius:8px;cursor:pointer;opacity:.85;transition:background .25s,opacity .25s}
+.slot{display:flex;align-items:center;gap:11px;padding:7px 13px;border-radius:8px;cursor:pointer;opacity:.85;transition:background .25s,opacity .25s}
 .slot:hover{background:rgba(58,91,208,.08);opacity:1}
 .slot svg{width:17px;height:17px;flex:0 0 17px;stroke:var(--muted);stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .slot .n{font-size:15px;font-weight:600;color:var(--ink);line-height:1.25}
@@ -626,15 +626,15 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .legend{display:flex;align-items:center;gap:6px;margin-top:10px;padding-top:9px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);line-height:1.35}
 .legend .nb{width:18px;height:18px;border-radius:6px;background:var(--accent);color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center;font-style:normal}
 .midcol{width:100%;display:block}
-.capdesc{position:relative;height:176px;background:transparent;padding:0}
+.capdesc{position:relative;height:152px;background:transparent;padding:0}
 .cd{position:absolute;inset:0;padding:0 22px;opacity:0;transition:opacity .25s ease;display:flex;flex-direction:column;justify-content:center}
-.cd .cdt{font-family:Deck;font-size:25px;line-height:1.28;color:var(--ink);font-weight:700;max-width:30ch}
-.cd .cdt::after{content:'';display:block;width:34px;height:3px;border-radius:2px;background:var(--accent);margin:10px 0 12px}
-.cd ul{list-style:none;display:flex;flex-direction:column;gap:8px;max-width:58ch}
+.cd .cdt{font-family:Deck;font-size:25px;line-height:1.26;color:var(--ink);font-weight:700;max-width:38ch}
+.cd .cdt::after{content:'';display:block;width:34px;height:3px;border-radius:2px;background:var(--accent);margin:9px 0 10px}
+.cd ul{list-style:none;display:flex;flex-direction:column;gap:6px;max-width:72ch}
 .cd li{font-size:15.5px;line-height:1.55;color:var(--ink);position:relative;padding-inline-start:17px}
 .cd li::before{content:'';position:absolute;inset-inline-start:0;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
 .cd li b{color:var(--ink);font-weight:600}
-.orgval{margin-top:auto;background:transparent;border-top:1px solid var(--line);padding:14px 0 0;display:flex;gap:12px;align-items:flex-start}
+.orgval{margin-top:auto;background:transparent;border-top:1px solid var(--line);padding:12px 0 0;display:flex;gap:12px;align-items:flex-start}
 .orgval .ol,.measure .ol{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--accent);white-space:nowrap;margin-top:3px}
 .orgval p{font-size:14.5px;line-height:1.5;color:var(--muted);margin:0}
 .orgval b{color:var(--base);font-weight:700}
@@ -696,7 +696,7 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .measure{display:flex;gap:12px;align-items:flex-start;background:transparent;border-top:1px solid var(--line);padding:12px 0 0}
 .measure p{font-size:14px;line-height:1.5;color:var(--ink);margin:0}
 .fx .phcol{position:static}
-.fx .phcol .proto{position:absolute;left:74px;top:140px;margin:0;transform:scale(1.15);transform-origin:top center}
+.fx .phcol .proto{position:absolute;left:74px;top:222px;margin:0;transform:scale(.96);transform-origin:top center}
 .h2c{font-size:46px;line-height:1.15;max-width:23ch}
 .h2l{font-size:43px;line-height:1.19;max-width:31ch}
 
@@ -835,14 +835,16 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .ask .a{font-size:14px;line-height:1.5;color:var(--muted);margin-top:auto;padding-top:12px;border-top:1px solid var(--line)}
 .phases{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:16px;position:relative}
 .phases::before{content:"";position:absolute;top:-1px;right:0;left:0;height:2px;background:var(--line)}
-.phase{background:transparent;border-radius:0;padding:0;display:flex;flex-direction:column;min-height:372px;position:relative}
-.phase::after{content:"";position:absolute;top:-6px;inset-inline-end:-22px;width:10px;height:10px;border-top:2px solid var(--line);border-left:2px solid var(--line);transform:rotate(-45deg);background:var(--bg)}
+.phase{background:transparent;border-radius:0;padding:0;display:flex;flex-direction:column;min-height:362px;position:relative}
+.phase::after{content:"";position:absolute;top:-6px;inset-inline-start:-22px;width:10px;height:10px;border-top:2px solid var(--line);border-left:2px solid var(--line);transform:rotate(-45deg);background:var(--bg)}
 .phase:first-child::after{content:none}
+.phase:last-child::after{content:none}
+.phase:nth-child(2)::after,.phase:nth-child(3)::after{content:""}
 .phase .pn{font-family:Deck;font-size:52px;font-weight:700;color:var(--coral);margin:18px 0 4px;line-height:1;letter-spacing:-.02em}
 .phase h3{font-family:Deck;font-size:24px;font-weight:700}
-.phase p{font-size:15.5px;line-height:1.6;color:var(--muted);margin-top:12px;min-height:5.2em}
+.phase p{font-size:15.5px;line-height:1.6;color:var(--muted);margin-top:12px;min-height:6.4em}
 .phase .pd{margin-top:10px;font-size:13.5px;color:var(--base);display:flex;gap:10px;align-items:baseline}
-.phase .pd.first{margin-top:auto;padding-top:14px;border-top:1px solid var(--line)}
+.phase .pd.first{margin-top:6px;padding-top:14px;border-top:1px solid var(--line)}
 .phase .pd span{flex:0 0 42px;font-size:11.5px;font-weight:700;letter-spacing:.06em;color:var(--accent)}
 .split{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:auto;padding-top:20px;border-top:1px solid var(--line);position:relative}
 .split .sl{position:absolute;top:-10px;right:0;background:var(--bg);padding-inline-end:12px;border:0;font-size:12.5px;font-weight:700;letter-spacing:.03em;color:var(--muted)}
@@ -1152,13 +1154,13 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .pathsub{font-size:17px;line-height:1.6;color:var(--muted);margin-top:12px;max-width:62ch}
 .opsteps .rest b{color:var(--muted)}
 .opsteps .rest span{color:var(--muted);font-size:15px}
-.opsteps div em{display:flex;align-items:center;gap:7px}
-.mk{width:12px;height:12px;border-radius:99px;flex:none;display:inline-block}
+.opsteps div em{display:flex;align-items:center;gap:9px}
+.mk{width:12px;height:12px;border-radius:99px;flex:none;display:inline-block;margin-inline-end:8px;vertical-align:-1px}
 .mk.ok{background:#8C8474;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round' d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/11px no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round' d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/11px no-repeat;border-radius:0}
 .mk.nx{background:var(--coral)}
 .mk.up{border:1.5px solid #B9AF9D;background:transparent}
-.opsteps .done em{color:#7E7668}
-.opsteps .done b,.opsteps .done span{color:#6E6759}
+.opsteps .done em{color:#6E6759}
+.opsteps .done b,.opsteps .done span{color:#544E43}
 .opsteps .now em{color:var(--coral);font-weight:700}
 .pathfoot{display:grid;grid-template-columns:1fr 300px;gap:40px;margin-top:22px;flex:1;min-height:0}
 .pfx p{font-size:17.5px;line-height:1.65;color:var(--muted);max-width:52ch}
@@ -1187,13 +1189,13 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .abhead{display:flex;justify-content:space-between;align-items:flex-end;gap:30px}
 .abhead .abl{height:44px;width:auto;margin-bottom:2px;opacity:.92}
 .ablead{font-size:18.5px;line-height:1.7;color:var(--muted);margin-top:16px;max-width:60ch}
-.abnums{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:28px;border-top:1px solid var(--line);padding-top:28px;align-items:start}
+.abnums{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:28px;border-top:1px solid var(--line);padding-top:28px;align-items:start;text-align:center}
 .abnums b{font-family:Lit,Deck,serif;font-size:80px;line-height:1;height:80px;color:var(--ink);display:block;letter-spacing:-.015em;font-weight:600}
-.abnums span{display:block;font-size:15.5px;line-height:1.5;color:var(--muted);margin-top:14px;max-width:26ch}
+.abnums span{display:block;font-size:15.5px;line-height:1.5;color:var(--muted);margin-top:14px;max-width:26ch;margin-inline:auto}
 .abflow{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:34px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px 0}
 .abflow div i{font-style:normal;font-family:Deck;font-size:12.5px;font-weight:700;color:var(--coral);display:block}
 .abflow div span{display:block;font-size:19.5px;color:var(--ink);margin-top:7px;line-height:1.25}
-.absec{margin-top:16px;font-size:15.5px;line-height:1.6;color:var(--muted)}
+.absec{margin-top:18px;font-size:15.5px;line-height:1.6;color:var(--muted);text-align:center}
 .abprod{margin-top:26px;padding:20px 24px;background:var(--sand);border-radius:4px}
 .abprod .lab{font-size:13px;font-weight:700;letter-spacing:.03em;color:var(--coral);margin-bottom:14px}
 .abprod .row{display:flex;align-items:center;justify-content:space-between;gap:14px}
@@ -1210,16 +1212,17 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .abwall img.sm{max-height:24px;max-width:124px}
 
 /* slides 13 + 15 - one shape for the two-project proof slides */
-.proof2{display:grid;grid-template-columns:1fr 1fr;gap:46px;margin-top:18px;flex:1;min-height:0;align-content:center}
-.pvh{font-family:Deck;font-size:22px;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:14px}
-.pvs{display:flex;gap:16px;align-items:flex-start;height:300px}
+.proof2{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:14px;flex:1;min-height:0;align-content:center}
+.pvh{font-family:Deck;font-size:22px;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:14px;text-align:center}
+.pvs{display:flex;gap:20px;align-items:flex-start;justify-content:center;height:344px}
 .pvs.one{justify-content:flex-start}
 .proof2 .shot{height:auto;display:block;place-items:initial}
-.proof2 .shot.big img{max-height:300px;max-width:none;width:auto;height:300px;border-radius:12px}
-.proof2 .shot.big.wide img{height:auto;width:auto;max-height:238px;max-width:366px;border-radius:12px}
-.proof2 .shot.sml img{max-height:238px;width:auto;height:238px;border-radius:10px;opacity:.94}
-.pvlbl{font-size:14.5px;font-weight:600;color:var(--coral);margin-top:16px}
-.proof2 .pdesc{font-size:15.5px;line-height:1.6;color:var(--muted);margin-top:8px}
+.proof2 .shot.big img{max-height:344px;max-width:none;width:auto;height:344px;border-radius:12px}
+.proof2 .shot.big.wide img{height:auto;width:auto;max-height:262px;max-width:404px;border-radius:12px}
+.proof2 .shot.big.tall img{height:auto;width:210px;max-height:none;border-radius:10px}
+.proof2 .shot.sml img{max-height:262px;width:auto;height:262px;border-radius:10px;opacity:.95}
+.pvlbl{font-size:14.5px;font-weight:600;color:var(--coral);margin-top:18px;text-align:center}
+.proof2 .pdesc{font-size:15.5px;line-height:1.6;color:var(--muted);margin-top:8px;text-align:center;max-width:46ch;margin-inline:auto}
 .proof2 .pdesc b{color:var(--ink);font-weight:700}
 
 /* slide 6 - three labels tied to the proposed screen */
@@ -1320,6 +1323,8 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
 .w3ctl b{font-size:15px;color:#fff;background:var(--coral);width:32px;height:32px;border-radius:99px;display:grid;place-items:center}
 .w3nx{margin-top:15px;padding-top:12px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);line-height:1.45}
 .w3h{margin-bottom:11px}
+.w3h.ph{position:absolute;left:76px;top:132px;width:300px;margin:0;text-align:center;z-index:3}
+.w3h.ph span{max-width:30ch;margin-inline:auto}
 .w3h b{display:block;font-family:Deck;font-size:20px;font-weight:700;color:var(--ink);line-height:1.2}
 .w3h span{display:block;font-size:14px;line-height:1.45;color:var(--muted);margin-top:5px;min-height:2.9em}
 .w3x{margin-top:26px;padding-top:20px;border-top:1px solid var(--line);display:grid;grid-template-columns:1.35fr 1fr;gap:38px}
@@ -1564,7 +1569,7 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
         <div class="orgval"><span class="ol">מה נמדד</span><p>אילו תכנים נפתחים, אילו מסלולים מושלמים, והאם חוזרים ללמוד.</p></div></div>
         <div class="phcol8"><div class="dev st-0"><div class="notch"></div><div class="cs" data-cs="0"><div class="fp-hd"><div class="t">הפרק היומי · שמואל ב ו</div><div class="s">929 · ממשיכים מהמקום שעצרתי</div></div><div class="fp-body"><div class="fp-seg"><span class="on">תקציר · 3 דק׳</span><span>הפרק · 7 דק׳</span><span>האזנה · 36</span></div><div class="fp-btn">פתיחת הפרק</div><div class="fp-card"><div class="fp-ring"><svg viewBox="0 0 74 74"><circle cx="37" cy="37" r="30" stroke="#E2DED5" stroke-width="7" fill="none"/><circle cx="37" cy="37" r="30" stroke="#C0454F" stroke-width="7" fill="none" stroke-linecap="round" stroke-dasharray="188" stroke-dashoffset="134"/></svg><div class="c"><b>269</b><span>מתוך 929 פרקים</span><div style="font-size:9.5px;color:#C0454F;font-weight:700;margin-top:4px">7 ימים ברצף</div></div></div></div><div class="fp-lbl">מותאם לך</div><div class="fp-card"><div class="rt">צופה בדוד, חושבת על פלטיאל</div><div class="ra">יוכי ברנדס · ספרות</div></div><div class="fp-lbl">מסלולים</div><div class="fp-chips"><span class="k">מנהיגות</span><span>אור</span><span>ספר משלי</span></div></div></div><div class="cs" data-cs="1"><div class="fp-hd"><div class="t">מסלולים</div><div class="s">הפרק היומי נשאר הלב</div></div><div class="fp-body"><div class="fp-player" style="padding:11px 12px"><div class="ps">הפרק היומי · שמואל ב</div><div class="pt">שמואל ב ו</div><div class="fp-btn" style="background:#C0454F;margin-top:8px;padding:6px 10px;font-size:9.5px;width:max-content">ממשיכים</div></div><div class="fp-lbl">תיקי נושא</div><div class="fp-chips"><span class="k">מנהיגות · נושא החודש</span><span>אור</span><span>חושך</span><span>גוף ונפש</span><span>צדק חברתי</span></div><div class="fp-lbl">סדרות</div><div class="fp-row"><div class="ic8"></div><div><div class="rt">20 השירים הגדולים של רחל</div><div class="ra">סדרה · 20 מפגשים</div></div><div class="rb">התחילו</div></div><div class="fp-row"><div class="ic8"></div><div><div class="rt">ספר משלי</div><div class="ra">סדרה · שבתות בלבד</div></div><div class="rb">התחילו</div></div><div class="fp-row"><div class="ic8"></div><div><div class="rt">מדרשים על אהבה</div><div class="ra">סדרה</div></div><div class="rb">התחילו</div></div></div></div><div class="cs" data-cs="2"><div class="fp-hd"><div class="t">דברים לב</div><div class="s">שירת האזינו · פרשת השבוע</div></div><div class="fp-body"><div class="fp-seg"><span>קריאה</span><span class="on">האזנה</span><span>שאל את הפרק</span></div><div class="fp-player"><div class="pt">מסע 929 של הרב שי פירון</div><div class="ps">דברים - פרק לב · 1.25x · שליטה מהאוזניות</div><div class="bar"><i></i></div><div class="pm"><span>14:48</span><span>36:00</span></div></div><div class="fp-lbl">פלייליסט: מנהיגות · הבא בתור</div><div class="fp-row"><div class="ic8"></div><div><div class="rt">קריינות הפרק</div><div class="ra">7 דק׳</div></div></div><div class="fp-row"><div class="ic8"></div><div><div class="rt">בקטנה על הפרק</div><div class="ra">4 דק׳</div></div></div><div class="fp-row"><div class="ic8"></div><div><div class="rt">ויהי פודקאסט!</div><div class="ra">פרק</div></div></div><div class="fp-btn l">שאל את הפרק: "למה משה פונה אל השמים?"</div></div></div><div class="cs" data-cs="3"><div class="fp-hd"><div class="t">שמואל ב ו</div><div class="s">הפרק היומי · כמה זמן יש לך היום?</div></div><div class="fp-body"><div class="fp-seg" style="font-size:8.5px"><span class="on" style="font-size:8.5px">תקציר · 3 דק׳</span><span style="font-size:8.5px">הפרק · 7 דק׳</span><span style="font-size:8.5px">האזנה · 36 דק׳</span></div><div class="fp-card" style="background:#F3E7E2"><div class="rt" style="color:#C0454F">התקציר היומי</div><div class="ra" style="color:#242322;line-height:1.5;margin-top:4px">דוד מעלה את ארון ה׳ לירושלים. הדרך נקטעת במות עוזא, ונשלמת בריקוד של המלך לפני הארון ובוויכוח עם מיכל.</div><div class="fp-tg" style="margin-top:7px"><span class="on">קריאה 3 דק׳</span><span>האזנה 4 דק׳</span></div></div><div class="fp-row"><div class="ic8"></div><div><div class="rt">רוצה עוד? כתבה אחת מהתחום שלך</div><div class="ra">מחקר · טור קצר</div></div><div class="rb">לקריאה</div></div><div class="fp-card"><div class="rt">פספסת השבוע: שמואל ב ה</div><div class="ra">השלמה בתקציר · 3 דק׳ · הרצף נשמר</div></div><div class="fp-btn">סיימתי להיום</div></div></div><div class="cs" data-cs="4"><div class="fp-hd"><div class="t">ההתקדמות שלי</div><div class="s">929 פרקים, יום אחר יום</div></div><div class="fp-body"><div class="fp-card"><div class="fp-ring"><svg viewBox="0 0 74 74"><circle cx="37" cy="37" r="30" stroke="#E2DED5" stroke-width="7" fill="none"/><circle cx="37" cy="37" r="30" stroke="#C0454F" stroke-width="7" fill="none" stroke-linecap="round" stroke-dasharray="188" stroke-dashoffset="134"/></svg><div class="c"><b>269</b><span>מתוך 929 פרקים</span><div style="font-size:9.5px;color:#C0454F;font-weight:700;margin-top:4px">7 ימים ברצף</div></div></div></div><div class="fp-card"><div class="fp-lbl" style="margin-bottom:4px">השבוע</div><div class="fp-chk"><i></i>שמואל ב ד</div><div class="fp-chk"><i></i>שמואל ב ה</div><div class="fp-chk"><i class="o"></i>שמואל ב ו · היום</div></div><div class="fp-card"><div class="rt">סיימתם את ספר שמואל א</div><div class="ra">תג השלמה · 31 פרקים</div></div><div class="fp-card"><div class="rt">תיק "מנהיגות"</div><div class="ra">מפגש 4 מתוך 12</div></div></div></div><div class="cs" data-cs="5"><div class="fp-lock"><div class="tm">07:30</div><div class="dt">יום ד׳ · הזמן שבחרת</div><div class="fp-notif"><div class="a"><span>929</span><span>עכשיו</span></div><div class="t">הפרק של היום מחכה: שמואל ב ו</div><div class="s">7 דקות קריאה, או תקציר של 3 דקות</div></div><div class="fp-notif" style="margin-top:8px;opacity:.85"><div class="a"><span>929 · תיק מנהיגות</span><span>אתמול</span></div><div class="t">כתבה חדשה בתחום שבחרת</div><div class="s">שופטים ד · דבורה</div></div><div style="font-size:9px;color:#C9C2B4;margin-top:22px">תזכורת אחת ביום · בזמן ובנושא שבחרת</div></div></div><div class="cs" data-cs="6"><div class="fp-hd"><div class="t">929 - לימוד פרקי התנ"ך</div><div class="s">הפרק היומי · שמואל ב ו</div></div><div class="fp-body"><div class="fp-chips"><span>קריינות</span><span>תקציר</span><span>כתבות עומק</span></div><div class="fp-lbl">קבוצות וואטסאפ פעילות</div><div class="fp-row"><div class="ic8" style="background:#dcfce7"></div><div><div class="rt">קצרים על הפרק</div><div class="ra">קבוצת תוכן</div></div><div class="rb">הצטרפות</div></div><div class="fp-row"><div class="ic8" style="background:#dcfce7"></div><div><div class="rt">תזכורות לשיעורים</div><div class="ra">קבוצת תזכורות</div></div><div class="rb">הצטרפות</div></div><div class="fp-card"><div class="fp-lbl">לומדים איתך במסלול היום</div><div style="display:flex;align-items:center;gap:8px;margin-top:5px"><div class="fp-av"><i></i><i></i><i></i><i></i></div><span style="font-size:9.5px;color:#6B6355">ועוד רבים</span></div></div><div class="fp-btn">הצטרפות למסלול</div><div class="fp-btn l">שאל את הפרק</div></div></div></div><div class="mocklbl">המחשה מוצעת</div></div>
       </div>
-    <div class="foot" style="padding-top:12px;margin-top:10px">שבע יכולות, ארכיון אחד. <b>בשלוש הראשונות נעמיק עכשיו.</b></div>
+    <div class="foot" style="padding-top:16px;margin-top:auto;margin-bottom:14px">שבע יכולות, ארכיון אחד. <b>בשלוש הראשונות נעמיק עכשיו.</b></div>
     </div>
   </section>
 
@@ -1759,7 +1764,7 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
             <div><b>ומה 929 מקבלת</b><p>מה שואלים על הפרק, ומה עדיין לא נמצא בתוכן.</p></div>
           </div>
         </div>
-        <div class="phcol"><div class="proto" data-demo="3" data-auto="4200" data-start="2">
+        <div class="phcol"><div class="w3h ph"><b>שאל את הפרק</b><span>תשובה שמפנה למקורות מזוהים מתוך 929</span></div><div class="proto" data-demo="3" data-auto="4200" data-start="2">
   <div class="dev st-0">
     <div class="notch"></div>
     <div class="cm-scr">
@@ -1979,8 +1984,8 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
           <p class="pdesc" style="font-size:18.5px;line-height:1.65;max-width:38ch">סידור מלא לנייד, שנבנה עם <span dir="ltr" style="white-space:nowrap">Koren Publishers Jerusalem</span>.</p>
           <ul class="kb">
             <li><b>טקסט מנוקד במלואו</b> בטיפוגרפיה של קורן</li>
-            <li><b>שלושה נוסחים</b> ושליטה בגודל האות<em>הכפתור אֲ/א בראש המסך</em></li>
-            <li><b>האזנה בבקרת מהירות</b><em>הבוררים <span dir="ltr">x1 x2 x4</span> מתחת לנגן</em></li>
+            <li><b>שליטה בגודל האות</b>, בשלושה נוסחים</li>
+            <li><b>האזנה בבקרת מהירות</b> <span dir="ltr">×1 / ×2 / ×4</span></li>
           </ul>
         </div>
         <div style="display:flex;gap:16px;justify-content:center">
@@ -1999,7 +2004,7 @@ ul.clean li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;backgro
         <div class="edu">
           <h3 class="pvh">אמי"ת · מערכת למידה</h3>
           <div class="pvs one">
-            <div class="shot big"><img src="assets/proof/amit/amit-feedback.png" alt=""></div>
+            <div class="shot big tall"><img src="assets/proof/amit/amit-feedback.png" alt=""></div>
           </div>
           <div class="pvlbl">ציון מול ממוצע הקורס, ומשוב מהמורה</div>
           <p class="pdesc">מעקב התקדמות אישי ברשת של <b>100+ חטיבות ותיכונים</b>,<br>בתצוגה אחת למורה ולתלמיד.</p>
