@@ -52,3 +52,7 @@ html[lang=en] .hero h1{font-size:clamp(48px,4.65vw,67px);letter-spacing:-2.7px;l
 @media(max-width:359px){.hero-first{font-size:13px}.brand200 small{font-size:5.6px}}
 @media(prefers-reduced-motion:reduce){.sticky-whatsapp:hover{transform:none}}
 @media print{.sticky-whatsapp{display:none}}
+
+/* Header lockup: center the Hebrew line under 200Apps and sit both on the Kol Barama wordmark line. */
+.header .brand200,.header .brand200 small{text-align:center}.header .brand200,.header .brand-cross{transform:translateY(7px)}
+@media(max-width:679px){.header .brand200,.header .brand-cross{transform:translateY(5px)}}
