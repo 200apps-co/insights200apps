@@ -528,6 +528,47 @@ h2{font-size:42px}
 #gotobox.on{display:block}
 @media print{#nav,#gotobox{display:none!important}}
 
+/* v5 (24.10.2026): 15 slides */
+/* slide 5: the opportunity, text beside the five parts */
+.s5o .op2{display:grid;grid-template-columns:1fr 600px;gap:56px;height:100%;align-items:center}
+.s5o .tx .foot{margin-top:34px}
+.s5o .parts{margin-top:0}
+.s5o .parts .p{grid-template-columns:54px 1fr;grid-template-rows:auto auto;column-gap:18px;row-gap:2px;padding:12px 0}
+.s5o .parts .ico{grid-row:span 2;align-self:center}
+.s5o .parts h3{font-size:24px}
+.s5o .parts p{font-size:19px;color:var(--muted)}
+/* slide 12: BrainsWay, the patient app and the patient card */
+.bw2{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:20px}
+.bw2 figure{margin:0}
+.bw2 .im{height:282px;border-radius:18px;overflow:hidden;box-shadow:0 14px 36px var(--shadow)}
+.bw2 .im.lt{background:var(--card)}
+.bw2 .im img{width:100%;height:100%;object-fit:cover;display:block}
+.bw2 figcaption{margin-top:12px;font-size:18px;line-height:1.45;color:var(--ours-muted)}
+.bw2 figcaption b{display:block;font-size:21px;color:var(--on-dark);margin-bottom:2px}
+.bw2 .cr{display:block;font-size:14px;margin-top:6px}
+.s12b .lead{color:var(--ours-muted)}
+/* slide 13: the member price gets the widest box */
+.s16 .cwf{grid-template-columns:1fr 1fr 1.5fr}
+/* slide 14: the next step stands out from the route */
+.nxw{margin-top:18px;font-size:22px;font-weight:700;line-height:1.45;color:var(--base);border-inline-start:4px solid var(--accent);padding:2px 16px}
+.s5o .op2{flex:1}
+.bw2 .im.lt img{object-position:center top}
+
+/* v5.1 (24.10.2026) */
+/* slide 5: message, list, and the bridge to the demo as three separate zones */
+.s5o .op2{align-items:center}
+.s5o > .pad > .foot{margin-top:24px}
+/* slide 14: the project route (a line of steps) apart from the meeting (topics under a rule) */
+.rt4{list-style:none;display:flex;align-items:center;gap:0;margin-top:26px;padding:0}
+.rt4 li{display:flex;align-items:center;gap:12px;font-size:22px;font-weight:600;color:var(--base);white-space:nowrap}
+.rt4 li + li::before{content:'';display:block;width:56px;height:2px;background:var(--line);margin:0 18px}
+.rt4 .k{width:36px;height:36px;border-radius:50%;background:var(--tint);color:var(--base);display:grid;place-items:center;font-size:16px;font-weight:700}
+.rt4 li:first-child .k{background:var(--base);color:var(--on-dark)}
+.meet{margin-top:34px;padding-top:24px;border-top:1px solid var(--line)}
+.meet .nxw{margin-top:0}
+.meet .nx3{margin-top:24px}
+.meet .nx3 > div{border-top:0;padding-top:0}
+
 /* ── modern phone frame (Hemi, 23.10: the 224x380 frame read wide and dated) ── */
 .dev{width:208px;height:446px;border-radius:42px;border:6px solid var(--phone-frame);background:var(--ph-bg);
   box-shadow:0 0 0 1px var(--phone-ring),0 26px 60px var(--shadow)}
@@ -617,88 +658,6 @@ h2{font-size:42px}
   .slide::after{display:none}
   #chrome,#hint,#rotnote,.covrot{display:none!important}
 }
-/* EMBED p0-home START */
-[data-embed="p0-home"] .cs{background:var(--ph-bg);direction:rtl;font-family:Deck,'Rubik','Assistant',Arial,sans-serif;color:var(--ink);text-align:right}
-[data-embed="p0-home"] .tsb{position:absolute;top:0;left:0;right:0;height:34px;padding:12px 20px 0;display:flex;justify-content:space-between;align-items:center;font-size:10px;font-weight:600;color:var(--ink)}
-[data-embed="p0-home"] .tsb .demo{font-size:8.5px;font-weight:600;color:var(--muted);background:var(--card);border-radius:99px;padding:1px 7px;box-shadow:0 0 0 1px var(--line)}
-[data-embed="p0-home"] .thd{position:absolute;top:38px;left:0;right:0;height:34px;padding:0 14px;display:flex;align-items:center;gap:7px}
-[data-embed="p0-home"] .thd .bk{font-size:18px;color:var(--muted);line-height:1;width:9px}
-[data-embed="p0-home"] .thd .tt{font-size:15px;font-weight:700;color:var(--ink);white-space:nowrap;letter-spacing:-.01em}
-[data-embed="p0-home"] .thd .av{margin-inline-start:auto;width:28px;height:28px;border-radius:50%;overflow:hidden;flex:0 0 28px;box-shadow:0 0 0 2px var(--card),0 0 0 3px var(--line)}
-[data-embed="p0-home"] .thd .av img,[data-embed="p0-home"] .hero img{width:100%;height:100%;object-fit:cover;display:block}
-[data-embed="p0-home"] .hero{display:flex;align-items:center;gap:10px}
-[data-embed="p0-home"] .pets{display:flex;gap:6px;align-items:center}
-[data-embed="p0-home"] .pets span{display:flex;align-items:center;gap:5px;font-size:10.5px;font-weight:600;color:var(--muted);background:var(--card);border-radius:99px;padding:3px 9px 3px 4px;box-shadow:0 0 0 1px var(--line);cursor:pointer}
-[data-embed="p0-home"] .cs:not([data-pet="louis"]) .pets [data-pet="mika"],[data-embed="p0-home"] .cs[data-pet="louis"] .pets [data-pet="louis"]{color:var(--on-dark);background:var(--ink);box-shadow:none}
-[data-embed="p0-home"] .pv{display:flex;flex-direction:column;gap:8px}
-[data-embed="p0-home"] .cs[data-pet="louis"] .pm,[data-embed="p0-home"] .cs:not([data-pet="louis"]) .pl{display:none}
-[data-embed="p0-home"] .pets span img{width:18px;height:18px;border-radius:50%;object-fit:cover;display:block}
-[data-embed="p0-home"] .pets span.add{padding:3px 8px;font-size:12px}
-[data-embed="p0-home"] .hero .ph{flex:0 0 46px;height:46px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 2px var(--on-dark-line)}
-[data-embed="p0-home"] .opt{display:flex;flex-direction:column;gap:5px;margin-top:6px}
-[data-embed="p0-home"] .opt span{display:block;text-align:center;border-radius:12px;padding:7px 8px;font-size:11px;font-weight:600;background:var(--card);box-shadow:0 0 0 1px var(--line);color:var(--ink)}
-[data-embed="p0-home"] .opt span.pick{box-shadow:0 0 0 1.5px var(--sel);background:var(--tint)}
-[data-embed="p0-home"] .ntf{background:var(--card);border-radius:16px;padding:10px 12px;box-shadow:0 1px 2px var(--ph-sh),0 10px 24px var(--ph-sh)}
-[data-embed="p0-home"] .ntf .nh{display:flex;align-items:center;gap:6px;font-size:9.5px;color:var(--muted);margin-bottom:5px}
-[data-embed="p0-home"] .ntf .nh i{width:16px;height:16px;border-radius:5px;background:var(--base);display:inline-block}
-[data-embed="p0-home"] .tbd{position:absolute;top:76px;left:0;right:0;bottom:62px;padding:0 12px 8px;display:flex;flex-direction:column;gap:8px;overflow:hidden}
-[data-embed="p0-home"] .tbd > *{flex-shrink:0}
-[data-embed="p0-home"] .tk{background:var(--card);border-radius:16px;padding:10px 12px;box-shadow:0 1px 2px var(--ph-sh),0 6px 16px var(--ph-sh)}
-[data-embed="p0-home"] .tk.sel{box-shadow:0 0 0 1.5px var(--sel),0 6px 16px var(--ph-sh)}
-[data-embed="p0-home"] .tk.brown{background:var(--base);color:var(--on-dark);box-shadow:none}
-[data-embed="p0-home"] .tk.brown .t1{color:var(--on-dark)}
-[data-embed="p0-home"] .tk.brown .ts{color:var(--on-dark-muted)}
-[data-embed="p0-home"] .t1{font-size:12px;font-weight:600;color:var(--ink);line-height:1.3}
-[data-embed="p0-home"] .t1.big{font-size:17px;font-weight:700;letter-spacing:-.01em}
-[data-embed="p0-home"] .ts{font-size:10.5px;color:var(--muted);line-height:1.35;margin-top:2px}
-[data-embed="p0-home"] .tsec{font-size:10.5px;font-weight:700;color:var(--muted);margin-top:2px;letter-spacing:.01em}
-[data-embed="p0-home"] .st{display:inline-block;font-size:8.5px;font-weight:600;border-radius:99px;padding:2px 7px;background:var(--tint);color:var(--ink);margin-inline-end:4px;vertical-align:1px;white-space:nowrap}
-[data-embed="p0-home"] .st.g{background:var(--ok-bg);color:var(--ok)}
-[data-embed="p0-home"] .st.m{background:var(--ph-bg);color:var(--muted)}
-[data-embed="p0-home"] .st.a{background:var(--ink);color:var(--on-dark)}
-[data-embed="p0-home"] .trow{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:6px 0;border-bottom:1px solid var(--line)}
-[data-embed="p0-home"] .trow:last-child{border-bottom:0}
-[data-embed="p0-home"] .trow .k{font-size:11px;color:var(--ink);line-height:1.3}
-[data-embed="p0-home"] .trow .v{font-size:10.5px;font-weight:600;color:var(--ink);white-space:nowrap}
-[data-embed="p0-home"] .trow .v.g{color:var(--ok)}
-[data-embed="p0-home"] .tbtn{display:block;text-align:center;background:var(--accent);color:var(--on-dark);border-radius:12px;padding:8px 10px;font-size:11.5px;font-weight:600}
-[data-embed="p0-home"] .tbtn.gh{background:var(--card);color:var(--ink);box-shadow:0 0 0 1px var(--line)}
-[data-embed="p0-home"] .tbtns{display:flex;gap:6px}
-[data-embed="p0-home"] .tbtns > *{flex:1}
-[data-embed="p0-home"] .tnote{font-size:9.5px;color:var(--muted);line-height:1.35;text-align:center}
-[data-embed="p0-home"] .tdot{display:flex;gap:7px;align-items:flex-start;padding:4px 0}
-[data-embed="p0-home"] .tdot::before{content:'';flex:0 0 6px;height:6px;border-radius:50%;background:var(--accent);margin-top:5px}
-[data-embed="p0-home"] .tdot.g::before{background:var(--ok)}
-[data-embed="p0-home"] .ttabs{position:absolute;bottom:0;left:0;right:0;height:62px;padding:7px 4px 0;background:var(--card);box-shadow:0 -1px 0 var(--line);display:grid;grid-template-columns:repeat(5,1fr);align-items:start;text-align:center;font-size:8.5px;font-weight:500;color:var(--muted)}
-[data-embed="p0-home"] .ttabs span{display:flex;flex-direction:column;align-items:center;gap:2px}
-[data-embed="p0-home"] .ttabs svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:block}
-[data-embed="p0-home"] .ttabs span.on{color:var(--ink);font-weight:700}
-[data-embed="p0-home"] .ttabs::after{content:'';position:absolute;bottom:6px;left:50%;width:72px;height:4px;margin-left:-36px;border-radius:99px;background:var(--ink)}
-[data-embed="p0-home"] .tl{position:relative;padding-inline-start:18px}
-[data-embed="p0-home"] .tl::before{content:'';position:absolute;inset-inline-start:4px;top:10px;bottom:10px;width:1.5px;background:var(--line)}
-[data-embed="p0-home"] .tl .ti{position:relative;padding:5px 0}
-[data-embed="p0-home"] .tl .ti::before{content:'';position:absolute;inset-inline-start:-18px;top:8px;width:10px;height:10px;border-radius:50%;background:var(--card);box-shadow:inset 0 0 0 1.5px var(--line)}
-[data-embed="p0-home"] .tl .ti.done::before{background:var(--ok);box-shadow:none}
-[data-embed="p0-home"] .tl .ti.now::before{background:var(--accent);box-shadow:0 0 0 3px var(--card)}
-[data-embed="p0-home"] .tl .ti.now{background:var(--card);border-radius:14px;padding:8px 10px;margin-inline-start:-8px;box-shadow:0 1px 2px var(--ph-sh),0 6px 16px var(--ph-sh)}
-[data-embed="p0-home"] .tl .ti.now::before{inset-inline-start:-10px}
-[data-embed="p0-home"] .tchat{display:flex;flex-direction:column;gap:7px}
-[data-embed="p0-home"] .tq{align-self:flex-end;background:var(--ink);color:var(--on-dark);font-size:11px;line-height:1.4;border-radius:16px 16px 16px 5px;padding:7px 10px;max-width:84%}
-[data-embed="p0-home"] .ta{align-self:flex-start;background:var(--card);color:var(--ink);font-size:11px;line-height:1.45;border-radius:16px 16px 5px 16px;padding:8px 10px;max-width:92%;box-shadow:0 1px 2px var(--ph-sh),0 6px 16px var(--ph-sh)}
-[data-embed="p0-home"] .ta .src{font-size:9px;color:var(--muted);margin-top:6px;border-top:1px solid var(--line);padding-top:5px;line-height:1.35}
-[data-embed="p0-home"] .tin{background:var(--card);border-radius:99px;padding:8px 12px;font-size:10.5px;color:var(--muted);box-shadow:0 0 0 1px var(--line);margin-top:auto}
-[data-embed="p0-home"] .tsum{padding:4px 0;border-bottom:1px solid var(--line)}
-[data-embed="p0-home"] .tsum:last-child{border-bottom:0}
-[data-embed="p0-home"] .tsum b{display:block;font-size:9.5px;font-weight:600;color:var(--muted)}
-[data-embed="p0-home"] .tsum span{display:block;font-size:11px;color:var(--ink);line-height:1.3}
-[data-embed="p0-home"] .tln{display:flex;justify-content:space-between;align-items:baseline;font-size:11px;padding:5px 0;border-bottom:1px solid var(--line)}
-[data-embed="p0-home"] .tln .v{font-weight:600;white-space:nowrap}
-[data-embed="p0-home"] .tln.tot{border-bottom:0;font-weight:700;color:var(--ink);font-size:12px}
-[data-embed="p0-home"] .tln.tot .v{font-weight:700}
-[data-embed="p0-home"] .tprod{display:flex;gap:10px;align-items:center}
-[data-embed="p0-home"] .tprod .im{flex:0 0 48px;height:48px;border-radius:12px;background:var(--ph-bg);display:grid;place-items:center}
-[data-embed="p0-home"] .tprod .im i{display:block;width:16px;height:26px;border-radius:5px 5px 3px 3px;background:var(--ink);box-shadow:0 -5px 0 -1px var(--accent)}
-/* EMBED p0-home END */
 /* EMBED p1-booking START */
 [data-embed="p1-booking"] .cs{background:var(--ph-bg);direction:rtl;font-family:Deck,'Rubik','Assistant',Arial,sans-serif;color:var(--ink);text-align:right}
 [data-embed="p1-booking"] .tsb{position:absolute;top:0;left:0;right:0;height:34px;padding:12px 20px 0;display:flex;justify-content:space-between;align-items:center;font-size:10px;font-weight:600;color:var(--ink)}
@@ -946,7 +905,7 @@ h2{font-size:42px}
 [data-embed="p3-after-visit"] .tprod .im i{display:block;width:16px;height:26px;border-radius:5px 5px 3px 3px;background:var(--ink);box-shadow:0 -5px 0 -1px var(--accent)}
 /* EMBED p3-after-visit END */
 </style>
-<meta name="deck-build" content="6d9866a4bd">
+<meta name="deck-build" content="8222f94fe8">
 </head>
 <body>
 
@@ -977,32 +936,6 @@ h2{font-size:42px}
     </div>
   </section>
 
-  <!-- ══ 2 · open · The app first: Mika's home screen large, their plans page small ══ -->
-  <section class="slide s2" data-act="open" data-title="האפליקציה קודם">
-    <div class="pad">
-      <div class="two2">
-        <div>
-          <h2>כל מה שהמנוי נותן.<br>ברגע שצריכים אותו.</h2>
-          <div class="lead">מה הטיפול הבא, מה כלול במנוי ואיך קובעים תור. אנחנו מציעים לחבר את כל אלה לחוויה אחת, אישית ופשוטה.</div>
-          <div class="today">
-            <div class="mini"><img src="assets/site/plans-mobile-top.png" alt="עמוד המנויים של טדי וטס"></div>
-            <div class="tl2"><b>תוכניות המנויים של טדי</b></div>
-          </div>
-        </div>
-        <div class="stage2">
-          <div class="dev">
-<!-- EMBED p0-home START --><div data-embed="p0-home"><div class="cs on" data-cs="0"><div class="tsb"><span>9:41</span><span class="demo">המחשה</span></div><div class="thd"><span class="bk">›</span><span class="tt">בוקר טוב</span><span class="av"><img class="pm" src="assets/mika.jpg" alt="מיקה"><img class="pl" src="assets/louis.jpg" alt="לואי"></span></div><div class="tbd"><div class="pets"><span data-pet="mika"><img src="assets/mika.jpg" alt="מיקה">מיקה</span><span data-pet="louis"><img src="assets/louis.jpg" alt="לואי">לואי</span><span class="add">+</span></div><div class="pv pm"><div class="tk brown hero"><span class="ph"><img src="assets/mika.jpg" alt="מיקה"></span><div><div class="t1 big">מיקה</div><div class="ts">בת 3 · טדי פלוס</div></div></div>
-<div class="tsec">הצעד הבא</div>
-<div class="tk sel"><div class="t1">בדיקת שיניים</div>
- <div class="ts"><span class="st g">כלולה בטדי פלוס</span></div>
- <div class="tbtns" style="margin-top:7px"><span class="tbtn">תיאום תור</span></div></div>
-<div class="tk"><div class="trow"><span class="k">בדיקת רופא</span><span class="v">3 בדיקות השנה</span></div></div>
-</div><div class="pv pl"><div class="tk brown hero"><span class="ph"><img src="assets/louis.jpg" alt="לואי"></span><div><div class="t1 big">לואי</div><div class="ts">חתול, בן 5</div></div></div><div class="tsec">הצעד הבא</div><div class="tk sel"><div class="t1">חיסון שנתי</div><div class="ts">מגיע בדצמבר 2026</div><div class="tbtns" style="margin-top:7px"><span class="tbtn">תיאום תור</span></div></div></div></div><div class="ttabs"><span class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7V20a1 1 0 0 1-1 1H15v-6H9v6H4.5a1 1 0 0 1-1-1z"/></svg>בית</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>תורים</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 14.5h4"/></svg>המנוי</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.1A8 8 0 1 1 20 12z"/></svg>שאלות</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12.5H6z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>חנות</span></div></div></div><!-- EMBED p0-home END --><div class="notch"></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ══ 3 · us · ours · Who we are, short and early (Hemi 23.10) ══ -->
   <section class="slide ours hi" data-act="us" data-title="נעים להכיר">
     <div class="pad">
@@ -1015,7 +948,7 @@ h2{font-size:42px}
       </div>
       <div class="people">
         <div><b>חמי בן לביא</b>Head of Product Operations</div>
-        <div><b>אלכס יעקובוב</b>CTO</div>
+        <div><b>אלכס יעקובוב</b>VP General Manager</div>
       </div>
       <div class="logos16">
         <img src="assets/clients/c09.png" alt="Express City Wash">
@@ -1038,31 +971,16 @@ h2{font-size:42px}
     </div>
   </section>
 
-  <!-- ══ 4 · them · What already exists, as big numbers ══ -->
-  <section class="slide s4" data-act="them" data-title="הבסיס כבר קיים">
-    <div class="pad">
-      <div class="eyebrow"><span class="num">01</span> מה כבר בניתם</div>
-      <h2>הבסיס כבר קיים אצל טדי</h2>
-      <div class="lead">רשת מרפאות, מנוי ותיק רפואי משותף. הזדמנות לחוויה דיגיטלית שמחברת ביניהם.</div>
-      <div class="nums n4">
-        <div><div class="t"><span class="v">6</span> מרפאות</div><div class="l">המנוי מלווה את המשפחה בכל הרשת</div></div>
-        <div><div class="t">תיק רפואי משותף</div><div class="l">המשכיות בטיפול בין המרפאות</div></div>
-        <div><div class="t"><span class="v">3</span> מסלולים לכלבים</div><div class="l">זכויות והטבות בהתאם למנוי</div></div>
-        <div><div class="t">זמינות לפי המסלול</div><div class="l">תורים רגילים וחיסונים בתוך 24 שעות בפלוס, ומהיום להיום בפלטינום</div></div>
-      </div>
-    </div>
-  </section>
-
   <!-- ══ 6 · world · Why now: a network that grows, the bond stays personal. Atmosphere photo
        (Hemi 24.10), not Teddy staff or members. The photo sits 120px left of the slide so the
        wall leaves room for the text; the right strip is the wall's own colours, faded in. ══ -->
-  <section class="slide s6" data-act="world" data-title="לגדול כרשת">
+  <section class="slide s6" data-act="them" data-title="טדי בצמיחה">
     <div class="ph6" aria-hidden="true"><img src="assets/family.jpg" alt=""><i class="fade"></i></div>
     <div class="pad">
       <div class="t6">
-        <div class="eyebrow"><span class="num">02</span> למה עכשיו</div>
+        <div class="eyebrow"><span class="num">01</span> טדי היום</div>
         <h2>לגדול כרשת.<br>להמשיך להכיר<br>כל משפחה.</h2>
-        <div class="lead">אפליקציה שתשמור על ההיכרות עם המשפחה ותלווה את הטיפול, גם כשהרשת גדלה ומגיעים למרפאה חדשה.</div>
+        <div class="lead">כבר חיברתם בין מרפאה שמכירה את המשפחה לבין היתרונות של רשת. האפליקציה יכולה להמשיך את ההיכרות הזאת גם בין הביקורים ובכל סניף חדש.</div>
         <div class="g6">
           <div><b>6</b><span>מרפאות היום</span></div>
           <svg class="ar" viewBox="0 0 40 20" aria-hidden="true"><path d="M36 10H5M12 3 5 10l7 7"/></svg>
@@ -1098,34 +1016,24 @@ h2{font-size:42px}
     </div>
   </section>
 
-  <!-- ══ 8 · world · dark · Three opportunities (no counts, Hemi 23.10) ══ -->
-  <section class="slide dark" data-act="world" data-title="שלושה כיוונים">
+  <!-- ══ 5 · world · The opportunity: the comparison families already know (Alex 24.10: health
+       apps), the five parts as a map, then straight into Mika. Replaces slides 2, 8 and 9 of v4 ══ -->
+  <section class="slide s5o" data-act="world" data-title="ההזדמנות">
     <div class="pad">
-      <div class="eyebrow"><span class="num">02</span> שלושה כיוונים</div>
-      <h2>להביא את היתרונות של טדי אל האפליקציה</h2>
-      <div class="lead">שלושה כיוונים שאנחנו מציעים לפתח על הבסיס שכבר בניתם.</div>
-      <div class="zt">
-        <div class="zr"><span class="z">1</span><span class="w">להרגיש את הערך של המנוי</span><span class="h">מסך אישי שמציג מה כלול במסלול, אילו שירותים כבר מומשו ומה רלוונטי לטיפול הבא.</span></div>
-        <div class="zr"><span class="z">2</span><span class="w">הצוות מכיר גם את הפרטים הקטנים</span><span class="h">מה מרגיע את החיה, מה מלחיץ אותה ומה חשוב למשפחה שהצוות יידע, זמין לקראת הביקור בכל מרפאה ברשת.</span></div>
-        <div class="zr"><span class="z">3</span><span class="w">לדעת מראש מה המנוי נותן בטיפול</span><span class="h">ההטבה הרלוונטית מוצגת לצד הצעת הטיפול, עם מחיר ברור לאחר ההנחה.</span></div>
+      <div class="op2">
+        <div class="tx">
+          <div class="eyebrow"><span class="num">02</span> ההזדמנות</div>
+          <h2>גם הטיפול בחיית המחמד יכול להיות בהישג יד</h2>
+          <div class="lead">מידע רפואי, תורים והנחיות זמינים בטלפון. אצל טדי, אפשר לחבר אליהם גם את זכויות המנוי ואת ההיכרות עם המשפחה.</div>
+        </div>
+        <div class="parts">
+          <div class="p"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg></span><h3>קביעת תורים</h3><p>לפי זמינות, מרחק או הצוות המוכר.</p></div>
+          <div class="p"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 14.5h4"/></svg></span><h3>המנוי שלי</h3><p>מה כלול, מה מומש, וחידוש בקלות.</p></div>
+          <div class="p"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3.5 13.5V3.5h10l7.1 7.1a2 2 0 0 1 0 2.8z"/><circle cx="8" cy="8" r="1.4"/></svg></span><h3>ההטבות שלי</h3><p>המחיר למנויים לצד הטיפול או המוצר.</p></div>
+          <div class="p"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.1A8 8 0 1 1 20 12z"/></svg></span><h3>שאלות בין הביקורים</h3><p>הסבר מתוכן מאושר, ומעבר לצוות כשצריך.</p></div>
+          <div class="p"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12.5H6z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></span><h3>מוצרים בהמלצת הצוות</h3><p>הזמנה עם הטבות המנוי.</p></div>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ══ 9 · product · The app: five parts, one per row ══ -->
-  <section class="slide s9" data-act="product" data-title="טדי לצד המשפחה">
-    <div class="pad">
-      <div class="eyebrow"><span class="num">03</span> האפליקציה</div>
-      <h2>טדי לצד המשפחה, גם בין הביקורים</h2>
-      <div class="lead">היכולות שאנחנו מציעים לחבר לחוויית מנוי אחת.</div>
-      <div class="parts">
-        <div class="p"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg></span><h3>קביעת תורים</h3><p>לבחור לפי זמינות, מרחק או הצוות המוכר, בכל הרשת.</p></div>
-        <div class="p"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 14.5h4"/></svg></span><h3>המנוי שלי</h3><p>לראות מה כלול, מה כבר מומש ולחדש בקלות כשמגיע הזמן.</p></div>
-        <div class="p"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3.5 13.5V3.5h10l7.1 7.1a2 2 0 0 1 0 2.8z"/><circle cx="8" cy="8" r="1.4"/></svg></span><h3>ההטבות שלי</h3><p>לראות את המחיר למנויים לצד הטיפול או המוצר.</p></div>
-        <div class="p"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.1A8 8 0 1 1 20 12z"/></svg></span><h3>שאלות בין הביקורים</h3><p>סיוע מבוסס AI להבנת מידע והנחיות שאושרו בידי טדי, עם העברה לצוות כשנדרש מענה מקצועי.</p></div>
-        <div class="p"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12.5H6z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></span><h3>מוצרים שהצוות ממליץ</h3><p>להזמין שוב מוצרים שהצוות המליץ עליהם, עם הטבות המנוי הרלוונטיות.</p></div>
-      </div>
-      <div class="band"><span class="it">לכל חיה בבית: פרופיל אישי, תוכנית מניעה וסיכומי ביקורים.</span></div>
       <div class="foot">כך זה יכול להיראות ביום־יום של מיקה, בת 3, מנויה בטדי פלוס.</div>
     </div>
   </section>
@@ -1158,11 +1066,11 @@ h2{font-size:42px}
 </div><div class="pv pl"><div class="tk brown hero"><span class="ph"><img src="assets/louis.jpg" alt="לואי"></span><div><div class="t1 big">לואי</div><div class="ts">חתול, בן 5</div></div></div><div class="tsec">הצעד הבא</div><div class="tk sel"><div class="t1">חיסון שנתי</div><div class="ts">מגיע בדצמבר 2026</div><div class="tbtns" style="margin-top:7px"><span class="tbtn">תיאום תור</span></div></div></div></div><div class="ttabs"><span class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7V20a1 1 0 0 1-1 1H15v-6H9v6H4.5a1 1 0 0 1-1-1z"/></svg>בית</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>תורים</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 14.5h4"/></svg>המנוי</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.1A8 8 0 1 1 20 12z"/></svg>שאלות</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12.5H6z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>חנות</span></div></div>
 <div class="cs" data-cs="1"><div class="tsb"><span>9:41</span><span class="demo">המחשה</span></div><div class="thd"><span class="bk">›</span><span class="tt">תור לבדיקת שיניים</span><span class="av"><img src="assets/mika.jpg" alt="מיקה"></span></div><div class="tbd">
 <div class="tsec">תורים זמינים בתוך 24 שעות</div>
-<div class="tk"><div class="t1">בקעת אונו</div><div class="ts"><span class="st m">הכי מהר</span>היום · 19:15</div></div>
-<div class="tk"><div class="t1">מרפאת מודיעין</div><div class="ts"><span class="st m">הכי קרוב</span>מחר 27.10 · 09:30</div></div>
+<div class="tk"><div class="t1">בקעת אונו</div><div class="ts"><span class="st m">הכי מהר</span>26.10 · 19:15</div></div>
+<div class="tk"><div class="t1">מרפאת מודיעין</div><div class="ts"><span class="st m">הכי קרוב</span>27.10 · 09:30</div></div>
 <div class="tsec">או לחכות לרופאה המוכרת</div>
 <div class="tk sel"><div class="ts" style="margin-top:0"><span class="st a">מכירה את מיקה</span></div>
- <div class="t1">הרופאה שטיפלה בה</div><div class="ts">מודיעין · מחר, יום ג׳ 27.10 · 17:30</div></div>
+ <div class="t1">הרופאה שטיפלה בה</div><div class="ts">מודיעין · 27.10 · 17:30</div></div>
 <span class="tbtn" data-go="2">קביעת התור</span>
 </div><div class="ttabs"><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7V20a1 1 0 0 1-1 1H15v-6H9v6H4.5a1 1 0 0 1-1-1z"/></svg>בית</span><span class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>תורים</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 14.5h4"/></svg>המנוי</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.1A8 8 0 1 1 20 12z"/></svg>שאלות</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12.5H6z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>חנות</span></div></div>
 <div class="cs" data-cs="2"><div class="tsb"><span>9:41</span><span class="demo">המחשה</span></div><div class="thd"><span class="bk">›</span><span class="tt">התור של מיקה</span><span class="av"><img src="assets/mika.jpg" alt="מיקה"></span></div><div class="tbd">
@@ -1175,8 +1083,8 @@ h2{font-size:42px}
 <div class="tnote">זמין לצוות המטפל בכל מרפאות טדי</div>
 </div><div class="ttabs"><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7V20a1 1 0 0 1-1 1H15v-6H9v6H4.5a1 1 0 0 1-1-1z"/></svg>בית</span><span class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>תורים</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 14.5h4"/></svg>המנוי</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.1A8 8 0 1 1 20 12z"/></svg>שאלות</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12.5H6z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>חנות</span></div></div></div><!-- EMBED p1-booking END --><div class="notch"></div></div>
           <div class="zm" data-cs="0" style="top:250px"><div class="zl">הצעד הבא של מיקה</div><div class="zt">בדיקת שיניים</div><span class="zc">כלולה בטדי פלוס</span></div>
-          <div class="zm" data-cs="1" style="top:120px"><div class="zl">תורים זמינים בתוך 24 שעות</div><div class="zt">היום, 19:15</div><div class="zs">בקעת אונו · הכי מהר</div>
-            <div class="zdiv"></div><div class="zl">או לחכות לרופאה המוכרת</div><div class="zt">מחר, 17:30</div><div class="zs">מודיעין · מכירה את מיקה</div></div>
+          <div class="zm" data-cs="1" style="top:120px"><div class="zl">תורים זמינים בתוך 24 שעות</div><div class="zt">26.10 · 19:15</div><div class="zs">בקעת אונו · הכי מהר</div>
+            <div class="zdiv"></div><div class="zl">או לחכות לרופאה המוכרת</div><div class="zt">27.10 · 17:30</div><div class="zs">מודיעין · מכירה את מיקה</div></div>
           <div class="zm" data-cs="2" style="top:250px"><div class="zl">חשוב לדעת לפני שמיקה מגיעה</div><div class="zli">מתקשה ליד כלבים אחרים</div><div class="zli">נרגעת עם חטיף</div><div class="zli">השבוע: מגרדת באוזן ימין</div></div>
         </div>
       </div>
@@ -1302,7 +1210,7 @@ h2{font-size:42px}
 <div class="tk">
  <div class="tln"><span>מחיר</span><span class="v">₪60</span></div>
  <div class="tln tot"><span>מחיר מנוי, 10% הנחה</span><span class="v">₪54</span></div>
- <div class="trow"><span class="k">איסוף</span><span class="v g">זמין מחר במודיעין</span></div>
+ <div class="trow"><span class="k">איסוף</span><span class="v g">זמין ב־6.11 במודיעין</span></div>
 </div>
 <div class="tnote">סכומים להמחשה</div>
 <span class="tbtn">הזמנה לאיסוף</span>
@@ -1311,7 +1219,7 @@ h2{font-size:42px}
           <div class="zm" data-cs="0" style="top:250px"><div class="zl">בבית</div><div class="zt">מזון רך עד 5.11</div><div class="zs">מתי לפנות למרפאה: אם לא אוכלת יותר מיום</div><span class="zc">אושר ע״י הצוות</span></div>
           <div class="zm" data-cs="1" style="top:130px"><div class="zl"><span class="zic"></span>טדי וטס · יום ה׳ 5.11</div><div class="zq">איך מיקה מרגישה היום?</div><div class="zopt"><span class="pick">אוכלת כרגיל</span><span>אוכלת פחות</span></div></div>
           <div class="zm za" data-cs="2" style="top:150px"><div class="zl">איך מצחצחים לה שיניים בבית?</div><div class="zans">עם משחה לכלבים בלבד, לא של בני אדם. מתחילים בכמה שניות ביום ומאריכים בהדרגה.</div><div class="zs">דוגמה למענה המבוסס על תוכן שהצוות יאשר</div></div>
-          <div class="zm" data-cs="3" style="top:200px"><div class="zl">ג׳ל לשיניים לכלבים</div><div class="zt">₪54 במנוי</div><div class="zs">במקום ₪60 · זמין לאיסוף מחר במודיעין</div><div class="zs">סכומים להמחשה · רק באישור שלכם</div></div>
+          <div class="zm" data-cs="3" style="top:200px"><div class="zl">ג׳ל לשיניים לכלבים</div><div class="zt">₪54 במנוי</div><div class="zs">במקום ₪60 · זמין לאיסוף ב־6.11 במודיעין</div><div class="zs">סכומים להמחשה · רק באישור שלכם</div></div>
         </div>
       </div>
     </div>
@@ -1363,6 +1271,24 @@ h2{font-size:42px}
     </div>
   </section>
 
+  <!-- ══ 12 · us · ours · Proof 1: BrainsWay, medical (Alex 24.10). App: 200apps.com/project/brainsway
+       ("We developed a dedicated app ... self-monitoring of moods", UX/UI, Mobile App, CRM, 2020).
+       Patient card: developed by 200Apps, interface designed by the client (Alex). Test data only. ══ -->
+  <section class="slide ours s12b" data-act="us" data-title="BrainsWay">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">04</span> מה שבנינו</div>
+      <h2>ניסיון בפיתוח מוצרים לעולם הרפואי</h2>
+      <div class="lead">בפרויקט BrainsWay פיתחנו אפליקציה למטופלים וממשק לצוות לניהול מטופלים ונתוני טיפול.</div>
+      <div class="bw2">
+        <figure><div class="im"><img src="assets/proof/bw-app.jpg" alt="BrainsWay, האפליקציה למטופלים"></div>
+          <figcaption><b>אפליקציה למטופלים</b>מעקב עצמי אחר מצב הרוח וההתקדמות לאורך הטיפול.</figcaption></figure>
+        <figure><div class="im lt"><img src="assets/proof/bw-patient-card.jpg" alt="BrainsWay, כרטיס מטופל"></div>
+          <figcaption><b>כרטיס מטופל ונתוני מפגשי הטיפול</b>פרטי המטופל, מועדי הטיפולים והפרוטוקולים, בממשק לצוות המקצועי.<span class="cr">פיתוח: 200Apps · עיצוב הממשק: הלקוח</span></figcaption></figure>
+      </div>
+      <div class="foot">לטדי נביא ניסיון בפיתוח מערכות שמשרתות צוותים מקצועיים ועובדות עם מידע רפואי.</div>
+    </div>
+  </section>
+
   <!-- ══ 16 · us · ours · Proof 1: Express City Wash, the subscription flow ══ -->
   <section class="slide ours s16" data-act="us" data-title="אקספרס סיטי ווש">
     <div class="pad">
@@ -1372,75 +1298,32 @@ h2{font-size:42px}
       <div class="cwf">
         <div class="st3"><div class="im"><img src="assets/proof/cw-join.jpg" alt="אקספרס סיטי ווש, הוספת רכב נוסף למנוי"></div><span class="k">1</span><h3>הצטרפות פשוטה</h3><p>מנוי חודשי, גם לרכב נוסף במשפחה.</p></div>
         <div class="st3"><div class="im"><img src="assets/proof/cw-manage.jpg" alt="אקספרס סיטי ווש, הרכבים שלי"></div><span class="k">2</span><h3>ניהול אישי</h3><p>כל רכב והמנוי שלו, במקום אחד.</p></div>
-        <div class="st3"><div class="im"><img src="assets/proof/cw-redeem.jpg" alt="אקספרס סיטי ווש, מחיר למנויים וקוד שואב"></div><span class="k">3</span><h3>מימוש בסניף</h3><p>מחיר למנויים ליד השירות, וקוד לשטיפה.</p></div>
+        <div class="st3 big"><div class="im"><img src="assets/proof/cw-price.jpg" alt="אקספרס סיטי ווש, מחיר מלא ומחיר למנויים"></div><span class="k">3</span><h3>מימוש בסניף</h3><p>מחיר למנויים ליד כל שירות, וקוד באפליקציה לשטיפה.</p></div>
       </div>
       <div class="foot">לטדי אנחנו מביאים ניסיון בחיבור בין מנויים, הטבות ושירות בסניפים, לצד אפיון ייעודי לצורכי המשפחות והצוותים שלכם.</div>
     </div>
   </section>
 
-  <!-- ══ 17 · us · ours · Proof 2: AMIT ══ -->
-  <section class="slide ours" data-act="us" data-title="אמי״ת">
-    <div class="pad">
-      <div class="eyebrow"><span class="num">04</span> מה שבנינו</div>
-      <div class="two" style="grid-template-columns:1fr 1fr;align-items:center">
-        <div>
-          <h2>ניסיון בשילוב AI בתוך מוצר ארגוני</h2>
-          <div class="pdesc2">עבור רשת אמי״ת פיתחנו מערכת למידה הכוללת כלי AI לבניית שיעורים ולסיוע אישי לתלמידים.</div>
-          <div class="ai2">
-            <div class="a"><div class="t">כלים לצוות</div><div class="d">סיוע ביצירת שיעורים על בסיס התוכן הארגוני.</div></div>
-            <div class="a"><div class="t">סיוע למשתמשים</div><div class="d">מורה פרטי חכם כחלק מחוויית הלמידה.</div></div>
-          </div>
-        </div>
-        <div><div class="amitshot"><img src="assets/proof/p-amit.png" alt="מערכת הלמידה של אמי״ת"></div><div class="cap">מערכת הלמידה שפיתחנו לרשת אמי״ת</div></div>
-      </div>
-      <div class="foot">לטדי נביא את הניסיון הזה כדי לפתח מענה המבוסס על הידע וההנחיות שלכם, עם גבולות ברורים ובקרה מקצועית.</div>
-    </div>
-  </section>
-
-  <!-- ══ 18 · close · The route: integration check first, a narrow first version (Hemi 23.10) ══ -->
-  <section class="slide" data-act="close" data-title="מתחילים ממוקד">
-    <div class="pad">
-      <div class="eyebrow"><span class="num">05</span> הדרך</div>
-      <h2>מתחילים ממוקד. בונים לצמיחה.</h2>
-      <div class="lead">אנחנו מציעים להתקדם בשלבים, עם תוצר ברור והחלטה משותפת בכל שלב.</div>
-      <div class="rtv">
-        <div class="s"><span class="k">1</span><h3>מבינים את השירות ואת המערכות</h3><p>ממפים את צורכי המשפחות והצוותים ובודקים את אפשרויות החיבור לתיק הרפואי, ליומן ולמערכת המנויים.</p></div>
-        <div class="s"><span class="k">2</span><h3>בוחרים ובונים גרסה ראשונה</h3><p>מתמקדים ביכולות בעלות הערך הגבוה ביותר, בהתאם למוכנות המערכות.</p></div>
-        <div class="s"><span class="k">3</span><h3>בודקים במרפאות</h3><p>מפעילים פיילוט במרפאה אחת או שתיים, בוחנים שימוש בפועל ואוספים משוב מהמשפחות ומהצוות.</p></div>
-        <div class="s"><span class="k">4</span><h3>מרחיבים לרשת</h3><p>משיקים בחנויות האפליקציות ומרחיבים בהדרגה למרפאות נוספות.</p></div>
-        <div class="s end"><span class="k">5</span><h3>ממשיכים לשפר</h3><p>מתעדפים יכולות נוספות לפי הנתונים, המשוב וצורכי הרשת.</p></div>
-      </div>
-      <div class="owners"><b>אתם מביאים את הידע המקצועי ואת ההיכרות עם השטח.</b><br><b>אנחנו מובילים את האפיון, העיצוב, הפיתוח והליווי לאחר ההשקה.</b></div>
-    </div>
-  </section>
-
-  <!-- ══ 19 · close · Extensions to prioritize after the pilot ══ -->
-  <section class="slide" data-act="close" data-title="בהמשך">
-    <div class="pad">
-      <div class="eyebrow"><span class="num">05</span> בהמשך</div>
-      <h2>בהמשך, אפשר להרחיב את הליווי</h2>
-      <div class="lead">כיוונים נוספים שנוכל לבחון יחד, על בסיס השירותים של טדי והלמידה מהפיילוט.</div>
-      <div class="nx3 nonum">
-        <div><h3>ללוות את ההחלמה בבית</h3><p>תזכורות, דיווחי התקדמות והנחיות אישיות שהצוות הגדיר לאחר טיפול או ניתוח.</p></div>
-        <div><h3>להגיע רגועים יותר למרפאה</h3><p>הכנה לביקור, הודעה על הגעה ואפשרות להמתין בחוץ עד שהצוות מוכן לקבל.</p></div>
-        <div><h3>הטבות לשגרה עם החיה</h3><p>הטבות של שותפים לחיי היום־יום עם החיה, כמו מזון וציוד.</p></div>
-      </div>
-      <div class="foot">את סדר הפיתוח נקבע יחד, לפי הערך למשפחות ולצוותים.</div>
-    </div>
-  </section>
-
   <!-- ══ 20 · close · The next step, and the questions it answers ══ -->
-  <section class="slide" data-act="close" data-title="הצעד הבא">
+  <section class="slide" data-act="close" data-title="הדרך והצעד הבא">
     <div class="pad">
-      <div class="eyebrow"><span class="num">05</span> הצעד הבא</div>
+      <div class="eyebrow"><span class="num">05</span> הדרך והצעד הבא</div>
       <h2>בואו נגדיר יחד את הגרסה הראשונה של טדי</h2>
-      <div class="lead">אנחנו מציעים פגישת עבודה של כחצי יום עם חלי, מנהלת מרפאה והגורם שמכיר את המערכות הקיימות.</div>
-      <div class="nx3">
-        <div><span class="k">1</span><h3>נבחר במה מתחילים</h3><p>אילו צרכים של המנויים והצוותים הכי חשוב לפתור בגרסה הראשונה.</p></div>
-        <div><span class="k">2</span><h3>נמפה את החיבורים הנדרשים</h3><p>איך מנוהלים היום התורים, התיק הרפואי, המנויים וסיכומי הביקור, ומה ניתן לחבר.</p></div>
-        <div><span class="k">3</span><h3>נבחן איך מתחילים בפיילוט</h3><p>באיזו מרפאה מתחילים, מי משתתף ואיך נבחן הצלחה.</p></div>
+      <ol class="rt4">
+        <li><span class="k">1</span>אפיון ובדיקת חיבור למערכות</li>
+        <li><span class="k">2</span>גרסה ראשונה</li>
+        <li><span class="k">3</span>פיילוט</li>
+        <li><span class="k">4</span>הרחבה לרשת</li>
+      </ol>
+      <div class="meet">
+        <div class="nxw">הצעד הבא המוצע: פגישת עבודה של כחצי יום עם חלי, מנהלת מרפאה והגורם שמכיר את המערכות הקיימות.</div>
+        <div class="nx3 nonum">
+          <div><h3>נבחר במה מתחילים</h3><p>הצרכים החשובים ביותר למנויים ולצוותים.</p></div>
+          <div><h3>נמפה את החיבורים הנדרשים</h3><p>התיק הרפואי, התורים והמנויים במערכות הקיימות.</p></div>
+          <div><h3>נבחן איך מתחילים בפיילוט</h3><p>מרפאה מתאימה, משתתפים ומדדי הצלחה.</p></div>
+        </div>
       </div>
-      <div class="foot">המטרה היא לגבש היקף ראשוני מוסכם ולזהות את הבדיקות הנוספות שנדרשות להכנת הצעת עבודה.</div>
+      <div class="foot">נגבש היקף ראשוני ונזהה אילו בדיקות נוספות נדרשות להכנת הצעת עבודה.</div>
     </div>
   </section>
 
@@ -1457,11 +1340,12 @@ h2{font-size:42px}
       <div class="cl2">בואו נבנה יחד את האפליקציה שתלווה את משפחות טדי בין הביקורים.</div>
       <div class="sig">
         <div><b>חמי בן לביא</b> · Head of Product Operations</div>
-        <div><b>אלכס יעקובוב</b> · CTO</div>
+        <div><b>אלכס יעקובוב</b> · VP General Manager</div>
         <div class="ct2"><a href="mailto:hemi@200apps.co"><bdi dir="ltr">hemi@200apps.co</bdi></a> · <a href="tel:+972544608119"><bdi dir="ltr">054-4608119</bdi></a></div>
       </div>
     </div>
   </section>
+
 
 </div></div>
 
