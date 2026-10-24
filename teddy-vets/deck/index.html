@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAESklEQVR42sWXT4he5RXGf8957/0+GaiN0KYmM0tj64BNyRQrCDNk3UW7KS1dtA1oiaDLIHQTuhPssrtYQoNQpXTpxo3NFFcyaQQdKVkVklGaQtKok5n75zwuvjuZb5JJjZN/Z3Pfc7m8z3vPe85zziN2WgC55dSzRw+H/JzsIxZPyj5g8ZisGeQaVCZfusdqLX8hc9WhNSUXLJ1L67320rsf3A5D2+9PBvw+Yakaz3IM6ZjwAiqjAWR4eHt9iwmknVu7b4xWsE9vXuI0nO22sW58NXkxenzxqajKGUX5oZ3gHnAOiLvsfovdfEqBAhWkwO7fz7b/dfPp8sdbmLoBfvDodyO8TJT9ZNeCCyi4J+YE9URVk/1/MrXYrL37LzgZE4D5+ZGif2sbnPregcOwV012LVH2K/o3mZ8fARQ46/H4e7+JGP92G/y+WcHZRoxmy8bo3/21M+cCCKzjdhoc3Hdz2Gms40Conlt8usA5UMUDNXc9HInAi6iqhpR/UOA9qqrAiyFrgYdkshbCcOgravu+YA+kcSgEBybMqAd4AAmM4EBY7Lsts97XNDAW+0LWzMCgD/gKjKyZQB7x8LJwFNstddfG4lsbzW39vZygxP9pHhquxZP+LU0datq/K4tdCUhVYF8bElYoAuf/QNrhS7q71HEfWM1OhiqQ+XrpmkOQSxDXbb9apZ5I548h1sn8XZV6AvuXQLPnSFhNGF/f5gUVnIy08UpXj17r0RWye5Mop9rgjyr+2O7+hvONLnxqI6t3TP4TFX1NKjcIy+shuLIzimbTo3ck/YpUQWozuxnhH8mak/xZ38c3Dc+OcvM7WBt75SKZq2H4ZDIn2jfupXpkAefb4+wvGX5amatI68posIrkXvA5Qbc3/vAkAvBJCC7sLCvJ2dpFL7UlTkixP7qmGQpgAEsh+S56yBbzXQgrVqZ7tKIKZ/cXd66jeuQEmY2+UQz6tsM1eBPCmP1kFIluzzUgr0SSy7jrJoSkYqcj+hM4hXkZ+NAb8bicL46VH1pxmEIneKGZGa0Bs8MArK9DQLjrEi1He3H5I5vzqExIxklmdVzSUef1K+BRj95yUG325Q+haknoddsaN+0pFE/i9CA47nAYKbY5315c/kgA47ml5yPqU862BWpFNVytsFtASAVjyNao0mTOz70MUq2irjO75zcv/v1PE10w/9dqfO1b7yvq7w+aIKaSskzWzkFolGE95d85OFHVzvaDzUf/+wyrP+smYVtdbdzr52R/mahqUE5Cqq1QDOstMN3k34kwmYCT/WX3+gWrq80NXQAno//8z5djZu5tKZ5VVHNbU8vU305X3J1Is9xmnEqKqpC5kl33k+bTf0xLs5vF6UI9nn30GMExOY/cG3Ea5zCnNy9dOw0r7S7idHfpPHNw6Qd96DmJBZtDsg8a9gnPII2mMj+xG6N1wVVLaxIXbFZK+r31tbPnb4fxJUFYQq6F3VrcAAAAAElFTkSuQmCC">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">  <!-- served from the insights.200apps.com root -->
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>אפליקציה למנויי טדי וטס · הצעה לדיון</title>
+<!-- ══ META BLOCK. One source for the link preview (WhatsApp, LinkedIn, mail).
+     1. <title>, og:title and twitter:title carry the same text as each other, and COMPLEMENT the
+        headline in the preview image instead of repeating it. og:description is one sentence.
+     2. deck-base-url: the public folder, with a trailing slash, e.g. https://insights.200apps.com/<slug>/
+        Set it once; the publish step rewrites og:url / og:image / twitter:image below from it
+        (data-path = the path under the base). Crawlers do not run JS, so these must be absolute.
+     3. assets/og-cover.jpg: 1200x630, composed by scripts/deck_publish.py --og-card: headline and
+        client name inside the central 630x630 square (WhatsApp may crop to it), headline 8 words
+        at most at 56px+, no text under 32px. Check _render/og-cover-square-check.png. ══ -->
+<meta name="deck-base-url" content="https://insights.200apps.com/teddy-vets/deck/">
+<meta property="og:url" content="https://insights.200apps.com/teddy-vets/deck/" data-path="">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="אפליקציה למנויי טדי וטס · הצעה לדיון">
+<meta property="og:description" content="הצעה לדיון, הוכנה עבור טדי וטס · 200Apps">
+<meta property="og:image" content="https://insights.200apps.com/teddy-vets/deck/assets/og-cover.jpg" data-path="assets/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="שער המצגת">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="אפליקציה למנויי טדי וטס · הצעה לדיון">
+<meta name="twitter:description" content="הצעה לדיון, הוכנה עבור טדי וטס · 200Apps">
+<meta name="twitter:image" content="https://insights.200apps.com/teddy-vets/deck/assets/og-cover.jpg" data-path="assets/og-cover.jpg">
+<style>
+/* ── fonts: download the woff2 subsets into assets/fonts/ so the deck works offline ──
+   Grab the Hebrew + Latin subset urls from Google's CSS2 endpoint and save them locally.
+   Never link to it live. Deck = Rubik (every heading, body and UI line).
+   Lit = Frank Ruhl Libre, optional: display numbers and quotes only, never below 16px. */
+@font-face{font-family:Deck;src:url(assets/fonts/rubik-hebrew.woff2) format('woff2');
+  font-weight:300 900;font-display:swap;
+  unicode-range:U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F}
+@font-face{font-family:Deck;src:url(assets/fonts/rubik-latin.woff2) format('woff2');
+  font-weight:300 900;font-display:swap}
+
+*{margin:0;padding:0;box-sizing:border-box}
+/* ── TOKENS BY ROLE. Every colour in this file is one of these; no hex anywhere below :root.
+   REPLACE the values with the target's palette (scripts/brand_probe.py), keep the names.
+   Contrast contract (WCAG): small text >= 4.5:1 on its surface, large text (>=24px, or bold >=19px)
+   and non-text marks >= 3:1. Write the measured ratio next to each accent value. ── */
+:root{
+  /* Palette B, chosen by Hemi 23.10.2026 after rejecting Teddy's brown and peach ("החום מכוער וגם הורוד").
+     From Teddy: the terracotta of their plan buttons (accent) and the mint of their site's section
+     backgrounds (tint). Deep green base is ours, chosen with Hemi. Ratios measured 23.10. */
+  --base:#163A31;          /* deep green: headings, dark slides. 12.0:1 on --bg */
+  --base-deep:#0F2922;
+  --tint:#E7F2EC;          /* mint wash */
+  --bg:#FAFBF9;
+  --card:#FFFFFF;
+  --ink:#1D2A25;           /* 13:1 on --tint */
+  --muted:#53615B;         /* 6.3:1 on --bg, 5.7:1 on --tint */
+  --line:#DDE6E1;
+  --accent:#BD4927;        /* Teddy plan CTA terracotta: 4.9:1 on --bg, large text and marks only */
+  --accent-text:#A63E1F;   /* small text: 5.5:1 on --tint */
+  --accent-tint:#E7F2EC;   /* no pink washes */
+  --accent-dark:#F4A261;   /* on --base 6.1:1 */
+  --accent-on-dark:#F6B37A;
+  --on-dark:#F4F8F6;
+  --on-dark-muted:#C7D8D0; /* 8.4:1 on --base */
+  --on-dark-line:rgba(244,248,246,.18);
+  --on-dark-card:rgba(244,248,246,.07);
+  --ours:#14213F;          /* 200Apps - credibility + proof slides only */
+  --ours-muted:#C9D1E4;
+  --ours-accent:#9FB0D8;
+  --sel:#1D2A25;
+  --sel-bg:rgba(29,42,37,.06);
+  --nav-scrim:rgba(13,30,25,.55); /* live slide index backdrop */
+  --wall-0:#E6E3DC; --wall-1:#E9E8E5; --wall-2:#E6E6E5; --wall-3:#DEDEDE; --wall-4:#D5D4D4;  /* slide 6: the photo's wall, sampled */
+  --wall-fade:rgba(231,230,228,.55);
+  --chrome-bg:#0B1A16;
+  --chrome-ink:#8FA39A;
+  --dot:#2C4A41;
+  --dot-on:#C7D8D0;
+  --shadow:rgba(10,30,24,.20);
+  --stage-shadow:rgba(0,0,0,.5);
+  --mask:#000;             /* opaque stop for mask-image fades */
+  --ok:#2A6F47;            /* success status inside the phone screens: 5.3:1 on --ok-bg, 6.1:1 on white */
+  --ok-bg:#E5F3EA;
+  --ph-bg:#F2F5F3;          /* phone screen ground */
+  --ph-sh:rgba(20,18,16,.06);/* phone card shadow */
+  --phone-frame:#121212;    /* device body */
+  --phone-ring:rgba(0,0,0,.18);
+  /* cover scrim: the locked stops (cover-slide.md), tinted to the deep green */
+  --scrim-0:rgba(10,30,24,.95);
+  --scrim-26:rgba(12,36,29,.80);
+  --scrim-52:rgba(15,41,34,.42);
+  --scrim-82:rgba(15,41,34,.06);
+  --scrim-100:rgba(15,41,34,0);
+}
+html,body{height:100%;background:var(--chrome-bg);overflow:hidden}
+body{font-family:Deck,'Assistant','Heebo',Arial,sans-serif;color:var(--ink);
+  -webkit-font-smoothing:antialiased}
+
+/* ── fixed stage, scaled to fit: every slide is laid out against known pixels.
+   place-content:center centres the 1280px track itself, also when the window is narrower
+   than 1280 (without it RTL pins the track to the right edge and the slide is cut). ── */
+#viewport{position:fixed;inset:0;display:grid;place-items:center;place-content:center}
+#stage{width:1280px;height:720px;position:relative;transform-origin:center center;
+  box-shadow:0 30px 90px var(--stage-shadow)}
+.slide{position:absolute;inset:0;background:var(--bg);opacity:0;pointer-events:none;
+  transition:opacity .45s ease,transform .45s ease;transform:translateY(14px);overflow:hidden}
+.slide.on{opacity:1;pointer-events:auto;transform:none}
+.pad{position:absolute;inset:0;padding:60px 76px;display:flex;flex-direction:column}
+/* grain: stops large flat fills reading as a template */
+.slide::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ── type ── */
+/* eyebrow = section number (01-05 by act, not the slide number) + the section's name */
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.12em;color:var(--accent-text);
+  margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.eyebrow .num{font-weight:700;letter-spacing:.04em;font-variant-numeric:tabular-nums}
+.eyebrow .num::after{content:'';display:inline-block;width:14px;height:1px;background:var(--line);
+  vertical-align:middle;margin-inline-start:10px}
+/* h1 is the cover's headline only: 58px, weight 700, up to 3 lines - locked in cover-slide.md */
+h1{font-size:58px;font-weight:700;line-height:1.08;letter-spacing:-.01em}
+/* h2 = the slide's conclusion, one sentence */
+h2{font-size:40px;font-weight:700;line-height:1.15;letter-spacing:-.01em;color:var(--base);text-wrap:balance}
+h3{font-size:19px;font-weight:600;line-height:1.3;color:var(--base)}
+.lead{font-size:19px;line-height:1.6;color:var(--muted);margin-top:14px;text-wrap:pretty}
+.kicker{font-size:16px;line-height:1.6;color:var(--muted)}
+/* the closing line: where the slide's argument lands */
+.foot{margin-top:auto;font-size:16px;line-height:1.6;color:var(--base);font-weight:500;
+  border-top:1px solid var(--line);padding-top:18px}
+/* source line under any slide that states their facts: one check date for the whole deck */
+.src{font-size:12.5px;line-height:1.5;color:var(--muted);margin-top:12px}
+.mono{font-variant-numeric:tabular-nums}
+b,strong{font-weight:600;color:var(--ink)}
+
+/* ── dark variants: EVERY colour needs overriding, not just the background ── */
+.dark{background:var(--base);color:var(--on-dark)}
+.dark h2,.dark h3{color:var(--on-dark)}
+.dark .lead,.dark .kicker,.dark .src{color:var(--on-dark-muted)}
+.dark .foot{color:var(--on-dark);border-top-color:var(--on-dark-line)}
+.dark .eyebrow{color:var(--accent-dark)}
+.dark .eyebrow .num::after,.ours .eyebrow .num::after{background:var(--on-dark-line)}
+.dark b,.dark strong{color:var(--on-dark)}
+.dark .card{background:var(--on-dark-card)}
+.dark .card p{color:var(--on-dark-muted)}
+.dark ul.clean li{color:var(--on-dark)}
+.dark ul.clean li::before{background:var(--accent-dark)}
+.dark .wall img,.ours .wall img{filter:grayscale(1) brightness(0) invert(1);opacity:.66}
+.ours{background:var(--ours);color:var(--on-dark)}
+.ours h2,.ours h3{color:var(--on-dark)}
+.ours .lead,.ours .kicker,.ours .card p,.ours .src{color:var(--ours-muted)}
+.ours .foot{color:var(--on-dark);border-top-color:var(--on-dark-line)}
+.ours .eyebrow{color:var(--ours-accent)}
+.ours .card{background:var(--on-dark-card)}
+.ours b,.ours strong{color:var(--on-dark)}
+.ours ul.clean li{color:var(--on-dark)}
+.ours ul.clean li::before{background:var(--ours-accent)}
+/* image slide (slide 2): the ground is the deep base, text on it is on-dark */
+.imgslide{background:var(--base-deep)}
+.imgslide .foot{color:var(--on-dark);border-top-color:var(--on-dark-line);font-size:20px;text-align:center}
+
+/* ── components ── */
+.grid{display:grid;gap:16px}
+.card{background:var(--card);border-radius:18px;padding:22px 24px}
+.card p{font-size:16px;line-height:1.55;color:var(--muted);margin-top:8px}
+.card.tint{background:var(--accent-tint)}
+.card.tint p{color:var(--ink)}
+.card.gt{background:var(--tint)}
+.stat{background:var(--card);border-radius:16px;padding:18px 20px}
+.stat .v{font-size:30px;font-weight:700;color:var(--base);line-height:1.05;letter-spacing:-.02em}
+.stat .l{font-size:14px;line-height:1.45;color:var(--muted);margin-top:7px}
+.dark .stat,.ours .stat{background:var(--on-dark-card)}
+.dark .stat .v,.ours .stat .v{color:var(--on-dark)}
+.dark .stat .l{color:var(--on-dark-muted)}.ours .stat .l{color:var(--ours-muted)}
+.ic{width:27px;height:27px;stroke:var(--accent);stroke-width:1.5;fill:none;
+  stroke-linecap:round;stroke-linejoin:round;display:block;margin-bottom:11px}
+.dark .ic{stroke:var(--accent-dark)}.ours .ic{stroke:var(--ours-accent)}
+.pill{display:inline-block;background:var(--base);color:var(--on-dark);border-radius:999px;
+  padding:7px 16px;font-size:14px;font-weight:500}
+.pill.ghost{background:transparent;color:var(--base);box-shadow:inset 0 0 0 1.5px var(--line)}
+.dark .pill.ghost{color:var(--on-dark);box-shadow:inset 0 0 0 1.5px var(--on-dark-line)}
+.pillrow{display:flex;flex-wrap:wrap;gap:9px}
+ul.clean{list-style:none}
+ul.clean li{font-size:17px;line-height:1.5;padding:9px 0;display:flex;gap:11px;
+  align-items:flex-start}
+ul.clean li::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;
+  background:var(--accent);margin-top:9px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}
+.tags span{font-size:12px;font-weight:600;background:var(--on-dark-card);color:var(--ours-muted);
+  padding:4px 10px;border-radius:99px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:32px;flex:1;min-height:0;align-items:center}
+/* who does what: its own row under the phases, never aligned to the phase columns */
+.owners{margin-top:14px;font-size:14px;line-height:1.6;color:var(--muted)}
+.owners b{color:var(--ink)}
+
+/* monochrome client logo wall - slide 14 ("who we are"). Heights come from the optical-weight
+   tool (equal visual area, not equal height), written per logo as style="height:..px" */
+.wall{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;align-items:center;justify-items:center}
+.wall img{max-width:100%;height:40px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.55}
+
+/* ── proof slide: whole image one side, text the other.
+      DEFINITE px height + px max-height, or the image WILL be clipped ── */
+.shot{height:428px;padding:16px;border-radius:16px;overflow:hidden;background:var(--card);
+  box-shadow:0 16px 44px var(--shadow);display:grid;place-items:center}
+.shot img{max-width:100%;max-height:396px;width:auto;height:auto;display:block}
+.shot.fill{padding:0}                      /* browser screenshots read fine cropped at the foot */
+.shot.fill img{max-width:none;max-height:none;width:100%;height:100%;
+  object-fit:cover;object-position:center top}
+.pdesc{font-size:17px;line-height:1.6;color:var(--ours-muted)}
+.pdesc b{color:var(--on-dark)}
+
+/* ── prototype: one persistent background + per-step overlays ──
+   <div class="proto" data-demo="N" data-auto="3200">   runs once to the last step, then holds (add data-loop to loop)
+   <div class="proto" data-demo="N" data-manual="1">    never moves on its own; the presenter clicks a [data-i] row
+   optional data-start="k". A deck shared as a LINK uses data-manual on every demo (nobody narrates it).
+   The controller sets .st-k on .dev and .sp-k on .proto, and toggles .on on
+   every [data-i], [data-cs] and .sh[data-st] whose value is k. Arrow keys always change the SLIDE. */
+.proto{display:flex;flex-direction:column;align-items:center;gap:10px;position:relative}
+/* a manual demo that is also the two-column row (rows beside the phone) keeps the grid */
+.proto.two{display:grid;flex-direction:initial;align-items:center;justify-items:center}
+.proto.two .slots{justify-self:stretch}
+.dev{width:224px;height:380px;background:var(--card);border-radius:31px;position:relative;
+  overflow:hidden;box-shadow:0 18px 46px var(--shadow);border:7px solid var(--base-deep);cursor:pointer}
+.dev .notch{position:absolute;top:7px;left:50%;transform:translateX(-50%);width:52px;height:4px;
+  border-radius:99px;background:var(--line);z-index:9}
+.bglayer{position:absolute;inset:0}
+.bglayer svg,.bglayer img{width:100%;height:100%;display:block}
+.dev .cs{position:absolute;inset:0;opacity:0;transition:opacity .3s;background:var(--card)}
+.dev .cs.on{opacity:1}
+.tb{position:absolute;top:15px;right:11px;left:11px;background:var(--card);border-radius:99px;
+  padding:8px 12px;font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:7px;
+  box-shadow:0 3px 13px var(--shadow);z-index:5;opacity:0;transform:translateY(-8px);
+  transition:opacity .4s ease,transform .4s ease}
+.st-1 .tb,.st-2 .tb,.st-3 .tb,.st-4 .tb{opacity:1;transform:none}
+.sh{position:absolute;right:0;left:0;bottom:0;background:var(--card);border-radius:20px 20px 0 0;
+  padding:14px 15px 16px;box-shadow:0 -4px 24px var(--shadow);z-index:6;
+  transform:translateY(102%);transition:transform .48s cubic-bezier(.22,.9,.24,1)}
+.sh.on{transform:none}
+.sh .grab{width:34px;height:3.5px;border-radius:99px;background:var(--line);margin:0 auto 10px}
+.sh .hd{font-size:15px;font-weight:600;color:var(--base);line-height:1.25}
+.sh .sc{font-size:11px;color:var(--muted);margin-top:3px;direction:ltr;text-align:right}
+.wl{position:absolute;inset:0;background:var(--base);z-index:8;display:flex;
+  flex-direction:column;align-items:center;justify-content:center;gap:13px;padding:26px;
+  text-align:center;opacity:0;pointer-events:none;transition:opacity .5s ease;color:var(--on-dark)}
+.st-0 .wl{opacity:1}
+.pbar{display:flex;gap:6px}
+.pbar i{width:6px;height:6px;border-radius:99px;background:var(--line);transition:.3s}
+.pbar i.on{background:var(--sel);width:18px}
+.dark .pbar i{background:var(--on-dark-line)}
+.dark .pbar i.on{background:var(--on-dark)}
+/* capability rows beside a manual demo. Selected = dark: a wash plus a bar on the reading edge */
+.slots{display:flex;flex-direction:column;gap:4px;align-self:stretch}
+.slot{display:flex;align-items:baseline;gap:12px;padding:10px 14px;border-radius:8px;cursor:pointer;
+  transition:background .25s,box-shadow .25s}
+.slot .n{font-size:17px;font-weight:600;color:var(--ink);line-height:1.3}
+.slot .d{font-size:14px;color:var(--muted);line-height:1.45}
+.slot:hover{background:var(--sel-bg)}
+.slot.on{background:var(--sel-bg);box-shadow:inset -3px 0 0 var(--sel)}
+.dark .slot .n{color:var(--on-dark)}.dark .slot .d{color:var(--on-dark-muted)}
+.dark .slot.on,.dark .slot:hover{background:var(--on-dark-card)}
+.dark .slot.on{box-shadow:inset -3px 0 0 var(--on-dark)}
+.demohint{font-size:13px;color:var(--muted)}
+
+/* ── Teddy Vets deck components, v3 (23.10.2026). Tokens only. Hemi's notes 5-8: bigger type,
+   shorter text, no five-across rows, fewer foot lines. ── */
+h2{font-size:42px}
+.lead{font-size:22px;line-height:1.5}
+.foot{font-size:19px}
+.src{font-size:13.5px}
+.noeb{margin-bottom:16px}
+.lead-b{margin-top:10px}
+/* slide 2: the app first, their site small */
+.s2 .two2{display:grid;grid-template-columns:1fr 520px;gap:30px;align-items:center;height:100%}
+.s2 h2{font-size:44px}
+.s2 .lead{font-size:23px;max-width:30ch}
+.s2 .today{display:flex;align-items:center;gap:16px;margin-top:34px}
+.s2 .today .mini{width:96px;height:196px;border-radius:20px;border:4px solid var(--phone-frame);overflow:hidden;
+  box-shadow:0 0 0 1px var(--phone-ring),0 10px 24px var(--shadow);transform:rotate(-4deg);flex:0 0 96px}
+.s2 .today .mini img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.s2 .today .tl2{font-size:17px;color:var(--muted);line-height:1.5}
+.s2 .today .tl2 b{display:block;font-size:18px;color:var(--ink)}
+.s2 .stage2{display:flex;justify-content:center;align-items:center;position:relative}
+.s2 .stage2 .dev{zoom:1.28}
+/* slide 3: who we are, early and short */
+.hi .big2{display:grid;grid-template-columns:auto auto 1fr;gap:70px;margin-top:26px;align-items:end}
+.hi .lead{color:var(--ours-muted);font-size:22px;margin-top:10px}
+.hi .big2 .w{font-size:21px;line-height:1.5;color:var(--on-dark);font-weight:400;max-width:34ch;padding-bottom:8px}
+.hi .big2 .w span{display:block;font-size:20px;font-weight:400;color:var(--ours-muted);margin-top:8px}
+.hi .big2 .n{font-size:130px;font-weight:700;line-height:.9;color:var(--on-dark);letter-spacing:-.03em}
+.hi .big2 .l{font-size:21px;color:var(--ours-muted);margin-top:12px}
+.hi .people{display:flex;gap:56px;margin-top:30px;font-size:20px;color:var(--ours-muted)}
+.hi .people b{display:block;font-size:23px;color:var(--on-dark)}
+.hi .logos16{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 22px;margin-top:auto;padding-top:20px;border-top:1px solid var(--on-dark-line)}
+.hi .logos16 img{width:166px;height:auto;filter:grayscale(1) brightness(0) invert(1);opacity:.85}
+.hi .logos16 img.asis{filter:none;opacity:.9}
+/* slide 4: their numbers, big, no cards */
+.nums{display:grid;grid-template-columns:repeat(4,1fr);margin-top:auto;margin-bottom:auto}
+.nums > div{padding:0 26px;border-inline-start:1.5px solid var(--line)}
+.nums > div:first-child{padding-inline-start:0;border-inline-start:0}
+.nums .t{min-height:72px;display:flex;align-items:flex-end;gap:10px;font-size:28px;font-weight:700;line-height:1.15;color:var(--base)}
+.nums .t .v{font-size:68px;line-height:.9;letter-spacing:-.03em}
+.nums .l{font-size:21px;line-height:1.45;color:var(--muted);margin-top:14px}
+.nums.n4{grid-template-columns:1fr 1fr;gap:40px 64px}
+.nums.n4 > div{padding:20px 0 0;border-inline-start:0;border-top:2px solid var(--line)}
+.nums.n4 .t{min-height:0;font-size:38px;align-items:baseline}
+.nums.n4 .t .v{font-size:66px}
+.nums.n4 .l{font-size:23px;margin-top:10px;color:var(--ink)}
+/* slide 5: channels as rows */
+.chrows{margin-top:24px;display:flex;flex-direction:column}
+.chrows .r{display:grid;grid-template-columns:260px 1fr 1fr;gap:28px;padding:21px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.chrows .r.hd{padding:0 0 8px;font-size:15px;font-weight:600;color:var(--muted);border-bottom:1.5px solid var(--line)}
+.chrows .r .c{font-size:23px;font-weight:700;color:var(--base)}
+.chrows .r .g{font-size:21px;color:var(--ink);line-height:1.4}
+.chrows .r .x{font-size:21px;color:var(--accent-text);font-weight:500;line-height:1.4}
+.chrows.c2 .r{grid-template-columns:330px 1fr;padding:24px 0}
+.chrows.c2 .r .c{font-size:24px}
+.chrows.c2 .r .x{font-size:22px}
+.chrows.c2 .r .x{color:var(--ink);font-weight:400}
+/* slide 6: the family photo fills the slide, the text sits on the bright wall at the right.
+   No stretch: the photo keeps its ratio (1672x941 = 16:9), moved 120px left; the strip it leaves
+   is a vertical gradient sampled from the wall's last column, and a short fade hides the seam */
+.s6{background:linear-gradient(to bottom,var(--wall-0) 0%,var(--wall-1) 30%,var(--wall-2) 55%,var(--wall-3) 74%,var(--wall-4) 100%)}
+.s6 .ph6{position:absolute;inset:0;overflow:hidden}
+.s6 .ph6 img{position:absolute;top:0;left:-120px;width:1280px;height:720px;object-fit:cover;object-position:left center;display:block}
+.s6 .ph6 .fade{position:absolute;top:0;bottom:0;left:960px;right:0;
+  background:linear-gradient(to right,transparent 0%,var(--wall-fade) 70%,transparent 100%)}
+.s6 .pad{z-index:2;justify-content:center}
+.s6 .t6{width:340px}
+.s6 h2{font-size:44px;line-height:1.14;color:var(--base)}
+.s6 .lead{font-size:20px;line-height:1.5;color:var(--ink);margin-top:14px}
+.g6{display:flex;align-items:flex-start;gap:20px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.g6 > div{text-align:center}
+.g6 b{display:block;font-size:44px;line-height:1;font-weight:700;color:var(--base);letter-spacing:-.02em}
+.g6 .to b{color:var(--accent)}
+.g6 span{display:block;font-size:16px;color:var(--ink);margin-top:6px}
+.g6 .ar{flex:0 0 34px;width:34px;height:17px;margin-top:14px;stroke:var(--muted);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}  /* centred on the 44px figures */
+/* slide 7: three networks, three lessons */
+.w3{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:20px}
+.w3 .wc{display:flex;flex-direction:column}
+.w3 .wc .im{height:300px;border-radius:18px;overflow:hidden;background:var(--card);box-shadow:0 0 0 1px var(--line),0 10px 26px var(--shadow)}
+.w3 .wc .im img{width:100%;height:100%;object-fit:cover;display:block}
+.w3 .nm{font-size:22px;font-weight:700;color:var(--base);margin-top:16px}
+.w3 .nm span.pr{display:block;font-size:19px;color:var(--accent-text);margin-top:2px}
+.w3 p{font-size:18.5px;line-height:1.45;color:var(--ink);margin-top:8px}
+.w3 .ls{font-size:19px;font-weight:600;line-height:1.4;color:var(--base);margin-top:8px}
+/* slide 8: three opportunities */
+.zt{display:flex;flex-direction:column;margin-top:18px}
+.zt .zr{display:grid;grid-template-columns:70px 1fr 1fr;gap:28px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--on-dark-line)}
+.zt .zr.hd{padding:0 0 8px;font-size:15px;font-weight:600;color:var(--on-dark-muted)}
+.zt .zr .z{font-size:44px;font-weight:700;color:var(--accent-on-dark);line-height:1}
+.zt .zr .w{font-size:25px;font-weight:600;color:var(--on-dark);line-height:1.35}
+.zt .zr .h{font-size:21px;color:var(--on-dark-muted);line-height:1.45}
+/* slide 9: five parts, one per row */
+.parts{display:flex;flex-direction:column;margin-top:16px}
+.parts .p{display:grid;grid-template-columns:54px 250px 1fr;gap:22px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line)}
+.parts .ico{width:50px;height:50px;border-radius:15px;background:var(--tint);display:grid;place-items:center}
+.parts .ico svg{width:26px;height:26px;fill:none;stroke:var(--base);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.parts h3{font-size:24px}
+.parts p{font-size:21px;line-height:1.4;color:var(--ink)}
+.band{margin-top:22px;background:var(--base);border-radius:18px;padding:16px 24px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.band .bl{font-size:18px;font-weight:600;color:var(--on-dark-muted)}
+.band span.it{font-size:21px;font-weight:700;color:var(--on-dark)}
+.band i{width:6px;height:6px;border-radius:50%;background:var(--accent-dark);display:inline-block}
+/* slides 10-12: the demo, phone and close-up take ~45% of the slide */
+.dm{display:grid;grid-template-columns:1fr 500px;gap:34px;height:100%;align-items:stretch}
+.dm .dtx{display:flex;flex-direction:column;min-height:0}
+.dm h2{font-size:40px}
+.dsteps{display:flex;flex-wrap:wrap;gap:7px;margin-top:26px}
+.dsteps .ds{display:flex;align-items:center;gap:7px;padding:8px 12px 8px 14px;border-radius:99px;cursor:pointer;
+  font-size:16.5px;font-weight:600;color:var(--muted);box-shadow:inset 0 0 0 1.3px var(--line)}  /* no transition: Chrome printed the selected pill mid-transition, blank */
+.dsteps .ds .k{width:23px;height:23px;border-radius:50%;display:grid;place-items:center;font-size:13px;background:var(--tint);color:var(--ink)}
+.dsteps .ds:hover{background:var(--sel-bg)}
+.dsteps .ds.on{background:var(--sel);color:var(--on-dark);box-shadow:none}
+.dsteps .ds.on .k{background:var(--on-dark);color:var(--sel)}
+.dcaps{position:relative;margin-top:44px;min-height:260px}
+.dcap{position:absolute;inset:0;opacity:0;transform:translateY(6px);transition:opacity .35s,transform .35s;pointer-events:none}
+.dcap.on{opacity:1;transform:none}
+.dcap .ct{font-size:38px;font-weight:700;line-height:1.2;color:var(--ink);text-wrap:balance}
+.dcap .cs2{font-size:22px;line-height:1.5;color:var(--muted);margin-top:14px;max-width:34ch}
+.dstage{position:relative}
+.dstage .dev{zoom:1.28;position:absolute;inset-inline-end:0;top:0}
+.dm [data-go]{cursor:pointer}
+.dev .cs{pointer-events:none}
+.slide.on .dev .cs.on{pointer-events:auto}  /* only the visible slide: pointer-events:auto on a child beats the hidden slide's none */
+.zm{position:absolute;inset-inline-start:0;width:250px;background:var(--card);border-radius:22px;padding:18px 20px;
+  box-shadow:0 0 0 1px var(--line),0 22px 50px var(--shadow);opacity:0;transform:scale(.96);transition:opacity .35s,transform .35s;z-index:3}
+.zm.on{opacity:1;transform:none}
+.zm .zl{font-size:14px;font-weight:600;color:var(--muted);margin-bottom:6px}
+.zm .zt{font-size:27px;font-weight:700;line-height:1.15;color:var(--ink)}
+.zm .zs{font-size:16px;line-height:1.45;color:var(--muted);margin-top:6px}
+.zm .zc{display:inline-block;margin-top:10px;font-size:15px;font-weight:600;color:var(--ok);background:var(--ok-bg);border-radius:99px;padding:5px 12px}
+.zm .zc.wait{color:var(--ink);background:var(--tint)}
+.zm.za{width:270px}
+.zm .zans{font-size:19px;font-weight:600;line-height:1.45;color:var(--ink);margin:4px 0 6px}
+.zm .zdiv{height:1px;background:var(--line);margin:14px 0 12px}
+.zm .zli{display:flex;gap:9px;align-items:flex-start;font-size:18px;font-weight:600;color:var(--ink);line-height:1.35;padding:6px 0}
+.zm .zli::before{content:'';flex:0 0 8px;height:8px;border-radius:50%;background:var(--ok);margin-top:7px}
+.zm .zbar{height:10px;border-radius:99px;background:var(--tint);margin-top:12px;overflow:hidden}
+.zm .zbar i{display:block;height:100%;width:66.6%;background:var(--base);border-radius:99px}
+.zm .zq{font-size:22px;font-weight:700;color:var(--ink);line-height:1.25}
+.zm .zopt{display:flex;flex-direction:column;gap:6px;margin-top:12px}
+.zm .zopt span{border-radius:12px;padding:8px 10px;text-align:center;font-size:16px;font-weight:600;box-shadow:0 0 0 1px var(--line);color:var(--ink)}
+.zm .zopt span.pick{box-shadow:0 0 0 1.5px var(--sel);background:var(--tint)}
+.zm .zic{width:20px;height:20px;border-radius:6px;background:var(--base);display:inline-block;vertical-align:-4px;margin-inline-end:6px}
+/* slide 13: the clinic inbox (illustration) */
+.inbox{margin-top:20px;background:var(--card);border-radius:20px;box-shadow:0 0 0 1px var(--line),0 18px 44px var(--shadow);overflow:hidden}
+.inbox .ibh{display:flex;align-items:center;gap:16px;padding:16px 24px;background:var(--tint);font-size:17px;color:var(--muted)}
+.inbox .ibh b{font-size:19px;color:var(--base);margin-inline-end:auto}
+.inbox .ibh .demo{font-size:13px;font-weight:600;background:var(--card);border-radius:99px;padding:2px 10px;box-shadow:0 0 0 1px var(--line)}
+.inbox .ibr{display:grid;grid-template-columns:1fr 90px 200px 150px 130px;gap:16px;align-items:center;padding:14px 24px;border-top:1px solid var(--line);font-size:19px;color:var(--ink)}
+.inbox .ibr.hd{font-size:14px;font-weight:600;color:var(--muted);padding:9px 24px;border-top:0}
+.inbox .ibr.sel{background:var(--sel-bg);box-shadow:inset -4px 0 0 var(--sel)}
+.inbox .pt{display:flex;align-items:center;gap:12px;min-width:0}
+.inbox .pt img,.inbox .pt .ini{flex:0 0 40px;width:40px;height:40px;border-radius:50%;object-fit:cover}
+.inbox .pt .ini{display:grid;place-items:center;background:var(--tint);color:var(--base);font-weight:700;font-size:17px}
+.inbox .pt b{display:block;font-size:19px;color:var(--ink)}
+.inbox .pt i{display:block;font-style:normal;font-size:16.5px;color:var(--muted);margin-top:2px}
+.inbox em.st{font-style:normal;font-size:15px;font-weight:600;border-radius:99px;padding:4px 12px;white-space:nowrap}
+.inbox em.st.w{background:var(--base);color:var(--on-dark)}
+.inbox em.st.n{background:var(--accent);color:var(--on-dark)}
+.inbox em.st.d{background:var(--ok-bg);color:var(--ok)}
+/* slide 14: the team leads, three principles (Hemi 23.10: six was too many after the demo) */
+.pr3{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;margin-top:auto;margin-bottom:auto}
+.pr3 > div{border-top:2px solid var(--on-dark-line);padding-top:22px}
+.pr3 .k{display:block;font-size:56px;font-weight:700;line-height:1;color:var(--accent-on-dark);margin-bottom:18px}
+.pr3 h3{font-size:30px;line-height:1.2;color:var(--on-dark)}
+.pr3 p{font-size:22px;line-height:1.5;color:var(--on-dark-muted);margin-top:12px}
+/* slide 15: value, three columns of short lines */
+.v3{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:auto;margin-bottom:auto}
+.v3 > div{border-top:3px solid var(--base);padding-top:18px}
+.v3 h3{font-size:28px;color:var(--base)}
+.v3 ul{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:12px}
+.v3 li{font-size:23px;line-height:1.45;color:var(--ink);padding-inline-start:18px;position:relative}
+.v3 li::before{content:'';position:absolute;inset-inline-start:0;top:12px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.s15 .foot{font-weight:700}
+/* slide 15 (v2 table, kept for reference) */
+.vt{width:100%;border-collapse:separate;border-spacing:0;margin-top:28px}
+.vt th{text-align:right;font-size:24px;font-weight:700;color:var(--on-dark);background:var(--base);padding:16px 20px}
+.vt th:first-child{border-start-start-radius:16px}
+.vt th:last-child{border-start-end-radius:16px}
+.vt td{font-size:22px;line-height:1.45;color:var(--ink);padding:24px 22px;border-bottom:1px solid var(--line);vertical-align:top;width:33.3%}
+.vt td + td{border-inline-start:1px solid var(--line)}
+.vnote{font-size:19px;color:var(--muted);margin-top:20px}
+/* slide 16: City Wash, the subscription flow */
+.s16 .lead{color:var(--ours-muted)}
+.cwf{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:18px}
+.cwf .st3{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
+.cwf .st3 .im{height:318px;width:100%;border-radius:18px;overflow:hidden;background:var(--card);box-shadow:0 14px 36px var(--shadow)}
+.cwf .st3 img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.s16 .cwf .st3 .k{display:none}
+.cwf .st3 .k{width:30px;height:30px;border-radius:50%;background:var(--ours-accent);color:var(--ours);display:grid;place-items:center;font-weight:700;font-size:15px}
+.cwf .st3 h3{font-size:23px;color:var(--on-dark)}
+.cwf .st3 p{font-size:19px;line-height:1.45;color:var(--ours-muted);max-width:26ch}
+/* slide 17: AMIT */
+.ai2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
+.ai2 .a{background:var(--on-dark-card);border-radius:18px;padding:22px 24px}
+.ai2 .a .t{font-size:26px;font-weight:700;color:var(--on-dark)}
+.ai2 .a .d{font-size:18px;color:var(--ours-muted);margin-top:6px}
+.amitshot{border-radius:14px;overflow:hidden;box-shadow:0 14px 36px var(--shadow);background:var(--card)}
+.amitshot img{width:100%;height:auto;display:block}
+.cap{font-size:14px;color:var(--ours-muted);margin-top:10px;text-align:center}
+.ours .pdesc2{font-size:21px;line-height:1.5;color:var(--ours-muted);margin-top:14px;max-width:38ch}
+.ours .pdesc2 + .pdesc2{margin-top:10px}
+/* slide 18: the route, top to bottom */
+.rtv{display:flex;flex-direction:column;margin-top:20px;position:relative}
+.rtv::before{content:'';position:absolute;top:24px;bottom:24px;inset-inline-start:19px;width:2px;background:var(--line)}
+.rtv .s{position:relative;display:grid;grid-template-columns:40px 400px 1fr;gap:22px;align-items:center;padding:14px 0}
+.rtv .s .k{width:40px;height:40px;border-radius:50%;background:var(--base);color:var(--on-dark);display:grid;place-items:center;font-weight:700;font-size:17px;box-shadow:0 0 0 6px var(--bg)}
+.rtv .s.end .k{background:var(--accent)}
+.rtv .s h3{font-size:24px}
+.rtv .s p{font-size:20px;line-height:1.4;color:var(--muted)}
+.owners{margin-top:auto;font-size:20px;line-height:1.6;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+.owners b{color:var(--ink)}
+/* slide 19: extensions as rows */
+.rd{margin-top:22px;display:flex;flex-direction:column}
+.rd .r{display:grid;grid-template-columns:270px 1fr 340px;gap:26px;padding:20px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.rd .r.hd{padding:0 0 8px;font-size:15px;font-weight:600;color:var(--muted);border-bottom:1.5px solid var(--line)}
+.rd .r .c{font-size:23px;font-weight:700;color:var(--base)}
+.rd .r .w{font-size:21px;color:var(--ink);line-height:1.4}
+.rd .r .b{font-size:19px;color:var(--accent-text);font-weight:600;line-height:1.4}
+/* slide 19: two columns, no "leans on" */
+.rd.r2 .r{grid-template-columns:330px 1fr;padding:16px 0}
+/* slide 20: three things the half day settles */
+.nx3{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:auto;margin-bottom:auto}
+.nx3 > div{border-top:2px solid var(--line);padding-top:18px}
+.nx3 .k{display:block;font-size:48px;font-weight:700;line-height:1;color:var(--accent);margin-bottom:14px}
+.nx3 h3{font-size:26px;color:var(--base)}
+.nx3 p{font-size:21px;line-height:1.5;color:var(--ink);margin-top:10px}
+.nx3.nonum h3{font-size:28px}
+.nx3.nonum p{font-size:22px}
+/* slide 20 (v3 questions, now in meeting prep) */
+.lead2{font-size:22px;line-height:1.5;color:var(--muted);margin-top:12px;max-width:62ch}
+.ql2{display:grid;grid-template-columns:1fr 1fr;column-gap:46px;margin-top:22px}
+.ql2 .q{display:grid;grid-template-columns:44px 1fr;gap:10px;padding:14px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.ql2 .q .k{font-size:24px;font-weight:700;color:var(--accent-text)}
+.ql2 .q .c{font-size:16px;font-weight:600;color:var(--muted)}
+.ql2 .q .t{font-size:22px;line-height:1.45;color:var(--ink);margin-top:2px}
+/* slide 21: the clinic photo returns, contacts at 22-24px */
+.clo h2{margin-top:6px}
+.bigline{font-size:46px;line-height:1.15;font-weight:700;max-width:20ch;text-wrap:balance}
+.cl2{font-size:23px;line-height:1.5;color:var(--on-dark);max-width:30ch;margin-top:14px}
+.sigart .sa{position:absolute;top:0;bottom:0;left:0;width:46%;
+  -webkit-mask-image:linear-gradient(to left,transparent 0,var(--mask) 40%);mask-image:linear-gradient(to left,transparent 0,var(--mask) 40%)}
+.sigart .sa img{width:100%;height:100%;object-fit:cover;object-position:62% 30%;display:block}
+.sigart .pad{z-index:2}
+.clo.sigart .sig{font-size:22px;gap:10px}
+.sigart .sig .ct2{font-size:24px;margin-top:6px}
+/* slide index (live only): opened from the counter, or with G */
+#nav{position:fixed;inset:0;z-index:40;display:none;background:var(--nav-scrim);direction:rtl;
+  font-family:Deck,'Rubik','Assistant',Arial,sans-serif;align-items:center;justify-content:center}
+#nav.open{display:flex}
+#nav .nv{background:var(--card);border-radius:20px;padding:24px 26px;width:min(980px,94vw);max-height:90vh;overflow:auto;
+  box-shadow:0 30px 80px var(--shadow)}
+#nav .nh{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;color:var(--muted);margin-bottom:14px}
+#nav .nh b{font-size:18px;color:var(--base)}
+#nav ol{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+#nav li{display:flex;gap:10px;align-items:baseline;padding:9px 12px;border-radius:12px;cursor:pointer;font-size:15px;color:var(--ink)}
+#nav li:hover{background:var(--sel-bg)}
+#nav li.on{background:var(--sel);color:var(--on-dark)}
+#nav li .n{font-variant-numeric:tabular-nums;font-weight:700;color:var(--accent-text);min-width:22px}
+#nav li.on .n{color:var(--accent-on-dark)}
+#cnt{pointer-events:auto;cursor:pointer;border-radius:99px;padding:2px 8px}
+#cnt:hover{background:var(--sel-bg)}
+#gotobox{position:fixed;bottom:44px;left:50%;transform:translateX(-50%);z-index:41;display:none;background:var(--sel);color:var(--on-dark);
+  font-size:20px;font-weight:700;border-radius:12px;padding:8px 16px;direction:ltr;font-variant-numeric:tabular-nums}
+#gotobox.on{display:block}
+@media print{#nav,#gotobox{display:none!important}}
+
+/* ── modern phone frame (Hemi, 23.10: the 224x380 frame read wide and dated) ── */
+.dev{width:208px;height:446px;border-radius:42px;border:6px solid var(--phone-frame);background:var(--ph-bg);
+  box-shadow:0 0 0 1px var(--phone-ring),0 26px 60px var(--shadow)}
+.dev .notch{top:8px;width:66px;height:20px;border-radius:99px;background:var(--phone-frame)}
+.pr .dev{zoom:1.04}
+.shotphone{width:208px;height:446px;border-radius:42px;border:6px solid var(--phone-frame);
+  box-shadow:0 0 0 1px var(--phone-ring),0 26px 60px var(--shadow)}
+/* ── cover (slide 1). Swappable between markers: a variant replaces this block and the
+   section markup, and one restore command brings the recipe back. ── */
+/* ══════ COVER START ══════ */
+.cov{background:var(--base-deep)}
+.cov .covart{position:absolute;top:0;bottom:0;left:0;width:66%;overflow:hidden;
+  -webkit-mask-image:linear-gradient(to left,transparent 0,var(--mask) 22%);mask-image:linear-gradient(to left,transparent 0,var(--mask) 22%)}
+.cov .covart img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block}
+/* the LOCKED scrim (cover-slide.md), directional, entering from the text side only */
+.cov .covshade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(to left,
+  var(--scrim-0) 0%,var(--scrim-26) 26%,var(--scrim-52) 52%,
+  var(--scrim-82) 82%,var(--scrim-100) 100%)}  /* locked shape and stops; tinted to --base-deep for palette B (23.10.2026) */
+.cov .covpanel{position:absolute;inset:0;padding:60px 76px;display:flex;flex-direction:column;
+  justify-content:space-between;z-index:2}
+.covlogos,.clologos{display:flex;align-items:center;gap:24px}
+.covlogos .rule,.clologos .rule{width:1px;height:58px;background:var(--on-dark-line)}
+.lg-them{height:34px;width:auto}                          /* heights: equal visual AREA, not equal height */
+.lg-us{height:74px;width:auto;filter:brightness(0) invert(1)}
+.cov .coveb{font-size:13.5px;font-weight:600;letter-spacing:.1em;color:var(--accent-dark);margin-bottom:16px}
+.cov h1{color:var(--on-dark);max-width:19ch;text-wrap:balance}
+.cov .covlead{font-size:19px;line-height:1.6;color:var(--on-dark-muted);max-width:42ch;margin-top:14px}
+.cov .covmeta{display:flex;gap:14px;font-size:13.5px;color:var(--on-dark-muted)}
+.covrot{display:none}
+/* portrait phone: the cover reflows into a vertical page (image band, then text), the rest of the
+   deck keeps the scaled stage with a small non-blocking note. No black rotate screen. */
+@media screen and (max-width:900px) and (orientation:portrait){
+  body.oncov{overflow:auto;background:var(--base-deep)}
+  body.oncov #chrome,body.oncov #hint,body.oncov #rotnote{display:none}
+  body.oncov #viewport{position:static;display:block}
+  body.oncov #stage{transform:none!important;width:100%;height:auto;box-shadow:none}
+  body.oncov .slide.cov{position:relative;min-height:100svh;display:flex;flex-direction:column;transform:none}
+  body.oncov .cov .covart{position:relative;inset:auto;width:100%;height:46svh;flex:none}
+  body.oncov .cov .covshade{display:none}
+  body.oncov .cov .covpanel{position:relative;inset:auto;width:100%;flex:1;padding:26px 24px 28px;
+    gap:24px;background:var(--base-deep)}
+  body.oncov .cov h1{font-size:clamp(34px,10.5vw,58px)}
+  body.oncov .cov .covlead{font-size:clamp(16px,4.2vw,20px)}
+  body.oncov .covlogos .lg-them{height:34px}
+  body.oncov .covlogos .lg-us{height:40px}
+  body.oncov .covlogos .rule{height:30px}
+  body.oncov .cov .covmeta{flex-wrap:wrap;gap:6px 12px}
+  body.oncov .covrot{display:block;font-size:13px;color:var(--on-dark-muted);
+    border-top:1px solid var(--on-dark-line);padding-top:14px}
+}
+/* ══════ COVER END ══════ */
+
+/* closing slide: the same lockup as the cover (logos appear on these two slides only) */
+.clo .clologos{margin-bottom:34px}
+.clo .sig{display:flex;flex-direction:column;gap:6px;margin-top:22px;font-size:17px;color:var(--on-dark-muted)}
+.clo .sig b{color:var(--on-dark)}
+.clo .sig a{color:inherit;text-decoration:none;border-bottom:1px solid var(--on-dark-line)}
+
+/* ── chrome ── */
+#chrome{position:fixed;bottom:14px;left:0;right:0;display:flex;justify-content:center;
+  align-items:center;gap:16px;z-index:20;font-size:12px;color:var(--chrome-ink);pointer-events:none}
+#dots{display:flex;gap:5px;pointer-events:auto}
+#dots i{width:6px;height:6px;border-radius:50%;background:var(--dot);cursor:pointer;transition:.2s}
+#dots i.on{background:var(--dot-on);width:17px;border-radius:3px}
+/* "1 / 18", never "18 / 1": the counter is an LTR island inside the RTL page */
+#cnt{font-variant-numeric:tabular-nums;min-width:44px;text-align:center;direction:ltr;unicode-bidi:isolate}
+#hint{position:fixed;top:14px;left:16px;font-size:11.5px;color:var(--chrome-ink);z-index:20;
+  transition:opacity .6s}
+@media (hover:none) and (pointer:coarse){#hint{display:none}}   /* touch devices have no keyboard */
+@media (max-height:500px){#chrome{display:none}}              /* phone in landscape: no room */
+#rotnote{display:none;position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);left:50%;
+  transform:translateX(-50%);z-index:30;background:var(--card);color:var(--ink);font-size:13px;
+  padding:7px 14px;border-radius:99px;box-shadow:0 6px 18px var(--shadow);white-space:nowrap;pointer-events:none}
+@media screen and (max-width:900px) and (orientation:portrait){#rotnote{display:block}}
+
+@media (prefers-reduced-motion:reduce){.slide,.sh,.tb,.wl,.dev .cs,.slot{transition:none!important}}
+
+@media print{
+  @page{size:1280px 720px;margin:0}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  html,body{overflow:visible;background:var(--card);height:auto}
+  #viewport{position:static;display:block}
+  #stage{transform:none!important;box-shadow:none;width:1280px;height:auto}
+  .slide{position:relative;opacity:1!important;transform:none!important;height:720px;
+    break-after:page;page-break-after:always;pointer-events:auto;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .slide::after{display:none}
+  #chrome,#hint,#rotnote,.covrot{display:none!important}
+}
+/* EMBED p0-home START */
+[data-embed="p0-home"] .cs{background:var(--ph-bg);direction:rtl;font-family:Deck,'Rubik','Assistant',Arial,sans-serif;color:var(--ink);text-align:right}
+[data-embed="p0-home"] .tsb{position:absolute;top:0;left:0;right:0;height:34px;padding:12px 20px 0;display:flex;justify-content:space-between;align-items:center;font-size:10px;font-weight:600;color:var(--ink)}
+[data-embed="p0-home"] .tsb .demo{font-size:8.5px;font-weight:600;color:var(--muted);background:var(--card);border-radius:99px;padding:1px 7px;box-shadow:0 0 0 1px var(--line)}
+[data-embed="p0-home"] .thd{position:absolute;top:38px;left:0;right:0;height:34px;padding:0 14px;display:flex;align-items:center;gap:7px}
+[data-embed="p0-home"] .thd .bk{font-size:18px;color:var(--muted);line-height:1;width:9px}
+[data-embed="p0-home"] .thd .tt{font-size:15px;font-weight:700;color:var(--ink);white-space:nowrap;letter-spacing:-.01em}
+[data-embed="p0-home"] .thd .av{margin-inline-start:auto;width:28px;height:28px;border-radius:50%;overflow:hidden;flex:0 0 28px;box-shadow:0 0 0 2px var(--card),0 0 0 3px var(--line)}
+[data-embed="p0-home"] .thd .av img,[data-embed="p0-home"] .hero img{width:100%;height:100%;object-fit:cover;display:block}
+[data-embed="p0-home"] .hero{display:flex;align-items:center;gap:10px}
+[data-embed="p0-home"] .pets{display:flex;gap:6px;align-items:center}
+[data-embed="p0-home"] .pets span{display:flex;align-items:center;gap:5px;font-size:10.5px;font-weight:600;color:var(--muted);background:var(--card);border-radius:99px;padding:3px 9px 3px 4px;box-shadow:0 0 0 1px var(--line);cursor:pointer}
+[data-embed="p0-home"] .cs:not([data-pet="louis"]) .pets [data-pet="mika"],[data-embed="p0-home"] .cs[data-pet="louis"] .pets [data-pet="louis"]{color:var(--on-dark);background:var(--ink);box-shadow:none}
+[data-embed="p0-home"] .pv{display:flex;flex-direction:column;gap:8px}
+[data-embed="p0-home"] .cs[data-pet="louis"] .pm,[data-embed="p0-home"] .cs:not([data-pet="louis"]) .pl{display:none}
+[data-embed="p0-home"] .pets span img{width:18px;height:18px;border-radius:50%;object-fit:cover;display:block}
+[data-embed="p0-home"] .pets span.add{padding:3px 8px;font-size:12px}
+[data-embed="p0-home"] .hero .ph{flex:0 0 46px;height:46px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 2px var(--on-dark-line)}
+[data-embed="p0-home"] .opt{display:flex;flex-direction:column;gap:5px;margin-top:6px}
+[data-embed="p0-home"] .opt span{display:block;text-align:center;border-radius:12px;padding:7px 8px;font-size:11px;font-weight:600;background:var(--card);box-shadow:0 0 0 1px var(--line);color:var(--ink)}
+[data-embed="p0-home"] .opt span.pick{box-shadow:0 0 0 1.5px var(--sel);background:var(--tint)}
+[data-embed="p0-home"] .ntf{background:var(--card);border-radius:16px;padding:10px 12px;box-shadow:0 1px 2px var(--ph-sh),0 10px 24px var(--ph-sh)}
+[data-embed="p0-home"] .ntf .nh{display:flex;align-items:center;gap:6px;font-size:9.5px;color:var(--muted);margin-bottom:5px}
+[data-embed="p0-home"] .ntf .nh i{width:16px;height:16px;border-radius:5px;background:var(--base);display:inline-block}
+[data-embed="p0-home"] .tbd{position:absolute;top:76px;left:0;right:0;bottom:62px;padding:0 12px 8px;display:flex;flex-direction:column;gap:8px;overflow:hidden}
+[data-embed="p0-home"] .tbd > *{flex-shrink:0}
+[data-embed="p0-home"] .tk{background:var(--card);border-radius:16px;padding:10px 12px;box-shadow:0 1px 2px var(--ph-sh),0 6px 16px var(--ph-sh)}
+[data-embed="p0-home"] .tk.sel{box-shadow:0 0 0 1.5px var(--sel),0 6px 16px var(--ph-sh)}
+[data-embed="p0-home"] .tk.brown{background:var(--base);color:var(--on-dark);box-shadow:none}
+[data-embed="p0-home"] .tk.brown .t1{color:var(--on-dark)}
+[data-embed="p0-home"] .tk.brown .ts{color:var(--on-dark-muted)}
+[data-embed="p0-home"] .t1{font-size:12px;font-weight:600;color:var(--ink);line-height:1.3}
+[data-embed="p0-home"] .t1.big{font-size:17px;font-weight:700;letter-spacing:-.01em}
+[data-embed="p0-home"] .ts{font-size:10.5px;color:var(--muted);line-height:1.35;margin-top:2px}
+[data-embed="p0-home"] .tsec{font-size:10.5px;font-weight:700;color:var(--muted);margin-top:2px;letter-spacing:.01em}
+[data-embed="p0-home"] .st{display:inline-block;font-size:8.5px;font-weight:600;border-radius:99px;padding:2px 7px;background:var(--tint);color:var(--ink);margin-inline-end:4px;vertical-align:1px;white-space:nowrap}
+[data-embed="p0-home"] .st.g{background:var(--ok-bg);color:var(--ok)}
+[data-embed="p0-home"] .st.m{background:var(--ph-bg);color:var(--muted)}
+[data-embed="p0-home"] .st.a{background:var(--ink);color:var(--on-dark)}
+[data-embed="p0-home"] .trow{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:6px 0;border-bottom:1px solid var(--line)}
+[data-embed="p0-home"] .trow:last-child{border-bottom:0}
+[data-embed="p0-home"] .trow .k{font-size:11px;color:var(--ink);line-height:1.3}
+[data-embed="p0-home"] .trow .v{font-size:10.5px;font-weight:600;color:var(--ink);white-space:nowrap}
+[data-embed="p0-home"] .trow .v.g{color:var(--ok)}
+[data-embed="p0-home"] .tbtn{display:block;text-align:center;background:var(--accent);color:var(--on-dark);border-radius:12px;padding:8px 10px;font-size:11.5px;font-weight:600}
+[data-embed="p0-home"] .tbtn.gh{background:var(--card);color:var(--ink);box-shadow:0 0 0 1px var(--line)}
+[data-embed="p0-home"] .tbtns{display:flex;gap:6px}
+[data-embed="p0-home"] .tbtns > *{flex:1}
+[data-embed="p0-home"] .tnote{font-size:9.5px;color:var(--muted);line-height:1.35;text-align:center}
+[data-embed="p0-home"] .tdot{display:flex;gap:7px;align-items:flex-start;padding:4px 0}
+[data-embed="p0-home"] .tdot::before{content:'';flex:0 0 6px;height:6px;border-radius:50%;background:var(--accent);margin-top:5px}
+[data-embed="p0-home"] .tdot.g::before{background:var(--ok)}
+[data-embed="p0-home"] .ttabs{position:absolute;bottom:0;left:0;right:0;height:62px;padding:7px 4px 0;background:var(--card);box-shadow:0 -1px 0 var(--line);display:grid;grid-template-columns:repeat(5,1fr);align-items:start;text-align:center;font-size:8.5px;font-weight:500;color:var(--muted)}
+[data-embed="p0-home"] .ttabs span{display:flex;flex-direction:column;align-items:center;gap:2px}
+[data-embed="p0-home"] .ttabs svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:block}
+[data-embed="p0-home"] .ttabs span.on{color:var(--ink);font-weight:700}
+[data-embed="p0-home"] .ttabs::after{content:'';position:absolute;bottom:6px;left:50%;width:72px;height:4px;margin-left:-36px;border-radius:99px;background:var(--ink)}
+[data-embed="p0-home"] .tl{position:relative;padding-inline-start:18px}
+[data-embed="p0-home"] .tl::before{content:'';position:absolute;inset-inline-start:4px;top:10px;bottom:10px;width:1.5px;background:var(--line)}
+[data-embed="p0-home"] .tl .ti{position:relative;padding:5px 0}
+[data-embed="p0-home"] .tl .ti::before{content:'';position:absolute;inset-inline-start:-18px;top:8px;width:10px;height:10px;border-radius:50%;background:var(--card);box-shadow:inset 0 0 0 1.5px var(--line)}
+[data-embed="p0-home"] .tl .ti.done::before{background:var(--ok);box-shadow:none}
+[data-embed="p0-home"] .tl .ti.now::before{background:var(--accent);box-shadow:0 0 0 3px var(--card)}
+[data-embed="p0-home"] .tl .ti.now{background:var(--card);border-radius:14px;padding:8px 10px;margin-inline-start:-8px;box-shadow:0 1px 2px var(--ph-sh),0 6px 16px var(--ph-sh)}
+[data-embed="p0-home"] .tl .ti.now::before{inset-inline-start:-10px}
+[data-embed="p0-home"] .tchat{display:flex;flex-direction:column;gap:7px}
+[data-embed="p0-home"] .tq{align-self:flex-end;background:var(--ink);color:var(--on-dark);font-size:11px;line-height:1.4;border-radius:16px 16px 16px 5px;padding:7px 10px;max-width:84%}
+[data-embed="p0-home"] .ta{align-self:flex-start;background:var(--card);color:var(--ink);font-size:11px;line-height:1.45;border-radius:16px 16px 5px 16px;padding:8px 10px;max-width:92%;box-shadow:0 1px 2px var(--ph-sh),0 6px 16px var(--ph-sh)}
+[data-embed="p0-home"] .ta .src{font-size:9px;color:var(--muted);margin-top:6px;border-top:1px solid var(--line);padding-top:5px;line-height:1.35}
+[data-embed="p0-home"] .tin{background:var(--card);border-radius:99px;padding:8px 12px;font-size:10.5px;color:var(--muted);box-shadow:0 0 0 1px var(--line);margin-top:auto}
+[data-embed="p0-home"] .tsum{padding:4px 0;border-bottom:1px solid var(--line)}
+[data-embed="p0-home"] .tsum:last-child{border-bottom:0}
+[data-embed="p0-home"] .tsum b{display:block;font-size:9.5px;font-weight:600;color:var(--muted)}
+[data-embed="p0-home"] .tsum span{display:block;font-size:11px;color:var(--ink);line-height:1.3}
+[data-embed="p0-home"] .tln{display:flex;justify-content:space-between;align-items:baseline;font-size:11px;padding:5px 0;border-bottom:1px solid var(--line)}
+[data-embed="p0-home"] .tln .v{font-weight:600;white-space:nowrap}
+[data-embed="p0-home"] .tln.tot{border-bottom:0;font-weight:700;color:var(--ink);font-size:12px}
+[data-embed="p0-home"] .tln.tot .v{font-weight:700}
+[data-embed="p0-home"] .tprod{display:flex;gap:10px;align-items:center}
+[data-embed="p0-home"] .tprod .im{flex:0 0 48px;height:48px;border-radius:12px;background:var(--ph-bg);display:grid;place-items:center}
+[data-embed="p0-home"] .tprod .im i{display:block;width:16px;height:26px;border-radius:5px 5px 3px 3px;background:var(--ink);box-shadow:0 -5px 0 -1px var(--accent)}
+/* EMBED p0-home END */
+/* EMBED p1-booking START */
+[data-embed="p1-booking"] .cs{background:var(--ph-bg);direction:rtl;font-family:Deck,'Rubik','Assistant',Arial,sans-serif;color:var(--ink);text-align:right}
+[data-embed="p1-booking"] .tsb{position:absolute;top:0;left:0;right:0;height:34px;padding:12px 20px 0;display:flex;justify-content:space-between;align-items:center;font-size:10px;font-weight:600;color:var(--ink)}
+[data-embed="p1-booking"] .tsb .demo{font-size:8.5px;font-weight:600;color:var(--muted);background:var(--card);border-radius:99px;padding:1px 7px;box-shadow:0 0 0 1px var(--line)}
+[data-embed="p1-booking"] .thd{position:absolute;top:38px;left:0;right:0;height:34px;padding:0 14px;display:flex;align-items:center;gap:7px}
+[data-embed="p1-booking"] .thd .bk{font-size:18px;color:var(--muted);line-height:1;width:9px}
+[data-embed="p1-booking"] .thd .tt{font-size:15px;font-weight:700;color:var(--ink);white-space:nowrap;letter-spacing:-.01em}
+[data-embed="p1-booking"] .thd .av{margin-inline-start:auto;width:28px;height:28px;border-radius:50%;overflow:hidden;flex:0 0 28px;box-shadow:0 0 0 2px var(--card),0 0 0 3px var(--line)}
+[data-embed="p1-booking"] .thd .av img,[data-embed="p1-booking"] .hero img{width:100%;height:100%;object-fit:cover;display:block}
+[data-embed="p1-booking"] .hero{display:flex;align-items:center;gap:10px}
+[data-embed="p1-booking"] .pets{display:flex;gap:6px;align-items:center}
+[data-embed="p1-booking"] .pets span{display:flex;align-items:center;gap:5px;font-size:10.5px;font-weight:600;color:var(--muted);background:var(--card);border-radius:99px;padding:3px 9px 3px 4px;box-shadow:0 0 0 1px var(--line);cursor:pointer}
+[data-embed="p1-booking"] .cs:not([data-pet="louis"]) .pets [data-pet="mika"],[data-embed="p1-booking"] .cs[data-pet="louis"] .pets [data-pet="louis"]{color:var(--on-dark);background:var(--ink);box-shadow:none}
+[data-embed="p1-booking"] .pv{display:flex;flex-direction:column;gap:8px}
+[data-embed="p1-booking"] .cs[data-pet="louis"] .pm,[data-embed="p1-booking"] .cs:not([data-pet="louis"]) .pl{display:none}
+[data-embed="p1-booking"] .pets span img{width:18px;height:18px;border-radius:50%;object-fit:cover;display:block}
+[data-embed="p1-booking"] .pets span.add{padding:3px 8px;font-size:12px}
+[data-embed="p1-booking"] .hero .ph{flex:0 0 46px;height:46px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 2px var(--on-dark-line)}
+[data-embed="p1-booking"] .opt{display:flex;flex-direction:column;gap:5px;margin-top:6px}
+[data-embed="p1-booking"] .opt span{display:block;text-align:center;border-radius:12px;padding:7px 8px;font-size:11px;font-weight:600;background:var(--card);box-shadow:0 0 0 1px var(--line);color:var(--ink)}
+[data-embed="p1-booking"] .opt span.pick{box-shadow:0 0 0 1.5px var(--sel);background:var(--tint)}
+[data-embed="p1-booking"] .ntf{background:var(--card);border-radius:16px;padding:10px 12px;box-shadow:0 1px 2px var(--ph-sh),0 10px 24px var(--ph-sh)}
+[data-embed="p1-booking"] .ntf .nh{display:flex;align-items:center;gap:6px;font-size:9.5px;color:var(--muted);margin-bottom:5px}
+[data-embed="p1-booking"] .ntf .nh i{width:16px;height:16px;border-radius:5px;background:var(--base);display:inline-block}
+[data-embed="p1-booking"] .tbd{position:absolute;top:76px;left:0;right:0;bottom:62px;padding:0 12px 8px;display:flex;flex-direction:column;gap:8px;overflow:hidden}
+[data-embed="p1-booking"] .tbd > *{flex-shrink:0}
+[data-embed="p1-booking"] .tk{background:var(--card);border-radius:16px;padding:10px 12px;box-shadow:0 1px 2px var(--ph-sh),0 6px 16px var(--ph-sh)}
+[data-embed="p1-booking"] .tk.sel{box-shadow:0 0 0 1.5px var(--sel),0 6px 16px var(--ph-sh)}
+[data-embed="p1-booking"] .tk.brown{background:var(--base);color:var(--on-dark);box-shadow:none}
+[data-embed="p1-booking"] .tk.brown .t1{color:var(--on-dark)}
+[data-embed="p1-booking"] .tk.brown .ts{color:var(--on-dark-muted)}
+[data-embed="p1-booking"] .t1{font-size:12px;font-weight:600;color:var(--ink);line-height:1.3}
+[data-embed="p1-booking"] .t1.big{font-size:17px;font-weight:700;letter-spacing:-.01em}
+[data-embed="p1-booking"] .ts{font-size:10.5px;color:var(--muted);line-height:1.35;margin-top:2px}
+[data-embed="p1-booking"] .tsec{font-size:10.5px;font-weight:700;color:var(--muted);margin-top:2px;letter-spacing:.01em}
+[data-embed="p1-booking"] .st{display:inline-block;font-size:8.5px;font-weight:600;border-radius:99px;padding:2px 7px;background:var(--tint);color:var(--ink);margin-inline-end:4px;vertical-align:1px;white-space:nowrap}
+[data-embed="p1-booking"] .st.g{background:var(--ok-bg);color:var(--ok)}
+[data-embed="p1-booking"] .st.m{background:var(--ph-bg);color:var(--muted)}
+[data-embed="p1-booking"] .st.a{background:var(--ink);color:var(--on-dark)}
+[data-embed="p1-booking"] .trow{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:6px 0;border-bottom:1px solid var(--line)}
+[data-embed="p1-booking"] .trow:last-child{border-bottom:0}
+[data-embed="p1-booking"] .trow .k{font-size:11px;color:var(--ink);line-height:1.3}
+[data-embed="p1-booking"] .trow .v{font-size:10.5px;font-weight:600;color:var(--ink);white-space:nowrap}
+[data-embed="p1-booking"] .trow .v.g{color:var(--ok)}
+[data-embed="p1-booking"] .tbtn{display:block;text-align:center;background:var(--accent);color:var(--on-dark);border-radius:12px;padding:8px 10px;font-size:11.5px;font-weight:600}
+[data-embed="p1-booking"] .tbtn.gh{background:var(--card);color:var(--ink);box-shadow:0 0 0 1px var(--line)}
+[data-embed="p1-booking"] .tbtns{display:flex;gap:6px}
+[data-embed="p1-booking"] .tbtns > *{flex:1}
+[data-embed="p1-booking"] .tnote{font-size:9.5px;color:var(--muted);line-height:1.35;text-align:center}
+[data-embed="p1-booking"] .tdot{display:flex;gap:7px;align-items:flex-start;padding:4px 0}
+[data-embed="p1-booking"] .tdot::before{content:'';flex:0 0 6px;height:6px;border-radius:50%;background:var(--accent);margin-top:5px}
+[data-embed="p1-booking"] .tdot.g::before{background:var(--ok)}
+[data-embed="p1-booking"] .ttabs{position:absolute;bottom:0;left:0;right:0;height:62px;padding:7px 4px 0;background:var(--card);box-shadow:0 -1px 0 var(--line);display:grid;grid-template-columns:repeat(5,1fr);align-items:start;text-align:center;font-size:8.5px;font-weight:500;color:var(--muted)}
+[data-embed="p1-booking"] .ttabs span{display:flex;flex-direction:column;align-items:center;gap:2px}
+[data-embed="p1-booking"] .ttabs svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:block}
+[data-embed="p1-booking"] .ttabs span.on{color:var(--ink);font-weight:700}
+[data-embed="p1-booking"] .ttabs::after{content:'';position:absolute;bottom:6px;left:50%;width:72px;height:4px;margin-left:-36px;border-radius:99px;background:var(--ink)}
+[data-embed="p1-booking"] .tl{position:relative;padding-inline-start:18px}
+[data-embed="p1-booking"] .tl::before{content:'';position:absolute;inset-inline-start:4px;top:10px;bottom:10px;width:1.5px;background:var(--line)}
+[data-embed="p1-booking"] .tl .ti{position:relative;padding:5px 0}
+[data-embed="p1-booking"] .tl .ti::before{content:'';position:absolute;inset-inline-start:-18px;top:8px;width:10px;height:10px;border-radius:50%;background:var(--card);box-shadow:inset 0 0 0 1.5px var(--line)}
+[data-embed="p1-booking"] .tl .ti.done::before{background:var(--ok);box-shadow:none}
+[data-embed="p1-booking"] .tl .ti.now::before{background:var(--accent);box-shadow:0 0 0 3px var(--card)}
+[data-embed="p1-booking"] .tl .ti.now{background:var(--card);border-radius:14px;padding:8px 10px;margin-inline-start:-8px;box-shadow:0 1px 2px var(--ph-sh),0 6px 16px var(--ph-sh)}
+[data-embed="p1-booking"] .tl .ti.now::before{inset-inline-start:-10px}
+[data-embed="p1-booking"] .tchat{display:flex;flex-direction:column;gap:7px}
+[data-embed="p1-booking"] .tq{align-self:flex-end;background:var(--ink);color:var(--on-dark);font-size:11px;line-height:1.4;border-radius:16px 16px 16px 5px;padding:7px 10px;max-width:84%}
+[data-embed="p1-booking"] .ta{align-self:flex-start;background:var(--card);color:var(--ink);font-size:11px;line-height:1.45;border-radius:16px 16px 5px 16px;padding:8px 10px;max-width:92%;box-shadow:0 1px 2px var(--ph-sh),0 6px 16px var(--ph-sh)}
+[data-embed="p1-booking"] .ta .src{font-size:9px;color:var(--muted);margin-top:6px;border-top:1px solid var(--line);padding-top:5px;line-height:1.35}
+[data-embed="p1-booking"] .tin{background:var(--card);border-radius:99px;padding:8px 12px;font-size:10.5px;color:var(--muted);box-shadow:0 0 0 1px var(--line);margin-top:auto}
+[data-embed="p1-booking"] .tsum{padding:4px 0;border-bottom:1px solid var(--line)}
+[data-embed="p1-booking"] .tsum:last-child{border-bottom:0}
+[data-embed="p1-booking"] .tsum b{display:block;font-size:9.5px;font-weight:600;color:var(--muted)}
+[data-embed="p1-booking"] .tsum span{display:block;font-size:11px;color:var(--ink);line-height:1.3}
+[data-embed="p1-booking"] .tln{display:flex;justify-content:space-between;align-items:baseline;font-size:11px;padding:5px 0;border-bottom:1px solid var(--line)}
+[data-embed="p1-booking"] .tln .v{font-weight:600;white-space:nowrap}
+[data-embed="p1-booking"] .tln.tot{border-bottom:0;font-weight:700;color:var(--ink);font-size:12px}
+[data-embed="p1-booking"] .tln.tot .v{font-weight:700}
+[data-embed="p1-booking"] .tprod{display:flex;gap:10px;align-items:center}
+[data-embed="p1-booking"] .tprod .im{flex:0 0 48px;height:48px;border-radius:12px;background:var(--ph-bg);display:grid;place-items:center}
+[data-embed="p1-booking"] .tprod .im i{display:block;width:16px;height:26px;border-radius:5px 5px 3px 3px;background:var(--ink);box-shadow:0 -5px 0 -1px var(--accent)}
+/* EMBED p1-booking END */
+/* EMBED p2-membership START */
+[data-embed="p2-membership"] .cs{background:var(--ph-bg);direction:rtl;font-family:Deck,'Rubik','Assistant',Arial,sans-serif;color:var(--ink);text-align:right}
+[data-embed="p2-membership"] .tsb{position:absolute;top:0;left:0;right:0;height:34px;padding:12px 20px 0;display:flex;justify-content:space-between;align-items:center;font-size:10px;font-weight:600;color:var(--ink)}
+[data-embed="p2-membership"] .tsb .demo{font-size:8.5px;font-weight:600;color:var(--muted);background:var(--card);border-radius:99px;padding:1px 7px;box-shadow:0 0 0 1px var(--line)}
+[data-embed="p2-membership"] .thd{position:absolute;top:38px;left:0;right:0;height:34px;padding:0 14px;display:flex;align-items:center;gap:7px}
+[data-embed="p2-membership"] .thd .bk{font-size:18px;color:var(--muted);line-height:1;width:9px}
+[data-embed="p2-membership"] .thd .tt{font-size:15px;font-weight:700;color:var(--ink);white-space:nowrap;letter-spacing:-.01em}
+[data-embed="p2-membership"] .thd .av{margin-inline-start:auto;width:28px;height:28px;border-radius:50%;overflow:hidden;flex:0 0 28px;box-shadow:0 0 0 2px var(--card),0 0 0 3px var(--line)}
+[data-embed="p2-membership"] .thd .av img,[data-embed="p2-membership"] .hero img{width:100%;height:100%;object-fit:cover;display:block}
+[data-embed="p2-membership"] .hero{display:flex;align-items:center;gap:10px}
+[data-embed="p2-membership"] .pets{display:flex;gap:6px;align-items:center}
+[data-embed="p2-membership"] .pets span{display:flex;align-items:center;gap:5px;font-size:10.5px;font-weight:600;color:var(--muted);background:var(--card);border-radius:99px;padding:3px 9px 3px 4px;box-shadow:0 0 0 1px var(--line);cursor:pointer}
+[data-embed="p2-membership"] .cs:not([data-pet="louis"]) .pets [data-pet="mika"],[data-embed="p2-membership"] .cs[data-pet="louis"] .pets [data-pet="louis"]{color:var(--on-dark);background:var(--ink);box-shadow:none}
+[data-embed="p2-membership"] .pv{display:flex;flex-direction:column;gap:8px}
+[data-embed="p2-membership"] .cs[data-pet="louis"] .pm,[data-embed="p2-membership"] .cs:not([data-pet="louis"]) .pl{display:none}
+[data-embed="p2-membership"] .pets span img{width:18px;height:18px;border-radius:50%;object-fit:cover;display:block}
+[data-embed="p2-membership"] .pets span.add{padding:3px 8px;font-size:12px}
+[data-embed="p2-membership"] .hero .ph{flex:0 0 46px;height:46px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 2px var(--on-dark-line)}
+[data-embed="p2-membership"] .opt{display:flex;flex-direction:column;gap:5px;margin-top:6px}
+[data-embed="p2-membership"] .opt span{display:block;text-align:center;border-radius:12px;padding:7px 8px;font-size:11px;font-weight:600;background:var(--card);box-shadow:0 0 0 1px var(--line);color:var(--ink)}
+[data-embed="p2-membership"] .opt span.pick{box-shadow:0 0 0 1.5px var(--sel);background:var(--tint)}
+[data-embed="p2-membership"] .ntf{background:var(--card);border-radius:16px;padding:10px 12px;box-shadow:0 1px 2px var(--ph-sh),0 10px 24px var(--ph-sh)}
+[data-embed="p2-membership"] .ntf .nh{display:flex;align-items:center;gap:6px;font-size:9.5px;color:var(--muted);margin-bottom:5px}
+[data-embed="p2-membership"] .ntf .nh i{width:16px;height:16px;border-radius:5px;background:var(--base);display:inline-block}
+[data-embed="p2-membership"] .tbd{position:absolute;top:76px;left:0;right:0;bottom:62px;padding:0 12px 8px;display:flex;flex-direction:column;gap:8px;overflow:hidden}
+[data-embed="p2-membership"] .tbd > *{flex-shrink:0}
+[data-embed="p2-membership"] .tk{background:var(--card);border-radius:16px;padding:10px 12px;box-shadow:0 1px 2px var(--ph-sh),0 6px 16px var(--ph-sh)}
+[data-embed="p2-membership"] .tk.sel{box-shadow:0 0 0 1.5px var(--sel),0 6px 16px var(--ph-sh)}
+[data-embed="p2-membership"] .tk.brown{background:var(--base);color:var(--on-dark);box-shadow:none}
+[data-embed="p2-membership"] .tk.brown .t1{color:var(--on-dark)}
+[data-embed="p2-membership"] .tk.brown .ts{color:var(--on-dark-muted)}
+[data-embed="p2-membership"] .t1{font-size:12px;font-weight:600;color:var(--ink);line-height:1.3}
+[data-embed="p2-membership"] .t1.big{font-size:17px;font-weight:700;letter-spacing:-.01em}
+[data-embed="p2-membership"] .ts{font-size:10.5px;color:var(--muted);line-height:1.35;margin-top:2px}
+[data-embed="p2-membership"] .tsec{font-size:10.5px;font-weight:700;color:var(--muted);margin-top:2px;letter-spacing:.01em}
+[data-embed="p2-membership"] .st{display:inline-block;font-size:8.5px;font-weight:600;border-radius:99px;padding:2px 7px;background:var(--tint);color:var(--ink);margin-inline-end:4px;vertical-align:1px;white-space:nowrap}
+[data-embed="p2-membership"] .st.g{background:var(--ok-bg);color:var(--ok)}
+[data-embed="p2-membership"] .st.m{background:var(--ph-bg);color:var(--muted)}
+[data-embed="p2-membership"] .st.a{background:var(--ink);color:var(--on-dark)}
+[data-embed="p2-membership"] .trow{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:6px 0;border-bottom:1px solid var(--line)}
+[data-embed="p2-membership"] .trow:last-child{border-bottom:0}
+[data-embed="p2-membership"] .trow .k{font-size:11px;color:var(--ink);line-height:1.3}
+[data-embed="p2-membership"] .trow .v{font-size:10.5px;font-weight:600;color:var(--ink);white-space:nowrap}
+[data-embed="p2-membership"] .trow .v.g{color:var(--ok)}
+[data-embed="p2-membership"] .tbtn{display:block;text-align:center;background:var(--accent);color:var(--on-dark);border-radius:12px;padding:8px 10px;font-size:11.5px;font-weight:600}
+[data-embed="p2-membership"] .tbtn.gh{background:var(--card);color:var(--ink);box-shadow:0 0 0 1px var(--line)}
+[data-embed="p2-membership"] .tbtns{display:flex;gap:6px}
+[data-embed="p2-membership"] .tbtns > *{flex:1}
+[data-embed="p2-membership"] .tnote{font-size:9.5px;color:var(--muted);line-height:1.35;text-align:center}
+[data-embed="p2-membership"] .tdot{display:flex;gap:7px;align-items:flex-start;padding:4px 0}
+[data-embed="p2-membership"] .tdot::before{content:'';flex:0 0 6px;height:6px;border-radius:50%;background:var(--accent);margin-top:5px}
+[data-embed="p2-membership"] .tdot.g::before{background:var(--ok)}
+[data-embed="p2-membership"] .ttabs{position:absolute;bottom:0;left:0;right:0;height:62px;padding:7px 4px 0;background:var(--card);box-shadow:0 -1px 0 var(--line);display:grid;grid-template-columns:repeat(5,1fr);align-items:start;text-align:center;font-size:8.5px;font-weight:500;color:var(--muted)}
+[data-embed="p2-membership"] .ttabs span{display:flex;flex-direction:column;align-items:center;gap:2px}
+[data-embed="p2-membership"] .ttabs svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:block}
+[data-embed="p2-membership"] .ttabs span.on{color:var(--ink);font-weight:700}
+[data-embed="p2-membership"] .ttabs::after{content:'';position:absolute;bottom:6px;left:50%;width:72px;height:4px;margin-left:-36px;border-radius:99px;background:var(--ink)}
+[data-embed="p2-membership"] .tl{position:relative;padding-inline-start:18px}
+[data-embed="p2-membership"] .tl::before{content:'';position:absolute;inset-inline-start:4px;top:10px;bottom:10px;width:1.5px;background:var(--line)}
+[data-embed="p2-membership"] .tl .ti{position:relative;padding:5px 0}
+[data-embed="p2-membership"] .tl .ti::before{content:'';position:absolute;inset-inline-start:-18px;top:8px;width:10px;height:10px;border-radius:50%;background:var(--card);box-shadow:inset 0 0 0 1.5px var(--line)}
+[data-embed="p2-membership"] .tl .ti.done::before{background:var(--ok);box-shadow:none}
+[data-embed="p2-membership"] .tl .ti.now::before{background:var(--accent);box-shadow:0 0 0 3px var(--card)}
+[data-embed="p2-membership"] .tl .ti.now{background:var(--card);border-radius:14px;padding:8px 10px;margin-inline-start:-8px;box-shadow:0 1px 2px var(--ph-sh),0 6px 16px var(--ph-sh)}
+[data-embed="p2-membership"] .tl .ti.now::before{inset-inline-start:-10px}
+[data-embed="p2-membership"] .tchat{display:flex;flex-direction:column;gap:7px}
+[data-embed="p2-membership"] .tq{align-self:flex-end;background:var(--ink);color:var(--on-dark);font-size:11px;line-height:1.4;border-radius:16px 16px 16px 5px;padding:7px 10px;max-width:84%}
+[data-embed="p2-membership"] .ta{align-self:flex-start;background:var(--card);color:var(--ink);font-size:11px;line-height:1.45;border-radius:16px 16px 5px 16px;padding:8px 10px;max-width:92%;box-shadow:0 1px 2px var(--ph-sh),0 6px 16px var(--ph-sh)}
+[data-embed="p2-membership"] .ta .src{font-size:9px;color:var(--muted);margin-top:6px;border-top:1px solid var(--line);padding-top:5px;line-height:1.35}
+[data-embed="p2-membership"] .tin{background:var(--card);border-radius:99px;padding:8px 12px;font-size:10.5px;color:var(--muted);box-shadow:0 0 0 1px var(--line);margin-top:auto}
+[data-embed="p2-membership"] .tsum{padding:4px 0;border-bottom:1px solid var(--line)}
+[data-embed="p2-membership"] .tsum:last-child{border-bottom:0}
+[data-embed="p2-membership"] .tsum b{display:block;font-size:9.5px;font-weight:600;color:var(--muted)}
+[data-embed="p2-membership"] .tsum span{display:block;font-size:11px;color:var(--ink);line-height:1.3}
+[data-embed="p2-membership"] .tln{display:flex;justify-content:space-between;align-items:baseline;font-size:11px;padding:5px 0;border-bottom:1px solid var(--line)}
+[data-embed="p2-membership"] .tln .v{font-weight:600;white-space:nowrap}
+[data-embed="p2-membership"] .tln.tot{border-bottom:0;font-weight:700;color:var(--ink);font-size:12px}
+[data-embed="p2-membership"] .tln.tot .v{font-weight:700}
+[data-embed="p2-membership"] .tprod{display:flex;gap:10px;align-items:center}
+[data-embed="p2-membership"] .tprod .im{flex:0 0 48px;height:48px;border-radius:12px;background:var(--ph-bg);display:grid;place-items:center}
+[data-embed="p2-membership"] .tprod .im i{display:block;width:16px;height:26px;border-radius:5px 5px 3px 3px;background:var(--ink);box-shadow:0 -5px 0 -1px var(--accent)}
+/* EMBED p2-membership END */
+/* EMBED p3-after-visit START */
+[data-embed="p3-after-visit"] .cs{background:var(--ph-bg);direction:rtl;font-family:Deck,'Rubik','Assistant',Arial,sans-serif;color:var(--ink);text-align:right}
+[data-embed="p3-after-visit"] .tsb{position:absolute;top:0;left:0;right:0;height:34px;padding:12px 20px 0;display:flex;justify-content:space-between;align-items:center;font-size:10px;font-weight:600;color:var(--ink)}
+[data-embed="p3-after-visit"] .tsb .demo{font-size:8.5px;font-weight:600;color:var(--muted);background:var(--card);border-radius:99px;padding:1px 7px;box-shadow:0 0 0 1px var(--line)}
+[data-embed="p3-after-visit"] .thd{position:absolute;top:38px;left:0;right:0;height:34px;padding:0 14px;display:flex;align-items:center;gap:7px}
+[data-embed="p3-after-visit"] .thd .bk{font-size:18px;color:var(--muted);line-height:1;width:9px}
+[data-embed="p3-after-visit"] .thd .tt{font-size:15px;font-weight:700;color:var(--ink);white-space:nowrap;letter-spacing:-.01em}
+[data-embed="p3-after-visit"] .thd .av{margin-inline-start:auto;width:28px;height:28px;border-radius:50%;overflow:hidden;flex:0 0 28px;box-shadow:0 0 0 2px var(--card),0 0 0 3px var(--line)}
+[data-embed="p3-after-visit"] .thd .av img,[data-embed="p3-after-visit"] .hero img{width:100%;height:100%;object-fit:cover;display:block}
+[data-embed="p3-after-visit"] .hero{display:flex;align-items:center;gap:10px}
+[data-embed="p3-after-visit"] .pets{display:flex;gap:6px;align-items:center}
+[data-embed="p3-after-visit"] .pets span{display:flex;align-items:center;gap:5px;font-size:10.5px;font-weight:600;color:var(--muted);background:var(--card);border-radius:99px;padding:3px 9px 3px 4px;box-shadow:0 0 0 1px var(--line);cursor:pointer}
+[data-embed="p3-after-visit"] .cs:not([data-pet="louis"]) .pets [data-pet="mika"],[data-embed="p3-after-visit"] .cs[data-pet="louis"] .pets [data-pet="louis"]{color:var(--on-dark);background:var(--ink);box-shadow:none}
+[data-embed="p3-after-visit"] .pv{display:flex;flex-direction:column;gap:8px}
+[data-embed="p3-after-visit"] .cs[data-pet="louis"] .pm,[data-embed="p3-after-visit"] .cs:not([data-pet="louis"]) .pl{display:none}
+[data-embed="p3-after-visit"] .pets span img{width:18px;height:18px;border-radius:50%;object-fit:cover;display:block}
+[data-embed="p3-after-visit"] .pets span.add{padding:3px 8px;font-size:12px}
+[data-embed="p3-after-visit"] .hero .ph{flex:0 0 46px;height:46px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 2px var(--on-dark-line)}
+[data-embed="p3-after-visit"] .opt{display:flex;flex-direction:column;gap:5px;margin-top:6px}
+[data-embed="p3-after-visit"] .opt span{display:block;text-align:center;border-radius:12px;padding:7px 8px;font-size:11px;font-weight:600;background:var(--card);box-shadow:0 0 0 1px var(--line);color:var(--ink)}
+[data-embed="p3-after-visit"] .opt span.pick{box-shadow:0 0 0 1.5px var(--sel);background:var(--tint)}
+[data-embed="p3-after-visit"] .ntf{background:var(--card);border-radius:16px;padding:10px 12px;box-shadow:0 1px 2px var(--ph-sh),0 10px 24px var(--ph-sh)}
+[data-embed="p3-after-visit"] .ntf .nh{display:flex;align-items:center;gap:6px;font-size:9.5px;color:var(--muted);margin-bottom:5px}
+[data-embed="p3-after-visit"] .ntf .nh i{width:16px;height:16px;border-radius:5px;background:var(--base);display:inline-block}
+[data-embed="p3-after-visit"] .tbd{position:absolute;top:76px;left:0;right:0;bottom:62px;padding:0 12px 8px;display:flex;flex-direction:column;gap:8px;overflow:hidden}
+[data-embed="p3-after-visit"] .tbd > *{flex-shrink:0}
+[data-embed="p3-after-visit"] .tk{background:var(--card);border-radius:16px;padding:10px 12px;box-shadow:0 1px 2px var(--ph-sh),0 6px 16px var(--ph-sh)}
+[data-embed="p3-after-visit"] .tk.sel{box-shadow:0 0 0 1.5px var(--sel),0 6px 16px var(--ph-sh)}
+[data-embed="p3-after-visit"] .tk.brown{background:var(--base);color:var(--on-dark);box-shadow:none}
+[data-embed="p3-after-visit"] .tk.brown .t1{color:var(--on-dark)}
+[data-embed="p3-after-visit"] .tk.brown .ts{color:var(--on-dark-muted)}
+[data-embed="p3-after-visit"] .t1{font-size:12px;font-weight:600;color:var(--ink);line-height:1.3}
+[data-embed="p3-after-visit"] .t1.big{font-size:17px;font-weight:700;letter-spacing:-.01em}
+[data-embed="p3-after-visit"] .ts{font-size:10.5px;color:var(--muted);line-height:1.35;margin-top:2px}
+[data-embed="p3-after-visit"] .tsec{font-size:10.5px;font-weight:700;color:var(--muted);margin-top:2px;letter-spacing:.01em}
+[data-embed="p3-after-visit"] .st{display:inline-block;font-size:8.5px;font-weight:600;border-radius:99px;padding:2px 7px;background:var(--tint);color:var(--ink);margin-inline-end:4px;vertical-align:1px;white-space:nowrap}
+[data-embed="p3-after-visit"] .st.g{background:var(--ok-bg);color:var(--ok)}
+[data-embed="p3-after-visit"] .st.m{background:var(--ph-bg);color:var(--muted)}
+[data-embed="p3-after-visit"] .st.a{background:var(--ink);color:var(--on-dark)}
+[data-embed="p3-after-visit"] .trow{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:6px 0;border-bottom:1px solid var(--line)}
+[data-embed="p3-after-visit"] .trow:last-child{border-bottom:0}
+[data-embed="p3-after-visit"] .trow .k{font-size:11px;color:var(--ink);line-height:1.3}
+[data-embed="p3-after-visit"] .trow .v{font-size:10.5px;font-weight:600;color:var(--ink);white-space:nowrap}
+[data-embed="p3-after-visit"] .trow .v.g{color:var(--ok)}
+[data-embed="p3-after-visit"] .tbtn{display:block;text-align:center;background:var(--accent);color:var(--on-dark);border-radius:12px;padding:8px 10px;font-size:11.5px;font-weight:600}
+[data-embed="p3-after-visit"] .tbtn.gh{background:var(--card);color:var(--ink);box-shadow:0 0 0 1px var(--line)}
+[data-embed="p3-after-visit"] .tbtns{display:flex;gap:6px}
+[data-embed="p3-after-visit"] .tbtns > *{flex:1}
+[data-embed="p3-after-visit"] .tnote{font-size:9.5px;color:var(--muted);line-height:1.35;text-align:center}
+[data-embed="p3-after-visit"] .tdot{display:flex;gap:7px;align-items:flex-start;padding:4px 0}
+[data-embed="p3-after-visit"] .tdot::before{content:'';flex:0 0 6px;height:6px;border-radius:50%;background:var(--accent);margin-top:5px}
+[data-embed="p3-after-visit"] .tdot.g::before{background:var(--ok)}
+[data-embed="p3-after-visit"] .ttabs{position:absolute;bottom:0;left:0;right:0;height:62px;padding:7px 4px 0;background:var(--card);box-shadow:0 -1px 0 var(--line);display:grid;grid-template-columns:repeat(5,1fr);align-items:start;text-align:center;font-size:8.5px;font-weight:500;color:var(--muted)}
+[data-embed="p3-after-visit"] .ttabs span{display:flex;flex-direction:column;align-items:center;gap:2px}
+[data-embed="p3-after-visit"] .ttabs svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:block}
+[data-embed="p3-after-visit"] .ttabs span.on{color:var(--ink);font-weight:700}
+[data-embed="p3-after-visit"] .ttabs::after{content:'';position:absolute;bottom:6px;left:50%;width:72px;height:4px;margin-left:-36px;border-radius:99px;background:var(--ink)}
+[data-embed="p3-after-visit"] .tl{position:relative;padding-inline-start:18px}
+[data-embed="p3-after-visit"] .tl::before{content:'';position:absolute;inset-inline-start:4px;top:10px;bottom:10px;width:1.5px;background:var(--line)}
+[data-embed="p3-after-visit"] .tl .ti{position:relative;padding:5px 0}
+[data-embed="p3-after-visit"] .tl .ti::before{content:'';position:absolute;inset-inline-start:-18px;top:8px;width:10px;height:10px;border-radius:50%;background:var(--card);box-shadow:inset 0 0 0 1.5px var(--line)}
+[data-embed="p3-after-visit"] .tl .ti.done::before{background:var(--ok);box-shadow:none}
+[data-embed="p3-after-visit"] .tl .ti.now::before{background:var(--accent);box-shadow:0 0 0 3px var(--card)}
+[data-embed="p3-after-visit"] .tl .ti.now{background:var(--card);border-radius:14px;padding:8px 10px;margin-inline-start:-8px;box-shadow:0 1px 2px var(--ph-sh),0 6px 16px var(--ph-sh)}
+[data-embed="p3-after-visit"] .tl .ti.now::before{inset-inline-start:-10px}
+[data-embed="p3-after-visit"] .tchat{display:flex;flex-direction:column;gap:7px}
+[data-embed="p3-after-visit"] .tq{align-self:flex-end;background:var(--ink);color:var(--on-dark);font-size:11px;line-height:1.4;border-radius:16px 16px 16px 5px;padding:7px 10px;max-width:84%}
+[data-embed="p3-after-visit"] .ta{align-self:flex-start;background:var(--card);color:var(--ink);font-size:11px;line-height:1.45;border-radius:16px 16px 5px 16px;padding:8px 10px;max-width:92%;box-shadow:0 1px 2px var(--ph-sh),0 6px 16px var(--ph-sh)}
+[data-embed="p3-after-visit"] .ta .src{font-size:9px;color:var(--muted);margin-top:6px;border-top:1px solid var(--line);padding-top:5px;line-height:1.35}
+[data-embed="p3-after-visit"] .tin{background:var(--card);border-radius:99px;padding:8px 12px;font-size:10.5px;color:var(--muted);box-shadow:0 0 0 1px var(--line);margin-top:auto}
+[data-embed="p3-after-visit"] .tsum{padding:4px 0;border-bottom:1px solid var(--line)}
+[data-embed="p3-after-visit"] .tsum:last-child{border-bottom:0}
+[data-embed="p3-after-visit"] .tsum b{display:block;font-size:9.5px;font-weight:600;color:var(--muted)}
+[data-embed="p3-after-visit"] .tsum span{display:block;font-size:11px;color:var(--ink);line-height:1.3}
+[data-embed="p3-after-visit"] .tln{display:flex;justify-content:space-between;align-items:baseline;font-size:11px;padding:5px 0;border-bottom:1px solid var(--line)}
+[data-embed="p3-after-visit"] .tln .v{font-weight:600;white-space:nowrap}
+[data-embed="p3-after-visit"] .tln.tot{border-bottom:0;font-weight:700;color:var(--ink);font-size:12px}
+[data-embed="p3-after-visit"] .tln.tot .v{font-weight:700}
+[data-embed="p3-after-visit"] .tprod{display:flex;gap:10px;align-items:center}
+[data-embed="p3-after-visit"] .tprod .im{flex:0 0 48px;height:48px;border-radius:12px;background:var(--ph-bg);display:grid;place-items:center}
+[data-embed="p3-after-visit"] .tprod .im i{display:block;width:16px;height:26px;border-radius:5px 5px 3px 3px;background:var(--ink);box-shadow:0 -5px 0 -1px var(--accent)}
+/* EMBED p3-after-visit END */
+</style>
+<meta name="deck-build" content="6d9866a4bd">
+</head>
+<body>
+
+<div id="hint">← → שקפים ושלבי הדמו · G רשימת השקפים · F מסך מלא</div>
+<div id="rotnote">לצפייה נוחה, סובבו את המכשיר לרוחב</div>
+
+<div id="viewport"><div id="stage">
+
+  <!-- ══ 1 · open · Cover. Their logo, one line that is the organizing idea.
+       Built from references/cover-slide.md - the scrim is LOCKED, verbatim, in .covshade.
+       Logo heights: equal visual area (optical weight), measured, not equal pixel height. ══ -->
+  <section class="slide on cov dark" data-title="פתיחה" data-act="open">
+    <div class="covart"><img src="assets/cover.jpg" alt="וטרינרית מטדי וטס עם כלב באסט, בגובה הרצפה במרפאה"></div>
+    <div class="covshade"></div>
+    <div class="covpanel">
+      <div class="covlogos">
+        <img src="assets/target-logo-white.svg" alt="טדי וטס" class="lg-them">
+        <span class="rule"></span>
+        <img src="assets/200apps-logo.png" alt="200Apps" class="lg-us">
+      </div>
+      <div>
+        <div class="coveb">הצעה מ־200Apps לטדי וטס</div>
+        <h1>הביקור נגמר.<br>הקשר ממשיך.</h1>
+        <div class="covlead">אפליקציה למנויי טדי, שמביאה את השירות האישי שלכם אל המשפחה גם בין הביקורים.</div>
+      </div>
+      <div class="covmeta"><span>25.10.2026</span></div>
+      <div class="covrot">לצפייה במצגת המלאה, סובבו את המכשיר לרוחב</div>
+    </div>
+  </section>
+
+  <!-- ══ 2 · open · The app first: Mika's home screen large, their plans page small ══ -->
+  <section class="slide s2" data-act="open" data-title="האפליקציה קודם">
+    <div class="pad">
+      <div class="two2">
+        <div>
+          <h2>כל מה שהמנוי נותן.<br>ברגע שצריכים אותו.</h2>
+          <div class="lead">מה הטיפול הבא, מה כלול במנוי ואיך קובעים תור. אנחנו מציעים לחבר את כל אלה לחוויה אחת, אישית ופשוטה.</div>
+          <div class="today">
+            <div class="mini"><img src="assets/site/plans-mobile-top.png" alt="עמוד המנויים של טדי וטס"></div>
+            <div class="tl2"><b>תוכניות המנויים של טדי</b></div>
+          </div>
+        </div>
+        <div class="stage2">
+          <div class="dev">
+<!-- EMBED p0-home START --><div data-embed="p0-home"><div class="cs on" data-cs="0"><div class="tsb"><span>9:41</span><span class="demo">המחשה</span></div><div class="thd"><span class="bk">›</span><span class="tt">בוקר טוב</span><span class="av"><img class="pm" src="assets/mika.jpg" alt="מיקה"><img class="pl" src="assets/louis.jpg" alt="לואי"></span></div><div class="tbd"><div class="pets"><span data-pet="mika"><img src="assets/mika.jpg" alt="מיקה">מיקה</span><span data-pet="louis"><img src="assets/louis.jpg" alt="לואי">לואי</span><span class="add">+</span></div><div class="pv pm"><div class="tk brown hero"><span class="ph"><img src="assets/mika.jpg" alt="מיקה"></span><div><div class="t1 big">מיקה</div><div class="ts">בת 3 · טדי פלוס</div></div></div>
+<div class="tsec">הצעד הבא</div>
+<div class="tk sel"><div class="t1">בדיקת שיניים</div>
+ <div class="ts"><span class="st g">כלולה בטדי פלוס</span></div>
+ <div class="tbtns" style="margin-top:7px"><span class="tbtn">תיאום תור</span></div></div>
+<div class="tk"><div class="trow"><span class="k">בדיקת רופא</span><span class="v">3 בדיקות השנה</span></div></div>
+</div><div class="pv pl"><div class="tk brown hero"><span class="ph"><img src="assets/louis.jpg" alt="לואי"></span><div><div class="t1 big">לואי</div><div class="ts">חתול, בן 5</div></div></div><div class="tsec">הצעד הבא</div><div class="tk sel"><div class="t1">חיסון שנתי</div><div class="ts">מגיע בדצמבר 2026</div><div class="tbtns" style="margin-top:7px"><span class="tbtn">תיאום תור</span></div></div></div></div><div class="ttabs"><span class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7V20a1 1 0 0 1-1 1H15v-6H9v6H4.5a1 1 0 0 1-1-1z"/></svg>בית</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>תורים</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 14.5h4"/></svg>המנוי</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.1A8 8 0 1 1 20 12z"/></svg>שאלות</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12.5H6z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>חנות</span></div></div></div><!-- EMBED p0-home END --><div class="notch"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 3 · us · ours · Who we are, short and early (Hemi 23.10) ══ -->
+  <section class="slide ours hi" data-act="us" data-title="נעים להכיר">
+    <div class="pad">
+      <h2>נעים להכיר, אנחנו 200Apps</h2>
+      <div class="lead">בית תוכנה ירושלמי שמלווה חברות בתכנון, בעיצוב ובפיתוח של מוצרים דיגיטליים.</div>
+      <div class="big2">
+        <div><div class="n">12</div><div class="l">שנות ניסיון</div></div>
+        <div><div class="n"><bdi dir="ltr">300+</bdi></div><div class="l">מוצרים דיגיטליים</div></div>
+        <div class="w">אנחנו מלווים אתכם מהגדרת המוצר ועד להפעלה במרפאות: מתכננים את חוויית השימוש, מחברים למערכות הקיימות וממשיכים לפתח ולתחזק אחרי ההשקה.</div>
+      </div>
+      <div class="people">
+        <div><b>חמי בן לביא</b>Head of Product Operations</div>
+        <div><b>אלכס יעקובוב</b>CTO</div>
+      </div>
+      <div class="logos16">
+        <img src="assets/clients/c09.png" alt="Express City Wash">
+        <img src="assets/clients/c03.png" alt="אמי״ת">
+        <img src="assets/clients/c08.png" alt="הסוכנות היהודית">
+        <img src="assets/clients/c12.png" alt="Toys R Us">
+        <img src="assets/clients/c11.png" alt="Brainsway">
+        <img src="assets/clients/c14.png" alt="Li &amp; Fung">
+        <img src="assets/clients/c18-white.png" alt="גן החיות התנ״כי" class="asis">
+        <img src="assets/clients/c10.png" alt="המכללה האקדמית בית ברל">
+        <img src="assets/clients/c02.png" alt="Inpris">
+        <img src="assets/clients/c04.png" alt="עוגן">
+        <img src="assets/clients/c05.png" alt="Momentum">
+        <img src="assets/clients/c06.png" alt="כינור לב">
+        <img src="assets/clients/c07.png" alt="ירושליים">
+        <img src="assets/clients/c17.png" alt="קידום">
+        <img src="assets/clients/c16.png" alt="zzapp">
+        <img src="assets/clients/c15.png" alt="Pictar">
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 4 · them · What already exists, as big numbers ══ -->
+  <section class="slide s4" data-act="them" data-title="הבסיס כבר קיים">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">01</span> מה כבר בניתם</div>
+      <h2>הבסיס כבר קיים אצל טדי</h2>
+      <div class="lead">רשת מרפאות, מנוי ותיק רפואי משותף. הזדמנות לחוויה דיגיטלית שמחברת ביניהם.</div>
+      <div class="nums n4">
+        <div><div class="t"><span class="v">6</span> מרפאות</div><div class="l">המנוי מלווה את המשפחה בכל הרשת</div></div>
+        <div><div class="t">תיק רפואי משותף</div><div class="l">המשכיות בטיפול בין המרפאות</div></div>
+        <div><div class="t"><span class="v">3</span> מסלולים לכלבים</div><div class="l">זכויות והטבות בהתאם למנוי</div></div>
+        <div><div class="t">זמינות לפי המסלול</div><div class="l">תורים רגילים וחיסונים בתוך 24 שעות בפלוס, ומהיום להיום בפלטינום</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 6 · world · Why now: a network that grows, the bond stays personal. Atmosphere photo
+       (Hemi 24.10), not Teddy staff or members. The photo sits 120px left of the slide so the
+       wall leaves room for the text; the right strip is the wall's own colours, faded in. ══ -->
+  <section class="slide s6" data-act="world" data-title="לגדול כרשת">
+    <div class="ph6" aria-hidden="true"><img src="assets/family.jpg" alt=""><i class="fade"></i></div>
+    <div class="pad">
+      <div class="t6">
+        <div class="eyebrow"><span class="num">02</span> למה עכשיו</div>
+        <h2>לגדול כרשת.<br>להמשיך להכיר<br>כל משפחה.</h2>
+        <div class="lead">אפליקציה שתשמור על ההיכרות עם המשפחה ותלווה את הטיפול, גם כשהרשת גדלה ומגיעים למרפאה חדשה.</div>
+        <div class="g6">
+          <div><b>6</b><span>מרפאות היום</span></div>
+          <svg class="ar" viewBox="0 0 40 20" aria-hidden="true"><path d="M36 10H5M12 3 5 10l7 7"/></svg>
+          <div class="to"><b>30</b><span>מרפאות ביעד הצמיחה</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 7 · world · Three networks, three lessons (Hemi 23.10: one slide, no ratings) ══ -->
+  <section class="slide s7" data-act="world" data-title="השראה מהעולם">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">02</span> השראה מהעולם</div>
+      <h2>מה אפשר ללמוד מחוויות מנוי בעולם</h2>
+      <div class="lead">שלוש דוגמאות שעזרו לנו לגבש את ההצעה לטדי.</div>
+      <div class="w3">
+        <div class="wc">
+          <div class="im"><img src="assets/world/sploot-careplan.jpg" alt="Sploot, מסך תוכנית הטיפול" style="object-position:center 55%"></div>
+          <div class="nm">Sploot <span class="pr">מהתוכנית לתור</span></div>
+          <p>תוכנית הטיפול מחוברת לקביעת תור.</p>
+        </div>
+        <div class="wc">
+          <div class="im"><img src="assets/world/banfield-pet.jpg" alt="Banfield, עמוד החיה" style="object-position:center 92%"></div>
+          <div class="nm">Banfield <span class="pr">החיה במרכז</span></div>
+          <p>עמוד אישי לכל חיה מרכז את המידע והפעולות הרלוונטיות לה.</p>
+        </div>
+        <div class="wc">
+          <div class="im"><img src="assets/world/modernanimal-home.jpg" alt="Modern Animal, מסך הבית" style="object-position:center 70%"></div>
+          <div class="nm">Modern Animal <span class="pr">הקשר ממשיך בבית</span></div>
+          <p>הביקור הבא וסיכום הביקור נגישים באפליקציה, והסיכום עובר בדיקת רופא לפני השליחה.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 8 · world · dark · Three opportunities (no counts, Hemi 23.10) ══ -->
+  <section class="slide dark" data-act="world" data-title="שלושה כיוונים">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">02</span> שלושה כיוונים</div>
+      <h2>להביא את היתרונות של טדי אל האפליקציה</h2>
+      <div class="lead">שלושה כיוונים שאנחנו מציעים לפתח על הבסיס שכבר בניתם.</div>
+      <div class="zt">
+        <div class="zr"><span class="z">1</span><span class="w">להרגיש את הערך של המנוי</span><span class="h">מסך אישי שמציג מה כלול במסלול, אילו שירותים כבר מומשו ומה רלוונטי לטיפול הבא.</span></div>
+        <div class="zr"><span class="z">2</span><span class="w">הצוות מכיר גם את הפרטים הקטנים</span><span class="h">מה מרגיע את החיה, מה מלחיץ אותה ומה חשוב למשפחה שהצוות יידע, זמין לקראת הביקור בכל מרפאה ברשת.</span></div>
+        <div class="zr"><span class="z">3</span><span class="w">לדעת מראש מה המנוי נותן בטיפול</span><span class="h">ההטבה הרלוונטית מוצגת לצד הצעת הטיפול, עם מחיר ברור לאחר ההנחה.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 9 · product · The app: five parts, one per row ══ -->
+  <section class="slide s9" data-act="product" data-title="טדי לצד המשפחה">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">03</span> האפליקציה</div>
+      <h2>טדי לצד המשפחה, גם בין הביקורים</h2>
+      <div class="lead">היכולות שאנחנו מציעים לחבר לחוויית מנוי אחת.</div>
+      <div class="parts">
+        <div class="p"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg></span><h3>קביעת תורים</h3><p>לבחור לפי זמינות, מרחק או הצוות המוכר, בכל הרשת.</p></div>
+        <div class="p"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 14.5h4"/></svg></span><h3>המנוי שלי</h3><p>לראות מה כלול, מה כבר מומש ולחדש בקלות כשמגיע הזמן.</p></div>
+        <div class="p"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3.5 13.5V3.5h10l7.1 7.1a2 2 0 0 1 0 2.8z"/><circle cx="8" cy="8" r="1.4"/></svg></span><h3>ההטבות שלי</h3><p>לראות את המחיר למנויים לצד הטיפול או המוצר.</p></div>
+        <div class="p"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.1A8 8 0 1 1 20 12z"/></svg></span><h3>שאלות בין הביקורים</h3><p>סיוע מבוסס AI להבנת מידע והנחיות שאושרו בידי טדי, עם העברה לצוות כשנדרש מענה מקצועי.</p></div>
+        <div class="p"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12.5H6z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></span><h3>מוצרים שהצוות ממליץ</h3><p>להזמין שוב מוצרים שהצוות המליץ עליהם, עם הטבות המנוי הרלוונטיות.</p></div>
+      </div>
+      <div class="band"><span class="it">לכל חיה בבית: פרופיל אישי, תוכנית מניעה וסיכומי ביקורים.</span></div>
+      <div class="foot">כך זה יכול להיראות ביום־יום של מיקה, בת 3, מנויה בטדי פלוס.</div>
+    </div>
+  </section>
+
+  <!-- ══ 10 · product · Demo A: before the visit ══ -->
+  <section class="slide" data-act="product" data-title="לפני הביקור">
+    <div class="pad">
+      <div class="proto dm" data-demo="3" data-manual="1">
+        <div class="dtx">
+          <div class="eyebrow"><span class="num">03</span> לפני הביקור</div>
+          <h2>הטיפול הבא ברור.<br>התור קרוב. הצוות מעודכן.</h2>
+          <div class="dsteps">
+            <span class="ds" data-i="0"><span class="k">1</span>הצעד הבא</span>
+            <span class="ds" data-i="1"><span class="k">2</span>בחירת תור</span>
+            <span class="ds" data-i="2"><span class="k">3</span>הצוות מעודכן</span>
+          </div>
+          <div class="dcaps">
+            <div class="dcap" data-cs="0"><div class="ct">יודעים מה הצעד הבא</div><div class="cs2">תזכורת לבדיקת השיניים של מיקה, לפי התוכנית שאושרה במרפאה, עם ציון שהבדיקה כלולה במנוי.</div></div>
+            <div class="dcap" data-cs="1"><div class="ct">בוחרים את התור שמתאים</div><div class="cs2">אפשר לבחור תור זמין בתוך 24 שעות, או להמתין לרופאה שמכירה את מיקה.</div></div>
+            <div class="dcap" data-cs="2"><div class="ct">מגיעים כשהצוות כבר מעודכן</div><div class="cs2">מה מלחיץ את מיקה ומה עוזר לה להירגע מצורף לביקור, כדי שהצוות יוכל להיערך לקראתה.</div></div>
+          </div>
+        </div>
+        <div class="dstage">
+          <div class="dev">
+<!-- EMBED p1-booking START --><div data-embed="p1-booking"><div class="cs" data-cs="0"><div class="tsb"><span>9:41</span><span class="demo">המחשה</span></div><div class="thd"><span class="bk">›</span><span class="tt">בוקר טוב</span><span class="av"><img class="pm" src="assets/mika.jpg" alt="מיקה"><img class="pl" src="assets/louis.jpg" alt="לואי"></span></div><div class="tbd"><div class="pets"><span data-pet="mika"><img src="assets/mika.jpg" alt="מיקה">מיקה</span><span data-pet="louis"><img src="assets/louis.jpg" alt="לואי">לואי</span><span class="add">+</span></div><div class="pv pm"><div class="tk brown hero"><span class="ph"><img src="assets/mika.jpg" alt="מיקה"></span><div><div class="t1 big">מיקה</div><div class="ts">בת 3 · טדי פלוס</div></div></div>
+<div class="tsec">הצעד הבא</div>
+<div class="tk sel"><div class="t1">בדיקת שיניים</div>
+ <div class="ts"><span class="st g">כלולה בטדי פלוס</span></div>
+ <div class="tbtns" style="margin-top:7px"><span class="tbtn" data-go="1">תיאום תור</span></div></div>
+</div><div class="pv pl"><div class="tk brown hero"><span class="ph"><img src="assets/louis.jpg" alt="לואי"></span><div><div class="t1 big">לואי</div><div class="ts">חתול, בן 5</div></div></div><div class="tsec">הצעד הבא</div><div class="tk sel"><div class="t1">חיסון שנתי</div><div class="ts">מגיע בדצמבר 2026</div><div class="tbtns" style="margin-top:7px"><span class="tbtn">תיאום תור</span></div></div></div></div><div class="ttabs"><span class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7V20a1 1 0 0 1-1 1H15v-6H9v6H4.5a1 1 0 0 1-1-1z"/></svg>בית</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>תורים</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 14.5h4"/></svg>המנוי</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.1A8 8 0 1 1 20 12z"/></svg>שאלות</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12.5H6z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>חנות</span></div></div>
+<div class="cs" data-cs="1"><div class="tsb"><span>9:41</span><span class="demo">המחשה</span></div><div class="thd"><span class="bk">›</span><span class="tt">תור לבדיקת שיניים</span><span class="av"><img src="assets/mika.jpg" alt="מיקה"></span></div><div class="tbd">
+<div class="tsec">תורים זמינים בתוך 24 שעות</div>
+<div class="tk"><div class="t1">בקעת אונו</div><div class="ts"><span class="st m">הכי מהר</span>היום · 19:15</div></div>
+<div class="tk"><div class="t1">מרפאת מודיעין</div><div class="ts"><span class="st m">הכי קרוב</span>מחר 27.10 · 09:30</div></div>
+<div class="tsec">או לחכות לרופאה המוכרת</div>
+<div class="tk sel"><div class="ts" style="margin-top:0"><span class="st a">מכירה את מיקה</span></div>
+ <div class="t1">הרופאה שטיפלה בה</div><div class="ts">מודיעין · מחר, יום ג׳ 27.10 · 17:30</div></div>
+<span class="tbtn" data-go="2">קביעת התור</span>
+</div><div class="ttabs"><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7V20a1 1 0 0 1-1 1H15v-6H9v6H4.5a1 1 0 0 1-1-1z"/></svg>בית</span><span class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>תורים</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 14.5h4"/></svg>המנוי</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.1A8 8 0 1 1 20 12z"/></svg>שאלות</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12.5H6z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>חנות</span></div></div>
+<div class="cs" data-cs="2"><div class="tsb"><span>9:41</span><span class="demo">המחשה</span></div><div class="thd"><span class="bk">›</span><span class="tt">התור של מיקה</span><span class="av"><img src="assets/mika.jpg" alt="מיקה"></span></div><div class="tbd">
+<div class="tk"><div class="ts" style="margin-top:0"><span class="st g">נקבע</span></div>
+ <div class="t1">בדיקת שיניים</div><div class="ts">יום ג׳ 27.10 · 17:30 · מודיעין</div></div>
+<div class="tsec">חשוב לדעת לפני שמיקה מגיעה</div>
+<div class="tk"><div class="tdot g"><div><div class="t1">מתקשה ליד כלבים אחרים</div><div class="ts">עדיף להמתין בחוץ</div></div></div>
+ <div class="tdot g"><div><div class="t1">נרגעת עם חטיף</div></div></div>
+ <div class="tdot g"><div><div class="t1">השבוע: מגרדת באוזן ימין</div><div class="ts">כדאי לבדוק גם את זה</div></div></div></div>
+<div class="tnote">זמין לצוות המטפל בכל מרפאות טדי</div>
+</div><div class="ttabs"><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7V20a1 1 0 0 1-1 1H15v-6H9v6H4.5a1 1 0 0 1-1-1z"/></svg>בית</span><span class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>תורים</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 14.5h4"/></svg>המנוי</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.1A8 8 0 1 1 20 12z"/></svg>שאלות</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12.5H6z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>חנות</span></div></div></div><!-- EMBED p1-booking END --><div class="notch"></div></div>
+          <div class="zm" data-cs="0" style="top:250px"><div class="zl">הצעד הבא של מיקה</div><div class="zt">בדיקת שיניים</div><span class="zc">כלולה בטדי פלוס</span></div>
+          <div class="zm" data-cs="1" style="top:120px"><div class="zl">תורים זמינים בתוך 24 שעות</div><div class="zt">היום, 19:15</div><div class="zs">בקעת אונו · הכי מהר</div>
+            <div class="zdiv"></div><div class="zl">או לחכות לרופאה המוכרת</div><div class="zt">מחר, 17:30</div><div class="zs">מודיעין · מכירה את מיקה</div></div>
+          <div class="zm" data-cs="2" style="top:250px"><div class="zl">חשוב לדעת לפני שמיקה מגיעה</div><div class="zli">מתקשה ליד כלבים אחרים</div><div class="zli">נרגעת עם חטיף</div><div class="zli">השבוע: מגרדת באוזן ימין</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 11 · product · Demo B: the membership ══ -->
+  <section class="slide" data-act="product" data-title="המנוי וההטבות">
+    <div class="pad">
+      <div class="proto dm" data-demo="3" data-manual="1">
+        <div class="dtx">
+          <div class="eyebrow"><span class="num">03</span> המנוי וההטבות</div>
+          <h2>ברור מה כלול.<br>רואים את הערך. קל לחדש.</h2>
+          <div class="dsteps">
+            <span class="ds" data-i="0"><span class="k">1</span>המנוי במקום אחד</span>
+            <span class="ds" data-i="1"><span class="k">2</span>המחיר מראש</span>
+            <span class="ds" data-i="2"><span class="k">3</span>חידוש</span>
+          </div>
+          <div class="dcaps">
+            <div class="dcap" data-cs="0"><div class="ct">המנוי במקום אחד</div><div class="cs2">מה כלול במסלול של מיקה, אילו טיפולים כבר בוצעו ואילו הטבות זמינות לה.</div></div>
+            <div class="dcap" data-cs="1"><div class="ct">המחיר ברור מראש</div><div class="cs2">הצעת הטיפול מציגה את הנחת המנוי, את הסכום לתשלום ואת מה שאינו כלול.</div></div>
+            <div class="dcap" data-cs="2"><div class="ct">מחדשים עם תמונה מלאה</div><div class="cs2">לקראת החידוש, סיכום אישי מציג את הטיפולים וההטבות שמיקה קיבלה לאורך השנה.</div></div>
+          </div>
+        </div>
+        <div class="dstage">
+          <div class="dev">
+<!-- EMBED p2-membership START --><div data-embed="p2-membership"><div class="cs" data-cs="0"><div class="tsb"><span>9:41</span><span class="demo">המחשה</span></div><div class="thd"><span class="bk">›</span><span class="tt">המנוי של מיקה</span><span class="av"><img src="assets/mika.jpg" alt="מיקה"></span></div><div class="tbd">
+<div class="tk brown"><div class="t1 big">טדי פלוס</div><div class="ts">מיקה · מועד חידוש: 1.3.2027</div></div>
+<div class="tsec">השנה</div>
+<div class="tk">
+ <div class="trow"><span class="k">בדיקת רופא מקיפה</span><span class="v">ללא הגבלה</span></div>
+ <div class="trow"><span class="k">חיסונים שנתיים</span><span class="v g">בוצעו 3.2026</span></div>
+ <div class="trow"><span class="k">טיפול תולעת הפארק</span><span class="v">4 מתוך 6</span></div>
+ <div class="trow"><span class="k">ניקוי שיניים</span><span class="v">25% הנחה</span></div>
+ <div class="trow"><span class="k">מוצרים בחנות</span><span class="v">10% הנחה</span></div>
+ <div class="trow"><span class="k">תור רגיל או חיסון</span><span class="v">תוך 24 שעות</span></div>
+</div>
+</div><div class="ttabs"><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7V20a1 1 0 0 1-1 1H15v-6H9v6H4.5a1 1 0 0 1-1-1z"/></svg>בית</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>תורים</span><span class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 14.5h4"/></svg>המנוי</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.1A8 8 0 1 1 20 12z"/></svg>שאלות</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12.5H6z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>חנות</span></div></div>
+<div class="cs" data-cs="1"><div class="tsb"><span>9:41</span><span class="demo">המחשה</span></div><div class="thd"><span class="bk">›</span><span class="tt">הצעת טיפול</span><span class="av"><img src="assets/mika.jpg" alt="מיקה"></span></div><div class="tbd">
+<div class="tk"><div class="t1">ניקוי שיניים והסרת אבנית</div><div class="ts">הוצע בבדיקה, יום ג׳ 27.10 · מודיעין</div>
+ <div class="ts">כולל טשטוש, הרדמה וניטור מלא</div></div>
+<div class="tk">
+ <div class="tln"><span>מחיר הטיפול</span><span class="v">₪1,200</span></div>
+ <div class="tln"><span>הנחת טדי פלוס, 25%</span><span class="v">₪300</span></div>
+ <div class="tln tot"><span>לתשלום</span><span class="v">₪900</span></div>
+ <div class="ts">לא כולל: בדיקות דם</div></div>
+<div class="tnote">סכומים להמחשה</div>
+<span class="tbtn">אישור הצעת הטיפול</span>
+<span class="tbtn gh">יש לי שאלה</span>
+</div><div class="ttabs"><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7V20a1 1 0 0 1-1 1H15v-6H9v6H4.5a1 1 0 0 1-1-1z"/></svg>בית</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>תורים</span><span class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 14.5h4"/></svg>המנוי</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.1A8 8 0 1 1 20 12z"/></svg>שאלות</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12.5H6z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>חנות</span></div></div>
+<div class="cs" data-cs="2"><div class="tsb"><span>9:41</span><span class="demo">המחשה</span></div><div class="thd"><span class="bk">›</span><span class="tt">חידוש המנוי</span><span class="av"><img src="assets/mika.jpg" alt="מיקה"></span></div><div class="tbd">
+<div class="tk brown"><div class="t1">מועד חידוש: 1.3.2027</div><div class="ts">מיקה · טדי פלוס, מנויה מ־3.2026</div></div>
+<div class="tsec">השנה של מיקה בטדי</div>
+<div class="tk">
+ <div class="tdot g"><div class="t1">3 בדיקות רופא מקיפות</div></div>
+ <div class="tdot g"><div class="t1">חיסון שנתי ו־4 טיפולי תולעת</div></div>
+ <div class="tdot g"><div class="t1">25% הנחה על ניקוי שיניים</div></div>
+</div>
+<span class="tbtn">חידוש בטדי פלוס</span>
+<span class="tbtn gh">השוואה לטדי פלטינום</span>
+</div><div class="ttabs"><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7V20a1 1 0 0 1-1 1H15v-6H9v6H4.5a1 1 0 0 1-1-1z"/></svg>בית</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>תורים</span><span class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 14.5h4"/></svg>המנוי</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.1A8 8 0 1 1 20 12z"/></svg>שאלות</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12.5H6z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>חנות</span></div></div></div><!-- EMBED p2-membership END --><div class="notch"></div></div>
+          <div class="zm" data-cs="0" style="top:300px"><div class="zl">טיפול תולעת הפארק</div><div class="zt">4 מתוך 6</div><div class="zs">נוצלו השנה · כלול במנוי</div><div class="zbar"><i></i></div></div>
+          <div class="zm" data-cs="1" style="top:250px"><div class="zl">לתשלום</div><div class="zt">₪900</div><div class="zs">אחרי 25% הנחת טדי פלוס · לא כולל בדיקות דם</div><div class="zs">סכומים להמחשה</div></div>
+          <div class="zm" data-cs="2" style="top:230px"><div class="zl">השנה של מיקה בטדי</div><div class="zli">3 בדיקות רופא מקיפות</div><div class="zli">חיסון שנתי ו־4 טיפולי תולעת</div><div class="zli">25% הנחה על ניקוי שיניים</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 12 · product · Demo C: after the visit ══ -->
+  <section class="slide" data-act="product" data-title="אחרי הביקור">
+    <div class="pad">
+      <div class="proto dm" data-demo="4" data-manual="1">
+        <div class="dtx">
+          <div class="eyebrow"><span class="num">03</span> אחרי הביקור</div>
+          <h2>הביקור נגמר. טדי ממשיכים איתכם.</h2>
+          <div class="dsteps">
+            <span class="ds" data-i="0"><span class="k">1</span>סיכום הביקור</span>
+            <span class="ds" data-i="1"><span class="k">2</span>מעקב בבית</span>
+            <span class="ds" data-i="2"><span class="k">3</span>שאלות</span>
+            <span class="ds" data-i="3"><span class="k">4</span>מוצרים שהומלצו</span>
+          </div>
+          <div class="dcaps">
+            <div class="dcap" data-cs="0"><div class="ct">יודעים מה לעשות בבית</div><div class="cs2">סיכום ברור שאושר בידי הצוות: מה נעשה בביקור, איך ממשיכים בבית ומתי צריך לפנות למרפאה.</div></div>
+            <div class="dcap" data-cs="1"><div class="ct">טדי שואלים איך מיקה מרגישה</div><div class="cs2">מעקב קצר אחרי הטיפול, במועד שהצוות הגדיר. תשובות שמצריכות התייחסות מועברות למרפאה.</div></div>
+            <div class="dcap" data-cs="2"><div class="ct">יש כתובת לשאלות שעולות</div><div class="cs2">סיוע מבוסס AI מסביר את ההנחיות שאושרו. כשנדרשת התייחסות מקצועית, השאלה עוברת לצוות והמשפחה רואה את סטטוס הפנייה.</div></div>
+            <div class="dcap" data-cs="3"><div class="ct">קל להזמין את מה שהומלץ</div><div class="cs2">המוצר שהצוות המליץ עליו, מחיר המנוי וזמינות האיסוף, עם אפשרות להזמין ישירות מהאפליקציה.</div></div>
+          </div>
+        </div>
+        <div class="dstage">
+          <div class="dev">
+<!-- EMBED p3-after-visit START --><div data-embed="p3-after-visit"><div class="cs" data-cs="0"><div class="tsb"><span>9:41</span><span class="demo">המחשה</span></div><div class="thd"><span class="bk">›</span><span class="tt">סיכום הביקור</span><span class="av"><img src="assets/mika.jpg" alt="מיקה"></span></div><div class="tbd">
+<div class="tk"><div class="ts" style="margin-top:0"><span class="st g">אושר ע״י הצוות</span></div>
+ <div class="t1">ניקוי שיניים · 3.11</div><div class="ts">מרפאת מודיעין</div></div>
+<div class="tk">
+ <div class="tsum"><b>מה עשינו</b><span>ניקוי אבנית בהרדמה</span></div>
+ <div class="tsum"><b>בבית</b><span>מזון רך עד 5.11</span></div>
+ <div class="tsum"><b>מתי לפנות למרפאה</b><span>אם לא אוכלת יותר מיום</span></div>
+ <div class="tsum"><b>הטיפול הבא</b><span>בדיקה מקיפה, 12.2026</span></div>
+</div>
+<div class="tbtns"><span class="tbtn gh" data-go="2">שאלה על הביקור</span></div>
+</div><div class="ttabs"><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7V20a1 1 0 0 1-1 1H15v-6H9v6H4.5a1 1 0 0 1-1-1z"/></svg>בית</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>תורים</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 14.5h4"/></svg>המנוי</span><span class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.1A8 8 0 1 1 20 12z"/></svg>שאלות</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12.5H6z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>חנות</span></div></div>
+<div class="cs" data-cs="1"><div class="tsb"><span>9:41</span><span class="demo">המחשה</span></div><div class="thd"><span class="bk">›</span><span class="tt">מיקה</span><span class="av"><img src="assets/mika.jpg" alt="מיקה"></span></div><div class="tbd">
+<div class="ntf"><div class="nh"><i></i>טדי וטס · יום ה׳ 5.11, 09:00</div>
+ <div class="t1">איך מיקה מרגישה היום?</div>
+ <div class="ts">יומיים אחרי ניקוי השיניים</div>
+ <div class="opt"><span class="pick">אוכלת כרגיל</span><span>אוכלת פחות</span><span>משהו אחר</span></div></div>
+<div class="tk"><div class="ts" style="margin-top:0"><span class="st g">נשמר בתיק של מיקה</span></div>
+ <div class="ts">תשובה שמדאיגה עוברת לצוות במודיעין</div></div>
+</div><div class="ttabs"><span class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7V20a1 1 0 0 1-1 1H15v-6H9v6H4.5a1 1 0 0 1-1-1z"/></svg>בית</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>תורים</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 14.5h4"/></svg>המנוי</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.1A8 8 0 1 1 20 12z"/></svg>שאלות</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12.5H6z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>חנות</span></div></div>
+<div class="cs" data-cs="2"><div class="tsb"><span>12:05</span><span class="demo">המחשה</span></div><div class="thd"><span class="bk">›</span><span class="tt">שאלות על מיקה</span><span class="av"><img src="assets/mika.jpg" alt="מיקה"></span></div><div class="tbd">
+<div class="tchat">
+ <div class="tq">איך מצחצחים לה שיניים בבית?</div>
+ <div class="ta">עם משחה לכלבים בלבד, לא של בני אדם. מתחילים בכמה שניות ביום ומאריכים בהדרגה.
+  <div class="src">דוגמה למענה המבוסס על תוכן שהצוות יאשר</div></div>
+</div>
+<div class="tk"><div class="ts" style="margin-top:0"><span class="st">בטיפול</span>שאלה לצוות במודיעין</div><div class="t1">מתי היא יכולה לחזור לעצמות?</div><div class="ts">מענה צפוי עד 14:00</div></div>
+<div class="tin">כתבו שאלה…</div>
+</div><div class="ttabs"><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7V20a1 1 0 0 1-1 1H15v-6H9v6H4.5a1 1 0 0 1-1-1z"/></svg>בית</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>תורים</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 14.5h4"/></svg>המנוי</span><span class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.1A8 8 0 1 1 20 12z"/></svg>שאלות</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12.5H6z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>חנות</span></div></div>
+<div class="cs" data-cs="3"><div class="tsb"><span>9:41</span><span class="demo">המחשה</span></div><div class="thd"><span class="bk">›</span><span class="tt">מה שהצוות המליץ</span><span class="av"><img src="assets/mika.jpg" alt="מיקה"></span></div><div class="tbd">
+<div class="tk"><div class="tprod"><span class="im"><i></i></span><div>
+ <div class="t1">ג׳ל לשיניים לכלבים</div><div class="ts">הומלץ בביקור 3.11</div></div></div></div>
+<div class="tk">
+ <div class="tln"><span>מחיר</span><span class="v">₪60</span></div>
+ <div class="tln tot"><span>מחיר מנוי, 10% הנחה</span><span class="v">₪54</span></div>
+ <div class="trow"><span class="k">איסוף</span><span class="v g">זמין מחר במודיעין</span></div>
+</div>
+<div class="tnote">סכומים להמחשה</div>
+<span class="tbtn">הזמנה לאיסוף</span>
+<div class="tnote">רק באישור שלכם. אין חיוב אוטומטי.</div>
+</div><div class="ttabs"><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7V20a1 1 0 0 1-1 1H15v-6H9v6H4.5a1 1 0 0 1-1-1z"/></svg>בית</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>תורים</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 14.5h4"/></svg>המנוי</span><span class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.1A8 8 0 1 1 20 12z"/></svg>שאלות</span><span class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12.5H6z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>חנות</span></div></div></div><!-- EMBED p3-after-visit END --><div class="notch"></div></div>
+          <div class="zm" data-cs="0" style="top:250px"><div class="zl">בבית</div><div class="zt">מזון רך עד 5.11</div><div class="zs">מתי לפנות למרפאה: אם לא אוכלת יותר מיום</div><span class="zc">אושר ע״י הצוות</span></div>
+          <div class="zm" data-cs="1" style="top:130px"><div class="zl"><span class="zic"></span>טדי וטס · יום ה׳ 5.11</div><div class="zq">איך מיקה מרגישה היום?</div><div class="zopt"><span class="pick">אוכלת כרגיל</span><span>אוכלת פחות</span></div></div>
+          <div class="zm za" data-cs="2" style="top:150px"><div class="zl">איך מצחצחים לה שיניים בבית?</div><div class="zans">עם משחה לכלבים בלבד, לא של בני אדם. מתחילים בכמה שניות ביום ומאריכים בהדרגה.</div><div class="zs">דוגמה למענה המבוסס על תוכן שהצוות יאשר</div></div>
+          <div class="zm" data-cs="3" style="top:200px"><div class="zl">ג׳ל לשיניים לכלבים</div><div class="zt">₪54 במנוי</div><div class="zs">במקום ₪60 · זמין לאיסוף מחר במודיעין</div><div class="zs">סכומים להמחשה · רק באישור שלכם</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 13 · product · The clinic side: who owns each request (Hemi 23.10, section 7) ══ -->
+  <section class="slide s13" data-act="product" data-title="בצד של המרפאה">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">03</span> בצד של המרפאה</div>
+      <h2>ברור מה ממתין. ברור מי מטפל.</h2>
+      <div class="lead">פניות מהאפליקציה מרוכזות עבור צוות המרפאה, עם פרטי החיה, ההקשר הרלוונטי, אחראי וסטטוס טיפול.</div>
+      <div class="inbox">
+        <div class="ibh"><b>הפניות מהאפליקציה | מרפאת מודיעין</b><span>יום ה׳ 5.11</span><span class="demo">המחשה</span></div>
+        <div class="ibr hd"><span>חיה ופנייה</span><span>התקבלה</span><span>אחראי</span><span>סטטוס</span><span>מועד מענה מתוכנן</span></div>
+        <div class="ibr sel"><span class="pt"><img src="assets/mika.jpg" alt=""><span><b>מיקה · שאלה אחרי ניקוי שיניים</b><i>„מתי היא יכולה לחזור לעצמות ללעיסה?”</i></span></span><span>11:42</span><span>הווטרינרית המטפלת</span><span><em class="st w">בטיפול</em></span><span>14:00</span></div>
+        <div class="ibr"><span class="pt"><span class="ini">ש</span><span><b>שוקו · מעקב בבית אחרי ניתוח</b><i>ענו „אוכלת פחות”</i></span></span><span>10:05</span><span>הרופא התורן</span><span><em class="st n">חדש</em></span><span>12:00</span></div>
+        <div class="ibr"><span class="pt"><span class="ini">ב</span><span><b>באדי · בקשה לתור חיסון</b><i>מידע לקראת הביקור מצורף</i></span></span><span>09:20</span><span>קבלה</span><span><em class="st d">בוצע</em></span><span></span></div>
+        <div class="ibr"><span class="pt"><span class="ini">נ</span><span><b>נלה · הזמנה לאיסוף</b><i>ג׳ל לשיניים לכלבים</i></span></span><span>08:50</span><span>קבלה</span><span><em class="st d">מוכן לאיסוף</em></span><span></span></div>
+      </div>
+      <div class="foot">לצוות יש תמונה משותפת של הפניות הפתוחות. המשפחה יכולה לראות שהפנייה התקבלה ומה מצבה.</div>
+    </div>
+  </section>
+
+  <!-- ══ 14 · product · dark · The team leads the care ══ -->
+  <section class="slide dark s14" data-act="product" data-title="הצוות מוביל את הטיפול">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">03</span> העיקרון</div>
+      <h2>הצוות מוביל את הטיפול</h2>
+      <div class="lead">האפליקציה מרחיבה את השירות של טדי. ההחלטות הרפואיות נשארות בידי הצוות.</div>
+      <div class="pr3">
+        <div><span class="k">1</span><h3>הצוות מאשר</h3><p>סיכומי ביקור ותוכניות טיפול נשלחים למשפחה לאחר אישור מקצועי.</p></div>
+        <div><span class="k">2</span><h3>ה־AI מסייע להבין</h3><p>מסביר מידע והנחיות שאושרו, אינו מאבחן ואינו משנה טיפול. שאלות שדורשות שיקול דעת רפואי עוברות לצוות.</p></div>
+        <div><span class="k">3</span><h3>לדחיפות יש מסלול ברור</h3><p>הנחיות לפנייה דחופה מוצגות באופן בולט, בהתאם למסלול המענה שטדי יגדירו.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 15 · product · Value for members, the clinic team and the network ══ -->
+  <section class="slide s15" data-act="product" data-title="הערך העסקי">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">03</span> למה זה שווה</div>
+      <h2>שירות טוב יותר למשפחה. בסיס לצמיחה של הרשת.</h2>
+      <div class="v3">
+        <div><h3>למשפחות</h3><ul><li>ברור מה הטיפול הבא ומה כלול במנוי.</li><li>ההנחיות והמידע זמינים גם בבית.</li><li>ההיכרות ממשיכה בכל מרפאה ברשת.</li></ul></div>
+        <div><h3>לצוותי המרפאות</h3><ul><li>המידע הרלוונטי זמין לקראת הביקור.</li><li>פניות מגיעות עם ההקשר הנדרש.</li><li>ברור מי מטפל ומה עדיין ממתין.</li></ul></div>
+        <div><h3>לטדי כרשת</h3><ul><li>לחזק את הקשר עם המנויים ולעודד חידוש.</li><li>לעודד השלמה של טיפולי מניעה.</li><li>לתמוך בחוויית שירות עקבית ככל שהרשת גדלה.</li></ul></div>
+      </div>
+      <div class="foot">בפיילוט נגדיר יחד מדדי הצלחה ונבדוק את ההשפעה בפועל.</div>
+    </div>
+  </section>
+
+  <!-- ══ 16 · us · ours · Proof 1: Express City Wash, the subscription flow ══ -->
+  <section class="slide ours s16" data-act="us" data-title="אקספרס סיטי ווש">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">04</span> מה שבנינו</div>
+      <h2>כבר בנינו חוויית מנוי לרשת סניפים</h2>
+      <div class="lead">באפליקציית אקספרס סיטי ווש שפיתחנו, הלקוח מצטרף, מנהל את המנוי ומשתמש בשירותי הרשת מהטלפון.</div>
+      <div class="cwf">
+        <div class="st3"><div class="im"><img src="assets/proof/cw-join.jpg" alt="אקספרס סיטי ווש, הוספת רכב נוסף למנוי"></div><span class="k">1</span><h3>הצטרפות פשוטה</h3><p>מנוי חודשי, גם לרכב נוסף במשפחה.</p></div>
+        <div class="st3"><div class="im"><img src="assets/proof/cw-manage.jpg" alt="אקספרס סיטי ווש, הרכבים שלי"></div><span class="k">2</span><h3>ניהול אישי</h3><p>כל רכב והמנוי שלו, במקום אחד.</p></div>
+        <div class="st3"><div class="im"><img src="assets/proof/cw-redeem.jpg" alt="אקספרס סיטי ווש, מחיר למנויים וקוד שואב"></div><span class="k">3</span><h3>מימוש בסניף</h3><p>מחיר למנויים ליד השירות, וקוד לשטיפה.</p></div>
+      </div>
+      <div class="foot">לטדי אנחנו מביאים ניסיון בחיבור בין מנויים, הטבות ושירות בסניפים, לצד אפיון ייעודי לצורכי המשפחות והצוותים שלכם.</div>
+    </div>
+  </section>
+
+  <!-- ══ 17 · us · ours · Proof 2: AMIT ══ -->
+  <section class="slide ours" data-act="us" data-title="אמי״ת">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">04</span> מה שבנינו</div>
+      <div class="two" style="grid-template-columns:1fr 1fr;align-items:center">
+        <div>
+          <h2>ניסיון בשילוב AI בתוך מוצר ארגוני</h2>
+          <div class="pdesc2">עבור רשת אמי״ת פיתחנו מערכת למידה הכוללת כלי AI לבניית שיעורים ולסיוע אישי לתלמידים.</div>
+          <div class="ai2">
+            <div class="a"><div class="t">כלים לצוות</div><div class="d">סיוע ביצירת שיעורים על בסיס התוכן הארגוני.</div></div>
+            <div class="a"><div class="t">סיוע למשתמשים</div><div class="d">מורה פרטי חכם כחלק מחוויית הלמידה.</div></div>
+          </div>
+        </div>
+        <div><div class="amitshot"><img src="assets/proof/p-amit.png" alt="מערכת הלמידה של אמי״ת"></div><div class="cap">מערכת הלמידה שפיתחנו לרשת אמי״ת</div></div>
+      </div>
+      <div class="foot">לטדי נביא את הניסיון הזה כדי לפתח מענה המבוסס על הידע וההנחיות שלכם, עם גבולות ברורים ובקרה מקצועית.</div>
+    </div>
+  </section>
+
+  <!-- ══ 18 · close · The route: integration check first, a narrow first version (Hemi 23.10) ══ -->
+  <section class="slide" data-act="close" data-title="מתחילים ממוקד">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">05</span> הדרך</div>
+      <h2>מתחילים ממוקד. בונים לצמיחה.</h2>
+      <div class="lead">אנחנו מציעים להתקדם בשלבים, עם תוצר ברור והחלטה משותפת בכל שלב.</div>
+      <div class="rtv">
+        <div class="s"><span class="k">1</span><h3>מבינים את השירות ואת המערכות</h3><p>ממפים את צורכי המשפחות והצוותים ובודקים את אפשרויות החיבור לתיק הרפואי, ליומן ולמערכת המנויים.</p></div>
+        <div class="s"><span class="k">2</span><h3>בוחרים ובונים גרסה ראשונה</h3><p>מתמקדים ביכולות בעלות הערך הגבוה ביותר, בהתאם למוכנות המערכות.</p></div>
+        <div class="s"><span class="k">3</span><h3>בודקים במרפאות</h3><p>מפעילים פיילוט במרפאה אחת או שתיים, בוחנים שימוש בפועל ואוספים משוב מהמשפחות ומהצוות.</p></div>
+        <div class="s"><span class="k">4</span><h3>מרחיבים לרשת</h3><p>משיקים בחנויות האפליקציות ומרחיבים בהדרגה למרפאות נוספות.</p></div>
+        <div class="s end"><span class="k">5</span><h3>ממשיכים לשפר</h3><p>מתעדפים יכולות נוספות לפי הנתונים, המשוב וצורכי הרשת.</p></div>
+      </div>
+      <div class="owners"><b>אתם מביאים את הידע המקצועי ואת ההיכרות עם השטח.</b><br><b>אנחנו מובילים את האפיון, העיצוב, הפיתוח והליווי לאחר ההשקה.</b></div>
+    </div>
+  </section>
+
+  <!-- ══ 19 · close · Extensions to prioritize after the pilot ══ -->
+  <section class="slide" data-act="close" data-title="בהמשך">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">05</span> בהמשך</div>
+      <h2>בהמשך, אפשר להרחיב את הליווי</h2>
+      <div class="lead">כיוונים נוספים שנוכל לבחון יחד, על בסיס השירותים של טדי והלמידה מהפיילוט.</div>
+      <div class="nx3 nonum">
+        <div><h3>ללוות את ההחלמה בבית</h3><p>תזכורות, דיווחי התקדמות והנחיות אישיות שהצוות הגדיר לאחר טיפול או ניתוח.</p></div>
+        <div><h3>להגיע רגועים יותר למרפאה</h3><p>הכנה לביקור, הודעה על הגעה ואפשרות להמתין בחוץ עד שהצוות מוכן לקבל.</p></div>
+        <div><h3>הטבות לשגרה עם החיה</h3><p>הטבות של שותפים לחיי היום־יום עם החיה, כמו מזון וציוד.</p></div>
+      </div>
+      <div class="foot">את סדר הפיתוח נקבע יחד, לפי הערך למשפחות ולצוותים.</div>
+    </div>
+  </section>
+
+  <!-- ══ 20 · close · The next step, and the questions it answers ══ -->
+  <section class="slide" data-act="close" data-title="הצעד הבא">
+    <div class="pad">
+      <div class="eyebrow"><span class="num">05</span> הצעד הבא</div>
+      <h2>בואו נגדיר יחד את הגרסה הראשונה של טדי</h2>
+      <div class="lead">אנחנו מציעים פגישת עבודה של כחצי יום עם חלי, מנהלת מרפאה והגורם שמכיר את המערכות הקיימות.</div>
+      <div class="nx3">
+        <div><span class="k">1</span><h3>נבחר במה מתחילים</h3><p>אילו צרכים של המנויים והצוותים הכי חשוב לפתור בגרסה הראשונה.</p></div>
+        <div><span class="k">2</span><h3>נמפה את החיבורים הנדרשים</h3><p>איך מנוהלים היום התורים, התיק הרפואי, המנויים וסיכומי הביקור, ומה ניתן לחבר.</p></div>
+        <div><span class="k">3</span><h3>נבחן איך מתחילים בפיילוט</h3><p>באיזו מרפאה מתחילים, מי משתתף ואיך נבחן הצלחה.</p></div>
+      </div>
+      <div class="foot">המטרה היא לגבש היקף ראשוני מוסכם ולזהות את הבדיקות הנוספות שנדרשות להכנת הצעת עבודה.</div>
+    </div>
+  </section>
+
+  <!-- ══ 21 · close · dark · Signature: the lockup returns ══ -->
+  <section class="slide dark clo sigart" data-act="close" data-title="סיום">
+    <div class="sa"><img src="assets/cover.jpg" alt=""></div>
+    <div class="pad" style="justify-content:center">
+      <div class="clologos">
+        <img src="assets/target-logo-white.svg" alt="טדי וטס" class="lg-them">
+        <span class="rule"></span>
+        <img src="assets/200apps-logo.png" alt="200Apps" class="lg-us">
+      </div>
+      <h2 class="bigline">הביקור נגמר. הקשר ממשיך.</h2>
+      <div class="cl2">בואו נבנה יחד את האפליקציה שתלווה את משפחות טדי בין הביקורים.</div>
+      <div class="sig">
+        <div><b>חמי בן לביא</b> · Head of Product Operations</div>
+        <div><b>אלכס יעקובוב</b> · CTO</div>
+        <div class="ct2"><a href="mailto:hemi@200apps.co"><bdi dir="ltr">hemi@200apps.co</bdi></a> · <a href="tel:+972544608119"><bdi dir="ltr">054-4608119</bdi></a></div>
+      </div>
+    </div>
+  </section>
+
+</div></div>
+
+<div id="chrome"><div id="dots"></div><div id="cnt"></div></div>
+
+<script>
+(function(){
+  var stage=document.getElementById('stage'),
+      slides=[].slice.call(document.querySelectorAll('.slide')),
+      dots=document.getElementById('dots'),
+      cnt=document.getElementById('cnt'),
+      hint=document.getElementById('hint'),
+      i=0, N=slides.length;
+
+  /* scale the fixed stage to the visible viewport. visualViewport is the real visible area
+     on phones; a zero or non-finite scale (hidden tab, first paint) keeps the last good one */
+  var lastScale=1;
+  function fit(){
+    var vv=window.visualViewport,
+        w=vv?vv.width:innerWidth, h=vv?vv.height:innerHeight,
+        s=Math.min(w/1280,h/720)*0.965;
+    if(!isFinite(s)||s<=0)s=lastScale; lastScale=s;
+    stage.style.transform='scale('+s+')';
+  }
+  ['resize','orientationchange','fullscreenchange','pageshow'].forEach(function(ev){addEventListener(ev,fit)});
+  if(window.visualViewport)visualViewport.addEventListener('resize',fit);
+  fit();
+
+  /* demo controller. Only .proto[data-demo] is a demo, so a label that happens to carry
+     class="proto" can never break the deck. See the CSS comment above .proto for the API.
+     v3 (Hemi 23.10, section 8): the clicker walks a manual demo's steps before the slide turns,
+     buttons inside the phone ([data-go]) open their screen, and a demo keeps its step when you
+     come back to it. */
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var demos=[].slice.call(document.querySelectorAll('.proto[data-demo]')).map(function(p){
+    var d={root:p,dev:p.querySelector('.dev'),bar:p.querySelector('.pbar'),
+           n:parseInt(p.dataset.demo,10)||1,ms:parseInt(p.dataset.auto,10)||3200,
+           first:parseInt(p.dataset.start,10)||0,manual:!!p.dataset.manual,loop:!!p.dataset.loop,
+           step:0,timer:null,seen:false,slide:p.closest('.slide')};
+    function mark(sel,attr){[].forEach.call(p.querySelectorAll(sel),function(el){
+      el.classList.toggle('on',parseInt(el.getAttribute(attr),10)===d.step)})}
+    d.render=function(){
+      if(d.dev)d.dev.className=d.dev.className.replace(/\bst-\d+\b/g,'').trim()+' st-'+d.step;
+      p.className=p.className.replace(/\bsp-\d+\b/g,'').trim()+' sp-'+d.step;
+      mark('[data-i]','data-i'); mark('[data-cs]','data-cs'); mark('.sh[data-st]','data-st');
+      if(d.bar)[].forEach.call(d.bar.children,function(b,k){b.classList.toggle('on',k===d.step)});
+    };
+    d.set=function(k){d.stop();d.step=Math.max(0,Math.min(d.n-1,k));d.seen=true;d.render()};
+    d.stop=function(){if(d.timer){clearInterval(d.timer);d.timer=null}};
+    d.next=function(){d.step=(d.step+1)%d.n;d.render()};
+    /* dir<0: arrived with the back key, so a demo seen for the first time opens on its last step */
+    d.start=function(dir){
+      d.stop();
+      if(d.manual&&d.seen){d.render();return}
+      d.step=(reduce&&!d.manual)?d.n-1:((d.manual&&dir<0)?d.n-1:d.first);
+      d.seen=true; d.render();
+      if(d.manual||reduce)return;
+      d.timer=setInterval(function(){
+        if(d.step>=d.n-1){if(d.loop){d.step=-1}else{d.stop();return}}
+        d.next()},d.ms);
+    };
+    /* an auto demo advances on a click; a manual demo lets the click reach the stage (= next) */
+    p.addEventListener('click',function(e){if(d.manual)return;e.stopPropagation();d.stop();d.next()});
+    [].forEach.call(p.querySelectorAll('[data-i]'),function(el){
+      el.addEventListener('click',function(e){e.stopPropagation();d.set(parseInt(el.dataset.i,10)||0)});
+    });
+    [].forEach.call(p.querySelectorAll('[data-go]'),function(el){
+      el.addEventListener('click',function(e){e.stopPropagation();d.set(parseInt(el.dataset.go,10)||0)});
+    });
+    d.render(); return d;
+  });
+  /* the pet switch on the home screens: a chip sets data-pet on its screen, CSS shows that pet */
+  [].forEach.call(document.querySelectorAll('.cs [data-pet]'),function(el){
+    el.addEventListener('click',function(e){e.stopPropagation();
+      var cs=el.closest('.cs'); if(cs)cs.setAttribute('data-pet',el.getAttribute('data-pet'))});
+  });
+  function curDemo(){
+    for(var k=0;k<demos.length;k++)if(demos[k].manual&&demos[k].slide===slides[i])return demos[k];
+    return null;
+  }
+  function syncDemos(dir){
+    demos.forEach(function(d){if(d.slide===slides[i])d.start(dir); else d.stop();});
+  }
+  function go(n,dir){
+    i=Math.max(0,Math.min(N-1,n));
+    slides.forEach(function(s,k){s.classList.toggle('on',k===i)});
+    [].forEach.call(dots.children,function(d,k){d.classList.toggle('on',k===i)});
+    [].forEach.call(navList.children,function(li,k){li.classList.toggle('on',k===i)});
+    cnt.textContent=(i+1)+' / '+N;
+    document.body.classList.toggle('oncov',slides[i].classList.contains('cov'));
+    try{history.replaceState(null,'','#'+(i+1))}catch(e){}
+    syncDemos(dir||0);
+  }
+  /* next and back: a manual demo's steps first, then the slide. A clicker sends the same keys */
+  function fwd(){var d=curDemo(); if(d&&d.step<d.n-1){d.set(d.step+1);return} if(i<N-1)go(i+1,1)}
+  function back(){var d=curDemo(); if(d&&d.step>0){d.set(d.step-1);return} if(i>0)go(i-1,-1)}
+
+  /* slide index: click the counter, or press G. Typing a number and Enter jumps from anywhere */
+  var nav=document.createElement('div'); nav.id='nav';
+  nav.innerHTML='<div class="nv"><div class="nh"><b>השקפים</b><span>מספר ואנטר, או לחיצה · Esc לסגירה</span></div><ol></ol></div>';
+  document.body.appendChild(nav);
+  var navList=nav.querySelector('ol');
+  slides.forEach(function(s,k){
+    var li=document.createElement('li'), a=document.createElement('span'), b=document.createElement('span');
+    a.className='n'; a.textContent=k+1;
+    b.textContent=s.getAttribute('data-title')||((s.querySelector('h2,h1')||{}).textContent||'').trim();
+    li.appendChild(a); li.appendChild(b);
+    li.onclick=function(e){e.stopPropagation();closeNav();go(k,0)};
+    navList.appendChild(li);
+  });
+  function openNav(){nav.classList.add('open')}
+  function closeNav(){nav.classList.remove('open')}
+  nav.addEventListener('click',function(e){if(e.target===nav)closeNav()});
+  cnt.title='רשימת השקפים (G)';
+  cnt.addEventListener('click',function(e){e.stopPropagation();nav.classList.contains('open')?closeNav():openNav()});
+  var gbox=document.createElement('div'); gbox.id='gotobox'; document.body.appendChild(gbox);
+  var buf='', bufT=null;
+  function showBuf(){gbox.textContent=buf+' ⏎';gbox.classList.toggle('on',!!buf);
+    clearTimeout(bufT); bufT=setTimeout(function(){buf='';showBuf()},2500)}
+
+  slides.forEach(function(_,k){
+    var d=document.createElement('i'); d.onclick=function(){go(k,0)}; dots.appendChild(d);
+  });
+  /* direction comes from the document, never a constant: RTL -> ArrowLeft is next,
+     LTR -> ArrowRight is next. */
+  var rtl=(document.dir||'').toLowerCase()==='rtl',
+      NEXT=rtl?'ArrowLeft':'ArrowRight', PREV=rtl?'ArrowRight':'ArrowLeft';
+  addEventListener('keydown',function(e){
+    if(e.metaKey||e.ctrlKey||e.altKey)return;
+    if(/^(INPUT|TEXTAREA|SELECT)$/.test((e.target||{}).tagName||''))return;
+    var k=e.key, c=e.code||'';
+    if(/^[0-9]$/.test(k)){buf=(buf+k).slice(-2);showBuf();e.preventDefault();return}
+    if(buf&&k==='Enter'){var n=parseInt(buf,10);buf='';showBuf();closeNav();if(n>=1)go(n-1,0);e.preventDefault();return}
+    if(buf&&k==='Backspace'){buf=buf.slice(0,-1);showBuf();e.preventDefault();return}
+    if(k==='Escape'){buf='';showBuf();closeNav();return}
+    if(c==='KeyG'||k==='g'||k==='G'){nav.classList.contains('open')?closeNav():openNav();e.preventDefault();return}
+    if(k===NEXT||k==='PageDown'||k===' '||k==='Enter'){closeNav();fwd();e.preventDefault()}
+    else if(k===PREV||k==='PageUp'||k==='Backspace'){closeNav();back();e.preventDefault()}
+    else if(k==='Home'){go(0,0)} else if(k==='End'){go(N-1,0)}
+    else if(c==='KeyF'||k==='f'||k==='F'){document.fullscreenElement?document.exitFullscreen()
+      :document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen()}
+  });
+  /* a click on the half the reading moves toward advances (left in RTL, right in LTR), demo
+     steps first. Links (mailto/tel), buttons, step pills, phone buttons and the dots do their
+     own job and never also turn the slide */
+  stage.addEventListener('click',function(e){
+    if(e.target.closest('#dots,a,button,[data-i],[data-go],[data-pet]'))return;
+    var r=stage.getBoundingClientRect(), left=(e.clientX-r.left)<r.width/2;
+    (left===rtl)?fwd():back();
+  });
+  /* a swipe runs opposite to the next-slide arrow: RTL -> finger moving right advances,
+     LTR -> finger moving left advances. Same dir reading as the keys, one implementation */
+  var tx=null,ty=null;
+  addEventListener('touchstart',function(e){var t=e.changedTouches[0];tx=t.clientX;ty=t.clientY},{passive:true});
+  addEventListener('touchend',function(e){
+    if(tx===null)return; var t=e.changedTouches[0],dx=t.clientX-tx,dy=t.clientY-ty; tx=null;
+    if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)*1.5)((dx>0)===rtl)?fwd():back();
+  },{passive:true});
+  setTimeout(function(){hint.style.opacity='0'},6000);
+  var h0=parseInt((location.hash||'').slice(1),10);
+  go(h0>0?h0-1:0,0);
+})();
+</script>
+<script data-goatcounter="https://200apps.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
