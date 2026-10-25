@@ -292,6 +292,14 @@ h2{font-size:42px}
 .hi .big2 .l{font-size:21px;color:var(--ours-muted);margin-top:12px}
 .hi .people{display:flex;gap:56px;margin-top:30px;font-size:20px;color:var(--ours-muted)}
 .hi .people b{display:block;font-size:23px;color:var(--on-dark)}
+/* #4 · what we do: three cards in the language of slide 2 (accent rule on top, no numbers) */
+.wedo .eyebrow{font-size:15px}
+.wedo .wd3{flex:1;min-height:0;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin:40px 0 34px}
+.wedo .wdc{background:var(--on-dark-card);border-radius:0 0 20px 20px;border-top:2px solid var(--ours-accent);
+  padding:34px 30px 36px;display:flex;flex-direction:column;justify-content:center;gap:14px}
+.wedo .wdc .ic{width:56px;height:56px;stroke-width:1.4;margin-bottom:0}
+.wedo .wdc b{font-size:30px;white-space:nowrap;line-height:1.2;color:var(--on-dark);font-weight:700;margin-top:16px}
+.wedo .wdc p{font-size:22px;line-height:1.5;color:var(--ours-muted);text-wrap:pretty}
 .hi .logos16{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 22px;margin-top:auto;padding-top:20px;border-top:1px solid var(--on-dark-line)}
 .hi .logos16 img{width:166px;height:auto;filter:grayscale(1) brightness(0) invert(1);opacity:.85}
 .hi .logos16 img.asis{filter:none;opacity:.9}
@@ -905,7 +913,7 @@ h2{font-size:42px}
 [data-embed="p3-after-visit"] .tprod .im i{display:block;width:16px;height:26px;border-radius:5px 5px 3px 3px;background:var(--ink);box-shadow:0 -5px 0 -1px var(--accent)}
 /* EMBED p3-after-visit END */
 </style>
-<meta name="deck-build" content="8222f94fe8">
+<meta name="deck-build" content="5e5a31fbd2">
 </head>
 <body>
 
@@ -974,6 +982,20 @@ h2{font-size:42px}
   <!-- ══ 6 · world · Why now: a network that grows, the bond stays personal. Atmosphere photo
        (Hemi 24.10), not Teddy staff or members. The photo sits 120px left of the slide so the
        wall leaves room for the text; the right strip is the wall's own colours, faded in. ══ -->
+  <!-- ══ 3 · us · ours · What we do (Hemi 25.10, from the Tower of David deck) ══ -->
+  <section class="slide ours wedo" data-act="us" data-title="מה אנחנו עושים">
+    <div class="pad">
+      <div class="eyebrow">מה אנחנו עושים</div>
+      <h2>שלושה דברים שאנחנו עושים לארגונים</h2>
+      <div class="wd3">
+        <div class="wdc"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M10.5 18.5h3"/><path d="M2.5 8v8M21.5 8v8"/></svg><b>מוצרים דיגיטליים</b><p>אפליקציות ומערכות, מהאפיון והעיצוב ועד הפיתוח, ההשקה והתחזוקה.</p></div>
+        <div class="wdc"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M18.5 15l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg><b>הטמעת AI בארגונים</b><p>מזהים איפה AI חוסך זמן בעבודה היומיומית, ומלווים את הצוותים עד שזה הופך להרגל.</p></div>
+        <div class="wdc"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M6.5 6.5l3.4 3.4M17.5 6.5l-3.4 3.4M6.5 17.5l3.4-3.4M17.5 17.5l-3.4-3.4"/></svg><b>מערכת לניהול סוכני AI</b><p>סוכנים שמבצעים משימות של הארגון, עם בקרה ושקיפות על מה שכל סוכן עושה.</p></div>
+      </div>
+      <div class="foot">היום נתמקד בקשר עם המשפחות, לפני הביקור ואחריו.</div>
+    </div>
+  </section>
+
   <section class="slide s6" data-act="them" data-title="טדי בצמיחה">
     <div class="ph6" aria-hidden="true"><img src="assets/family.jpg" alt=""><i class="fade"></i></div>
     <div class="pad">
